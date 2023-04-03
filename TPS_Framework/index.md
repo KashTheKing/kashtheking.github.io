@@ -1,8 +1,6 @@
 # TPS Framework Documentation
 ## Created By KashTheKing
 
-### Credit to stravant for their Signal Module
-
 API
 ```lua
 --Assuming this is a script inside of a tool you want to be a gun
