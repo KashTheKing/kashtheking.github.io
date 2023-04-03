@@ -11,4 +11,5 @@ local gun = tps:new(script.Parent)
 Yes, it's really that simple
 
 You can also change the gun config to a custom preset or a default preset
+
 More documentation coming soon...
