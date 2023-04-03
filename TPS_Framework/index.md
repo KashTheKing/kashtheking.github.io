@@ -1,7 +1,7 @@
-### TPS Framework Documentation
+# TPS Framework Documentation
 ## Created By KashTheKing
 
-# Credit to stravant for their Signal Module
+### Credit to stravant for their Signal Module
 
 API
 ```lua
