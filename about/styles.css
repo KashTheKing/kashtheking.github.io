@@ -1,0 +1,752 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #3f4144;
+    color: white;
+}
+
+.floating-nav {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 9999;
+}
+
+.glass-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    font-size: 13px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    border-radius: 20px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background 0.15s ease;
+}
+
+.glass-btn:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px 64px 60px;
+    border-bottom: none;
+}
+
+section h2 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: 0.03em;
+    border-left: 5px solid white;
+    padding-left: 20px;
+}
+
+#about-me {
+    background: linear-gradient(to bottom, #3f4144 0%, #1a1a1c 100%);
+    justify-content: center;
+}
+
+#my-work {
+    background: linear-gradient(to bottom, #1a1a1c 0%, #1a1a1c 100%);
+}
+
+#my-community {
+    background: linear-gradient(to bottom, #1a1a1c 0%, #1a3a5c 100%);
+}
+
+#about-me h2 {
+    margin-bottom: 0;
+}
+
+#hero {
+    background: url('/public/banner.png') center center / cover no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 64px 60px;
+    border-bottom: none;
+}
+
+#hero h1 {
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+    white-space: nowrap;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(2deg);
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+}
+
+.scroll-hint svg {
+    width: 28px;
+    height: 28px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+.about-hero {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    overflow: visible;
+    position: relative;
+}
+
+.about-hero::before,
+.about-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    width: 500px;
+    height: 700px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-hero::before,
+.about-hero::after {
+    display: none;
+}
+
+.bio-text {
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgba(255,255,255,1);
+    line-height: 1.7;
+    max-width: 460px;
+}
+
+.avatar-spotlight {
+    position: relative;
+    flex-shrink: 0;
+    width: 280px;
+    z-index: 1;
+}
+
+.spotlight-beam {
+    display: none;
+}
+
+.avatar-spotlight img {
+    position: relative;
+    width: 280px;
+    z-index: 1;
+    filter: drop-shadow(0 24px 32px rgba(0,0,0,0.7));
+}
+
+.avatar-spotlight::after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 28px;
+    background: rgba(0,0,0,0.55);
+    border-radius: 50%;
+    filter: blur(14px);
+    z-index: 0;
+}
+
+.about-text {
+    z-index: 1;
+    flex: 1;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    min-width: 160px;
+}
+
+.social-link:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.25);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.about-text h2 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 72px;
+    font-weight: 800;
+    margin-bottom: 0;
+    border-left: 5px solid white;
+    padding-left: 20px;
+    letter-spacing: 0.03em;
+}
+
+blockquote {
+    margin-top: 24px;
+    padding: 20px 24px;
+    border-left: 3px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.75);
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.subsection-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0 10px;
+}
+
+.subsection-header .subsection-label {
+    margin: 0;
+}
+
+.see-all-btn {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.see-all-btn:hover {
+    color: white;
+}
+
+.subsection-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin: 32px 0 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.15s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+}
+
+.video-card:hover .play-btn {
+    opacity: 1;
+}
+
+.video-thumb {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    font-size: 28px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.video-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.9);
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.12);
+}
+
+.game-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 12px;
+}
+
+.game-info h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 4px 0;
+}
+
+.game-info p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.dev-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: rgba(255, 180, 0, 0.2);
+    color: #ffb400;
+    border: 1px solid rgba(255, 180, 0, 0.4);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.group-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.12);
+}
+
+.group-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.group-info {
+    padding: 7px;
+}
+
+.group-info h3 {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.group-info p {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.stolen-tag {
+    font-size: 10px;
+    font-weight: 700;
+    background: #e03e3e;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+}
+
+.embeds {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.community-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.community-text {
+    flex: 1;
+}
+
+.community-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+    max-width: 480px;
+}
+
+.discord-widget {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 24px;
+    min-width: 320px;
+    flex-shrink: 0;
+}
+
+.discord-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.discord-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 2px;
+}
+
+.discord-header span {
+    font-size: 12px;
+    color: #57f287;
+}
+
+.discord-header div {
+    flex: 1;
+}
+
+.discord-join {
+    padding: 8px 16px;
+    background: #5865F2;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.15s;
+}
+
+.discord-join:hover {
+    background: #4752c4;
+}
+
+.discord-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.discord-member {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+}
+
+.discord-avatar {
+    position: relative;
+    width: 28px;
+    height: 28px;
+}
+
+.discord-avatar img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.discord-ui {
+    display: flex;
+    margin-top: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    height: 380px;
+    background: #2b2d31;
+}
+
+.discord-ui-sidebar {
+    display: flex;
+    width: 240px;
+    flex-shrink: 0;
+    background: #2b2d31;
+    flex-direction: column;
+}
+
+.discord-server-icon {
+    height: 48px;
+    background: #1e1f22;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.discord-server-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.discord-channel-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.discord-category {
+    margin-bottom: 4px;
+}
+
+.discord-category-label {
+    display: block;
+    padding: 6px 16px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    cursor: default;
+}
+
+.discord-channel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px 5px 16px;
+    margin: 1px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    cursor: pointer;
+    transition: background 0.1s, color 0.1s;
+}
+
+.discord-channel span {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.3);
+    line-height: 1;
+}
+
+.discord-channel:hover {
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.75);
+}
+
+.discord-channel.active {
+    background: rgba(255,255,255,0.12);
+    color: white;
+}
+
+.discord-channel.active span {
+    color: rgba(255,255,255,0.7);
+}
+
+.discord-ui-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #313338;
+    min-width: 0;
+}
+
+.discord-chat-header {
+    height: 48px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.discord-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.discord-message {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.discord-msg-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #5865f2;
+}
+
+.discord-msg-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.discord-msg-content p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+}
+
+.discord-msg-author {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.discord-msg-time {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-left: 6px;
+}
+
+.discord-chat-input {
+    margin: 0 16px 16px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.25);
+    flex-shrink: 0;
+    cursor: text;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #57f287;
+    border-radius: 50%;
+    border: 2px solid #2b2b2b;
+}
