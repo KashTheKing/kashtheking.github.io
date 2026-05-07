@@ -740,6 +740,31 @@ blockquote {
     cursor: text;
 }
 
+.skeleton-card {
+    pointer-events: none;
+}
+
+.skeleton-img {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+}
+
+.skeleton-line {
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    display: block;
+}
+
+.skeleton-img, .skeleton-line {
+    animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
 .status-dot {
     position: absolute;
     bottom: 0;
