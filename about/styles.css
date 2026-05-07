@@ -404,6 +404,17 @@ blockquote {
     overflow: hidden;
 }
 
+.finished-tag {
+    background: rgba(87, 242, 135, 0.15);
+    color: #57f287;
+    border-color: rgba(87, 242, 135, 0.35);
+}
+
+.games-sublabel {
+    grid-column: 1 / -1;
+    margin: 16px 0 4px;
+}
+
 .dev-tag {
     font-size: 9px;
     font-weight: 700;

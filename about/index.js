@@ -13,10 +13,16 @@ const STATIC_GROUPS = [
 ];
 
 const STATIC_GAMES = [
-    { placeId: 18882629640,    universeId: 6395375513, name: "Waterslide Simulator",            desc: "How fun can a waterslide REALLY be? 💥 Come find out. 💥", icon: "https://tr.rbxcdn.com/180DAY-686004a42acf612642dc37c32a20d926/150/150/Image/Png/noFilter" },
-    { placeId: 18882642310,    universeId: 6395380195, name: "Mega Ramp Obby",                  desc: "",                                                         icon: "https://t2.rbxcdn.com/180DAY-592cff9498813006ee393de00fa697c4" },
-    { placeId: 91804761265726, universeId: 6676207694, name: "Grapple Ball Sandbox",            desc: "",                                                         icon: "https://t4.rbxcdn.com/180DAY-4fb716609029d3b8f6ffed5c338c713c" },
-    { placeId: 18882651254,    universeId: 6395383240, name: "Obby but you're strapped to a bomb!", desc: "",                                                     icon: "https://t0.rbxcdn.com/180DAY-b9b1d7b305e38c8666fd39852423d926" },
+    { placeId: 130778402266121, name: "Players vs Hunter",                  desc: "",                                                         icon: "https://t3.rbxcdn.com/180DAY-2c1129a448e74940038294483f07d5a6",                                    finished: false },
+    { placeId: 18882629640,     universeId: 6395375513, name: "Waterslide Simulator",           desc: "How fun can a waterslide REALLY be? 💥 Come find out. 💥", icon: "https://tr.rbxcdn.com/180DAY-686004a42acf612642dc37c32a20d926/150/150/Image/Png/noFilter", finished: false },
+    { placeId: 18882642310,     universeId: 6395380195, name: "Mega Ramp Obby",                 desc: "",                                                         icon: "https://t2.rbxcdn.com/180DAY-592cff9498813006ee393de00fa697c4",                              finished: false },
+    { placeId: 91804761265726,  universeId: 6676207694, name: "Grapple Ball Sandbox",           desc: "",                                                         icon: "https://t4.rbxcdn.com/180DAY-4fb716609029d3b8f6ffed5c338c713c",                            finished: false },
+    { placeId: 18882651254,     universeId: 6395383240, name: "Obby but you're strapped to a bomb!", desc: "",                                                    icon: "https://t0.rbxcdn.com/180DAY-b9b1d7b305e38c8666fd39852423d926",                            finished: false },
+    { placeId: 97158533146210,  name: "Be Famous",                          desc: "",                                                         icon: "https://tr.rbxcdn.com/180DAY-a2813934e301a4615cf888980d2ce9a0/150/150/Image/Png/noFilter",    finished: true  },
+    { placeId: 116357250335199, name: "Calculator",                         desc: "",                                                         icon: "https://tr.rbxcdn.com/180DAY-063e683869c069c10b3034b3b4be5afb/150/150/Image/Png/noFilter",    finished: true  },
+    { placeId: 93247877223004,  name: "Sun Apocalypse",                     desc: "",                                                         icon: "https://tr.rbxcdn.com/180DAY-006143452bcbc8ca45aa94b4d486970e/150/150/Image/Png/noFilter",    finished: true  },
+    { placeId: 17054406156,     name: "Interview Box",                      desc: "",                                                         icon: "https://tr.rbxcdn.com/180DAY-59d23f9f9093c93fd25f8c2ade24f80b/150/150/Image/Png/noFilter",    finished: true  },
+    { placeId: 15239012937,     name: "Missile Launch Sequence",            desc: "",                                                         icon: "https://tr.rbxcdn.com/180DAY-0859bd7dbcd79ad358132ba9557b5647/150/150/Image/Png/noFilter",    finished: true  },
 ];
 
 const STATIC_VIDEOS = [
@@ -48,23 +54,37 @@ function renderGroups(groups) {
     });
 }
 
+function makeGameCard(game) {
+    const card = document.createElement('a');
+    card.href = `https://www.roblox.com/games/${game.placeId}`;
+    card.target = '_blank';
+    card.className = 'game-card';
+    const tag = game.finished
+        ? `<span class="dev-tag finished-tag">FINISHED</span>`
+        : `<span class="dev-tag">IN DEVELOPMENT</span>`;
+    card.innerHTML = `
+        <img src="${game.icon}" alt="${game.name}">
+        <div class="game-info">
+            ${tag}
+            <h3>${game.name}</h3>
+            <p>${game.desc || ''}</p>
+        </div>`;
+    return card;
+}
+
 function renderGames(games) {
     const grid = document.getElementById('games-grid');
     grid.innerHTML = '';
-    games.forEach(game => {
-        const card = document.createElement('a');
-        card.href = `https://www.roblox.com/games/${game.placeId}`;
-        card.target = '_blank';
-        card.className = 'game-card';
-        card.innerHTML = `
-            <img src="${game.icon}" alt="${game.name}">
-            <div class="game-info">
-                <span class="dev-tag">IN DEVELOPMENT</span>
-                <h3>${game.name}</h3>
-                <p>${game.desc || ''}</p>
-            </div>`;
-        grid.appendChild(card);
-    });
+    const inDev = games.filter(g => !g.finished);
+    const finished = games.filter(g => g.finished);
+    inDev.forEach(g => grid.appendChild(makeGameCard(g)));
+    if (finished.length) {
+        const label = document.createElement('p');
+        label.className = 'subsection-label games-sublabel';
+        label.textContent = 'Finished Games';
+        grid.appendChild(label);
+        finished.forEach(g => grid.appendChild(makeGameCard(g)));
+    }
 }
 
 function renderVideos(videos) {
