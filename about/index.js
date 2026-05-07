@@ -11,14 +11,20 @@ const GROUPS = [
 ];
 
 async function robloxFetch(url) {
-    try {
-        const r = await fetch(url);
-        if (!r.ok) throw new Error(r.status);
-        return r.json();
-    } catch {
-        const proxy = `https://corsproxy.io/?url=${encodeURIComponent(url)}`;
-        return fetch(proxy).then(r => r.json());
+    const proxies = [
+        u => u,
+        u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+        u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+        u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
+    ];
+    for (const proxy of proxies) {
+        try {
+            const r = await fetch(proxy(url));
+            if (!r.ok) throw new Error(r.status);
+            return r.json();
+        } catch {}
     }
+    throw new Error(`All proxies failed for ${url}`);
 }
 
 async function loadGroups() {
