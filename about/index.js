@@ -1,56 +1,96 @@
-const GROUPS = [
-    { id: 32360058 },
-    { id: 829233796 },
-    { id: 34555295 },
-    { id: 33447364 },
-    { id: 300315957 },
-    { id: 34135129 },
-    { id: 33846029 },
-    { id: 219333405 },
-    { id: 32924401, stolen: true },
+// --- Static data (always renders immediately) ---
+
+const STATIC_GROUPS = [
+    { id: 32360058,  name: "Kash's Kingdom",   desc: "I created this group to make games and bring developers together.", icon: "https://tr.rbxcdn.com/180DAY-c68fff864fd8da819b9779b15e86345f/150/150/Image/Png/noFilter" },
+    { id: 829233796, name: "The Bloxxas",       desc: "Everything Changes.",                                              icon: "https://tr.rbxcdn.com/180DAY-e198b0732b354f0ec61f19c1e16d76fb/150/150/Image/Png/noFilter" },
+    { id: 34555295,  name: "Brickiez",          desc: "Creating fun and silly games for everyone to enjoy!",              icon: "https://tr.rbxcdn.com/180DAY-40fb0fe9866d98db4573cdacb8e2a76a/150/150/Image/Png/noFilter" },
+    { id: 33447364,  name: "Best Events",       desc: "",                                                                  icon: "https://tr.rbxcdn.com/180DAY-73279337d38a0909602a4d10657c3228/150/150/Image/Png/noFilter" },
+    { id: 300315957, name: "Clanker Studios",   desc: "all about the vibes 😎",                                           icon: "https://tr.rbxcdn.com/180DAY-b3724b62515f03f99435f72a99adc8eb/150/150/Image/Png/noFilter" },
+    { id: 34135129,  name: "Game Swap",         desc: "THE MOST AWESOME GAMES ON ROBLOX MADE IN A SHORT TIME!",           icon: "https://tr.rbxcdn.com/180DAY-bc6e7b57abe6c197cc9f3f721d307957/150/150/Image/Png/noFilter" },
+    { id: 33846029,  name: "WeTheBread",        desc: "bread bread bread bread bread bread bread bread bread",             icon: "https://tr.rbxcdn.com/180DAY-a03926b78e8c2db772b249675ab27f36/150/150/Image/Png/noFilter" },
+    { id: 219333405, name: "Unknown Group",     desc: "",                                                                  icon: "https://tr.rbxcdn.com/180DAY-47f9867bc677d5a08801bda4407f958d/150/150/Image/Png/noFilter" },
+    { id: 32924401,  name: "Unknown Group",     desc: "", stolen: true,                                                    icon: "https://tr.rbxcdn.com/180DAY-e806a1501862c6dd05947de7729ee6e4/150/150/Image/Png/noFilter" },
 ];
 
-const GAMES = [
-    { placeId: 18882629640,    universeId: 6395375513 },
-    { placeId: 18882642310,    universeId: 6395380195 },
-    { placeId: 91804761265726, universeId: 6676207694 },
-    { placeId: 18882651254,    universeId: 6395383240 },
+const STATIC_GAMES = [
+    { placeId: 18882629640,    universeId: 6395375513, name: "Waterslide Simulator",            desc: "How fun can a waterslide REALLY be? 💥 Come find out. 💥", icon: "https://tr.rbxcdn.com/180DAY-686004a42acf612642dc37c32a20d926/150/150/Image/Png/noFilter" },
+    { placeId: 18882642310,    universeId: 6395380195, name: "Mega Ramp Obby",                  desc: "",                                                         icon: "https://t2.rbxcdn.com/180DAY-592cff9498813006ee393de00fa697c4" },
+    { placeId: 91804761265726, universeId: 6676207694, name: "Grapple Ball Sandbox",            desc: "",                                                         icon: "https://t4.rbxcdn.com/180DAY-4fb716609029d3b8f6ffed5c338c713c" },
+    { placeId: 18882651254,    universeId: 6395383240, name: "Obby but you're strapped to a bomb!", desc: "",                                                     icon: "https://t0.rbxcdn.com/180DAY-b9b1d7b305e38c8666fd39852423d926" },
 ];
 
-const FRIEND_COLORS = ['#57f287', '#eb459e', '#5865f2', '#ed4245', '#fee75c', '#3ba55c'];
+const STATIC_VIDEOS = [
+    { id: "xeXbQVAVgQg", title: "Is Scripting or 3D Modeling Harder?",          thumb: "https://i1.ytimg.com/vi/xeXbQVAVgQg/hqdefault.jpg" },
+    { id: "bxOjZ29GyDI", title: "THE RICHEST ROBLOX GAME... 🤯 #shorts",        thumb: "https://i3.ytimg.com/vi/bxOjZ29GyDI/hqdefault.jpg" },
+    { id: "U3gJC9g5mqk", title: "Can 10 DEVS Make Grow a Garden in ROBLOX?",    thumb: "https://i2.ytimg.com/vi/U3gJC9g5mqk/hqdefault.jpg" },
+    { id: "jPtJBVbHNOY", title: "5 Game Devs vs 1 Fake | Odd One Out",          thumb: "https://i3.ytimg.com/vi/jPtJBVbHNOY/hqdefault.jpg" },
+    { id: "tMjvzB8MnnY", title: "5 Devs Game Swap",                             thumb: "https://i1.ytimg.com/vi/tMjvzB8MnnY/hqdefault.jpg" },
+    { id: "w0SLgD7fn48", title: "Scripter vs 3D Modeler Game Swap",             thumb: "https://i4.ytimg.com/vi/w0SLgD7fn48/hqdefault.jpg" },
+];
 
-// --- Skeleton helpers ---
+// --- Render functions ---
 
-function groupSkeleton() {
-    return `<div class="group-card skeleton-card" style="pointer-events:none;">
-        <div class="skeleton-img"></div>
-        <div class="group-info">
-            <div class="skeleton-line" style="width:70%;height:10px;margin-bottom:6px;"></div>
-            <div class="skeleton-line" style="width:90%;height:8px;"></div>
-        </div>
-    </div>`;
+function renderGroups(groups) {
+    const gallery = document.querySelector('.gallery');
+    gallery.innerHTML = '';
+    groups.forEach(group => {
+        const card = document.createElement('a');
+        card.href = `https://www.roblox.com/groups/${group.id}`;
+        card.target = '_blank';
+        card.className = 'group-card' + (group.stolen ? ' stolen' : '');
+        card.innerHTML = `
+            <img src="${group.icon}" alt="${group.name}">
+            <div class="group-info">
+                <h3>${group.name}${group.stolen ? ' <span class="stolen-tag">STOLEN</span>' : ''}</h3>
+                <p>${group.desc || ''}</p>
+            </div>`;
+        gallery.appendChild(card);
+    });
 }
 
-function gameSkeleton() {
-    return `<div class="game-card skeleton-card" style="pointer-events:none;">
-        <div class="skeleton-img" style="aspect-ratio:1;"></div>
-        <div class="game-info">
-            <div class="skeleton-line" style="width:50%;height:8px;margin-bottom:6px;"></div>
-            <div class="skeleton-line" style="width:80%;height:10px;margin-bottom:4px;"></div>
-            <div class="skeleton-line" style="width:95%;height:8px;"></div>
-        </div>
-    </div>`;
+function renderGames(games) {
+    const grid = document.getElementById('games-grid');
+    grid.innerHTML = '';
+    games.forEach(game => {
+        const card = document.createElement('a');
+        card.href = `https://www.roblox.com/games/${game.placeId}`;
+        card.target = '_blank';
+        card.className = 'game-card';
+        card.innerHTML = `
+            <img src="${game.icon}" alt="${game.name}">
+            <div class="game-info">
+                <span class="dev-tag">IN DEVELOPMENT</span>
+                <h3>${game.name}</h3>
+                <p>${game.desc || ''}</p>
+            </div>`;
+        grid.appendChild(card);
+    });
 }
 
-function videoSkeleton() {
-    return `<div class="video-card skeleton-card" style="pointer-events:none;">
-        <div class="skeleton-img" style="aspect-ratio:16/9;border-radius:12px;"></div>
-        <div class="skeleton-line" style="width:85%;height:10px;margin-top:8px;"></div>
-        <div class="skeleton-line" style="width:60%;height:10px;margin-top:6px;"></div>
-    </div>`;
+function renderVideos(videos) {
+    const grid = document.getElementById('videos-grid');
+    grid.innerHTML = '';
+    videos.forEach(video => {
+        const card = document.createElement('a');
+        card.href = `https://www.youtube.com/watch?v=${video.id}`;
+        card.target = '_blank';
+        card.className = 'video-card';
+        card.innerHTML = `
+            <div class="video-thumb">
+                <img src="${video.thumb}" alt="${video.title}">
+                <div class="play-btn">▶</div>
+            </div>
+            <p class="video-title">${video.title}</p>`;
+        grid.appendChild(card);
+    });
 }
 
-// --- CORS proxy fetch ---
+// --- Render static data immediately ---
+renderGroups(STATIC_GROUPS);
+renderGames(STATIC_GAMES);
+renderVideos(STATIC_VIDEOS);
+
+// --- Try to refresh from APIs in background ---
 
 async function robloxFetch(url) {
     const proxies = [
@@ -69,96 +109,45 @@ async function robloxFetch(url) {
     throw new Error(`All proxies failed for ${url}`);
 }
 
-// --- Loaders ---
-
-async function loadGroups() {
-    const gallery = document.querySelector('.gallery');
-    gallery.innerHTML = GROUPS.map(() => groupSkeleton()).join('');
-
+async function refreshGroups() {
     try {
-        const ids = GROUPS.map(g => g.id);
+        const ids = STATIC_GROUPS.map(g => g.id);
         const [infoResults, iconResults] = await Promise.all([
             Promise.all(ids.map(id => robloxFetch(`https://groups.roblox.com/v1/groups/${id}`))),
             robloxFetch(`https://thumbnails.roblox.com/v1/groups/icons?groupIds=${ids.join(',')}&size=150x150&format=Png&isCircular=false`),
         ]);
-
         const iconMap = {};
         for (const item of (iconResults.data || [])) iconMap[item.targetId] = item.imageUrl;
-
-        const cards = GROUPS.map((group, i) => {
+        const fresh = STATIC_GROUPS.map((g, i) => {
             const info = infoResults[i];
-            if (!info || !info.name) return null;
-            const icon = iconMap[group.id] || '';
-            const stolen = group.stolen || false;
-            const card = document.createElement('a');
-            card.href = `https://www.roblox.com/groups/${group.id}`;
-            card.target = '_blank';
-            card.className = 'group-card' + (stolen ? ' stolen' : '');
-            card.innerHTML = `
-                <img src="${icon}" alt="${info.name}">
-                <div class="group-info">
-                    <h3>${info.name}${stolen ? ' <span class="stolen-tag">STOLEN</span>' : ''}</h3>
-                    <p>${info.description || ''}</p>
-                </div>`;
-            return card;
-        }).filter(Boolean);
-
-        if (cards.length) {
-            gallery.innerHTML = '';
-            cards.forEach(c => gallery.appendChild(c));
-        }
-    } catch (err) {
-        console.error('Failed to load groups:', err);
-    }
+            if (!info || !info.name) return g;
+            return { ...g, name: info.name, desc: info.description || '', icon: iconMap[g.id] || g.icon };
+        });
+        renderGroups(fresh);
+    } catch {}
 }
 
-async function loadGames() {
-    const grid = document.getElementById('games-grid');
-    grid.innerHTML = GAMES.map(() => gameSkeleton()).join('');
-
+async function refreshGames() {
     try {
-        const universeIds = GAMES.map(g => g.universeId).join(',');
+        const universeIds = STATIC_GAMES.map(g => g.universeId).join(',');
         const [infoRes, iconRes] = await Promise.all([
             robloxFetch(`https://games.roblox.com/v1/games?universeIds=${universeIds}`),
             robloxFetch(`https://thumbnails.roblox.com/v1/games/icons?universeIds=${universeIds}&size=150x150&format=Png&isCircular=false`),
         ]);
-
         const iconMap = {};
         for (const item of (iconRes.data || [])) iconMap[item.targetId] = item.imageUrl;
         const infoMap = {};
         for (const item of (infoRes.data || [])) infoMap[item.id] = item;
-
-        const cards = GAMES.map(game => {
-            const info = infoMap[game.universeId];
-            if (!info) return null;
-            const icon = iconMap[game.universeId] || '';
-            const card = document.createElement('a');
-            card.href = `https://www.roblox.com/games/${game.placeId}`;
-            card.target = '_blank';
-            card.className = 'game-card';
-            card.innerHTML = `
-                <img src="${icon}" alt="${info.name}">
-                <div class="game-info">
-                    <span class="dev-tag">IN DEVELOPMENT</span>
-                    <h3>${info.name}</h3>
-                    <p>${info.description || ''}</p>
-                </div>`;
-            return card;
-        }).filter(Boolean);
-
-        if (cards.length) {
-            grid.innerHTML = '';
-            cards.forEach(c => grid.appendChild(c));
-        }
-    } catch (err) {
-        console.error('Failed to load games:', err);
-    }
+        const fresh = STATIC_GAMES.map(g => {
+            const info = infoMap[g.universeId];
+            if (!info) return g;
+            return { ...g, name: info.name, desc: info.description || '', icon: iconMap[g.universeId] || g.icon };
+        });
+        renderGames(fresh);
+    } catch {}
 }
 
-async function loadVideos() {
-    const grid = document.getElementById('videos-grid');
-    grid.innerHTML = Array(6).fill(videoSkeleton()).join('');
-
+async function refreshVideos() {
     try {
         const feedUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=UCN_nYYokQXHP5UUh6eC3C_A';
         const proxies = [
@@ -166,44 +155,20 @@ async function loadVideos() {
             `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`,
             `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(feedUrl)}`,
         ];
-
         let xml = null;
         for (const proxy of proxies) {
-            try {
-                const r = await fetch(proxy);
-                if (r.ok) { xml = await r.text(); break; }
-            } catch {}
+            try { const r = await fetch(proxy); if (r.ok) { xml = await r.text(); break; } } catch {}
         }
-        if (!xml) throw new Error('No proxy worked for YouTube feed');
-
+        if (!xml) return;
         const doc = new DOMParser().parseFromString(xml, 'text/xml');
         const entries = [...doc.querySelectorAll('entry')].slice(0, 6);
-
-        const cards = entries.map(entry => {
-            const id = entry.querySelector('videoId')?.textContent;
-            const title = entry.querySelector('title')?.textContent;
-            const thumb = entry.querySelector('thumbnail')?.getAttribute('url');
-            if (!id || !title) return null;
-            const card = document.createElement('a');
-            card.href = `https://www.youtube.com/watch?v=${id}`;
-            card.target = '_blank';
-            card.className = 'video-card';
-            card.innerHTML = `
-                <div class="video-thumb">
-                    <img src="${thumb}" alt="${title}">
-                    <div class="play-btn">▶</div>
-                </div>
-                <p class="video-title">${title}</p>`;
-            return card;
-        }).filter(Boolean);
-
-        if (cards.length) {
-            grid.innerHTML = '';
-            cards.forEach(c => grid.appendChild(c));
-        }
-    } catch (err) {
-        console.error('Failed to load videos:', err);
-    }
+        const fresh = entries.map(entry => ({
+            id: entry.querySelector('videoId')?.textContent,
+            title: entry.querySelector('title')?.textContent,
+            thumb: entry.querySelector('thumbnail')?.getAttribute('url'),
+        })).filter(v => v.id && v.title);
+        if (fresh.length) renderVideos(fresh);
+    } catch {}
 }
 
 async function loadDiscord() {
@@ -232,15 +197,14 @@ async function loadDiscord() {
                         <span>${m.username}</span>
                     </div>`).join('')}
             </div>` : ''}`;
-    } catch (err) {
-        console.error('Failed to load Discord widget:', err);
-    }
+    } catch {}
 }
+
+const FRIEND_COLORS = ['#57f287', '#eb459e', '#5865f2', '#ed4245', '#fee75c', '#3ba55c'];
 
 async function loadDiscordUiUsers() {
     const messages = document.querySelectorAll('.discord-message[data-discord-id]');
     const ids = [...new Set([...messages].map(m => m.dataset.discordId).filter(id => id !== 'kash'))];
-
     const users = {};
     await Promise.all(ids.map(async (id, i) => {
         try {
@@ -254,7 +218,6 @@ async function loadDiscordUiUsers() {
             };
         } catch {}
     }));
-
     messages.forEach(msg => {
         const id = msg.dataset.discordId;
         if (id === 'kash') return;
@@ -267,8 +230,9 @@ async function loadDiscordUiUsers() {
     });
 }
 
-loadGroups();
-loadGames();
-loadVideos();
+// Background refresh
+refreshGroups();
+refreshGames();
+refreshVideos();
 loadDiscord();
 loadDiscordUiUsers();
