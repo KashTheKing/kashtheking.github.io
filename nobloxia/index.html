@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nobloxia Scam — Kash's Kingdom</title>
+    <meta name="description" content="How Azure Ventures, run by DevMammal and DevFleas, scammed Nobloxia from KashTheKing and his team.">
+    <meta name="theme-color" content="#1a0a0a">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .floating-nav {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 999;
+        }
+
+        .glass-btn {
+            display: inline-block;
+            padding: 8px 18px;
+            background: rgba(0,0,0,0.55);
+            color: white;
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            border-radius: 20px;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: background 0.15s;
+        }
+
+        .glass-btn:hover { background: rgba(0,0,0,0.75); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 120px 80px 80px;
+            background: radial-gradient(ellipse at top left, rgba(180,20,20,0.18) 0%, transparent 60%);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .warning-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #e03e3e;
+            background: rgba(224,62,62,0.12);
+            border: 1px solid rgba(224,62,62,0.3);
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            margin-bottom: 28px;
+            max-width: 900px;
+        }
+
+        h1 span {
+            color: #e03e3e;
+        }
+
+        .hero-sub {
+            font-size: 20px;
+            color: rgba(255,255,255,0.55);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 40px 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .block-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .block h2 {
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            border-left: 4px solid #e03e3e;
+            padding-left: 16px;
+        }
+
+        .block p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .block p strong {
+            color: white;
+            font-weight: 700;
+        }
+
+        .callout {
+            background: rgba(224,62,62,0.08);
+            border: 1px solid rgba(224,62,62,0.25);
+            border-radius: 16px;
+            padding: 28px 32px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .callout strong {
+            color: #e03e3e;
+        }
+
+        .perps {
+            display: flex;
+            gap: 16px;
+        }
+
+        .perp-card {
+            flex: 1;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .perp-card .perp-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: #e03e3e;
+        }
+
+        .perp-card .perp-role {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 4px;
+        }
+
+        .perp-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-nav">
+        <a href="/about" class="glass-btn">← Back</a>
+    </div>
+
+    <div class="hero">
+        <div class="warning-tag">⚠ Public Record</div>
+        <h1>They Stole <span>Nobloxia</span><br>From Us.</h1>
+        <p class="hero-sub">This is the story of how a fake "company" called Azure Ventures conned me and my team out of a group we built from the ground up.</p>
+    </div>
+
+    <div class="content">
+        <div class="block">
+            <span class="block-label">What was Nobloxia</span>
+            <h2>A group we built together</h2>
+            <p>Nobloxia was a Roblox group created and grown by me and my team. We put real time, effort, and trust into building it — developing games, growing a community, and working toward something we were proud of.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="block">
+            <span class="block-label">What happened</span>
+            <h2>Azure Ventures moved in</h2>
+            <p>A group calling themselves <strong>Azure Ventures</strong> approached us under the guise of a professional partnership or acquisition. What followed was a deliberate and calculated act of theft — they took ownership of Nobloxia and cut us out entirely, leaving me and my team with nothing after everything we had put into it.</p>
+        </div>
+
+        <div class="callout">
+            <strong>Azure Ventures is not a legitimate company.</strong> They used the appearance of professionalism to gain trust, then exploited it. Do not do business with them.
+        </div>
+
+        <div class="block">
+            <span class="block-label">The people behind it</span>
+            <h2>DevMammal & DevFleas</h2>
+            <div class="perps">
+                <div class="perp-card">
+                    <span class="perp-name">DevMammal</span>
+                    <span class="perp-role">Azure Ventures</span>
+                    <p>One of the key figures running Azure Ventures and directly involved in the scam that took Nobloxia from our team.</p>
+                </div>
+                <div class="perp-card">
+                    <span class="perp-name">DevFleas</span>
+                    <span class="perp-role">Azure Ventures</span>
+                    <p>The other primary operator of Azure Ventures, complicit in the theft of Nobloxia and the betrayal of our team's trust.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="block">
+            <span class="block-label">Why this page exists</span>
+            <h2>People deserve to know</h2>
+            <p>I'm not making this page out of anger — I'm making it because the Roblox development community deserves to know who Azure Ventures is and what they did. If you've been approached by them, or by DevMammal or DevFleas, <strong>be careful.</strong> What happened to us can happen to anyone who lets their guard down.</p>
+        </div>
+
+        <p style="font-size:14px;color:rgba(255,255,255,0.25);text-align:center;padding-top:8px;">More information on this soon.</p>
+    </div>
+
+    <div id="transition" style="position:fixed;inset:0;background:#0f0505;z-index:9999;opacity:1;pointer-events:none;transition:opacity 0.4s ease;"></div>
+    <script>
+        window.addEventListener('load', () => {
+            requestAnimationFrame(() => {
+                document.getElementById('transition').style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>
