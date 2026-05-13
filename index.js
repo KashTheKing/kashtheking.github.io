@@ -1,3 +1,19 @@
+// --- Daily Quote ---
+const DAILY_QUOTES = [
+    { text: "My only stable belief is that Christ is King", author: "Me" },
+    { text: "Become the person you have a crush on", author: "Me" },
+    { text: "Love is patient, love is kind. It does not envy, it does not boast, it is not proud", author: "1 Corinthians 13:4" },
+    { text: "If you have faith as small as a mustard seed, you can say to this mountain, ‘Move from here to there,’ and it will move. Nothing will be impossible for you.", author: "Matthew 17:20" },
+    { text: "Recognize what is in your sight, and that which is hidden from you will become plain to you. For there is nothing hidden which will not become manifest.", author: "Jesus" },
+    { text: "An abundance of self-love is the key to a joyful life.", author: "Me" },
+    { text: "Ambition is the quality seen in every great person", author: "Me" },
+];
+(function() {
+    const q = DAILY_QUOTES[new Date().getDay()];
+    const el = document.getElementById('daily-quote-text');
+    if (el) el.innerHTML = `“${q.text}”<br>- ${q.author}`;
+})();
+
 // --- Static data (always renders immediately) ---
 
 const STATIC_GROUPS = [
@@ -303,7 +319,7 @@ async function loadGitHub() {
         const langColors = { TypeScript: '#3178c6', JavaScript: '#f7df1e', HTML: '#e34c26', Lua: '#000080', CSS: '#563d7c', Python: '#3572A5' };
 
         container.innerHTML = `
-            <div class="github-stat-card">
+            <a class="github-stat-card" href="https://github.com/KashTheKing" target="_blank" rel="noopener">
                 <h4>
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12 24 5.4 18.6 0 12 0z"/></svg>
                     GitHub Stats
@@ -314,8 +330,8 @@ async function loadGitHub() {
                     <div class="github-stat-row"><span>Stars Earned</span><span>${stars}</span></div>
                     <div class="github-stat-row"><span>Following</span><span>${user.following}</span></div>
                 </div>
-            </div>
-            <div class="github-stat-card">
+            </a>
+            <a class="github-stat-card" href="https://github.com/KashTheKing?tab=repositories" target="_blank" rel="noopener">
                 <h4>
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12 24 5.4 18.6 0 12 0z"/></svg>
                     Top Languages
@@ -330,7 +346,7 @@ async function loadGitHub() {
                         </div>`;
                     }).join('')}
                 </div>
-            </div>`;
+            </a>`;
     } catch (err) {
         console.error('Failed to load GitHub stats:', err);
     }

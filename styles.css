@@ -355,8 +355,18 @@ section h2 {
     letter-spacing: 0.03em;
 }
 
+.daily-quote-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-top: 20px;
+    padding-left: 24px;
+}
+
 blockquote {
-    margin-top: 24px;
+    margin-top: 6px;
     padding: 20px 24px;
     border-left: 3px solid rgba(255,255,255,0.3);
     color: rgba(255,255,255,0.75);
@@ -404,6 +414,14 @@ blockquote {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.github-stat-card:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(255,255,255,0.2);
 }
 
 .github-stat-card h4 {
@@ -411,7 +429,7 @@ blockquote {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
+    color: white;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -420,7 +438,7 @@ blockquote {
 .github-stat-card h4 svg {
     width: 16px;
     height: 16px;
-    fill: rgba(255,255,255,0.35);
+    fill: white;
 }
 
 .github-stat-rows {
@@ -1485,4 +1503,262 @@ blockquote {
     background: #57f287;
     border-radius: 50%;
     border: 2px solid #2b2b2b;
+}
+
+@keyframes avatar-pop {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.18) translateY(-6px); }
+    55%  { transform: scale(0.94) translateY(2px); }
+    75%  { transform: scale(1.07) translateY(-2px); }
+    100% { transform: scale(1); }
+}
+
+.avatar-spotlight img.popping {
+    animation: avatar-pop 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    .section-nav {
+        top: 16px;
+        right: 16px;
+        left: 16px;
+        bottom: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        padding: 0 8px;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        border-radius: 999px;
+        height: 44px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        box-shadow: none;
+    }
+
+    .section-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .section-nav-arrow {
+        display: none;
+    }
+
+    .section-nav-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 8px;
+        margin: 0;
+        flex-shrink: 0;
+        border-radius: 999px;
+        transition: background 0.2s, padding 0.2s;
+    }
+
+    .section-nav-item.active {
+        background: rgba(255,255,255,0.15);
+        padding: 6px 12px;
+    }
+
+    .section-nav-dot {
+        width: 5px;
+        height: 5px;
+        margin-right: 0;
+    }
+
+    .section-nav-label {
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        font-size: 11px;
+        letter-spacing: 0.02em;
+        transition: max-width 0.25s ease, opacity 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .section-nav-item.active .section-nav-label {
+        max-width: 100px;
+        opacity: 1;
+    }
+
+    .section-nav-item:hover .section-nav-label {
+        max-width: 100px;
+        opacity: 1;
+    }
+
+    section {
+        padding-top: 88px;
+    }
+
+    #hero {
+        padding-top: 80px;
+    }
+
+    section {
+        padding: 56px 20px 48px;
+        min-height: 100svh;
+    }
+
+    section h2 {
+        font-size: 36px;
+        padding-left: 14px;
+        margin-bottom: 24px;
+    }
+
+    #hero {
+        padding: 48px 20px 48px;
+    }
+
+    #hero h1 {
+        font-size: 36px;
+        white-space: normal;
+        text-align: center;
+        letter-spacing: 0.04em;
+        top: 72%;
+        width: 90%;
+    }
+
+    .about-hero {
+        flex-direction: column;
+        gap: 28px;
+        align-items: flex-start;
+    }
+
+    .avatar-spotlight {
+        width: 180px;
+        align-self: center;
+    }
+
+    .avatar-spotlight img {
+        width: 180px;
+    }
+
+    .about-text h2 {
+        font-size: 40px;
+        padding-left: 14px;
+    }
+
+    blockquote {
+        font-size: 16px;
+        padding: 14px 16px;
+        margin-top: 16px;
+    }
+
+    .bio-text {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .social-link {
+        min-width: calc(50% - 5px);
+        flex: 1 1 calc(50% - 5px);
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .stats-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-value {
+        font-size: 40px;
+    }
+
+    .stat-label {
+        font-size: 15px;
+    }
+
+    .github-stats {
+        flex-direction: column;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 10px;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .community-layout {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .community-desc {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .discord-widget {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .discord-ui {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .discord-ui-sidebar {
+        display: none;
+    }
+
+    .discord-ui-chat {
+        height: 320px;
+    }
+
+    .dream-feature {
+        padding: 24px 20px;
+    }
+
+    .dream-feature-desc {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .contact-heading {
+        font-size: clamp(36px, 12vw, 72px);
+    }
+
+    .contact-email {
+        font-size: 14px;
+        padding: 14px 24px;
+        word-break: break-all;
+    }
+
+    .contact-sub {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .social-link {
+        min-width: 100%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

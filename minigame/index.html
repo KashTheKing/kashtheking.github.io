@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kash's Kingdom</title>
+    <meta name="description" content="KashTheKing — YouTuber, game developer, boxer, and programmer. Check out my games, videos, and community.">
+    <meta name="author" content="KashTheKing">
+    <meta name="theme-color" content="#3f4144">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kashtheking.github.io/">
+    <meta property="og:title" content="Kash's Kingdom 👑">
+    <meta property="og:description" content="KashTheKing — YouTuber, game developer, boxer, and programmer. Check out my games, videos, and community.">
+    <meta property="og:image" content="https://kashtheking.github.io/public/banner.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+    <meta property="og:site_name" content="Kash's Kingdom">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@KashTheKing_X">
+    <meta name="twitter:creator" content="@KashTheKing_X">
+    <meta name="twitter:title" content="Kash's Kingdom 👑">
+    <meta name="twitter:description" content="KashTheKing — YouTuber, game developer, boxer, and programmer. Check out my games, videos, and community.">
+    <meta name="twitter:image" content="https://kashtheking.github.io/public/banner.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
+    <link rel="canonical" href="https://kashtheking.github.io/minigame/">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #818181;
+        }
+
+        iframe {
+            border: none;
+            display: block;
+        }
+
+        #roblox-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            backdrop-filter: blur(8px);
+            transition: background 0.15s, transform 0.15s;
+            text-decoration: none;
+        }
+
+        #roblox-home:hover {
+            background: rgba(0,0,0,0.75);
+            transform: scale(1.08);
+        }
+
+        #roblox-home:active {
+            transform: scale(0.94);
+        }
+    </style>
+</head>
+<body>
+    <iframe class="spline" src='https://my.spline.design/robloxfollowcursorforlandingpage-SLgqPdO5ilXKaGofSwI67afS/' frameborder='0' width='120%' height='100%'></iframe>
+
+    <a href="/" id="roblox-home" aria-label="Back to home">
+        <svg viewBox="0 0 24 24" fill="white" width="26" height="26" fill-rule="evenodd" style="transform: rotate(15deg)"><path d="M2 2h20v20H2zm7.5 7.5h5v5H9.5z"/></svg>
+    </a>
+
+    <div id="transition" style="position:fixed;inset:0;background:#3f4144;z-index:9999;opacity:0;pointer-events:none;transition:opacity 0.4s ease;"></div>
+    <script>
+        document.getElementById('roblox-home').addEventListener('click', function(e) {
+            e.preventDefault();
+            const overlay = document.getElementById('transition');
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'all';
+            setTimeout(() => { window.location.href = '/'; }, 400);
+        });
+    </script>
+</body>
+</html>

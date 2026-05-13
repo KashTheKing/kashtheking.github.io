@@ -3,87 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kash's Kingdom</title>
-    <meta name="description" content="KashTheKing — YouTuber, game developer, and programmer. Check out my games, videos, and community.">
+    <title>About - Kash's Kingdom</title>
+    <meta name="description" content="Learn about KashTheKing — 18-year-old YouTuber, Roblox game developer, boxer, and programmer. See my games, videos, and community.">
     <meta name="author" content="KashTheKing">
     <meta name="theme-color" content="#3f4144">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
     <meta property="og:url" content="https://kashtheking.github.io/">
-    <meta property="og:title" content="Kash's Kingdom 👑">
-    <meta property="og:description" content="KashTheKing — YouTuber, game developer, and programmer. Check out my games, videos, and community.">
-    <meta property="og:image" content="https://kashtheking.github.io/public/banner.png">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="720">
+    <meta property="og:title" content="About KashTheKing 👑">
+    <meta property="og:description" content="18-year-old YouTuber, Roblox game developer, boxer, and programmer. Check out my games, videos, and community.">
+    <meta property="og:image" content="https://kashtheking.github.io/public/kash beam pfp.png">
     <meta property="og:site_name" content="Kash's Kingdom">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@KashTheKing_X">
     <meta name="twitter:creator" content="@KashTheKing_X">
-    <meta name="twitter:title" content="Kash's Kingdom 👑">
-    <meta name="twitter:description" content="KashTheKing — YouTuber, game developer, and programmer. Check out my games, videos, and community.">
-    <meta name="twitter:image" content="https://kashtheking.github.io/public/banner.png">
+    <meta name="twitter:title" content="About KashTheKing 👑">
+    <meta name="twitter:description" content="18-year-old YouTuber, Roblox game developer, boxer, and programmer. Check out my games, videos, and community.">
+    <meta name="twitter:image" content="https://kashtheking.github.io/public/kash beam pfp.png">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
     <link rel="canonical" href="https://kashtheking.github.io/">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background: #818181;
-        }
-
-        iframe {
-            border: none;
-            display: block;
-        }
-
-        #about-link {
-            display: inline-block;
-            padding: 14px 56px;
-            background: rgba(0,0,0,0.55);
-            color: white;
-            font-family: sans-serif;
-            font-size: 15px;
-            border-radius: 24px;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            backdrop-filter: blur(4px);
-            transition: padding 0.25s ease, background 0.15s ease;
-        }
-
-        #about-link:hover {
-            padding-left: 80px;
-            padding-right: 80px;
-            background: rgba(0,0,0,0.75);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <iframe class="spline" src='https://my.spline.design/robloxfollowcursorforlandingpage-SLgqPdO5ilXKaGofSwI67afS/' frameborder='0' width='120%' height='100%'></iframe>
+    <nav class="section-nav" id="section-nav">
+        <button class="section-nav-arrow" id="nav-up" aria-label="Previous section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+        <a href="#hero" class="section-nav-item active" data-section="hero"><span class="section-nav-dot"></span><span class="section-nav-label">Home</span></a>
+        <a href="#about-me" class="section-nav-item" data-section="about-me"><span class="section-nav-dot"></span><span class="section-nav-label">About Me</span></a>
+        <a href="#my-work" class="section-nav-item" data-section="my-work"><span class="section-nav-dot"></span><span class="section-nav-label">My Contributions</span></a>
+        <a href="#my-dreams" class="section-nav-item" data-section="my-dreams"><span class="section-nav-dot"></span><span class="section-nav-label">My Dreams</span></a>
+        <a href="#my-community" class="section-nav-item" data-section="my-community"><span class="section-nav-dot"></span><span class="section-nav-label">My Community</span></a>
+        <a href="#contact" class="section-nav-item" data-section="contact"><span class="section-nav-dot"></span><span class="section-nav-label">Contact</span></a>
+        <button class="section-nav-arrow" id="nav-down" aria-label="Next section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+    </nav>
 
-    <div style="position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); text-align: center;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-            <p style="color: white; font-family: sans-serif; font-size: 13px; margin: 0; text-shadow: 0 1px 4px rgba(0,0,0,0.5); letter-spacing: 0.05em;">Jesus Christ is KING</p>
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5));"><path d="M11 2h2v7h7v2h-7v11h-2V11H4V9h7z"/></svg>
-        </div><br>
-        <a href="/about" id="about-link">More about me →</a>
-    </div>
+    <main>
+        <section id="hero">
+            <h1>KASHTHEKING 👑</h1>
+            <div class="scroll-hint">
+                <span>Scroll Down</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </div>
+        </section>
 
-    <div id="transition" style="position:fixed;inset:0;background:#3f4144;z-index:9999;opacity:0;pointer-events:none;transition:opacity 0.4s ease;"></div>
+        <section id="about-me">
+            <div class="about-hero">
+                <div class="avatar-spotlight">
+                    <div class="spotlight-beam"></div>
+                    <img src="/public/KashTheKing%20Avatar%20Cutout.png" alt="KashTheKing">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <div class="daily-quote-label">Daily Quote</div>
+                    <blockquote id="daily-quote-text"></blockquote>
+                    <p class="bio-text">Hey! I'm Kash — an 18-year-old YouTuber, game developer, boxer, and programmer, among many other things. Check out my stuff below!</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://youtube.com/@KashTheKingYT?sub_confirmation=1" target="_blank" class="social-link social-link--youtube" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://discord.gg/6HYgCk22eD" target="_blank" class="social-link social-link--discord" aria-label="Discord">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 3A18.8 18.8 0 0 0 15.6 1.5a13 13 0 0 0-.6 1.2 17.4 17.4 0 0 0-5.9 0A13 13 0 0 0 8.4 1.5 18.7 18.7 0 0 0 3.7 3 19.9 19.9 0 0 0 .5 18.6a18.9 18.9 0 0 0 5.8 2.9 14 14 0 0 0 1.2-2 12.3 12.3 0 0 1-1.9-.9l.5-.3a13.5 13.5 0 0 0 11.8 0l.5.3a12.3 12.3 0 0 1-1.9.9 14 14 0 0 0 1.2 2 18.8 18.8 0 0 0 5.8-2.9A19.9 19.9 0 0 0 20.3 3zM8.7 15.3c-1.3 0-2.3-1.2-2.3-2.6s1-2.6 2.3-2.6 2.3 1.2 2.3 2.6-1 2.6-2.3 2.6zm6.6 0c-1.3 0-2.3-1.2-2.3-2.6s1-2.6 2.3-2.6 2.3 1.2 2.3 2.6-1 2.6-2.3 2.6z"/></svg>
+                        <span>Discord</span>
+                    </a>
+                    <a href="https://www.roblox.com/users/117445502/profile" target="_blank" class="social-link social-link--roblox" aria-label="Roblox">
+                        <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" style="transform: rotate(15deg)"><path d="M2 2h20v20H2zm7.5 7.5h5v5H9.5z"/></svg>
+                        <span>Roblox</span>
+                    </a>
+                    <a href="https://x.com/KashTheKing_X" target="_blank" class="social-link social-link--x" aria-label="X">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1h3.7l-8 9.1L24 23h-7.4l-5.8-7.5L4.4 23H.7l8.6-9.8L0 1h7.6l5.2 6.9zm-1.3 19.8h2L6.5 3.1H4.3z"/></svg>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://github.com/KashTheKing" target="_blank" class="social-link social-link--github" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12 24 5.4 18.6 0 12 0z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://paypal.me/KashPlacek" target="_blank" class="social-link social-link--paypal" aria-label="PayPal">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 6.637-8.993 6.637H9.39l-1.167 7.4h3.583c.458 0 .85-.334.922-.787l.038-.196.733-4.647.047-.257a.932.932 0 0 1 .921-.788h.58c3.757 0 6.698-1.527 7.556-5.944.36-1.847.174-3.39-.38-4.131z"/></svg>
+                        <span>Support Me</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-work">
+            <h2>My Contributions</h2>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-value">20M+</div>
+                    <div class="stat-label">Visits Contributed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100,000+</div>
+                    <div class="stat-label">People Guided by my Teaching</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">∞</div>
+                    <div class="stat-label">Ambition</div>
+                </div>
+            </div>
+
+            <div class="github-stats" id="github-stats"></div>
+
+            <p class="subsection-label">My Groups</p>
+            <div class="gallery">
+                <!-- populated by index.js -->
+            </div>
+
+            <p class="subsection-label">My Games</p>
+            <div class="games-grid" id="games-grid">
+                <!-- populated by index.js -->
+            </div>
+
+            <div class="subsection-header">
+                <p class="subsection-label">My Videos</p>
+                <a href="https://youtube.com/@KashTheKingYT/videos" target="_blank" class="see-all-btn">See all →</a>
+            </div>
+            <div class="videos-grid" id="videos-grid">
+                <!-- populated by index.js -->
+            </div>
+        </section>
+
+        <section id="my-dreams">
+            <h2>My Dreams</h2>
+            <div class="dreams-grid">
+            <div class="dream-feature" style="background: url('/public/Pixel%20Divers%20Screenshot%202.png') center center / 140% auto no-repeat;">
+                <div class="dream-feature-tag">Dream Game</div>
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                    <div class="dream-feature-title">Pixel Divers</div>
+                    <a href="https://www.pixeldivers.world/" target="_blank" class="dream-site-link">Learn More ↗</a>
+                </div>
+                <div class="dream-feature-genre">2D Ocean Survival Exploration Game</div>
+                <div class="dream-feature-engine">Made with Godot Engine</div>
+                <p class="dream-feature-desc">A passion project close to my heart — dive into the depths of a vast, procedurally-generated ocean world. Explore, survive, and uncover what lies beneath. Basically a mix of Terraria, Subnautica, and Minecraft.</p>
+                <div class="steam-btn-wrap">
+                    <button class="steam-btn" disabled>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/></svg>
+                        Wishlist on Steam
+                    </button>
+                    <span class="steam-coming-soon">Coming Soon</span>
+                </div>
+                <div class="discord-widget" id="pixeldivers-widget" style="max-width:360px;margin-top:8px;"></div>
+            </div>
+
+            <div class="dream-feature dream-feature--mission">
+                <div class="dream-feature-tag">Dream Mission</div>
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                    <div class="dream-feature-title">100 Confident<br>Game Devs</div>
+                    <a href="https://100confidentdevs.org" target="_blank" class="dream-site-link">Learn More ↗</a>
+                </div>
+                <div class="dream-feature-genre">Teaching Game Development</div>
+                <p class="dream-feature-desc">I want to personally teach 100 people how to make games — from absolute zero to the point where they can ship something and teach others. I'm not done until every single one of them is fully confident in their skills.</p>
+                <div class="mission-counter">
+                    <span class="mission-count">5</span>
+                    <span class="mission-total">/ 100</span>
+                </div>
+            </div>
+
+            <div class="dream-feature dream-feature--fatigue">
+                <div class="dream-feature-tag">Dream App</div>
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                    <div class="dream-feature-title">FATIGUE <sup class="fatigue-ai-tag">AI</sup></div>
+                    <a href="https://getfatigue.com" target="_blank" class="dream-site-link">Learn More ↗</a>
+                </div>
+                <div class="dream-feature-genre">Know Who You're Buying From</div>
+                <div class="fatigue-meta">
+                    <span class="fatigue-pill">AI Barcode Scanner</span>
+                    <span class="fatigue-pill">Ownership Transparency</span>
+                    <span class="fatigue-pill">7B+ Products</span>
+                </div>
+                <p class="dream-feature-desc">I got tired of my money going to people I'd never support if I knew the truth. Fatigue lets you scan any product or logo and instantly see who owns the brand, who profits, and who's behind it — all the way up the chain. Every purchase funds someone. Now you can find out who.</p>
+            </div>
+            </div>
+        </section>
+
+        <section id="my-community">
+            <h2>My Community</h2>
+            <div class="community-layout">
+                <div class="community-text">
+                    <p class="community-desc">I'm nothing without my friends and fans — seriously. Every video, every game, every late night grinding away at something new is fueled by the people around me. This community is full of creative, passionate people who love to build and play together. I host events regularly, share knowledge, and help members develop new skills — come hang out!</p>
+                </div>
+                <div class="discord-widget" id="discord-widget">
+                    <!-- populated by index.js -->
+                </div>
+            </div>
+            <div class="discord-ui">
+                <div class="discord-ui-sidebar">
+                    <div class="discord-server-icon">
+                        <img src="https://cdn.discordapp.com/icons/820530275981066270/73c1868747ed37621f1e17ff19b2f264.webp?size=2048" alt="Server Icon">
+                    </div>
+                    <div class="discord-channel-list">
+                        <div class="discord-category">
+                            <span class="discord-category-label">▸ Text Channels</span>
+                            <div class="discord-channel active"><span>#</span>general</div>
+                            <div class="discord-channel"><span>#</span>announcements</div>
+                            <div class="discord-channel"><span>#</span>introductions</div>
+                        </div>
+                        <div class="discord-category">
+                            <span class="discord-category-label">▸ Development</span>
+                            <div class="discord-channel"><span>#</span>scripting</div>
+                            <div class="discord-channel"><span>#</span>building</div>
+                            <div class="discord-channel"><span>#</span>showcase</div>
+                        </div>
+                        <div class="discord-category">
+                            <span class="discord-category-label">▸ Lounge</span>
+                            <div class="discord-channel"><span>#</span>off-topic</div>
+                            <div class="discord-channel"><span>#</span>memes</div>
+                            <div class="discord-channel"><span>#</span>music</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="discord-ui-chat">
+                    <div class="discord-chat-header"># general</div>
+                    <div class="discord-messages">
+                        <div class="discord-message" data-discord-id="kash">
+                            <img class="discord-msg-avatar" src="/public/kash beam pfp.png" alt="KashTheKing">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author" style="color:#ffd700;">KashTheKing 👑</span>
+                                <span class="discord-msg-time">Today at 2:04 PM</span>
+                                <p>Sup guys welcome</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="295682508744425472">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 2:17 PM</span>
+                                <p>What the bust 🔥</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="792131571925647412">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 2:45 PM</span>
+                                <p>just made Kash a new PFP, check #showcase 👀</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="510974525458874389">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 2:50 PM</span>
+                                <p>Jesus Christ is King</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="kash">
+                            <img class="discord-msg-avatar" src="/public/kash beam pfp.png" alt="KashTheKing">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author" style="color:#ffd700;">KashTheKing 👑</span>
+                                <span class="discord-msg-time">Today at 2:52 PM</span>
+                                <p>If I ever die early, PhoenixBoss inherits all of my stuff.</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="287756987113144322">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 3:12 PM</span>
+                                <p>anyone know how to make a tween loop infinitely in Roblox?</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="kash">
+                            <img class="discord-msg-avatar" src="/public/kash beam pfp.png" alt="KashTheKing">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author" style="color:#ffd700;">KashTheKing 👑</span>
+                                <span class="discord-msg-time">Today at 3:14 PM</span>
+                                <p>check #scripting, I dropped a tutorial on that last week!</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="636983739263483905">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 4:02 PM</span>
+                                <p>bro where'd you go come back here</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="740327784521662594">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 4:08 PM</span>
+                                <p>bro I'm here I'm here 😭</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="766370802617679882">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 4:19 PM</span>
+                                <p>yo just joined what's good 👋</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="841775360445775882">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 4:22 PM</span>
+                                <p>never leaving this server lol</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="966995915296628786">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 4:31 PM</span>
+                                <p>I made a snowy cabin</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="567936163613114368">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 4:38 PM</span>
+                                <p>W server fr, been here since day one</p>
+                            </div>
+                        </div>
+                        <div class="discord-message" data-discord-id="490221481947693061">
+                            <img class="discord-msg-avatar" src="" alt="">
+                            <div class="discord-msg-content">
+                                <span class="discord-msg-author discord-msg-author-name"></span>
+                                <span class="discord-msg-time">Today at 5:11 PM</span>
+                                <p>new showcase just dropped in #showcase go check it out 👀</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discord-chat-input">
+                        <span>Message #general</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-inner">
+                <p class="contact-eyebrow">Get In Touch</p>
+                <h2 class="contact-heading">CONTACT ME</h2>
+                <p class="contact-sub">Want to work with me? Let's get in touch.</p>
+                <a href="mailto:business@kashtheking.com" class="contact-email">business@kashtheking.com</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="transition" style="position:fixed;inset:0;background:#3f4144;z-index:9999;opacity:1;pointer-events:none;transition:opacity 0.4s ease;"></div>
+    <script src="index.js"></script>
     <script>
-        document.getElementById('about-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            const overlay = document.getElementById('transition');
-            overlay.style.opacity = '1';
-            overlay.style.pointerEvents = 'all';
-            setTimeout(() => { window.location.href = '/about'; }, 400);
+        window.addEventListener('load', () => {
+            requestAnimationFrame(() => {
+                document.getElementById('transition').style.opacity = '0';
+            });
+        });
+
+        // Section nav active state
+        const navItems = document.querySelectorAll('.section-nav-item');
+        const sections = Array.from(navItems).map(el => document.getElementById(el.dataset.section));
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navItems.forEach(el => el.classList.toggle('active', el.dataset.section === id));
+                }
+            });
+        }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+        window.addEventListener('load', () => {
+            sections.forEach(sec => { if (sec) observer.observe(sec); });
+        });
+
+        navItems.forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                const id = el.dataset.section;
+                window.location.hash = id;
+                document.getElementById(id)?.scrollIntoView();
+            });
+        });
+
+        const navSections = Array.from(navItems).map(el => el.dataset.section);
+        function getActiveIndex() {
+            return navSections.findIndex(id => document.querySelector(`.section-nav-item[data-section="${id}"]`)?.classList.contains('active'));
+        }
+        document.getElementById('nav-up').addEventListener('click', () => {
+            const i = getActiveIndex();
+            if (i > 0) document.querySelector(`.section-nav-item[data-section="${navSections[i - 1]}"]`).click();
+        });
+        document.getElementById('nav-down').addEventListener('click', () => {
+            const i = getActiveIndex();
+            if (i < navSections.length - 1) document.querySelector(`.section-nav-item[data-section="${navSections[i + 1]}"]`).click();
+        });
+
+        // Triple-click avatar+quote to open minigame, with pop animation on every click
+        let clickCount = 0;
+        let clickTimer;
+        const eggTarget = document.querySelector('.about-hero');
+        const avatarImg = document.querySelector('.avatar-spotlight img');
+        eggTarget.style.cursor = 'pointer';
+        eggTarget.addEventListener('click', () => {
+            // Pop the avatar on every click
+            avatarImg.classList.remove('popping');
+            void avatarImg.offsetWidth; // force reflow to restart animation
+            avatarImg.classList.add('popping');
+            avatarImg.addEventListener('animationend', () => avatarImg.classList.remove('popping'), { once: true });
+
+            clickCount++;
+            clearTimeout(clickTimer);
+            clickTimer = setTimeout(() => { clickCount = 0; }, 600);
+            if (clickCount >= 3) {
+                clickCount = 0;
+                const overlay = document.getElementById('transition');
+                overlay.style.opacity = '1';
+                overlay.style.pointerEvents = 'all';
+                setTimeout(() => { window.location.href = '/minigame/'; }, 400);
+            }
         });
     </script>
 </body>
