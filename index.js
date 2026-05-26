@@ -5,8 +5,8 @@ const DAILY_QUOTES = [
     { text: "Love is patient, love is kind. It does not envy, it does not boast, it is not proud", author: "1 Corinthians 13:4" },
     { text: "If you have faith as small as a mustard seed, you can say to this mountain, ‘Move from here to there,’ and it will move. Nothing will be impossible for you.", author: "Matthew 17:20" },
     { text: "Recognize what is in your sight, and that which is hidden from you will become plain to you. For there is nothing hidden which will not become manifest.", author: "Jesus" },
-    { text: "An abundance of self-love is the key to a joyful life.", author: "Me" },
-    { text: "Ambition is the quality seen in every great person", author: "Me" },
+    { text: "Be aware, be vigilant.", author: "George Orwell" },
+    { text: "Life's better on Saturn", author: "👁️" },
 ];
 (function() {
     const q = DAILY_QUOTES[new Date().getDay()];
