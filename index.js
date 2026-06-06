@@ -26,6 +26,7 @@ const STATIC_GROUPS = [
     { id: 34135129,  name: "Game Swap",         desc: "THE MOST AWESOME GAMES ON ROBLOX MADE IN A SHORT TIME!",           icon: "https://tr.rbxcdn.com/180DAY-bc6e7b57abe6c197cc9f3f721d307957/150/150/Image/Png/noFilter", tag: "EVENTS" },
     { id: 33846029,  name: "WeTheBread",        desc: "bread bread bread bread bread bread bread bread bread",             icon: "https://tr.rbxcdn.com/180DAY-a03926b78e8c2db772b249675ab27f36/150/150/Image/Png/noFilter", tag: "FUN GAMES" },
     { id: 219333405, name: "Roblox Civilization Survival", desc: "",                                                       icon: "https://tr.rbxcdn.com/180DAY-47f9867bc677d5a08801bda4407f958d/150/150/Image/Png/noFilter", tag: "EVENTS" },
+    { id: 45578084,  name: "No Trash Studios",  desc: "",                                                                  icon: "https://tr.rbxcdn.com/180DAY-438648c2382e7be64f83cdc2fcadbf16/150/150/Image/Png/noFilter", tag: "FUN GAMES" },
     { id: 32924401,  name: "Nobloxia",           desc: "Stolen from us by Azure Ventures.", stolen: true,               icon: "https://tr.rbxcdn.com/180DAY-e806a1501862c6dd05947de7729ee6e4/150/150/Image/Png/noFilter", link: "/nobloxia" },
 ];
 
