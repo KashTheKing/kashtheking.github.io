@@ -32,21 +32,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="section-nav" id="section-nav">
-        <button class="section-nav-arrow" id="nav-up" aria-label="Previous section">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="18 15 12 9 6 15"/></svg>
-        </button>
-        <a href="#hero" class="section-nav-item active" data-section="hero"><span class="section-nav-dot"></span><span class="section-nav-label">Home</span></a>
-        <a href="#about-me" class="section-nav-item" data-section="about-me"><span class="section-nav-dot"></span><span class="section-nav-label">About Me</span></a>
-        <a href="#my-work" class="section-nav-item" data-section="my-work"><span class="section-nav-dot"></span><span class="section-nav-label">My Contributions</span></a>
-        <a href="#my-dreams" class="section-nav-item" data-section="my-dreams"><span class="section-nav-dot"></span><span class="section-nav-label">My Dreams</span></a>
-        <a href="#my-community" class="section-nav-item" data-section="my-community"><span class="section-nav-dot"></span><span class="section-nav-label">My Community</span></a>
-        <a href="#contact" class="section-nav-item" data-section="contact"><span class="section-nav-dot"></span><span class="section-nav-label">Contact</span></a>
-        <button class="section-nav-arrow" id="nav-down" aria-label="Next section">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-    </nav>
-
     <main>
         <section id="hero">
             <h1>KASHTHEKING 👑</h1>
@@ -68,7 +53,7 @@
                     <h2>About Me</h2>
                     <div class="daily-quote-label">Daily Quote</div>
                     <blockquote id="daily-quote-text"></blockquote>
-                    <p class="bio-text">Hey! I'm Kash — an 18-year-old YouTuber, game developer, boxer, and programmer, among many other things. Check out my stuff below!</p>
+                    <p class="bio-text">Hey! I'm Kash, also known as KashTheKing. I'm an 18 year old Roblox game developer, YouTuber, boxer, philosopher, and teacher among many other things. Check out my stuff below!</p>
                 </div>
                 <div class="social-links">
                     <a href="https://youtube.com/@KashTheKingYT?sub_confirmation=1" target="_blank" class="social-link social-link--youtube" aria-label="YouTube">
@@ -100,16 +85,16 @@
         </section>
 
         <section id="my-work">
-            <h2>My Contributions</h2>
+            <h2>My Work</h2>
 
             <div class="stats-cards">
                 <div class="stat-card">
-                    <div class="stat-value">20M+</div>
+                    <div class="stat-value">240M+</div>
                     <div class="stat-label">Visits Contributed</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">100,000+</div>
-                    <div class="stat-label">People Guided by my Teaching</div>
+                    <div class="stat-value">100K+</div>
+                    <div class="stat-label">People helped learn Roblox Studio</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">∞</div>
@@ -117,15 +102,22 @@
                 </div>
             </div>
 
-            <div class="github-stats" id="github-stats"></div>
-
-            <p class="subsection-label">My Groups</p>
-            <div class="gallery">
+            <h2 class="work-heading">My Groups</h2>
+            <div class="groups">
                 <!-- populated by index.js -->
             </div>
 
+            <h2 class="work-heading">Roblox Games</h2>
             <p class="subsection-label">My Games</p>
-            <div class="games-grid" id="games-grid">
+            <div class="games-row" id="my-games-row">
+                <!-- populated by index.js -->
+            </div>
+            <p class="subsection-label">Games I've contributed to</p>
+            <div class="games-row" id="contributed-games-row">
+                <!-- populated by index.js -->
+            </div>
+            <p class="subsection-label">In Development</p>
+            <div class="games-row" id="indev-games-row">
                 <!-- populated by index.js -->
             </div>
 
@@ -143,13 +135,14 @@
             <div class="dreams-grid">
             <div class="dream-feature" style="background: url('/public/Pixel%20Divers%20Screenshot%202.png') center center / 140% auto no-repeat;">
                 <div class="dream-feature-tag">Dream Game</div>
-                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                    <div class="dream-feature-title">Pixel Divers</div>
-                    <a href="https://www.pixeldivers.world/" target="_blank" class="dream-site-link">Learn More ↗</a>
-                </div>
+                <a href="https://www.pixeldivers.world/" target="_blank" class="dream-site-link">Learn More ↗</a>
+                <div class="dream-feature-title">Pixel Divers</div>
                 <div class="dream-feature-genre">2D Ocean Survival Exploration Game</div>
-                <div class="dream-feature-engine">Made with Godot Engine</div>
-                <p class="dream-feature-desc">A passion project close to my heart — dive into the depths of a vast, procedurally-generated ocean world. Explore, survive, and uncover what lies beneath. Basically a mix of Terraria, Subnautica, and Minecraft.</p>
+                <div class="dream-feature-engine" aria-label="Made with Godot Engine">
+                    <svg viewBox="0 0 24 24" fill="#478CBF" width="22" height="22"><path d="M9.5598.683c-1.096.244-2.1812.5831-3.1983 1.0951.023.8981.081 1.7582.199 2.6323-.395.253-.81.47-1.178.766-.375.288-.7581.564-1.0971.9011-.6781-.448-1.3962-.869-2.1352-1.2411C1.3532 5.6934.608 6.6186 0 7.6546c.458.7411.936 1.4352 1.4521 2.0942h.014v6.3565c.012 0 .023 0 .035.003l3.8963.376c.204.02.364.184.378.3891l.12 1.7201 3.3994.242.234-1.587c.03-.206.207-.358.415-.358h4.1114c.208 0 .385.152.415.358l.234 1.587 3.3993-.242.12-1.72a.4196.4196 0 01.378-.3891l3.8954-.376c.012 0 .023-.003.035-.003v-.5071h.002V9.7498h.014c.516-.659.994-1.3531 1.4521-2.0942-.608-1.036-1.3541-1.9611-2.1512-2.8192-.739.372-1.4571.793-2.1352 1.2411-.339-.337-.721-.613-1.096-.901-.369-.296-.7841-.5131-1.1781-.7661.117-.8741.175-1.7342.199-2.6323-1.0171-.512-2.1012-.851-3.1983-1.095-.438.736-.838 1.533-1.1871 2.3121-.414-.069-.829-.094-1.2461-.099h-.016c-.417.005-.832.03-1.2461.099-.349-.779-.749-1.576-1.1881-2.3121l.001-.001zM6.4765 9.9889c1.2971 0 2.3492 1.0511 2.3492 2.3482s-1.052 2.3482-2.3492 2.3482c-1.296 0-2.3482-1.051-2.3482-2.3482 0-1.297 1.0511-2.3482 2.3482-2.3482zm11.049 0c1.296 0 2.3482 1.0511 2.3482 2.3482s-1.0511 2.3482-2.3482 2.3482-2.3492-1.051-2.3492-2.3482c0-1.297 1.051-2.3482 2.3492-2.3482zm-10.824.9301c-.861 0-1.559.698-1.559 1.5591s.698 1.5582 1.559 1.5582c.8611 0 1.5592-.698 1.5592-1.5582 0-.86-.697-1.559-1.5591-1.559zm10.598 0c-.8611 0-1.5582.698-1.5582 1.5591s.697 1.5582 1.5581 1.5582c.8611 0 1.5592-.698 1.5592-1.5582 0-.86-.697-1.559-1.5592-1.559zm-5.2985.453c.417 0 .757.308.757.6871v2.1622c0 .379-.339.687-.757.687s-.756-.308-.756-.687V12.059c0-.379.339-.687.756-.687zM1.4601 16.9464c.002.377.006.789.006.871 0 3.7014 4.6944 5.4795 10.5269 5.5005h.014c5.8325-.02 10.5259-1.7991 10.5259-5.5004 0-.084.005-.495.007-.871l-3.5023.338-.121 1.729a.421.421 0 01-.389.3901l-4.1814.296a.4203.4203 0 01-.415-.358l-.238-1.6141h-3.3863l-.238 1.6141a.4192.4192 0 01-.4451.357l-4.1513-.296c-.208-.015-.375-.181-.389-.389l-.12-1.7292-3.5044-.337z"/></svg>
+                    <span>Made with Godot Engine</span>
+                </div>
+                <p class="dream-feature-desc">A passion project close to my heart. Dive into the depths of a vast, procedurally-generated ocean world. Explore, survive, and uncover what lies beneath. Basically a mix of Terraria, Subnautica, and Minecraft.</p>
                 <div class="steam-btn-wrap">
                     <button class="steam-btn" disabled>
                         <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/></svg>
@@ -162,12 +155,10 @@
 
             <div class="dream-feature dream-feature--mission">
                 <div class="dream-feature-tag">Dream Mission</div>
-                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                    <div class="dream-feature-title">100 Confident<br>Game Devs</div>
-                    <a href="https://100confidentdevs.org" target="_blank" class="dream-site-link">Learn More ↗</a>
-                </div>
+                <a href="https://100confidentdevs.org" target="_blank" class="dream-site-link">Learn More ↗</a>
+                <div class="dream-feature-title">100 Confident<br>Game Devs</div>
                 <div class="dream-feature-genre">Teaching Game Development</div>
-                <p class="dream-feature-desc">I want to personally teach 100 people how to make games — from absolute zero to the point where they can ship something and teach others. I'm not done until every single one of them is fully confident in their skills.</p>
+                <p class="dream-feature-desc">I want to personally teach 100 people how to make games, from absolute zero to the point where they can ship something and teach others. I'm not done until every single one of them is fully confident in their skills.</p>
                 <div class="mission-counter">
                     <span class="mission-count">5</span>
                     <span class="mission-total">/ 100</span>
@@ -176,17 +167,15 @@
 
             <div class="dream-feature dream-feature--fatigue">
                 <div class="dream-feature-tag">Dream App</div>
-                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                    <div class="dream-feature-title">FATIGUE <sup class="fatigue-ai-tag">AI</sup></div>
-                    <a href="https://getfatigue.com" target="_blank" class="dream-site-link">Learn More ↗</a>
-                </div>
+                <a href="https://getfatigue.com" target="_blank" class="dream-site-link">Learn More ↗</a>
+                <div class="dream-feature-title">FATIGUE <sup class="fatigue-ai-tag">AI</sup></div>
                 <div class="dream-feature-genre">Know Who You're Buying From</div>
                 <div class="fatigue-meta">
                     <span class="fatigue-pill">AI Barcode Scanner</span>
                     <span class="fatigue-pill">Ownership Transparency</span>
                     <span class="fatigue-pill">7B+ Products</span>
                 </div>
-                <p class="dream-feature-desc">I got tired of my money going to people I'd never support if I knew the truth. Fatigue lets you scan any product or logo and instantly see who owns the brand, who profits, and who's behind it — all the way up the chain. Every purchase funds someone. Now you can find out who.</p>
+                <p class="dream-feature-desc">I got tired of my money going to people I'd never support if I knew the truth. Fatigue lets you scan any product or logo and instantly see who owns the brand, who profits, and who's behind it, all the way up the chain. Every purchase funds someone. Now you can find out who.</p>
             </div>
             </div>
         </section>
@@ -195,7 +184,7 @@
             <h2>My Community</h2>
             <div class="community-layout">
                 <div class="community-text">
-                    <p class="community-desc">I'm nothing without my friends and fans — seriously. Every video, every game, every late night grinding away at something new is fueled by the people around me. This community is full of creative, passionate people who love to build and play together. I host events regularly, share knowledge, and help members develop new skills — come hang out!</p>
+                    <p class="community-desc">Stay upto date with all of my latest creations, YouTube videos, and events. Join now!</p>
                 </div>
                 <div class="discord-widget" id="discord-widget">
                     <!-- populated by index.js -->
@@ -355,7 +344,14 @@
                 <p class="contact-eyebrow">Get In Touch</p>
                 <h2 class="contact-heading">CONTACT ME</h2>
                 <p class="contact-sub">Want to work with me? Let's get in touch.</p>
-                <a href="mailto:kashtheking123@gmail.com" class="contact-email">kashtheking123@gmail.com</a>
+                <a href="mailto:kashtheking123@gmail.com" class="contact-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                    <span>kashtheking123@gmail.com</span>
+                </a>
+                <a href="https://discord.gg/6HYgCk22eD" target="_blank" class="contact-email">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.3 3A18.8 18.8 0 0 0 15.6 1.5a13 13 0 0 0-.6 1.2 17.4 17.4 0 0 0-5.9 0A13 13 0 0 0 8.4 1.5 18.7 18.7 0 0 0 3.7 3 19.9 19.9 0 0 0 .5 18.6a18.9 18.9 0 0 0 5.8 2.9 14 14 0 0 0 1.2-2 12.3 12.3 0 0 1-1.9-.9l.5-.3a13.5 13.5 0 0 0 11.8 0l.5.3a12.3 12.3 0 0 1-1.9.9 14 14 0 0 0 1.2 2 18.8 18.8 0 0 0 5.8-2.9A19.9 19.9 0 0 0 20.3 3zM8.7 15.3c-1.3 0-2.3-1.2-2.3-2.6s1-2.6 2.3-2.6 2.3 1.2 2.3 2.6-1 2.6-2.3 2.6zm6.6 0c-1.3 0-2.3-1.2-2.3-2.6s1-2.6 2.3-2.6 2.3 1.2 2.3 2.6-1 2.6-2.3 2.6z"/></svg>
+                    <span>@KashTheKing</span>
+                </a>
             </div>
         </section>
     </main>
@@ -367,45 +363,6 @@
             requestAnimationFrame(() => {
                 document.getElementById('transition').style.opacity = '0';
             });
-        });
-
-        // Section nav active state
-        const navItems = document.querySelectorAll('.section-nav-item');
-        const sections = Array.from(navItems).map(el => document.getElementById(el.dataset.section));
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    navItems.forEach(el => el.classList.toggle('active', el.dataset.section === id));
-                }
-            });
-        }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-
-        window.addEventListener('load', () => {
-            sections.forEach(sec => { if (sec) observer.observe(sec); });
-        });
-
-        navItems.forEach(el => {
-            el.addEventListener('click', e => {
-                e.preventDefault();
-                const id = el.dataset.section;
-                window.location.hash = id;
-                document.getElementById(id)?.scrollIntoView();
-            });
-        });
-
-        const navSections = Array.from(navItems).map(el => el.dataset.section);
-        function getActiveIndex() {
-            return navSections.findIndex(id => document.querySelector(`.section-nav-item[data-section="${id}"]`)?.classList.contains('active'));
-        }
-        document.getElementById('nav-up').addEventListener('click', () => {
-            const i = getActiveIndex();
-            if (i > 0) document.querySelector(`.section-nav-item[data-section="${navSections[i - 1]}"]`).click();
-        });
-        document.getElementById('nav-down').addEventListener('click', () => {
-            const i = getActiveIndex();
-            if (i < navSections.length - 1) document.querySelector(`.section-nav-item[data-section="${navSections[i + 1]}"]`).click();
         });
 
         // Triple-click avatar+quote to open minigame, with pop animation on every click
