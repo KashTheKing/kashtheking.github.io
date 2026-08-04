@@ -1576,3 +1576,66 @@ blockquote {
         width: 108px;
     }
 }
+
+/* --- My Library --- */
+#my-library {
+    background: #1a1a1c;
+}
+
+.library-showcase {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.library-github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.library-github-btn:hover {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+}
+
+.library-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    width: min(420px, 100%);
+    line-height: 0;
+}
+
+.library-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.library-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 118, 232, 0.45);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.library-link:hover::after {
+    opacity: 1;
+}
