@@ -1,15 +1,7 @@
 // --- Daily Quote ---
-const DAILY_QUOTES = [
-    { text: "My only stable belief is that Christ is King", author: "Me" },
-    { text: "Become the person you have a crush on", author: "Me" },
-    { text: "Love is patient, love is kind. It does not envy, it does not boast, it is not proud", author: "1 Corinthians 13:4" },
-    { text: "If you have faith as small as a mustard seed, you can say to this mountain, ‘Move from here to there,’ and it will move. Nothing will be impossible for you.", author: "Matthew 17:20" },
-    { text: "Recognize what is in your sight, and that which is hidden from you will become plain to you. For there is nothing hidden which will not become manifest.", author: "Jesus" },
-    { text: "Be aware, be vigilant.", author: "George Orwell" },
-    { text: "Life's better on Saturn", author: "👁️" },
-];
+const DAILY_QUOTE = { text: "If your beliefs are stable, you don't have the full picture.", author: "Me" };
 (function() {
-    const q = DAILY_QUOTES[new Date().getDay()];
+    const q = DAILY_QUOTE;
     const el = document.getElementById('daily-quote-text');
     if (el) el.innerHTML = `“${q.text}”<br>- ${q.author}`;
 })();
@@ -341,3 +333,52 @@ refreshVideos();
 loadDiscord();
 loadDiscordUiUsers();
 loadPixelDiversWidget();
+
+// --- My Library: contents drifting down the section like code on a screen ---
+const LIBRARY_ITEMS = [
+    "building-blocks", "building-blocks/init", "building-blocks/packager-blocks",
+    "guides", "guides/contributing", "guides/tycoon-game",
+    "packages", "packages/src/Attributor", "packages/src/Authority", "packages/src/Binder",
+    "packages/src/CameraController", "packages/src/ClassProperties", "packages/src/ClientSettings",
+    "packages/src/CountryFlags", "packages/src/GuiHandler", "packages/src/Hitbox",
+    "packages/src/Init", "packages/src/Mechanic", "packages/src/Packet",
+    "packages/src/Predicates", "packages/src/SoundPool", "packages/src/StateManager", "packages/src/t",
+    "plugins", "plugins/bounding-box", "plugins/init-framework",
+    "plugins/packager", "plugins/studio-wally", "plugins/viewmodel-editor",
+];
+(function () {
+    const stream = document.getElementById('library-stream');
+    if (!stream || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const rand = (min, max) => min + Math.random() * (max - min);
+    let i = Math.floor(Math.random() * LIBRARY_ITEMS.length);
+
+    function spawn() {
+        // Cycle the list rather than pick at random, so nothing repeats back to back
+        const path = LIBRARY_ITEMS[i++ % LIBRARY_ITEMS.length];
+        const pill = document.createElement('a');
+        pill.className = 'library-pill';
+        pill.href = 'https://kashtheking.com/library/' + path;
+        pill.textContent = path;
+        pill.style.setProperty('--dur', rand(9, 16).toFixed(1) + 's');
+        // Travel only the section height: the pill is invisible well before it would clip
+        pill.style.setProperty('--fall', stream.clientHeight + 'px');
+        pill.style.left = rand(2, 70).toFixed(1) + '%';
+        pill.addEventListener('animationend', () => pill.remove());
+        stream.appendChild(pill);
+    }
+
+    let timer;
+    const tick = () => { spawn(); timer = setTimeout(tick, rand(700, 2200)); };
+
+    // Only run while the section is on screen, so it isn't burning frames off-screen
+    new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+            if (!timer) tick();
+        } else {
+            clearTimeout(timer);
+            timer = null;
+            stream.replaceChildren();
+        }
+    }, { threshold: 0 }).observe(stream);
+})();
