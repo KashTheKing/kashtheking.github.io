@@ -24,8 +24,8 @@
     <meta name="twitter:description" content="18-year-old YouTuber, Roblox game developer, boxer, and programmer. Check out my games, videos, and community.">
     <meta name="twitter:image" content="https://kashtheking.github.io/public/kash beam pfp.png">
 
-    <!-- bump ?v= whenever styles.css changes, else GitHub Pages serves a stale cached copy -->
-    <link rel="stylesheet" href="styles.css?v=9">
+    <!-- Asset FILENAMES are versioned (styles.vN.css). A ?query is not enough: GitHub Pages edge nodes serve stale bytes for the same path regardless of query string. Rename on every change. -->
+    <link rel="stylesheet" href="styles.v9.css">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
@@ -380,7 +380,7 @@
     </main>
 
     <div id="transition" style="position:fixed;inset:0;background:#3f4144;z-index:9999;opacity:1;pointer-events:none;transition:opacity 0.4s ease;"></div>
-    <script src="index.js?v=9"></script>
+    <script src="index.v9.js"></script>
     <script>
         window.addEventListener('load', () => {
             requestAnimationFrame(() => {
