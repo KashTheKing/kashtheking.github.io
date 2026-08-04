@@ -363,13 +363,14 @@ const LIBRARY_ITEMS = [
         pill.style.setProperty('--dur', rand(9, 16).toFixed(1) + 's');
         // Travel only the section height: the pill is invisible well before it would clip
         pill.style.setProperty('--fall', stream.clientHeight + 'px');
-        pill.style.left = rand(2, 70).toFixed(1) + '%';
+        // Keep them in the band the stream's mask leaves visible
+        pill.style.left = rand(50, 66).toFixed(1) + '%';
         pill.addEventListener('animationend', () => pill.remove());
         stream.appendChild(pill);
     }
 
     let timer;
-    const tick = () => { spawn(); timer = setTimeout(tick, rand(700, 2200)); };
+    const tick = () => { spawn(); timer = setTimeout(tick, rand(2600, 5200)); };
 
     // Only run while the section is on screen, so it isn't burning frames off-screen
     new IntersectionObserver(([entry]) => {
