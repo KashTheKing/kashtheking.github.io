@@ -1196,17 +1196,6 @@ blockquote {
     transform: translateY(-2px);
 }
 
-.steam-coming-soon {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.06);
-    padding: 4px 10px;
-    border-radius: 20px;
-}
-
 .dream-feature-desc {
     margin-top: 8px;
     font-size: 16px;
