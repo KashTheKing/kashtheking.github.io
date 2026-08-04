@@ -1181,19 +1181,19 @@ blockquote {
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, #1b6dc1, #66c0f4);
     border-radius: 12px;
-    color: rgba(255,255,255,0.85);
+    color: #fff;
     font-size: 14px;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s;
+    transition: filter 0.2s, transform 0.2s;
 }
 
 .steam-btn:hover {
-    background: rgba(255,255,255,0.18);
-    color: #fff;
+    filter: brightness(1.15);
+    transform: translateY(-2px);
 }
 
 .steam-coming-soon {
