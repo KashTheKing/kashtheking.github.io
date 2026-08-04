@@ -890,7 +890,7 @@ blockquote {
     margin-top: 40px;
     border-radius: 16px;
     overflow: hidden;
-    height: 380px;
+    height: clamp(380px, 62vh, 720px);
     background: #2b2d31;
 }
 
@@ -1531,7 +1531,10 @@ blockquote {
     }
 
     .discord-ui-chat {
-        height: 320px;
+        /* flex:none so height wins — as a column flex item, flex-basis:0 would override it */
+        flex: none;
+        height: clamp(320px, 60vh, 560px);
+        min-height: 0;
     }
 
     .dream-feature {
