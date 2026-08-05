@@ -282,18 +282,8 @@ section h2 {
     letter-spacing: 0.03em;
 }
 
-.daily-quote-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    margin-top: 20px;
-    padding-left: 24px;
-}
-
 blockquote {
-    margin-top: 6px;
+    margin-top: 20px;
     padding: 20px 24px;
     border-left: 3px solid rgba(255,255,255,0.3);
     color: rgba(255,255,255,0.75);
