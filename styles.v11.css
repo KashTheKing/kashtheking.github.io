@@ -1262,6 +1262,38 @@ blockquote {
     color: rgba(255,255,255,0.8);
 }
 
+.dream-feature--simple-editor {
+    background: radial-gradient(ellipse at top right, rgba(90,160,255,0.1) 0%, transparent 60%),
+                radial-gradient(ellipse at bottom left, rgba(60,120,220,0.07) 0%, transparent 60%),
+                #0a0d12;
+}
+
+.dream-feature--simple-editor .dream-feature-tag {
+    color: rgba(120,180,255,0.95);
+}
+
+.simple-editor-beta-tag {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    vertical-align: super;
+    position: relative;
+    top: -4px;
+}
+
+.simple-editor-meta {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.simple-editor-pill {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+}
+
 #support-me {
     background: linear-gradient(to bottom, #1a3a5c 0%, #0d2040 50%, #1a3a5c 100%);
     justify-content: center;
