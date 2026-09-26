@@ -41,6 +41,8 @@ The module table is `{ DEFAULT_WARN_FORMAT_STRING, doPredicateWarning, Predicate
 T }`, where `T` is the bundled [t](/api/t) type-checking library for use as a
 [TypeValidator](#TypeValidator).
 
+**Credits:** type validation is done with [t](/api/t), originally by [Osyris](https://github.com/osyrisrblx). Wally installs it.
+
 Installation and guide: [Predicates package page](/docs/packages/predicates)."><meta data-rh="true" property="og:description" content="Ready-made predicate factories for [Binder](/api/Binder). A predicate is a function that
 receives a candidate instance and returns `true` or `false`, optionally followed by extra values.
 Binder forwards those extra values to your constructor, so a predicate both *filters* instances
@@ -79,9 +81,11 @@ The module table is `{ DEFAULT_WARN_FORMAT_STRING, doPredicateWarning, Predicate
 T }`, where `T` is the bundled [t](/api/t) type-checking library for use as a
 [TypeValidator](#TypeValidator).
 
-Installation and guide: [Predicates package page](/docs/packages/predicates)."><link data-rh="true" rel="icon" href="/library/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/library/api/Predicates/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Predicates/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Predicates/" hreflang="x-default"><link rel="stylesheet" href="/library/assets/css/styles.488e994c.css">
-<script src="/library/assets/js/runtime~main.c79aac5a.js" defer="defer"></script>
-<script src="/library/assets/js/main.c50984e6.js" defer="defer"></script>
+**Credits:** type validation is done with [t](/api/t), originally by [Osyris](https://github.com/osyrisrblx). Wally installs it.
+
+Installation and guide: [Predicates package page](/docs/packages/predicates)."><link data-rh="true" rel="icon" href="/library/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/library/api/Predicates/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Predicates/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Predicates/" hreflang="x-default"><link rel="stylesheet" href="/library/assets/css/styles.99ecadb2.css">
+<script src="/library/assets/js/runtime~main.8137992f.js" defer="defer"></script>
+<script src="/library/assets/js/main.24d52921.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -126,14 +130,15 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
   The module table is <code>{ DEFAULT_WARN_FORMAT_STRING, doPredicateWarning, Predicates = { ... }, T }</code>, where <code>T</code> is the bundled <a href="/library/api/t">t</a> type-checking library for use as a
   <a href="#TypeValidator">TypeValidator</a>.
 </p>
+<p><strong>Credits:</strong> type validation is done with <a href="/library/api/t">t</a>, originally by <a href="https://github.com/osyrisrblx">Osyris</a>. Wally installs it.</p>
 <p>Installation and guide: <a href="/library/docs/packages/predicates">Predicates package page</a>.</p>
-</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Predicate"><code style="text-decoration:none">Predicate</code><a href="#Predicate" class="hash-link" aria-label="Direct link to Predicate" title="Direct link to Predicate" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L59"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>Predicate<!-- --> = </code> <code class="purple_ieR2">(</code><code class="blue_P4bS">any</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code class="blue_P4bS">boolean</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">...any</code></div><code class="purple_ieR2">)</code></div><div>
+</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Predicate"><code style="text-decoration:none">Predicate</code><a href="#Predicate" class="hash-link" aria-label="Direct link to Predicate" title="Direct link to Predicate" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L61"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>Predicate<!-- --> = </code> <code class="purple_ieR2">(</code><code class="blue_P4bS">any</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code class="blue_P4bS">boolean</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">...any</code></div><code class="purple_ieR2">)</code></div><div>
 <p>
   A function that receives the candidate (normally an <code>Instance</code>) and returns whether it passes,
   followed by any extra values. Binder passes those extra values to the constructor after the
   Trove. The first return value must be a real boolean.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="TypeValidator"><code style="text-decoration:none">TypeValidator</code><a href="#TypeValidator" class="hash-link" aria-label="Direct link to TypeValidator" title="Direct link to TypeValidator" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L87"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>TypeValidator<!-- --> = </code> <code class="blue_P4bS">&quot;any&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">string</code><code class="op_lSLc"> | </code><code class="purple_ieR2">(</code><code>value<!-- -->: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any?</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="TypeValidator"><code style="text-decoration:none">TypeValidator</code><a href="#TypeValidator" class="hash-link" aria-label="Direct link to TypeValidator" title="Direct link to TypeValidator" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L89"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>TypeValidator<!-- --> = </code> <code class="blue_P4bS">&quot;any&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">string</code><code class="op_lSLc"> | </code><code class="purple_ieR2">(</code><code>value<!-- -->: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any?</code></div><div>
 <p>
   Describes the type an attribute must have, for <a href="#Attribute">Attribute</a> and
   <a href="#Attributes">Attributes</a>. Either a <code>typeof</code> name such as <code>"number"</code>, <code>"string"</code>, <code>"Color3"</code> or
@@ -161,21 +166,21 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
     
   
 
-</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="DEFAULT_WARN_FORMAT_STRING"><code style="text-decoration:none">DEFAULT_WARN_FORMAT_STRING</code><a href="#DEFAULT_WARN_FORMAT_STRING" class="hash-link" aria-label="Direct link to DEFAULT_WARN_FORMAT_STRING" title="Direct link to DEFAULT_WARN_FORMAT_STRING" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L70"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.<!-- -->DEFAULT_WARN_FORMAT_STRING<!-- -->:<!-- --> </code> <code class="blue_P4bS">string</code></div><div>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="DEFAULT_WARN_FORMAT_STRING"><code style="text-decoration:none">DEFAULT_WARN_FORMAT_STRING</code><a href="#DEFAULT_WARN_FORMAT_STRING" class="hash-link" aria-label="Direct link to DEFAULT_WARN_FORMAT_STRING" title="Direct link to DEFAULT_WARN_FORMAT_STRING" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L72"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.<!-- -->DEFAULT_WARN_FORMAT_STRING<!-- -->:<!-- --> </code> <code class="blue_P4bS">string</code></div><div>
 <p>
   <code>"[%s] Predicate failed for %s: %s"</code>. The <code>string.format</code> pattern used for predicate warnings
   when no <code>warnFormatString</code> is supplied. The three <code>%s</code> receive the warning name, the instance's
   full name and the failure message, in that order; a custom format string must accept the same
   three arguments.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="T"><code style="text-decoration:none">T</code><a href="#T" class="hash-link" aria-label="Direct link to T" title="Direct link to T" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L548"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.<!-- -->T<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/t/">t</a></code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="T"><code style="text-decoration:none">T</code><a href="#T" class="hash-link" aria-label="Direct link to T" title="Direct link to T" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L550"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.<!-- -->T<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/t/">t</a></code></div><div>
 <p>
   The bundled <a href="/library/api/t">t</a> runtime type-checking library, re-exported for convenience so you can
   build validators without installing it separately (for example <code>Predicates.T.numberPositive</code>).
   See the <a href="#TypeValidator">TypeValidator</a> caution before using function validators with
   <a href="#Attribute">Attribute</a>.
 </p>
-</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="doPredicateWarning"><code style="text-decoration:none">doPredicateWarning</code><a href="#doPredicateWarning" class="hash-link" aria-label="Direct link to doPredicateWarning" title="Direct link to doPredicateWarning" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L144"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">doPredicateWarning</code><code>(</code><div class="inset_uKQm"><div><code>instance<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="doPredicateWarning"><code style="text-decoration:none">doPredicateWarning</code><a href="#doPredicateWarning" class="hash-link" aria-label="Direct link to doPredicateWarning" title="Direct link to doPredicateWarning" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L146"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">doPredicateWarning</code><code>(</code><div class="inset_uKQm"><div><code>instance<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The instance that failed; its full name is included in the warning.</p>
 </span></span></div><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Label for the warning (typically the name of your binder or script). Nil suppresses the warning.</p>
@@ -199,7 +204,7 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
 	<span class="token keyword">end</span>
 <span class="token keyword">end</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Combine"><code style="text-decoration:none">Combine</code><a href="#Combine" class="hash-link" aria-label="Direct link to Combine" title="Direct link to Combine" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L188"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Combine</code><code>(</code><div class="inset_uKQm"><div><code>predicates<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate</a></code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Combine"><code style="text-decoration:none">Combine</code><a href="#Combine" class="hash-link" aria-label="Direct link to Combine" title="Direct link to Combine" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L190"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Combine</code><code>(</code><div class="inset_uKQm"><div><code>predicates<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate</a></code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
 <p>Predicates to run, in order.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>A predicate that passes when every input passes and returns all their extra values.</p>
@@ -215,7 +220,7 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
 <span class="token punctuation">}</span>
 <span class="token comment">-- constructor(instance, trove, speed: number, seat: VehicleSeat)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Attribute"><code style="text-decoration:none">Attribute</code><a href="#Attribute" class="hash-link" aria-label="Direct link to Attribute" title="Direct link to Attribute" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L226"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Attribute</code><code>(</code><div class="inset_uKQm"><div><code>attribute<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Attribute"><code style="text-decoration:none">Attribute</code><a href="#Attribute" class="hash-link" aria-label="Direct link to Attribute" title="Direct link to Attribute" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L228"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Attribute</code><code>(</code><div class="inset_uKQm"><div><code>attribute<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Name of the attribute to read.</p>
 </span></span></div><div><code>typeValidator<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#TypeValidator">TypeValidator?</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Type the value must have; skipped when nil.</p>
@@ -251,7 +256,7 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
     
   
 
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Attributes"><code style="text-decoration:none">Attributes</code><a href="#Attributes" class="hash-link" aria-label="Direct link to Attributes" title="Direct link to Attributes" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L267"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Attributes</code><code>(</code><div class="inset_uKQm"><div><code>attributes<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#TypeValidator">TypeValidator</a></code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Attributes"><code style="text-decoration:none">Attributes</code><a href="#Attributes" class="hash-link" aria-label="Direct link to Attributes" title="Direct link to Attributes" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L269"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Attributes</code><code>(</code><div class="inset_uKQm"><div><code>attributes<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#TypeValidator">TypeValidator</a></code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Attribute names mapped to the type each must have (use <code>"any"</code> to accept anything).</p>
 </span></span></div><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables warnings on failure; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
@@ -286,7 +291,7 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
     
   
 
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Child"><code style="text-decoration:none">Child</code><a href="#Child" class="hash-link" aria-label="Direct link to Child" title="Direct link to Child" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L292"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Child</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Child"><code style="text-decoration:none">Child</code><a href="#Child" class="hash-link" aria-label="Direct link to Child" title="Direct link to Child" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L294"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Child</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Name of the child to find.</p>
 </span></span></div><div><code>isA<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Class name the child must be (or inherit from); skipped when nil.</p>
@@ -301,7 +306,7 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
   Requires a direct child named <code>name</code> (found with <code>FindFirstChild</code>, so it does not wait) and
   returns it as the extra value. When <code>isA</code> is given the child must also satisfy <code>IsA(isA)</code>.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ChildWhichIsA"><code style="text-decoration:none">ChildWhichIsA</code><a href="#ChildWhichIsA" class="hash-link" aria-label="Direct link to ChildWhichIsA" title="Direct link to ChildWhichIsA" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L321"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">ChildWhichIsA</code><code>(</code><div class="inset_uKQm"><div><code>isA<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ChildWhichIsA"><code style="text-decoration:none">ChildWhichIsA</code><a href="#ChildWhichIsA" class="hash-link" aria-label="Direct link to ChildWhichIsA" title="Direct link to ChildWhichIsA" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L323"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">ChildWhichIsA</code><code>(</code><div class="inset_uKQm"><div><code>isA<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Class name the child must be or inherit from, e.g. <code>"BasePart"</code>.</p>
 </span></span></div><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables warnings on failure; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
@@ -314,7 +319,7 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
   Requires a direct child of class <code>isA</code> (via <code>FindFirstChildWhichIsA</code>, so subclasses count) and
   returns the first one found as the extra value.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Descendant"><code style="text-decoration:none">Descendant</code><a href="#Descendant" class="hash-link" aria-label="Direct link to Descendant" title="Direct link to Descendant" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L345"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Descendant</code><code>(</code><div class="inset_uKQm"><div><code>query<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Descendant"><code style="text-decoration:none">Descendant</code><a href="#Descendant" class="hash-link" aria-label="Direct link to Descendant" title="Direct link to Descendant" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L347"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Descendant</code><code>(</code><div class="inset_uKQm"><div><code>query<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Selector string passed to <code>QueryDescendants</code>.</p>
 </span></span></div><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables warnings on failure; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
@@ -327,7 +332,7 @@ Installation and guide: [Predicates package page](/docs/packages/predicates)."><
   Requires at least one descendant matching the selector <code>query</code> (evaluated with
   <code>Instance:QueryDescendants</code>) and returns the first match as the extra value.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="PrimaryPart"><code style="text-decoration:none">PrimaryPart</code><a href="#PrimaryPart" class="hash-link" aria-label="Direct link to PrimaryPart" title="Direct link to PrimaryPart" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L379"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">PrimaryPart</code><code>(</code><div class="inset_uKQm"><div><code>primaryPartPredicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate?</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="PrimaryPart"><code style="text-decoration:none">PrimaryPart</code><a href="#PrimaryPart" class="hash-link" aria-label="Direct link to PrimaryPart" title="Direct link to PrimaryPart" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L381"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">PrimaryPart</code><code>(</code><div class="inset_uKQm"><div><code>primaryPartPredicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate?</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Optional predicate to run on the primary part.</p>
 </span></span></div><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables warnings on failure; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
@@ -347,7 +352,7 @@ Predicates<span class="token punctuation">.</span><span class="token function">P
 <span class="token comment">-- constructor receives (model, trove, range: number) read from the primary part</span>
 Predicates<span class="token punctuation">.</span><span class="token function">PrimaryPart</span><span class="token punctuation">(</span>Predicates<span class="token punctuation">.</span><span class="token function">Attribute</span><span class="token punctuation">(</span><span class="token string">"Range"</span><span class="token punctuation">,</span> <span class="token string">"number"</span><span class="token punctuation">,</span> <span class="token string">"TurretBinder"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"TurretBinder"</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="IsDescendantOf"><code style="text-decoration:none">IsDescendantOf</code><a href="#IsDescendantOf" class="hash-link" aria-label="Direct link to IsDescendantOf" title="Direct link to IsDescendantOf" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L416"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">IsDescendantOf</code><code>(</code><div class="inset_uKQm"><div><code>ancestor<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="IsDescendantOf"><code style="text-decoration:none">IsDescendantOf</code><a href="#IsDescendantOf" class="hash-link" aria-label="Direct link to IsDescendantOf" title="Direct link to IsDescendantOf" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L418"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">IsDescendantOf</code><code>(</code><div class="inset_uKQm"><div><code>ancestor<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
 <p>The required ancestor.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Passes for descendants of <code>ancestor</code>.</p>
@@ -357,7 +362,7 @@ Predicates<span class="token punctuation">.</span><span class="token function">P
   warns. Handy inside <a href="#ContextGate">ContextGate</a> or <a href="#Combine">Combine</a> when a Binder's own
   <code>Ancestors</code> filter is not enough.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Humanoid"><code style="text-decoration:none">Humanoid</code><a href="#Humanoid" class="hash-link" aria-label="Direct link to Humanoid" title="Direct link to Humanoid" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L432"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Humanoid</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Humanoid"><code style="text-decoration:none">Humanoid</code><a href="#Humanoid" class="hash-link" aria-label="Direct link to Humanoid" title="Direct link to Humanoid" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L434"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Humanoid</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables warnings on failure; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
 </span></span></div><div><code>warnFormatString<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Custom warning format; defaults to <a href="#DEFAULT_WARN_FORMAT_STRING">DEFAULT_WARN_FORMAT_STRING</a>.</p>
@@ -368,7 +373,7 @@ Predicates<span class="token punctuation">.</span><span class="token function">P
   Requires a <code>Humanoid</code> child and returns it as the extra value. Equivalent to
   <code>ChildWhichIsA("Humanoid", ...)</code>.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Character"><code style="text-decoration:none">Character</code><a href="#Character" class="hash-link" aria-label="Direct link to Character" title="Direct link to Character" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L446"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Character</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Character"><code style="text-decoration:none">Character</code><a href="#Character" class="hash-link" aria-label="Direct link to Character" title="Direct link to Character" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L448"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Character</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables warnings on failure; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
 </span></span></div><div><code>warnFormatString<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Custom warning format; defaults to <a href="#DEFAULT_WARN_FORMAT_STRING">DEFAULT_WARN_FORMAT_STRING</a>.</p>
@@ -379,7 +384,7 @@ Predicates<span class="token punctuation">.</span><span class="token function">P
   Requires the instance to look like a character: a <code>Humanoid</code> child and a <code>BasePart</code> child named
   <code>HumanoidRootPart</code>. Returns the Humanoid, then the HumanoidRootPart, as extra values.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Player"><code style="text-decoration:none">Player</code><a href="#Player" class="hash-link" aria-label="Direct link to Player" title="Direct link to Player" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L465"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Player</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Player"><code style="text-decoration:none">Player</code><a href="#Player" class="hash-link" aria-label="Direct link to Player" title="Direct link to Player" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L467"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">Player</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables warnings on failure; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
 </span></span></div><div><code>warnFormatString<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Custom warning format; defaults to <a href="#DEFAULT_WARN_FORMAT_STRING">DEFAULT_WARN_FORMAT_STRING</a>.</p>
@@ -392,7 +397,7 @@ Predicates<span class="token punctuation">.</span><span class="token function">P
   model, and finally a <code>Player</code> ancestor (for things parented under <code>Players.&#x3C;Name></code>, such as
   items in a Backpack or PlayerGui). Fails when none of those resolves to a player.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ContextGate"><code style="text-decoration:none">ContextGate</code><a href="#ContextGate" class="hash-link" aria-label="Direct link to ContextGate" title="Direct link to ContextGate" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L508"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">ContextGate</code><code>(</code><div class="inset_uKQm"><div><code>clientPredicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ContextGate"><code style="text-decoration:none">ContextGate</code><a href="#ContextGate" class="hash-link" aria-label="Direct link to ContextGate" title="Direct link to ContextGate" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L510"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">ContextGate</code><code>(</code><div class="inset_uKQm"><div><code>clientPredicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Used when <code>RunService:IsServer()</code> is false.</p>
 </span></span></div><div><code>serverPredicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Predicates/#Predicate">Predicate</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Used on the server.</p>
@@ -404,7 +409,7 @@ Predicates<span class="token punctuation">.</span><span class="token function">P
   <code>clientPredicate</code> on the client. The chosen predicate's results (including extra values) are
   returned unchanged, so a shared Binder module can demand different things on each side.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="StudioOnly"><code style="text-decoration:none">StudioOnly</code><a href="#StudioOnly" class="hash-link" aria-label="Direct link to StudioOnly" title="Direct link to StudioOnly" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L529"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">StudioOnly</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="StudioOnly"><code style="text-decoration:none">StudioOnly</code><a href="#StudioOnly" class="hash-link" aria-label="Direct link to StudioOnly" title="Direct link to StudioOnly" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Predicates/init.luau#L531"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Predicates<!-- -->.</code><code class="green_DgR4">StudioOnly</code><code>(</code><div class="inset_uKQm"><div><code>warningName<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Enables the "Studio only" warning; see <a href="#doPredicateWarning">doPredicateWarning</a>.</p>
 </span></span></div><div><code>warnFormatString<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Custom warning format; defaults to <a href="#DEFAULT_WARN_FORMAT_STRING">DEFAULT_WARN_FORMAT_STRING</a>.</p>
@@ -446,7 +451,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 144,
+                &quot;line&quot;: 146,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -468,7 +473,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 188,
+                &quot;line&quot;: 190,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -505,7 +510,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 226,
+                &quot;line&quot;: 228,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -537,7 +542,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 267,
+                &quot;line&quot;: 269,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -574,7 +579,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 292,
+                &quot;line&quot;: 294,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -606,7 +611,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 321,
+                &quot;line&quot;: 323,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -638,7 +643,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 345,
+                &quot;line&quot;: 347,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -670,7 +675,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 379,
+                &quot;line&quot;: 381,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -692,7 +697,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 416,
+                &quot;line&quot;: 418,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -719,7 +724,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 432,
+                &quot;line&quot;: 434,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -746,7 +751,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 446,
+                &quot;line&quot;: 448,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -773,7 +778,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 465,
+                &quot;line&quot;: 467,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -800,7 +805,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 508,
+                &quot;line&quot;: 510,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -827,7 +832,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 529,
+                &quot;line&quot;: 531,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         }
@@ -839,7 +844,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             &quot;lua_type&quot;: &quot;string&quot;,
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 70,
+                &quot;line&quot;: 72,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -849,7 +854,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             &quot;lua_type&quot;: &quot;t&quot;,
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 548,
+                &quot;line&quot;: 550,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         }
@@ -860,7 +865,7 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             &quot;desc&quot;: &quot;A function that receives the candidate (normally an `Instance`) and returns whether it passes,\nfollowed by any extra values. Binder passes those extra values to the constructor after the\nTrove. The first return value must be a real boolean.&quot;,
             &quot;lua_type&quot;: &quot;(any) -&gt; (boolean, ...any)&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 59,
+                &quot;line&quot;: 61,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         },
@@ -869,15 +874,15 @@ returns <code>true</code></strong>; it flags an instance that should not exist i
             &quot;desc&quot;: &quot;Describes the type an attribute must have, for [Attribute](#Attribute) and\n[Attributes](#Attributes). Either a `typeof` name such as `\&quot;number\&quot;`, `\&quot;string\&quot;`, `\&quot;Color3\&quot;` or\n`\&quot;Vector3\&quot;`, the string `\&quot;any\&quot;` (accepts any non-nil value), or a function that receives the\nvalue and either errors, returns a message, or returns `true`.\n\n:::caution\nIn the current version a function validator is always reported as failing, because the result\ncheck treats every return value (including `true`) as an error. Use a type-name string until\nthis is fixed.\n:::&quot;,
             &quot;lua_type&quot;: &quot;\&quot;any\&quot; | string | (value: any) -&gt; any?&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 87,
+                &quot;line&quot;: 89,
                 &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
             }
         }
     ],
     &quot;name&quot;: &quot;Predicates&quot;,
-    &quot;desc&quot;: &quot;Ready-made predicate factories for [Binder](/api/Binder). A predicate is a function that\nreceives a candidate instance and returns `true` or `false`, optionally followed by extra values.\nBinder forwards those extra values to your constructor, so a predicate both *filters* instances\nand *collects* the attribute, child, player or part you were going to look up anyway.\n\nThe factories live in the `Predicates` sub-table of the module (and are also reachable as\n`Binder.Predicates.*`). Most accept an optional `warningName`: when it is given, a failing\npredicate prints a warning formatted with [DEFAULT_WARN_FORMAT_STRING](#DEFAULT_WARN_FORMAT_STRING)\n(or your own `warnFormatString`) telling you which instance failed and why. Without a\n`warningName` predicates fail silently.\n\n```lua\nlocal Binder = require(path.to.Binder)\nlocal Predicates = require(path.to.Predicates).Predicates\n\n-- Bind every Model tagged \&quot;Vendor\&quot; that has a numeric Price attribute and a\n-- ProximityPrompt child; the constructor receives them in that order.\nlocal vendors = Binder.new(function(model: Model, trove, price: number, prompt: ProximityPrompt)\n\ttrove:Connect(prompt.Triggered, function(player)\n\t\tprint(`{player.Name} paid {price}`)\n\tend)\n\n\treturn trove\nend, {\n\tTags = { \&quot;Vendor\&quot; },\n\tClassNames = { \&quot;Model\&quot; },\n\tPredicate = Predicates.Combine {\n\t\tPredicates.Attribute(\&quot;Price\&quot;, \&quot;number\&quot;, \&quot;VendorBinder\&quot;),\n\t\tPredicates.ChildWhichIsA(\&quot;ProximityPrompt\&quot;, \&quot;VendorBinder\&quot;),\n\t},\n\tAutoStart = true,\n})\n```\n\nThe module table is `{ DEFAULT_WARN_FORMAT_STRING, doPredicateWarning, Predicates = { ... },\nT }`, where `T` is the bundled [t](/api/t) type-checking library for use as a\n[TypeValidator](#TypeValidator).\n\nInstallation and guide: [Predicates package page](/docs/packages/predicates).&quot;,
+    &quot;desc&quot;: &quot;Ready-made predicate factories for [Binder](/api/Binder). A predicate is a function that\nreceives a candidate instance and returns `true` or `false`, optionally followed by extra values.\nBinder forwards those extra values to your constructor, so a predicate both *filters* instances\nand *collects* the attribute, child, player or part you were going to look up anyway.\n\nThe factories live in the `Predicates` sub-table of the module (and are also reachable as\n`Binder.Predicates.*`). Most accept an optional `warningName`: when it is given, a failing\npredicate prints a warning formatted with [DEFAULT_WARN_FORMAT_STRING](#DEFAULT_WARN_FORMAT_STRING)\n(or your own `warnFormatString`) telling you which instance failed and why. Without a\n`warningName` predicates fail silently.\n\n```lua\nlocal Binder = require(path.to.Binder)\nlocal Predicates = require(path.to.Predicates).Predicates\n\n-- Bind every Model tagged \&quot;Vendor\&quot; that has a numeric Price attribute and a\n-- ProximityPrompt child; the constructor receives them in that order.\nlocal vendors = Binder.new(function(model: Model, trove, price: number, prompt: ProximityPrompt)\n\ttrove:Connect(prompt.Triggered, function(player)\n\t\tprint(`{player.Name} paid {price}`)\n\tend)\n\n\treturn trove\nend, {\n\tTags = { \&quot;Vendor\&quot; },\n\tClassNames = { \&quot;Model\&quot; },\n\tPredicate = Predicates.Combine {\n\t\tPredicates.Attribute(\&quot;Price\&quot;, \&quot;number\&quot;, \&quot;VendorBinder\&quot;),\n\t\tPredicates.ChildWhichIsA(\&quot;ProximityPrompt\&quot;, \&quot;VendorBinder\&quot;),\n\t},\n\tAutoStart = true,\n})\n```\n\nThe module table is `{ DEFAULT_WARN_FORMAT_STRING, doPredicateWarning, Predicates = { ... },\nT }`, where `T` is the bundled [t](/api/t) type-checking library for use as a\n[TypeValidator](#TypeValidator).\n\n**Credits:** type validation is done with [t](/api/t), originally by [Osyris](https://github.com/osyrisrblx). Wally installs it.\n\nInstallation and guide: [Predicates package page](/docs/packages/predicates).&quot;,
     &quot;source&quot;: {
-        &quot;line&quot;: 51,
+        &quot;line&quot;: 53,
         &quot;path&quot;: &quot;packages/src/Predicates/init.luau&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#Predicate" class="table-of-contents__link toc-highlight">Predicate</a></li><li><a href="#TypeValidator" class="table-of-contents__link toc-highlight">TypeValidator</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#DEFAULT_WARN_FORMAT_STRING" class="table-of-contents__link toc-highlight">DEFAULT_WARN_FORMAT_STRING</a></li><li><a href="#T" class="table-of-contents__link toc-highlight">T</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Attribute" class="table-of-contents__link toc-highlight">.Attribute</a></li><li><a href="#Attributes" class="table-of-contents__link toc-highlight">.Attributes</a></li><li><a href="#Character" class="table-of-contents__link toc-highlight">.Character</a></li><li><a href="#Child" class="table-of-contents__link toc-highlight">.Child</a></li><li><a href="#ChildWhichIsA" class="table-of-contents__link toc-highlight">.ChildWhichIsA</a></li><li><a href="#Combine" class="table-of-contents__link toc-highlight">.Combine</a></li><li><a href="#ContextGate" class="table-of-contents__link toc-highlight">.ContextGate</a></li><li><a href="#Descendant" class="table-of-contents__link toc-highlight">.Descendant</a></li><li><a href="#doPredicateWarning" class="table-of-contents__link toc-highlight">.doPredicateWarning</a></li><li><a href="#Humanoid" class="table-of-contents__link toc-highlight">.Humanoid</a></li><li><a href="#IsDescendantOf" class="table-of-contents__link toc-highlight">.IsDescendantOf</a></li><li><a href="#Player" class="table-of-contents__link toc-highlight">.Player</a></li><li><a href="#PrimaryPart" class="table-of-contents__link toc-highlight">.PrimaryPart</a></li><li><a href="#StudioOnly" class="table-of-contents__link toc-highlight">.StudioOnly</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Library</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/library/docs/intro/">Getting started</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/packages/">Packages</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/plugins/">Plugins</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/building-blocks/">Building Blocks</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/guides/">Guides</a></li><li class="footer__item"><a class="footer__link-item" href="/library/api/">API reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Source</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/KashTheKing/library" target="_blank" rel="noopener noreferrer" class="footer__link-item">This repository on GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/KashTheKing/library/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Report a bug or request a feature<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://wally.run/?q=kashtheking" target="_blank" rel="noopener noreferrer" class="footer__link-item">Packages on Wally<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/infinite-ocean/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Infinite Ocean docs<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Help &amp; contact</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord server<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="mailto:kashtheking123@gmail.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking123@gmail.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.roblox.com/users/117445502/profile" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on Roblox<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/KashTheKing_X" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing_X on X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://youtube.com/@KashTheKingYT" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKingYT on YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://paypal.me/KashPlacek" target="_blank" rel="noopener noreferrer" class="footer__link-item">Support me on PayPal<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 KashTheKing. Packages and building blocks are MIT; the Studio plugins are distributed on the Creator Store under their own terms.</div></div></div></footer></div>
