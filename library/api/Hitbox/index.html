@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Hitbox | KashTheKing&#x27;s Library</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://kashtheking.com/library/api/Hitbox/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Hitbox | KashTheKing&#x27;s Library"><meta data-rh="true" name="description" content="Hitbox wraps an invisible, non-colliding `Part` and uses `Workspace:GetPartsInPart` to find
+what is overlapping it. Use it for melee swings, area-of-effect abilities, trigger zones or
+anything else where you want to know which parts or humanoids are inside a volume right now,
+or for a period of time.
+
+A Hitbox can be queried once (`Check`, `CheckHumanoids`), scanned for a fixed duration on
+`Heartbeat` (`Scan`, `ScanHumanoids`) or scanned on your own schedule using a repeat interval
+or any signal (`ScanWithEvent`, `ScanHumanoidsWithEvent`). The hitbox part can be welded to
+another part so it follows a character or weapon. Everything the hitbox creates (the part,
+welds, timers and connections) is tracked by a [Trove](https://sleitnick.github.io/RbxUtil/api/Trove/)
+and released by `Destroy`; destroying the hitbox part also destroys the hitbox.
+
+Create one with `Hitbox.new`, or from existing geometry with `Hitbox.fromPart`,
+`Hitbox.fromModel` or `Hitbox.convert`.
+
+```lua
+local Hitbox = require(path.to.Hitbox)
+
+local function swing(character: Model)
+	local rootPart = character:WaitForChild(&quot;HumanoidRootPart&quot;) :: BasePart
+
+	local params = OverlapParams.new()
+	params.FilterType = Enum.RaycastFilterType.Exclude
+	params.FilterDescendantsInstances = { character }
+
+	-- A 4x4x4 block one stud in front of the character, welded to the root so it follows them
+	local hitbox = Hitbox.new(
+		rootPart.CFrame * CFrame.new(0, 0, -3),
+		Vector3.new(4, 4, 4),
+		Enum.PartType.Block,
+		params,
+		workspace,
+		false,
+		rootPart
+	)
+
+	-- Scan every frame for half a second and damage each humanoid once
+	local alreadyHit: { [Humanoid]: boolean } = {}
+	hitbox:ScanHumanoids(0.5, function(humanoid)
+		if alreadyHit[humanoid] then
+			return
+		end
+		alreadyHit[humanoid] = true
+		humanoid:TakeDamage(10)
+	end)
+
+	task.delay(0.5, function()
+		hitbox:Destroy()
+	end)
+end
+```
+
+Installation and guide: [Hitbox package page](/docs/packages/hitbox)."><meta data-rh="true" property="og:description" content="Hitbox wraps an invisible, non-colliding `Part` and uses `Workspace:GetPartsInPart` to find
+what is overlapping it. Use it for melee swings, area-of-effect abilities, trigger zones or
+anything else where you want to know which parts or humanoids are inside a volume right now,
+or for a period of time.
+
+A Hitbox can be queried once (`Check`, `CheckHumanoids`), scanned for a fixed duration on
+`Heartbeat` (`Scan`, `ScanHumanoids`) or scanned on your own schedule using a repeat interval
+or any signal (`ScanWithEvent`, `ScanHumanoidsWithEvent`). The hitbox part can be welded to
+another part so it follows a character or weapon. Everything the hitbox creates (the part,
+welds, timers and connections) is tracked by a [Trove](https://sleitnick.github.io/RbxUtil/api/Trove/)
+and released by `Destroy`; destroying the hitbox part also destroys the hitbox.
+
+Create one with `Hitbox.new`, or from existing geometry with `Hitbox.fromPart`,
+`Hitbox.fromModel` or `Hitbox.convert`.
+
+```lua
+local Hitbox = require(path.to.Hitbox)
+
+local function swing(character: Model)
+	local rootPart = character:WaitForChild(&quot;HumanoidRootPart&quot;) :: BasePart
+
+	local params = OverlapParams.new()
+	params.FilterType = Enum.RaycastFilterType.Exclude
+	params.FilterDescendantsInstances = { character }
+
+	-- A 4x4x4 block one stud in front of the character, welded to the root so it follows them
+	local hitbox = Hitbox.new(
+		rootPart.CFrame * CFrame.new(0, 0, -3),
+		Vector3.new(4, 4, 4),
+		Enum.PartType.Block,
+		params,
+		workspace,
+		false,
+		rootPart
+	)
+
+	-- Scan every frame for half a second and damage each humanoid once
+	local alreadyHit: { [Humanoid]: boolean } = {}
+	hitbox:ScanHumanoids(0.5, function(humanoid)
+		if alreadyHit[humanoid] then
+			return
+		end
+		alreadyHit[humanoid] = true
+		humanoid:TakeDamage(10)
+	end)
+
+	task.delay(0.5, function()
+		hitbox:Destroy()
+	end)
+end
+```
+
+Installation and guide: [Hitbox package page](/docs/packages/hitbox)."><link data-rh="true" rel="icon" href="/library/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/library/api/Hitbox/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Hitbox/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Hitbox/" hreflang="x-default"><link rel="stylesheet" href="/library/assets/css/styles.488e994c.css">
+<script src="/library/assets/js/runtime~main.c79aac5a.js" defer="defer"></script>
+<script src="/library/assets/js/main.8bf04826.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/library/"><div class="navbar__logo"><img src="/library/img/favicon.svg" alt="KashTheKing&#x27;s Library" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/library/img/favicon.svg" alt="KashTheKing&#x27;s Library" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">KashTheKing&#x27;s Library</b></a><a class="navbar__item navbar__link" href="/library/docs/intro/">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/library/api/">API</a><a class="navbar__item navbar__link" href="/library/docs/packages/">Packages</a><a class="navbar__item navbar__link" href="/library/docs/plugins/">Plugins</a><a class="navbar__item navbar__link" href="/library/docs/building-blocks/">Building Blocks</a><a class="navbar__item navbar__link" href="/library/docs/guides/">Guides</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a class="navbar__item navbar__link" href="/library/docs/support/">Support</a><a href="https://github.com/KashTheKing/library" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/library/api/Binder/"><span title="Instances &amp; lifecycle" class="categoryLinkLabel_W154">Instances &amp; lifecycle</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/library/api/Packet/"><span title="Networking &amp; state" class="categoryLinkLabel_W154">Networking &amp; state</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/library/api/Hitbox/"><span title="Gameplay" class="categoryLinkLabel_W154">Gameplay</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/library/api/Hitbox/"><span title="​Hitbox" class="linkLabel_WmDU">​Hitbox</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/library/api/CameraController/"><span title="​Camera​Controller" class="linkLabel_WmDU">​Camera​Controller</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/library/api/GuiHandler/"><span title="​Gui​Handler" class="linkLabel_WmDU">​Gui​Handler</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/library/api/t/"><span title="Utilities" class="categoryLinkLabel_W154">Utilities</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/library/api/Mechanic/"><span title="Deprecated" class="categoryLinkLabel_W154">Deprecated</span></a></div></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Hitbox</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>
+  Hitbox wraps an invisible, non-colliding <code>Part</code> and uses <code>Workspace:GetPartsInPart</code> to find
+  what is overlapping it. Use it for melee swings, area-of-effect abilities, trigger zones or
+  anything else where you want to know which parts or humanoids are inside a volume right now,
+  or for a period of time.
+</p>
+<p>
+  A Hitbox can be queried once (<code>Check</code>, <code>CheckHumanoids</code>), scanned for a fixed duration on
+  <code>Heartbeat</code> (<code>Scan</code>, <code>ScanHumanoids</code>) or scanned on your own schedule using a repeat interval
+  or any signal (<code>ScanWithEvent</code>, <code>ScanHumanoidsWithEvent</code>). The hitbox part can be welded to
+  another part so it follows a character or weapon. Everything the hitbox creates (the part,
+  welds, timers and connections) is tracked by a <a href="https://sleitnick.github.io/RbxUtil/api/Trove/">Trove</a>
+  and released by <code>Destroy</code>; destroying the hitbox part also destroys the hitbox.
+</p>
+<p>
+  Create one with <code>Hitbox.new</code>, or from existing geometry with <code>Hitbox.fromPart</code>,
+  <code>Hitbox.fromModel</code> or <code>Hitbox.convert</code>.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> Hitbox <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span>to<span class="token punctuation">.</span>Hitbox<span class="token punctuation">)</span>
+
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">swing</span><span class="token punctuation">(</span>character<span class="token punctuation">:</span> Model<span class="token punctuation">)</span>
+	<span class="token keyword">local</span> rootPart <span class="token operator">=</span> character<span class="token punctuation">:</span><span class="token function">WaitForChild</span><span class="token punctuation">(</span><span class="token string">"HumanoidRootPart"</span><span class="token punctuation">)</span> <span class="token punctuation">::</span> BasePart
+
+	<span class="token keyword">local</span> params <span class="token operator">=</span> OverlapParams<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	params<span class="token punctuation">.</span>FilterType <span class="token operator">=</span> Enum<span class="token punctuation">.</span>RaycastFilterType<span class="token punctuation">.</span>Exclude
+	params<span class="token punctuation">.</span>FilterDescendantsInstances <span class="token operator">=</span> <span class="token punctuation">{</span> character <span class="token punctuation">}</span>
+
+	<span class="token comment">-- A 4x4x4 block one stud in front of the character, welded to the root so it follows them</span>
+	<span class="token keyword">local</span> hitbox <span class="token operator">=</span> Hitbox<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span>
+		rootPart<span class="token punctuation">.</span>CFrame <span class="token operator">*</span> CFrame<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		Vector3<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		Enum<span class="token punctuation">.</span>PartType<span class="token punctuation">.</span>Block<span class="token punctuation">,</span>
+		params<span class="token punctuation">,</span>
+		workspace<span class="token punctuation">,</span>
+		<span class="token keyword">false</span><span class="token punctuation">,</span>
+		rootPart
+	<span class="token punctuation">)</span>
+
+	<span class="token comment">-- Scan every frame for half a second and damage each humanoid once</span>
+	<span class="token keyword">local</span> alreadyHit<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>Humanoid<span class="token punctuation">]</span><span class="token punctuation">:</span> boolean <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+	hitbox<span class="token punctuation">:</span><span class="token function">ScanHumanoids</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>humanoid<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> alreadyHit<span class="token punctuation">[</span>humanoid<span class="token punctuation">]</span> <span class="token keyword">then</span>
+			<span class="token keyword">return</span>
+		<span class="token keyword">end</span>
+		alreadyHit<span class="token punctuation">[</span>humanoid<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">true</span>
+		humanoid<span class="token punctuation">:</span><span class="token function">TakeDamage</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+	<span class="token keyword">end</span><span class="token punctuation">)</span>
+
+	task<span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		hitbox<span class="token punctuation">:</span><span class="token function">Destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">end</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Installation and guide: <a href="/library/docs/packages/hitbox">Hitbox package page</a>.</p>
+</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ConnectionLike"><code style="text-decoration:none">ConnectionLike</code><a href="#ConnectionLike" class="hash-link" aria-label="Direct link to ConnectionLike" title="Direct link to ConnectionLike" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L130"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>ConnectionLike<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>Connected<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether the connection is still active.</p>
+</span></span></div><div><code>Disconnect<!-- -->: </code><code class="purple_ieR2">(</code><code>self<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#ConnectionLike">ConnectionLike</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>Stops the scan this connection belongs to.</p>
+</span></span></div></div><code>}</code></div><div>
+<p>
+  The object returned by every <code>Scan*</code> method. It is the connection returned by the signal (or
+  internal Timer) that drives the scan; call <code>Disconnect</code> to stop scanning early. The hitbox's
+  Trove also disconnects it when the hitbox is destroyed.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SignalLike"><code style="text-decoration:none">SignalLike</code><a href="#SignalLike" class="hash-link" aria-label="Direct link to SignalLike" title="Direct link to SignalLike" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L145"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>SignalLike<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>Connect<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>self<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#SignalLike">SignalLike</a></code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>callback<!-- -->: </code><code class="green_DgR4">(</code><code class="blue_P4bS">...any</code><code class="green_DgR4">)</code><code class="green_DgR4"> → </code><code class="blue_P4bS">...any</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#ConnectionLike">ConnectionLike</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Connects a callback and returns its connection.</p>
+</span></span></div><div><code>Once<!-- -->: </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code>self<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#SignalLike">SignalLike</a></code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>callback<!-- -->: </code><code class="green_DgR4">(</code><code class="blue_P4bS">...any</code><code class="green_DgR4">)</code><code class="green_DgR4"> → </code><code class="blue_P4bS">...any</code></div><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#ConnectionLike">ConnectionLike</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Connects a callback that runs once.</p>
+</span></span></div></div><code>}</code></div><div>
+<p>
+  Anything with a <code>Connect</code> method can drive a scan: <code>RBXScriptSignal</code>s such as
+  <code>RunService.Heartbeat</code>, or custom signals like sleitnick's Signal. The arguments the signal
+  fires with are ignored; each firing simply triggers one check.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="PredicateFunc"><code style="text-decoration:none">PredicateFunc</code><a href="#PredicateFunc" class="hash-link" aria-label="Direct link to PredicateFunc" title="Direct link to PredicateFunc" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L157"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>PredicateFunc<!-- --> = </code> <code class="purple_ieR2">(</code><code>part<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">boolean</code></div><div>
+<p>
+  Filter applied to each overlapping part. Return <code>true</code> to keep the part. The predicate is
+  called inside <code>pcall</code>, so a part is also dropped if the predicate errors.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="DisconnectPredicateFunc"><code style="text-decoration:none">DisconnectPredicateFunc</code><a href="#DisconnectPredicateFunc" class="hash-link" aria-label="Direct link to DisconnectPredicateFunc" title="Direct link to DisconnectPredicateFunc" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L166"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>DisconnectPredicateFunc<!-- --> = </code> <code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">boolean</code></div><div>
+<p>
+  Called before every check of an event-driven scan. Return <code>true</code> to keep scanning; returning
+  <code>false</code> disconnects the scan instead of performing that check. <code>Scan</code> and <code>ScanHumanoids</code> use
+  one of these internally to stop after their duration.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="BasePartCallback"><code style="text-decoration:none">BasePartCallback</code><a href="#BasePartCallback" class="hash-link" aria-label="Direct link to BasePartCallback" title="Direct link to BasePartCallback" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L175"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>BasePartCallback<!-- --> = </code> <code class="purple_ieR2">(</code><code>part<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code></div><div>
+<p>
+  Receives one overlapping part. Called in its own thread (<code>task.spawn</code>) for every part found on
+  every check, so a part that stays inside the hitbox is reported once per check.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="HumanoidCallback"><code style="text-decoration:none">HumanoidCallback</code><a href="#HumanoidCallback" class="hash-link" aria-label="Direct link to HumanoidCallback" title="Direct link to HumanoidCallback" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L183"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>HumanoidCallback<!-- --> = </code> <code class="purple_ieR2">(</code><code>humanoid<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Humanoid" target="_blank" rel="noopener noreferrer">Humanoid<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code></div><div>
+<p>
+  Receives one living humanoid. Called in its own thread (<code>task.spawn</code>) for every humanoid found
+  on every check, so the same humanoid is reported repeatedly while it stays inside the hitbox.
+</p>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Trove"><code style="text-decoration:none">Trove</code><a href="#Trove" class="hash-link" aria-label="Direct link to Trove" title="Direct link to Trove" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L83"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.<!-- -->Trove<!-- -->:<!-- --> </code> <code class="blue_P4bS">Trove</code></div><div>
+<p>
+  The <a href="https://sleitnick.github.io/RbxUtil/api/Trove/">Trove</a> that owns everything the hitbox
+  creates: the hitbox part, the weld, scan timers and scan connections. <code>Destroy</code> destroys it.
+  You can add your own objects to it so they are cleaned up with the hitbox.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="HitboxPart"><code style="text-decoration:none">HitboxPart</code><a href="#HitboxPart" class="hash-link" aria-label="Direct link to HitboxPart" title="Direct link to HitboxPart" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L93"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.<!-- -->HitboxPart<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Part" target="_blank" rel="noopener noreferrer">Part<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  The physical part used for <code>Workspace:GetPartsInPart</code>. It is anchored (until welded), has
+  <code>CanCollide</code>, <code>CastShadow</code> off and <code>Massless</code> on. Move it with <code>CFrame</code>/<code>PivotTo</code> if you want to
+  reposition an unwelded hitbox. The Trove is attached to this instance, so destroying the part
+  destroys the hitbox.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="HitboxParams"><code style="text-decoration:none">HitboxParams</code><a href="#HitboxParams" class="hash-link" aria-label="Direct link to HitboxParams" title="Direct link to HitboxParams" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L100"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.<!-- -->HitboxParams<!-- -->:<!-- --> </code> <code class="blue_P4bS">OverlapParams</code></div><div>
+<p>
+  The <code>OverlapParams</code> passed to every <code>GetPartsInPart</code> call. Change its filter list at any time
+  to include or exclude instances from future checks.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Weld"><code style="text-decoration:none">Weld</code><a href="#Weld" class="hash-link" aria-label="Direct link to Weld" title="Direct link to Weld" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L108"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.<!-- -->Weld<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/WeldConstraint" target="_blank" rel="noopener noreferrer">WeldConstraint?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  The <code>WeldConstraint</code> created by <code>WeldTo</code>, or <code>nil</code> if the hitbox is not welded to anything.
+  It is parented to the part the hitbox was welded to.
+</p>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="new"><code style="text-decoration:none">new</code><a href="#new" class="hash-link" aria-label="Direct link to new" title="Direct link to new" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Constructor</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L289"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.</code><code class="green_DgR4">new</code><code>(</code><div class="inset_uKQm"><div><code>cframe<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/CFrame" target="_blank" rel="noopener noreferrer">CFrame<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>World position and rotation of the hitbox part.</p>
+</span></span></div><div><code>size<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector3" target="_blank" rel="noopener noreferrer">Vector3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Size of the hitbox part in studs.</p>
+</span></span></div><div><code>shape<!-- -->: </code><code class="blue_P4bS">Enum.PartType</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Shape of the hitbox part (<code>Block</code>, <code>Ball</code>, <code>Cylinder</code>, ...).</p>
+</span></span></div><div><code>hitboxParams<!-- -->: </code><code class="blue_P4bS">OverlapParams</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Filter used for every <code>GetPartsInPart</code> query; stored as <code>HitboxParams</code>.</p>
+</span></span></div><div><code>parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Where to parent the hitbox part; defaults to <code>game</code>.</p>
+</span></span></div><div><code>visible<!-- -->: </code><code class="blue_P4bS">boolean?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Show the part as red and half transparent instead of invisible.</p>
+</span></span></div><div><code>weldTo<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>If given, the hitbox part is welded to this part right away.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/">Hitbox</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The new hitbox.</p>
+</span></span></div><div>
+<p>Creates a hitbox by building a new part from a position, size and shape.</p>
+<p>
+  The part is anchored, non-colliding, massless and casts no shadow. When <code>visible</code> is true it is
+  drawn as a red, half-transparent part (handy while tuning a hitbox); otherwise it is fully
+  invisible. When <code>weldTo</code> is given, <code>WeldTo</code> is called immediately so the hitbox part follows
+  that part and keeps the offset described by <code>cframe</code>.
+</p>
+
+  
+    
+    
+      <div class="admonition admonition-caution alert alert--warning">
+        <div class="admonition-heading">
+          <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+              </svg></span><span class="admonition-title">CAUTION</span></h5>
+        </div>
+        <div class="admonition-content">
+          <p>
+            <code>parent</code> defaults to <code>game</code> (the DataModel) when omitted. Pass <code>workspace</code> or a folder inside
+            it so the part is actually in the world.
+          </p>
+        </div>
+      </div>
+    
+  
+
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;CFrame must be a CFrame&quot;</td><td>`cframe` is not a CFrame.</td></tr><tr><td>&quot;Size must be a Vector3&quot;</td><td>`size` is not a Vector3.</td></tr><tr><td>&quot;Shape must be an Enum.PartType item&quot;</td><td>`shape` is not an EnumItem.</td></tr><tr><td>&quot;HitboxParams must be an OverlapParams&quot;</td><td>`hitboxParams` is not an OverlapParams.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fromPart"><code style="text-decoration:none">fromPart</code><a href="#fromPart" class="hash-link" aria-label="Direct link to fromPart" title="Direct link to fromPart" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Constructor</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L340"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.</code><code class="green_DgR4">fromPart</code><code>(</code><div class="inset_uKQm"><div><code>part<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Part whose position, size and shape are copied.</p>
+</span></span></div><div><code>hitboxParams<!-- -->: </code><code class="blue_P4bS">OverlapParams</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Filter used for every <code>GetPartsInPart</code> query.</p>
+</span></span></div><div><code>parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Where to parent the hitbox part; defaults to <code>game</code>.</p>
+</span></span></div><div><code>visible<!-- -->: </code><code class="blue_P4bS">boolean?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Show the part as red and half transparent instead of invisible.</p>
+</span></span></div><div><code>weldTo<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>If given, the hitbox part is welded to this part right away.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/">Hitbox</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The new hitbox.</p>
+</span></span></div><div>
+<p>
+  Creates a hitbox that copies the <code>CFrame</code>, <code>Size</code> and shape of an existing part. The shape is
+  only copied when <code>part</code> is a <code>Part</code>; other <code>BasePart</code>s (meshes, unions, wedges) produce a
+  <code>Block</code>. The original part is left untouched; use <code>convert</code> if you want it removed.
+</p>
+<p>The <code>parent</code>, <code>visible</code> and <code>weldTo</code> arguments behave exactly as in <code>new</code>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fromModel"><code style="text-decoration:none">fromModel</code><a href="#fromModel" class="hash-link" aria-label="Direct link to fromModel" title="Direct link to fromModel" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Constructor</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L362"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.</code><code class="green_DgR4">fromModel</code><code>(</code><div class="inset_uKQm"><div><code>model<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Model" target="_blank" rel="noopener noreferrer">Model<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Model whose bounding box defines the hitbox.</p>
+</span></span></div><div><code>hitboxParams<!-- -->: </code><code class="blue_P4bS">OverlapParams</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Filter used for every <code>GetPartsInPart</code> query.</p>
+</span></span></div><div><code>parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Where to parent the hitbox part; defaults to <code>game</code>.</p>
+</span></span></div><div><code>visible<!-- -->: </code><code class="blue_P4bS">boolean?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Show the part as red and half transparent instead of invisible.</p>
+</span></span></div><div><code>weldTo<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>If given, the hitbox part is welded to this part right away.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/">Hitbox</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The new hitbox.</p>
+</span></span></div><div>
+<p>
+  Creates a <code>Block</code> hitbox that covers a model's bounding box, using <code>Model:GetBoundingBox()</code>
+  for the CFrame and <code>Model:GetExtentsSize()</code> for the size. The model itself is left untouched;
+  use <code>convert</code> if you want it removed.
+</p>
+<p>The <code>parent</code>, <code>visible</code> and <code>weldTo</code> arguments behave exactly as in <code>new</code>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="convert"><code style="text-decoration:none">convert</code><a href="#convert" class="hash-link" aria-label="Direct link to convert" title="Direct link to convert" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#ff793f;color:#ff793f">Constructor</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L387"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->.</code><code class="green_DgR4">convert</code><code>(</code><div class="inset_uKQm"><div><code>instanceToConvert<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Model" target="_blank" rel="noopener noreferrer">Model<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc"> | </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The part or model to turn into a hitbox; it is destroyed afterwards.</p>
+</span></span></div><div><code>hitboxParams<!-- -->: </code><code class="blue_P4bS">OverlapParams</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Filter used for every <code>GetPartsInPart</code> query.</p>
+</span></span></div><div><code>parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Where to parent the hitbox part; defaults to <code>game</code>.</p>
+</span></span></div><div><code>visible<!-- -->: </code><code class="blue_P4bS">boolean?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Show the part as red and half transparent instead of invisible.</p>
+</span></span></div><div><code>weldTo<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>If given, the hitbox part is welded to this part right away.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/">Hitbox</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The new hitbox.</p>
+</span></span></div><div>
+<p>
+  Replaces a placeholder part or model with a hitbox. Behaves like <code>fromPart</code> for a <code>BasePart</code>
+  and <code>fromModel</code> for a <code>Model</code>, then <strong>destroys the original instance</strong>. Useful when you lay
+  out hitbox volumes in Studio and want them swapped for real hitboxes at runtime.
+</p>
+<p>The <code>parent</code>, <code>visible</code> and <code>weldTo</code> arguments behave exactly as in <code>new</code>.</p>
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Unable to convert class ...&quot;</td><td>`instanceToConvert` is neither a `BasePart` nor a `Model`.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Check"><code style="text-decoration:none">Check</code><a href="#Check" class="hash-link" aria-label="Direct link to Check" title="Direct link to Check" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L422"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">Check</code><code>(</code><div class="inset_uKQm"><div><code>predicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#PredicateFunc">PredicateFunc?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Optional filter; return <code>true</code> to keep a part.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>The parts currently inside the hitbox that passed the filter.</p>
+</span></span></div><div>
+<p>
+  Performs one <code>Workspace:GetPartsInPart(HitboxPart, HitboxParams)</code> query and returns the
+  overlapping parts. When a <code>predicate</code> is given, only parts it returns <code>true</code> for are kept; the
+  predicate is wrapped in <code>pcall</code>, so a part is also dropped if the predicate errors.
+</p>
+<p>
+  This is the raw building block. Use <code>CheckHumanoids</code> when you care about characters rather
+  than individual parts, and the <code>Scan*</code> methods to run checks repeatedly.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> parts <span class="token operator">=</span> hitbox<span class="token punctuation">:</span><span class="token function">Check</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>part<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> part<span class="token punctuation">:</span><span class="token function">HasTag</span><span class="token punctuation">(</span><span class="token string">"Breakable"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="CheckHumanoids"><code style="text-decoration:none">CheckHumanoids</code><a href="#CheckHumanoids" class="hash-link" aria-label="Direct link to CheckHumanoids" title="Direct link to CheckHumanoids" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L452"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">CheckHumanoids</code><code>(</code><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/Humanoid" target="_blank" rel="noopener noreferrer">Humanoid<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>Living humanoids whose character parts are inside the hitbox.</p>
+</span></span></div><div>
+<p>
+  Performs one check and resolves the overlapping parts to living humanoids. For each part found
+  by <code>Check</code>, the nearest <code>Model</code> ancestor is looked up and the first <code>Humanoid</code> descendant of
+  that model with <code>Health > 0</code> is collected. Dead humanoids and parts that are not inside a model
+  with a humanoid are ignored.
+</p>
+
+  
+    
+    
+      <div class="admonition admonition-caution alert alert--warning">
+        <div class="admonition-heading">
+          <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+              </svg></span><span class="admonition-title">CAUTION</span></h5>
+        </div>
+        <div class="admonition-content">
+          <p>
+            The list is not de-duplicated: a character with several parts inside the hitbox appears once
+            per part. Track humanoids you have already handled if you need one hit per character.
+          </p>
+        </div>
+      </div>
+    
+  
+
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ScanWithEvent"><code style="text-decoration:none">ScanWithEvent</code><a href="#ScanWithEvent" class="hash-link" aria-label="Direct link to ScanWithEvent" title="Direct link to ScanWithEvent" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L504"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">ScanWithEvent</code><code>(</code><div class="inset_uKQm"><div><code>interval<!-- -->: </code><code class="blue_P4bS">number</code><code class="op_lSLc"> | </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#SignalLike">SignalLike</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Seconds between checks, or a signal whose firings trigger checks.</p>
+</span></span></div><div><code>callback<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#BasePartCallback">BasePartCallback</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Called with each part found on each check.</p>
+</span></span></div><div><code>predicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#PredicateFunc">PredicateFunc?</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Optional filter passed to <code>Check</code>.</p>
+</span></span></div><div><code>disconnectPredicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#DisconnectPredicateFunc">DisconnectPredicateFunc?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Return <code>false</code> to stop the scan before the next check.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#ConnectionLike">ConnectionLike</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Connection driving the scan; <code>Disconnect</code> it to stop early.</p>
+</span></span></div><div>
+<p>
+  Repeatedly runs <code>Check(predicate)</code> and calls <code>callback</code> for every part found, driven either by
+  a fixed interval or by a signal:
+</p>
+<ul>
+  <li>
+    If <code>interval</code> is a <strong>number</strong>, a <a href="https://sleitnick.github.io/RbxUtil/api/Timer/">Timer</a> is
+    constructed inside the hitbox's Trove with that many seconds between ticks, started, and its
+    <code>Tick</code> signal drives the checks.
+  </li>
+  <li>
+    If <code>interval</code> is a <strong>signal</strong> (<code>RunService.Heartbeat</code>, a custom Signal, ...), one check runs
+    every time the signal fires. The signal's arguments are ignored.
+  </li>
+</ul>
+<p>
+  Before each check <code>disconnectPredicate</code> is called (if given); when it returns <code>false</code> the scan
+  disconnects itself instead of checking. <code>Scan</code> uses this to stop after a duration. Without a
+  disconnect predicate the scan runs until you call <code>Disconnect</code> on the returned connection or
+  destroy the hitbox.
+</p>
+<p>
+  Each callback is spawned in its own thread, and a part that stays inside the hitbox is reported
+  on every check, so de-duplicate in the callback if you only want to react once per part.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- Scan every 0.1s while the ability is active</span>
+<span class="token keyword">local</span> connection <span class="token operator">=</span> hitbox<span class="token punctuation">:</span><span class="token function">ScanWithEvent</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>part<span class="token punctuation">)</span>
+	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Touching"</span><span class="token punctuation">,</span> part<span class="token punctuation">:</span><span class="token function">GetFullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">,</span> <span class="token keyword">nil</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> ability<span class="token punctuation">.</span>Active
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Scan"><code style="text-decoration:none">Scan</code><a href="#Scan" class="hash-link" aria-label="Direct link to Scan" title="Direct link to Scan" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L544"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">Scan</code><code>(</code><div class="inset_uKQm"><div><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>How many seconds to keep scanning.</p>
+</span></span></div><div><code>callback<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#BasePartCallback">BasePartCallback</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Called with each part found on each frame.</p>
+</span></span></div><div><code>predicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#PredicateFunc">PredicateFunc?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Optional filter passed to <code>Check</code>.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#ConnectionLike">ConnectionLike</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Connection driving the scan; <code>Disconnect</code> it to stop early.</p>
+</span></span></div><div>
+<p>
+  Scans for parts on every <code>RunService.Heartbeat</code> for <code>duration</code> seconds, then stops on its own.
+  This is <code>ScanWithEvent(RunService.Heartbeat, callback, predicate, ...)</code> with a disconnect
+  predicate that compares <code>os.clock()</code> against the start time. The callback runs for every part
+  on every frame it is inside the hitbox.
+</p>
+<p>
+  Returns immediately; the scan happens in the background. Use <code>ScanWithEvent</code> if you need a
+  slower interval or a different signal.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ScanHumanoidsWithEvent"><code style="text-decoration:none">ScanHumanoidsWithEvent</code><a href="#ScanHumanoidsWithEvent" class="hash-link" aria-label="Direct link to ScanHumanoidsWithEvent" title="Direct link to ScanHumanoidsWithEvent" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L566"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">ScanHumanoidsWithEvent</code><code>(</code><div class="inset_uKQm"><div><code>interval<!-- -->: </code><code class="blue_P4bS">number</code><code class="op_lSLc"> | </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#SignalLike">SignalLike</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Seconds between checks, or a signal whose firings trigger checks.</p>
+</span></span></div><div><code>callback<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#HumanoidCallback">HumanoidCallback</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Called with each living humanoid found on each check.</p>
+</span></span></div><div><code>disconnectPredicate<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#DisconnectPredicateFunc">DisconnectPredicateFunc?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Return <code>false</code> to stop the scan before the next check.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#ConnectionLike">ConnectionLike</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Connection driving the scan; <code>Disconnect</code> it to stop early.</p>
+</span></span></div><div>
+<p>
+  Humanoid version of <code>ScanWithEvent</code>: repeatedly runs <code>CheckHumanoids</code> and calls <code>callback</code> for
+  every living humanoid found. <code>interval</code> is either a number of seconds (an internal Timer is
+  created and started in the Trove) or a signal that triggers a check each time it fires.
+  <code>disconnectPredicate</code> is called before each check and stops the scan when it returns <code>false</code>.
+</p>
+<p>
+  Each callback is spawned in its own thread. Because <code>CheckHumanoids</code> does not de-duplicate,
+  the same humanoid can be reported several times per check and again on every following check
+  while it stays inside the hitbox.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ScanHumanoids"><code style="text-decoration:none">ScanHumanoids</code><a href="#ScanHumanoids" class="hash-link" aria-label="Direct link to ScanHumanoids" title="Direct link to ScanHumanoids" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L611"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">ScanHumanoids</code><code>(</code><div class="inset_uKQm"><div><code>duration<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>How many seconds to keep scanning.</p>
+</span></span></div><div><code>callback<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#HumanoidCallback">HumanoidCallback</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Called with each living humanoid found on each frame.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Hitbox/#ConnectionLike">ConnectionLike</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Connection driving the scan; <code>Disconnect</code> it to stop early.</p>
+</span></span></div><div>
+<p>
+  Scans for living humanoids on every <code>RunService.Heartbeat</code> for <code>duration</code> seconds, then stops
+  on its own. Equivalent to <code>ScanHumanoidsWithEvent(RunService.Heartbeat, callback, ...)</code> with a
+  time-based disconnect predicate. Returns immediately; the scan runs in the background.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> hit <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+hitbox<span class="token punctuation">:</span><span class="token function">ScanHumanoids</span><span class="token punctuation">(</span><span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>humanoid<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> <span class="token keyword">not</span> hit<span class="token punctuation">[</span>humanoid<span class="token punctuation">]</span> <span class="token keyword">then</span>
+		hit<span class="token punctuation">[</span>humanoid<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">true</span>
+		humanoid<span class="token punctuation">:</span><span class="token function">TakeDamage</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
+	<span class="token keyword">end</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="WeldTo"><code style="text-decoration:none">WeldTo</code><a href="#WeldTo" class="hash-link" aria-label="Direct link to WeldTo" title="Direct link to WeldTo" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L629"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">WeldTo</code><code>(</code><div class="inset_uKQm"><div><code>part<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The part the hitbox should follow (becomes <code>Part0</code> of the weld).</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>
+  Attaches the hitbox part to <code>part</code> with a <code>WeldConstraint</code> so it moves with it, keeping the
+  current relative offset between the two. The hitbox part is unanchored, and the constraint is
+  parented to <code>part</code> (named after the hitbox part) and stored in <code>Weld</code>. Any previous weld is
+  destroyed first, so calling this again re-parents the hitbox to a different part.
+</p>
+<p>
+  The weld is added to the Trove and removed when the hitbox is destroyed. Position the hitbox
+  part where you want it relative to <code>part</code> <strong>before</strong> welding.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Hitbox/init.luau#L650"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Hitbox<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>
+  Destroys the hitbox: the Trove is destroyed, which removes the hitbox part and weld, stops any
+  running scan timers and disconnects every scan connection. Always call this (or destroy
+  <code>HitboxPart</code>, which has the same effect) when you are done, otherwise the part and its scans
+  keep running.
+</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;new&quot;,
+            &quot;desc&quot;: &quot;Creates a hitbox by building a new part from a position, size and shape.\n\nThe part is anchored, non-colliding, massless and casts no shadow. When `visible` is true it is\ndrawn as a red, half-transparent part (handy while tuning a hitbox); otherwise it is fully\ninvisible. When `weldTo` is given, `WeldTo` is called immediately so the hitbox part follows\nthat part and keeps the offset described by `cframe`.\n\n:::caution\n`parent` defaults to `game` (the DataModel) when omitted. Pass `workspace` or a folder inside\nit so the part is actually in the world.\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;cframe&quot;,
+                    &quot;desc&quot;: &quot;World position and rotation of the hitbox part.&quot;,
+                    &quot;lua_type&quot;: &quot;CFrame&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;size&quot;,
+                    &quot;desc&quot;: &quot;Size of the hitbox part in studs.&quot;,
+                    &quot;lua_type&quot;: &quot;Vector3&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;shape&quot;,
+                    &quot;desc&quot;: &quot;Shape of the hitbox part (`Block`, `Ball`, `Cylinder`, ...).&quot;,
+                    &quot;lua_type&quot;: &quot;Enum.PartType&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;hitboxParams&quot;,
+                    &quot;desc&quot;: &quot;Filter used for every `GetPartsInPart` query; stored as `HitboxParams`.&quot;,
+                    &quot;lua_type&quot;: &quot;OverlapParams&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;parent&quot;,
+                    &quot;desc&quot;: &quot;Where to parent the hitbox part; defaults to `game`.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;visible&quot;,
+                    &quot;desc&quot;: &quot;Show the part as red and half transparent instead of invisible.&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;weldTo&quot;,
+                    &quot;desc&quot;: &quot;If given, the hitbox part is welded to this part right away.&quot;,
+                    &quot;lua_type&quot;: &quot;BasePart?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The new hitbox.&quot;,
+                    &quot;lua_type&quot;: &quot;Hitbox&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Constructor&quot;
+            ],
+            &quot;errors&quot;: [
+                {
+                    &quot;lua_type&quot;: &quot;\&quot;CFrame must be a CFrame\&quot;&quot;,
+                    &quot;desc&quot;: &quot;`cframe` is not a CFrame.&quot;
+                },
+                {
+                    &quot;lua_type&quot;: &quot;\&quot;Size must be a Vector3\&quot;&quot;,
+                    &quot;desc&quot;: &quot;`size` is not a Vector3.&quot;
+                },
+                {
+                    &quot;lua_type&quot;: &quot;\&quot;Shape must be an Enum.PartType item\&quot;&quot;,
+                    &quot;desc&quot;: &quot;`shape` is not an EnumItem.&quot;
+                },
+                {
+                    &quot;lua_type&quot;: &quot;\&quot;HitboxParams must be an OverlapParams\&quot;&quot;,
+                    &quot;desc&quot;: &quot;`hitboxParams` is not an OverlapParams.&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 289,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;fromPart&quot;,
+            &quot;desc&quot;: &quot;Creates a hitbox that copies the `CFrame`, `Size` and shape of an existing part. The shape is\nonly copied when `part` is a `Part`; other `BasePart`s (meshes, unions, wedges) produce a\n`Block`. The original part is left untouched; use `convert` if you want it removed.\n\nThe `parent`, `visible` and `weldTo` arguments behave exactly as in `new`.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;part&quot;,
+                    &quot;desc&quot;: &quot;Part whose position, size and shape are copied.&quot;,
+                    &quot;lua_type&quot;: &quot;BasePart&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;hitboxParams&quot;,
+                    &quot;desc&quot;: &quot;Filter used for every `GetPartsInPart` query.&quot;,
+                    &quot;lua_type&quot;: &quot;OverlapParams&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;parent&quot;,
+                    &quot;desc&quot;: &quot;Where to parent the hitbox part; defaults to `game`.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;visible&quot;,
+                    &quot;desc&quot;: &quot;Show the part as red and half transparent instead of invisible.&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;weldTo&quot;,
+                    &quot;desc&quot;: &quot;If given, the hitbox part is welded to this part right away.&quot;,
+                    &quot;lua_type&quot;: &quot;BasePart?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The new hitbox.&quot;,
+                    &quot;lua_type&quot;: &quot;Hitbox&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Constructor&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 340,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;fromModel&quot;,
+            &quot;desc&quot;: &quot;Creates a `Block` hitbox that covers a model&#x27;s bounding box, using `Model:GetBoundingBox()`\nfor the CFrame and `Model:GetExtentsSize()` for the size. The model itself is left untouched;\nuse `convert` if you want it removed.\n\nThe `parent`, `visible` and `weldTo` arguments behave exactly as in `new`.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;model&quot;,
+                    &quot;desc&quot;: &quot;Model whose bounding box defines the hitbox.&quot;,
+                    &quot;lua_type&quot;: &quot;Model&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;hitboxParams&quot;,
+                    &quot;desc&quot;: &quot;Filter used for every `GetPartsInPart` query.&quot;,
+                    &quot;lua_type&quot;: &quot;OverlapParams&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;parent&quot;,
+                    &quot;desc&quot;: &quot;Where to parent the hitbox part; defaults to `game`.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;visible&quot;,
+                    &quot;desc&quot;: &quot;Show the part as red and half transparent instead of invisible.&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;weldTo&quot;,
+                    &quot;desc&quot;: &quot;If given, the hitbox part is welded to this part right away.&quot;,
+                    &quot;lua_type&quot;: &quot;BasePart?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The new hitbox.&quot;,
+                    &quot;lua_type&quot;: &quot;Hitbox&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Constructor&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 362,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;convert&quot;,
+            &quot;desc&quot;: &quot;Replaces a placeholder part or model with a hitbox. Behaves like `fromPart` for a `BasePart`\nand `fromModel` for a `Model`, then **destroys the original instance**. Useful when you lay\nout hitbox volumes in Studio and want them swapped for real hitboxes at runtime.\n\nThe `parent`, `visible` and `weldTo` arguments behave exactly as in `new`.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;instanceToConvert&quot;,
+                    &quot;desc&quot;: &quot;The part or model to turn into a hitbox; it is destroyed afterwards.&quot;,
+                    &quot;lua_type&quot;: &quot;Model | BasePart&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;hitboxParams&quot;,
+                    &quot;desc&quot;: &quot;Filter used for every `GetPartsInPart` query.&quot;,
+                    &quot;lua_type&quot;: &quot;OverlapParams&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;parent&quot;,
+                    &quot;desc&quot;: &quot;Where to parent the hitbox part; defaults to `game`.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;visible&quot;,
+                    &quot;desc&quot;: &quot;Show the part as red and half transparent instead of invisible.&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;weldTo&quot;,
+                    &quot;desc&quot;: &quot;If given, the hitbox part is welded to this part right away.&quot;,
+                    &quot;lua_type&quot;: &quot;BasePart?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The new hitbox.&quot;,
+                    &quot;lua_type&quot;: &quot;Hitbox&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Constructor&quot;
+            ],
+            &quot;errors&quot;: [
+                {
+                    &quot;lua_type&quot;: &quot;\&quot;Unable to convert class ...\&quot;&quot;,
+                    &quot;desc&quot;: &quot;`instanceToConvert` is neither a `BasePart` nor a `Model`.&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 387,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Check&quot;,
+            &quot;desc&quot;: &quot;Performs one `Workspace:GetPartsInPart(HitboxPart, HitboxParams)` query and returns the\noverlapping parts. When a `predicate` is given, only parts it returns `true` for are kept; the\npredicate is wrapped in `pcall`, so a part is also dropped if the predicate errors.\n\nThis is the raw building block. Use `CheckHumanoids` when you care about characters rather\nthan individual parts, and the `Scan*` methods to run checks repeatedly.\n\n```lua\nlocal parts = hitbox:Check(function(part)\n\treturn part:HasTag(\&quot;Breakable\&quot;)\nend)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;predicate&quot;,
+                    &quot;desc&quot;: &quot;Optional filter; return `true` to keep a part.&quot;,
+                    &quot;lua_type&quot;: &quot;PredicateFunc?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;The parts currently inside the hitbox that passed the filter.&quot;,
+                    &quot;lua_type&quot;: &quot;{ BasePart }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 422,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;CheckHumanoids&quot;,
+            &quot;desc&quot;: &quot;Performs one check and resolves the overlapping parts to living humanoids. For each part found\nby `Check`, the nearest `Model` ancestor is looked up and the first `Humanoid` descendant of\nthat model with `Health &gt; 0` is collected. Dead humanoids and parts that are not inside a model\nwith a humanoid are ignored.\n\n:::caution\nThe list is not de-duplicated: a character with several parts inside the hitbox appears once\nper part. Track humanoids you have already handled if you need one hit per character.\n:::&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Living humanoids whose character parts are inside the hitbox.&quot;,
+                    &quot;lua_type&quot;: &quot;{ Humanoid }&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 452,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ScanWithEvent&quot;,
+            &quot;desc&quot;: &quot;Repeatedly runs `Check(predicate)` and calls `callback` for every part found, driven either by\na fixed interval or by a signal:\n\n- If `interval` is a **number**, a [Timer](https://sleitnick.github.io/RbxUtil/api/Timer/) is\n  constructed inside the hitbox&#x27;s Trove with that many seconds between ticks, started, and its\n  `Tick` signal drives the checks.\n- If `interval` is a **signal** (`RunService.Heartbeat`, a custom Signal, ...), one check runs\n  every time the signal fires. The signal&#x27;s arguments are ignored.\n\nBefore each check `disconnectPredicate` is called (if given); when it returns `false` the scan\ndisconnects itself instead of checking. `Scan` uses this to stop after a duration. Without a\ndisconnect predicate the scan runs until you call `Disconnect` on the returned connection or\ndestroy the hitbox.\n\nEach callback is spawned in its own thread, and a part that stays inside the hitbox is reported\non every check, so de-duplicate in the callback if you only want to react once per part.\n\n```lua\n-- Scan every 0.1s while the ability is active\nlocal connection = hitbox:ScanWithEvent(0.1, function(part)\n\tprint(\&quot;Touching\&quot;, part:GetFullName())\nend, nil, function()\n\treturn ability.Active\nend)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;interval&quot;,
+                    &quot;desc&quot;: &quot;Seconds between checks, or a signal whose firings trigger checks.&quot;,
+                    &quot;lua_type&quot;: &quot;number | SignalLike&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;Called with each part found on each check.&quot;,
+                    &quot;lua_type&quot;: &quot;BasePartCallback&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;predicate&quot;,
+                    &quot;desc&quot;: &quot;Optional filter passed to `Check`.&quot;,
+                    &quot;lua_type&quot;: &quot;PredicateFunc?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;disconnectPredicate&quot;,
+                    &quot;desc&quot;: &quot;Return `false` to stop the scan before the next check.&quot;,
+                    &quot;lua_type&quot;: &quot;DisconnectPredicateFunc?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Connection driving the scan; `Disconnect` it to stop early.&quot;,
+                    &quot;lua_type&quot;: &quot;ConnectionLike&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 504,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Scan&quot;,
+            &quot;desc&quot;: &quot;Scans for parts on every `RunService.Heartbeat` for `duration` seconds, then stops on its own.\nThis is `ScanWithEvent(RunService.Heartbeat, callback, predicate, ...)` with a disconnect\npredicate that compares `os.clock()` against the start time. The callback runs for every part\non every frame it is inside the hitbox.\n\nReturns immediately; the scan happens in the background. Use `ScanWithEvent` if you need a\nslower interval or a different signal.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;duration&quot;,
+                    &quot;desc&quot;: &quot;How many seconds to keep scanning.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;Called with each part found on each frame.&quot;,
+                    &quot;lua_type&quot;: &quot;BasePartCallback&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;predicate&quot;,
+                    &quot;desc&quot;: &quot;Optional filter passed to `Check`.&quot;,
+                    &quot;lua_type&quot;: &quot;PredicateFunc?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Connection driving the scan; `Disconnect` it to stop early.&quot;,
+                    &quot;lua_type&quot;: &quot;ConnectionLike&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 544,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ScanHumanoidsWithEvent&quot;,
+            &quot;desc&quot;: &quot;Humanoid version of `ScanWithEvent`: repeatedly runs `CheckHumanoids` and calls `callback` for\nevery living humanoid found. `interval` is either a number of seconds (an internal Timer is\ncreated and started in the Trove) or a signal that triggers a check each time it fires.\n`disconnectPredicate` is called before each check and stops the scan when it returns `false`.\n\nEach callback is spawned in its own thread. Because `CheckHumanoids` does not de-duplicate,\nthe same humanoid can be reported several times per check and again on every following check\nwhile it stays inside the hitbox.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;interval&quot;,
+                    &quot;desc&quot;: &quot;Seconds between checks, or a signal whose firings trigger checks.&quot;,
+                    &quot;lua_type&quot;: &quot;number | SignalLike&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;Called with each living humanoid found on each check.&quot;,
+                    &quot;lua_type&quot;: &quot;HumanoidCallback&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;disconnectPredicate&quot;,
+                    &quot;desc&quot;: &quot;Return `false` to stop the scan before the next check.&quot;,
+                    &quot;lua_type&quot;: &quot;DisconnectPredicateFunc?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Connection driving the scan; `Disconnect` it to stop early.&quot;,
+                    &quot;lua_type&quot;: &quot;ConnectionLike&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 566,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ScanHumanoids&quot;,
+            &quot;desc&quot;: &quot;Scans for living humanoids on every `RunService.Heartbeat` for `duration` seconds, then stops\non its own. Equivalent to `ScanHumanoidsWithEvent(RunService.Heartbeat, callback, ...)` with a\ntime-based disconnect predicate. Returns immediately; the scan runs in the background.\n\n```lua\nlocal hit = {}\nhitbox:ScanHumanoids(0.4, function(humanoid)\n\tif not hit[humanoid] then\n\t\thit[humanoid] = true\n\t\thumanoid:TakeDamage(25)\n\tend\nend)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;duration&quot;,
+                    &quot;desc&quot;: &quot;How many seconds to keep scanning.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;Called with each living humanoid found on each frame.&quot;,
+                    &quot;lua_type&quot;: &quot;HumanoidCallback&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Connection driving the scan; `Disconnect` it to stop early.&quot;,
+                    &quot;lua_type&quot;: &quot;ConnectionLike&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 611,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;WeldTo&quot;,
+            &quot;desc&quot;: &quot;Attaches the hitbox part to `part` with a `WeldConstraint` so it moves with it, keeping the\ncurrent relative offset between the two. The hitbox part is unanchored, and the constraint is\nparented to `part` (named after the hitbox part) and stored in `Weld`. Any previous weld is\ndestroyed first, so calling this again re-parents the hitbox to a different part.\n\nThe weld is added to the Trove and removed when the hitbox is destroyed. Position the hitbox\npart where you want it relative to `part` **before** welding.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;part&quot;,
+                    &quot;desc&quot;: &quot;The part the hitbox should follow (becomes `Part0` of the weld).&quot;,
+                    &quot;lua_type&quot;: &quot;BasePart&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 629,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Destroy&quot;,
+            &quot;desc&quot;: &quot;Destroys the hitbox: the Trove is destroyed, which removes the hitbox part and weld, stops any\nrunning scan timers and disconnects every scan connection. Always call this (or destroy\n`HitboxPart`, which has the same effect) when you are done, otherwise the part and its scans\nkeep running.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 650,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [
+        {
+            &quot;name&quot;: &quot;Trove&quot;,
+            &quot;desc&quot;: &quot;The [Trove](https://sleitnick.github.io/RbxUtil/api/Trove/) that owns everything the hitbox\ncreates: the hitbox part, the weld, scan timers and scan connections. `Destroy` destroys it.\nYou can add your own objects to it so they are cleaned up with the hitbox.&quot;,
+            &quot;lua_type&quot;: &quot;Trove&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 83,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;HitboxPart&quot;,
+            &quot;desc&quot;: &quot;The physical part used for `Workspace:GetPartsInPart`. It is anchored (until welded), has\n`CanCollide`, `CastShadow` off and `Massless` on. Move it with `CFrame`/`PivotTo` if you want to\nreposition an unwelded hitbox. The Trove is attached to this instance, so destroying the part\ndestroys the hitbox.&quot;,
+            &quot;lua_type&quot;: &quot;Part&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 93,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;HitboxParams&quot;,
+            &quot;desc&quot;: &quot;The `OverlapParams` passed to every `GetPartsInPart` call. Change its filter list at any time\nto include or exclude instances from future checks.&quot;,
+            &quot;lua_type&quot;: &quot;OverlapParams&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 100,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Weld&quot;,
+            &quot;desc&quot;: &quot;The `WeldConstraint` created by `WeldTo`, or `nil` if the hitbox is not welded to anything.\nIt is parented to the part the hitbox was welded to.&quot;,
+            &quot;lua_type&quot;: &quot;WeldConstraint?&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 108,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        }
+    ],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;ConnectionLike&quot;,
+            &quot;desc&quot;: &quot;The object returned by every `Scan*` method. It is the connection returned by the signal (or\ninternal Timer) that drives the scan; call `Disconnect` to stop scanning early. The hitbox&#x27;s\nTrove also disconnects it when the hitbox is destroyed.&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;Connected&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;,
+                    &quot;desc&quot;: &quot;Whether the connection is still active.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Disconnect&quot;,
+                    &quot;lua_type&quot;: &quot;(self: ConnectionLike) -&gt; ()&quot;,
+                    &quot;desc&quot;: &quot;Stops the scan this connection belongs to.&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 130,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;SignalLike&quot;,
+            &quot;desc&quot;: &quot;Anything with a `Connect` method can drive a scan: `RBXScriptSignal`s such as\n`RunService.Heartbeat`, or custom signals like sleitnick&#x27;s Signal. The arguments the signal\nfires with are ignored; each firing simply triggers one check.&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;Connect&quot;,
+                    &quot;lua_type&quot;: &quot;(self: SignalLike, callback: (...any) -&gt; ...any) -&gt; ConnectionLike&quot;,
+                    &quot;desc&quot;: &quot;Connects a callback and returns its connection.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Once&quot;,
+                    &quot;lua_type&quot;: &quot;(self: SignalLike, callback: (...any) -&gt; ...any) -&gt; ConnectionLike&quot;,
+                    &quot;desc&quot;: &quot;Connects a callback that runs once.&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 145,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;PredicateFunc&quot;,
+            &quot;desc&quot;: &quot;Filter applied to each overlapping part. Return `true` to keep the part. The predicate is\ncalled inside `pcall`, so a part is also dropped if the predicate errors.&quot;,
+            &quot;lua_type&quot;: &quot;(part: BasePart) -&gt; boolean&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 157,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;DisconnectPredicateFunc&quot;,
+            &quot;desc&quot;: &quot;Called before every check of an event-driven scan. Return `true` to keep scanning; returning\n`false` disconnects the scan instead of performing that check. `Scan` and `ScanHumanoids` use\none of these internally to stop after their duration.&quot;,
+            &quot;lua_type&quot;: &quot;() -&gt; boolean&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 166,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;BasePartCallback&quot;,
+            &quot;desc&quot;: &quot;Receives one overlapping part. Called in its own thread (`task.spawn`) for every part found on\nevery check, so a part that stays inside the hitbox is reported once per check.&quot;,
+            &quot;lua_type&quot;: &quot;(part: BasePart) -&gt; ()&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 175,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;HumanoidCallback&quot;,
+            &quot;desc&quot;: &quot;Receives one living humanoid. Called in its own thread (`task.spawn`) for every humanoid found\non every check, so the same humanoid is reported repeatedly while it stays inside the hitbox.&quot;,
+            &quot;lua_type&quot;: &quot;(humanoid: Humanoid) -&gt; ()&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 183,
+                &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+            }
+        }
+    ],
+    &quot;name&quot;: &quot;Hitbox&quot;,
+    &quot;desc&quot;: &quot;Hitbox wraps an invisible, non-colliding `Part` and uses `Workspace:GetPartsInPart` to find\nwhat is overlapping it. Use it for melee swings, area-of-effect abilities, trigger zones or\nanything else where you want to know which parts or humanoids are inside a volume right now,\nor for a period of time.\n\nA Hitbox can be queried once (`Check`, `CheckHumanoids`), scanned for a fixed duration on\n`Heartbeat` (`Scan`, `ScanHumanoids`) or scanned on your own schedule using a repeat interval\nor any signal (`ScanWithEvent`, `ScanHumanoidsWithEvent`). The hitbox part can be welded to\nanother part so it follows a character or weapon. Everything the hitbox creates (the part,\nwelds, timers and connections) is tracked by a [Trove](https://sleitnick.github.io/RbxUtil/api/Trove/)\nand released by `Destroy`; destroying the hitbox part also destroys the hitbox.\n\nCreate one with `Hitbox.new`, or from existing geometry with `Hitbox.fromPart`,\n`Hitbox.fromModel` or `Hitbox.convert`.\n\n```lua\nlocal Hitbox = require(path.to.Hitbox)\n\nlocal function swing(character: Model)\n\tlocal rootPart = character:WaitForChild(\&quot;HumanoidRootPart\&quot;) :: BasePart\n\n\tlocal params = OverlapParams.new()\n\tparams.FilterType = Enum.RaycastFilterType.Exclude\n\tparams.FilterDescendantsInstances = { character }\n\n\t-- A 4x4x4 block one stud in front of the character, welded to the root so it follows them\n\tlocal hitbox = Hitbox.new(\n\t\trootPart.CFrame * CFrame.new(0, 0, -3),\n\t\tVector3.new(4, 4, 4),\n\t\tEnum.PartType.Block,\n\t\tparams,\n\t\tworkspace,\n\t\tfalse,\n\t\trootPart\n\t)\n\n\t-- Scan every frame for half a second and damage each humanoid once\n\tlocal alreadyHit: { [Humanoid]: boolean } = {}\n\thitbox:ScanHumanoids(0.5, function(humanoid)\n\t\tif alreadyHit[humanoid] then\n\t\t\treturn\n\t\tend\n\t\talreadyHit[humanoid] = true\n\t\thumanoid:TakeDamage(10)\n\tend)\n\n\ttask.delay(0.5, function()\n\t\thitbox:Destroy()\n\tend)\nend\n```\n\nInstallation and guide: [Hitbox package page](/docs/packages/hitbox).&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 72,
+        &quot;path&quot;: &quot;packages/src/Hitbox/init.luau&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#BasePartCallback" class="table-of-contents__link toc-highlight">BasePartCallback</a></li><li><a href="#ConnectionLike" class="table-of-contents__link toc-highlight">ConnectionLike</a></li><li><a href="#DisconnectPredicateFunc" class="table-of-contents__link toc-highlight">DisconnectPredicateFunc</a></li><li><a href="#HumanoidCallback" class="table-of-contents__link toc-highlight">HumanoidCallback</a></li><li><a href="#PredicateFunc" class="table-of-contents__link toc-highlight">PredicateFunc</a></li><li><a href="#SignalLike" class="table-of-contents__link toc-highlight">SignalLike</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#HitboxParams" class="table-of-contents__link toc-highlight">HitboxParams</a></li><li><a href="#HitboxPart" class="table-of-contents__link toc-highlight">HitboxPart</a></li><li><a href="#Trove" class="table-of-contents__link toc-highlight">Trove</a></li><li><a href="#Weld" class="table-of-contents__link toc-highlight">Weld</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Check" class="table-of-contents__link toc-highlight">:Check</a></li><li><a href="#CheckHumanoids" class="table-of-contents__link toc-highlight">:CheckHumanoids</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#Scan" class="table-of-contents__link toc-highlight">:Scan</a></li><li><a href="#ScanHumanoids" class="table-of-contents__link toc-highlight">:ScanHumanoids</a></li><li><a href="#ScanHumanoidsWithEvent" class="table-of-contents__link toc-highlight">:ScanHumanoidsWithEvent</a></li><li><a href="#ScanWithEvent" class="table-of-contents__link toc-highlight">:ScanWithEvent</a></li><li><a href="#WeldTo" class="table-of-contents__link toc-highlight">:WeldTo</a></li><li><a href="#convert" class="table-of-contents__link toc-highlight">.convert</a></li><li><a href="#fromModel" class="table-of-contents__link toc-highlight">.fromModel</a></li><li><a href="#fromPart" class="table-of-contents__link toc-highlight">.fromPart</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Library</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/library/docs/intro/">Getting started</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/packages/">Packages</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/plugins/">Plugins</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/building-blocks/">Building Blocks</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/guides/">Guides</a></li><li class="footer__item"><a class="footer__link-item" href="/library/api/">API reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Source</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/KashTheKing/library" target="_blank" rel="noopener noreferrer" class="footer__link-item">This repository on GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/KashTheKing/library/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Report a bug or request a feature<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://wally.run/?q=kashtheking" target="_blank" rel="noopener noreferrer" class="footer__link-item">Packages on Wally<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/infinite-ocean/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Infinite Ocean docs<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Help &amp; contact</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord server<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="mailto:kashtheking123@gmail.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking123@gmail.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.roblox.com/users/117445502/profile" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on Roblox<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/KashTheKing_X" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing_X on X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://youtube.com/@KashTheKingYT" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKingYT on YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://paypal.me/KashPlacek" target="_blank" rel="noopener noreferrer" class="footer__link-item">Support me on PayPal<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 KashTheKing. Packages and building blocks are MIT; the Studio plugins are distributed on the Creator Store under their own terms.</div></div></div></footer></div>
+</body>
+</html>

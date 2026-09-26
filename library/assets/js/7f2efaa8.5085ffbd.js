@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[7471],{43364:(s,c,u)=>{u.r(c),u.d(c,{default:()=>o});var d=u(56347),e=u(86025),n=(u(96540),u(74848));function o(){return(0,n.jsx)(d.rd,{to:(0,e.Ay)("/docs/building-blocks/")})}}}]);
