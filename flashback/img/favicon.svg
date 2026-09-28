@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;display=block');</style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4d6dff"/>
+      <stop offset="0.55" stop-color="#3358ff"/>
+      <stop offset="1" stop-color="#1b34b8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.32" r="0.55">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fb0ff"/>
+      <stop offset="0.45" stop-color="#3358ff"/>
+      <stop offset="0.5" stop-color="#1b34b8"/>
+      <stop offset="1" stop-color="#5a7cff"/>
+    </linearGradient>
+    <clipPath id="round"><rect x="40" y="40" width="1000" height="1000" rx="200"/></clipPath>
+  </defs>
+
+  <!-- tile -->
+  <rect x="40" y="40" width="1000" height="1000" rx="200" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1000" height="1000" rx="200" fill="url(#glow)"/>
+  <g clip-path="url(#round)">
+    <rect x="40" y="40" width="1000" height="520" fill="url(#sheen)"/>
+  </g>
+
+  <!-- replay: a rewind arrow circling a play button, white line art -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <!-- faint echoes of the arrow, like a replay trail -->
+    <path d="M704 176 A262 262 0 1 0 800 414" stroke-width="10" opacity="0.28"/>
+    <path d="M693 190 A242 242 0 1 0 780 412" stroke-width="10" opacity="0.5"/>
+    <!-- the arrow -->
+    <path d="M681 201 A220 220 0 1 0 752 409" stroke-width="30"/>
+  </g>
+  <path d="M770 340 L808 420 L714 408 Z" fill="#ffffff" stroke="#ffffff" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M482 282 L482 458 L640 370 Z" fill="#ffffff" fill-opacity="0.9" stroke="#ffffff" stroke-width="20" stroke-linejoin="round"/>
+
+  <!-- the recording's timeline, scrubbed part way -->
+  <g stroke-linecap="round">
+    <line x1="262" y1="690" x2="818" y2="690" stroke="#ffffff" stroke-width="16" opacity="0.45"/>
+    <line x1="262" y1="690" x2="600" y2="690" stroke="#ffffff" stroke-width="16"/>
+  </g>
+  <circle cx="600" cy="690" r="28" fill="#ffffff"/>
+
+  <!-- outline -->
+  <rect x="40" y="40" width="1000" height="1000" rx="200" fill="none" stroke="#ffffff" stroke-width="22"/>
+  <rect x="61" y="61" width="958" height="958" rx="180" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.35"/>
+
+  <!-- name -->
+  <g font-family="'Luckiest Guy', Impact, sans-serif" font-size="148" text-anchor="middle" stroke-linejoin="round">
+    <text x="540" y="930" transform="rotate(-3 540 930)" fill="none" stroke="#0d1b5e" stroke-width="34">FLASHBACK</text>
+    <text x="540" y="930" transform="rotate(-3 540 930)" fill="#ffffff" stroke="url(#rim)" stroke-width="22" paint-order="stroke">FLASHBACK</text>
+  </g>
+</svg>
