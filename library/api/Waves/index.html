@@ -16,8 +16,8 @@ server matches the surface a client sees.
 Each weather compiles to a *set* of six waves plus its look. The sea at a point is a weighted sum of
 whole sets (zones cross-fading at their rims, the global weather for the rest, and two sets while a
 weather is transitioning), never a blend of wave parameters."><link data-rh="true" rel="icon" href="/library/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/library/api/Waves/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Waves/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Waves/" hreflang="x-default"><link rel="stylesheet" href="/library/assets/css/styles.99ecadb2.css">
-<script src="/library/assets/js/runtime~main.56163829.js" defer="defer"></script>
-<script src="/library/assets/js/main.eef3d6d3.js" defer="defer"></script>
+<script src="/library/assets/js/runtime~main.dcccaea9.js" defer="defer"></script>
+<script src="/library/assets/js/main.b4bff89a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -40,36 +40,42 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
 <p>Compiled wave sets by weather name.</p>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Version"><code style="text-decoration:none">Version</code><a href="#Version" class="hash-link" aria-label="Direct link to Version" title="Direct link to Version" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L46"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.<!-- -->Version<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>Increments every time the sets are recompiled.</p>
-</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="MeshAvailable"><code style="text-decoration:none">MeshAvailable</code><a href="#MeshAvailable" class="hash-link" aria-label="Direct link to MeshAvailable" title="Direct link to MeshAvailable" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L126"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">MeshAvailable</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="MeshAvailable"><code style="text-decoration:none">MeshAvailable</code><a href="#MeshAvailable" class="hash-link" aria-label="Direct link to MeshAvailable" title="Direct link to MeshAvailable" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L134"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">MeshAvailable</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>
   Whether this experience may create EditableMeshes. When it may not, the sea falls back to a
   flat surface at <code>SeaLevel</code> (as if <code>FlatSea</code> were on) and the wave mesh is never built.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Refresh"><code style="text-decoration:none">Refresh</code><a href="#Refresh" class="hash-link" aria-label="Direct link to Refresh" title="Direct link to Refresh" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L143"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Refresh</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SetLocalFlat"><code style="text-decoration:none">SetLocalFlat</code><a href="#SetLocalFlat" class="hash-link" aria-label="Direct link to SetLocalFlat" title="Direct link to SetLocalFlat" translate="no">​</a></h3><span class="badge_Ba2I" style="color:#349AD5"><span class="badgeTooltip_cWXP">This item only works when running on the client.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337 304" fill="#349AD5" role="img" aria-label="This item only works when running on the client."><path d="M0 201h337v36H0v-36zm0 0zM0 0v188h337V0H0zM218 287h30c12 0 12 17 0 17H88c-11 0-11-17 0-17h31l10-39h79l10 39z"></path></svg> <!-- -->Client</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L154"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">SetLocalFlat</code><code>(</code><code>on<!-- -->: </code><code class="blue_P4bS">boolean</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>
+  Makes this client's sea flat (heights, swimming and the tint follow the flat surface it is
+  drawing) without touching the setting. The renderer turns it on while a device cannot hold the
+  wave mesh and off again once it can.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Refresh"><code style="text-decoration:none">Refresh</code><a href="#Refresh" class="hash-link" aria-label="Direct link to Refresh" title="Direct link to Refresh" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L167"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Refresh</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>
   Recompiles every weather into wave sets from the current settings and weather state. Runs
   automatically whenever a setting or the weather changes.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="RefreshObstacles"><code style="text-decoration:none">RefreshObstacles</code><a href="#RefreshObstacles" class="hash-link" aria-label="Direct link to RefreshObstacles" title="Direct link to RefreshObstacles" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L184"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">RefreshObstacles</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="RefreshObstacles"><code style="text-decoration:none">RefreshObstacles</code><a href="#RefreshObstacles" class="hash-link" aria-label="Direct link to RefreshObstacles" title="Direct link to RefreshObstacles" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L208"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">RefreshObstacles</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Re-reads every <code>OceanObstacle</code> in the workspace. Runs twice a second on its own.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ObstaclesNear"><code style="text-decoration:none">ObstaclesNear</code><a href="#ObstaclesNear" class="hash-link" aria-label="Direct link to ObstaclesNear" title="Direct link to ObstaclesNear" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L230"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">ObstaclesNear</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>radius<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ObstaclesNear"><code style="text-decoration:none">ObstaclesNear</code><a href="#ObstaclesNear" class="hash-link" aria-label="Direct link to ObstaclesNear" title="Direct link to ObstaclesNear" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L254"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">ObstaclesNear</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>radius<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
 <p>Obstacles whose calming ring touches the circle <code>(x, z, radius)</code>; with no arguments, all of them.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Damp"><code style="text-decoration:none">Damp</code><a href="#Damp" class="hash-link" aria-label="Direct link to Damp" title="Direct link to Damp" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L256"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Damp</code><code>(</code><div class="inset_uKQm"><div><code>list<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Damp"><code style="text-decoration:none">Damp</code><a href="#Damp" class="hash-link" aria-label="Direct link to Damp" title="Direct link to Damp" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L280"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Damp</code><code>(</code><div class="inset_uKQm"><div><code>list<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>from <a href="/library/api/Waves#ObstaclesNear">Waves.ObstaclesNear</a></p>
 </span></span></div><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code></div></div><code>) → </code><code class="blue_P4bS">number</code></div><div>
 <p>
   The wave multiplier at <code>(x, z)</code> from the given obstacles: 1 in open water, down to
   <code>1 - OceanCalmness</code> against an obstacle, easing across its shore ring.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Time"><code style="text-decoration:none">Time</code><a href="#Time" class="hash-link" aria-label="Direct link to Time" title="Direct link to Time" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L317"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Time</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Time"><code style="text-decoration:none">Time</code><a href="#Time" class="hash-link" aria-label="Direct link to Time" title="Direct link to Time" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L341"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Time</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
 <p>The synced wave clock: server time times <code>TimeScale</code>, or 0 while <code>StaticWaves</code> is on.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ZonesNear"><code style="text-decoration:none">ZonesNear</code><a href="#ZonesNear" class="hash-link" aria-label="Direct link to ZonesNear" title="Direct link to ZonesNear" translate="no">  ​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L336"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">ZonesNear</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>radius<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ZonesNear"><code style="text-decoration:none">ZonesNear</code><a href="#ZonesNear" class="hash-link" aria-label="Direct link to ZonesNear" title="Direct link to ZonesNear" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L360"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">ZonesNear</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code></div><div><code>radius<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code></div><div>
 <p>Scripted weather zones whose disc touches the circle <code>(x, z, radius)</code>; with no arguments, all of them.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="IsBlending"><code style="text-decoration:none">IsBlending</code><a href="#IsBlending" class="hash-link" aria-label="Direct link to IsBlending" title="Direct link to IsBlending" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L357"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">IsBlending</code><code>(</code><div class="inset_uKQm"><div><code>now<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="IsBlending"><code style="text-decoration:none">IsBlending</code><a href="#IsBlending" class="hash-link" aria-label="Direct link to IsBlending" title="Direct link to IsBlending" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L381"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">IsBlending</code><code>(</code><div class="inset_uKQm"><div><code>now<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p><code>workspace:GetServerTimeNow()</code></p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>True while the global weather is mid-transition.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Gather"><code style="text-decoration:none">Gather</code><a href="#Gather" class="hash-link" aria-label="Direct link to Gather" title="Direct link to Gather" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L390"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Gather</code><code>(</code><div class="inset_uKQm"><div><code>zoneList<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Gather"><code style="text-decoration:none">Gather</code><a href="#Gather" class="hash-link" aria-label="Direct link to Gather" title="Direct link to Gather" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L414"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Gather</code><code>(</code><div class="inset_uKQm"><div><code>zoneList<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>from <a href="/library/api/Waves#ZonesNear">Waves.ZonesNear</a></p>
 </span></span></div><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>now<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p><code>workspace:GetServerTimeNow()</code></p>
@@ -78,7 +84,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
   Fills <code>Waves.LayerSets</code> and <code>Waves.LayerWeights</code> with the wave sets that apply at <code>(x, z)</code> and
   returns how many there are. The weights sum to 1.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Displace"><code style="text-decoration:none">Displace</code><a href="#Displace" class="hash-link" aria-label="Direct link to Displace" title="Direct link to Displace" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L451"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Displace</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>t<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Displace"><code style="text-decoration:none">Displace</code><a href="#Displace" class="hash-link" aria-label="Direct link to Displace" title="Direct link to Displace" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L475"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Displace</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>t<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>wave clock (default: now)</p>
 </span></span></div><div><code>now<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
 <p>server time (default: now)</p>
@@ -93,7 +99,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
   Displacement of the surface point that rests at <code>(x, z)</code>: how far it has been pushed along X, up
   along Y and along Z. Zero everywhere while <code>FlatSea</code> is on.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Height"><code style="text-decoration:none">Height</code><a href="#Height" class="hash-link" aria-label="Direct link to Height" title="Direct link to Height" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L477"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Height</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>t<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Height"><code style="text-decoration:none">Height</code><a href="#Height" class="hash-link" aria-label="Direct link to Height" title="Direct link to Height" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L501"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">Height</code><code>(</code><div class="inset_uKQm"><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>t<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>wave clock (default: now)</p>
 </span></span></div><div><code>now<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
 <p>server time (default: now)</p>
@@ -102,12 +108,12 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
   World Y of the surface above <code>(x, z)</code>. Gerstner waves move points sideways, so this iterates to find
   the rest point that lands on <code>(x, z)</code>; the answer is within a quarter stud. <a href="/library/api/Ocean#GetHeight">Ocean:GetHeight</a> calls this.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="LookNumber"><code style="text-decoration:none">LookNumber</code><a href="#LookNumber" class="hash-link" aria-label="Direct link to LookNumber" title="Direct link to LookNumber" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L506"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">LookNumber</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code></div></div><code>) → </code><code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="LookNumber"><code style="text-decoration:none">LookNumber</code><a href="#LookNumber" class="hash-link" aria-label="Direct link to LookNumber" title="Direct link to LookNumber" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L530"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">LookNumber</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>x<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>z<!-- -->: </code><code class="blue_P4bS">number</code></div></div><code>) → </code><code class="blue_P4bS">number</code></div><div>
 <p>
   One numeric weather setting blended at a point, for example <code>Waves.LookNumber("SplashRate", x, z)</code>.
   <code>"MaxAmp"</code> gives the tallest possible crest there.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SelfTest"><code style="text-decoration:none">SelfTest</code><a href="#SelfTest" class="hash-link" aria-label="Direct link to SelfTest" title="Direct link to SelfTest" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L523"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">SelfTest</code><code>(</code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="SelfTest"><code style="text-decoration:none">SelfTest</code><a href="#SelfTest" class="hash-link" aria-label="Direct link to SelfTest" title="Direct link to SelfTest" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Ocean/Waves.luau#L547"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Waves<!-- -->.</code><code class="green_DgR4">SelfTest</code><code>(</code><code>) → </code><code class="blue_P4bS">string</code></div><div>
 <p>
   Checks that <a href="/library/api/Waves#Height">Waves.Height</a> inverts <a href="/library/api/Waves#Displace">Waves.Displace</a> and that layer weights sum to 1. Run it from the
   command bar: <code>require(game.ReplicatedStorage.Ocean.Waves).SelfTest()</code>.
@@ -126,7 +132,27 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 126,
+                &quot;line&quot;: 134,
+                &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;SetLocalFlat&quot;,
+            &quot;desc&quot;: &quot;Makes this client&#x27;s sea flat (heights, swimming and the tint follow the flat surface it is\ndrawing) without touching the setting. The renderer turns it on while a device cannot hold the\nwave mesh and off again once it can.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;on&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;realm&quot;: [
+                &quot;Client&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 154,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -137,7 +163,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 143,
+                &quot;line&quot;: 167,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -148,7 +174,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 184,
+                &quot;line&quot;: 208,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -180,7 +206,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 230,
+                &quot;line&quot;: 254,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -212,7 +238,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 256,
+                &quot;line&quot;: 280,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -224,7 +250,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;private&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 289,
+                &quot;line&quot;: 313,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -236,7 +262,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;private&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 304,
+                &quot;line&quot;: 328,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -252,7 +278,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 317,
+                &quot;line&quot;: 341,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -284,7 +310,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 336,
+                &quot;line&quot;: 360,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -306,7 +332,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 357,
+                &quot;line&quot;: 381,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -343,7 +369,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 390,
+                &quot;line&quot;: 414,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -388,7 +414,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 451,
+                &quot;line&quot;: 475,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -425,7 +451,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 477,
+                &quot;line&quot;: 501,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -457,7 +483,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 506,
+                &quot;line&quot;: 530,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         },
@@ -473,7 +499,7 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 523,
+                &quot;line&quot;: 547,
                 &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
             }
         }
@@ -514,6 +540,6 @@ weather is transitioning), never a blend of wave parameters."><link data-rh="tru
         &quot;line&quot;: 31,
         &quot;path&quot;: &quot;packages/src/Ocean/Waves.luau&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#SeaLevel" class="table-of-contents__link toc-highlight">SeaLevel</a></li><li><a href="#Sets" class="table-of-contents__link toc-highlight">Sets</a></li><li><a href="#Version" class="table-of-contents__link toc-highlight">Version</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Damp" class="table-of-contents__link toc-highlight">.Damp</a></li><li><a href="#Displace" class="table-of-contents__link toc-highlight">.Displace</a></li><li><a href="#Gather" class="table-of-contents__link toc-highlight">.Gather</a></li><li><a href="#Height" class="table-of-contents__link toc-highlight">.Height</a></li><li><a href="#IsBlending" class="table-of-contents__link toc-highlight">.IsBlending</a></li><li><a href="#LookNumber" class="table-of-contents__link toc-highlight">.LookNumber</a></li><li><a href="#MeshAvailable" class="table-of-contents__link toc-highlight">.MeshAvailable</a></li><li><a href="#ObstaclesNear" class="table-of-contents__link toc-highlight">.ObstaclesNear</a></li><li><a href="#Refresh" class="table-of-contents__link toc-highlight">.Refresh</a></li><li><a href="#RefreshObstacles" class="table-of-contents__link toc-highlight">.RefreshObstacles</a></li><li><a href="#SelfTest" class="table-of-contents__link toc-highlight">.SelfTest</a></li><li><a href="#Time" class="table-of-contents__link toc-highlight">.Time</a></li><li><a href="#ZonesNear" class="table-of-contents__link toc-highlight">.ZonesNear</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Library</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/library/docs/intro/">Getting started</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/packages/">Packages</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/plugins/">Plugins</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/building-blocks/">Building Blocks</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/guides/">Guides</a></li><li class="footer__item"><a class="footer__link-item" href="/library/api/">API reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Source</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/KashTheKing/library" target="_blank" rel="noopener noreferrer" class="footer__link-item">This repository on GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/KashTheKing/library/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Report a bug or request a feature<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://wally.run/?q=kashtheking" target="_blank" rel="noopener noreferrer" class="footer__link-item">Packages on Wally<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/infinite-ocean/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Infinite Ocean docs<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Help &amp; contact</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord server<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="mailto:kashtheking123@gmail.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking123@gmail.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.roblox.com/users/117445502/profile" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on Roblox<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/KashTheKing_X" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing_X on X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://youtube.com/@KashTheKingYT" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKingYT on YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://paypal.me/KashPlacek" target="_blank" rel="noopener noreferrer" class="footer__link-item">Support me on PayPal<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 KashTheKing. Packages and building blocks are MIT; the Studio plugins are distributed on the Creator Store under their own terms.</div></div></div></footer></div>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#SeaLevel" class="table-of-contents__link toc-highlight">SeaLevel</a></li><li><a href="#Sets" class="table-of-contents__link toc-highlight">Sets</a></li><li><a href="#Version" class="table-of-contents__link toc-highlight">Version</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Damp" class="table-of-contents__link toc-highlight">.Damp</a></li><li><a href="#Displace" class="table-of-contents__link toc-highlight">.Displace</a></li><li><a href="#Gather" class="table-of-contents__link toc-highlight">.Gather</a></li><li><a href="#Height" class="table-of-contents__link toc-highlight">.Height</a></li><li><a href="#IsBlending" class="table-of-contents__link toc-highlight">.IsBlending</a></li><li><a href="#LookNumber" class="table-of-contents__link toc-highlight">.LookNumber</a></li><li><a href="#MeshAvailable" class="table-of-contents__link toc-highlight">.MeshAvailable</a></li><li><a href="#ObstaclesNear" class="table-of-contents__link toc-highlight">.ObstaclesNear</a></li><li><a href="#Refresh" class="table-of-contents__link toc-highlight">.Refresh</a></li><li><a href="#RefreshObstacles" class="table-of-contents__link toc-highlight">.RefreshObstacles</a></li><li><a href="#SelfTest" class="table-of-contents__link toc-highlight">.SelfTest</a></li><li><a href="#SetLocalFlat" class="table-of-contents__link toc-highlight">.SetLocalFlat</a></li><li><a href="#Time" class="table-of-contents__link toc-highlight">.Time</a></li><li><a href="#ZonesNear" class="table-of-contents__link toc-highlight">.ZonesNear</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Library</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/library/docs/intro/">Getting started</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/packages/">Packages</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/plugins/">Plugins</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/building-blocks/">Building Blocks</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/guides/">Guides</a></li><li class="footer__item"><a class="footer__link-item" href="/library/api/">API reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Source</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/KashTheKing/library" target="_blank" rel="noopener noreferrer" class="footer__link-item">This repository on GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/KashTheKing/library/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Report a bug or request a feature<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://wally.run/?q=kashtheking" target="_blank" rel="noopener noreferrer" class="footer__link-item">Packages on Wally<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/infinite-ocean/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Infinite Ocean docs<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Help &amp; contact</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord server<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="mailto:kashtheking123@gmail.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking123@gmail.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.roblox.com/users/117445502/profile" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on Roblox<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/KashTheKing_X" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing_X on X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://youtube.com/@KashTheKingYT" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKingYT on YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://paypal.me/KashPlacek" target="_blank" rel="noopener noreferrer" class="footer__link-item">Support me on PayPal<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 KashTheKing. Packages and building blocks are MIT; the Studio plugins are distributed on the Creator Store under their own terms.</div></div></div></footer></div>
 </body>
 </html>
