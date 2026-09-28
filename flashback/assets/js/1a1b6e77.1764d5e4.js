@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[521],{4410:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/KashTheKing/library/blob/master","baseUrl":"/flashback/","classOrder":[],"apiCategories":[]}')}}]);

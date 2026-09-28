@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Snapshot | Flashback</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://kashtheking.com/flashback/api/Snapshot/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Snapshot | Flashback"><meta data-rh="true" name="description" content="Serializes the visible state of a part or model into a compact buffer and
+rebuilds it as an anchored proxy. Every BasePart descendant is kept with
+its offset from the root, size, appearance, surfaces, decals and textures,
+meshes, PBR surface appearance, attachments and the effects on them
+(sounds, particle emitters, beams, trails, fire, smoke, sparkles, lights). Models with a Humanoid also keep
+clothing and body colours so rigs and NPCs look right on playback.
+
+MeshPart meshes come back as real MeshParts built through
+`AssetService:CreateMeshPartAsync` (call `prefetch` first; it yields), so
+clothing, body colours and surface appearance render exactly as recorded.
+Without a prefetched mesh a Part carrying a scaled SpecialMesh stands in.
+Joints (Motor6D, Weld, AnimationConstraint and RigidConstraint) are kept
+so rebuilt rigs still animate. Constraint joints come back as Motor6D and
+Weld built from their attachment offsets: the Animator drives those
+kinematically, so playback also works in Studio edit mode where physics
+(and therefore AnimationConstraint) does not run.
+
+UnionOperation geometry cannot be read back at runtime. Unions are stored
+by key (their full name when recorded) and resolved through `links` or the
+same path on playback; unresolved unions fall back to a plain Part.
+
+Every snapshot also carries the source key of the instance it was taken
+from. Linking that key to a prefab (for example under ReplicatedStorage)
+makes playback clone the prefab instead of rebuilding from the snapshot,
+which is the way to bring back models whose geometry cannot be serialized."><meta data-rh="true" property="og:description" content="Serializes the visible state of a part or model into a compact buffer and
+rebuilds it as an anchored proxy. Every BasePart descendant is kept with
+its offset from the root, size, appearance, surfaces, decals and textures,
+meshes, PBR surface appearance, attachments and the effects on them
+(sounds, particle emitters, beams, trails, fire, smoke, sparkles, lights). Models with a Humanoid also keep
+clothing and body colours so rigs and NPCs look right on playback.
+
+MeshPart meshes come back as real MeshParts built through
+`AssetService:CreateMeshPartAsync` (call `prefetch` first; it yields), so
+clothing, body colours and surface appearance render exactly as recorded.
+Without a prefetched mesh a Part carrying a scaled SpecialMesh stands in.
+Joints (Motor6D, Weld, AnimationConstraint and RigidConstraint) are kept
+so rebuilt rigs still animate. Constraint joints come back as Motor6D and
+Weld built from their attachment offsets: the Animator drives those
+kinematically, so playback also works in Studio edit mode where physics
+(and therefore AnimationConstraint) does not run.
+
+UnionOperation geometry cannot be read back at runtime. Unions are stored
+by key (their full name when recorded) and resolved through `links` or the
+same path on playback; unresolved unions fall back to a plain Part.
+
+Every snapshot also carries the source key of the instance it was taken
+from. Linking that key to a prefab (for example under ReplicatedStorage)
+makes playback clone the prefab instead of rebuilding from the snapshot,
+which is the way to bring back models whose geometry cannot be serialized."><link data-rh="true" rel="icon" href="/flashback/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/flashback/api/Snapshot/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/flashback/api/Snapshot/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/flashback/api/Snapshot/" hreflang="x-default"><link rel="stylesheet" href="/flashback/assets/css/styles.7899213f.css">
+<script src="/flashback/assets/js/runtime~main.8b085ed2.js" defer="defer"></script>
+<script src="/flashback/assets/js/main.16a810b8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/flashback/"><div class="navbar__logo"><img src="/flashback/img/favicon.svg" alt="Flashback" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/flashback/img/favicon.svg" alt="Flashback" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Flashback</b></a><a class="navbar__item navbar__link" href="/flashback/docs/intro/">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/flashback/api/">API</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/flashback/docs/intro/">Plugin: coming soon</a><a href="https://github.com/KashTheKing/library/tree/main/packages/src/Flashback" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Module source<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://github.com/KashTheKing/library" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/flashback/api/Flashback/"><span title="Start here" class="categoryLinkLabel_W154">Start here</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/flashback/api/Store/"><span title="Storage" class="categoryLinkLabel_W154">Storage</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/flashback/api/Serializer/"><span title="Under the hood" class="categoryLinkLabel_W154">Under the hood</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/flashback/api/Serializer/"><span title="​Serializer" class="linkLabel_WmDU">​Serializer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/flashback/api/Snapshot/"><span title="​Snapshot" class="linkLabel_WmDU">​Snapshot</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/flashback/api/MoonExport/"><span title="​Moon​Export" class="linkLabel_WmDU">​Moon​Export</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/flashback/api/Studio/"><span title="​Studio" class="linkLabel_WmDU">​Studio</span></a></li></ul></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Snapshot</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>
+  Serializes the visible state of a part or model into a compact buffer and
+  rebuilds it as an anchored proxy. Every BasePart descendant is kept with
+  its offset from the root, size, appearance, surfaces, decals and textures,
+  meshes, PBR surface appearance, attachments and the effects on them
+  (sounds, particle emitters, beams, trails, fire, smoke, sparkles, lights). Models with a Humanoid also keep
+  clothing and body colours so rigs and NPCs look right on playback.
+</p>
+<p>
+  MeshPart meshes come back as real MeshParts built through
+  <code>AssetService:CreateMeshPartAsync</code> (call <code>prefetch</code> first; it yields), so
+  clothing, body colours and surface appearance render exactly as recorded.
+  Without a prefetched mesh a Part carrying a scaled SpecialMesh stands in.
+  Joints (Motor6D, Weld, AnimationConstraint and RigidConstraint) are kept
+  so rebuilt rigs still animate. Constraint joints come back as Motor6D and
+  Weld built from their attachment offsets: the Animator drives those
+  kinematically, so playback also works in Studio edit mode where physics
+  (and therefore AnimationConstraint) does not run.
+</p>
+<p>
+  UnionOperation geometry cannot be read back at runtime. Unions are stored
+  by key (their full name when recorded) and resolved through <code>links</code> or the
+  same path on playback; unresolved unions fall back to a plain Part.
+</p>
+<p>
+  Every snapshot also carries the source key of the instance it was taken
+  from. Linking that key to a prefab (for example under ReplicatedStorage)
+  makes playback clone the prefab instead of rebuilding from the snapshot,
+  which is the way to bring back models whose geometry cannot be serialized.
+</p>
+</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rootOf"><code style="text-decoration:none">rootOf</code><a href="#rootOf" class="hash-link" aria-label="Direct link to rootOf" title="Direct link to rootOf" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L69"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">rootOf</code><code>(</code><code>inst<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  The part whose CFrame stands for an instance: the part itself, a model's
+  PrimaryPart, or its first part. Shared with the Recorder so recorded
+  transforms and snapshot offsets always refer to the same part.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="segment"><code style="text-decoration:none">segment</code><a href="#segment" class="hash-link" aria-label="Direct link to segment" title="Direct link to segment" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L86"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">segment</code><code>(</code><code>inst<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p>
+  Path segment for an instance: its name, followed by <code>#n</code> when other
+  siblings share that name (n counts same-named siblings in child order).
+  Names alone are ambiguous inside many models (several <code>Wheel</code>s, several
+  unions called <code>Union</code>), and runtime scripts cannot read <code>UniqueId</code>.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="child"><code style="text-decoration:none">child</code><a href="#child" class="hash-link" aria-label="Direct link to child" title="Direct link to child" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L108"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">child</code><code>(</code><div class="inset_uKQm"><div><code>parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code></div><div><code>segment<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  Resolves one segment under <code>parent</code>: an exact name first (names may
+  contain <code>#</code>), then the <code>Name#n</code> form.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pathWithin"><code style="text-decoration:none">pathWithin</code><a href="#pathWithin" class="hash-link" aria-label="Direct link to pathWithin" title="Direct link to pathWithin" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L135"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">pathWithin</code><code>(</code><div class="inset_uKQm"><div><code>inst<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code></div><div><code>root<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div></div><code>) → </code><code class="blue_P4bS">string?</code></div><div>
+<p>
+  Segments of <code>inst</code> below <code>root</code>, joined with <code>/</code>. Nil when <code>inst</code> is not
+  inside <code>root</code>; empty when they are the same instance.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="resolve"><code style="text-decoration:none">resolve</code><a href="#resolve" class="hash-link" aria-label="Direct link to resolve" title="Direct link to resolve" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L152"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">resolve</code><code>(</code><div class="inset_uKQm"><div><code>root<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code></div><div><code>path<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>Follows a <code>/</code> path from <code>root</code>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pathOf"><code style="text-decoration:none">pathOf</code><a href="#pathOf" class="hash-link" aria-label="Direct link to pathOf" title="Direct link to pathOf" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L167"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">pathOf</code><code>(</code><code>inst<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p>
+  Unique full path from the DataModel, dotted like <code>GetFullName</code> but with
+  <code>#n</code> on ambiguous segments.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instanceAt"><code style="text-decoration:none">instanceAt</code><a href="#instanceAt" class="hash-link" aria-label="Direct link to instanceAt" title="Direct link to instanceAt" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L443"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">instanceAt</code><code>(</code><code>key<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  Walks a dotted path (see <code>pathOf</code>) from the DataModel. Returns nil when
+  any segment is missing.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prefetch"><code style="text-decoration:none">prefetch</code><a href="#prefetch" class="hash-link" aria-label="Direct link to prefetch" title="Direct link to prefetch" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L469"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">prefetch</code><code>(</code><code>data<!-- -->: </code><code class="blue_P4bS">buffer</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>
+  Creates a MeshPart template for every mesh id a snapshot uses. Yields on
+  first use of each id; later builds are synchronous. Ids that fail to load
+  fall back to a SpecialMesh at build time.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="resolveUnion"><code style="text-decoration:none">resolveUnion</code><a href="#resolveUnion" class="hash-link" aria-label="Direct link to resolveUnion" title="Direct link to resolveUnion" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L488"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">resolveUnion</code><code>(</code><code>key<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/UnionOperation" target="_blank" rel="noopener noreferrer">UnionOperation?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  Finds the UnionOperation a key refers to: a manual link first, then the
+  instance at the same path the union had when recorded.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="keys"><code style="text-decoration:none">keys</code><a href="#keys" class="hash-link" aria-label="Direct link to keys" title="Direct link to keys" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L498"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">keys</code><code>(</code><code>data<!-- -->: </code><code class="blue_P4bS">buffer</code><code>) → </code><code class="blue_P4bS">Keys</code></div><div>
+<p>
+  Reads the source key and the union keys a snapshot depends on without
+  rebuilding it.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="capture"><code style="text-decoration:none">capture</code><a href="#capture" class="hash-link" aria-label="Direct link to capture" title="Direct link to capture" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L908"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">capture</code><code>(</code><div class="inset_uKQm"><div><code>inst<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code></div><div><code>exclude<!-- -->: </code><code class="purple_ieR2">(</code><code class="green_DgR4">(</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="green_DgR4">)</code><code class="green_DgR4"> → </code><code class="blue_P4bS">boolean</code><code class="purple_ieR2">)</code><code class="blue_P4bS">?</code></div></div><code>) → </code><code class="blue_P4bS">buffer?</code></div><div>
+<p>
+  Captures <code>inst</code> relative to its root part. Returns nil when there is no
+  geometry to capture. Descendants for which <code>exclude</code> returns true are
+  left out along with everything inside them.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="build"><code style="text-decoration:none">build</code><a href="#build" class="hash-link" aria-label="Direct link to build" title="Direct link to build" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Flashback/Snapshot.luau#L1011"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Snapshot<!-- -->.</code><code class="green_DgR4">build</code><code>(</code><code>data<!-- -->: </code><code class="blue_P4bS">buffer</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>
+  Rebuilds a snapshot as an anchored, non-colliding Part or Model whose
+  pivot matches the original root. A linked prefab is cloned instead, with
+  its pivot moved to the part at the recorded root's path (or name) so
+  recorded transforms land where the original did.
+</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;rootOf&quot;,
+            &quot;desc&quot;: &quot;The part whose CFrame stands for an instance: the part itself, a model&#x27;s\nPrimaryPart, or its first part. Shared with the Recorder so recorded\ntransforms and snapshot offsets always refer to the same part.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;inst&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;BasePart?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 69,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;segment&quot;,
+            &quot;desc&quot;: &quot;Path segment for an instance: its name, followed by `#n` when other\nsiblings share that name (n counts same-named siblings in child order).\nNames alone are ambiguous inside many models (several `Wheel`s, several\nunions called `Union`), and runtime scripts cannot read `UniqueId`.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;inst&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 86,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;child&quot;,
+            &quot;desc&quot;: &quot;Resolves one segment under `parent`: an exact name first (names may\ncontain `#`), then the `Name#n` form.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;parent&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;segment&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 108,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;pathWithin&quot;,
+            &quot;desc&quot;: &quot;Segments of `inst` below `root`, joined with `/`. Nil when `inst` is not\ninside `root`; empty when they are the same instance.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;inst&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;root&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 135,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;resolve&quot;,
+            &quot;desc&quot;: &quot;Follows a `/` path from `root`.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;root&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;path&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 152,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;pathOf&quot;,
+            &quot;desc&quot;: &quot;Unique full path from the DataModel, dotted like `GetFullName` but with\n`#n` on ambiguous segments.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;inst&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 167,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;instanceAt&quot;,
+            &quot;desc&quot;: &quot;Walks a dotted path (see `pathOf`) from the DataModel. Returns nil when\nany segment is missing.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;key&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 443,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;prefetch&quot;,
+            &quot;desc&quot;: &quot;Creates a MeshPart template for every mesh id a snapshot uses. Yields on\nfirst use of each id; later builds are synchronous. Ids that fail to load\nfall back to a SpecialMesh at build time.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;data&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;buffer&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 469,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;resolveUnion&quot;,
+            &quot;desc&quot;: &quot;Finds the UnionOperation a key refers to: a manual link first, then the\ninstance at the same path the union had when recorded.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;key&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;UnionOperation?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 488,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;keys&quot;,
+            &quot;desc&quot;: &quot;Reads the source key and the union keys a snapshot depends on without\nrebuilding it.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;data&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;buffer&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Keys\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 498,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;capture&quot;,
+            &quot;desc&quot;: &quot;Captures `inst` relative to its root part. Returns nil when there is no\ngeometry to capture. Descendants for which `exclude` returns true are\nleft out along with everything inside them.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;inst&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;exclude&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;((Instance) -&gt; boolean)?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;buffer?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 908,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;build&quot;,
+            &quot;desc&quot;: &quot;Rebuilds a snapshot as an anchored, non-colliding Part or Model whose\npivot matches the original root. A linked prefab is cloned instead, with\nits pivot moved to the part at the recorded root&#x27;s path (or name) so\nrecorded transforms land where the original did.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;data&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;buffer&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 1011,
+                &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [],
+    &quot;types&quot;: [],
+    &quot;name&quot;: &quot;Snapshot&quot;,
+    &quot;desc&quot;: &quot;Serializes the visible state of a part or model into a compact buffer and\nrebuilds it as an anchored proxy. Every BasePart descendant is kept with\nits offset from the root, size, appearance, surfaces, decals and textures,\nmeshes, PBR surface appearance, attachments and the effects on them\n(sounds, particle emitters, beams, trails, fire, smoke, sparkles, lights). Models with a Humanoid also keep\nclothing and body colours so rigs and NPCs look right on playback.\n\nMeshPart meshes come back as real MeshParts built through\n`AssetService:CreateMeshPartAsync` (call `prefetch` first; it yields), so\nclothing, body colours and surface appearance render exactly as recorded.\nWithout a prefetched mesh a Part carrying a scaled SpecialMesh stands in.\nJoints (Motor6D, Weld, AnimationConstraint and RigidConstraint) are kept\nso rebuilt rigs still animate. Constraint joints come back as Motor6D and\nWeld built from their attachment offsets: the Animator drives those\nkinematically, so playback also works in Studio edit mode where physics\n(and therefore AnimationConstraint) does not run.\n\nUnionOperation geometry cannot be read back at runtime. Unions are stored\nby key (their full name when recorded) and resolved through `links` or the\nsame path on playback; unresolved unions fall back to a plain Part.\n\nEvery snapshot also carries the source key of the instance it was taken\nfrom. Linking that key to a prefab (for example under ReplicatedStorage)\nmakes playback clone the prefab instead of rebuilding from the snapshot,\nwhich is the way to bring back models whose geometry cannot be serialized.&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 30,
+        &quot;path&quot;: &quot;src/Flashback/Snapshot.luau&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#build" class="table-of-contents__link toc-highlight">.build</a></li><li><a href="#capture" class="table-of-contents__link toc-highlight">.capture</a></li><li><a href="#child" class="table-of-contents__link toc-highlight">.child</a></li><li><a href="#instanceAt" class="table-of-contents__link toc-highlight">.instanceAt</a></li><li><a href="#keys" class="table-of-contents__link toc-highlight">.keys</a></li><li><a href="#pathOf" class="table-of-contents__link toc-highlight">.pathOf</a></li><li><a href="#pathWithin" class="table-of-contents__link toc-highlight">.pathWithin</a></li><li><a href="#prefetch" class="table-of-contents__link toc-highlight">.prefetch</a></li><li><a href="#resolve" class="table-of-contents__link toc-highlight">.resolve</a></li><li><a href="#resolveUnion" class="table-of-contents__link toc-highlight">.resolveUnion</a></li><li><a href="#rootOf" class="table-of-contents__link toc-highlight">.rootOf</a></li><li><a href="#segment" class="table-of-contents__link toc-highlight">.segment</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/flashback/docs/intro/">Getting started</a></li><li class="footer__item"><a class="footer__link-item" href="/flashback/docs/plugin/">Plugin guide</a></li><li class="footer__item"><a class="footer__link-item" href="/flashback/docs/recording/">Recording</a></li><li class="footer__item"><a class="footer__link-item" href="/flashback/docs/playback/">Playback</a></li><li class="footer__item"><a class="footer__link-item" href="/flashback/docs/storage/">Storage</a></li><li class="footer__item"><a class="footer__link-item" href="/flashback/api/Recorder/">API reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Support</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord server<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.roblox.com/users/117445502/profile" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on Roblox<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/KashTheKing" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/@KashTheKing" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 KashTheKing. The Flashback module is MIT; the Studio plugin is proprietary.</div></div></div></footer></div>
+</body>
+</html>
