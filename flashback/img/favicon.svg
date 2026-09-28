@@ -20,22 +20,7 @@
       <stop offset="0.5" stop-color="#1b34b8"/>
       <stop offset="1" stop-color="#5a7cff"/>
     </linearGradient>
-    <linearGradient id="slate" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2a2f45"/>
-      <stop offset="1" stop-color="#151827"/>
-    </linearGradient>
     <clipPath id="round"><rect x="40" y="40" width="1000" height="1000" rx="200"/></clipPath>
-    <clipPath id="bar"><rect x="0" y="0" width="560" height="96" rx="18"/></clipPath>
-    <!-- black and white clapper stripes -->
-    <g id="stripes">
-      <rect x="0" y="0" width="560" height="96" fill="#ffffff"/>
-      <g fill="#151827">
-        <path d="M20 0 H100 L60 96 H-20 Z"/>
-        <path d="M180 0 H260 L220 96 H140 Z"/>
-        <path d="M340 0 H420 L380 96 H300 Z"/>
-        <path d="M500 0 H580 L540 96 H460 Z"/>
-      </g>
-    </g>
   </defs>
 
   <!-- tile -->
@@ -45,39 +30,23 @@
     <rect x="40" y="40" width="1000" height="520" fill="url(#sheen)"/>
   </g>
 
-  <!-- clapperboard, tilted a little like it's being snapped shut -->
-  <g transform="translate(540 540) scale(0.84) translate(-540 -480) rotate(-6 540 480)">
-    <!-- slate body -->
-    <rect x="260" y="360" width="560" height="380" rx="30" fill="url(#slate)" stroke="#ffffff" stroke-width="18"/>
-    <!-- fixed stripe bar -->
-    <g transform="translate(260 300)">
-      <g clip-path="url(#bar)"><use href="#stripes"/></g>
-      <rect x="0" y="0" width="560" height="96" rx="18" fill="none" stroke="#ffffff" stroke-width="18"/>
-    </g>
-    <!-- clapper arm, swung open on its hinge -->
-    <g transform="rotate(-18 272 300) translate(260 196)">
-      <g clip-path="url(#bar)"><use href="#stripes"/></g>
-      <rect x="0" y="0" width="560" height="96" rx="18" fill="none" stroke="#ffffff" stroke-width="18"/>
-    </g>
-    <circle cx="282" cy="298" r="22" fill="#ffffff"/>
-    <!-- slate lines -->
-    <g stroke="#ffffff" stroke-opacity="0.35" stroke-width="8" stroke-linecap="round">
-      <line x1="300" y1="660" x2="780" y2="660"/>
-      <line x1="540" y1="660" x2="540" y2="712"/>
-    </g>
-    <!-- CUT! -->
-    <g font-family="'Luckiest Guy', Impact, sans-serif" font-size="210" text-anchor="middle" stroke-linejoin="round">
-      <text x="540" y="630" fill="none" stroke="#0d1b5e" stroke-width="30">CUT!</text>
-      <text x="540" y="630" fill="#ffd23f" stroke="#ffffff" stroke-width="10" paint-order="stroke">CUT!</text>
-    </g>
+  <!-- replay: a rewind arrow circling a play button, white line art -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <!-- faint echoes of the arrow, like a replay trail -->
+    <path d="M704 176 A262 262 0 1 0 800 414" stroke-width="10" opacity="0.28"/>
+    <path d="M693 190 A242 242 0 1 0 780 412" stroke-width="10" opacity="0.5"/>
+    <!-- the arrow -->
+    <path d="M681 201 A220 220 0 1 0 752 409" stroke-width="30"/>
   </g>
+  <path d="M770 340 L808 420 L714 408 Z" fill="#ffffff" stroke="#ffffff" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M482 282 L482 458 L640 370 Z" fill="#ffffff" fill-opacity="0.9" stroke="#ffffff" stroke-width="20" stroke-linejoin="round"/>
 
-  <!-- snap lines off the clapper tip -->
-  <g stroke="#ffffff" stroke-width="20" stroke-linecap="round">
-    <line x1="800" y1="190" x2="846" y2="148"/>
-    <line x1="820" y1="262" x2="890" y2="248"/>
-    <line x1="738" y1="160" x2="748" y2="110"/>
+  <!-- the recording's timeline, scrubbed part way -->
+  <g stroke-linecap="round">
+    <line x1="262" y1="690" x2="818" y2="690" stroke="#ffffff" stroke-width="16" opacity="0.45"/>
+    <line x1="262" y1="690" x2="600" y2="690" stroke="#ffffff" stroke-width="16"/>
   </g>
+  <circle cx="600" cy="690" r="28" fill="#ffffff"/>
 
   <!-- outline -->
   <rect x="40" y="40" width="1000" height="1000" rx="200" fill="none" stroke="#ffffff" stroke-width="22"/>
