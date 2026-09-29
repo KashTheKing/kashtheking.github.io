@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[5145],{25608:e=>{e.exports=JSON.parse('{"functions":[],"properties":[],"types":[],"name":"Spectral","desc":"","private":true,"source":{"line":87,"path":"src/Ocean/Spectral/init.luau"}}')}}]);
