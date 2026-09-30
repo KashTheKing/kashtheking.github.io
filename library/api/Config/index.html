@@ -28,8 +28,8 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
 	StutterChance = 0.7,
 })
 ```"><link data-rh="true" rel="icon" href="/library/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/library/api/Config/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Config/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Config/" hreflang="x-default"><link rel="stylesheet" href="/library/assets/css/styles.99ecadb2.css">
-<script src="/library/assets/js/runtime~main.4ecba9d4.js" defer="defer"></script>
-<script src="/library/assets/js/main.5362e430.js" defer="defer"></script>
+<script src="/library/assets/js/runtime~main.8d2473f4.js" defer="defer"></script>
+<script src="/library/assets/js/main.407c02d3.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -50,7 +50,7 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
 	StutterChance <span class="token operator">=</span> <span class="token number">0.7</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Presets"><code style="text-decoration:none">Presets</code><a href="#Presets" class="hash-link" aria-label="Direct link to Presets" title="Direct link to Presets" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Config.luau#L159"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Config<!-- -->.<!-- -->Presets<!-- -->:<!-- --> </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Config/#Config">Config</a></code><code class="purple_ieR2">}</code></div><div>
+</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Presets"><code style="text-decoration:none">Presets</code><a href="#Presets" class="hash-link" aria-label="Direct link to Presets" title="Direct link to Presets" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Config.luau#L183"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Config<!-- -->.<!-- -->Presets<!-- -->:<!-- --> </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Config/#Config">Config</a></code><code class="purple_ieR2">}</code></div><div>
 <p>Built in presets, all reachable as <code>Stagger.Presets</code>:</p>
 <ul>
   <li><code>Default</code>: a solid shove.</li>
@@ -58,7 +58,7 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
   <li><code>Heavy</code>: an explosion or a car; long lurch, almost always ends on the floor.</li>
   <li><code>Drunk</code>: slow drain, lots of half steps, long before anything is decided.</li>
 </ul>
-</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="extend"><code style="text-decoration:none">extend</code><a href="#extend" class="hash-link" aria-label="Direct link to extend" title="Direct link to extend" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Config.luau#L132"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Config<!-- -->.</code><code class="green_DgR4">extend</code><code>(</code><div class="inset_uKQm"><div><code>base<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Config/#Config">Config</a></code><code>,</code></div><div><code>overrides<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Config/#Config">Config</a></code></div><h3>Types</h3><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Config"><a href="#Config" class="hash-link" aria-label="Direct link to Config" title="Direct link to Config" translate="no">​</a></h3><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Config<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>StartBalance<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="extend"><code style="text-decoration:none">extend</code><a href="#extend" class="hash-link" aria-label="Direct link to extend" title="Direct link to extend" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Config.luau#L156"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Config<!-- -->.</code><code class="green_DgR4">extend</code><code>(</code><div class="inset_uKQm"><div><code>base<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Config/#Config">Config</a></code><code>,</code></div><div><code>overrides<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Config/#Config">Config</a></code></div><h3>Types</h3><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Config"><a href="#Config" class="hash-link" aria-label="Direct link to Config" title="Direct link to Config" translate="no">​</a></h3><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Config<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>StartBalance<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>Balance the character starts with at intensity 1, from 0 (falls at once) to 1 (barely bothered). Intensity above 1 lowers it further. Default <code>0.6</code>.</p>
 </span></span></div><div><code>BalanceDrain<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>Balance lost per second just from being off balance, scaled by how fast the character is still lurching. Default <code>0.15</code>.</p>
@@ -74,6 +74,8 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
 <p>Balance regained by a clean step. Default <code>0.14</code>.</p>
 </span></span></div><div><code>StepMomentumKeep<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>Fraction of the lurch that survives a clean step (lower stops sooner). Default <code>0.7</code>.</p>
+</span></span></div><div><code>MomentumHold<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>How much a low balance stops the lurch slowing down, from 0 (friction and steps always slow it) to 1 (at zero balance it keeps its full speed until the character falls or steps back above half balance). Default <code>1</code>.</p>
 </span></span></div><div><code>StutterChance<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>Chance a step is a half step: shorter, weaker, closer to the next. This is the "stutter". Default <code>0.45</code>.</p>
 </span></span></div><div><code>MisstepChance<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
@@ -100,6 +102,16 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
 <p>Radians the knee bends during a step. Default <code>0.9</code>.</p>
 </span></span></div><div><code>HeadCounter<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>How much the head counter-rotates to stay level (0 none, 1 fully). Default <code>0.7</code>.</p>
+</span></span></div><div><code>Steering<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Radians per second the player's walk input can bend the lurch towards where they are walking. <code>0</code> ignores input (and turns the controls off for the stagger). Default <code>2.5</code>.</p>
+</span></span></div><div><code>CatchGain<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Balance per second a player earns back by walking with the stumble (running it out). Default <code>0.35</code>.</p>
+</span></span></div><div><code>CatchBrake<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Extra studs per second per second the lurch slows while they do. Default <code>4</code>.</p>
+</span></span></div><div><code>TurnSpeed<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Radians per second the body turns to face the way it is being thrown. <code>0</code> (the default) keeps them facing where they were when hit: shoved from the front they stagger backwards. Either way the heading is held so the Humanoid can't swing them round.</p>
+</span></span></div><div><code>ReHitBalanceLoss<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Extra balance lost when hit again mid-stagger, on top of keeping the lower balance and adding the lurches together. Default <code>0.2</code>.</p>
 </span></span></div><div><code>MuscleStrength<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p><code>AnimationConstraint.AngularStrength</code> for the upper body while staggering. Below 1 the arms and torso lag the animation and swing with the body: this is the Euphoria look. Default <code>0.3</code>.</p>
 </span></span></div><div><code>MuscleDamping<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
@@ -110,8 +122,12 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
 <p><code>AngularDamping</code> while ragdolled. Default <code>1</code>.</p>
 </span></span></div><div><code>RagdollDuration<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>Seconds to stay ragdolled before standing up on their own. <code>0</code> means stay down until <a href="/library/api/Stagger#Recover">Stagger.Recover</a> is called. Default <code>3</code>.</p>
+</span></span></div><div><code>GetUpTime<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>Seconds the get-up animation takes after a ragdoll: arms push, knees come under, then the rise. Default <code>1.3</code>.</p>
 </span></span></div><div><code>GetUpDuration<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
-<p>Seconds after standing up before the stagger is fully over (controls stay off, jumping stays disabled). Default <code>0.8</code>.</p>
+<p>Seconds a character who recovered on their feet (never fell) stays in <code>Recovering</code> before the stagger is over. After a ragdoll the stagger ends with the get-up instead. Default <code>0.25</code>.</p>
+</span></span></div><div><code>RagdollInAir<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>A stagger that starts with no ground under the character ragdolls them instead. Default <code>true</code>.</p>
 </span></span></div><div><code>DisableControls<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
 <p>On a player's own client, disable the PlayerModule controls for the duration. Default <code>true</code>.</p>
 </span></span></div></div><code>}</code></div><div></div><div>
@@ -144,7 +160,7 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 132,
+                &quot;line&quot;: 156,
                 &quot;path&quot;: &quot;packages/src/Stagger/Config.luau&quot;
             }
         }
@@ -155,7 +171,7 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
             &quot;desc&quot;: &quot;Built in presets, all reachable as `Stagger.Presets`:\n\n- `Default`: a solid shove.\n- `Light`: a bump; short, usually recovered.\n- `Heavy`: an explosion or a car; long lurch, almost always ends on the floor.\n- `Drunk`: slow drain, lots of half steps, long before anything is decided.&quot;,
             &quot;lua_type&quot;: &quot;{ [string]: Config }&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 159,
+                &quot;line&quot;: 183,
                 &quot;path&quot;: &quot;packages/src/Stagger/Config.luau&quot;
             }
         }
@@ -204,6 +220,11 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
                     &quot;name&quot;: &quot;StepMomentumKeep&quot;,
                     &quot;lua_type&quot;: &quot;number&quot;,
                     &quot;desc&quot;: &quot;Fraction of the lurch that survives a clean step (lower stops sooner). Default `0.7`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;MomentumHold&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;How much a low balance stops the lurch slowing down, from 0 (friction and steps always slow it) to 1 (at zero balance it keeps its full speed until the character falls or steps back above half balance). Default `1`.&quot;
                 },
                 {
                     &quot;name&quot;: &quot;StutterChance&quot;,
@@ -271,6 +292,31 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
                     &quot;desc&quot;: &quot;How much the head counter-rotates to stay level (0 none, 1 fully). Default `0.7`.&quot;
                 },
                 {
+                    &quot;name&quot;: &quot;Steering&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Radians per second the player&#x27;s walk input can bend the lurch towards where they are walking. `0` ignores input (and turns the controls off for the stagger). Default `2.5`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;CatchGain&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Balance per second a player earns back by walking with the stumble (running it out). Default `0.35`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;CatchBrake&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Extra studs per second per second the lurch slows while they do. Default `4`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;TurnSpeed&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Radians per second the body turns to face the way it is being thrown. `0` (the default) keeps them facing where they were when hit: shoved from the front they stagger backwards. Either way the heading is held so the Humanoid can&#x27;t swing them round.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ReHitBalanceLoss&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Extra balance lost when hit again mid-stagger, on top of keeping the lower balance and adding the lurches together. Default `0.2`.&quot;
+                },
+                {
                     &quot;name&quot;: &quot;MuscleStrength&quot;,
                     &quot;lua_type&quot;: &quot;number&quot;,
                     &quot;desc&quot;: &quot;`AnimationConstraint.AngularStrength` for the upper body while staggering. Below 1 the arms and torso lag the animation and swing with the body: this is the Euphoria look. Default `0.3`.&quot;
@@ -296,9 +342,19 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
                     &quot;desc&quot;: &quot;Seconds to stay ragdolled before standing up on their own. `0` means stay down until [Stagger.Recover] is called. Default `3`.&quot;
                 },
                 {
+                    &quot;name&quot;: &quot;GetUpTime&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;Seconds the get-up animation takes after a ragdoll: arms push, knees come under, then the rise. Default `1.3`.&quot;
+                },
+                {
                     &quot;name&quot;: &quot;GetUpDuration&quot;,
                     &quot;lua_type&quot;: &quot;number&quot;,
-                    &quot;desc&quot;: &quot;Seconds after standing up before the stagger is fully over (controls stay off, jumping stays disabled). Default `0.8`.&quot;
+                    &quot;desc&quot;: &quot;Seconds a character who recovered on their feet (never fell) stays in `Recovering` before the stagger is over. After a ragdoll the stagger ends with the get-up instead. Default `0.25`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;RagdollInAir&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;,
+                    &quot;desc&quot;: &quot;A stagger that starts with no ground under the character ragdolls them instead. Default `true`.&quot;
                 },
                 {
                     &quot;name&quot;: &quot;DisableControls&quot;,
@@ -307,7 +363,7 @@ Stagger.RegisterPreset(&quot;Drunk&quot;, Stagger.Presets.Default, {
                 }
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 51,
+                &quot;line&quot;: 59,
                 &quot;path&quot;: &quot;packages/src/Stagger/Config.luau&quot;
             }
         }

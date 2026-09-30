@@ -30,8 +30,8 @@ have **recovered**; when balance hits zero they **fall**.
 
 Everything random comes from a `Random` seeded by the stagger, so the server and the
 simulating client agree on what happens without talking."><link data-rh="true" rel="icon" href="/library/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/library/api/Balance/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Balance/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Balance/" hreflang="x-default"><link rel="stylesheet" href="/library/assets/css/styles.99ecadb2.css">
-<script src="/library/assets/js/runtime~main.4ecba9d4.js" defer="defer"></script>
-<script src="/library/assets/js/main.5362e430.js" defer="defer"></script>
+<script src="/library/assets/js/runtime~main.8d2473f4.js" defer="defer"></script>
+<script src="/library/assets/js/main.407c02d3.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -76,13 +76,15 @@ simulating client agree on what happens without talking."><link data-rh="true" r
   direction) and takes <code>amount</code> off the balance. The controller feeds bumps into this; you
   can too.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Step"><code style="text-decoration:none">Step</code><a href="#Step" class="hash-link" aria-label="Direct link to Step" title="Direct link to Step" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Balance.luau#L184"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Balance<!-- -->:</code><code class="green_DgR4">Step</code><code>(</code><code>dt<!-- -->: </code><code class="blue_P4bS">number</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Balance/#Outcome">Outcome</a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Step"><code style="text-decoration:none">Step</code><a href="#Step" class="hash-link" aria-label="Direct link to Step" title="Direct link to Step" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Balance.luau#L195"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Balance<!-- -->:</code><code class="green_DgR4">Step</code><code>(</code><div class="inset_uKQm"><div><code>dt<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code></div><div><code>catch<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>0 to 1: how much the player is running the stumble out (walk input lined up with the lurch). Earns balance back and bleeds speed.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/library/api/Balance/#Outcome">Outcome</a></code><span class="inlineDescription_G7Er">-- <span>
 <p><code>"Staggering"</code> while undecided, then <code>"Recovered"</code> or <code>"Fell"</code> once and for all.</p>
 </span></span></div><div>
 <p>Advances the model by <code>dt</code> seconds. Call it every frame on the simulating side.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Lean"><code style="text-decoration:none">Lean</code><a href="#Lean" class="hash-link" aria-label="Direct link to Lean" title="Direct link to Lean" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Balance.luau#L239"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Balance<!-- -->:</code><code class="green_DgR4">Lean</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Lean"><code style="text-decoration:none">Lean</code><a href="#Lean" class="hash-link" aria-label="Direct link to Lean" title="Direct link to Lean" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Balance.luau#L254"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Balance<!-- -->:</code><code class="green_DgR4">Lean</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
 <p>How far the torso should lean into the lurch right now, in radians.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ArmRaise"><code style="text-decoration:none">ArmRaise</code><a href="#ArmRaise" class="hash-link" aria-label="Direct link to ArmRaise" title="Direct link to ArmRaise" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Balance.luau#L252"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Balance<!-- -->:</code><code class="green_DgR4">ArmRaise</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ArmRaise"><code style="text-decoration:none">ArmRaise</code><a href="#ArmRaise" class="hash-link" aria-label="Direct link to ArmRaise" title="Direct link to ArmRaise" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/KashTheKing/library/blob/main/packages/src/Stagger/Balance.luau#L267"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Balance<!-- -->:</code><code class="green_DgR4">ArmRaise</code><code>(</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
 <p>How far the arms should be out, 0 to 1.</p>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
@@ -153,6 +155,11 @@ simulating client agree on what happens without talking."><link data-rh="true" r
                     &quot;name&quot;: &quot;dt&quot;,
                     &quot;desc&quot;: &quot;&quot;,
                     &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;catch&quot;,
+                    &quot;desc&quot;: &quot;0 to 1: how much the player is running the stumble out (walk input lined up with the lurch). Earns balance back and bleeds speed.&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;
                 }
             ],
             &quot;returns&quot;: [
@@ -163,7 +170,7 @@ simulating client agree on what happens without talking."><link data-rh="true" r
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 184,
+                &quot;line&quot;: 195,
                 &quot;path&quot;: &quot;packages/src/Stagger/Balance.luau&quot;
             }
         },
@@ -179,7 +186,7 @@ simulating client agree on what happens without talking."><link data-rh="true" r
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 239,
+                &quot;line&quot;: 254,
                 &quot;path&quot;: &quot;packages/src/Stagger/Balance.luau&quot;
             }
         },
@@ -195,7 +202,7 @@ simulating client agree on what happens without talking."><link data-rh="true" r
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 252,
+                &quot;line&quot;: 267,
                 &quot;path&quot;: &quot;packages/src/Stagger/Balance.luau&quot;
             }
         }
