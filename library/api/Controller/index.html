@@ -8,7 +8,8 @@ creates them through a [Binder](/api/Binder) and hands each a Trove that is clea
 the stagger ends or the character leaves.
 
 Only the **driver** does real work: the network owner of the character, which is the
-player&#x27;s own client for player characters and the server for NPCs. The driver runs the
+player&#x27;s own client for player characters and, for NPCs, the client of the nearest player
+(the server when nobody is near). The driver runs the
 [Balance] model every `Heartbeat`, turns it into `Humanoid:Move` pulses (the little
 catch-up steps), writes the procedural pose into each joint&#x27;s `Transform` during
 `PreSimulation` (leaning, arms out, leg swings, head counter-rotation), and reports the
@@ -20,7 +21,8 @@ creates them through a [Binder](/api/Binder) and hands each a Trove that is clea
 the stagger ends or the character leaves.
 
 Only the **driver** does real work: the network owner of the character, which is the
-player&#x27;s own client for player characters and the server for NPCs. The driver runs the
+player&#x27;s own client for player characters and, for NPCs, the client of the nearest player
+(the server when nobody is near). The driver runs the
 [Balance] model every `Heartbeat`, turns it into `Humanoid:Move` pulses (the little
 catch-up steps), writes the procedural pose into each joint&#x27;s `Transform` during
 `PreSimulation` (leaning, arms out, leg swings, head counter-rotation), and reports the
@@ -28,8 +30,8 @@ outcome. Other peers hold the controller only so [Stagger.GetState] and the sign
 they see the result through ordinary physics replication.
 
 You do not construct these yourself; read them with [Stagger.GetController]."><link data-rh="true" rel="icon" href="/library/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://kashtheking.com/library/api/Controller/"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Controller/" hreflang="en"><link data-rh="true" rel="alternate" href="https://kashtheking.com/library/api/Controller/" hreflang="x-default"><link rel="stylesheet" href="/library/assets/css/styles.99ecadb2.css">
-<script src="/library/assets/js/runtime~main.8d2473f4.js" defer="defer"></script>
-<script src="/library/assets/js/main.407c02d3.js" defer="defer"></script>
+<script src="/library/assets/js/runtime~main.0c097b6a.js" defer="defer"></script>
+<script src="/library/assets/js/main.d90e7f36.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -43,7 +45,8 @@ You do not construct these yourself; read them with [Stagger.GetController]."><l
 </p>
 <p>
   Only the <strong>driver</strong> does real work: the network owner of the character, which is the
-  player's own client for player characters and the server for NPCs. The driver runs the
+  player's own client for player characters and, for NPCs, the client of the nearest player
+  (the server when nobody is near). The driver runs the
   <a href="/library/api/Balance">Balance</a> model every <code>Heartbeat</code>, turns it into <code>Humanoid:Move</code> pulses (the little
   catch-up steps), writes the procedural pose into each joint's <code>Transform</code> during
   <code>PreSimulation</code> (leaning, arms out, leg swings, head counter-rotation), and reports the
@@ -61,7 +64,25 @@ You do not construct these yourself; read them with [Stagger.GetController]."><l
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;private&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 87,
+                &quot;line&quot;: 92,
+                &quot;path&quot;: &quot;packages/src/Stagger/Controller.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;SetDriver&quot;,
+            &quot;desc&quot;: &quot;Tells the controller who simulates the character: `nil` for the server (or the character&#x27;s\nown player), a Player for an NPC driven by that player&#x27;s client. [Stagger] calls it as the\nstate packets arrive, before [Controller:SetState].&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;driver&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Player?&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;private&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 624,
                 &quot;path&quot;: &quot;packages/src/Stagger/Controller.luau&quot;
             }
         },
@@ -84,7 +105,7 @@ You do not construct these yourself; read them with [Stagger.GetController]."><l
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;private&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 605,
+                &quot;line&quot;: 646,
                 &quot;path&quot;: &quot;packages/src/Stagger/Controller.luau&quot;
             }
         },
@@ -96,7 +117,7 @@ You do not construct these yourself; read them with [Stagger.GetController]."><l
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;private&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 772,
+                &quot;line&quot;: 823,
                 &quot;path&quot;: &quot;packages/src/Stagger/Controller.luau&quot;
             }
         }
@@ -104,9 +125,9 @@ You do not construct these yourself; read them with [Stagger.GetController]."><l
     &quot;properties&quot;: [],
     &quot;types&quot;: [],
     &quot;name&quot;: &quot;Controller&quot;,
-    &quot;desc&quot;: &quot;One per character that is staggering, ragdolled or getting up, on every peer. [Stagger]\ncreates them through a [Binder](/api/Binder) and hands each a Trove that is cleaned when\nthe stagger ends or the character leaves.\n\nOnly the **driver** does real work: the network owner of the character, which is the\nplayer&#x27;s own client for player characters and the server for NPCs. The driver runs the\n[Balance] model every `Heartbeat`, turns it into `Humanoid:Move` pulses (the little\ncatch-up steps), writes the procedural pose into each joint&#x27;s `Transform` during\n`PreSimulation` (leaning, arms out, leg swings, head counter-rotation), and reports the\noutcome. Other peers hold the controller only so [Stagger.GetState] and the signals work;\nthey see the result through ordinary physics replication.\n\nYou do not construct these yourself; read them with [Stagger.GetController].&quot;,
+    &quot;desc&quot;: &quot;One per character that is staggering, ragdolled or getting up, on every peer. [Stagger]\ncreates them through a [Binder](/api/Binder) and hands each a Trove that is cleaned when\nthe stagger ends or the character leaves.\n\nOnly the **driver** does real work: the network owner of the character, which is the\nplayer&#x27;s own client for player characters and, for NPCs, the client of the nearest player\n(the server when nobody is near). The driver runs the\n[Balance] model every `Heartbeat`, turns it into `Humanoid:Move` pulses (the little\ncatch-up steps), writes the procedural pose into each joint&#x27;s `Transform` during\n`PreSimulation` (leaning, arms out, leg swings, head counter-rotation), and reports the\noutcome. Other peers hold the controller only so [Stagger.GetState] and the signals work;\nthey see the result through ordinary physics replication.\n\nYou do not construct these yourself; read them with [Stagger.GetController].&quot;,
     &quot;source&quot;: {
-        &quot;line&quot;: 18,
+        &quot;line&quot;: 19,
         &quot;path&quot;: &quot;packages/src/Stagger/Controller.luau&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Library</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/library/docs/intro/">Getting started</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/packages/">Packages</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/plugins/">Plugins</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/building-blocks/">Building Blocks</a></li><li class="footer__item"><a class="footer__link-item" href="/library/docs/guides/">Guides</a></li><li class="footer__item"><a class="footer__link-item" href="/library/api/">API reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Source</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/KashTheKing/library" target="_blank" rel="noopener noreferrer" class="footer__link-item">This repository on GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/KashTheKing/library/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Report a bug or request a feature<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://wally.run/?q=kashtheking" target="_blank" rel="noopener noreferrer" class="footer__link-item">Packages on Wally<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/infinite-ocean/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Infinite Ocean docs<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://kashtheking.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Help &amp; contact</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord server<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="mailto:kashtheking123@gmail.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">kashtheking123@gmail.com<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.roblox.com/users/117445502/profile" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing on Roblox<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/KashTheKing_X" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKing_X on X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://youtube.com/@KashTheKingYT" target="_blank" rel="noopener noreferrer" class="footer__link-item">@KashTheKingYT on YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://paypal.me/KashPlacek" target="_blank" rel="noopener noreferrer" class="footer__link-item">Support me on PayPal<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 KashTheKing. Packages and building blocks are MIT; the Studio plugins are distributed on the Creator Store under their own terms.</div></div></div></footer></div>
