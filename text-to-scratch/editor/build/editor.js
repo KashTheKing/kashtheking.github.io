@@ -776,7 +776,8 @@ export function boxesOverlap(ax: number, ay: number, aw: number, ah: number, bx:
 export function pointInBox(px: number, py: number, bx: number, by: number, bw: number, bh: number): boolean {
   return Math.abs(px - bx) * 2 < bw && Math.abs(py - by) * 2 < bh;
 }
-`,"net.ts":`// tts/net: online multiplayer over Scratch cloud variables (up to 6 players, plus a message channel).
+`,"net.ts":`// tts/net: online multiplayer over Scratch cloud variables (up to 6 players, plus a quick-chat channel).
+// Scratch does not allow free-text chat, so messages are picked from the fixed QUICK_CHAT list.
 //
 // Cloud variables only sync on scratch.mit.edu for logged-in Scratchers in a shared project, and on
 // TurboWarp. Each update is limited to ~10 per second, so sendState() throttles itself.
@@ -796,7 +797,8 @@ export function pointInBox(px: number, py: number, bx: number, by: number, bw: n
 export const cloud = { p1: 0, p2: 0, p3: 0, p4: 0, p5: 0, p6: 0, msg: 0 };
 
 export const SLOTS = 6;
-const CHARS = " abcdefghijklmnopqrstuvwxyz0123456789.,!?-_:;'()/+*=#@&%";
+/** Quick-chat phrases: sendMessage(i) sends QUICK_CHAT[i]. Edit freely, but keep them friendly (Scratch community guidelines). */
+export const QUICK_CHAT: string[] = ["Hi!", "Good game!", "Follow me!", "Nice!", "Oops!", "Bye!"];
 
 /** This client's player slot (1..6) in session.slot, or 0 before join() / if the game is full. Shared by all sprites. */
 export const session = { slot: 0 };
@@ -854,27 +856,6 @@ export function slice(text: string, start: number, length: number): string {
   return out;
 }
 
-/** Text -> digits (2 per character; letters are lower-cased by Scratch's comparison). */
-/** @warp */
-export function encode(text: string): string {
-  let out = "";
-  for (let i = 0; i < text.length; i++) {
-    let code = 1; // unknown characters become spaces
-    for (let j = 0; j < CHARS.length; j++) if (text[i] === CHARS[j]) code = j + 1;
-    out = out + String(code + 10);
-  }
-  return out;
-}
-
-/** @warp */
-export function decode(digits: string): string {
-  let out = "";
-  for (let i = 0; i + 1 < digits.length; i += 2) {
-    const code = Number(digits[i] + digits[i + 1]) - 10;
-    out = out + CHARS[code - 1];
-  }
-  return out;
-}
 
 /** @warp */
 function snapshotSlots() {
@@ -936,25 +917,24 @@ export function readPlayer(slot: number): boolean {
   return slot === session.slot || timer() - lastChange[slot - 1] < 3;
 }
 
-/** Send a short text message to everyone (about 100 characters at most). */
+/** Send QUICK_CHAT[phrase] to everyone. */
 /** @warp */
-export function sendMessage(text: string) {
+export function sendMessage(phrase: number) {
   msgSeq = msgSeq + 1;
   if (msgSeq > 9) msgSeq = 1;
-  const body = encode(text);
-  cloud.msg = ("1" + String(session.slot) + String(msgSeq) + body) as unknown as number;
+  cloud.msg = ("1" + String(session.slot) + String(msgSeq) + pad(phrase, 2)) as unknown as number;
 }
 
-/** True when a new message arrived (from someone else); read Net.message and Net.messageFrom. */
+/** True when a new message arrived (from someone else); read Net.message (the phrase text) and Net.messageFrom. */
 /** @warp */
 export function pollMessage(): boolean {
   const v = String(cloud.msg);
-  if (v === lastMsg || v.length < 4) return false;
+  if (v === lastMsg || v.length < 5) return false;
   lastMsg = v;
   messageFrom = Number(v[1]);
   if (messageFrom === session.slot) return false;
-  const body = slice(v, 3, v.length - 3);
-  message = decode(body);
+  const phrase = Number(slice(v, 3, 2));
+  message = phrase >= 0 && phrase < QUICK_CHAT.length ? QUICK_CHAT[phrase] : "";
   return true;
 }
 `,"particles.ts":`// tts/particles: clone-based particle bursts. Give a sprite a small costume, then:
