@@ -141,8 +141,8 @@
   .group__items { padding: 10px 14px 18px; }
   .obj.card .glass::after { content: none; }
   .obj.card .glass { background: rgba(255,255,255,.12); backdrop-filter: blur(12px); }
-  .obj.card .frame { position: relative; display: block; width: 100%; aspect-ratio: 1; flex: none; }
-  .obj.card img.sq { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 0; object-fit: cover; margin: 0; }
+  .obj.card .frame { position: relative; display: block; width: 100%; aspect-ratio: 1; flex: none; border-radius: 22px 22px 0 0; overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(white, black); }
+  .obj.card img.sq { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 22px 22px 0 0; object-fit: cover; margin: 0; }
   .obj.card .name { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; box-sizing: content-box; height: 2.4em; padding: 8px 8px 0; font-size: .8rem; line-height: 1.2; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.6); position: relative; z-index: 2; }
   .obj.card .objlink { display: flex; flex-direction: column; }
   .obj.card .objlink { gap: 0; }
