@@ -299,7 +299,7 @@
   .settings input:checked::after { transform: translateX(18px); }
   @media (max-width: 720px) { .me img { height: 22vh; } }
   /* phones: stretch the ring's bottom arc down so labels don't overlap */
-  @media (max-width: 720px) { .group--ring { --ring-ry: 60vw; } .group--ring .group__items { height: 110vw; } .group--ring .obj { top: 26%; } }
+  @media (max-width: 720px) { .group--ring { --ring-ry: 60vw; } .group--ring .group__items { height: 110vw; } .group--ring .obj { top: 26%; } .group--cross:not(.group--circle) { --cross-ry: 42vw; } .group--cross:not(.group--circle) .group__items { height: 110vw; } }
 </style>
 </head>
 <body>
@@ -496,7 +496,7 @@
       var style = "--tint:" + (it.bg || g.tint);
       if (g.layout === "cross") {
         var four = g.items.length === 4, ca = (four ? [-90, 180, 0, 90][i] : -90 + i * 360 / g.items.length) * Math.PI / 180, cr = four ? "min(31vw, 210px)" : "var(--cr)";
-        style += ";--x:calc(" + Math.cos(ca).toFixed(3) + " * " + cr + ");--y:calc(" + Math.sin(ca).toFixed(3) + " * " + cr + ")";
+        style += ";--x:calc(" + Math.cos(ca).toFixed(3) + " * " + cr + ");--y:calc(" + Math.sin(ca).toFixed(3) + " * " + (four ? "var(--cross-ry, " + cr + ")" : cr) + ")";
       }
       if (g.layout === "ring" && i > 0) {
         /* fan the rest along the bottom arc under the big one */
