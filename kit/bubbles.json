@@ -1,0 +1,601 @@
+{
+  "groups": [
+    {
+      "id": "work",
+      "label": "Work",
+      "object": "work",
+      "size": 1.0,
+      "angle": -135,
+      "tint": "#FFB300",
+      "items": [
+        {
+          "label": "Contact me",
+          "icon": "mail-3d.png",
+          "page": "contact.html",
+          "button": {
+            "label": "Email me",
+            "href": "mailto:business@kashtheking.com"
+          },
+          "bg": "#2979FF"
+        },
+        {
+          "label": "Game Consulting",
+          "icon": "bulb-3d.png",
+          "page": "terms.html",
+          "bg": "#F48FB1",
+          "button": {
+            "label": "Download terms (.md)",
+            "href": "consulting-terms.md",
+            "download": "KashTheKing consulting terms.md"
+          }
+        },
+        {
+          "label": "Support me - Paypal",
+          "icon": "paypal.svg",
+          "href": "https://paypal.me/KashPlacek",
+          "bg": "#0070BA"
+        }
+      ],
+      "grid": true,
+      "pageTint": "#3A3F47"
+    },
+    {
+      "id": "blog",
+      "label": "Blog",
+      "object": "blog",
+      "titleIcon": "blog",
+      "pageTint": "#3A3F47",
+      "size": 0.88,
+      "angle": -45,
+      "tint": "#FF3D00",
+      "shift": "-8%",
+      "layout": "posts",
+      "items": [
+        {
+          "label": "Follow on X",
+          "icon": "x.svg",
+          "bg": "#8A9199",
+          "href": "https://x.com/KashTheKing_X"
+        },
+        {
+          "label": "Subscribe on YouTube",
+          "icon": "youtube.svg",
+          "href": "https://youtube.com/@KashTheKingYT?sub_confirmation=1",
+          "bg": "#8A9199"
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "label": "My Library",
+      "object": "library",
+      "size": 1.06,
+      "angle": 0,
+      "tint": "#00C853",
+      "layout": "ring",
+      "grid": true,
+      "items": [
+        {
+          "label": "Library Website",
+          "icon": "library.png",
+          "href": "https://kashtheking.com/library/"
+        },
+        {
+          "label": "Plugins",
+          "icon": "plugins.svg",
+          "href": "https://kashtheking.com/library/plugins",
+          "items": [
+            {
+              "label": "All plugins",
+              "icon": "plugins.svg",
+              "href": "https://kashtheking.com/library/plugins"
+            },
+            {
+              "label": "Infinite Ocean",
+              "icon": "infinite-ocean-3d.png",
+              "href": "https://kashtheking.com/infinite-ocean/",
+              "bg": "#1E88E5"
+            },
+            {
+              "label": "Flashback",
+              "icon": "flashback-3d.png",
+              "href": "https://kashtheking.com/flashback/"
+            },
+            {
+              "label": "Blockwork",
+              "icon": "blockwork.png",
+              "href": "https://github.com/KashTheKing/blockwork"
+            }
+          ]
+        },
+        {
+          "label": "Packages",
+          "icon": "packages.svg",
+          "href": "https://kashtheking.com/library/packages"
+        },
+        {
+          "label": "Building Blocks",
+          "icon": "blocks.svg",
+          "href": "https://kashtheking.com/library/building-blocks"
+        },
+        {
+          "label": "Guides",
+          "icon": "guides.svg",
+          "href": "https://kashtheking.com/library/guides"
+        }
+      ]
+    },
+    {
+      "id": "play",
+      "label": "Play",
+      "object": "play",
+      "size": 0.94,
+      "angle": 180,
+      "tint": "#2979FF",
+      "items": [
+        {
+          "label": "Roblox games",
+          "cluster": true,
+          "href": "https://www.roblox.com/users/117445502/profile",
+          "items": [
+            {
+              "label": "Infinite Ocean Showcase",
+              "href": "https://www.roblox.com/games/72030094231659",
+              "play": "roblox://experiences/start?placeId=72030094231659",
+              "placeId": 72030094231659,
+              "universeId": "10768106481",
+              "thumb": "https://tr.rbxcdn.com/180DAY-bb4d8f599e33318fb3fbc41aff998339/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-f899b7b7d46d6ef5d6aa2855f9f347fc/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Rob a Convenience Store Simulator",
+              "href": "https://www.roblox.com/games/17223006401",
+              "play": "roblox://experiences/start?placeId=17223006401",
+              "placeId": 17223006401,
+              "universeId": "5894409679",
+              "thumb": "https://tr.rbxcdn.com/180DAY-d043058e72b93c430b0e99181a3333bc/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-573722b15d95c9dccfcf038699bb318c/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Be Famous",
+              "href": "https://www.roblox.com/games/97158533146210",
+              "play": "roblox://experiences/start?placeId=97158533146210",
+              "placeId": 97158533146210,
+              "universeId": "9251494665",
+              "thumb": "https://tr.rbxcdn.com/180DAY-99d71a15335ad835614a6a74e79db63f/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-ed46ad772a9af1d516bd664858fed49d/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Calculator",
+              "href": "https://www.roblox.com/games/116357250335199",
+              "play": "roblox://experiences/start?placeId=116357250335199",
+              "placeId": 116357250335199,
+              "universeId": "7413307311",
+              "thumb": "https://tr.rbxcdn.com/180DAY-cbfe689a0bde9a4f0824d75b98069256/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-063e683869c069c10b3034b3b4be5afb/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Sun Apocalypse",
+              "href": "https://www.roblox.com/games/93247877223004",
+              "play": "roblox://experiences/start?placeId=93247877223004",
+              "placeId": 93247877223004,
+              "universeId": "7395704513",
+              "thumb": "https://tr.rbxcdn.com/180DAY-2a8a006d11157c33e55a24846acd8cbf/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-006143452bcbc8ca45aa94b4d486970e/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Interview Box",
+              "href": "https://www.roblox.com/games/17054406156",
+              "play": "roblox://experiences/start?placeId=17054406156",
+              "placeId": 17054406156,
+              "universeId": "5846862286",
+              "thumb": "https://tr.rbxcdn.com/180DAY-d4bfbb41e58a941f1c1911f810a7cce0/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-59d23f9f9093c93fd25f8c2ade24f80b/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Missile Launch Sequence",
+              "href": "https://www.roblox.com/games/15239012937",
+              "play": "roblox://experiences/start?placeId=15239012937",
+              "placeId": 15239012937,
+              "universeId": "5254192909",
+              "thumb": "https://tr.rbxcdn.com/180DAY-63283f4439acc9e7e565ec7b0fb74529/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-0859bd7dbcd79ad358132ba9557b5647/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Ways to Die",
+              "href": "https://www.roblox.com/games/10141461362",
+              "play": "roblox://experiences/start?placeId=10141461362",
+              "placeId": 10141461362,
+              "universeId": "3723366489",
+              "thumb": "https://tr.rbxcdn.com/180DAY-4c442e1ea13c8461c1ce27293602ab81/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-fdd165ef5ad3bf9d2f5a5685ae6da899/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "My Fishing Brainrots",
+              "href": "https://www.roblox.com/games/113489516847696",
+              "play": "roblox://experiences/start?placeId=113489516847696",
+              "placeId": 113489516847696,
+              "universeId": "8916375040",
+              "thumb": "https://tr.rbxcdn.com/180DAY-09721c339e333fc0af649db41d1aef80/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-9b9be8b2f5fe657a2b57f5e733a0da21/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Sword Combat",
+              "href": "https://www.roblox.com/games/13992243473",
+              "play": "roblox://experiences/start?placeId=13992243473",
+              "placeId": 13992243473,
+              "universeId": "4847474655",
+              "thumb": "https://tr.rbxcdn.com/180DAY-a47f797eb94974140cf7193c66e1e84/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-0c609d228de364e8bfcc70564d503599/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "Goofy Soccer",
+              "href": "https://www.roblox.com/games/12946776055",
+              "play": "roblox://experiences/start?placeId=12946776055",
+              "placeId": 12946776055,
+              "universeId": "4528468905",
+              "thumb": "https://tr.rbxcdn.com/180DAY-de3f19b589efd0b4e30812e7856db9e5/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-09a22c21a3820a939abb64df02d66691/150/150/Image/Png/noFilter",
+              "square": true
+            },
+            {
+              "label": "ShapeShifter",
+              "href": "https://www.roblox.com/games/6196759988",
+              "play": "roblox://experiences/start?placeId=6196759988",
+              "placeId": 6196759988,
+              "universeId": "2270233824",
+              "thumb": "https://tr.rbxcdn.com/180DAY-93b27b35cd58373da46eb52fada27f39/768/432/Image/Png/noFilter",
+              "icon": "https://tr.rbxcdn.com/180DAY-eb4d3b4d6f640050ac2c76824ea02b9c/150/150/Image/Png/noFilter",
+              "square": true
+            }
+          ],
+          "search": true
+        },
+        {
+          "label": "Roblox groups",
+          "cluster": true,
+          "href": "https://www.roblox.com/users/117445502/profile#!/groups",
+          "items": [
+            {
+              "label": "No Trash Studios",
+              "img": "https://tr.rbxcdn.com/180DAY-438648c2382e7be64f83cdc2fcadbf16/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/45578084"
+            },
+            {
+              "label": "Kash's Kingdom",
+              "img": "https://tr.rbxcdn.com/180DAY-c68fff864fd8da819b9779b15e86345f/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/32360058"
+            },
+            {
+              "label": "Game Swap",
+              "img": "https://tr.rbxcdn.com/180DAY-bc6e7b57abe6c197cc9f3f721d307957/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/34135129"
+            },
+            {
+              "label": "Brickiez",
+              "img": "https://tr.rbxcdn.com/180DAY-40fb0fe9866d98db4573cdacb8e2a76a/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/34555295"
+            },
+            {
+              "label": "Clanker Studios",
+              "img": "https://tr.rbxcdn.com/180DAY-b3724b62515f03f99435f72a99adc8eb/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/300315957"
+            },
+            {
+              "label": "WeTheBread",
+              "img": "https://tr.rbxcdn.com/180DAY-a03926b78e8c2db772b249675ab27f36/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/33846029"
+            },
+            {
+              "label": "The Basement Games",
+              "img": "https://tr.rbxcdn.com/180DAY-86d27432e33b6d5f3f0478465ba6b2d9/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/443524639"
+            },
+            {
+              "label": "No Slop Studios",
+              "img": "https://tr.rbxcdn.com/180DAY-342ae8e5ec226669de7034e891e28601/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/559719618"
+            },
+            {
+              "label": "Best Events",
+              "img": "https://tr.rbxcdn.com/180DAY-73279337d38a0909602a4d10657c3228/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/33447364"
+            },
+            {
+              "label": "Roblox Civilization Survival",
+              "img": "https://tr.rbxcdn.com/180DAY-47f9867bc677d5a08801bda4407f958d/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/219333405"
+            },
+            {
+              "label": "The Bloxxas",
+              "img": "https://tr.rbxcdn.com/180DAY-e198b0732b354f0ec61f19c1e16d76fb/150/150/Image/Png/noFilter",
+              "href": "https://www.roblox.com/groups/829233796"
+            }
+          ]
+        },
+        {
+          "label": "Other games",
+          "href": "",
+          "items": [
+            {
+              "label": "Pixel Divers",
+              "icon": "pixel-divers.png",
+              "pixel": true,
+              "href": "https://www.pixeldivers.world/"
+            },
+            {
+              "label": "Scratch games",
+              "icon": "scratch-cat.svg",
+              "href": "https://scratch.mit.edu/studios/52025574"
+            },
+            {
+              "label": "Minigame",
+              "icon": "crown.png",
+              "href": "https://kashtheking.com/minigame/"
+            }
+          ],
+          "cluster": true
+        },
+        {
+          "label": "Discord",
+          "icon": "discord.svg",
+          "href": "https://discord.gg/6HYgCk22eD"
+        }
+      ],
+      "layout": "cross"
+    },
+    {
+      "id": "more",
+      "label": "More",
+      "text": "…",
+      "size": 0.62,
+      "angle": 90,
+      "tint": "#CFD8DC",
+      "items": [
+        {
+          "label": "My Dreams",
+          "href": "",
+          "cluster": true,
+          "bg": "#0D69AC",
+          "tint": "#0D69AC",
+          "pageTint": "#0D69AC",
+          "grid": false,
+          "layout": "cross",
+          "items": [
+            {
+              "label": "Simple Editor",
+              "icon": "simple-editor.png",
+              "href": "https://kashtheking.com/simple-editor/",
+              "bg": "#4A5160"
+            },
+            {
+              "label": "Pixel Divers",
+              "icon": "pixel-divers.png",
+              "pixel": true,
+              "href": "https://www.pixeldivers.world/",
+              "bg": "#0B3D91"
+            },
+            {
+              "label": "TextToScratch",
+              "icon": "tts.png",
+              "href": "https://kashtheking.com/text-to-scratch/",
+              "bg": "#4B4FD9"
+            },
+            {
+              "label": "100 Confident Devs",
+              "icon": "100cd.png",
+              "href": "https://100confidentdevs.org",
+              "bg": "#20242C"
+            },
+            {
+              "label": "Custom Roblox Background",
+              "icon": "chrome.svg",
+              "href": "https://kashtheking.com/chrome-extensions/custom-roblox-website/",
+              "bg": "#335FFF"
+            }
+          ],
+          "solid": true,
+          "backdrop": "radial-gradient(circle at 76% 27%, rgba(255,255,255,.95) 0, rgba(255,255,255,.5) 5%, rgba(255,255,255,0) 17%), radial-gradient(circle at 21% 70%, rgba(255,255,255,.35) 0 2.4%, rgba(255,255,255,.12) 2.6% 2.9%, transparent 3.1%), radial-gradient(circle at 27% 61%, rgba(255,255,255,.28) 0 1.4%, rgba(255,255,255,.1) 1.6% 1.8%, transparent 2%), radial-gradient(circle at 80% 66%, rgba(255,255,255,.3) 0 2%, rgba(255,255,255,.1) 2.2% 2.5%, transparent 2.7%), radial-gradient(circle at 71% 75%, rgba(255,255,255,.25) 0 1.2%, transparent 1.5%), radial-gradient(ellipse 90% 40% at 50% 6%, rgba(255,255,255,.5) 0, rgba(255,255,255,.14) 55%, rgba(255,255,255,0) 56%), linear-gradient(rgba(0,140,255,.18), rgba(120,255,200,.22)), url(assets/sky.jpg) center / cover no-repeat"
+        },
+        {
+          "label": "Friends and Recognition",
+          "href": "",
+          "cluster": true,
+          "bg": "#2FD65B",
+          "tint": "#2FD65B",
+          "pageTint": "#2FD65B",
+          "grid": true,
+          "items": [
+            {
+              "label": "PhoenixBoss",
+              "img": "assets/friends/phoenixboss.png",
+              "href": "https://www.roblox.com/users/1906238425/profile",
+              "caption": "My Best Friend and Personal Artist"
+            },
+            {
+              "label": "DanCodes",
+              "img": "assets/friends/rbx-dan_codes.png",
+              "href": "https://www.roblox.com/users/109408098/profile",
+              "caption": "The Elites"
+            },
+            {
+              "label": "Semay",
+              "img": "assets/friends/rbx-legendarysynthic.png",
+              "href": "https://www.roblox.com/users/367716413/profile",
+              "caption": "The Elites"
+            },
+            {
+              "label": "DecayedPyro",
+              "img": "assets/friends/rbx-ragecraft19.png",
+              "href": "https://www.roblox.com/users/1764967406/profile",
+              "caption": "The Elites"
+            },
+            {
+              "label": "Nythxcal",
+              "img": "assets/friends/rbx-nythxcal.png",
+              "href": "https://www.roblox.com/users/118490350/profile",
+              "caption": "The Elites"
+            },
+            {
+              "label": "Jinokep",
+              "img": "assets/friends/rbx-jinokep.png",
+              "href": "https://www.roblox.com/users/296998007/profile",
+              "caption": "The Elites"
+            },
+            {
+              "label": "Neverparty",
+              "img": "assets/friends/rbx-neverparty.png",
+              "href": "https://www.roblox.com/users/5780351521/profile",
+              "caption": "The Elites"
+            },
+            {
+              "label": "Aelivar",
+              "img": "assets/friends/rbx-aelivarius.png",
+              "href": "https://www.roblox.com/users/10085056131/profile",
+              "caption": "The Elites"
+            },
+            {
+              "break": true
+            },
+            {
+              "label": "BloxyRBX",
+              "img": "assets/friends/bloxy.png",
+              "href": "https://www.roblox.com/users/548366430/profile",
+              "caption": "Great friend I make games and videos with"
+            },
+            {
+              "label": "DuckableDev",
+              "img": "assets/friends/rbx-duckabledev.png",
+              "href": "https://www.roblox.com/users/5046233416/profile",
+              "caption": "Great friend and inspiration"
+            }
+          ],
+          "backdrop": "linear-gradient(#3BE36A, #17A845)",
+          "solidBubble": true
+        },
+        {
+          "break": true
+        },
+        {
+          "label": "My Links",
+          "href": "",
+          "cluster": true,
+          "bg": "#111214",
+          "tint": "#111214",
+          "pageTint": "#111214",
+          "grid": true,
+          "items": [
+            {
+              "label": "Roblox",
+              "icon": "roblox.svg",
+              "href": "https://www.roblox.com/users/117445502/profile"
+            },
+            {
+              "label": "YouTube",
+              "icon": "youtube.svg",
+              "href": "https://youtube.com/@KashTheKingYT?sub_confirmation=1"
+            },
+            {
+              "label": "X",
+              "icon": "x.svg",
+              "href": "https://x.com/KashTheKing_X"
+            },
+            {
+              "label": "Discord",
+              "icon": "discord.svg",
+              "href": "https://discord.gg/6HYgCk22eD"
+            },
+            {
+              "label": "GitHub",
+              "icon": "github.svg",
+              "href": "https://github.com/KashTheKing"
+            },
+            {
+              "label": "Scratch",
+              "icon": "scratch-cat.svg",
+              "href": "https://scratch.mit.edu/studios/52025574"
+            },
+            {
+              "break": true
+            },
+            {
+              "label": "Main Website",
+              "icon": "kash-site.png",
+              "href": "https://kashtheking.com/"
+            },
+            {
+              "label": "Library",
+              "icon": "library.png",
+              "href": "https://kashtheking.com/library/"
+            },
+            {
+              "label": "100 Confident Devs",
+              "icon": "100cd.png",
+              "href": "https://100confidentdevs.org"
+            },
+            {
+              "label": "Pixel Divers",
+              "icon": "pixel-divers.png",
+              "pixel": true,
+              "href": "https://www.pixeldivers.world/"
+            },
+            {
+              "label": "Fatigue",
+              "icon": "globe.svg",
+              "href": "https://getfatigue.com"
+            }
+          ],
+          "backdrop": "linear-gradient(#1C1D21, #050506)",
+          "solidBubble": true
+        }
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "label": "Roblox",
+      "icon": "roblox.svg",
+      "href": "https://www.roblox.com/users/117445502/profile",
+      "angle": -90,
+      "size": 0.62
+    },
+    {
+      "label": "GitHub",
+      "icon": "github.svg",
+      "href": "https://github.com/KashTheKing",
+      "angle": 35,
+      "size": 0.44
+    },
+    {
+      "label": "X",
+      "icon": "x.svg",
+      "href": "https://x.com/KashTheKing_X",
+      "angle": 60,
+      "size": 0.36
+    },
+    {
+      "label": "Discord",
+      "icon": "discord.svg",
+      "href": "https://discord.gg/6HYgCk22eD",
+      "angle": 120,
+      "size": 0.48
+    },
+    {
+      "label": "YouTube",
+      "icon": "youtube.svg",
+      "href": "https://youtube.com/@KashTheKingYT?sub_confirmation=1",
+      "angle": 145,
+      "size": 0.4
+    }
+  ]
+}
