@@ -578,7 +578,9 @@
         if (g.backdrop) fly(backdrop, small, rest);
       } else {
         ghost.style.zIndex = 5; fly(ghost, rest, small, 1, 0); fly(group, near, rest, 0, 1);
-        if (bdOld) { stage.insertBefore(bdOld, ghost); bdOld.style.zIndex = 4; fly(bdOld, rest, small); }
+        if (bdOld) { stage.insertBefore(bdOld, ghost); bdOld.style.zIndex = 4; fly(bdOld, rest, small, 1, 0); }
+        /* the bubble we came out of: its preview fades back in as the page shrinks into it */
+        if (home_) { var gl = home_.querySelector(".glass"); gl.style.transition = "none"; gl.style.opacity = 0; void gl.offsetWidth; gl.style.transition = "opacity 620ms cubic-bezier(.76,0,.24,1)"; gl.style.opacity = 1; setTimeout(function () { gl.style.transition = gl.style.opacity = ""; }, 640); }
       }
       setTimeout(function () {
         ghost.remove(); if (bdOld) bdOld.remove();
