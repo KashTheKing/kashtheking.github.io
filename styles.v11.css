@@ -1368,6 +1368,9 @@ blockquote {
 }
 
 .dream-feature--tts .library-github-btn:hover {
+    background: #F2EBFF;
+    color: #6B43C4;
+    border-color: rgba(0,0,0,0.08);
     transform: translateY(-2px);
     box-shadow: 0 6px 0 #5E3BA8;
 }
