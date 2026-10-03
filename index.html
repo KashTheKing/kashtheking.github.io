@@ -158,7 +158,9 @@
   .group--circle .group__items { width: var(--size); height: var(--size); margin-bottom: 30px; }
   .group--circle .obj { --w: calc(var(--size) * .2); font-size: .8rem; }
   .group--circle .center { font-size: clamp(1.1rem, 3.4vw, 2rem); white-space: nowrap; }
-  .search { width: min(92vw, 420px); margin: 0 auto 6px; display: block; height: 42px; border-radius: 999px; border: 0; padding: 0 18px; font: 600 15px/1 var(--font); color: #fff; background: rgba(255,255,255,.16); backdrop-filter: blur(12px); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 0 0 1px rgba(255,255,255,.25); outline: none; }
+  .search { box-sizing: border-box; width: min(100%, 420px); margin: 0 auto 6px; display: block; height: 42px; border-radius: 999px; border: 0; padding: 0 18px; font: 600 15px/1 var(--font); color: #fff; background: rgba(255,255,255,.16); backdrop-filter: blur(12px); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 0 0 1px rgba(255,255,255,.25); outline: none; }
+  /* fade the bottom edge of scrolling search lists so the cut-off row reads as "scroll for more" */
+  .group--search { -webkit-mask-image: linear-gradient(#000 calc(100% - 48px), transparent); mask-image: linear-gradient(#000 calc(100% - 48px), transparent); padding-bottom: 40px; }
   .search::placeholder { color: rgba(255,255,255,.7); }
   .search:focus { box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 0 0 2px #fff; }
   .obj.is-hidden { display: none; }
@@ -475,7 +477,7 @@
       if (hadBackdrop) { bdOld = backdrop.cloneNode(false); bdOld.classList.add("ghost"); bdOld.style.opacity = 1; bdOld.style.transition = ""; stage.insertBefore(bdOld, ghost); }
     }
     origin = null;
-    group.className = "group" + (g.layout ? " group--" + g.layout : "") + (g.layout === "cross" && g.items.length !== 4 ? " group--circle" : "") + (!g.layout && !g.search && g.items.length > 8 ? " group--dense" : "");
+    group.className = "group" + (g.layout ? " group--" + g.layout : "") + (g.layout === "cross" && g.items.length !== 4 ? " group--circle" : "") + (!g.layout && !g.search && g.items.length > 8 ? " group--dense" : "") + (g.search ? " group--search" : "");
     stage.classList.toggle("grid-focus", !!g.grid);
     if (g.backdrop) backdrop.style.background = g.backdrop;
     backdrop.style.transition = "none"; stage.classList.toggle("has-backdrop", !!g.backdrop); void backdrop.offsetWidth; backdrop.style.transition = "";
