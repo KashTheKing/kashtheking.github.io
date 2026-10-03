@@ -1294,6 +1294,29 @@ blockquote {
     color: rgba(255,255,255,0.8);
 }
 
+.dream-feature--tts {
+    background: radial-gradient(ellipse at top right, rgba(153,102,255,0.14) 0%, transparent 60%),
+                radial-gradient(ellipse at bottom left, rgba(255,171,25,0.08) 0%, transparent 60%),
+                #0e0b14;
+}
+
+.dream-feature--tts .dream-feature-tag {
+    color: rgba(180,140,255,0.95);
+}
+
+.tts-meta {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.tts-pill {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+}
+
 #support-me {
     background: linear-gradient(to bottom, #1a3a5c 0%, #0d2040 50%, #1a3a5c 100%);
     justify-content: center;
