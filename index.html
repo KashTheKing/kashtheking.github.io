@@ -18,6 +18,10 @@
 <link rel="stylesheet" href="kit/kash.v1.css">
 <style>
   html, body { height: 100%; overflow: hidden; }
+  /* nothing on the site is selectable or draggable: only click/hover; text fields still work */
+  * { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+  img, a { -webkit-user-drag: none; }
+  input, textarea { -webkit-user-select: text; user-select: text; }
   .stage { opacity: 0; transition: opacity 900ms ease-out; }
   .stage.is-ready { opacity: 1; }
   /* first paint lands in its final state; only the stage fades */
@@ -681,7 +685,7 @@
     if (clicks >= 3) { clicks = 0; window.open("https://kashtheking.com/minigame/", "_blank", "noopener"); }
   });
 
-  stage.addEventListener("dragstart", function (e) { e.preventDefault(); });
+  document.addEventListener("dragstart", function (e) { e.preventDefault(); });
   /* a short synthesized pop, no audio file needed */
   /* sounds: pick files at assets/sfx/pick.html; choice lives in localStorage "sfx" */
   var PICK = { hover: "hover-wii", click: "wii-wsd-select" };
