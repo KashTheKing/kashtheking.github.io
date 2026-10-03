@@ -155,7 +155,7 @@
   .badge { pointer-events: auto; cursor: default; }
   /* cross layout: the group object in the middle, items N W E S */
   .group--cross .group__items { position: relative; width: min(84vw, 560px); height: min(84vw, 560px); display: block; }
-  .group--cross .obj { position: absolute; left: 50%; top: 50%; width: var(--w, min(22vw, 136px)); margin: calc(var(--w, 136px) / -2 - 14px) 0 0 calc(var(--w, 136px) / -2); transform: translate(var(--x, 0), var(--y, 0)); }
+  .group--cross .obj { position: absolute; left: 50%; top: 50%; width: var(--w, min(22vw, 136px)); margin: calc(var(--w, min(22vw, 136px)) / -2 - 14px) 0 0 calc(var(--w, min(22vw, 136px)) / -2); transform: translate(var(--x, 0), var(--y, 0)); }
   .group--cross .center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.02em; text-shadow: 0 2px 12px rgba(0,0,0,.5); pointer-events: none; }
   .group--cross h2 { display: none; }
   /* circle: any number of items evenly round a text label */
