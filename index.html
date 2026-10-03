@@ -685,7 +685,10 @@
     if (!/^(https?:|mailto:|roblox:)/.test(h)) return;
     e.preventDefault();
     pending = h;
-    document.getElementById("confirm-host").textContent = describe(h);
+    /* links to another page on this site: say so, and show the whole address */
+    var own = false; try { own = new URL(h).hostname.replace(/^www\./, "") === "kashtheking.com"; } catch (err) {}
+    document.getElementById("confirm-title").textContent = own ? "Leaving this Page" : "Leaving the site";
+    document.getElementById("confirm-host").textContent = own ? h : describe(h);
     confirmBox.hidden = false;
     document.getElementById("confirm-go").focus();
   });
