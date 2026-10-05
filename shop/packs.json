@@ -1,5 +1,28 @@
 [
     {
+        "slug":  "100CuteTycoon",
+        "name":  "100 Cute Tycoon Assets",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/74651319090155",
+        "image":  "img/100CuteTycoon.jpg",
+        "slides":  [
+                       "img/100CuteTycoon/01.jpg",
+                       "img/100CuteTycoon/02.jpg",
+                       "img/100CuteTycoon/03.jpg",
+                       "img/100CuteTycoon/04.jpg",
+                       "img/100CuteTycoon/05.jpg",
+                       "img/100CuteTycoon/06.jpg",
+                       "img/100CuteTycoon/09.jpg"
+                   ],
+        "description":  "100 cute rounded pastel tycoon assets: droppers in ten tiers, conveyors and pipes, upgraders, furnaces and machines, cash, coins, gold and safes, crates and ores, walls, doors, floors and stairs, decor, buttons, pads, trophies and a teleporter. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Tycoon"
+                 ],
+        "date":  "2026-10-05T10:50:43"
+    },
+    {
         "slug":  "1000CutePets",
         "name":  "1000 Cute Pets",
         "count":  1000,
