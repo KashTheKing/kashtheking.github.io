@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | KashTheKing</title>
+    <meta name="description" content="Roblox asset packs by KashTheKing: low-poly, textured, rigged and animated models ready to drop into your game.">
+    <meta name="theme-color" content="#1c1e22">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kashtheking.com/shop/">
+    <meta property="og:title" content="KashTheKing Shop 👑">
+    <meta property="og:description" content="Low-poly Roblox asset packs: textured, rigged and animated.">
+    <meta property="og:image" content="https://kashtheking.com/shop/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+    <link rel="canonical" href="https://kashtheking.com/shop/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #1c1e22; --panel: #26292e; --line: #3a3d44; --text: #fff; --dim: #a9adb6; --gold: #ffb02e; --gold-hi: #ffe98a; --orange: #c86e19; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); min-height: 100vh;
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(rgba(62,65,70,.55) 1px, transparent 1px), linear-gradient(90deg, rgba(62,65,70,.55) 1px, transparent 1px),
+                linear-gradient(rgba(38,41,46,.9) 1px, transparent 1px), linear-gradient(90deg, rgba(38,41,46,.9) 1px, transparent 1px);
+            background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
+        }
+        a { color: inherit; }
+        .home { position: fixed; top: 24px; left: 24px; z-index: 10; padding: 8px 18px; background: rgba(0,0,0,.55); border-radius: 20px; font-size: 13px; letter-spacing: .05em; text-decoration: none; backdrop-filter: blur(8px); }
+        .home:hover { background: rgba(0,0,0,.75); }
+        header { position: relative; overflow: hidden; padding: 120px 64px 56px; }
+        header::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(200,110,25,.85), rgba(120,60,15,.1) 60%); clip-path: polygon(0 0, 62% 0, 0 78%); }
+        header > * { position: relative; }
+        h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(44px, 7vw, 92px); line-height: .95; letter-spacing: .01em; text-shadow: 0 6px 0 rgba(0,0,0,.45); }
+        h1 span { background: linear-gradient(var(--gold-hi), #ff9a1f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .tag { display: inline-block; margin-top: 22px; padding: 10px 22px; background: #000; font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: .12em; font-size: 15px; transform: skewX(-10deg); }
+        .lead { max-width: 640px; margin-top: 22px; color: #e6e8ec; font-size: 17px; line-height: 1.55; }
+        .stats { display: flex; gap: 36px; margin-top: 28px; flex-wrap: wrap; }
+        .stats b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 34px; color: var(--gold); }
+        .stats span { color: var(--dim); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+        .bar { position: sticky; top: 0; z-index: 5; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 14px 64px; background: rgba(20,23,28,.92); border-block: 1px solid var(--line); backdrop-filter: blur(10px); }
+        .bar input { flex: 1 1 240px; min-width: 0; padding: 11px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 15px; }
+        .bar input:focus-visible, .chip:focus-visible, .card a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .chip { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 14px; cursor: pointer; }
+        .chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #1c1e22; font-weight: 700; }
+        main { padding: 40px 64px 80px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 26px; }
+        .card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+        .card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 14px 34px rgba(0,0,0,.45); }
+        .card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: #14171c; }
+        .body { display: flex; flex-direction: column; gap: 10px; padding: 18px; flex: 1; }
+        .card h2 { font-size: 20px; font-weight: 800; }
+        .card p { color: var(--dim); font-size: 14px; line-height: 1.5; flex: 1; }
+        .meta { display: flex; gap: 8px; flex-wrap: wrap; }
+        .meta span { padding: 4px 10px; border-radius: 6px; background: #1c1e22; color: #d6d9df; font-size: 12px; font-weight: 600; }
+        .buy { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; }
+        .price { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px; color: var(--gold); }
+        .buy a { padding: 11px 20px; border-radius: 10px; background: var(--gold); color: #1c1e22; font-weight: 800; text-decoration: none; white-space: nowrap; }
+        .buy a:hover { background: var(--gold-hi); }
+        .soon { padding: 11px 20px; border-radius: 10px; border: 1px dashed var(--line); color: var(--dim); font-weight: 700; }
+        .empty { padding: 60px 0; text-align: center; color: var(--dim); }
+        section.info { margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+        .info div { padding: 22px; background: rgba(38,41,46,.85); border: 1px solid var(--line); border-radius: 14px; }
+        .info h3 { font-size: 17px; margin-bottom: 8px; color: var(--gold); }
+        .info p { color: #d6d9df; font-size: 14px; line-height: 1.55; }
+        footer { padding: 28px 64px 44px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); background: rgba(20,23,28,.8); }
+        footer a { color: var(--gold); }
+        @media (max-width: 720px) { header { padding: 96px 22px 40px; } .bar, main, footer { padding-inline: 22px; } .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; } .card h2 { font-size: 16px; } .card p { display: none; } .price { font-size: 20px; } .buy a, .soon { padding: 9px 12px; font-size: 13px; } }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+    </style>
+</head>
+<body>
+    <a class="home" href="/">← KashTheKing</a>
+    <header>
+        <h1><span>ASSET</span><br>MARKETPLACE</h1>
+        <div class="tag">TEXTURED &nbsp; RIGGED &nbsp; ANIMATED</div>
+        <p class="lead">Low-poly asset packs for Roblox games. Every model is textured, rigged and animated, and every pack is one model you insert and use.</p>
+        <div class="stats">
+            <div><b id="stat-packs">0</b><span>packs</span></div>
+            <div><b id="stat-assets">0</b><span>models</span></div>
+        </div>
+    </header>
+
+    <div class="bar" role="search">
+        <input id="search" type="search" placeholder="Search packs…" aria-label="Search packs">
+        <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+    </div>
+
+    <main>
+        <div id="grid" class="grid" aria-live="polite"></div>
+        <p id="empty" class="empty" hidden>No packs match that search.</p>
+
+        <section class="info" aria-label="About the packs">
+            <div><h3>What you get</h3><p>One Roblox model per pack. Inside, every asset is its own model with a rig, an animation controller and its animations, plus a README.</p></div>
+            <div><h3>How to buy</h3><p>Packs are sold on the Roblox Creator Store. Buy there and the pack appears in your Toolbox inventory, ready to insert in Studio.</p></div>
+            <div><h3>License</h3><p>Use and modify the assets in any game, including commercial ones. Reselling or redistributing the assets themselves is not allowed. Each pack includes the full text.</p></div>
+            <div><h3>Questions</h3><p>Ask in the <a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener">community Discord</a>.</p></div>
+        </section>
+    </main>
+
+    <footer>© KashTheKing · <a href="/">kashtheking.com</a> · Not affiliated with Roblox Corporation.</footer>
+
+    <script>
+        // packs.json is generated by the asset-pack pipeline (build-shop.ps1). Do not edit it by hand.
+        const grid = document.getElementById("grid"), empty = document.getElementById("empty");
+        const search = document.getElementById("search"), chips = document.getElementById("chips");
+        let packs = [], tag = "All";
+        const money = p => "$" + p.toFixed(2);
+        function card(p) {
+            const el = document.createElement("article");
+            el.className = "card";
+            const buy = p.url
+                ? `<a href="${p.url}" target="_blank" rel="noopener" aria-label="Get ${p.name} on the Roblox Creator Store">Get on Roblox</a>`
+                : `<span class="soon">Coming soon</span>`;
+            el.innerHTML = `
+                <img src="${p.image}" alt="${p.name} thumbnail" loading="lazy" width="540" height="540">
+                <div class="body">
+                    <h2>${p.name}</h2>
+                    <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+                    <p>${p.description}</p>
+                    <div class="buy"><span class="price">${p.price ? money(p.price) : ""}</span>${buy}</div>
+                </div>`;
+            return el;
+        }
+        function render() {
+            const q = search.value.trim().toLowerCase();
+            const shown = packs.filter(p => (tag === "All" || p.tags.includes(tag)) && (!q || (p.name + " " + p.description + " " + p.tags.join(" ")).toLowerCase().includes(q)));
+            grid.replaceChildren(...shown.map(card));
+            empty.hidden = shown.length > 0;
+        }
+        fetch("packs.json").then(r => r.json()).then(data => {
+            packs = data;
+            document.getElementById("stat-packs").textContent = packs.length;
+            document.getElementById("stat-assets").textContent = packs.reduce((n, p) => n + p.count, 0).toLocaleString();
+            for (const t of ["All", ...new Set(packs.flatMap(p => p.tags))]) {
+                const b = document.createElement("button");
+                b.className = "chip"; b.type = "button"; b.textContent = t; b.setAttribute("aria-pressed", t === tag);
+                b.onclick = () => { tag = t; [...chips.children].forEach(c => c.setAttribute("aria-pressed", c === b)); render(); };
+                chips.append(b);
+            }
+            render();
+        }).catch(() => { empty.hidden = false; empty.textContent = "The shop could not load. Please refresh."; });
+        search.addEventListener("input", render);
+    </script>
+</body>
+</html>

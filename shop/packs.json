@@ -1,0 +1,28 @@
+[
+    {
+        "name":  "100 Cute Fruits",
+        "count":  100,
+        "price":  14.99,
+        "url":  "https://create.roblox.com/store/asset/119844717670889",
+        "image":  "img/100CuteFruits.jpg",
+        "description":  "100 cute low-poly fruits with blinking faces and a soft glowing outline. Every fruit has an idle wiggle and a blink.",
+        "tags":  [
+                     "Cute",
+                     "Food"
+                 ],
+        "date":  "2026-10-05T03:08:19"
+    },
+    {
+        "name":  "100 RPG Enemies",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/127326377885299",
+        "image":  "img/100RPGEnemies.jpg",
+        "description":  "100 chunky low-poly RPG enemies: cute slimes, big angry slimes, skeletons, undead, goblins and orcs, golems, dragons, beasts and dark forces. Textured, rigged and animated.",
+        "tags":  [
+                     "RPG",
+                     "Characters"
+                 ],
+        "date":  "2026-10-05T03:06:23"
+    }
+]
