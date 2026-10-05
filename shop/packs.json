@@ -1,5 +1,27 @@
 [
     {
+        "slug":  "1000CutePets",
+        "name":  "1000 Cute Pets",
+        "count":  1000,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/120961179518311",
+        "image":  "img/1000CutePets.jpg",
+        "slides":  [
+                       "img/1000CutePets/01.jpg",
+                       "img/1000CutePets/02.jpg",
+                       "img/1000CutePets/03.jpg",
+                       "img/1000CutePets/04.jpg",
+                       "img/1000CutePets/05.jpg",
+                       "img/1000CutePets/06.jpg"
+                   ],
+        "description":  "1000 cute round pets and animals with happy, neutral and angry faces. Cats, dogs, farm, forest, safari, birds, reptiles, sea creatures, bugs and mythical beasts. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Animals"
+                 ],
+        "date":  "2026-10-05T08:06:01"
+    },
+    {
         "slug":  "250CuteSeaCreatures",
         "name":  "250 Cute Sea Creatures",
         "count":  250,
