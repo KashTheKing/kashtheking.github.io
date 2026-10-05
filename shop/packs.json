@@ -1,5 +1,29 @@
 [
     {
+        "slug":  "100SpookyTools",
+        "page":  "100-spooky-tools",
+        "name":  "100 Spooky Tools",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/92600598493133",
+        "image":  "img/100SpookyTools.jpg",
+        "slides":  [
+                       "img/100SpookyTools/01.jpg",
+                       "img/100SpookyTools/02.jpg",
+                       "img/100SpookyTools/03.jpg",
+                       "img/100SpookyTools/04.jpg",
+                       "img/100SpookyTools/05.jpg",
+                       "img/100SpookyTools/06.jpg",
+                       "img/100SpookyTools/09.jpg"
+                   ],
+        "description":  "100 chunky low-poly Halloween tools for simulator and survival games: axes, pickaxes, hammers, shovels, swords, scythes, staffs and pitchforks in upgrade tiers from wood and bone to pumpkin, bat, slime, skull and cursed. Textured, rigged and animated.",
+        "tags":  [
+                     "Halloween",
+                     "Weapons"
+                 ],
+        "date":  "2026-10-05T12:13:52"
+    },
+    {
         "slug":  "100HalloweenDecor",
         "page":  "100-halloween-decorations",
         "name":  "100 Halloween Decorations",
