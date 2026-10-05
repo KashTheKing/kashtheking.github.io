@@ -20,7 +20,7 @@
         :root { --bg: #1c1e22; --panel: #26292e; --line: #3a3d44; --text: #fff; --dim: #a9adb6; --gold: #ffb02e; --gold-hi: #ffe98a; --orange: #c86e19; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); min-height: 100vh; display: flex; flex-direction: column; /* footer sits on the bottom edge */
             background-color: var(--bg);
             background-image:
                 linear-gradient(rgba(62,65,70,.55) 1px, transparent 1px), linear-gradient(90deg, rgba(62,65,70,.55) 1px, transparent 1px),
@@ -28,8 +28,12 @@
             background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
         }
         a { color: inherit; }
-        .home { position: fixed; top: 24px; left: 24px; z-index: 10; padding: 8px 18px; background: rgba(0,0,0,.55); border-radius: 20px; font-size: 13px; letter-spacing: .05em; text-decoration: none; backdrop-filter: blur(8px); }
-        .home:hover { background: rgba(0,0,0,.75); }
+        /* Same crown + name mark as the home page (index.html .brand), placed top right; links home */
+        .brand { position: absolute; top: 30px; right: 42px; z-index: 10; display: flex; align-items: center; font-weight: 900; font-size: 1.1rem; color: #fff; text-decoration: none; user-select: none; -webkit-user-select: none; }
+        .brand img { position: absolute; width: 30px; height: 30px; left: -36px; top: -11px; transform: rotate(-20deg); object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
+        .brand span { text-shadow: 0 2px 4px rgba(0,0,0,.7), 0 0 10px rgba(0,0,0,.4); }
+        .brand:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+
         header { position: relative; overflow: hidden; padding: 120px 64px 56px; }
         header::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(200,110,25,.85), rgba(120,60,15,.1) 60%); clip-path: polygon(0 0, 62% 0, 0 78%); }
         header > * { position: relative; }
@@ -46,7 +50,7 @@
         .bar input:focus-visible, .chip:focus-visible, .card a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
         .chip { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 14px; cursor: pointer; }
         .chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #1c1e22; font-weight: 700; }
-        main { padding: 40px 64px 80px; }
+        main { padding: 40px 64px 80px; flex: 1; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 26px; }
         .card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
         .card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 14px 34px rgba(0,0,0,.45); }
@@ -68,12 +72,12 @@
         .info p { color: #d6d9df; font-size: 14px; line-height: 1.55; }
         footer { padding: 28px 64px 44px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); background: rgba(20,23,28,.8); }
         footer a { color: var(--gold); }
-        @media (max-width: 720px) { header { padding: 96px 22px 40px; } .bar, main, footer { padding-inline: 22px; } .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; } .card h2 { font-size: 16px; } .card p { display: none; } .price { font-size: 20px; } .buy a, .soon { padding: 9px 12px; font-size: 13px; } }
+        @media (max-width: 720px) { header { padding: 96px 22px 40px; } .brand { right: 22px; } .bar, main, footer { padding-inline: 22px; } .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; } .card h2 { font-size: 16px; } .card p { display: none; } .price { font-size: 20px; } .buy a, .soon { padding: 9px 12px; font-size: 13px; } }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
     </style>
 </head>
 <body>
-    <a class="home" href="/">← KashTheKing</a>
+    <a class="brand" href="https://kashtheking.com/" aria-label="KashTheKing home"><img src="/assets/icons/crown.png" alt=""><span>KashTheKing</span></a>
     <header>
         <h1><span>ASSET</span><br>MARKETPLACE</h1>
         <div class="tag">TEXTURED &nbsp; RIGGED &nbsp; ANIMATED</div>
@@ -101,7 +105,7 @@
         </section>
     </main>
 
-    <footer>© KashTheKing · <a href="/">kashtheking.com</a> · Not affiliated with Roblox Corporation.</footer>
+    <footer>© KashTheKing · <a href="/">kashtheking.com</a></footer>
 
     <script>
         // packs.json is generated by the asset-pack pipeline (build-shop.ps1). Do not edit it by hand.
