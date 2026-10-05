@@ -1,5 +1,27 @@
 [
     {
+        "slug":  "250CuteSeaCreatures",
+        "name":  "250 Cute Sea Creatures",
+        "count":  250,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/132504272814995",
+        "image":  "img/250CuteSeaCreatures.jpg",
+        "slides":  [
+                       "img/250CuteSeaCreatures/01.jpg",
+                       "img/250CuteSeaCreatures/02.jpg",
+                       "img/250CuteSeaCreatures/03.jpg",
+                       "img/250CuteSeaCreatures/04.jpg",
+                       "img/250CuteSeaCreatures/05.jpg",
+                       "img/250CuteSeaCreatures/06.jpg"
+                   ],
+        "description":  "250 cute low-poly sea creatures: fish, sharks, whales, dolphins, crabs, lobsters, octopuses, squid, jellyfish and more. They swim, blink and bite. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Animals"
+                 ],
+        "date":  "2026-10-05T05:18:02"
+    },
+    {
         "slug":  "100RPGItems",
         "name":  "100 RPG Items",
         "count":  100,
