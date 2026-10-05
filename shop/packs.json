@@ -1,6 +1,7 @@
 [
     {
         "slug":  "100WildWest",
+        "page":  "100-wild-west-decorations",
         "name":  "100 Wild West Decorations",
         "count":  100,
         "price":  9.99,
@@ -24,6 +25,7 @@
     },
     {
         "slug":  "100CuteFurniture",
+        "page":  "100-cute-furniture",
         "name":  "100 Cute Furniture",
         "count":  100,
         "price":  9.99,
@@ -47,6 +49,7 @@
     },
     {
         "slug":  "100CuteTycoon",
+        "page":  "100-cute-tycoon-assets",
         "name":  "100 Cute Tycoon Assets",
         "count":  100,
         "price":  9.99,
@@ -70,6 +73,7 @@
     },
     {
         "slug":  "1000CutePets",
+        "page":  "1000-cute-pets",
         "name":  "1000 Cute Pets",
         "count":  1000,
         "price":  9.99,
@@ -92,6 +96,7 @@
     },
     {
         "slug":  "250CuteSeaCreatures",
+        "page":  "250-cute-sea-creatures",
         "name":  "250 Cute Sea Creatures",
         "count":  250,
         "price":  9.99,
@@ -114,6 +119,7 @@
     },
     {
         "slug":  "100RPGItems",
+        "page":  "100-rpg-items",
         "name":  "100 RPG Items",
         "count":  100,
         "price":  9.99,
@@ -137,6 +143,7 @@
     },
     {
         "slug":  "100CuteCars",
+        "page":  "100-cute-cars",
         "name":  "100 Cute Cars",
         "count":  100,
         "price":  9.99,
@@ -160,6 +167,7 @@
     },
     {
         "slug":  "100CuteFoliage",
+        "page":  "100-cute-foliage",
         "name":  "100 Cute Foliage",
         "count":  100,
         "price":  9.99,
@@ -183,6 +191,7 @@
     },
     {
         "slug":  "100PirateAssets",
+        "page":  "100-pirate-assets",
         "name":  "100 Pirate Assets",
         "count":  100,
         "price":  9.99,
@@ -205,6 +214,7 @@
     },
     {
         "slug":  "100MagicTreasure",
+        "page":  "100-magic-and-treasure-items",
         "name":  "100 Magic \u0026 Treasure Items",
         "count":  100,
         "price":  9.99,
@@ -228,6 +238,7 @@
     },
     {
         "slug":  "50LowPolyGuns",
+        "page":  "50-low-poly-guns",
         "name":  "50 Low Poly Guns",
         "count":  50,
         "price":  9.99,
@@ -249,6 +260,7 @@
     },
     {
         "slug":  "100CuteFruits",
+        "page":  "100-cute-fruits",
         "name":  "100 Cute Fruits",
         "count":  100,
         "price":  14.99,
@@ -271,6 +283,7 @@
     },
     {
         "slug":  "100RPGEnemies",
+        "page":  "100-rpg-enemies",
         "name":  "100 RPG Enemies",
         "count":  100,
         "price":  9.99,

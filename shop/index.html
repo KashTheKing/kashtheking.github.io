@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | KashTheKing</title>
-    <meta name="description" content="Roblox asset packs by KashTheKing: low-poly, textured, rigged and animated models ready to drop into your game.">
+    <title>Roblox Asset Packs: Low-Poly Models, Rigged &amp; Animated | KashTheKing Shop</title>
+    <meta name="description" content="Roblox asset packs for Roblox Studio: thousands of low-poly 3D models, textured, rigged and animated. Pets, food, furniture, tycoon, simulator, weapons, vehicles and map decoration on the Creator Store.">
     <meta name="theme-color" content="#1c1e22">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kashtheking.com/shop/">
@@ -17,6 +17,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-crown-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-crown-180.png">
     <link rel="canonical" href="https://kashtheking.com/shop/">
+    <!--packs:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Roblox asset packs by KashTheKing","numberOfItems":13,"itemListElement":[{"@type":"ListItem","position":1,"name":"100 Wild West Decorations","url":"https://kashtheking.com/shop/100-wild-west-decorations/"},{"@type":"ListItem","position":2,"name":"100 Cute Furniture","url":"https://kashtheking.com/shop/100-cute-furniture/"},{"@type":"ListItem","position":3,"name":"100 Cute Tycoon Assets","url":"https://kashtheking.com/shop/100-cute-tycoon-assets/"},{"@type":"ListItem","position":4,"name":"1000 Cute Pets","url":"https://kashtheking.com/shop/1000-cute-pets/"},{"@type":"ListItem","position":5,"name":"250 Cute Sea Creatures","url":"https://kashtheking.com/shop/250-cute-sea-creatures/"},{"@type":"ListItem","position":6,"name":"100 RPG Items","url":"https://kashtheking.com/shop/100-rpg-items/"},{"@type":"ListItem","position":7,"name":"100 Cute Cars","url":"https://kashtheking.com/shop/100-cute-cars/"},{"@type":"ListItem","position":8,"name":"100 Cute Foliage","url":"https://kashtheking.com/shop/100-cute-foliage/"},{"@type":"ListItem","position":9,"name":"100 Pirate Assets","url":"https://kashtheking.com/shop/100-pirate-assets/"},{"@type":"ListItem","position":10,"name":"100 Magic \u0026 Treasure Items","url":"https://kashtheking.com/shop/100-magic-and-treasure-items/"},{"@type":"ListItem","position":11,"name":"50 Low Poly Guns","url":"https://kashtheking.com/shop/50-low-poly-guns/"},{"@type":"ListItem","position":12,"name":"100 Cute Fruits","url":"https://kashtheking.com/shop/100-cute-fruits/"},{"@type":"ListItem","position":13,"name":"100 RPG Enemies","url":"https://kashtheking.com/shop/100-rpg-enemies/"}]}</script><!--packs:end-->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,7 +50,8 @@
         .stats span { color: var(--dim); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
         .bar { position: sticky; top: 0; z-index: 5; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 14px 64px; background: rgba(20,23,28,.92); border-block: 1px solid var(--line); backdrop-filter: blur(10px); }
         .bar input { flex: 1 1 240px; min-width: 0; padding: 11px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 15px; }
-        .bar input:focus-visible, .chip:focus-visible, .card a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .bar select { padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 15px; cursor: pointer; }
+        .bar input:focus-visible, .bar select:focus-visible, .chip:focus-visible, .card a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
         .chip { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 14px; cursor: pointer; }
         .chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #1c1e22; font-weight: 700; }
         main { padding: 40px 64px 80px; flex: 1; }
@@ -83,7 +85,7 @@
     <header>
         <h1><span>ASSET</span><br>MARKETPLACE</h1>
         <div class="tag">TEXTURED &nbsp; RIGGED &nbsp; ANIMATED</div>
-        <p class="lead">Low-poly asset packs for Roblox games. Every model is textured, rigged and animated, and every pack is one model you insert and use.</p>
+        <p class="lead">Low-poly Roblox asset packs for Roblox Studio. Every model is textured, rigged and animated, and every pack is one model you insert and use.</p>
         <div class="stats">
             <div><b id="stat-packs">0</b><span>packs</span></div>
             <div><b id="stat-assets">0</b><span>models</span></div>
@@ -92,11 +94,17 @@
 
     <div class="bar" role="search">
         <input id="search" type="search" placeholder="Search packs…" aria-label="Search packs">
+        <select id="sort" aria-label="Sort packs">
+            <option value="new">Newest</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="big">Most models</option>
+        </select>
         <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
     </div>
 
     <main>
-        <div id="grid" class="grid" aria-live="polite"></div>
+        <div id="grid" class="grid" aria-live="polite"><!--grid:start--><a class="card" href="100-wild-west-decorations/"><img src="img/100WildWest.jpg" alt="100 Wild West Decorations Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Wild West Decorations</h2><p>100 chunky low-poly Wild West map decorations: cacti, tumbleweeds, dead trees, desert rocks and mesas, town props, ranch fences and wagons, mine carts and rails, and camp gear. Textured, rigged and animated.</p></div></a><a class="card" href="100-cute-furniture/"><img src="img/100CuteFurniture.jpg" alt="100 Cute Furniture Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Furniture</h2><p>100 cute rounded low-poly furniture pieces in pastel colours for roleplay, housing and tycoon games: living room, bedroom, kitchen, bathroom, office, kids and gaming, decor and outdoor. Textured, rigged and animated.</p></div></a><a class="card" href="100-cute-tycoon-assets/"><img src="img/100CuteTycoon.jpg" alt="100 Cute Tycoon Assets Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Tycoon Assets</h2><p>100 cute rounded pastel tycoon assets: droppers in ten tiers, conveyors and pipes, upgraders, furnaces and machines, cash, coins, gold and safes, crates and ores, walls, doors, floors and stairs, decor, buttons, pads, trophies and a teleporter. Textured, rigged and animated.</p></div></a><a class="card" href="1000-cute-pets/"><img src="img/1000CutePets.jpg" alt="1000 Cute Pets Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>1000 Cute Pets</h2><p>1000 cute round pets and animals with happy, neutral and angry faces. Cats, dogs, farm, forest, safari, birds, reptiles, sea creatures, bugs and mythical beasts. Textured, rigged and animated.</p></div></a><a class="card" href="250-cute-sea-creatures/"><img src="img/250CuteSeaCreatures.jpg" alt="250 Cute Sea Creatures Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>250 Cute Sea Creatures</h2><p>250 cute low-poly sea creatures: fish, sharks, whales, dolphins, crabs, lobsters, octopuses, squid, jellyfish and more. They swim, blink and bite. Textured, rigged and animated.</p></div></a><a class="card" href="100-rpg-items/"><img src="img/100RPGItems.jpg" alt="100 RPG Items Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 RPG Items</h2><p>100 chunky low-poly RPG and survival items: tools, weapons, armour, gear, food, resources, crafting stations and economy props. Textured, rigged and animated.</p></div></a><a class="card" href="100-cute-cars/"><img src="img/100CuteCars.jpg" alt="100 Cute Cars Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Cars</h2><p>100 low-poly cartoon cars: compacts, sedans, sports cars, utility vehicles, service vehicles, fun vehicles, heavy trucks and vintage cars. Wheels are separate bones that spin, tyres have a black outline, no interiors. Textured, rigged and animated.</p></div></a><a class="card" href="100-cute-foliage/"><img src="img/100CuteFoliage.jpg" alt="100 Cute Foliage Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Foliage</h2><p>100 cute low-poly terrain decorations: trees, pines, bushes, grass, flowers, mushrooms, rocks, fallen logs and stumps. Textured, rigged and animated.</p></div></a><a class="card" href="100-pirate-assets/"><img src="img/100PirateAssets.jpg" alt="100 Pirate Assets Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Pirate Assets</h2><p>100 chunky low-poly pirate assets: characters, creatures, weapons, treasure, ship parts and island props. Textured, rigged and animated.</p></div></a><a class="card" href="100-magic-and-treasure-items/"><img src="img/100MagicTreasure.jpg" alt="100 Magic &amp; Treasure Items Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Magic &amp; Treasure Items</h2><p>100 chunky low-poly potions, gems, crystals, magic items, jewelry and treasure. Textured, rigged and animated.</p></div></a><a class="card" href="50-low-poly-guns/"><img src="img/50LowPolyGuns.jpg" alt="50 Low Poly Guns Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>50 Low Poly Guns</h2><p>50 chunky low-poly guns and firearms. Textured, rigged and animated.</p></div></a><a class="card" href="100-cute-fruits/"><img src="img/100CuteFruits.jpg" alt="100 Cute Fruits Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Fruits</h2><p>100 cute low-poly fruits with blinking faces and a soft glowing outline. Every fruit has an idle wiggle and a blink.</p></div></a><a class="card" href="100-rpg-enemies/"><img src="img/100RPGEnemies.jpg" alt="100 RPG Enemies Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 RPG Enemies</h2><p>100 chunky low-poly RPG enemies: cute slimes, big angry slimes, skeletons, undead, goblins and orcs, golems, dragons, beasts and dark forces. Textured, rigged and animated.</p></div></a><!--grid:end--></div>
         <p id="empty" class="empty" hidden>No packs match that search.</p>
 
         <section class="info" aria-label="About the packs">
@@ -119,7 +127,7 @@
             // The whole card opens the pack's own page (slideshow, buy buttons, recommendations)
             const el = document.createElement("a");
             el.className = "card";
-            el.href = "pack/?p=" + encodeURIComponent(p.slug);
+            el.href = p.page + "/";
             el.setAttribute("aria-label", `${p.name}, ${money(p.price)}. View pack`);
             el.innerHTML = `
                 <img src="${p.image}" alt="" loading="lazy" width="540" height="540">
@@ -134,6 +142,8 @@
         function render() {
             const q = search.value.trim().toLowerCase();
             const shown = packs.filter(p => (tag === "All" || p.tags.includes(tag)) && (!q || (p.name + " " + p.description + " " + p.tags.join(" ")).toLowerCase().includes(q)));
+            const order = { low: (a, b) => a.price - b.price, high: (a, b) => b.price - a.price, big: (a, b) => b.count - a.count }[sort.value];
+            if (order) shown.sort(order);   // "new" keeps packs.json order (newest first); filter() already made a copy
             grid.replaceChildren(...shown.map(card));
             empty.hidden = shown.length > 0;
         }
@@ -150,6 +160,8 @@
             render();
         }).catch(() => { empty.hidden = false; empty.textContent = "The shop could not load. Please refresh."; });
         search.addEventListener("input", render);
+        const sort = document.getElementById("sort");
+        sort.addEventListener("change", render);
     </script>
 </body>
 </html>
