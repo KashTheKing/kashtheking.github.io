@@ -1,5 +1,51 @@
 [
     {
+        "slug":  "100RPGItems",
+        "name":  "100 RPG Items",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/81895573095035",
+        "image":  "img/100RPGItems.jpg",
+        "slides":  [
+                       "img/100RPGItems/01.jpg",
+                       "img/100RPGItems/02.jpg",
+                       "img/100RPGItems/03.jpg",
+                       "img/100RPGItems/04.jpg",
+                       "img/100RPGItems/05.jpg",
+                       "img/100RPGItems/06.jpg",
+                       "img/100RPGItems/09.jpg"
+                   ],
+        "description":  "100 chunky low-poly RPG and survival items: tools, weapons, armour, gear, food, resources, crafting stations and economy props. Textured, rigged and animated.",
+        "tags":  [
+                     "RPG",
+                     "Props"
+                 ],
+        "date":  "2026-10-05T04:20:16"
+    },
+    {
+        "slug":  "100CuteCars",
+        "name":  "100 Cute Cars",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/100307529223115",
+        "image":  "img/100CuteCars.jpg",
+        "slides":  [
+                       "img/100CuteCars/01.jpg",
+                       "img/100CuteCars/02.jpg",
+                       "img/100CuteCars/03.jpg",
+                       "img/100CuteCars/04.jpg",
+                       "img/100CuteCars/05.jpg",
+                       "img/100CuteCars/06.jpg",
+                       "img/100CuteCars/09.jpg"
+                   ],
+        "description":  "100 low-poly cartoon cars: compacts, sedans, sports cars, utility vehicles, service vehicles, fun vehicles, heavy trucks and vintage cars. Wheels are separate bones that spin, tyres have a black outline, no interiors. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Vehicles"
+                 ],
+        "date":  "2026-10-05T04:17:28"
+    },
+    {
         "slug":  "100CuteFoliage",
         "name":  "100 Cute Foliage",
         "count":  100,
