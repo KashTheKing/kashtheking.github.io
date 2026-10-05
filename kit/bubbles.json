@@ -76,6 +76,11 @@
       "grid": true,
       "items": [
         {
+          "label": "Shop",
+          "icon": "shop.svg",
+          "href": "https://kashtheking.com/shop/"
+        },
+        {
           "label": "Library Website",
           "icon": "library.png",
           "href": "https://kashtheking.com/library/"
