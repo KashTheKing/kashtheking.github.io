@@ -1,5 +1,55 @@
 [
     {
+        "slug":  "100ObbyParts",
+        "page":  "100-obby-parts",
+        "name":  "100 Obby Parts",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/120544606008620",
+        "image":  "img/100ObbyParts.jpg",
+        "slides":  [
+                       "img/100ObbyParts/01.jpg",
+                       "img/100ObbyParts/02.jpg",
+                       "img/100ObbyParts/03.jpg",
+                       "img/100ObbyParts/04.jpg",
+                       "img/100ObbyParts/05.jpg",
+                       "img/100ObbyParts/06.jpg",
+                       "img/100ObbyParts/09.jpg",
+                       "img/100ObbyParts/10.jpg"
+                   ],
+        "description":  "100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball, spinning bar, truss, ropes, monkey bars, zipline, balloons, clouds, checkpoints, spawn and win pads, start gate, finish arch, podium, buttons, lever, key door, timed door, teleporter, portal, cannon launcher, speed, jump and gravity pads, coins, stars, gems, keys, hearts and decoration. 1 Blender unit = 1 stud. Moving hazards, doors, lever and cannon have bones and looping actions. Textured, rigged and animated.",
+        "tags":  [
+                     "Obby",
+                     "Props"
+                 ],
+        "date":  "2026-10-05T16:15:32"
+    },
+    {
+        "slug":  "100CityProps",
+        "page":  "100-city-street-props",
+        "name":  "100 City Street Props",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/106936770013413",
+        "image":  "img/100CityProps.jpg",
+        "slides":  [
+                       "img/100CityProps/01.jpg",
+                       "img/100CityProps/02.jpg",
+                       "img/100CityProps/03.jpg",
+                       "img/100CityProps/04.jpg",
+                       "img/100CityProps/05.jpg",
+                       "img/100CityProps/06.jpg",
+                       "img/100CityProps/09.jpg",
+                       "img/100CityProps/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly props to dress a city map, true to scale for a 5-stud character: from a 2-stud road cone to a 35-stud city bus. Traffic and pedestrian lights, street lamps, blank road signs, cones, barriers, bollards, benches, bins, hydrant, mailbox, phone booth, bus stop, hot dog and ice cream carts, food truck, newsstand, vending machine, ATM, market stall, power pole, water tower, billboard, dumpster, fountain, playground, gazebo, subway entrance, bus, taxi, scooter, bicycle, scaffold, cement mixer and more. 1 Blender unit = 1 stud. Every wheel is its own part; swings, seesaw, barrier arm, doors, lids and the fountain have bones. No text and no brands on any model. Textured, rigged and animated.",
+        "tags":  [
+                     "City",
+                     "Props"
+                 ],
+        "date":  "2026-10-05T16:12:55"
+    },
+    {
         "slug":  "150MilitaryAssets",
         "page":  "150-military-assets",
         "name":  "150 Military Assets",
