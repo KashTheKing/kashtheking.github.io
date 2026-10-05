@@ -256,6 +256,7 @@
   .is-focused.grid-focus::after { opacity: 1; }
 
   /* ring: first item big in the middle, the rest around it */
+  .group--ring { --ring-ry: min(29vw, 225px); } /* the ring is wider than it is tall, so the bottom bubble and its label stay inside the box */
   .group--ring .group__items { position: relative; width: min(80vw, 560px); height: min(80vw, 560px); display: block; }
   .group--ring .obj { position: absolute; left: 50%; top: 42%; width: var(--w); margin: calc(var(--w) / -2 - 14px) 0 0 calc(var(--w) / -2); transform: translate(var(--x, 0), var(--y, 0)); }
   .group--ring .obj.is-hub { --w: min(34vw, 220px); }
