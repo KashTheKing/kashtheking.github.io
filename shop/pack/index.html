@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Pack | KashTheKing Shop</title>
+    <meta name="description" content="Roblox asset pack by KashTheKing: low-poly, textured, rigged and animated.">
+    <meta name="theme-color" content="#1c1e22">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #1c1e22; --panel: #26292e; --line: #3a3d44; --text: #fff; --dim: #a9adb6; --gold: #ffb02e; --gold-hi: #ffe98a; --blurple: #5865f2; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); min-height: 100vh; display: flex; flex-direction: column;
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(rgba(62,65,70,.55) 1px, transparent 1px), linear-gradient(90deg, rgba(62,65,70,.55) 1px, transparent 1px),
+                linear-gradient(rgba(38,41,46,.9) 1px, transparent 1px), linear-gradient(90deg, rgba(38,41,46,.9) 1px, transparent 1px);
+            background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
+        }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+        /* Same crown + name mark as the home page, top right; links home */
+        .brand { position: absolute; top: 30px; right: 42px; z-index: 10; display: flex; align-items: center; font-weight: 900; font-size: 1.1rem; text-decoration: none; user-select: none; -webkit-user-select: none; }
+        .brand img { position: absolute; width: 30px; height: 30px; left: -36px; top: -11px; transform: rotate(-20deg); object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
+        .brand span { text-shadow: 0 2px 4px rgba(0,0,0,.7), 0 0 10px rgba(0,0,0,.4); }
+        main { flex: 1; width: min(1280px, 100%); margin: 0 auto; padding: 84px 48px 72px; }
+        .back { display: inline-block; margin-bottom: 22px; color: var(--dim); text-decoration: none; font-weight: 600; font-size: 14px; }
+        .back:hover { color: var(--text); }
+        .top { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr); gap: 36px; align-items: start; }
+
+        /* slideshow: a horizontal scroll-snap strip, so swiping, trackpads and the buttons all work */
+        .show { position: relative; }
+        .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: 16px; border: 1px solid var(--line); background: #14171c; scrollbar-width: none; }
+        .strip::-webkit-scrollbar { display: none; }
+        .strip figure { flex: 0 0 100%; min-width: 0; scroll-snap-align: center; aspect-ratio: 16 / 10; overflow: hidden; }
+        .strip img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.6); color: #fff; font-size: 22px; cursor: pointer; display: grid; place-items: center; }
+        .nav:hover { background: rgba(0,0,0,.85); }
+        .nav[disabled] { opacity: .25; cursor: default; }
+        .prev { left: 12px; } .next { right: 12px; }
+        .thumbs { display: flex; gap: 8px; margin-top: 12px; overflow-x: auto; padding-bottom: 4px; }
+        .thumbs button { flex: 0 0 auto; width: 84px; height: 56px; padding: 0; border-radius: 8px; border: 2px solid transparent; background: #14171c; cursor: pointer; overflow: hidden; opacity: .6; }
+        .thumbs button[aria-current="true"] { border-color: var(--gold); opacity: 1; }
+        .thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .side { background: rgba(38,41,46,.92); border: 1px solid var(--line); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 16px; }
+        h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.05; }
+        .meta { display: flex; gap: 8px; flex-wrap: wrap; }
+        .meta span { padding: 4px 10px; border-radius: 6px; background: #1c1e22; color: #d6d9df; font-size: 12px; font-weight: 600; }
+        .desc { color: #d6d9df; line-height: 1.6; font-size: 15px; }
+        .price { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 40px; color: var(--gold); }
+        .btn { display: block; text-align: center; padding: 15px 20px; border-radius: 12px; font-weight: 800; font-size: 16px; text-decoration: none; }
+        .roblox { background: var(--gold); color: #1c1e22; } .roblox:hover { background: var(--gold-hi); }
+        .discord { background: var(--blurple); color: #fff; } .discord:hover { filter: brightness(1.12); }
+        .or { text-align: center; color: var(--dim); font-size: 13px; }
+        .list { color: #d6d9df; font-size: 14px; line-height: 1.7; padding-left: 18px; }
+
+        h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px; margin: 64px 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
+        .card:hover { transform: translateY(-4px); border-color: var(--gold); }
+        .card img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; }
+        .card div { padding: 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        .card b { font-size: 15px; } .card span { font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--gold); }
+        .missing { padding: 80px 0; text-align: center; color: var(--dim); }
+        footer { padding: 28px 48px 40px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); background: rgba(20,23,28,.8); }
+        footer a { color: var(--gold); }
+        @media (max-width: 860px) { main { padding: 84px 20px 56px; } .top { grid-template-columns: 1fr; } .brand { right: 22px; } footer { padding-inline: 20px; } .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; } }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+    </style>
+</head>
+<body>
+    <a class="brand" href="https://kashtheking.com/" aria-label="KashTheKing home"><img src="/assets/icons/crown.png" alt=""><span>KashTheKing</span></a>
+    <main>
+        <a class="back" href="../">← All asset packs</a>
+        <div id="pack"></div>
+        <p id="missing" class="missing" hidden>That pack was not found. <a href="../">Browse all packs</a>.</p>
+        <section id="more" hidden>
+            <h2>You might also like</h2>
+            <div id="recommended" class="grid"></div>
+        </section>
+    </main>
+    <footer>© KashTheKing · <a href="/">kashtheking.com</a></footer>
+
+    <script>
+        // Page for one pack: /shop/pack/?p=<slug>. Data comes from ../packs.json (generated by build-shop.ps1).
+        const DISCORD = "https://discord.gg/6HYgCk22eD";
+        const slug = new URLSearchParams(location.search).get("p");
+        const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+        fetch("../packs.json").then(r => r.json()).then(packs => {
+            const p = packs.find(x => x.slug === slug);
+            if (!p) { document.getElementById("missing").hidden = false; return; }
+            document.title = `${p.name} | KashTheKing Shop`;
+            const slides = p.slides && p.slides.length ? p.slides : [p.image];
+            document.getElementById("pack").innerHTML = `
+                <div class="top">
+                    <div>
+                        <div class="show">
+                            <div class="strip" id="strip" tabindex="0" aria-label="${esc(p.name)} images. Scroll or use the arrow buttons.">
+                                ${slides.map((s, i) => `<figure><img src="../${s}" alt="${esc(p.name)} image ${i + 1} of ${slides.length}" ${i ? 'loading="lazy"' : ""}></figure>`).join("")}
+                            </div>
+                            <button class="nav prev" id="prev" type="button" aria-label="Previous image">‹</button>
+                            <button class="nav next" id="next" type="button" aria-label="Next image">›</button>
+                        </div>
+                        <div class="thumbs" id="thumbs">
+                            ${slides.map((s, i) => `<button type="button" aria-label="Show image ${i + 1}"><img src="../${s}" alt="" loading="lazy"></button>`).join("")}
+                        </div>
+                    </div>
+                    <aside class="side">
+                        <h1>${esc(p.name)}</h1>
+                        <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
+                        <p class="desc">${esc(p.description)}</p>
+                        <div class="price">$${p.price.toFixed(2)}</div>
+                        <a class="btn roblox" href="${p.url}" target="_blank" rel="noopener">Get on Roblox</a>
+                        <div class="or">or</div>
+                        <a class="btn discord" href="${DISCORD}" target="_blank" rel="noopener">Discord for other methods</a>
+                        <ul class="list">
+                            <li>Textured, rigged and animated</li>
+                            <li>One model to insert, ${p.count} assets inside</li>
+                            <li>Use in any game, including commercial ones</li>
+                        </ul>
+                    </aside>
+                </div>`;
+
+            // slideshow controls
+            const strip = document.getElementById("strip"), thumbs = [...document.getElementById("thumbs").children];
+            const prev = document.getElementById("prev"), next = document.getElementById("next");
+            const index = () => Math.round(strip.scrollLeft / strip.clientWidth);
+            const go = i => strip.scrollTo({ left: Math.max(0, Math.min(slides.length - 1, i)) * strip.clientWidth });
+            const sync = () => { const i = index(); thumbs.forEach((t, k) => t.setAttribute("aria-current", k === i)); prev.disabled = i === 0; next.disabled = i === slides.length - 1; };
+            prev.onclick = () => go(index() - 1); next.onclick = () => go(index() + 1);
+            thumbs.forEach((t, k) => t.onclick = () => go(k));
+            strip.addEventListener("scroll", () => requestAnimationFrame(sync));
+            strip.addEventListener("keydown", e => { if (e.key === "ArrowLeft") go(index() - 1); if (e.key === "ArrowRight") go(index() + 1); });
+            sync();
+
+            // recommended: packs sharing the most tags first, then the newest
+            const score = x => x.tags.filter(t => p.tags.includes(t)).length;
+            const others = packs.filter(x => x.slug !== p.slug).sort((a, b) => score(b) - score(a)).slice(0, 4);
+            if (others.length) {
+                document.getElementById("more").hidden = false;
+                document.getElementById("recommended").innerHTML = others.map(o => `
+                    <a class="card" href="?p=${encodeURIComponent(o.slug)}">
+                        <img src="../${o.image}" alt="${esc(o.name)} thumbnail" loading="lazy" width="360" height="360">
+                        <div><b>${esc(o.name)}</b><span>$${o.price.toFixed(2)}</span></div>
+                    </a>`).join("");
+            }
+        }).catch(() => { document.getElementById("missing").hidden = false; });
+    </script>
+</body>
+</html>
