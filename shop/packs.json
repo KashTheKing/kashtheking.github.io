@@ -1,5 +1,80 @@
 [
     {
+        "slug":  "100MedievalVillage",
+        "page":  "100-medieval-village-assets",
+        "name":  "100 Medieval Village Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/128198284864129",
+        "image":  "img/100MedievalVillage.jpg",
+        "slides":  [
+                       "img/100MedievalVillage/01.jpg",
+                       "img/100MedievalVillage/02.jpg",
+                       "img/100MedievalVillage/03.jpg",
+                       "img/100MedievalVillage/04.jpg",
+                       "img/100MedievalVillage/05.jpg",
+                       "img/100MedievalVillage/06.jpg",
+                       "img/100MedievalVillage/09.jpg",
+                       "img/100MedievalVillage/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly assets to build a medieval village and castle, true to scale for a 5-stud character: from a 1-stud tankard to a 40-stud castle keep. Cottages, tavern, chapel, windmill, water mill, barn, a modular castle kit (walls 14 studs high, towers, gatehouse with portcullis, drawbridge, stairs), market stalls, carts and wagons, workshop and interior props, siege engines, fences, bridge, dock and rowboat. 1 Blender unit = 1 stud: doors are 3.4 x 6.8 studs, tables 3 high. Every cart wheel is its own part; doors, gates, sails, water wheel and siege engines have bones and actions. Textured, rigged and animated.",
+        "tags":  [
+                     "RPG",
+                     "Buildings"
+                 ],
+        "date":  "2026-10-05T16:46:09"
+    },
+    {
+        "slug":  "100CandyLand",
+        "page":  "100-candy-land-assets",
+        "name":  "100 Candy Land Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/118652325500833",
+        "image":  "img/100CandyLand.jpg",
+        "slides":  [
+                       "img/100CandyLand/01.jpg",
+                       "img/100CandyLand/02.jpg",
+                       "img/100CandyLand/03.jpg",
+                       "img/100CandyLand/04.jpg",
+                       "img/100CandyLand/05.jpg",
+                       "img/100CandyLand/06.jpg",
+                       "img/100CandyLand/09.jpg",
+                       "img/100CandyLand/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly candy world assets for simulator zones, obbies and tycoon maps, true to scale for a 5-stud character: from a 2-stud candy flower to a 60-stud ice cream mountain. Lollipop, candy cane and cotton candy trees, gumdrop hills, chocolate rocks, marshmallow boulders, sugar crystals, frosting clouds, gingerbread house, cupcake house, ice cream shop, candy tower, chocolate fountain, gumball machine tower, wafer walls, waffle bridge, peppermint, cookie, donut and macaron platforms, chocolate river, syrup waterfall, rainbow road, candy train and props. 1 Blender unit = 1 stud. Every wheel is its own part; the gate, chest, portal, fountain and gumball crank have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Nature"
+                 ],
+        "date":  "2026-10-05T16:42:06"
+    },
+    {
+        "slug":  "100CuteFarm",
+        "page":  "100-cute-farm-assets",
+        "name":  "100 Cute Farm Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/130200390113774",
+        "image":  "img/100CuteFarm.jpg",
+        "slides":  [
+                       "img/100CuteFarm/01.jpg",
+                       "img/100CuteFarm/02.jpg",
+                       "img/100CuteFarm/03.jpg",
+                       "img/100CuteFarm/04.jpg",
+                       "img/100CuteFarm/05.jpg",
+                       "img/100CuteFarm/06.jpg",
+                       "img/100CuteFarm/09.jpg",
+                       "img/100CuteFarm/10.jpg"
+                   ],
+        "description":  "100 cute, rounded low-poly farm assets for farming games, true to scale for a 5-stud character: from a 1-stud strawberry to a 40-stud barn. Nine crops in three growth stages (Baby = seedling, Young = growing, Ripe): wheat, corn, sunflower, carrot, potato, cabbage, tomato, pumpkin, strawberry. Harvested produce, crates, baskets and sacks, soil plots (dry, tilled, watered), raised bed, scarecrow, compost bin, barn, silo, chicken coop, stable, greenhouse, windmill, water tower, tool shed, farm stand, well, dog house, fences, gate, hay bales, trough, feeder, beehive, water pump, tractor, trailer, combine harvester, pickup, wheelbarrow, hand cart, tools, fruit trees, berry bush, pond and flowers. 1 Blender unit = 1 stud. Every wheel is its own part; windmill blades, barn doors, gate and pump handle have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Farm"
+                 ],
+        "date":  "2026-10-05T16:19:46"
+    },
+    {
         "slug":  "100ObbyParts",
         "page":  "100-obby-parts",
         "name":  "100 Obby Parts",
