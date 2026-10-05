@@ -34,7 +34,8 @@
         header::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(200,110,25,.85), rgba(120,60,15,.1) 60%); clip-path: polygon(0 0, 62% 0, 0 78%); }
         header > * { position: relative; }
         h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(44px, 7vw, 92px); line-height: .95; letter-spacing: .01em; text-shadow: 0 6px 0 rgba(0,0,0,.45); }
-        h1 span { background: linear-gradient(var(--gold-hi), #ff9a1f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        /* Gradient text is transparent, so an inherited text-shadow would show through the letters: use a filter shadow instead */
+        h1 span { background: linear-gradient(var(--gold-hi), #ff9a1f); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 6px 0 rgba(0,0,0,.45)); }
         .tag { display: inline-block; margin-top: 22px; padding: 10px 22px; background: #000; font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: .12em; font-size: 15px; transform: skewX(-10deg); }
         .lead { max-width: 640px; margin-top: 22px; color: #e6e8ec; font-size: 17px; line-height: 1.55; }
         .stats { display: flex; gap: 36px; margin-top: 28px; flex-wrap: wrap; }
