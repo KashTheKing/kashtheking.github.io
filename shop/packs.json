@@ -1,5 +1,28 @@
 [
     {
+        "slug":  "100CuteFurniture",
+        "name":  "100 Cute Furniture",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/129821030523509",
+        "image":  "img/100CuteFurniture.jpg",
+        "slides":  [
+                       "img/100CuteFurniture/01.jpg",
+                       "img/100CuteFurniture/02.jpg",
+                       "img/100CuteFurniture/03.jpg",
+                       "img/100CuteFurniture/04.jpg",
+                       "img/100CuteFurniture/05.jpg",
+                       "img/100CuteFurniture/06.jpg",
+                       "img/100CuteFurniture/09.jpg"
+                   ],
+        "description":  "100 cute rounded low-poly furniture pieces in pastel colours for roleplay, housing and tycoon games: living room, bedroom, kitchen, bathroom, office, kids and gaming, decor and outdoor. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Furniture"
+                 ],
+        "date":  "2026-10-05T11:08:34"
+    },
+    {
         "slug":  "100CuteTycoon",
         "name":  "100 Cute Tycoon Assets",
         "count":  100,
