@@ -1,5 +1,28 @@
 [
     {
+        "slug":  "100WildWest",
+        "name":  "100 Wild West Decorations",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/107835050512816",
+        "image":  "img/100WildWest.jpg",
+        "slides":  [
+                       "img/100WildWest/01.jpg",
+                       "img/100WildWest/02.jpg",
+                       "img/100WildWest/03.jpg",
+                       "img/100WildWest/04.jpg",
+                       "img/100WildWest/05.jpg",
+                       "img/100WildWest/06.jpg",
+                       "img/100WildWest/09.jpg"
+                   ],
+        "description":  "100 chunky low-poly Wild West map decorations: cacti, tumbleweeds, dead trees, desert rocks and mesas, town props, ranch fences and wagons, mine carts and rails, and camp gear. Textured, rigged and animated.",
+        "tags":  [
+                     "Western",
+                     "Nature"
+                 ],
+        "date":  "2026-10-05T11:23:57"
+    },
+    {
         "slug":  "100CuteFurniture",
         "name":  "100 Cute Furniture",
         "count":  100,
