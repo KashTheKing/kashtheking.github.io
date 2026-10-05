@@ -1,5 +1,29 @@
 [
     {
+        "slug":  "100SimulatorEssentials",
+        "page":  "100-simulator-essentials",
+        "name":  "100 Simulator Essentials",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/98284485465970",
+        "image":  "img/100SimulatorEssentials.jpg",
+        "slides":  [
+                       "img/100SimulatorEssentials/01.jpg",
+                       "img/100SimulatorEssentials/02.jpg",
+                       "img/100SimulatorEssentials/03.jpg",
+                       "img/100SimulatorEssentials/04.jpg",
+                       "img/100SimulatorEssentials/05.jpg",
+                       "img/100SimulatorEssentials/06.jpg",
+                       "img/100SimulatorEssentials/09.jpg"
+                   ],
+        "description":  "100 chunky low-poly props for simulator games: pet eggs, hatching stands, coins and gems, breakables, gates, portals and islands, shop and upgrade stations, boosts and rewards. Textured, rigged and animated.",
+        "tags":  [
+                     "Simulator",
+                     "Props"
+                 ],
+        "date":  "2026-10-05T12:40:33"
+    },
+    {
         "slug":  "100Christmas",
         "page":  "100-christmas-decorations",
         "name":  "100 Christmas Decorations",
