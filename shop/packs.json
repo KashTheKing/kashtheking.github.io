@@ -1,5 +1,53 @@
 [
     {
+        "slug":  "100HalloweenDecor",
+        "page":  "100-halloween-decorations",
+        "name":  "100 Halloween Decorations",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/116561819837052",
+        "image":  "img/100HalloweenDecor.jpg",
+        "slides":  [
+                       "img/100HalloweenDecor/01.jpg",
+                       "img/100HalloweenDecor/02.jpg",
+                       "img/100HalloweenDecor/03.jpg",
+                       "img/100HalloweenDecor/04.jpg",
+                       "img/100HalloweenDecor/05.jpg",
+                       "img/100HalloweenDecor/06.jpg",
+                       "img/100HalloweenDecor/09.jpg"
+                   ],
+        "description":  "100 chunky cute-spooky Halloween map decorations: dead trees, pumpkins and jack-o-lanterns, gravestones and crypts, fences and gates, candles and lanterns, witch props, bones and decor. Textured, rigged and animated.",
+        "tags":  [
+                     "Halloween",
+                     "Nature"
+                 ],
+        "date":  "2026-10-05T11:56:07"
+    },
+    {
+        "slug":  "100CuteGuns",
+        "page":  "100-cute-guns",
+        "name":  "100 Cute Guns",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/124167877388095",
+        "image":  "img/100CuteGuns.jpg",
+        "slides":  [
+                       "img/100CuteGuns/01.jpg",
+                       "img/100CuteGuns/02.jpg",
+                       "img/100CuteGuns/03.jpg",
+                       "img/100CuteGuns/04.jpg",
+                       "img/100CuteGuns/05.jpg",
+                       "img/100CuteGuns/06.jpg",
+                       "img/100CuteGuns/09.jpg"
+                   ],
+        "description":  "100 cute, chubby toy blasters: pistols, SMGs, rifles, shotguns, snipers, launchers, ray guns and novelty guns in pastel and candy colours. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Weapons"
+                 ],
+        "date":  "2026-10-05T11:53:34"
+    },
+    {
         "slug":  "100WildWest",
         "page":  "100-wild-west-decorations",
         "name":  "100 Wild West Decorations",
