@@ -19,6 +19,12 @@
           "bg": "#2979FF"
         },
         {
+          "label": "Shop",
+          "icon": "shop.svg",
+          "href": "https://kashtheking.com/shop/",
+          "bg": "#00C853"
+        },
+        {
           "label": "Game Consulting",
           "icon": "bulb-3d.png",
           "page": "terms.html",
