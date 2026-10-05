@@ -1,5 +1,29 @@
 [
     {
+        "slug":  "100Christmas",
+        "page":  "100-christmas-decorations",
+        "name":  "100 Christmas Decorations",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/89778546951345",
+        "image":  "img/100Christmas.jpg",
+        "slides":  [
+                       "img/100Christmas/01.jpg",
+                       "img/100Christmas/02.jpg",
+                       "img/100Christmas/03.jpg",
+                       "img/100Christmas/04.jpg",
+                       "img/100Christmas/05.jpg",
+                       "img/100Christmas/06.jpg",
+                       "img/100Christmas/09.jpg"
+                   ],
+        "description":  "100 chunky low-poly Christmas and winter decorations: snowy pines and decorated trees, presents, candy canes and gingerbread, snowmen and snow forts, ice, ornaments, lights and village props. Textured, rigged and animated.",
+        "tags":  [
+                     "Christmas",
+                     "Nature"
+                 ],
+        "date":  "2026-10-05T12:26:32"
+    },
+    {
         "slug":  "100SpookyTools",
         "page":  "100-spooky-tools",
         "name":  "100 Spooky Tools",
