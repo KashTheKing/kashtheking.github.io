@@ -1,5 +1,55 @@
 [
     {
+        "slug":  "150MilitaryAssets",
+        "page":  "150-military-assets",
+        "name":  "150 Military Assets",
+        "count":  150,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/136219371644903",
+        "image":  "img/150MilitaryAssets.jpg",
+        "slides":  [
+                       "img/150MilitaryAssets/01.jpg",
+                       "img/150MilitaryAssets/02.jpg",
+                       "img/150MilitaryAssets/03.jpg",
+                       "img/150MilitaryAssets/04.jpg",
+                       "img/150MilitaryAssets/05.jpg",
+                       "img/150MilitaryAssets/06.jpg",
+                       "img/150MilitaryAssets/09.jpg",
+                       "img/150MilitaryAssets/10.jpg"
+                   ],
+        "description":  "150 chunky low-poly military assets, true to scale for a 5-stud character: from a 0.6-stud bullet to an 80-stud cargo plane. Sandbags, barriers, trenches, bunkers, towers, hangar, tents, crates, radar, artillery, projectiles, tanks, trucks, helicopters, jets and boats. 1 Blender unit = 1 stud: hand-held gear is 0.6 to 3.5 studs, cover is chest high, doors and decks clear 7 studs, vehicles are 12 to 37 long. Every wheel is its own part, weapons have Turret / Barrel / Muzzle bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Military",
+                     "Vehicles"
+                 ],
+        "date":  "2026-10-05T15:38:47"
+    },
+    {
+        "slug":  "100PrisonAssets",
+        "page":  "100-prison-assets",
+        "name":  "100 Prison Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/71750706741656",
+        "image":  "img/100PrisonAssets.jpg",
+        "slides":  [
+                       "img/100PrisonAssets/01.jpg",
+                       "img/100PrisonAssets/02.jpg",
+                       "img/100PrisonAssets/03.jpg",
+                       "img/100PrisonAssets/04.jpg",
+                       "img/100PrisonAssets/05.jpg",
+                       "img/100PrisonAssets/06.jpg",
+                       "img/100PrisonAssets/09.jpg",
+                       "img/100PrisonAssets/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly prison assets for jailbreak and escape games, true to scale for a 5-stud character: from a 0.8-stud key to a 30-stud prison bus and a 35-stud guard tower. Police car, SUV, prison van, bus, armoured truck, motorbike and helicopter, cells with sliding bar doors, bunks, walls, fences, gates, guard tower, yard, cafeteria, laundry, workshop, offices, security gear and escape tools. 1 Blender unit = 1 stud: cells are 12 x 10 x 10, doors clear 7.5 studs. Every wheel is its own part; doors, gates, barrier, searchlight and camera have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Prison",
+                     "Vehicles"
+                 ],
+        "date":  "2026-10-05T15:28:51"
+    },
+    {
         "slug":  "100SimulatorEssentials",
         "page":  "100-simulator-essentials",
         "name":  "100 Simulator Essentials",
