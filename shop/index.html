@@ -61,6 +61,8 @@
         .card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: #14171c; }
         .body { display: flex; flex-direction: column; gap: 10px; padding: 18px; flex: 1; }
         .card h2 { font-size: 20px; font-weight: 800; }
+        .badge { align-self: flex-start; display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #fff; background: #3a3d44; }
+        .badge.first { color: #1c1e22; background: linear-gradient(180deg, #ffe98a, #ff9a1f); }
         .card p { color: var(--dim); font-size: 14px; line-height: 1.5; flex: 1; }
         .meta { display: flex; gap: 8px; flex-wrap: wrap; }
         .meta span { padding: 4px 10px; border-radius: 6px; background: #1c1e22; color: #d6d9df; font-size: 12px; font-weight: 600; }
@@ -132,6 +134,7 @@
             el.innerHTML = `
                 <img src="${p.image}" alt="" loading="lazy" width="540" height="540">
                 <div class="body">
+                    ${p.badge ? `<span class="badge${p.badge.startsWith("#1") ? " first" : ""}">${p.badge}</span>` : ""}
                     <h2>${p.name}</h2>
                     <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
                     <p>${p.description}</p>

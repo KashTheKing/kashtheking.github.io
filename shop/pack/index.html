@@ -62,6 +62,8 @@
         .meta span { padding: 4px 10px; border-radius: 6px; background: #1c1e22; color: #d6d9df; font-size: 12px; font-weight: 600; }
         .desc { color: #d6d9df; line-height: 1.6; font-size: 15px; }
         .price { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 40px; color: var(--gold); }
+        .badge { display: inline-block; margin-bottom: 10px; padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #fff; background: #3a3d44; }
+        .badge.first { color: #1c1e22; background: linear-gradient(180deg, #ffe98a, #ff9a1f); }
         .btn { display: block; text-align: center; padding: 15px 20px; border-radius: 12px; font-weight: 800; font-size: 16px; text-decoration: none; }
         .roblox { background: var(--gold); color: #1c1e22; } .roblox:hover { background: var(--gold-hi); }
         .discord { background: var(--blurple); color: #fff; } .discord:hover { filter: brightness(1.12); }
@@ -127,6 +129,7 @@
                         </div>
                     </div>
                     <aside class="side">
+                        ${p.badge ? `<span class="badge${p.badge.startsWith("#1") ? " first" : ""}">${esc(p.badge)}</span>` : ""}
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
