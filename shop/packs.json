@@ -1,5 +1,28 @@
 [
     {
+        "slug":  "100MagicTreasure",
+        "name":  "100 Magic \u0026 Treasure Items",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/105476584252876",
+        "image":  "img/100MagicTreasure.jpg",
+        "slides":  [
+                       "img/100MagicTreasure/01.jpg",
+                       "img/100MagicTreasure/02.jpg",
+                       "img/100MagicTreasure/03.jpg",
+                       "img/100MagicTreasure/04.jpg",
+                       "img/100MagicTreasure/05.jpg",
+                       "img/100MagicTreasure/06.jpg",
+                       "img/100MagicTreasure/09.jpg"
+                   ],
+        "description":  "100 chunky low-poly potions, gems, crystals, magic items, jewelry and treasure. Textured, rigged and animated.",
+        "tags":  [
+                     "RPG",
+                     "Props"
+                 ],
+        "date":  "2026-10-05T03:35:02"
+    },
+    {
         "slug":  "50LowPolyGuns",
         "name":  "50 Low Poly Guns",
         "count":  50,
@@ -19,23 +42,6 @@
                      "Weapons"
                  ],
         "date":  "2026-10-05T03:19:10"
-    },
-    {
-        "slug":  "100MagicTreasure",
-        "name":  "100 Magic \u0026 Treasure Items",
-        "count":  100,
-        "price":  9.99,
-        "url":  "https://create.roblox.com/store/asset/105476584252876",
-        "image":  "img/100MagicTreasure.jpg",
-        "slides":  [
-                       "img/100MagicTreasure.jpg"
-                   ],
-        "description":  "100 chunky low-poly potions, gems, crystals, magic items, jewelry and treasure. Textured, rigged and animated.",
-        "tags":  [
-                     "RPG",
-                     "Props"
-                 ],
-        "date":  "2026-10-05T03:17:26"
     },
     {
         "slug":  "100CuteFruits",
