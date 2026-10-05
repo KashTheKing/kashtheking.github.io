@@ -1,5 +1,28 @@
 [
     {
+        "slug":  "100CuteFoliage",
+        "name":  "100 Cute Foliage",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/82542365949087",
+        "image":  "img/100CuteFoliage.jpg",
+        "slides":  [
+                       "img/100CuteFoliage/01.jpg",
+                       "img/100CuteFoliage/02.jpg",
+                       "img/100CuteFoliage/03.jpg",
+                       "img/100CuteFoliage/04.jpg",
+                       "img/100CuteFoliage/05.jpg",
+                       "img/100CuteFoliage/06.jpg",
+                       "img/100CuteFoliage/10.jpg"
+                   ],
+        "description":  "100 cute low-poly terrain decorations: trees, pines, bushes, grass, flowers, mushrooms, rocks, fallen logs and stumps. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Nature"
+                 ],
+        "date":  "2026-10-05T03:51:27"
+    },
+    {
         "slug":  "100PirateAssets",
         "name":  "100 Pirate Assets",
         "count":  100,
