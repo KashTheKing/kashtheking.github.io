@@ -1,5 +1,27 @@
 [
     {
+        "slug":  "100PirateAssets",
+        "name":  "100 Pirate Assets",
+        "count":  100,
+        "price":  9.99,
+        "url":  "https://create.roblox.com/store/asset/91916855155085",
+        "image":  "img/100PirateAssets.jpg",
+        "slides":  [
+                       "img/100PirateAssets/01.jpg",
+                       "img/100PirateAssets/02.jpg",
+                       "img/100PirateAssets/03.jpg",
+                       "img/100PirateAssets/04.jpg",
+                       "img/100PirateAssets/05.jpg",
+                       "img/100PirateAssets/06.jpg"
+                   ],
+        "description":  "100 chunky low-poly pirate assets: characters, creatures, weapons, treasure, ship parts and island props. Textured, rigged and animated.",
+        "tags":  [
+                     "Pirates",
+                     "Characters"
+                 ],
+        "date":  "2026-10-05T03:40:11"
+    },
+    {
         "slug":  "100MagicTreasure",
         "name":  "100 Magic \u0026 Treasure Items",
         "count":  100,
