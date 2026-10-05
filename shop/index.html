@@ -28,10 +28,9 @@
             background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
         }
         a { color: inherit; }
-        /* Same crown + name mark as the home page (index.html .brand), placed top right; links home */
-        .brand { position: absolute; top: 30px; right: 42px; z-index: 10; display: flex; align-items: center; font-weight: 900; font-size: 1.1rem; color: #fff; text-decoration: none; user-select: none; -webkit-user-select: none; }
-        .brand img { position: absolute; width: 30px; height: 30px; left: -36px; top: -11px; transform: rotate(-20deg); object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
-        .brand span { text-shadow: 0 2px 4px rgba(0,0,0,.7), 0 0 10px rgba(0,0,0,.4); }
+        /* Standard watermark (assets/watermark.png), top left like the home page; links home */
+        .brand { position: absolute; top: 22px; left: 28px; z-index: 10; display: block; line-height: 0; text-decoration: none; }
+        .brand img { display: block; width: auto; height: 35px; filter: drop-shadow(0 2px 3px rgba(0,0,0,.45)); }
         .brand:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
 
         header { position: relative; overflow: hidden; padding: 120px 64px 56px; }
@@ -72,12 +71,12 @@
         .info p { color: #d6d9df; font-size: 14px; line-height: 1.55; }
         footer { padding: 28px 64px 44px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); background: rgba(20,23,28,.8); }
         footer a { color: var(--gold); }
-        @media (max-width: 720px) { header { padding: 96px 22px 40px; } .brand { right: 22px; } .bar, main, footer { padding-inline: 22px; } .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; } .card h2 { font-size: 16px; } .card p { display: none; } .price { font-size: 20px; } .view, .soon { padding: 9px 12px; font-size: 13px; } }
+        @media (max-width: 720px) { header { padding: 96px 22px 40px; } .brand { left: 16px; } .bar, main, footer { padding-inline: 22px; } .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; } .card h2 { font-size: 16px; } .card p { display: none; } .price { font-size: 20px; } .view, .soon { padding: 9px 12px; font-size: 13px; } }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
     </style>
 </head>
 <body>
-    <a class="brand" href="https://kashtheking.com/" aria-label="KashTheKing home"><img src="/assets/icons/crown.png" alt=""><span>KashTheKing</span></a>
+    <a class="brand" href="https://kashtheking.com/" aria-label="KashTheKing home"><img class="mark" src="/assets/watermark.png" alt="KashTheKing" width="165" height="35"></a>
     <header>
         <h1><span>ASSET</span><br>MARKETPLACE</h1>
         <div class="tag">TEXTURED &nbsp; RIGGED &nbsp; ANIMATED</div>

@@ -32,9 +32,9 @@
     background: radial-gradient(ellipse 50% 50% at 50% 48%, rgba(255,255,255,.18), rgba(255,255,255,.05) 45%, transparent 72%);
   }
 
-  .brand { position: fixed; top: 30px; left: 42px; z-index: 5; display: flex; align-items: center; font-weight: 900; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
-  .brand img { position: absolute; width: 30px; height: 30px; left: -36px; top: -11px; transform: rotate(-20deg); object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
-  .brand span { text-shadow: 0 2px 4px rgba(0,0,0,.7), 0 0 10px rgba(0,0,0,.4); }
+  /* Standard watermark: the crown + glossy name image from the asset-pack thumbnails (assets/watermark.png) */
+  .brand { position: fixed; top: 22px; left: 28px; z-index: 5; display: block; line-height: 0; text-decoration: none; }
+  .brand img { display: block; width: auto; height: 35px; filter: drop-shadow(0 2px 3px rgba(0,0,0,.45)); }
   .back.glass { position: fixed; left: 50%; top: calc(100% - 56px); transform: translate(-50%, -50%) scale(.6); opacity: 0; visibility: hidden; transition: transform 620ms cubic-bezier(.76,0,.24,1), opacity 620ms cubic-bezier(.76,0,.24,1), visibility 0s 620ms, box-shadow 160ms ease-out, scale 130ms ease-out; z-index: 6; width: 56px; height: 56px; border: 0; padding: 0; cursor: pointer; --tint: #CFD8DC; place-items: center; }
   .back img { width: 60%; height: 60%; filter: drop-shadow(0 4px 4px rgba(0,0,0,.45)); transition: transform 160ms ease-out; }
   .back:hover img { transform: translateX(-3px) scale(1.08); }
@@ -313,7 +313,7 @@
 </head>
 <body>
 <div class="stage baseplate" id="stage">
-  <a class="brand" href="./" aria-label="KashTheKing home"><img src="assets/icons/crown.png" alt=""><span>KashTheKing</span></a>
+  <a class="brand" href="./" aria-label="KashTheKing home"><img class="mark" src="/assets/watermark.png" alt="KashTheKing" width="165" height="35"></a>
 <button class="gear glass" type="button" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3H9l-.3 2.9a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L4.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.6 7.6 0 0 0 1.7 1L9 21h6l.3-2.9a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.5zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></button>
 <div class="settings"><label>Sound effects <input type="checkbox" id="opt-sound"></label><label>Animations <input type="checkbox" id="opt-anim"></label></div>
   <button class="back glass" type="button" id="back" aria-label="Back"><img src="assets/icons/back.svg" alt=""></button>
