@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found | KashTheKing</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#1c1e22">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-crown-32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { min-height: 100vh; display: grid; place-items: center; padding: 24px; text-align: center; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #fff; background: #1c1e22; }
+        h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(72px, 18vw, 160px); line-height: 1; background: linear-gradient(#ffe98a, #ff9a1f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        p { margin: 14px 0 26px; color: #a9adb6; font-size: 17px; line-height: 1.5; }
+        nav { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        a { padding: 12px 22px; border-radius: 10px; border: 1px solid #3a3d44; background: #26292e; color: #fff; font-weight: 600; text-decoration: none; }
+        a.main { background: #ffb02e; border-color: #ffb02e; color: #1c1e22; }
+        a:focus-visible { outline: 2px solid #ffb02e; outline-offset: 3px; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>404</h1>
+        <p id="msg">That page doesn't exist.</p>
+        <nav>
+            <a class="main" href="/shop/">Asset pack shop</a>
+            <a href="/">Home</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </main>
+    <script>
+        // GitHub Pages serves this file for every missing URL, so the address bar still holds what the visitor asked for.
+        (async () => {
+            const parts = location.pathname.toLowerCase().split("/").filter(Boolean);
+            if (parts[0] !== "shop") return;
+            const key = s => s.toLowerCase().replace(/[^a-z0-9]/g, "");   // "250CuteSeaCreatures" == "250-cute-sea-creatures"
+            const want = key(parts[1] || "");
+            let target = "/shop/", label = "the shop";
+            try {
+                const packs = await (await fetch("/shop/packs.json")).json();
+                const hit = want && packs.find(p => [p.page, p.slug, p.name].some(v => key(v) === want))
+                    || want.length > 5 && packs.find(p => key(p.page).includes(want) || want.includes(key(p.page)));
+                if (hit) { target = "/shop/" + hit.page + "/"; label = hit.name; }
+            } catch (e) {}
+            document.getElementById("msg").textContent = "That page doesn't exist. Taking you to " + label + "…";
+            setTimeout(() => location.replace(target), 2500);
+        })();
+    </script>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cd94b2bc49634d048aa496f6b380505d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
