@@ -1,5 +1,55 @@
 [
     {
+        "slug":  "100HorrorProps",
+        "page":  "100-horror-game-props",
+        "name":  "100 Horror Game Props",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/116267901576117",
+        "image":  "img/100HorrorProps.jpg",
+        "slides":  [
+                       "img/100HorrorProps/01.jpg",
+                       "img/100HorrorProps/02.jpg",
+                       "img/100HorrorProps/03.jpg",
+                       "img/100HorrorProps/04.jpg",
+                       "img/100HorrorProps/05.jpg",
+                       "img/100HorrorProps/06.jpg",
+                       "img/100HorrorProps/09.jpg",
+                       "img/100HorrorProps/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly props for horror games, true to scale for a 5-stud character: from a 0.9-stud battery to a 16-stud abandoned car and a 14-stud dead tree. Abandoned house, asylum and hospital, backrooms-style office, basement and utility rooms, a spooky yard and gameplay pick-ups (flashlight, keys, fuses, medkit, hiding locker, safe). Spooky and worn, not gory. 1 Blender unit = 1 stud: doors clear 7.5 studs. Doors, gates, lids, the elevator, the rocking chair, hanging lights, chains and swings have bones and actions; every wheel is its own part. Textured, rigged and animated.",
+        "tags":  [
+                     "Horror",
+                     "Props"
+                 ],
+        "date":  "2026-10-05T17:20:50"
+    },
+    {
+        "slug":  "100TropicalIsland",
+        "page":  "100-tropical-island-assets",
+        "name":  "100 Tropical Island Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/74834991571910",
+        "image":  "img/100TropicalIsland.jpg",
+        "slides":  [
+                       "img/100TropicalIsland/01.jpg",
+                       "img/100TropicalIsland/02.jpg",
+                       "img/100TropicalIsland/03.jpg",
+                       "img/100TropicalIsland/04.jpg",
+                       "img/100TropicalIsland/05.jpg",
+                       "img/100TropicalIsland/06.jpg",
+                       "img/100TropicalIsland/09.jpg",
+                       "img/100TropicalIsland/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly tropical island assets, true to scale for a 5-stud character, to build beaches, islands and resorts: palms, tropical plants, rocks, shells and coral, beach gear, lifeguard tower, huts, tiki bar and tiki statues, bungalow on stilts, boardwalks, pier and dock, boats, a beach buggy and a golf cart, plus a volcano, waterfall, cave and shipwreck. 1 Blender unit = 1 stud. Every wheel is its own part; doors, lids, sails, the hammock, the propeller and flames have bones and actions. Textured, rigged and animated.",
+        "tags":  [
+                     "Nature",
+                     "Buildings"
+                 ],
+        "date":  "2026-10-05T17:16:30"
+    },
+    {
         "slug":  "100MedievalVillage",
         "page":  "100-medieval-village-assets",
         "name":  "100 Medieval Village Assets",
