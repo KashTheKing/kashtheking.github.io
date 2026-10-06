@@ -48,6 +48,11 @@
         .stats { display: flex; gap: 36px; margin-top: 28px; flex-wrap: wrap; }
         .stats b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 34px; color: var(--gold); }
         .stats span { color: var(--dim); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+        .stats { align-items: center; }
+        #drop { padding: 12px 20px; border: 1px solid var(--line); border-radius: 14px; background: rgba(20,23,28,.6); text-align: center; }
+        #drop span { display: block; }
+        #drop b { font-variant-numeric: tabular-nums; margin: 2px 0; }
+        #drop b i { font-style: normal; font-size: 16px; color: var(--dim); margin-left: 2px; }
         .bar { position: sticky; top: 0; z-index: 5; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 14px 64px; background: rgba(20,23,28,.92); border-block: 1px solid var(--line); backdrop-filter: blur(10px); }
         .bar input { flex: 1 1 240px; min-width: 0; padding: 11px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 15px; }
         .bar select { padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 15px; cursor: pointer; }
@@ -99,7 +104,7 @@
         <div class="stats">
             <div><b id="stat-packs">0</b><span>packs</span></div>
             <div><b id="stat-assets">0</b><span>models</span></div>
-            <div id="drop" hidden><b id="drop-timer">00:00:00</b><span>New packs drop · <span id="drop-date"></span></span></div>
+            <div id="drop" hidden><span>10 new packs drop in</span><b id="drop-timer"></b><span id="drop-date"></span></div>
         </div>
     </header>
 
@@ -140,10 +145,14 @@
         function tick() {
             const left = DROP - Date.now(), box = document.getElementById("drop");
             box.hidden = !soon.length;
-            document.getElementById("drop-date").textContent = DROP_DAY;
-            if (left <= 0) { document.getElementById("drop-timer").textContent = "NOW"; return; }
-            const s = Math.floor(left / 1000), two = n => String(n).padStart(2, "0"), days = Math.floor(s / 86400);
-            document.getElementById("drop-timer").textContent = (days ? days + "d " : "") + `${two(Math.floor(s % 86400 / 3600))}:${two(Math.floor(s % 3600 / 60))}:${two(s % 60)}`;
+            box.firstElementChild.textContent = `${soon.length} new pack${soon.length === 1 ? "" : "s"} drop in`;
+            document.getElementById("drop-date").textContent = "on " + DROP_DAY;
+            const timer = document.getElementById("drop-timer");
+            if (left <= 0) { timer.textContent = "NOW"; return; }
+            // every number carries its unit: "3d 16h 50m 28s"
+            const s = Math.floor(left / 1000), parts = [[Math.floor(s / 86400), "d"], [Math.floor(s % 86400 / 3600), "h"], [Math.floor(s % 3600 / 60), "m"], [s % 60, "s"]];
+            while (parts.length > 1 && parts[0][0] === 0) parts.shift();
+            timer.innerHTML = parts.map(([n, u]) => `${n}<i>${u}</i>`).join(" ");
         }
         function locked(p) {
             // Not released yet: thumbnail and name only. No link, no price, no page.
