@@ -99,6 +99,17 @@
         "soon":  true
     },
     {
+        "slug":  "250CuteSeaCreatures",
+        "name":  "250 Cute Sea Creatures",
+        "count":  250,
+        "image":  "img/250CuteSeaCreatures.jpg",
+        "tags":  [
+                     "Cute",
+                     "Animals"
+                 ],
+        "soon":  true
+    },
+    {
         "slug":  "100TropicalIsland",
         "name":  "100 Tropical Island Assets",
         "count":  100,
