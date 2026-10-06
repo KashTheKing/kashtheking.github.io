@@ -73,6 +73,12 @@
         .view { padding: 11px 20px; border-radius: 10px; background: var(--gold); color: #1c1e22; font-weight: 800; white-space: nowrap; }
         .card:hover .view { background: var(--gold-hi); }
         .soon { padding: 11px 20px; border-radius: 10px; border: 1px dashed var(--line); color: var(--dim); font-weight: 700; }
+        .card.locked { cursor: default; }
+        .card.locked:hover { transform: none; border-color: var(--line); box-shadow: none; }
+        .card.locked .shot { position: relative; }
+        .card.locked .shot img { filter: grayscale(.55) brightness(.42) blur(1.5px); }
+        .card.locked .lock { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: .08em; text-shadow: 0 2px 10px rgba(0,0,0,.7); }
+        .card.locked h2 { color: var(--dim); }
         .empty { padding: 60px 0; text-align: center; color: var(--dim); }
         section.info { margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
         .info div { padding: 22px; background: rgba(38,41,46,.85); border: 1px solid var(--line); border-radius: 14px; }
@@ -127,7 +133,22 @@
         const search = document.getElementById("search"), chips = document.getElementById("chips");
         let packs = [], tag = "All";
         const money = p => "$" + p.toFixed(2);
+        function locked(p) {
+            // Not released yet: thumbnail and name only. No link, no price, no page.
+            const el = document.createElement("div");
+            el.className = "card locked";
+            el.setAttribute("aria-label", `${p.name}. Coming soon`);
+            el.innerHTML = `
+                <div class="shot"><img src="${p.image}" alt="" loading="lazy" width="540" height="540"><span class="lock"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2H5v13h14V9h-2Zm-8 0V7a3 3 0 0 1 6 0v2H9Z"/></svg>COMING SOON</span></div>
+                <div class="body">
+                    <h2>${p.name}</h2>
+                    <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+                    <div class="buy"><span class="soon">Coming soon</span></div>
+                </div>`;
+            return el;
+        }
         function card(p) {
+            if (p.soon) return locked(p);
             // The whole card opens the pack's own page (slideshow, buy buttons, recommendations)
             const el = document.createElement("a");
             el.className = "card";
@@ -146,17 +167,20 @@
         }
         function render() {
             const q = search.value.trim().toLowerCase();
-            const shown = packs.filter(p => (tag === "All" || p.tags.includes(tag)) && (!q || (p.name + " " + p.description + " " + p.tags.join(" ")).toLowerCase().includes(q)));
+            const match = p => (tag === "All" || p.tags.includes(tag)) && (!q || (p.name + " " + (p.description || "") + " " + p.tags.join(" ")).toLowerCase().includes(q));
+            const shown = packs.filter(match);
             const order = { low: (a, b) => a.price - b.price, high: (a, b) => b.price - a.price, big: (a, b) => b.count - a.count }[sort.value];
             if (order) shown.sort(order);   // "new" keeps packs.json order (newest first); filter() already made a copy
+            shown.push(...soon.filter(match));   // coming-soon packs always sit after the ones you can buy
             grid.replaceChildren(...shown.map(card));
             empty.hidden = shown.length > 0;
         }
-        fetch("packs.json").then(r => r.json()).then(data => {
-            packs = data;
+        let soon = [];
+        Promise.all([fetch("packs.json").then(r => r.json()), fetch("soon.json").then(r => r.ok ? r.json() : []).catch(() => [])]).then(([data, later]) => {
+            packs = data; soon = later;
             document.getElementById("stat-packs").textContent = packs.length;
             document.getElementById("stat-assets").textContent = packs.reduce((n, p) => n + p.count, 0).toLocaleString();
-            for (const t of ["All", ...new Set(packs.flatMap(p => p.tags))]) {
+            for (const t of ["All", ...new Set([...packs, ...soon].flatMap(p => p.tags))]) {
                 const b = document.createElement("button");
                 b.className = "chip"; b.type = "button"; b.textContent = t; b.setAttribute("aria-pressed", t === tag);
                 b.onclick = () => { tag = t; [...chips.children].forEach(c => c.setAttribute("aria-pressed", c === b)); render(); };
