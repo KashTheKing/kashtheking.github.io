@@ -90,6 +90,12 @@
         .wide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 26px; }
         .wide-grid .card { border-color: #c86e19; }
         .wide-grid .card img { aspect-ratio: 16 / 9; }
+        /* Lifetime Pack banner: image on the left, pitch on the right; stacks on narrow screens */
+        #lifetime { flex-direction: row; flex-wrap: wrap; margin-bottom: 44px; border-color: var(--gold); }
+        #lifetime img { flex: 1 1 380px; width: auto; min-width: 0; aspect-ratio: 2 / 1; }
+        #lifetime .body { flex: 1 1 320px; justify-content: center; padding: 26px; }
+        #lifetime h2 { font-size: 28px; }
+        #lifetime p { display: block; font-size: 15px; }
         .empty { padding: 60px 0; text-align: center; color: var(--dim); }
         section.info { margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
         .info div { padding: 22px; background: rgba(38,41,46,.85); border: 1px solid var(--line); border-radius: 14px; }
@@ -126,6 +132,15 @@
     </div>
 
     <main>
+        <a id="lifetime" class="card" href="https://clearlydev.com/store/kashtheking" target="_blank" rel="noopener" aria-label="KashTheKing Lifetime Pack, $199. Every asset pack, now and in the future. Get it on ClearlyDev">
+            <img src="img/lifetime.jpg" alt="" width="800" height="400">
+            <div class="body">
+                <span class="badge first">Best value</span>
+                <h2>Lifetime Pack</h2>
+                <p>Every asset pack on this page, plus every pack I release in the future. Buy once, download the new packs as they come out. Includes FBX, Blender and Roblox files.</p>
+                <div class="buy"><span class="price">$199.00</span><span class="view">Get it on ClearlyDev</span></div>
+            </div>
+        </a>
         <section id="featured" hidden aria-labelledby="featured-title">
             <h2 id="featured-title">🎃 Featured: Halloween</h2>
             <div class="wide-grid"></div>
