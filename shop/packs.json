@@ -1,5 +1,30 @@
 [
     {
+        "slug":  "100JapaneseVillage",
+        "page":  "100-japanese-village-assets",
+        "name":  "100 Japanese Village Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/108834780220872",
+        "image":  "img/100JapaneseVillage.jpg",
+        "slides":  [
+                       "img/100JapaneseVillage/01.jpg",
+                       "img/100JapaneseVillage/02.jpg",
+                       "img/100JapaneseVillage/03.jpg",
+                       "img/100JapaneseVillage/04.jpg",
+                       "img/100JapaneseVillage/05.jpg",
+                       "img/100JapaneseVillage/06.jpg",
+                       "img/100JapaneseVillage/09.jpg",
+                       "img/100JapaneseVillage/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly assets to build ninja, samurai and anime-style village maps, true to scale for a 5-stud character: from a 2-stud tea set to a 45-stud pagoda. Houses, tea house, dojo, pagodas, keep, shrine hall, stalls, red gates, castle walls, paper-screen wall panels, cherry, maple, pine and bamboo, stone lanterns, koi pond, zen garden, lantern strings, rickshaw and carts, interior props and a ninja training ground. 1 Blender unit = 1 stud. Every cart wheel is its own part; sliding doors, gates, lids, the bell, the water spout and the hanging lanterns have bones and actions. Textured, rigged and animated.",
+        "tags":  [
+                     "Japan",
+                     "Buildings"
+                 ],
+        "date":  "2026-10-05T19:30:07"
+    },
+    {
         "slug":  "150MilitaryAssets",
         "page":  "150-military-assets",
         "name":  "150 Military Assets",
