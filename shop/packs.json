@@ -1,5 +1,30 @@
 [
     {
+        "slug":  "100FantasyDungeon",
+        "page":  "100-fantasy-dungeon-assets",
+        "name":  "100 Fantasy Dungeon Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/109678902149518",
+        "image":  "img/100FantasyDungeon.jpg",
+        "slides":  [
+                       "img/100FantasyDungeon/01.jpg",
+                       "img/100FantasyDungeon/02.jpg",
+                       "img/100FantasyDungeon/03.jpg",
+                       "img/100FantasyDungeon/04.jpg",
+                       "img/100FantasyDungeon/05.jpg",
+                       "img/100FantasyDungeon/06.jpg",
+                       "img/100FantasyDungeon/09.jpg",
+                       "img/100FantasyDungeon/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly assets to build RPG dungeons, crypts and caves, true to scale for a 5-stud character on one grid: floor tiles are 12 x 12 studs, walls are 12 wide, 12 tall and 2 thick, doorways are 6 wide and 8 tall. Modular kit (floors, walls, corner, door arch, barred window, pillars, archway, stairs, spiral stair, bridge, pit edge, ceiling), doors and gates, traps, lighting, chests in 5 tiers and a mimic, loot, furniture, statues, magic props and cave pieces. 1 Blender unit = 1 stud. Doors, gates, lids, traps, the lever, the portal and every flame have bones and actions. Textured, rigged and animated.",
+        "tags":  [
+                     "RPG",
+                     "Buildings"
+                 ],
+        "date":  "2026-10-05T17:57:51"
+    },
+    {
         "slug":  "100HorrorProps",
         "page":  "100-horror-game-props",
         "name":  "100 Horror Game Props",
