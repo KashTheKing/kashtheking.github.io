@@ -157,7 +157,7 @@
                 <span class="badge first">Best value</span>
                 <h2>Lifetime Pack</h2>
                 <p>Every asset pack on this page, plus every pack I release in the future. Buy once, download the new packs as they come out. Includes FBX, Blender and Roblox files.</p>
-                <div class="buy"><span class="price">$199.00<small class="robux">or R$ 52,369</small></span><span class="view">Get it on ClearlyDev</span></div>
+                <div class="buy"><span class="price">$199.00<small class="robux">or R$ 50,000</small></span><span class="view">Get it on ClearlyDev</span></div>
             </div>
         </a>
         <section id="featured" hidden aria-labelledby="featured-title">
@@ -183,8 +183,10 @@
         const search = document.getElementById("search"), chips = document.getElementById("chips");
         let packs = [], tag = "All";
         const money = p => "$" + p.toFixed(2);
-        // Robux alternative: the DevEx value of the dollar price ($0.0038 per Robux), rounded up. No marketplace tax added.
-        const DEVEX = 0.0038, robux = p => `<small class="robux">or R$ ${Math.ceil(p / DEVEX - 1e-9).toLocaleString("en-US")}</small>`;
+        // Robux alternative: the DevEx value of the dollar price ($0.0038 per Robux). No marketplace tax added.
+        // Rounded DOWN to a clean number (Kash: "fine with losing a little bit of robux to make it clean").
+        const rbx = p => { const r = p / 0.0038; if (p === 14.99) return "3,945";   /* Kash kept this one as it was */ return (r < 5000 ? Math.floor(r / 100) * 100 : r < 20000 ? Math.floor(r / 500) * 500 : Math.floor(r / 5000) * 5000).toLocaleString("en-US"); };
+        const robux = p => `<small class="robux">or R$ ${rbx(p)}</small>`;
         // The next drop: when the coming-soon packs go on sale. Change this one line to move it.
         const DROP = new Date("2026-10-09T12:00:00-07:00");   // Friday 10/9/2026, noon Pacific
         const DROP_DAY = DROP.toLocaleDateString("en-US", { weekday: "long", timeZone: "America/Los_Angeles" }) + " " + DROP.toLocaleDateString("en-US", { month: "numeric", day: "numeric", year: "numeric", timeZone: "America/Los_Angeles" });
@@ -221,7 +223,7 @@
             const el = document.createElement("a");
             el.className = "card";
             el.href = p.page + "/";
-            el.setAttribute("aria-label", `${p.name}, ${money(p.price)} or ${Math.ceil(p.price / DEVEX - 1e-9).toLocaleString("en-US")} Robux. View pack`);
+            el.setAttribute("aria-label", `${p.name}, ${money(p.price)} or ${rbx(p.price)} Robux. View pack`);
             el.innerHTML = `
                 <img src="${p.image}" alt="" loading="lazy" width="540" height="540">
                 <div class="body">
