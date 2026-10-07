@@ -24,6 +24,18 @@
         "unscheduled":  false
     },
     {
+        "slug":  "25DarkRPGMonsters",
+        "name":  "25 Dark RPG Monsters",
+        "count":  25,
+        "image":  "img/25DarkRPGMonsters.jpg",
+        "tags":  [
+                     "RPG",
+                     "Characters"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
         "slug":  "100FantasyDungeon",
         "name":  "100 Fantasy Dungeon Assets",
         "count":  100,
@@ -168,6 +180,18 @@
         "unscheduled":  true
     },
     {
+        "slug":  "200PixelItems",
+        "name":  "200 Pixel Items",
+        "count":  200,
+        "image":  "img/200PixelItems.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Props"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
         "slug":  "100CuteRestaurant",
         "name":  "100 Cute Restaurant Assets",
         "count":  100,
@@ -288,6 +312,66 @@
         "unscheduled":  false
     },
     {
+        "slug":  "100VoxelBiomeKit",
+        "name":  "100 Voxel Biome Kit",
+        "count":  100,
+        "image":  "img/100VoxelBiomeKit.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Nature"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "100VoxelCharacters",
+        "name":  "100 Voxel Characters",
+        "count":  100,
+        "image":  "img/100VoxelCharacters.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Characters"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "100VoxelCityBuilds",
+        "name":  "100 Voxel City Builds",
+        "count":  100,
+        "image":  "img/100VoxelCityBuilds.jpg",
+        "tags":  [
+                     "Voxel",
+                     "City"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "100VoxelDungeonKit",
+        "name":  "100 Voxel Dungeon Kit",
+        "count":  100,
+        "image":  "img/100VoxelDungeonKit.jpg",
+        "tags":  [
+                     "Voxel",
+                     "RPG"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "150VoxelFurniture",
+        "name":  "150 Voxel Furniture",
+        "count":  150,
+        "image":  "img/150VoxelFurniture.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Furniture"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
         "slug":  "100VoxelSkyIslands",
         "name":  "100 Voxel Sky Islands",
         "count":  100,
@@ -295,6 +379,54 @@
         "tags":  [
                      "Voxel",
                      "Nature"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "100VoxelMobs",
+        "name":  "100 Voxel Mobs",
+        "count":  100,
+        "image":  "img/100VoxelMobs.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Animals"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "150VoxelToolsArmor",
+        "name":  "150 Voxel Tools \u0026 Armor",
+        "count":  150,
+        "image":  "img/150VoxelToolsArmor.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Weapons"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "100VoxelVehicles",
+        "name":  "100 Voxel Vehicles",
+        "count":  100,
+        "image":  "img/100VoxelVehicles.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Vehicles"
+                 ],
+        "soon":  true,
+        "unscheduled":  true
+    },
+    {
+        "slug":  "100VoxelVillageBuilds",
+        "name":  "100 Voxel Village Builds",
+        "count":  100,
+        "image":  "img/100VoxelVillageBuilds.jpg",
+        "tags":  [
+                     "Voxel",
+                     "Buildings"
                  ],
         "soon":  true,
         "unscheduled":  true
