@@ -8,7 +8,8 @@
                      "Cute",
                      "Nature"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100CityProps",
@@ -19,7 +20,8 @@
                      "City",
                      "Props"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100FantasyDungeon",
@@ -30,7 +32,8 @@
                      "RPG",
                      "Buildings"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100CuteFarm",
@@ -41,7 +44,8 @@
                      "Cute",
                      "Farm"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100FishingRods",
@@ -52,7 +56,8 @@
                      "Simulator",
                      "Weapons"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100HalloweenCreatures",
@@ -63,7 +68,8 @@
                      "Halloween",
                      "Animals"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100HomestoreAssets",
@@ -74,7 +80,8 @@
                      "Homestore",
                      "Props"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100HorrorProps",
@@ -85,7 +92,8 @@
                      "Horror",
                      "Props"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100KartRacingAssets",
@@ -96,7 +104,8 @@
                      "Racing",
                      "Vehicles"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100LuckyBlocks",
@@ -107,7 +116,8 @@
                      "Stud",
                      "Simulator"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100FactoryMachines",
@@ -118,7 +128,8 @@
                      "Tycoon",
                      "Props"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100MedievalVillage",
@@ -129,7 +140,8 @@
                      "RPG",
                      "Buildings"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100ObbyParts",
@@ -140,7 +152,8 @@
                      "Obby",
                      "Props"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "160PixelGuns",
@@ -151,7 +164,8 @@
                      "Voxel",
                      "Weapons"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100CuteRestaurant",
@@ -162,7 +176,8 @@
                      "Cute",
                      "Food"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100SciFiSpace",
@@ -173,7 +188,8 @@
                      "Sci-Fi",
                      "Vehicles"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "250CuteSeaCreatures",
@@ -184,7 +200,8 @@
                      "Cute",
                      "Animals"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "50StuddedBosses",
@@ -195,7 +212,8 @@
                      "Stud",
                      "Characters"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100StudEggs",
@@ -206,7 +224,8 @@
                      "Stud",
                      "Simulator"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100StudHalloweenAssets",
@@ -217,7 +236,8 @@
                      "Stud",
                      "Halloween"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100StudPets",
@@ -228,7 +248,8 @@
                      "Stud",
                      "Animals"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100StudWorldAssets",
@@ -239,7 +260,8 @@
                      "Stud",
                      "Nature"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100TowerDefenseAssets",
@@ -250,7 +272,8 @@
                      "Stud",
                      "Tower Defense"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     },
     {
         "slug":  "100TropicalIsland",
@@ -261,7 +284,8 @@
                      "Nature",
                      "Buildings"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  false
     },
     {
         "slug":  "100VoxelSkyIslands",
@@ -272,6 +296,7 @@
                      "Voxel",
                      "Nature"
                  ],
-        "soon":  true
+        "soon":  true,
+        "unscheduled":  true
     }
 ]

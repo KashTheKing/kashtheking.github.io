@@ -103,7 +103,26 @@
         .info p { color: #d6d9df; font-size: 14px; line-height: 1.55; }
         footer { padding: 28px 64px 44px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); background: rgba(20,23,28,.8); }
         footer a { color: var(--gold); }
-        @media (max-width: 720px) { header { padding: 96px 22px 40px; } .brand { left: 16px; } .bar, main, footer { padding-inline: 22px; } .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; } .card h2 { font-size: 16px; } .card p { display: none; } .price { font-size: 20px; } .view, .soon { padding: 9px 12px; font-size: 13px; } }
+        .robux { display: block; margin-top: 2px; color: var(--dim); font-size: 13px; font-weight: 700; white-space: nowrap; }
+        /* Phones: a short header, one swipeable row of filter chips (wrapped, they covered most of the screen), two cards per row */
+        @media (max-width: 720px) {
+            header { padding: 76px 16px 28px; } h1 { font-size: min(44px, 10.4vw); } .brand { left: 16px; } .bar, main, footer { padding-inline: 14px; }
+            .lead { font-size: 15px; margin-top: 16px; } .tag { font-size: 12px; padding: 8px 14px; margin-top: 16px; } .stats { gap: 22px; margin-top: 20px; } .stats b { font-size: 26px; }
+            .bar { gap: 8px; padding-block: 10px; } .bar input { flex: 1 1 0; padding: 9px 12px; } .bar select { padding: 9px 8px; max-width: 46%; }
+            #chips { flex: 1 1 100%; flex-wrap: nowrap !important; overflow-x: auto; margin-inline: -14px; padding: 0 14px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; } #chips::-webkit-scrollbar { display: none; }
+            .chip { flex: none; padding: 7px 13px; font-size: 13px; }
+            main { padding-top: 22px; }
+            .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+            .grid .card { border-radius: 12px; } .grid .body { padding: 10px; gap: 7px; }
+            .grid .card h2 { font-size: 14px; line-height: 1.25; } .grid .card p { display: none; }
+            .grid .meta { gap: 4px; } .grid .meta span { padding: 2px 6px; font-size: 10.5px; } .grid .meta span:nth-child(n+3) { display: none; }
+            .grid .badge { font-size: 10px; padding: 3px 7px; }
+            .grid .buy { flex-direction: column; align-items: stretch; gap: 7px; } .grid .price { font-size: 19px; } .grid .robux { display: inline; margin: 0 0 0 6px; font-size: 12px; }
+            .grid .view, .grid .soon { padding: 8px 6px; font-size: 13px; text-align: center; white-space: normal; }
+            .card.locked .lock { font-size: 14px; gap: 6px; } .card.locked .lock svg { width: 24px; height: 24px; }
+            #lifetime, #featured { margin-bottom: 26px; } #lifetime .body { padding: 16px; } #lifetime h2 { font-size: 22px; } #featured > h2 { font-size: 20px; }
+            .wide-grid { gap: 14px; } section.info { margin-top: 44px; }
+        }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
     </style>
 </head>
@@ -138,7 +157,7 @@
                 <span class="badge first">Best value</span>
                 <h2>Lifetime Pack</h2>
                 <p>Every asset pack on this page, plus every pack I release in the future. Buy once, download the new packs as they come out. Includes FBX, Blender and Roblox files.</p>
-                <div class="buy"><span class="price">$199.00</span><span class="view">Get it on ClearlyDev</span></div>
+                <div class="buy"><span class="price">$199.00<small class="robux">or R$ 52,369</small></span><span class="view">Get it on ClearlyDev</span></div>
             </div>
         </a>
         <section id="featured" hidden aria-labelledby="featured-title">
@@ -164,13 +183,16 @@
         const search = document.getElementById("search"), chips = document.getElementById("chips");
         let packs = [], tag = "All";
         const money = p => "$" + p.toFixed(2);
+        // Robux alternative: the DevEx value of the dollar price ($0.0038 per Robux), rounded up. No marketplace tax added.
+        const DEVEX = 0.0038, robux = p => `<small class="robux">or R$ ${Math.ceil(p / DEVEX - 1e-9).toLocaleString("en-US")}</small>`;
         // The next drop: when the coming-soon packs go on sale. Change this one line to move it.
         const DROP = new Date("2026-10-09T12:00:00-07:00");   // Friday 10/9/2026, noon Pacific
         const DROP_DAY = DROP.toLocaleDateString("en-US", { weekday: "long", timeZone: "America/Los_Angeles" }) + " " + DROP.toLocaleDateString("en-US", { month: "numeric", day: "numeric", year: "numeric", timeZone: "America/Los_Angeles" });
         function tick() {
             const left = DROP - Date.now(), box = document.getElementById("drop");
-            box.hidden = !soon.length;
-            box.firstElementChild.textContent = `${soon.length} new pack${soon.length === 1 ? "" : "s"} drop in`;
+            const dropping = soon.filter(p => !p.unscheduled).length;   // packs still being reviewed have no date yet
+            box.hidden = !dropping;
+            box.firstElementChild.textContent = `${dropping} new pack${dropping === 1 ? "" : "s"} drop in`;
             document.getElementById("drop-date").textContent = "on " + DROP_DAY;
             const timer = document.getElementById("drop-timer");
             if (left <= 0) { timer.textContent = "NOW"; return; }
@@ -189,7 +211,7 @@
                 <div class="body">
                     <h2>${p.name}</h2>
                     <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
-                    <div class="buy"><span class="soon">Releases ${DROP_DAY}</span></div>
+                    <div class="buy"><span class="soon">${p.unscheduled ? "Coming soon" : "Releases " + DROP_DAY}</span></div>
                 </div>`;
             return el;
         }
@@ -199,7 +221,7 @@
             const el = document.createElement("a");
             el.className = "card";
             el.href = p.page + "/";
-            el.setAttribute("aria-label", `${p.name}, ${money(p.price)}. View pack`);
+            el.setAttribute("aria-label", `${p.name}, ${money(p.price)} or ${Math.ceil(p.price / DEVEX - 1e-9).toLocaleString("en-US")} Robux. View pack`);
             el.innerHTML = `
                 <img src="${p.image}" alt="" loading="lazy" width="540" height="540">
                 <div class="body">
@@ -207,7 +229,7 @@
                     <h2>${p.name}</h2>
                     <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
                     <p>${p.description}</p>
-                    <div class="buy"><span class="price">${money(p.price)}</span><span class="view">View pack</span></div>
+                    <div class="buy"><span class="price">${money(p.price)}${robux(p.price)}</span><span class="view">View pack</span></div>
                 </div>`;
             return el;
         }

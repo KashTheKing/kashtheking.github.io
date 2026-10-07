@@ -80,7 +80,7 @@
         .missing { padding: 80px 0; text-align: center; color: var(--dim); }
         footer { padding: 28px 48px 40px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); background: rgba(20,23,28,.8); }
         footer a { color: var(--gold); }
-        @media (max-width: 860px) { main { padding: 84px 20px 56px; } .top { grid-template-columns: 1fr; } .brand { left: 16px; } footer { padding-inline: 20px; } .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; } }
+        @media (max-width: 860px) { main { padding: 84px 20px 56px; } .top { grid-template-columns: minmax(0, 1fr); } .brand { left: 16px; } footer { padding-inline: 20px; } .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; } }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
     </style>
 </head>
@@ -103,6 +103,8 @@
         const slug = window.PACK_SLUG || new URLSearchParams(location.search).get("p");   // static pages (/shop/<page>/) set PACK_SLUG
         const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
         fetch("../packs.json").then(r => r.json()).then(packs => {
+            // Robux alternative: the DevEx value of the dollar price ($0.0038 per Robux), rounded up, no marketplace tax
+            const robux = d => Math.ceil(d / 0.0038 - 1e-9).toLocaleString("en-US");
             const p = packs.find(x => x.slug === slug || x.page === slug);
             if (p && !window.PACK_SLUG && p.page) { location.replace("../" + p.page + "/"); return; }   // old ?p= links go to the pack's own URL
             if (!p) { document.getElementById("missing").hidden = false; return; }
@@ -133,7 +135,7 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)}</div>
+                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
                         <a class="btn roblox" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Get on Roblox</a>
                         <div class="or">or</div>
                         <a class="btn discord" href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Discord for other methods</a>
@@ -189,7 +191,7 @@
                 document.getElementById("recommended").innerHTML = others.map(o => `
                     <a class="card" href="../${o.page}/">
                         <img src="../${o.image}" alt="${esc(o.name)} thumbnail" loading="lazy" width="360" height="360">
-                        <div><b>${esc(o.name)}</b><span>$${o.price.toFixed(2)}</span></div>
+                        <div><b>${esc(o.name)}</b><span>$${o.price.toFixed(2)} <small style="color:var(--dim)">or R$ ${robux(o.price)}</small></span></div>
                     </a>`).join("");
             }
         }).catch(() => { document.getElementById("missing").hidden = false; });
