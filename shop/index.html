@@ -53,6 +53,7 @@
         #drop span { display: block; }
         #drop b { font-variant-numeric: tabular-nums; margin: 2px 0; }
         #drop b i { font-style: normal; font-size: 16px; color: var(--dim); margin-left: 2px; }
+        .sub-slot { padding: 0 64px; } @media (max-width: 720px) { .sub-slot { padding: 0 14px; } }
         .bar { position: sticky; top: 0; z-index: 5; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 14px 64px; background: rgba(20,23,28,.92); border-block: 1px solid var(--line); backdrop-filter: blur(10px); }
         .bar input { flex: 1 1 240px; min-width: 0; padding: 11px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 15px; }
         .bar select { padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-size: 15px; cursor: pointer; }
@@ -138,6 +139,8 @@
             <div id="drop" hidden><span>10 new packs drop in</span><b id="drop-timer"></b><span id="drop-date"></span></div>
         </div>
     </header>
+
+    <div id="sub" class="sub-slot"></div>
 
     <div class="bar" role="search">
         <input id="search" type="search" placeholder="Search packs…" aria-label="Search packs">
@@ -269,5 +272,6 @@
         sort.addEventListener("change", render);
     </script>
     <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cd94b2bc49634d048aa496f6b380505d"}'></script><!-- End Cloudflare Web Analytics -->
+    <script src="/shop/sub.js" defer></script>
 </body>
 </html>
