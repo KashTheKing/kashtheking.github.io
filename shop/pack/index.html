@@ -89,6 +89,7 @@
 <body>
     <a class="brand" href="/shop/" aria-label="KashTheKing shop"><img class="mark" src="/assets/watermark.png" alt="KashTheKing" width="165" height="35"></a>
     <main>
+        <div id="sub"></div>
         <a class="back" href="../">← All asset packs</a>
         <div id="pack"></div>
         <p id="missing" class="missing" hidden>That pack was not found. <a href="../">Browse all packs</a>.</p>
@@ -210,5 +211,6 @@
         }).catch(() => { document.getElementById("missing").hidden = false; });
     </script>
     <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cd94b2bc49634d048aa496f6b380505d"}'></script><!-- End Cloudflare Web Analytics -->
+    <script src="/shop/sub.js" defer></script>
 </body>
 </html>
