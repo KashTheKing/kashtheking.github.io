@@ -1,4 +1,5 @@
 {
     "showcasePlaceId": null,
-    "packs": {}
+    "packs": {},
+    "newsletter_endpoint": ""
 }
