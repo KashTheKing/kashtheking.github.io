@@ -107,7 +107,7 @@
         const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
         // shop/buy.json (made in the Clanker panel, My shop > Robux purchases): the showcase place and, per pack, the
         // Robux developer product and the Clearly Dev link. Missing or unreadable: only the Creator Store button shows.
-        const BUY = fetch("../buy.json").then(r => r.ok ? r.json() : {}).catch(() => ({}));
+        const BUY = fetch("../buy.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({}));
         Promise.all([fetch("../packs.json").then(r => r.json()), BUY]).then(([packs, buy]) => {
             // Robux alternative: the DevEx value of the dollar price ($0.0038 per Robux), no marketplace tax
             const robux = d => { const r = d / 0.0038; if (d === 14.99) return "3,945";   /* Kash kept this one as it was */ return (r < 5000 ? Math.floor(r / 100) * 100 : r < 20000 ? Math.floor(r / 500) * 500 : Math.floor(r / 5000) * 5000).toLocaleString("en-US"); }   // rounded down to a clean number

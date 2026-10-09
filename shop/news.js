@@ -13,7 +13,7 @@
         ".news-consent{margin-top:8px!important;font-size:12px!important}.news-consent a{color:var(--gold,#ffb02e)}.news-msg{margin-top:8px!important;color:var(--text,#fff)!important}" +
         ".news-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}.news-slot[data-place=top]{margin:0 0 26px}.news-slot[data-place=footer]{margin:0 0 18px}";
     var base = (document.currentScript && document.currentScript.src) || location.href;
-    fetch(new URL("buy.json", base)).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (cfg) {
+    fetch(new URL("buy.json", base), { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (cfg) {
         var endpoint = cfg && typeof cfg.newsletter_endpoint === "string" ? cfg.newsletter_endpoint.trim() : "";
         if (!endpoint) return;
         var url = new URL(endpoint, location.href);

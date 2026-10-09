@@ -4,7 +4,7 @@
 (() => {
     const slot = document.getElementById("sub");
     if (!slot) return;
-    const get = u => fetch(u).then(r => (r.ok ? r.json() : null)).catch(() => null);
+    const get = u => fetch(u, { cache: "no-cache" }).then(r => (r.ok ? r.json() : null)).catch(() => null);
     Promise.all([get("/shop/buy.json"), get("/shop/packs.json")]).then(([buy, packs]) => {
         const s = buy && buy.subscription;
         const price = Number(s && s.price_usd);
