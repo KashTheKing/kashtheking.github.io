@@ -79,6 +79,7 @@
         .buy-store { background: var(--gold); color: #1c1e22; } .buy-store:hover { background: var(--gold-hi); }
         .buy-robux { background: #2ea043; color: #fff; } .buy-robux:hover { filter: brightness(1.12); }
         .buy-clearly { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.75); padding: 13px 18px; } .buy-clearly:hover { border-color: #fff; background: rgba(255,255,255,.06); }
+        .buy-try { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 13px 18px; } .buy-try:hover { background: rgba(255,176,46,.12); }
         .buy-other { text-align: center; color: var(--dim); font-size: 13px; } .buy-other a { color: var(--dim); }
         .list { color: #d6d9df; font-size: 14px; line-height: 1.7; padding-left: 18px; }
 
@@ -130,6 +131,8 @@
             const place = /^\d{1,19}$/.test(String(buy && buy.showcasePlaceId)) ? buy.showcasePlaceId : null;
             // opens the Roblox app in the showcase place, which shows this pack and sells it for Robux
             const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
+            // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
+            const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
             document.getElementById("pack").innerHTML = `
                 <div class="top">
@@ -160,6 +163,7 @@
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
+                            ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
                         <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
