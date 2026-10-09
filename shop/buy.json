@@ -1,6 +1,93 @@
 {
-    "showcasePlaceId": null,
-    "packs": {},
-    "subscription": {"enabled": false, "price_usd": 14.99, "showcase_place_id": null},
+    "showcasePlaceId": "91734861985398",
+    "packs": {
+        "100JapaneseVillage": {
+            "robuxProductId": "3717365468",
+            "robux": 1300
+        },
+        "150MilitaryAssets": {
+            "robuxProductId": "3717365471",
+            "robux": 1300
+        },
+        "100PrisonAssets": {
+            "robuxProductId": "3717365473",
+            "robux": 1300
+        },
+        "100SimulatorEssentials": {
+            "robuxProductId": "3717365475",
+            "robux": 1300
+        },
+        "100Christmas": {
+            "robuxProductId": "3717365477",
+            "robux": 1300
+        },
+        "100SpookyTools": {
+            "robuxProductId": "3717365478",
+            "robux": 1300
+        },
+        "100HalloweenDecor": {
+            "robuxProductId": "3717365481",
+            "robux": 1300
+        },
+        "100CuteGuns": {
+            "robuxProductId": "3717365483",
+            "robux": 1300
+        },
+        "100WildWest": {
+            "robuxProductId": "3717365486",
+            "robux": 1300
+        },
+        "100CuteFurniture": {
+            "robuxProductId": "3717365489",
+            "robux": 1300
+        },
+        "100CuteTycoon": {
+            "robuxProductId": "3717365490",
+            "robux": 1300
+        },
+        "1000CutePets": {
+            "robuxProductId": "3717365491",
+            "robux": 6500
+        },
+        "100RPGItems": {
+            "robuxProductId": "3717365493",
+            "robux": 1300
+        },
+        "100CuteCars": {
+            "robuxProductId": "3717365494",
+            "robux": 1300
+        },
+        "100CuteFoliage": {
+            "robuxProductId": "3717365497",
+            "robux": 1300
+        },
+        "100PirateAssets": {
+            "robuxProductId": "3717365499",
+            "robux": 1300
+        },
+        "100MagicTreasure": {
+            "robuxProductId": "3717365501",
+            "robux": 1300
+        },
+        "50LowPolyGuns": {
+            "robuxProductId": "3717365502",
+            "robux": 1300
+        },
+        "100CuteFruits": {
+            "robuxProductId": "3717365503",
+            "robux": 3945
+        },
+        "100RPGEnemies": {
+            "robuxProductId": "3717365506",
+            "robux": 1300
+        }
+    },
+    "subscription": {
+        "enabled": true,
+        "price_usd": 14.99,
+        "showcase_place_id": "91734861985398",
+        "usd_product_id": "EXP-1116050795377328629",
+        "robux_product_id": "EXP-8479828162023391799"
+    },
     "newsletter_endpoint": "https://ingest.kashtheking.com/newsletter/subscribe"
 }
