@@ -118,8 +118,8 @@
             const slides = p.slides && p.slides.length ? p.slides : [p.image];
             const b = (buy && buy.packs && buy.packs[p.slug]) || {};
             const place = /^\d{1,19}$/.test(String(buy && buy.showcasePlaceId)) ? buy.showcasePlaceId : null;
-            // opens the Roblox app in the showcase place, which shows this pack and sells it for Robux
-            const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
+            // opens the Roblox app in the showcase place, which shows this pack and prompts its developer product at once
+            const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "buy", pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
             document.getElementById("pack").innerHTML = `
                 <div class="top">

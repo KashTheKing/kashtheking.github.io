@@ -1,6 +1,8 @@
 // "Subscribe Monthly - Use EVERY Pack": the block at the top of the shop and of every pack page (<div id="sub">).
-// Settings come from shop/buy.json `subscription: {enabled, price_usd, showcase_place_id}` (made in the Clanker panel,
-// My shop > Subscription). Not enabled, missing or unreadable: nothing renders.
+// Settings come from shop/buy.json `subscription: {enabled, price_usd, showcase_place_id, usd_product_id, robux_product_id}`
+// (made in the Clanker panel, My shop > Subscription). Not enabled, missing or unreadable: nothing renders.
+// The buttons open the Roblox app in the showcase place with launch data {"a":"sub","p":"usd"|"robux"}; the place
+// prompts that subscription at once. A product id that is null hides its button (no ids at all: the USD one shows).
 (() => {
     const slot = document.getElementById("sub");
     if (!slot) return;
@@ -13,10 +15,17 @@
         const list = Array.isArray(packs) ? packs.filter(p => typeof p.price === "number") : [];
         const worth = list.reduce((t, p) => t + p.price, 0);
         const usd = n => "$" + n.toFixed(2);
-        const url = `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ sub: "all" }))}`;
+        const url = p => `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "sub", p }))}`;
+        const usdOn = s.usd_product_id ? true : !s.robux_product_id;
+        const robuxOn = Boolean(s.robux_product_id);
         const style = document.createElement("style");
         style.textContent = `
-.sub-card { margin: 0 0 28px; padding: 22px; border-radius: 16px; background: #26292e; border: 2px solid #ffb02e; box-shadow: 0 0 0 4px rgba(255,176,46,.12); display: grid; gap: 18px; grid-template-columns: 1fr auto; align-items: center; }
+.sub-card { margin: 0 0 28px; padding: 22px; border-radius: 16px; background: #26292e; border: 2px solid #ffb02e; box-shadow: 0 0 0 4px rgba(255,176,46,.12); display: grid; gap: 18px; grid-template-columns: auto 1fr auto; align-items: center; }
+.sub-icon { width: 120px; height: 120px; border-radius: 22px; display: block; }
+.sub-actions { display: grid; gap: 8px; }
+.sub-alt { display: block; text-align: center; padding: 10px 18px; border-radius: 10px; font-weight: 800; font-size: 15px; text-decoration: none; color: #fff; background: #2ea043; }
+.sub-alt:hover { filter: brightness(1.12); }
+.sub-note { margin: 0; text-align: center; color: #a9adb6; font-size: 12px; }
 .sub-card h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px; margin: 4px 0 6px; color: #fff; }
 .sub-tag { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #1c1e22; background: linear-gradient(180deg, #ffe98a, #ff9a1f); }
 .sub-price { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 34px; color: #ffb02e; }
@@ -25,9 +34,10 @@
 .sub-list { margin: 0; padding-left: 18px; color: #d6d9df; font-size: 14px; line-height: 1.7; }
 .sub-go { display: block; text-align: center; padding: 16px 26px; border-radius: 12px; font-weight: 800; font-size: 17px; text-decoration: none; background: #ffb02e; color: #1c1e22; white-space: nowrap; }
 .sub-go:hover { background: #ffe98a; }
-@media (max-width: 700px) { .sub-card { grid-template-columns: 1fr; padding: 18px; } .sub-card h2 { font-size: 22px; } .sub-go { white-space: normal; } }`;
+@media (max-width: 700px) { .sub-card { grid-template-columns: 1fr; padding: 18px; } .sub-icon { width: 84px; height: 84px; } .sub-card h2 { font-size: 22px; } .sub-go { white-space: normal; } }`;
         document.head.appendChild(style);
         slot.innerHTML = `<section class="sub-card" aria-labelledby="sub-title">
+    <img class="sub-icon" src="/shop/img/subscription.png" width="150" height="150" alt="">
     <div>
         <span class="sub-tag">Best deal</span>
         <h2 id="sub-title">Subscribe Monthly - Use EVERY Pack</h2>
@@ -40,7 +50,11 @@
             <li>Cancel anytime in Roblox</li>
         </ul>
     </div>
-    <a class="sub-go" href="${url}" rel="noopener">Subscribe in Roblox</a>
+    <div class="sub-actions">
+        ${usdOn ? `<a class="sub-go" href="${url("usd")}" rel="noopener">Get Subscription</a>` : ""}
+        ${robuxOn ? `<a class="sub-alt" href="${url("robux")}" rel="noopener">Pay with Robux</a>` : ""}
+        <p class="sub-note">Opens Roblox</p>
+    </div>
 </section>`;
     });
 })();
