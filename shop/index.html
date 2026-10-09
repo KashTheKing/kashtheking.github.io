@@ -70,6 +70,8 @@
         .card h2 { font-size: 20px; font-weight: 800; }
         .badge { align-self: flex-start; display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #fff; background: #3a3d44; }
         .badge.first { color: #1c1e22; background: linear-gradient(180deg, #ffe98a, #ff9a1f); }
+        .badge.sale { background: #e5484d; margin-left: 6px; }
+        .was { color: var(--dim); font-size: .7em; font-weight: 700; opacity: .8; }
         /* three lines then "...": the full description is on the pack's own page */
         .card p { color: var(--dim); font-size: 14px; line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
         .card .buy { margin-top: auto; }
@@ -156,13 +158,14 @@
     </div>
 
     <main>
-        <a id="lifetime" class="card" href="https://clearlydev.com/store/kashtheking" target="_blank" rel="noopener" aria-label="KashTheKing Lifetime Pack, $199. Every asset pack, now and in the future. Get it on ClearlyDev">
+        <a id="lifetime" class="card" href="https://clearlydev.com/store/kashtheking" target="_blank" rel="noopener" aria-label="KashTheKing Lifetime Pack, 50% off, $99.50 instead of $199. Every asset pack, now and in the future. Get it on ClearlyDev">
             <img src="img/lifetime.jpg" alt="" width="800" height="400">
             <div class="body">
                 <span class="badge first">Best value</span>
+                <span class="badge sale">50% off sale</span>
                 <h2>Lifetime Pack</h2>
                 <p>Every asset pack on this page, plus every pack I release in the future. Buy once, download the new packs as they come out. Includes FBX, Blender and Roblox files.</p>
-                <div class="buy"><span class="price">$199.00<small class="robux">or R$ 50,000</small></span><span class="view">Get it on ClearlyDev</span></div>
+                <div class="buy"><span class="price"><s class="was">$199.00</s> $99.50<small class="robux"><s class="was">R$ 50,000</s> or R$ 25,000</small></span><span class="view">Get it on ClearlyDev</span></div>
             </div>
         </a>
         <section id="featured" hidden aria-labelledby="featured-title">
