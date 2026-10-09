@@ -1,5 +1,80 @@
 [
     {
+        "slug":  "100HalloweenCreatures",
+        "page":  "100-halloween-creatures",
+        "name":  "100 Halloween Creatures",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/86535892309623",
+        "image":  "img/100HalloweenCreatures.jpg",
+        "slides":  [
+                       "img/100HalloweenCreatures/01.jpg",
+                       "img/100HalloweenCreatures/02.jpg",
+                       "img/100HalloweenCreatures/03.jpg",
+                       "img/100HalloweenCreatures/04.jpg",
+                       "img/100HalloweenCreatures/05.jpg",
+                       "img/100HalloweenCreatures/06.jpg",
+                       "img/100HalloweenCreatures/09.jpg",
+                       "img/100HalloweenCreatures/10.jpg"
+                   ],
+        "description":  "100 stylized low-poly Halloween creatures: skeleton animals, undead beasts, bats, crows and owls, black cats, spiders, wolves, werewolves and hellhounds, ghosts, pumpkin monsters, scarecrows, treants, demons and gargoyles. True stud scale, one texture, rigged and animated.",
+        "tags":  [
+                     "Halloween",
+                     "Animals"
+                 ],
+        "date":  "2026-10-09T11:05:07"
+    },
+    {
+        "slug":  "100FishingRods",
+        "page":  "100-fishing-rods",
+        "name":  "100 Fishing Rods",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/115587184023336",
+        "image":  "img/100FishingRods.jpg",
+        "slides":  [
+                       "img/100FishingRods/01.jpg",
+                       "img/100FishingRods/02.jpg",
+                       "img/100FishingRods/03.jpg",
+                       "img/100FishingRods/04.jpg",
+                       "img/100FishingRods/05.jpg",
+                       "img/100FishingRods/06.jpg",
+                       "img/100FishingRods/09.jpg",
+                       "img/100FishingRods/10.jpg"
+                   ],
+        "description":  "100 stylized low-poly fishing rods for fishing and simulator games: 20 unique themed rods (wooden, bamboo, steel, toy, lucky, candy, pirate, egypt, jungle, coral, bone, ice, lava, toxic, gem, cyber, ghost, angel, dragon, galaxy), each in 5 colour variations. Line, hook and lure are modelled. Textured, rigged and animated (Idle, Cast, Reel).",
+        "tags":  [
+                     "Simulator",
+                     "Weapons"
+                 ],
+        "date":  "2026-10-09T10:02:54"
+    },
+    {
+        "slug":  "25DarkRPGMonsters",
+        "page":  "25-dark-rpg-monsters",
+        "name":  "25 Dark RPG Monsters",
+        "count":  25,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/114148844777818",
+        "image":  "img/25DarkRPGMonsters.jpg",
+        "slides":  [
+                       "img/25DarkRPGMonsters/01.jpg",
+                       "img/25DarkRPGMonsters/02.jpg",
+                       "img/25DarkRPGMonsters/03.jpg",
+                       "img/25DarkRPGMonsters/04.jpg",
+                       "img/25DarkRPGMonsters/05.jpg",
+                       "img/25DarkRPGMonsters/06.jpg",
+                       "img/25DarkRPGMonsters/09.jpg",
+                       "img/25DarkRPGMonsters/10.jpg"
+                   ],
+        "description":  "25 dark fantasy monsters and bosses for RPGs: a club-swinging cyclops, drowned giant, crab titan, leviathan eel and a crowned eldritch king, plus brutes, stalkers, beasts and crawlers. Huge true stud scale (5 to 60 studs), high detail, rigged with shared bone names and Idle, Walk, Attack and Roar animations. 25 materials and 25 painted colour textures, one per monster (4096 px for the four colossi and the Cyclops, 1024 px for the vulture and the hound, 2048 px for the rest), each with a matching normal and roughness map in the tex folder. Every monster also has a second, studded look on the same UVs (tex/\u003cName\u003e_stud.png with its own normal and roughness maps); in Blender, use_stud.py switches all 25 materials between the two.",
+        "tags":  [
+                     "RPG",
+                     "Characters"
+                 ],
+        "date":  "2026-10-09T09:57:18"
+    },
+    {
         "slug":  "100CuteRestaurant",
         "page":  "100-cute-restaurant-assets",
         "name":  "100 Cute Restaurant Assets",

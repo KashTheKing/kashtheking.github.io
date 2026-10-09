@@ -1,41 +1,5 @@
 [
     {
-        "slug":  "25DarkRPGMonsters",
-        "name":  "25 Dark RPG Monsters",
-        "count":  25,
-        "image":  "img/25DarkRPGMonsters.jpg",
-        "tags":  [
-                     "RPG",
-                     "Characters"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
-        "slug":  "100FishingRods",
-        "name":  "100 Fishing Rods",
-        "count":  100,
-        "image":  "img/100FishingRods.jpg",
-        "tags":  [
-                     "Simulator",
-                     "Weapons"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
-        "slug":  "100HalloweenCreatures",
-        "name":  "100 Halloween Creatures",
-        "count":  100,
-        "image":  "img/100HalloweenCreatures.jpg",
-        "tags":  [
-                     "Halloween",
-                     "Animals"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
         "slug":  "100HomestoreAssets",
         "name":  "100 Homestore Assets",
         "count":  100,

@@ -118,7 +118,7 @@
         const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
         // shop/buy.json (made in the Clanker panel, My shop > Robux purchases): the showcase place and, per pack, the
         // Robux developer product and the Clearly Dev link. Missing or unreadable: only the Creator Store button shows.
-        const BUY = fetch("../buy.json").then(r => r.ok ? r.json() : {}).catch(() => ({}));
+        const BUY = fetch("../buy.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({}));
         Promise.all([fetch("../packs.json").then(r => r.json()), BUY]).then(([packs, buy]) => {
             // Robux alternative: the DevEx value of the dollar price ($0.0038 per Robux), no marketplace tax
             const robux = d => { const r = d / 0.0038; if (d === 14.99) return "3,945";   /* Kash kept this one as it was */ return (r < 5000 ? Math.floor(r / 100) * 100 : r < 20000 ? Math.floor(r / 500) * 500 : Math.floor(r / 5000) * 5000).toLocaleString("en-US"); }   // rounded down to a clean number
@@ -129,8 +129,8 @@
             const slides = p.slides && p.slides.length ? p.slides : [p.image];
             const b = (buy && buy.packs && buy.packs[p.slug]) || {};
             const place = /^\d{1,19}$/.test(String(buy && buy.showcasePlaceId)) ? buy.showcasePlaceId : null;
-            // opens the Roblox app in the showcase place, which shows this pack and sells it for Robux
-            const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
+            // opens the Roblox app in the showcase place, which shows this pack and prompts its developer product at once
+            const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "buy", pack: p.slug }))}` : null;
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
