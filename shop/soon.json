@@ -1,53 +1,5 @@
 [
     {
-        "slug":  "200PixelItems",
-        "name":  "200 Pixel Items",
-        "count":  200,
-        "image":  "img/200PixelItems.jpg",
-        "tags":  [
-                     "Voxel",
-                     "Props"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
-        "slug":  "50StuddedBosses",
-        "name":  "50 Studded Bosses",
-        "count":  50,
-        "image":  "img/50StuddedBosses.jpg",
-        "tags":  [
-                     "Stud",
-                     "Characters"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
-        "slug":  "100StudEggs",
-        "name":  "100 Stud Eggs",
-        "count":  100,
-        "image":  "img/100StudEggs.jpg",
-        "tags":  [
-                     "Stud",
-                     "Simulator"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
-        "slug":  "100StudHalloweenAssets",
-        "name":  "100 Stud Halloween Assets",
-        "count":  100,
-        "image":  "img/100StudHalloweenAssets.jpg",
-        "tags":  [
-                     "Stud",
-                     "Halloween"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
         "slug":  "100StudPets",
         "name":  "100 Stud Pets",
         "count":  100,

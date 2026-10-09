@@ -1,5 +1,107 @@
 [
     {
+        "slug":  "100StudHalloweenAssets",
+        "page":  "100-stud-halloween-assets",
+        "name":  "100 Stud Halloween Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/86306315674759",
+        "image":  "img/100StudHalloweenAssets.jpg",
+        "slides":  [
+                       "img/100StudHalloweenAssets/01.jpg",
+                       "img/100StudHalloweenAssets/02.jpg",
+                       "img/100StudHalloweenAssets/03.jpg",
+                       "img/100StudHalloweenAssets/04.jpg",
+                       "img/100StudHalloweenAssets/05.jpg",
+                       "img/100StudHalloweenAssets/06.jpg",
+                       "img/100StudHalloweenAssets/09.jpg",
+                       "img/100StudHalloweenAssets/10.jpg"
+                   ],
+        "description":  "Sharp, blocky, studded Halloween and graveyard props at real stud scale: crypts and mausoleums with glowing purple windows, a haunted house, gravestones, coffins, iron fences and gates, dead trees, jack-o-lanterns, ghosts, skulls, webs, cauldrons, lamps and candy. One texture. Root-rigged, with Idle, Open (gates, coffin lids) and Flap (bat) animations.",
+        "tags":  [
+                     "Stud",
+                     "Halloween"
+                 ],
+        "date":  "2026-10-09T13:29:21"
+    },
+    {
+        "slug":  "100StudEggs",
+        "page":  "100-stud-eggs",
+        "name":  "100 Stud Eggs",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/80062575373343",
+        "image":  "img/100StudEggs.jpg",
+        "slides":  [
+                       "img/100StudEggs/01.jpg",
+                       "img/100StudEggs/02.jpg",
+                       "img/100StudEggs/03.jpg",
+                       "img/100StudEggs/04.jpg",
+                       "img/100StudEggs/05.jpg",
+                       "img/100StudEggs/06.jpg",
+                       "img/100StudEggs/09.jpg",
+                       "img/100StudEggs/10.jpg"
+                   ],
+        "description":  "100 hatching eggs built from stacked stud cubes: animals, dragons, characters, treats, elements, special eggs and egg stands. About 4 to 5 studs tall for a 5-stud character. One texture, rigged (Egg, Top, Float) with shared Idle, Wobble and Hatch animations.",
+        "tags":  [
+                     "Stud",
+                     "Simulator"
+                 ],
+        "date":  "2026-10-09T13:18:07"
+    },
+    {
+        "slug":  "50StuddedBosses",
+        "page":  "50-studded-bosses",
+        "name":  "50 Studded Bosses",
+        "count":  50,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/114264732499572",
+        "image":  "img/50StuddedBosses.jpg",
+        "slides":  [
+                       "img/50StuddedBosses/01.jpg",
+                       "img/50StuddedBosses/02.jpg",
+                       "img/50StuddedBosses/03.jpg",
+                       "img/50StuddedBosses/04.jpg",
+                       "img/50StuddedBosses/05.jpg",
+                       "img/50StuddedBosses/06.jpg",
+                       "img/50StuddedBosses/09.jpg",
+                       "img/50StuddedBosses/10.jpg"
+                   ],
+        "description":  "50 sharp, blocky boss monsters covered in classic studs, 17 to 40 studs tall for a 5-stud character: undead, golems, beasts, dragons, machines, warriors, royals and mages. One texture, no outline. Rigged with the same bones on every boss (Torso, Head, Jaw, arms, hands, legs, Float for crowns and crystals) and shared Idle, Attack and Roar animations.",
+        "tags":  [
+                     "Stud",
+                     "Characters"
+                 ],
+        "date":  "2026-10-09T13:02:41"
+    },
+    {
+        "slug":  "200PixelItems",
+        "page":  "200-pixel-items",
+        "name":  "200 Pixel Items",
+        "count":  200,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/95103406816723",
+        "image":  "img/200PixelItems.jpg",
+        "slides":  [
+                       "img/200PixelItems/01.jpg",
+                       "img/200PixelItems/02.jpg",
+                       "img/200PixelItems/03.jpg",
+                       "img/200PixelItems/03.jpg",
+                       "img/200PixelItems/03.jpg",
+                       "img/200PixelItems/04.jpg",
+                       "img/200PixelItems/05.jpg",
+                       "img/200PixelItems/06.jpg",
+                       "img/200PixelItems/09.jpg",
+                       "img/200PixelItems/10.jpg"
+                   ],
+        "description":  "200 items as full 3D voxel models for drops, pickups and inventories: food, drinks and potions, ores and ingots, coins and gems, crafting materials, farming, magic, loot containers, music and misc, tech. 1 voxel = 0.125 stud, items are 1 to 2.5 studs across and sculpted all the way round. One texture, rigged and animated (Idle bob and spin, Pickup).",
+        "tags":  [
+                     "Voxel",
+                     "Props"
+                 ],
+        "date":  "2026-10-09T12:52:37"
+    },
+    {
         "slug":  "100VoxelVillageBuilds",
         "page":  "100-voxel-village-builds",
         "name":  "100 Voxel Village Builds",
