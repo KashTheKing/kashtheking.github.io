@@ -1,5 +1,328 @@
 [
     {
+        "slug":  "100VoxelVillageBuilds",
+        "page":  "100-voxel-village-builds",
+        "name":  "100 Voxel Village Builds",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/108214285909892",
+        "image":  "img/100VoxelVillageBuilds.jpg",
+        "slides":  [
+                       "img/100VoxelVillageBuilds/01.jpg",
+                       "img/100VoxelVillageBuilds/02.jpg",
+                       "img/100VoxelVillageBuilds/03.jpg",
+                       "img/100VoxelVillageBuilds/04.jpg",
+                       "img/100VoxelVillageBuilds/05.jpg",
+                       "img/100VoxelVillageBuilds/06.jpg",
+                       "img/100VoxelVillageBuilds/09.jpg",
+                       "img/100VoxelVillageBuilds/10.jpg"
+                   ],
+        "description":  "100 voxel village assets: ten enterable houses, fifteen service buildings (forge, bakery, tavern, town hall, windmill, watermill, lighthouse ...), walls and gates, paths, bridges and street props, crop fields in growth stages, interior furniture and decorations. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; doorways are 4 studs wide and 6 tall; everything snaps to the 2-stud block grid. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags":  [
+                     "Voxel",
+                     "Buildings"
+                 ],
+        "date":  "2026-10-09T12:48:10"
+    },
+    {
+        "slug":  "100VoxelVehicles",
+        "page":  "100-voxel-vehicles",
+        "name":  "100 Voxel Vehicles",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/91005801671480",
+        "image":  "img/100VoxelVehicles.jpg",
+        "slides":  [
+                       "img/100VoxelVehicles/01.jpg",
+                       "img/100VoxelVehicles/02.jpg",
+                       "img/100VoxelVehicles/03.jpg",
+                       "img/100VoxelVehicles/03.jpg",
+                       "img/100VoxelVehicles/04.jpg",
+                       "img/100VoxelVehicles/05.jpg",
+                       "img/100VoxelVehicles/06.jpg",
+                       "img/100VoxelVehicles/10.jpg"
+                   ],
+        "description":  "100 blocky voxel vehicles in bright flat colours with pixel-art shading: cars, trucks and service vehicles, bikes and carts, trains with rail pieces, boats, aircraft, spacecraft and fantasy rides. True stud scale for a 5 stud character: 1 voxel = 0.5 stud (0.25 stud on the small ride-ons). Every wheel is its own part with a bone on the axle. One texture, rigged and animated.",
+        "tags":  [
+                     "Voxel",
+                     "Vehicles"
+                 ],
+        "date":  "2026-10-09T12:45:06"
+    },
+    {
+        "slug":  "150VoxelToolsArmor",
+        "page":  "150-voxel-tools-and-armor",
+        "name":  "150 Voxel Tools \u0026 Armor",
+        "count":  150,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/105607660350111",
+        "image":  "img/150VoxelToolsArmor.jpg",
+        "slides":  [
+                       "img/150VoxelToolsArmor/01.jpg",
+                       "img/150VoxelToolsArmor/02.jpg",
+                       "img/150VoxelToolsArmor/03.jpg",
+                       "img/150VoxelToolsArmor/03.jpg",
+                       "img/150VoxelToolsArmor/04.jpg",
+                       "img/150VoxelToolsArmor/05.jpg",
+                       "img/150VoxelToolsArmor/06.jpg",
+                       "img/150VoxelToolsArmor/09.jpg"
+                   ],
+        "description":  "150 voxel tools, weapons and armour pieces in a bright pixel-art style, in ten material tiers that each have their own shapes: Wood, Stone, Copper, Iron, Gold, Crystal, Emerald, Obsidian, Magma and Void. Every tier has a sword, pickaxe, axe, shovel, hoe, dagger, hammer, spear and bow, plus a helmet, armor, pants and boots that fit a blocky 5 stud character, and there are 20 extras: shields, buckets, torch, lantern, compass, clock, map and more. 1 voxel = 0.1 stud. Every tool has its grip at the same place, so one hold animation fits all. One texture, rigged and animated.",
+        "tags":  [
+                     "Voxel",
+                     "Weapons"
+                 ],
+        "date":  "2026-10-09T12:40:54"
+    },
+    {
+        "slug":  "160PixelGuns",
+        "page":  "160-pixel-guns",
+        "name":  "160 Pixel Guns",
+        "count":  160,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/137103683799519",
+        "image":  "img/160PixelGuns.jpg",
+        "slides":  [
+                       "img/160PixelGuns/01.jpg",
+                       "img/160PixelGuns/02.jpg",
+                       "img/160PixelGuns/03.jpg",
+                       "img/160PixelGuns/03.jpg",
+                       "img/160PixelGuns/04.jpg",
+                       "img/160PixelGuns/05.jpg",
+                       "img/160PixelGuns/06.jpg",
+                       "img/160PixelGuns/10.jpg"
+                   ],
+        "description":  "160 full 3D voxel weapons in a bright pixel-art style: rifles, SMGs, shotguns, pistols, swords, hammers, scythes, bows, staffs, ray guns, snipers, crossbows, launchers and miniguns, including 36 legendary weapons with wings, jaws and orbiting parts. One texture, rigged and animated.",
+        "tags":  [
+                     "Voxel",
+                     "Weapons"
+                 ],
+        "date":  "2026-10-09T12:38:40"
+    },
+    {
+        "slug":  "100VoxelMobs",
+        "page":  "100-voxel-mobs",
+        "name":  "100 Voxel Mobs",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/91631826383744",
+        "image":  "img/100VoxelMobs.jpg",
+        "slides":  [
+                       "img/100VoxelMobs/01.jpg",
+                       "img/100VoxelMobs/02.jpg",
+                       "img/100VoxelMobs/03.jpg",
+                       "img/100VoxelMobs/04.jpg",
+                       "img/100VoxelMobs/05.jpg",
+                       "img/100VoxelMobs/06.jpg",
+                       "img/100VoxelMobs/09.jpg",
+                       "img/100VoxelMobs/10.jpg"
+                   ],
+        "description":  "100 blocky voxel creatures with painted pixel-art skins: farm animals, wild animals, sea life, hostile monsters, villagers and traders, nether and void creatures and ten large bosses. Scale: 1 unit = 1 stud for a 5-stud character; the pixel art is 8 px per stud on every mob (1 px = 0.125 stud). Animals are 1 to 5 studs, humanoids 5 to 6, bosses 12 to 30. One material, one pixel-art atlas texture, rigged with shared bone names (Root, Float, Body, Head, Jaw, Tail, ArmL/R, LegL/R, LegFL/FR/BL/BR, WingL/R) and shared actions (Idle, Walk, Attack, Fly, Hurt, Hop).",
+        "tags":  [
+                     "Voxel",
+                     "Animals"
+                 ],
+        "date":  "2026-10-09T12:37:13"
+    },
+    {
+        "slug":  "100VoxelSkyIslands",
+        "page":  "100-voxel-sky-islands",
+        "name":  "100 Voxel Sky Islands",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/101683416854844",
+        "image":  "img/100VoxelSkyIslands.jpg",
+        "slides":  [
+                       "img/100VoxelSkyIslands/01.jpg",
+                       "img/100VoxelSkyIslands/02.jpg",
+                       "img/100VoxelSkyIslands/03.jpg",
+                       "img/100VoxelSkyIslands/04.jpg",
+                       "img/100VoxelSkyIslands/05.jpg",
+                       "img/100VoxelSkyIslands/06.jpg",
+                       "img/100VoxelSkyIslands/09.jpg",
+                       "img/100VoxelSkyIslands/10.jpg"
+                   ],
+        "description":  "100 voxel skyblock assets: floating islands, trees and plants, blocks and ores, tiered ore generators, stations, bridges, stairs, portals and small structures. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; islands are 8 to 120 studs across. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags":  [
+                     "Voxel",
+                     "Nature"
+                 ],
+        "date":  "2026-10-09T12:33:36"
+    },
+    {
+        "slug":  "150VoxelFurniture",
+        "page":  "150-voxel-furniture",
+        "name":  "150 Voxel Furniture",
+        "count":  150,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/111710075728823",
+        "image":  "img/150VoxelFurniture.jpg",
+        "slides":  [
+                       "img/150VoxelFurniture/01.jpg",
+                       "img/150VoxelFurniture/02.jpg",
+                       "img/150VoxelFurniture/03.jpg",
+                       "img/150VoxelFurniture/03.jpg",
+                       "img/150VoxelFurniture/04.jpg",
+                       "img/150VoxelFurniture/05.jpg",
+                       "img/150VoxelFurniture/06.jpg",
+                       "img/150VoxelFurniture/10.jpg"
+                   ],
+        "description":  "150 blocky voxel furniture and room decor assets for building, housing and roleplay games: living room, kitchen, bedroom, bathroom, office and school, gaming, garden, medieval, shop and cafe, plus floors, walls, doors and stairs. True scale for a 5-stud character (1 unit = 1 stud, 1 voxel = 0.25 stud: seats at 2 studs, tables at 3, doors 4 x 7). One palette texture, rigged (doors, drawers, lids, spinning and swinging parts) and animated.",
+        "tags":  [
+                     "Voxel",
+                     "Furniture"
+                 ],
+        "date":  "2026-10-09T12:30:29"
+    },
+    {
+        "slug":  "100VoxelDungeonKit",
+        "page":  "100-voxel-dungeon-kit",
+        "name":  "100 Voxel Dungeon Kit",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/135576798818525",
+        "image":  "img/100VoxelDungeonKit.jpg",
+        "slides":  [
+                       "img/100VoxelDungeonKit/01.jpg",
+                       "img/100VoxelDungeonKit/02.jpg",
+                       "img/100VoxelDungeonKit/03.jpg",
+                       "img/100VoxelDungeonKit/04.jpg",
+                       "img/100VoxelDungeonKit/05.jpg",
+                       "img/100VoxelDungeonKit/06.jpg",
+                       "img/100VoxelDungeonKit/09.jpg",
+                       "img/100VoxelDungeonKit/10.jpg"
+                   ],
+        "description":  "100 voxel dungeon crawler assets: modular rooms and corridors on a 16-stud grid, ten complete set-piece rooms, doors and gates, traps, chests and loot, spawners and altars, and decor. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; corridors are 8 studs wide and 12 tall inside, rooms are up to 64 studs across. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags":  [
+                     "Voxel",
+                     "RPG"
+                 ],
+        "date":  "2026-10-09T12:26:53"
+    },
+    {
+        "slug":  "100VoxelCityBuilds",
+        "page":  "100-voxel-city-builds",
+        "name":  "100 Voxel City Builds",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/81911762313383",
+        "image":  "img/100VoxelCityBuilds.jpg",
+        "slides":  [
+                       "img/100VoxelCityBuilds/01.jpg",
+                       "img/100VoxelCityBuilds/02.jpg",
+                       "img/100VoxelCityBuilds/03.jpg",
+                       "img/100VoxelCityBuilds/04.jpg",
+                       "img/100VoxelCityBuilds/05.jpg",
+                       "img/100VoxelCityBuilds/09.jpg",
+                       "img/100VoxelCityBuilds/10.jpg"
+                   ],
+        "description":  "100 voxel city builder assets: road tiles on a 32-stud grid, homes, shops, services, towers and landmarks, street props, static vehicles and rooftop bits. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; road tiles are 32 x 32 studs with two 12-stud lanes, doors are 4 x 6 studs, towers reach 120 studs. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags":  [
+                     "Voxel",
+                     "City"
+                 ],
+        "date":  "2026-10-09T12:23:33"
+    },
+    {
+        "slug":  "100VoxelCharacters",
+        "page":  "100-voxel-characters",
+        "name":  "100 Voxel Characters",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/102696004386746",
+        "image":  "img/100VoxelCharacters.jpg",
+        "slides":  [
+                       "img/100VoxelCharacters/01.jpg",
+                       "img/100VoxelCharacters/02.jpg",
+                       "img/100VoxelCharacters/03.jpg",
+                       "img/100VoxelCharacters/04.jpg",
+                       "img/100VoxelCharacters/05.jpg",
+                       "img/100VoxelCharacters/06.jpg",
+                       "img/100VoxelCharacters/09.jpg",
+                       "img/100VoxelCharacters/10.jpg"
+                   ],
+        "description":  "100 blocky voxel characters and NPC skins: medieval, adventurers, modern jobs, fantasy races, sci-fi, kids and teens, festive and five bosses. Scale: 1 unit = 1 stud; a normal character is 5.25 studs tall (head a 1.25 cube, torso 2, arms and legs 1 wide and 2 tall); painted skins with clothes, hair and gear raised as real voxels, 8 px per stud; bosses are the same rig scaled 1.6 to 2 times. One material, one pixel-art atlas, one shared rig with Idle, Walk, Run, Wave, Attack and Sit.",
+        "tags":  [
+                     "Voxel",
+                     "Characters"
+                 ],
+        "date":  "2026-10-09T12:19:55"
+    },
+    {
+        "slug":  "100VoxelBiomeKit",
+        "page":  "100-voxel-biome-kit",
+        "name":  "100 Voxel Biome Kit",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/83548467081510",
+        "image":  "img/100VoxelBiomeKit.jpg",
+        "slides":  [
+                       "img/100VoxelBiomeKit/01.jpg",
+                       "img/100VoxelBiomeKit/02.jpg",
+                       "img/100VoxelBiomeKit/03.jpg",
+                       "img/100VoxelBiomeKit/04.jpg",
+                       "img/100VoxelBiomeKit/05.jpg",
+                       "img/100VoxelBiomeKit/09.jpg",
+                       "img/100VoxelBiomeKit/10.jpg"
+                   ],
+        "description":  "100 voxel overworld assets in 10 biomes (plains, forest, autumn forest, desert, snow tundra, jungle, swamp, mushroom fields, volcanic wasteland, crystal caves). Each biome has 3 terrain chunks (flat, hill, cliff), 1 landmark, 3 trees or large plants and 3 small props. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset. Terrain chunks are 32 x 32 studs and every chunk edge is 8 studs high, so chunks of all biomes tile on a 32-stud grid; a cliff chunk is 20 studs high on its far edge and joins other cliffs sideways. One material, one pixel-art atlas texture, rigged (Root, Float, Flow) and animated.",
+        "tags":  [
+                     "Voxel",
+                     "Nature"
+                 ],
+        "date":  "2026-10-09T12:15:46"
+    },
+    {
+        "slug":  "100FactoryMachines",
+        "page":  "100-factory-machines",
+        "name":  "100 Factory Machines",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/81030307300077",
+        "image":  "img/100FactoryMachines.jpg",
+        "slides":  [
+                       "img/100FactoryMachines/01.jpg",
+                       "img/100FactoryMachines/02.jpg",
+                       "img/100FactoryMachines/03.jpg",
+                       "img/100FactoryMachines/04.jpg",
+                       "img/100FactoryMachines/05.jpg",
+                       "img/100FactoryMachines/06.jpg",
+                       "img/100FactoryMachines/09.jpg",
+                       "img/100FactoryMachines/10.jpg"
+                   ],
+        "description":  "100 stylized toy-factory assets for tycoon and simulator games, true to scale for a 5-stud character (1 Blender unit = 1 stud): conveyors that tile on a 4-stud grid with moving belts, fat pipes that connect flange to flange with a lump of stuff visibly pumping through, 28 machines with spinning gears, stamping presses, shaking hoppers, robot arms and bobbing chimney caps, tanks, silos and vats, push buttons, levers, valve wheels and gauges that animate, plus crates, barrels, ingots, catwalks and floor tiles. Models and bone animations only: no scripts, no particles. Textured, rigged and animated.",
+        "tags":  [
+                     "Tycoon",
+                     "Props"
+                 ],
+        "date":  "2026-10-09T12:10:19"
+    },
+    {
+        "slug":  "100LuckyBlocks",
+        "page":  "100-lucky-blocks",
+        "name":  "100 Lucky Blocks",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/117632336509523",
+        "image":  "img/100LuckyBlocks.jpg",
+        "slides":  [
+                       "img/100LuckyBlocks/01.jpg",
+                       "img/100LuckyBlocks/02.jpg",
+                       "img/100LuckyBlocks/03.jpg",
+                       "img/100LuckyBlocks/04.jpg",
+                       "img/100LuckyBlocks/05.jpg",
+                       "img/100LuckyBlocks/06.jpg",
+                       "img/100LuckyBlocks/09.jpg",
+                       "img/100LuckyBlocks/10.jpg"
+                   ],
+        "description":  "70 studded lucky blocks (rarity tiers, elements, themes, creatures, special shapes) and 30 supporting pieces: pads, pedestals, conveyor, drop tube, breaking tools, loot and arena parts. Real stud scale for a 5-stud character. One texture, rigged (Block, Lid, Float) with shared Idle, Shake and Open animations.",
+        "tags":  [
+                     "Stud",
+                     "Simulator"
+                 ],
+        "date":  "2026-10-09T11:56:10"
+    },
+    {
         "slug":  "100KartRacingAssets",
         "page":  "100-kart-racing-assets",
         "name":  "100 Kart Racing Assets",
