@@ -1,29 +1,5 @@
 [
     {
-        "slug":  "100HomestoreAssets",
-        "name":  "100 Homestore Assets",
-        "count":  100,
-        "image":  "img/100HomestoreAssets.jpg",
-        "tags":  [
-                     "Homestore",
-                     "Props"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
-        "slug":  "100KartRacingAssets",
-        "name":  "100 Kart Racing Assets",
-        "count":  100,
-        "image":  "img/100KartRacingAssets.jpg",
-        "tags":  [
-                     "Racing",
-                     "Vehicles"
-                 ],
-        "soon":  true,
-        "unscheduled":  true
-    },
-    {
         "slug":  "100LuckyBlocks",
         "name":  "100 Lucky Blocks",
         "count":  100,

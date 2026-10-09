@@ -1,5 +1,55 @@
 [
     {
+        "slug":  "100KartRacingAssets",
+        "page":  "100-kart-racing-assets",
+        "name":  "100 Kart Racing Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/98326620608611",
+        "image":  "img/100KartRacingAssets.jpg",
+        "slides":  [
+                       "img/100KartRacingAssets/01.jpg",
+                       "img/100KartRacingAssets/02.jpg",
+                       "img/100KartRacingAssets/03.jpg",
+                       "img/100KartRacingAssets/04.jpg",
+                       "img/100KartRacingAssets/05.jpg",
+                       "img/100KartRacingAssets/06.jpg",
+                       "img/100KartRacingAssets/09.jpg",
+                       "img/100KartRacingAssets/10.jpg"
+                   ],
+        "description":  "100 sharp low-poly kart racing assets, true to scale for a 5-stud character: 60 themed go-karts (30 designs, two colourways each) and 40 track assets. Every kart is about 7 studs long and 5 wide with a seat, a steering wheel on a Steer bone, exhausts and four wheels that are each their own MeshPart with a bone on the axle. Track tiles are 28 studs wide and snap together: straight, finish line, curve and ramp, plus start arch, start lights, curbs, boost pads, item boxes, tyre walls, cones, pit props, grandstand, podium and trophies. One palette texture. Drive, Idle, Boost, Steer, Spin and Flap animations.",
+        "tags":  [
+                     "Racing",
+                     "Vehicles"
+                 ],
+        "date":  "2026-10-09T11:38:25"
+    },
+    {
+        "slug":  "100HomestoreAssets",
+        "page":  "100-homestore-assets",
+        "name":  "100 Homestore Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/136375834601619",
+        "image":  "img/100HomestoreAssets.jpg",
+        "slides":  [
+                       "img/100HomestoreAssets/01.jpg",
+                       "img/100HomestoreAssets/02.jpg",
+                       "img/100HomestoreAssets/03.jpg",
+                       "img/100HomestoreAssets/04.jpg",
+                       "img/100HomestoreAssets/05.jpg",
+                       "img/100HomestoreAssets/06.jpg",
+                       "img/100HomestoreAssets/09.jpg",
+                       "img/100HomestoreAssets/10.jpg"
+                   ],
+        "description":  "100 clean low-poly assets to build a clothing homestore, true to scale for a 5-stud character: from a 1-stud card reader to a 34-stud storefront. Blank blocky mannequins in five poses plus bust, torso, legs and head forms; clothing racks with hangers and plain garments, folded stacks, shoe and hat displays; pedestals, podiums, glass cases, shelves, slatwall and pegboard; checkout desk, register, card reader, bags, basket, fitting room, mirrors, seating, stanchions, security gate, sign holders, tip jar, rank board and purchase kiosk; plants, rugs and carpet runners, balloons, speakers and a DJ booth; ceiling lamps, spotlights, six neon shape signs; and a snap-together building kit on a 4-stud grid (walls 8 wide and 12 tall, windows, glass walls, doors, corner, pillar, floor, ceiling, dome skylight, stairs, railing, awning, sign board, roof ornaments, arch) with three complete storefront shells. 1 Blender unit = 1 stud. Glass is its own part; doors, the rotating pedestal, the round rack, the curtain, the register drawer and the spotlight have bones and actions. Signs and boards are blank. Textured, rigged and animated.",
+        "tags":  [
+                     "Homestore",
+                     "Props"
+                 ],
+        "date":  "2026-10-09T11:18:02"
+    },
+    {
         "slug":  "100HalloweenCreatures",
         "page":  "100-halloween-creatures",
         "name":  "100 Halloween Creatures",
