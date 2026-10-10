@@ -1,5 +1,330 @@
 [
     {
+        "slug":  "100CuteRobots",
+        "page":  "100-cute-robots",
+        "name":  "100 Cute Robots",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/117663071550657",
+        "image":  "img/100CuteRobots.jpg",
+        "slides":  [
+                       "img/100CuteRobots/01.jpg",
+                       "img/100CuteRobots/02.jpg",
+                       "img/100CuteRobots/03.jpg",
+                       "img/100CuteRobots/04.jpg",
+                       "img/100CuteRobots/05.jpg",
+                       "img/100CuteRobots/06.jpg",
+                       "img/100CuteRobots/09.jpg",
+                       "img/100CuteRobots/10.jpg"
+                   ],
+        "description":  "100 cute chibi toy robots, glossy and colourful, true to scale for a 5-stud character: helper bots, worker bots, wheeled and tracked bots, flying bots, animal bots, battle bots, retro bots, tiny 2-stud bots, six giant boss mechs up to 16 studs and 10 props. Every robot has a screen or simple-eye face that blinks and a battery / power core that is its own detachable part sitting in a modelled socket, like a vinyl collectible. Every wheel is its own part. One shared rig and animation set (same bone and action names as the Cute Zombies and Cute Dinos packs): Idle, Walk, Run, Jump, Blink, Hit, Fall, Wave, Attack, Cheer, PowerDown, PowerUp, Dance, Spin, Drive, Fire, Stomp, CorePop and HeadPop. Humanoid bots are set up as playable StarterCharacters by PackSetup. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Characters"
+                 ],
+        "date":  "2026-10-09T18:39:14"
+    },
+    {
+        "slug":  "100SportsAssets",
+        "page":  "100-sports-assets",
+        "name":  "100 Sports Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/93377073750510",
+        "image":  "img/100SportsAssets.jpg",
+        "slides":  [
+                       "img/100SportsAssets/01.jpg",
+                       "img/100SportsAssets/02.jpg",
+                       "img/100SportsAssets/03.jpg",
+                       "img/100SportsAssets/04.jpg",
+                       "img/100SportsAssets/05.jpg",
+                       "img/100SportsAssets/06.jpg",
+                       "img/100SportsAssets/09.jpg",
+                       "img/100SportsAssets/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly sports assets, true to scale for a 5-stud character: from a 0.3-stud tennis ball to a 40-stud floodlight tower. Balls, bats, rackets, medals and trophies, full-size goals, hoops, nets and posts, track and sideline gear, a whole gym, bleachers, stadium seats, ticket booth, turnstile, ice resurfacer, golf cart, skate ramps, pool, bowling and arcade pieces. 1 Blender unit = 1 stud: a soccer goal is 20 wide, the basketball rim is 8.5 up. Every wheel is its own part; hoop nets, turnstile, pedals, punching bags, diving board, barrier and locker door have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Sports",
+                     "Props"
+                 ],
+        "date":  "2026-10-09T17:32:34"
+    },
+    {
+        "slug":  "100SchoolAssets",
+        "page":  "100-school-assets",
+        "name":  "100 School Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/112362766069027",
+        "image":  "img/100SchoolAssets.jpg",
+        "slides":  [
+                       "img/100SchoolAssets/01.jpg",
+                       "img/100SchoolAssets/02.jpg",
+                       "img/100SchoolAssets/03.jpg",
+                       "img/100SchoolAssets/04.jpg",
+                       "img/100SchoolAssets/05.jpg",
+                       "img/100SchoolAssets/06.jpg",
+                       "img/100SchoolAssets/09.jpg",
+                       "img/100SchoolAssets/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly school assets for school roleplay and school-escape games, true to scale for a 5-stud character: from a 1-stud eraser to a 29-stud school bus and a 22-stud bell tower. Classroom desks, boards, globe and doors, backpacks and supplies, science lab, hallway lockers, stairs and double doors, cafeteria, library, music room, principal and nurse offices, and the school yard. 1 Blender unit = 1 stud: doors clear 7.5 studs. Every wheel is its own part; doors, locker doors, the desk lid, clock hand, bell hammer, globe, fan and pottery wheel have bones. No text, flags or logos. Textured, rigged and animated.",
+        "tags":  [
+                     "School",
+                     "Props"
+                 ],
+        "date":  "2026-10-09T17:04:30"
+    },
+    {
+        "slug":  "100MiningAssets",
+        "page":  "100-mining-and-ore-assets",
+        "name":  "100 Mining \u0026 Ore Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/71370120023492",
+        "image":  "img/100MiningAssets.jpg",
+        "slides":  [
+                       "img/100MiningAssets/01.jpg",
+                       "img/100MiningAssets/02.jpg",
+                       "img/100MiningAssets/03.jpg",
+                       "img/100MiningAssets/04.jpg",
+                       "img/100MiningAssets/05.jpg",
+                       "img/100MiningAssets/06.jpg",
+                       "img/100MiningAssets/09.jpg",
+                       "img/100MiningAssets/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly mining assets for simulators and tycoons, true to scale for a 5-stud character: from a 1-stud cut gem to a 16-stud drill rig. 18 ore nodes with real embedded nuggets and crystals (coal to mythic rainbow), loose ore chunks, ingots, cut gems, boulders, stalagmites, cave wall and arch, geodes, 8 pickaxe tiers, drills, dynamite, detonator, lantern, backpacks, crusher, smelter, conveyor, sorter, drill rig, pump, generator, sell station, rails, mine carts, elevator, ladder, rope bridge and signs. 1 Blender unit = 1 stud. Every mine cart wheel is its own part; drill bits, the crusher jaw, the elevator cage and the detonator plunger have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Simulator",
+                     "Mining"
+                 ],
+        "date":  "2026-10-09T16:43:59"
+    },
+    {
+        "slug":  "100HospitalAssets",
+        "page":  "100-hospital-assets",
+        "name":  "100 Hospital Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/80531541996728",
+        "image":  "img/100HospitalAssets.jpg",
+        "slides":  [
+                       "img/100HospitalAssets/01.jpg",
+                       "img/100HospitalAssets/02.jpg",
+                       "img/100HospitalAssets/03.jpg",
+                       "img/100HospitalAssets/04.jpg",
+                       "img/100HospitalAssets/05.jpg",
+                       "img/100HospitalAssets/06.jpg",
+                       "img/100HospitalAssets/09.jpg",
+                       "img/100HospitalAssets/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly hospital assets for hospital, clinic and doctor roleplay games, true to scale for a 5-stud character: from a 1-stud thermometer to a 19-stud ambulance and a 24-stud entrance canopy. Reception and waiting room, patient room, exam and treatment, surgery and imaging (MRI, CT, X-ray), lab and pharmacy, staff and utility carts, doors, walls and signs, ambulance and helipad. Clean, bright and friendly. 1 Blender unit = 1 stud: doors clear 7.6 studs. Every wheel is its own part; doors, bed back-rest, curtain, MRI table, barrier, centrifuge and beacon have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Hospital",
+                     "Props"
+                 ],
+        "date":  "2026-10-09T16:29:02"
+    },
+    {
+        "slug":  "100FishingHarbor",
+        "page":  "100-fishing-and-harbor-assets",
+        "name":  "100 Fishing \u0026 Harbor Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/140365427558842",
+        "image":  "img/100FishingHarbor.jpg",
+        "slides":  [
+                       "img/100FishingHarbor/01.jpg",
+                       "img/100FishingHarbor/02.jpg",
+                       "img/100FishingHarbor/03.jpg",
+                       "img/100FishingHarbor/04.jpg",
+                       "img/100FishingHarbor/05.jpg",
+                       "img/100FishingHarbor/06.jpg",
+                       "img/100FishingHarbor/09.jpg",
+                       "img/100FishingHarbor/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly fishing and harbour assets, true to scale for a 5-stud character: from a 1-stud tin can to a 44-stud lighthouse. Eight fishing rod tiers from stick-and-string to mythic, reel, bobbers, lures, tackle boxes, nets, traps, buoys and anchor; fish crates, barrels, market stall, smokehouse, aquarium and junk catches; ten boats from kayak to trawler and tugboat; modular docks, pilings, boat lift and ramp; lighthouse, crane, bait shop, boathouse, forklift and carts; reeds, lily pads, rocks, campfire and tent. 1 Blender unit = 1 stud: dock decks are 8 wide and 3.2 up, a rowboat is 13 long. Every wheel is its own part; rods cast, reels crank, propellers spin, lids, doors, crane, boat lift, forks and the lighthouse lamp have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "Simulator",
+                     "Vehicles"
+                 ],
+        "date":  "2026-10-09T16:12:03"
+    },
+    {
+        "slug":  "100CuteZombies",
+        "page":  "100-cute-zombie-apocalypse",
+        "name":  "100 Cute Zombie Apocalypse",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/117868639492594",
+        "image":  "img/100CuteZombies.jpg",
+        "slides":  [
+                       "img/100CuteZombies/01.jpg",
+                       "img/100CuteZombies/02.jpg",
+                       "img/100CuteZombies/03.jpg",
+                       "img/100CuteZombies/04.jpg",
+                       "img/100CuteZombies/05.jpg",
+                       "img/100CuteZombies/06.jpg",
+                       "img/100CuteZombies/09.jpg",
+                       "img/100CuteZombies/10.jpg"
+                   ],
+        "description":  "100 cute chibi zombie apocalypse assets, true to scale for a 5-stud character: 20 small playable survivors, 40 zombies, mad scientist zombies, skeletons, imps, 8 huge bosses and 10 props. Every monster does a HUGE snappy chomp (jaw and top of the head split wide open, with teeth and tongue) and has a pink cartoon brain that is its own detachable part, like a vinyl collectible. One shared rig and animation set: Idle, Walk, Run, Jump, Blink, Wave, Attack, Hit, Cheer, ZombieWalk, Chomp, Roar, BrainPop, Fall and Slam. Survivors are set up as playable StarterCharacters by PackSetup. Cute, never gory. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Characters"
+                 ],
+        "date":  "2026-10-09T15:55:20"
+    },
+    {
+        "slug":  "100CuteDinos",
+        "page":  "100-cute-dinosaurs",
+        "name":  "100 Cute Dinosaurs",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/124556256211210",
+        "image":  "img/100CuteDinos.jpg",
+        "slides":  [
+                       "img/100CuteDinos/01.jpg",
+                       "img/100CuteDinos/02.jpg",
+                       "img/100CuteDinos/03.jpg",
+                       "img/100CuteDinos/04.jpg",
+                       "img/100CuteDinos/05.jpg",
+                       "img/100CuteDinos/06.jpg",
+                       "img/100CuteDinos/09.jpg",
+                       "img/100CuteDinos/10.jpg"
+                   ],
+        "description":  "100 cute chubby low-poly dinosaurs and prehistoric animals with blinking faces, true to scale for a 5-stud character: from 2-stud babies to a 25-stud Brachiosaurus. T-Rex, Raptor, Triceratops, Stegosaurus, Brontosaurus, Ankylosaurus, Spinosaurus, Pterodactyl, Mosasaurus, Mammoth, Sabertooth, Dodo and many more, plus colour variants, babies, hatchlings, eggs, a nest, bones and fossils. Happy, neutral and angry faces. Head, jaw, tail and wing bones with Idle, Blink, Bite, Roar and Flap animations. Textured, rigged and animated.",
+        "tags":  [
+                     "Cute",
+                     "Animals"
+                 ],
+        "date":  "2026-10-09T15:15:40"
+    },
+    {
+        "slug":  "100ConstructionSite",
+        "page":  "100-construction-site-assets",
+        "name":  "100 Construction Site Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/115486433943860",
+        "image":  "img/100ConstructionSite.jpg",
+        "slides":  [
+                       "img/100ConstructionSite/01.jpg",
+                       "img/100ConstructionSite/02.jpg",
+                       "img/100ConstructionSite/03.jpg",
+                       "img/100ConstructionSite/04.jpg",
+                       "img/100ConstructionSite/05.jpg",
+                       "img/100ConstructionSite/06.jpg",
+                       "img/100ConstructionSite/09.jpg",
+                       "img/100ConstructionSite/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly construction site assets for building, demolition and city tycoon games, true to scale for a 5-stud character: from a 2-stud pair of goggles to a 78-stud tower crane. Excavator, bulldozer, dump truck, mixer truck, mobile and tower crane, forklift, road roller, loader, backhoe, skid steer, telehandler, trucks and lifts; scaffolding, steel, rebar, concrete, brick and timber pieces on a 12-stud grid; pallets and piles of materials; hand tools and safety gear; site office, containers, generators, tanks and a wrecking ball. 1 Blender unit = 1 stud. Every wheel is its own part; cabs swing, booms, buckets, blades, beds, drums, forks, hooks, platforms, doors, gates and lids have bones. Textured, rigged and animated.",
+        "tags":  [
+                     "City",
+                     "Vehicles"
+                 ],
+        "date":  "2026-10-09T14:51:16"
+    },
+    {
+        "slug":  "100CampingOutdoor",
+        "page":  "100-camping-and-outdoor-assets",
+        "name":  "100 Camping \u0026 Outdoor Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/73998325485229",
+        "image":  "img/100CampingOutdoor.jpg",
+        "slides":  [
+                       "img/100CampingOutdoor/01.jpg",
+                       "img/100CampingOutdoor/02.jpg",
+                       "img/100CampingOutdoor/03.jpg",
+                       "img/100CampingOutdoor/04.jpg",
+                       "img/100CampingOutdoor/05.jpg",
+                       "img/100CampingOutdoor/06.jpg",
+                       "img/100CampingOutdoor/09.jpg",
+                       "img/100CampingOutdoor/10.jpg"
+                   ],
+        "description":  "100 chunky low-poly camping and outdoor assets, true to scale for a 5-stud character, for camping, survival, hiking and summer-camp games: tents, cabins, a ranger station and fire lookout, an RV, pop-up trailer and camper van, campfires and camp cooking, backpacks and hiking gear, trail signs, bridges, a camp gate, canoes, an archery target, zipline and swings, plus pines, logs, boulders and forest plants. 1 Blender unit = 1 stud. Every wheel is its own part and every fire is its own Flame part; tent flaps, doors, lids, the gate, the pump handle, the lantern and the swings have bones and actions. Textured, rigged and animated.",
+        "tags":  [
+                     "Nature",
+                     "Props"
+                 ],
+        "date":  "2026-10-09T14:32:46"
+    },
+    {
+        "slug":  "100TowerDefenseAssets",
+        "page":  "100-tower-defense-assets",
+        "name":  "100 Tower Defense Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/118906122720194",
+        "image":  "img/100TowerDefenseAssets.jpg",
+        "slides":  [
+                       "img/100TowerDefenseAssets/01.jpg",
+                       "img/100TowerDefenseAssets/02.jpg",
+                       "img/100TowerDefenseAssets/03.jpg",
+                       "img/100TowerDefenseAssets/04.jpg",
+                       "img/100TowerDefenseAssets/05.jpg",
+                       "img/100TowerDefenseAssets/06.jpg",
+                       "img/100TowerDefenseAssets/09.jpg",
+                       "img/100TowerDefenseAssets/10.jpg"
+                   ],
+        "description":  "Everything for a tower defense game in the sharp studded style: 15 towers with 3 upgrade levels each, 30 enemies and bosses, and 25 path tiles and map props on an 8-stud grid. Real scale for a 5-stud character. One texture, rigged (Turret, Barrel, Recoil, Spin; Torso, Head, arms, legs, wings) with shared Idle, Fire, Spin, Walk and Attack animations.",
+        "tags":  [
+                     "Stud",
+                     "Tower Defense"
+                 ],
+        "date":  "2026-10-09T14:14:57"
+    },
+    {
+        "slug":  "100StudWorldAssets",
+        "page":  "100-stud-world-assets",
+        "name":  "100 Stud World Assets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/92680942443465",
+        "image":  "img/100StudWorldAssets.jpg",
+        "slides":  [
+                       "img/100StudWorldAssets/01.jpg",
+                       "img/100StudWorldAssets/02.jpg",
+                       "img/100StudWorldAssets/03.jpg",
+                       "img/100StudWorldAssets/04.jpg",
+                       "img/100StudWorldAssets/05.jpg",
+                       "img/100StudWorldAssets/06.jpg",
+                       "img/100StudWorldAssets/09.jpg",
+                       "img/100StudWorldAssets/10.jpg"
+                   ],
+        "description":  "Sharp, blocky, studded world props in five biomes: forest, winter, desert, buildings and samurai. True scale for a 5-stud character, from 1 to 40 studs. One texture, rigged, with Idle, Open and Ring animations.",
+        "tags":  [
+                     "Stud",
+                     "Nature"
+                 ],
+        "date":  "2026-10-09T14:02:02"
+    },
+    {
+        "slug":  "100StudPets",
+        "page":  "100-stud-pets",
+        "name":  "100 Stud Pets",
+        "count":  100,
+        "price":  4.99,
+        "url":  "https://create.roblox.com/store/asset/121177796223271",
+        "image":  "img/100StudPets.jpg",
+        "slides":  [
+                       "img/100StudPets/01.jpg",
+                       "img/100StudPets/02.jpg",
+                       "img/100StudPets/03.jpg",
+                       "img/100StudPets/04.jpg",
+                       "img/100StudPets/05.jpg",
+                       "img/100StudPets/06.jpg",
+                       "img/100StudPets/09.jpg",
+                       "img/100StudPets/10.jpg"
+                   ],
+        "description":  "Blocky, studded voxel pets for pet-simulator games: farm, forest, safari, ocean, bugs, dinos and mythics. 2 to 12 studs for a 5-stud character. One texture, rigged (Body, Head, Jaw, Tail, legs, wings, ears, Float) with shared Idle, Walk, Fly and Jump animations.",
+        "tags":  [
+                     "Stud",
+                     "Animals"
+                 ],
+        "date":  "2026-10-09T13:50:43"
+    },
+    {
         "slug":  "100StudHalloweenAssets",
         "page":  "100-stud-halloween-assets",
         "name":  "100 Stud Halloween Assets",
