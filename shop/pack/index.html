@@ -120,7 +120,7 @@
             const b = (buy && buy.packs && buy.packs[p.slug]) || {};
             const place = /^\d{1,19}$/.test(String(buy && buy.showcasePlaceId)) ? buy.showcasePlaceId : null;
             // opens the Roblox app in the showcase place, which shows this pack and prompts its developer product at once
-            const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "buy", pack: p.slug }))}` : null;
+            const robuxUrl = p.price && place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "buy", pack: p.slug }))}` : null;
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
@@ -149,9 +149,9 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
+                        <div class="price">${p.price ? `$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small>` : "Free"}</div>
                         <div class="buy">
-                            ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
+                            ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">${p.price ? "Purchase on Creator Store" : "Get it free on Creator Store"}</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
@@ -209,7 +209,7 @@
                 document.getElementById("recommended").innerHTML = others.map(o => `
                     <a class="card" href="../${o.page}/">
                         <img src="../${o.image}" alt="${esc(o.name)} thumbnail" loading="lazy" width="360" height="360">
-                        <div><b>${esc(o.name)}</b><span>$${o.price.toFixed(2)} <small style="color:var(--dim)">or R$ ${robux(o.price)}</small></span></div>
+                        <div><b>${esc(o.name)}</b><span>${o.price ? `$${o.price.toFixed(2)} <small style="color:var(--dim)">or R$ ${robux(o.price)}</small>` : "Free"}</span></div>
                     </a>`).join("");
             }
         }).catch(() => { document.getElementById("missing").hidden = false; });
