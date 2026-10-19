@@ -12,7 +12,7 @@
         const price = Number(s && s.price_usd);
         const place = String((s && s.showcase_place_id) || "");
         if (!s || s.enabled !== true || !(price > 0) || !/^\d{1,19}$/.test(place)) return;
-        const list = Array.isArray(packs) ? packs.filter(p => typeof p.price === "number") : [];
+        const list = Array.isArray(packs) ? packs.filter(p => typeof p.price === "number" && p.price > 0) : [];
         const worth = list.reduce((t, p) => t + p.price, 0);
         const usd = n => "$" + n.toFixed(2);
         const url = p => `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "sub", p }))}`;
