@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /test/
 
 Sitemap: https://kashtheking.com/sitemap.xml
+Sitemap: https://kashtheking.com/library/sitemap.xml
+Sitemap: https://kashtheking.com/infinite-ocean/sitemap.xml
+Sitemap: https://kashtheking.com/flashback/sitemap.xml
