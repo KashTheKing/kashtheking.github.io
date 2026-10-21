@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KashTheKing</title>
-<meta name="description" content="Kash Placek. Roblox developer, teacher, and builder of tools. Everything in one place.">
+<title>KashTheKing: Roblox Asset Packs, Plugins and Games</title>
+<meta name="description" content="Kash Placek (KashTheKing): Roblox developer, teacher and builder of tools. Roblox asset packs for Roblox Studio, plugins like Infinite Ocean and Flashback, free packages and games.">
 <meta name="theme-color" content="#1A1C20">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://kashtheking.com/">
@@ -16,9 +16,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-crown-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-crown-180.png">
 <link rel="canonical" href="https://kashtheking.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kashtheking.com/#site","url":"https://kashtheking.com/","name":"KashTheKing","publisher":{"@id":"https://kashtheking.com/#kash"}},{"@type":"Person","@id":"https://kashtheking.com/#kash","name":"Kash Placek","alternateName":"KashTheKing","url":"https://kashtheking.com/","image":"https://kashtheking.com/assets/avatar.png","jobTitle":"Roblox developer","sameAs":["https://www.roblox.com/users/117445502/profile","https://x.com/KashTheKing_X","https://youtube.com/@KashTheKingYT","https://github.com/KashTheKing"]}]}</script>
 <link rel="stylesheet" href="kit/kash.v1.css">
 <style>
   html, body { height: 100%; overflow: hidden; }
+  .sr-links { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .sr-links:focus-within { position: fixed; top: 8px; left: 8px; width: auto; height: auto; clip: auto; white-space: normal; z-index: 99; display: flex; flex-wrap: wrap; gap: 6px 12px; max-width: calc(100vw - 16px); padding: 10px 14px; background: #1A1C20; color: #fff; border-radius: 10px; }
   /* nothing on the site is selectable or draggable: only click/hover; text fields still work */
   * { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
   img, a { -webkit-user-drag: none; }
@@ -315,6 +318,8 @@
 </head>
 <body>
 <div class="stage baseplate" id="stage">
+  <!-- Plain links for search engines and screen readers; the bubbles below are drawn by script -->
+  <nav class="sr-links" aria-label="Site"><h1>KashTheKing</h1><a href="/shop/">Roblox asset packs shop</a> <a href="/shop/stud/">Stud asset packs</a> <a href="/shop/voxel/">Voxel asset packs</a> <a href="/shop/pixel/">Pixel asset packs</a> <a href="/infinite-ocean/">Infinite Ocean plugin</a> <a href="/flashback/">Flashback plugin</a> <a href="/library/">Library: Roblox packages and plugins</a> <a href="/chrome-extensions/custom-roblox-website/">Custom Roblox Background extension</a></nav>
   <a class="brand" href="/" aria-label="KashTheKing home"><img class="mark" src="/assets/watermark.png" alt="KashTheKing" width="165" height="35"></a>
 <button class="gear glass" type="button" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3H9l-.3 2.9a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L4.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.6 7.6 0 0 0 1.7 1L9 21h6l.3-2.9a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.5zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></button>
 <div class="settings"><label>Sound effects <input type="checkbox" id="opt-sound"></label><label>Animations <input type="checkbox" id="opt-anim"></label></div>

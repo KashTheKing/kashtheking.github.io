@@ -1,0 +1,52 @@
+# Keeps the shop findable: when shop/packs.json (the panel edits it) or a shop page changes on main, tools/seo.mjs
+# rebuilds the pack pages, the style pages (/shop/stud/ ...) and sitemap.xml, commits what changed, and tells
+# Bing, Yandex and the other IndexNow engines which pages are new or changed. Google reads sitemap.xml itself.
+name: Shop SEO
+on:
+  push:
+    branches: [main]
+    paths: ['shop/**', 'tools/seo.mjs', 'index.html', '.github/workflows/seo.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency: {group: shop-seo, cancel-in-progress: false}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - run: node --test test/*.test.mjs
+      - run: node tools/seo.mjs
+      - name: Commit the rebuilt pages
+        id: commit
+        run: |
+          git add -A shop sitemap.xml
+          if git diff --cached --quiet; then echo "pushed=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "shop: rebuild pack pages, style pages and sitemap (tools/seo.mjs)"
+          git push origin HEAD:main
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+      - name: Publish the bot's commit on GitHub Pages
+        if: steps.commit.outputs.pushed == '1'
+        continue-on-error: true
+        run: curl -fsS -X POST -H "Authorization: Bearer ${{ github.token }}" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${{ github.repository }}/pages/builds"
+      - name: Tell IndexNow engines what changed
+        continue-on-error: true
+        env: {BEFORE: '${{ github.event.before }}'}
+        run: |
+          sleep 60   # give Pages a minute to publish first
+          base="$BEFORE"; git cat-file -e "$base^{commit}" 2>/dev/null || base="HEAD~1"
+          node -e '
+            const fs = require("fs"), {execFileSync} = require("child_process");
+            const key = fs.readdirSync(".").find((f) => /^[0-9a-f]{32}\.txt$/.test(f)).slice(0, -4);
+            const files = execFileSync("git", ["diff", "--name-only", process.argv[1], "HEAD", "--", "*.html"], {encoding: "utf8"}).split("\n").filter(Boolean);
+            const listed = fs.readFileSync("sitemap.xml", "utf8");
+            const urls = files.map((f) => "https://kashtheking.com/" + f.replace(/(^|\/)index\.html$/, "$1")).filter((u) => listed.includes("<loc>" + u + "</loc>"));
+            if (!urls.length) return console.log("no listed pages changed");
+            const body = {host: "kashtheking.com", key, keyLocation: "https://kashtheking.com/" + key + ".txt", urlList: urls.slice(0, 10000)};
+            fetch("https://api.indexnow.org/indexnow", {method: "POST", headers: {"content-type": "application/json; charset=utf-8"}, body: JSON.stringify(body)})
+              .then((r) => console.log("IndexNow", r.status, urls.length, "pages"));
+          ' "$base"
