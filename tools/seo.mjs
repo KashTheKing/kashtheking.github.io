@@ -93,7 +93,7 @@ const imageUrl = (rel) => `${SITE}/shop/${rel}`;
 /** The search snippet: what it is, the style, the price, under ~160 characters. */
 export function metaDescription(p) {
   const lead = ui(p) ? `${p.count ?? ''} full Roblox UI screens, static and Fusion.`.trim() : `${p.count ?? ''} ${style(p)} Roblox models, ${moves(p)}.`.trim();
-  const tail = ` ${priceText(p)} on the Creator Store.`;
+  const tail = ` ${priceText(p)}${ui(p) && !p.url ? '' : ' on the Creator Store'}.`;
   const first = (p.description ?? '').split(/(?<=[.!?])\s/)[0];
   return `${lead} ${clip(first, Math.max(40, 158 - lead.length - tail.length))}${tail}`.replace(/\s+/g, ' ');
 }
@@ -128,7 +128,7 @@ function packSeo(p) {
     '@context': 'https://schema.org', '@type': 'Product', name: `${p.name} - ${what(p)}`, description: p.description ?? desc,
     image: [p.image, ...slides].filter((v, i, a) => v && a.indexOf(v) === i).map(imageUrl), url: pageUrl(p), sku: p.slug,
     category: ui(p) ? 'Roblox UI pack' : 'Roblox asset pack', brand: {'@type': 'Brand', name: 'KashTheKing'},
-    offers: {'@type': 'Offer', price: Number(p.price).toFixed(2), priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: p.url},
+    offers: {'@type': 'Offer', price: Number(p.price).toFixed(2), priceCurrency: 'USD', availability: `https://schema.org/${p.url ? 'InStock' : 'PreOrder'}`, ...(p.url && {url: p.url})},
   };
   const crumbs = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     {'@type': 'ListItem', position: 1, name: 'KashTheKing', item: `${SITE}/`},
@@ -157,7 +157,7 @@ function packSeo(p) {
 }
 
 function packStatic(p) {
-  return `<div id="pack"><h1>${esc(p.name)} - ${what(p)}</h1><p>${esc(p.description)}</p><p>${p.count} ${units(p)}, ${priceText(p)}. <a href="${esc(p.url)}">Get it on the Roblox Creator Store</a>.</p>${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} ${what(p)} thumbnail" width="540" height="540">` : ''}</div>\n`;
+  return `<div id="pack"><h1>${esc(p.name)} - ${what(p)}</h1><p>${esc(p.description)}</p><p>${p.count} ${units(p)}, ${priceText(p)}.${p.url ? ` <a href="${esc(p.url)}">Get it on the Roblox Creator Store</a>.` : ''}</p>${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} ${what(p)} thumbnail" width="540" height="540">` : ''}</div>\n`;
 }
 
 /** Links to every collection page. `prefix` is how the page reaches /shop/ ("" on the shop, "../" one level down). */
@@ -208,7 +208,8 @@ export function build(root = ROOT) {
     if (!Array.isArray(p.tags)) { p.tags = []; fixed = true; }
   }
   if (fixed) write(file, `${JSON.stringify(packs, null, 4)}\n`, changed);
-  const live = packs.filter((p) => p.page && p.url);
+  // UI packs show before their Creator Store listing is live; the Roblox link appears once it has a url
+  const live = packs.filter((p) => p.page && (p.url || ui(p)));
 
   const cols = COLLECTIONS.map((c) => ({...c, packs: live.filter(c.match)}))
     .filter((c) => c.packs.length >= 2);
@@ -225,7 +226,7 @@ export function build(root = ROOT) {
     write(rel, html, changed);
     for (const [sub, label, to] of [['roblox', 'Roblox', p.url], ['discord', 'Discord', 'https://discord.gg/6HYgCk22eD']]) {
       const srel = `shop/${p.page}/${sub}/index.html`;
-      if (fs.existsSync(path.join(ROOT, srel))) continue;
+      if (!to || fs.existsSync(path.join(ROOT, srel))) continue;
       const t = read(`shop/${TEMPLATE}/${sub}/index.html`)
         .replace(/<title>[^<]*<\/title>/, `<title>Opening ${label}: ${esc(p.name)}</title>`)
         .replace(/id="go" href="[^"]*"/, `id="go" href="${esc(to)}"`);
