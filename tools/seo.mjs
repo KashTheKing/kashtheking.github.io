@@ -17,6 +17,10 @@ const TEMPLATE = '100-stud-pets';   // the pack page a new pack's page is copied
 // Pages per style or theme. `match` picks packs from packs.json; a page with fewer than 2 packs is not made.
 // Words are what people type into Google, YouTube and the DevForum when they look for assets.
 export const COLLECTIONS = [
+  {slug: 'ui', nav: 'UI packs', h1: ['UI', 'PACKS'], tag: 'FULL GAME SCREENS  ·  STATIC + FUSION',
+    title: 'Roblox UI Packs: Full Game UI for Roblox Studio',
+    lead: 'Complete Roblox game interfaces: HUD, shop, inventory, rewards and settings screens, each as a plain ScreenGui to edit and as a Fusion 0.3 version with UI Labs stories.',
+    match: (p) => ui(p)},
   {slug: 'stud', nav: 'Stud', h1: ['STUD', 'ASSET PACKS'], tag: 'CLASSIC ROBLOX STUDS',
     title: 'Roblox Stud Asset Packs: Studded Models for Roblox Studio',
     lead: 'Classic studded Roblox style: smooth blocky models with the real Roblox studs texture. Pets, eggs, bosses, worlds and seasonal builds that look at home in any old-school or simulator game.',
@@ -68,6 +72,10 @@ export const COLLECTIONS = [
 ];
 
 const has = (p, t) => (p.tags ?? []).includes(t);
+/** A UI pack (kind "ui"): its count is screens, not models. */
+export const ui = (p) => p.kind === 'ui';
+const units = (p) => (ui(p) ? 'screens' : 'models');
+const what = (p) => (ui(p) ? 'Roblox UI Pack' : 'Roblox Asset Pack');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 const money = (n) => `$${Number(n).toFixed(2)}`;
@@ -84,7 +92,7 @@ const imageUrl = (rel) => `${SITE}/shop/${rel}`;
 
 /** The search snippet: what it is, the style, the price, under ~160 characters. */
 export function metaDescription(p) {
-  const lead = `${p.count ?? ''} ${style(p)} Roblox models, ${moves(p)}.`.trim();
+  const lead = ui(p) ? `${p.count ?? ''} full Roblox UI screens, static and Fusion.`.trim() : `${p.count ?? ''} ${style(p)} Roblox models, ${moves(p)}.`.trim();
   const tail = ` ${priceText(p)} on the Creator Store.`;
   const first = (p.description ?? '').split(/(?<=[.!?])\s/)[0];
   return `${lead} ${clip(first, Math.max(40, 158 - lead.length - tail.length))}${tail}`.replace(/\s+/g, ' ');
@@ -117,9 +125,9 @@ function packSeo(p) {
   const slides = (p.slides?.length ? p.slides : [p.image]).filter(Boolean);
   const desc = metaDescription(p);
   const product = {
-    '@context': 'https://schema.org', '@type': 'Product', name: `${p.name} - Roblox Asset Pack`, description: p.description ?? desc,
+    '@context': 'https://schema.org', '@type': 'Product', name: `${p.name} - ${what(p)}`, description: p.description ?? desc,
     image: [p.image, ...slides].filter((v, i, a) => v && a.indexOf(v) === i).map(imageUrl), url: pageUrl(p), sku: p.slug,
-    category: 'Roblox asset pack', brand: {'@type': 'Brand', name: 'KashTheKing'},
+    category: ui(p) ? 'Roblox UI pack' : 'Roblox asset pack', brand: {'@type': 'Brand', name: 'KashTheKing'},
     offers: {'@type': 'Offer', price: Number(p.price).toFixed(2), priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: p.url},
   };
   const crumbs = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -128,16 +136,16 @@ function packSeo(p) {
     {'@type': 'ListItem', position: 3, name: p.name, item: pageUrl(p)}]};
   const img = slides[0] ?? p.image;
   return `
-    <title>${esc(p.name)} - ${style(p) === 'low-poly' ? '' : `${style(p)[0].toUpperCase()}${style(p).slice(1)} `}Roblox Asset Pack | KashTheKing Shop</title>
+    <title>${esc(p.name)} - ${ui(p) ? 'Roblox UI Pack' : `${style(p) === 'low-poly' ? '' : `${style(p)[0].toUpperCase()}${style(p).slice(1)} `}Roblox Asset Pack`} | KashTheKing Shop</title>
     <meta name="description" content="${esc(desc)}">
     <link rel="canonical" href="${pageUrl(p)}">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="KashTheKing Shop">
     <meta property="og:url" content="${pageUrl(p)}">
-    <meta property="og:title" content="${esc(p.name)} - Roblox Asset Pack (${priceText(p)})">
+    <meta property="og:title" content="${esc(p.name)} - ${what(p)} (${priceText(p)})">
     <meta property="og:description" content="${esc(clip(p.description ?? desc, 300))}">
     ${img ? `<meta property="og:image" content="${imageUrl(img)}">
-    <meta property="og:image:alt" content="${esc(p.name)} Roblox asset pack">` : `<meta property="og:image" content="${SITE}/shop/og-banner.jpg">`}
+    <meta property="og:image:alt" content="${esc(p.name)} ${what(p)}">` : `<meta property="og:image" content="${SITE}/shop/og-banner.jpg">`}
     <meta property="product:price:amount" content="${Number(p.price).toFixed(2)}">
     <meta property="product:price:currency" content="USD">
     <meta name="twitter:card" content="summary_large_image">
@@ -149,7 +157,7 @@ function packSeo(p) {
 }
 
 function packStatic(p) {
-  return `<div id="pack"><h1>${esc(p.name)} - Roblox Asset Pack</h1><p>${esc(p.description)}</p><p>${p.count} models, ${priceText(p)}. <a href="${esc(p.url)}">Get it on the Roblox Creator Store</a>.</p>${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} Roblox asset pack thumbnail" width="540" height="540">` : ''}</div>\n`;
+  return `<div id="pack"><h1>${esc(p.name)} - ${what(p)}</h1><p>${esc(p.description)}</p><p>${p.count} ${units(p)}, ${priceText(p)}. <a href="${esc(p.url)}">Get it on the Roblox Creator Store</a>.</p>${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} ${what(p)} thumbnail" width="540" height="540">` : ''}</div>\n`;
 }
 
 /** Links to every collection page. `prefix` is how the page reaches /shop/ ("" on the shop, "../" one level down). */
@@ -161,7 +169,7 @@ function itemList(name, list) {
   return `<script type="application/ld+json">${json({'@context': 'https://schema.org', '@type': 'ItemList', name, numberOfItems: list.length,
     itemListElement: list.map((p, i) => ({'@type': 'ListItem', position: i + 1, name: p.name, url: pageUrl(p)}))})}</script>`;
 }
-const gridCards = (list) => list.map((p) => `<a class="card" href="${esc(p.page)}/"><img src="${esc(p.image)}" alt="${esc(p.name)} Roblox asset pack" loading="lazy" width="540" height="540"><div class="body"><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p></div></a>`).join('');
+const gridCards = (list) => list.map((p) => `<a class="card" href="${esc(p.page)}/"><img src="${esc(p.image)}" alt="${esc(p.name)} ${what(p)}" loading="lazy" width="540" height="540"><div class="body"><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p></div></a>`).join('');
 
 /** Pages with a canonical address on this site and no noindex: everything search engines should list. */
 function sitemapPages() {
@@ -238,7 +246,7 @@ export function build(root = ROOT) {
   for (const c of cols) {
     const url = `${SITE}/shop/${c.slug}/`;
     const title = `${c.title} | KashTheKing Shop`;
-    const desc = clip(`${c.lead} ${c.packs.length} packs, ${c.packs.reduce((n, p) => n + (p.count || 0), 0).toLocaleString('en-US')} models.`, 160);
+    const desc = clip(`${c.lead} ${c.packs.length} packs, ${c.packs.reduce((n, p) => n + (p.count || 0), 0).toLocaleString('en-US')} ${c.slug === 'ui' ? 'screens' : 'models'}.`, 160);
     const img = c.packs[0].slides?.[0] ?? c.packs[0].image;
     let html = base
       .replace(/<meta name="viewport"[^>]*>/, (m) => `${m}\n    <base href="/shop/">`)

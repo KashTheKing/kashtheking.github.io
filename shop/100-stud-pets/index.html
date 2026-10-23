@@ -162,7 +162,7 @@
                     <aside class="side">
                         ${p.badge ? `<span class="badge${p.badge.startsWith("#1") ? " first" : ""}">${esc(p.badge)}</span>` : ""}
                         <h1>${esc(p.name)}</h1>
-                        <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
+                        <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
                         <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
                         <div class="buy">
@@ -173,8 +173,9 @@
                         </div>
                         <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
                         <ul class="list">
-                            <li>Textured, rigged and animated</li>
-                            <li>One model to insert, ${p.count} assets inside</li>
+                            ${p.kind === "ui" ? `<li>${p.count} full screens, every button working</li>
+                            <li>A static ScreenGui and a Fusion 0.3 version with UI Labs stories</li>` : `<li>Textured, rigged and animated</li>
+                            <li>One model to insert, ${p.count} assets inside</li>`}
                             <li>Use in any game, including commercial ones</li>
                         </ul>
                     </aside>
