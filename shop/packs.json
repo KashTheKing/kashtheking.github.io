@@ -1,1628 +1,1900 @@
 [
     {
-        "slug":  "100CuteRobots",
-        "page":  "100-cute-robots",
-        "name":  "100 Cute Robots",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/117663071550657",
-        "image":  "img/100CuteRobots.jpg",
-        "slides":  [
-                       "img/100CuteRobots/01.jpg",
-                       "img/100CuteRobots/02.jpg",
-                       "img/100CuteRobots/03.jpg",
-                       "img/100CuteRobots/04.jpg",
-                       "img/100CuteRobots/05.jpg",
-                       "img/100CuteRobots/06.jpg",
-                       "img/100CuteRobots/09.jpg",
-                       "img/100CuteRobots/10.jpg"
-                   ],
-        "description":  "100 cute chibi toy robots, glossy and colourful, true to scale for a 5-stud character: helper bots, worker bots, wheeled and tracked bots, flying bots, animal bots, battle bots, retro bots, tiny 2-stud bots, six giant boss mechs up to 16 studs and 10 props. Every robot has a screen or simple-eye face that blinks and a battery / power core that is its own detachable part sitting in a modelled socket, like a vinyl collectible. Every wheel is its own part. One shared rig and animation set (same bone and action names as the Cute Zombies and Cute Dinos packs): Idle, Walk, Run, Jump, Blink, Hit, Fall, Wave, Attack, Cheer, PowerDown, PowerUp, Dance, Spin, Drive, Fire, Stomp, CorePop and HeadPop. Humanoid bots are set up as playable StarterCharacters by PackSetup. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Characters"
-                 ],
-        "date":  "2026-10-09T18:39:14"
-    },
-    {
-        "slug":  "100SportsAssets",
-        "page":  "100-sports-assets",
-        "name":  "100 Sports Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/93377073750510",
-        "image":  "img/100SportsAssets.jpg",
-        "slides":  [
-                       "img/100SportsAssets/01.jpg",
-                       "img/100SportsAssets/02.jpg",
-                       "img/100SportsAssets/03.jpg",
-                       "img/100SportsAssets/04.jpg",
-                       "img/100SportsAssets/05.jpg",
-                       "img/100SportsAssets/06.jpg",
-                       "img/100SportsAssets/09.jpg",
-                       "img/100SportsAssets/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly sports assets, true to scale for a 5-stud character: from a 0.3-stud tennis ball to a 40-stud floodlight tower. Balls, bats, rackets, medals and trophies, full-size goals, hoops, nets and posts, track and sideline gear, a whole gym, bleachers, stadium seats, ticket booth, turnstile, ice resurfacer, golf cart, skate ramps, pool, bowling and arcade pieces. 1 Blender unit = 1 stud: a soccer goal is 20 wide, the basketball rim is 8.5 up. Every wheel is its own part; hoop nets, turnstile, pedals, punching bags, diving board, barrier and locker door have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Sports",
-                     "Props"
-                 ],
-        "date":  "2026-10-09T17:32:34"
-    },
-    {
-        "slug":  "100SchoolAssets",
-        "page":  "100-school-assets",
-        "name":  "100 School Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/112362766069027",
-        "image":  "img/100SchoolAssets.jpg",
-        "slides":  [
-                       "img/100SchoolAssets/01.jpg",
-                       "img/100SchoolAssets/02.jpg",
-                       "img/100SchoolAssets/03.jpg",
-                       "img/100SchoolAssets/04.jpg",
-                       "img/100SchoolAssets/05.jpg",
-                       "img/100SchoolAssets/06.jpg",
-                       "img/100SchoolAssets/09.jpg",
-                       "img/100SchoolAssets/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly school assets for school roleplay and school-escape games, true to scale for a 5-stud character: from a 1-stud eraser to a 29-stud school bus and a 22-stud bell tower. Classroom desks, boards, globe and doors, backpacks and supplies, science lab, hallway lockers, stairs and double doors, cafeteria, library, music room, principal and nurse offices, and the school yard. 1 Blender unit = 1 stud: doors clear 7.5 studs. Every wheel is its own part; doors, locker doors, the desk lid, clock hand, bell hammer, globe, fan and pottery wheel have bones. No text, flags or logos. Textured, rigged and animated.",
-        "tags":  [
-                     "School",
-                     "Props"
-                 ],
-        "date":  "2026-10-09T17:04:30"
-    },
-    {
-        "slug":  "100MiningAssets",
-        "page":  "100-mining-and-ore-assets",
-        "name":  "100 Mining \u0026 Ore Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/71370120023492",
-        "image":  "img/100MiningAssets.jpg",
-        "slides":  [
-                       "img/100MiningAssets/01.jpg",
-                       "img/100MiningAssets/02.jpg",
-                       "img/100MiningAssets/03.jpg",
-                       "img/100MiningAssets/04.jpg",
-                       "img/100MiningAssets/05.jpg",
-                       "img/100MiningAssets/06.jpg",
-                       "img/100MiningAssets/09.jpg",
-                       "img/100MiningAssets/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly mining assets for simulators and tycoons, true to scale for a 5-stud character: from a 1-stud cut gem to a 16-stud drill rig. 18 ore nodes with real embedded nuggets and crystals (coal to mythic rainbow), loose ore chunks, ingots, cut gems, boulders, stalagmites, cave wall and arch, geodes, 8 pickaxe tiers, drills, dynamite, detonator, lantern, backpacks, crusher, smelter, conveyor, sorter, drill rig, pump, generator, sell station, rails, mine carts, elevator, ladder, rope bridge and signs. 1 Blender unit = 1 stud. Every mine cart wheel is its own part; drill bits, the crusher jaw, the elevator cage and the detonator plunger have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Simulator",
-                     "Mining"
-                 ],
-        "date":  "2026-10-09T16:43:59"
-    },
-    {
-        "slug":  "100HospitalAssets",
-        "page":  "100-hospital-assets",
-        "name":  "100 Hospital Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/80531541996728",
-        "image":  "img/100HospitalAssets.jpg",
-        "slides":  [
-                       "img/100HospitalAssets/01.jpg",
-                       "img/100HospitalAssets/02.jpg",
-                       "img/100HospitalAssets/03.jpg",
-                       "img/100HospitalAssets/04.jpg",
-                       "img/100HospitalAssets/05.jpg",
-                       "img/100HospitalAssets/06.jpg",
-                       "img/100HospitalAssets/09.jpg",
-                       "img/100HospitalAssets/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly hospital assets for hospital, clinic and doctor roleplay games, true to scale for a 5-stud character: from a 1-stud thermometer to a 19-stud ambulance and a 24-stud entrance canopy. Reception and waiting room, patient room, exam and treatment, surgery and imaging (MRI, CT, X-ray), lab and pharmacy, staff and utility carts, doors, walls and signs, ambulance and helipad. Clean, bright and friendly. 1 Blender unit = 1 stud: doors clear 7.6 studs. Every wheel is its own part; doors, bed back-rest, curtain, MRI table, barrier, centrifuge and beacon have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Hospital",
-                     "Props"
-                 ],
-        "date":  "2026-10-09T16:29:02"
-    },
-    {
-        "slug":  "100FishingHarbor",
-        "page":  "100-fishing-and-harbor-assets",
-        "name":  "100 Fishing \u0026 Harbor Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/140365427558842",
-        "image":  "img/100FishingHarbor.jpg",
-        "slides":  [
-                       "img/100FishingHarbor/01.jpg",
-                       "img/100FishingHarbor/02.jpg",
-                       "img/100FishingHarbor/03.jpg",
-                       "img/100FishingHarbor/04.jpg",
-                       "img/100FishingHarbor/05.jpg",
-                       "img/100FishingHarbor/06.jpg",
-                       "img/100FishingHarbor/09.jpg",
-                       "img/100FishingHarbor/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly fishing and harbour assets, true to scale for a 5-stud character: from a 1-stud tin can to a 44-stud lighthouse. Eight fishing rod tiers from stick-and-string to mythic, reel, bobbers, lures, tackle boxes, nets, traps, buoys and anchor; fish crates, barrels, market stall, smokehouse, aquarium and junk catches; ten boats from kayak to trawler and tugboat; modular docks, pilings, boat lift and ramp; lighthouse, crane, bait shop, boathouse, forklift and carts; reeds, lily pads, rocks, campfire and tent. 1 Blender unit = 1 stud: dock decks are 8 wide and 3.2 up, a rowboat is 13 long. Every wheel is its own part; rods cast, reels crank, propellers spin, lids, doors, crane, boat lift, forks and the lighthouse lamp have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Simulator",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-09T16:12:03"
-    },
-    {
-        "slug":  "100CuteZombies",
-        "page":  "100-cute-zombie-apocalypse",
-        "name":  "100 Cute Zombie Apocalypse",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/117868639492594",
-        "image":  "img/100CuteZombies.jpg",
-        "slides":  [
-                       "img/100CuteZombies/01.jpg",
-                       "img/100CuteZombies/02.jpg",
-                       "img/100CuteZombies/03.jpg",
-                       "img/100CuteZombies/04.jpg",
-                       "img/100CuteZombies/05.jpg",
-                       "img/100CuteZombies/06.jpg",
-                       "img/100CuteZombies/09.jpg",
-                       "img/100CuteZombies/10.jpg"
-                   ],
-        "description":  "100 cute chibi zombie apocalypse assets, true to scale for a 5-stud character: 20 small playable survivors, 40 zombies, mad scientist zombies, skeletons, imps, 8 huge bosses and 10 props. Every monster does a HUGE snappy chomp (jaw and top of the head split wide open, with teeth and tongue) and has a pink cartoon brain that is its own detachable part, like a vinyl collectible. One shared rig and animation set: Idle, Walk, Run, Jump, Blink, Wave, Attack, Hit, Cheer, ZombieWalk, Chomp, Roar, BrainPop, Fall and Slam. Survivors are set up as playable StarterCharacters by PackSetup. Cute, never gory. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Characters"
-                 ],
-        "date":  "2026-10-09T15:55:20"
-    },
-    {
-        "slug":  "100CuteDinos",
-        "page":  "100-cute-dinosaurs",
-        "name":  "100 Cute Dinosaurs",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/124556256211210",
-        "image":  "img/100CuteDinos.jpg",
-        "slides":  [
-                       "img/100CuteDinos/01.jpg",
-                       "img/100CuteDinos/02.jpg",
-                       "img/100CuteDinos/03.jpg",
-                       "img/100CuteDinos/04.jpg",
-                       "img/100CuteDinos/05.jpg",
-                       "img/100CuteDinos/06.jpg",
-                       "img/100CuteDinos/09.jpg",
-                       "img/100CuteDinos/10.jpg"
-                   ],
-        "description":  "100 cute chubby low-poly dinosaurs and prehistoric animals with blinking faces, true to scale for a 5-stud character: from 2-stud babies to a 25-stud Brachiosaurus. T-Rex, Raptor, Triceratops, Stegosaurus, Brontosaurus, Ankylosaurus, Spinosaurus, Pterodactyl, Mosasaurus, Mammoth, Sabertooth, Dodo and many more, plus colour variants, babies, hatchlings, eggs, a nest, bones and fossils. Happy, neutral and angry faces. Head, jaw, tail and wing bones with Idle, Blink, Bite, Roar and Flap animations. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Animals"
-                 ],
-        "date":  "2026-10-09T15:15:40"
-    },
-    {
-        "slug":  "100ConstructionSite",
-        "page":  "100-construction-site-assets",
-        "name":  "100 Construction Site Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/115486433943860",
-        "image":  "img/100ConstructionSite.jpg",
-        "slides":  [
-                       "img/100ConstructionSite/01.jpg",
-                       "img/100ConstructionSite/02.jpg",
-                       "img/100ConstructionSite/03.jpg",
-                       "img/100ConstructionSite/04.jpg",
-                       "img/100ConstructionSite/05.jpg",
-                       "img/100ConstructionSite/06.jpg",
-                       "img/100ConstructionSite/09.jpg",
-                       "img/100ConstructionSite/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly construction site assets for building, demolition and city tycoon games, true to scale for a 5-stud character: from a 2-stud pair of goggles to a 78-stud tower crane. Excavator, bulldozer, dump truck, mixer truck, mobile and tower crane, forklift, road roller, loader, backhoe, skid steer, telehandler, trucks and lifts; scaffolding, steel, rebar, concrete, brick and timber pieces on a 12-stud grid; pallets and piles of materials; hand tools and safety gear; site office, containers, generators, tanks and a wrecking ball. 1 Blender unit = 1 stud. Every wheel is its own part; cabs swing, booms, buckets, blades, beds, drums, forks, hooks, platforms, doors, gates and lids have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "City",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-09T14:51:16"
-    },
-    {
-        "slug":  "100CampingOutdoor",
-        "page":  "100-camping-and-outdoor-assets",
-        "name":  "100 Camping \u0026 Outdoor Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/73998325485229",
-        "image":  "img/100CampingOutdoor.jpg",
-        "slides":  [
-                       "img/100CampingOutdoor/01.jpg",
-                       "img/100CampingOutdoor/02.jpg",
-                       "img/100CampingOutdoor/03.jpg",
-                       "img/100CampingOutdoor/04.jpg",
-                       "img/100CampingOutdoor/05.jpg",
-                       "img/100CampingOutdoor/06.jpg",
-                       "img/100CampingOutdoor/09.jpg",
-                       "img/100CampingOutdoor/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly camping and outdoor assets, true to scale for a 5-stud character, for camping, survival, hiking and summer-camp games: tents, cabins, a ranger station and fire lookout, an RV, pop-up trailer and camper van, campfires and camp cooking, backpacks and hiking gear, trail signs, bridges, a camp gate, canoes, an archery target, zipline and swings, plus pines, logs, boulders and forest plants. 1 Blender unit = 1 stud. Every wheel is its own part and every fire is its own Flame part; tent flaps, doors, lids, the gate, the pump handle, the lantern and the swings have bones and actions. Textured, rigged and animated.",
-        "tags":  [
-                     "Nature",
-                     "Props"
-                 ],
-        "date":  "2026-10-09T14:32:46"
-    },
-    {
-        "slug":  "100TowerDefenseAssets",
-        "page":  "100-tower-defense-assets",
-        "name":  "100 Tower Defense Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/118906122720194",
-        "image":  "img/100TowerDefenseAssets.jpg",
-        "slides":  [
-                       "img/100TowerDefenseAssets/01.jpg",
-                       "img/100TowerDefenseAssets/02.jpg",
-                       "img/100TowerDefenseAssets/03.jpg",
-                       "img/100TowerDefenseAssets/04.jpg",
-                       "img/100TowerDefenseAssets/05.jpg",
-                       "img/100TowerDefenseAssets/06.jpg",
-                       "img/100TowerDefenseAssets/09.jpg",
-                       "img/100TowerDefenseAssets/10.jpg"
-                   ],
-        "description":  "Everything for a tower defense game in the sharp studded style: 15 towers with 3 upgrade levels each, 30 enemies and bosses, and 25 path tiles and map props on an 8-stud grid. Real scale for a 5-stud character. One texture, rigged (Turret, Barrel, Recoil, Spin; Torso, Head, arms, legs, wings) with shared Idle, Fire, Spin, Walk and Attack animations.",
-        "tags":  [
-                     "Stud",
-                     "Tower Defense"
-                 ],
-        "date":  "2026-10-09T14:14:57"
-    },
-    {
-        "slug":  "100StudWorldAssets",
-        "page":  "100-stud-world-assets",
-        "name":  "100 Stud World Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/92680942443465",
-        "image":  "img/100StudWorldAssets.jpg",
-        "slides":  [
-                       "img/100StudWorldAssets/01.jpg",
-                       "img/100StudWorldAssets/02.jpg",
-                       "img/100StudWorldAssets/03.jpg",
-                       "img/100StudWorldAssets/04.jpg",
-                       "img/100StudWorldAssets/05.jpg",
-                       "img/100StudWorldAssets/06.jpg",
-                       "img/100StudWorldAssets/09.jpg",
-                       "img/100StudWorldAssets/10.jpg"
-                   ],
-        "description":  "Sharp, blocky, studded world props in five biomes: forest, winter, desert, buildings and samurai. True scale for a 5-stud character, from 1 to 40 studs. One texture, rigged, with Idle, Open and Ring animations.",
-        "tags":  [
-                     "Stud",
-                     "Nature"
-                 ],
-        "date":  "2026-10-09T14:02:02"
-    },
-    {
-        "slug":  "100StudPets",
-        "page":  "100-stud-pets",
-        "name":  "100 Stud Pets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/121177796223271",
-        "image":  "img/100StudPets.jpg",
-        "slides":  [
-                       "img/100StudPets/01.jpg",
-                       "img/100StudPets/02.jpg",
-                       "img/100StudPets/03.jpg",
-                       "img/100StudPets/04.jpg",
-                       "img/100StudPets/05.jpg",
-                       "img/100StudPets/06.jpg",
-                       "img/100StudPets/09.jpg",
-                       "img/100StudPets/10.jpg"
-                   ],
-        "description":  "Blocky, studded voxel pets for pet-simulator games: farm, forest, safari, ocean, bugs, dinos and mythics. 2 to 12 studs for a 5-stud character. One texture, rigged (Body, Head, Jaw, Tail, legs, wings, ears, Float) with shared Idle, Walk, Fly and Jump animations.",
-        "tags":  [
-                     "Stud",
-                     "Animals"
-                 ],
-        "date":  "2026-10-09T13:50:43"
-    },
-    {
-        "slug":  "100StudHalloweenAssets",
-        "page":  "100-stud-halloween-assets",
-        "name":  "100 Stud Halloween Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/86306315674759",
-        "image":  "img/100StudHalloweenAssets.jpg",
-        "slides":  [
-                       "img/100StudHalloweenAssets/01.jpg",
-                       "img/100StudHalloweenAssets/02.jpg",
-                       "img/100StudHalloweenAssets/03.jpg",
-                       "img/100StudHalloweenAssets/04.jpg",
-                       "img/100StudHalloweenAssets/05.jpg",
-                       "img/100StudHalloweenAssets/06.jpg",
-                       "img/100StudHalloweenAssets/09.jpg",
-                       "img/100StudHalloweenAssets/10.jpg"
-                   ],
-        "description":  "Sharp, blocky, studded Halloween and graveyard props at real stud scale: crypts and mausoleums with glowing purple windows, a haunted house, gravestones, coffins, iron fences and gates, dead trees, jack-o-lanterns, ghosts, skulls, webs, cauldrons, lamps and candy. One texture. Root-rigged, with Idle, Open (gates, coffin lids) and Flap (bat) animations.",
-        "tags":  [
-                     "Stud",
-                     "Halloween"
-                 ],
-        "date":  "2026-10-09T13:29:21"
-    },
-    {
-        "slug":  "100StudEggs",
-        "page":  "100-stud-eggs",
-        "name":  "100 Stud Eggs",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/80062575373343",
-        "image":  "img/100StudEggs.jpg",
-        "slides":  [
-                       "img/100StudEggs/01.jpg",
-                       "img/100StudEggs/02.jpg",
-                       "img/100StudEggs/03.jpg",
-                       "img/100StudEggs/04.jpg",
-                       "img/100StudEggs/05.jpg",
-                       "img/100StudEggs/06.jpg",
-                       "img/100StudEggs/09.jpg",
-                       "img/100StudEggs/10.jpg"
-                   ],
-        "description":  "100 hatching eggs built from stacked stud cubes: animals, dragons, characters, treats, elements, special eggs and egg stands. About 4 to 5 studs tall for a 5-stud character. One texture, rigged (Egg, Top, Float) with shared Idle, Wobble and Hatch animations.",
-        "tags":  [
-                     "Stud",
-                     "Simulator"
-                 ],
-        "date":  "2026-10-09T13:18:07"
-    },
-    {
-        "slug":  "50StuddedBosses",
-        "page":  "50-studded-bosses",
-        "name":  "50 Studded Bosses",
-        "count":  50,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/114264732499572",
-        "image":  "img/50StuddedBosses.jpg",
-        "slides":  [
-                       "img/50StuddedBosses/01.jpg",
-                       "img/50StuddedBosses/02.jpg",
-                       "img/50StuddedBosses/03.jpg",
-                       "img/50StuddedBosses/04.jpg",
-                       "img/50StuddedBosses/05.jpg",
-                       "img/50StuddedBosses/06.jpg",
-                       "img/50StuddedBosses/09.jpg",
-                       "img/50StuddedBosses/10.jpg"
-                   ],
-        "description":  "50 sharp, blocky boss monsters covered in classic studs, 17 to 40 studs tall for a 5-stud character: undead, golems, beasts, dragons, machines, warriors, royals and mages. One texture, no outline. Rigged with the same bones on every boss (Torso, Head, Jaw, arms, hands, legs, Float for crowns and crystals) and shared Idle, Attack and Roar animations.",
-        "tags":  [
-                     "Stud",
-                     "Characters"
-                 ],
-        "date":  "2026-10-09T13:02:41"
-    },
-    {
-        "slug":  "200PixelItems",
-        "page":  "200-pixel-items",
-        "name":  "200 Pixel Items",
-        "count":  200,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/95103406816723",
-        "image":  "img/200PixelItems.jpg",
-        "slides":  [
-                       "img/200PixelItems/01.jpg",
-                       "img/200PixelItems/02.jpg",
-                       "img/200PixelItems/03.jpg",
-                       "img/200PixelItems/03.jpg",
-                       "img/200PixelItems/03.jpg",
-                       "img/200PixelItems/04.jpg",
-                       "img/200PixelItems/05.jpg",
-                       "img/200PixelItems/06.jpg",
-                       "img/200PixelItems/09.jpg",
-                       "img/200PixelItems/10.jpg"
-                   ],
-        "description":  "200 items as full 3D voxel models for drops, pickups and inventories: food, drinks and potions, ores and ingots, coins and gems, crafting materials, farming, magic, loot containers, music and misc, tech. 1 voxel = 0.125 stud, items are 1 to 2.5 studs across and sculpted all the way round. One texture, rigged and animated (Idle bob and spin, Pickup).",
-        "tags":  [
-                     "Voxel",
-                     "Props"
-                 ],
-        "date":  "2026-10-09T12:52:37"
-    },
-    {
-        "slug":  "100VoxelVillageBuilds",
-        "page":  "100-voxel-village-builds",
-        "name":  "100 Voxel Village Builds",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/108214285909892",
-        "image":  "img/100VoxelVillageBuilds.jpg",
-        "slides":  [
-                       "img/100VoxelVillageBuilds/01.jpg",
-                       "img/100VoxelVillageBuilds/02.jpg",
-                       "img/100VoxelVillageBuilds/03.jpg",
-                       "img/100VoxelVillageBuilds/04.jpg",
-                       "img/100VoxelVillageBuilds/05.jpg",
-                       "img/100VoxelVillageBuilds/06.jpg",
-                       "img/100VoxelVillageBuilds/09.jpg",
-                       "img/100VoxelVillageBuilds/10.jpg"
-                   ],
-        "description":  "100 voxel village assets: ten enterable houses, fifteen service buildings (forge, bakery, tavern, town hall, windmill, watermill, lighthouse ...), walls and gates, paths, bridges and street props, crop fields in growth stages, interior furniture and decorations. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; doorways are 4 studs wide and 6 tall; everything snaps to the 2-stud block grid. One material, one pixel-art atlas texture, rigged and animated.",
-        "tags":  [
-                     "Voxel",
-                     "Buildings"
-                 ],
-        "date":  "2026-10-09T12:48:10"
-    },
-    {
-        "slug":  "100VoxelVehicles",
-        "page":  "100-voxel-vehicles",
-        "name":  "100 Voxel Vehicles",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/91005801671480",
-        "image":  "img/100VoxelVehicles.jpg",
-        "slides":  [
-                       "img/100VoxelVehicles/01.jpg",
-                       "img/100VoxelVehicles/02.jpg",
-                       "img/100VoxelVehicles/03.jpg",
-                       "img/100VoxelVehicles/03.jpg",
-                       "img/100VoxelVehicles/04.jpg",
-                       "img/100VoxelVehicles/05.jpg",
-                       "img/100VoxelVehicles/06.jpg",
-                       "img/100VoxelVehicles/10.jpg"
-                   ],
-        "description":  "100 blocky voxel vehicles in bright flat colours with pixel-art shading: cars, trucks and service vehicles, bikes and carts, trains with rail pieces, boats, aircraft, spacecraft and fantasy rides. True stud scale for a 5 stud character: 1 voxel = 0.5 stud (0.25 stud on the small ride-ons). Every wheel is its own part with a bone on the axle. One texture, rigged and animated.",
-        "tags":  [
-                     "Voxel",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-09T12:45:06"
-    },
-    {
-        "slug":  "150VoxelToolsArmor",
-        "page":  "150-voxel-tools-and-armor",
-        "name":  "150 Voxel Tools \u0026 Armor",
-        "count":  150,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/105607660350111",
-        "image":  "img/150VoxelToolsArmor.jpg",
-        "slides":  [
-                       "img/150VoxelToolsArmor/01.jpg",
-                       "img/150VoxelToolsArmor/02.jpg",
-                       "img/150VoxelToolsArmor/03.jpg",
-                       "img/150VoxelToolsArmor/03.jpg",
-                       "img/150VoxelToolsArmor/04.jpg",
-                       "img/150VoxelToolsArmor/05.jpg",
-                       "img/150VoxelToolsArmor/06.jpg",
-                       "img/150VoxelToolsArmor/09.jpg"
-                   ],
-        "description":  "150 voxel tools, weapons and armour pieces in a bright pixel-art style, in ten material tiers that each have their own shapes: Wood, Stone, Copper, Iron, Gold, Crystal, Emerald, Obsidian, Magma and Void. Every tier has a sword, pickaxe, axe, shovel, hoe, dagger, hammer, spear and bow, plus a helmet, armor, pants and boots that fit a blocky 5 stud character, and there are 20 extras: shields, buckets, torch, lantern, compass, clock, map and more. 1 voxel = 0.1 stud. Every tool has its grip at the same place, so one hold animation fits all. One texture, rigged and animated.",
-        "tags":  [
-                     "Voxel",
-                     "Weapons"
-                 ],
-        "date":  "2026-10-09T12:40:54"
-    },
-    {
-        "slug":  "160PixelGuns",
-        "page":  "160-pixel-guns",
-        "name":  "160 Pixel Guns",
-        "count":  160,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/137103683799519",
-        "image":  "img/160PixelGuns.jpg",
-        "slides":  [
-                       "img/160PixelGuns/01.jpg",
-                       "img/160PixelGuns/02.jpg",
-                       "img/160PixelGuns/03.jpg",
-                       "img/160PixelGuns/03.jpg",
-                       "img/160PixelGuns/04.jpg",
-                       "img/160PixelGuns/05.jpg",
-                       "img/160PixelGuns/06.jpg",
-                       "img/160PixelGuns/10.jpg"
-                   ],
-        "description":  "160 full 3D voxel weapons in a bright pixel-art style: rifles, SMGs, shotguns, pistols, swords, hammers, scythes, bows, staffs, ray guns, snipers, crossbows, launchers and miniguns, including 36 legendary weapons with wings, jaws and orbiting parts. One texture, rigged and animated.",
-        "tags":  [
-                     "Voxel",
-                     "Weapons"
-                 ],
-        "date":  "2026-10-09T12:38:40"
-    },
-    {
-        "slug":  "100VoxelMobs",
-        "page":  "100-voxel-mobs",
-        "name":  "100 Voxel Mobs",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/91631826383744",
-        "image":  "img/100VoxelMobs.jpg",
-        "slides":  [
-                       "img/100VoxelMobs/01.jpg",
-                       "img/100VoxelMobs/02.jpg",
-                       "img/100VoxelMobs/03.jpg",
-                       "img/100VoxelMobs/04.jpg",
-                       "img/100VoxelMobs/05.jpg",
-                       "img/100VoxelMobs/06.jpg",
-                       "img/100VoxelMobs/09.jpg",
-                       "img/100VoxelMobs/10.jpg"
-                   ],
-        "description":  "100 blocky voxel creatures with painted pixel-art skins: farm animals, wild animals, sea life, hostile monsters, villagers and traders, nether and void creatures and ten large bosses. Scale: 1 unit = 1 stud for a 5-stud character; the pixel art is 8 px per stud on every mob (1 px = 0.125 stud). Animals are 1 to 5 studs, humanoids 5 to 6, bosses 12 to 30. One material, one pixel-art atlas texture, rigged with shared bone names (Root, Float, Body, Head, Jaw, Tail, ArmL/R, LegL/R, LegFL/FR/BL/BR, WingL/R) and shared actions (Idle, Walk, Attack, Fly, Hurt, Hop).",
-        "tags":  [
-                     "Voxel",
-                     "Animals"
-                 ],
-        "date":  "2026-10-09T12:37:13"
-    },
-    {
-        "slug":  "100VoxelSkyIslands",
-        "page":  "100-voxel-sky-islands",
-        "name":  "100 Voxel Sky Islands",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/101683416854844",
-        "image":  "img/100VoxelSkyIslands.jpg",
-        "slides":  [
-                       "img/100VoxelSkyIslands/01.jpg",
-                       "img/100VoxelSkyIslands/02.jpg",
-                       "img/100VoxelSkyIslands/03.jpg",
-                       "img/100VoxelSkyIslands/04.jpg",
-                       "img/100VoxelSkyIslands/05.jpg",
-                       "img/100VoxelSkyIslands/06.jpg",
-                       "img/100VoxelSkyIslands/09.jpg",
-                       "img/100VoxelSkyIslands/10.jpg"
-                   ],
-        "description":  "100 voxel skyblock assets: floating islands, trees and plants, blocks and ores, tiered ore generators, stations, bridges, stairs, portals and small structures. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; islands are 8 to 120 studs across. One material, one pixel-art atlas texture, rigged and animated.",
-        "tags":  [
-                     "Voxel",
-                     "Nature"
-                 ],
-        "date":  "2026-10-09T12:33:36"
-    },
-    {
-        "slug":  "150VoxelFurniture",
-        "page":  "150-voxel-furniture",
-        "name":  "150 Voxel Furniture",
-        "count":  150,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/111710075728823",
-        "image":  "img/150VoxelFurniture.jpg",
-        "slides":  [
-                       "img/150VoxelFurniture/01.jpg",
-                       "img/150VoxelFurniture/02.jpg",
-                       "img/150VoxelFurniture/03.jpg",
-                       "img/150VoxelFurniture/03.jpg",
-                       "img/150VoxelFurniture/04.jpg",
-                       "img/150VoxelFurniture/05.jpg",
-                       "img/150VoxelFurniture/06.jpg",
-                       "img/150VoxelFurniture/10.jpg"
-                   ],
-        "description":  "150 blocky voxel furniture and room decor assets for building, housing and roleplay games: living room, kitchen, bedroom, bathroom, office and school, gaming, garden, medieval, shop and cafe, plus floors, walls, doors and stairs. True scale for a 5-stud character (1 unit = 1 stud, 1 voxel = 0.25 stud: seats at 2 studs, tables at 3, doors 4 x 7). One palette texture, rigged (doors, drawers, lids, spinning and swinging parts) and animated.",
-        "tags":  [
-                     "Voxel",
-                     "Furniture"
-                 ],
-        "date":  "2026-10-09T12:30:29"
-    },
-    {
-        "slug":  "100VoxelDungeonKit",
-        "page":  "100-voxel-dungeon-kit",
-        "name":  "100 Voxel Dungeon Kit",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/135576798818525",
-        "image":  "img/100VoxelDungeonKit.jpg",
-        "slides":  [
-                       "img/100VoxelDungeonKit/01.jpg",
-                       "img/100VoxelDungeonKit/02.jpg",
-                       "img/100VoxelDungeonKit/03.jpg",
-                       "img/100VoxelDungeonKit/04.jpg",
-                       "img/100VoxelDungeonKit/05.jpg",
-                       "img/100VoxelDungeonKit/06.jpg",
-                       "img/100VoxelDungeonKit/09.jpg",
-                       "img/100VoxelDungeonKit/10.jpg"
-                   ],
-        "description":  "100 voxel dungeon crawler assets: modular rooms and corridors on a 16-stud grid, ten complete set-piece rooms, doors and gates, traps, chests and loot, spawners and altars, and decor. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; corridors are 8 studs wide and 12 tall inside, rooms are up to 64 studs across. One material, one pixel-art atlas texture, rigged and animated.",
-        "tags":  [
-                     "Voxel",
-                     "RPG"
-                 ],
-        "date":  "2026-10-09T12:26:53"
-    },
-    {
-        "slug":  "100VoxelCityBuilds",
-        "page":  "100-voxel-city-builds",
-        "name":  "100 Voxel City Builds",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/81911762313383",
-        "image":  "img/100VoxelCityBuilds.jpg",
-        "slides":  [
-                       "img/100VoxelCityBuilds/01.jpg",
-                       "img/100VoxelCityBuilds/02.jpg",
-                       "img/100VoxelCityBuilds/03.jpg",
-                       "img/100VoxelCityBuilds/04.jpg",
-                       "img/100VoxelCityBuilds/05.jpg",
-                       "img/100VoxelCityBuilds/09.jpg",
-                       "img/100VoxelCityBuilds/10.jpg"
-                   ],
-        "description":  "100 voxel city builder assets: road tiles on a 32-stud grid, homes, shops, services, towers and landmarks, street props, static vehicles and rooftop bits. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; road tiles are 32 x 32 studs with two 12-stud lanes, doors are 4 x 6 studs, towers reach 120 studs. One material, one pixel-art atlas texture, rigged and animated.",
-        "tags":  [
-                     "Voxel",
-                     "City"
-                 ],
-        "date":  "2026-10-09T12:23:33"
-    },
-    {
-        "slug":  "100VoxelCharacters",
-        "page":  "100-voxel-characters",
-        "name":  "100 Voxel Characters",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/102696004386746",
-        "image":  "img/100VoxelCharacters.jpg",
-        "slides":  [
-                       "img/100VoxelCharacters/01.jpg",
-                       "img/100VoxelCharacters/02.jpg",
-                       "img/100VoxelCharacters/03.jpg",
-                       "img/100VoxelCharacters/04.jpg",
-                       "img/100VoxelCharacters/05.jpg",
-                       "img/100VoxelCharacters/06.jpg",
-                       "img/100VoxelCharacters/09.jpg",
-                       "img/100VoxelCharacters/10.jpg"
-                   ],
-        "description":  "100 blocky voxel characters and NPC skins: medieval, adventurers, modern jobs, fantasy races, sci-fi, kids and teens, festive and five bosses. Scale: 1 unit = 1 stud; a normal character is 5.25 studs tall (head a 1.25 cube, torso 2, arms and legs 1 wide and 2 tall); painted skins with clothes, hair and gear raised as real voxels, 8 px per stud; bosses are the same rig scaled 1.6 to 2 times. One material, one pixel-art atlas, one shared rig with Idle, Walk, Run, Wave, Attack and Sit.",
-        "tags":  [
-                     "Voxel",
-                     "Characters"
-                 ],
-        "date":  "2026-10-09T12:19:55"
-    },
-    {
-        "slug":  "100VoxelBiomeKit",
-        "page":  "100-voxel-biome-kit",
-        "name":  "100 Voxel Biome Kit",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/83548467081510",
-        "image":  "img/100VoxelBiomeKit.jpg",
-        "slides":  [
-                       "img/100VoxelBiomeKit/01.jpg",
-                       "img/100VoxelBiomeKit/02.jpg",
-                       "img/100VoxelBiomeKit/03.jpg",
-                       "img/100VoxelBiomeKit/04.jpg",
-                       "img/100VoxelBiomeKit/05.jpg",
-                       "img/100VoxelBiomeKit/09.jpg",
-                       "img/100VoxelBiomeKit/10.jpg"
-                   ],
-        "description":  "100 voxel overworld assets in 10 biomes (plains, forest, autumn forest, desert, snow tundra, jungle, swamp, mushroom fields, volcanic wasteland, crystal caves). Each biome has 3 terrain chunks (flat, hill, cliff), 1 landmark, 3 trees or large plants and 3 small props. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset. Terrain chunks are 32 x 32 studs and every chunk edge is 8 studs high, so chunks of all biomes tile on a 32-stud grid; a cliff chunk is 20 studs high on its far edge and joins other cliffs sideways. One material, one pixel-art atlas texture, rigged (Root, Float, Flow) and animated.",
-        "tags":  [
-                     "Voxel",
-                     "Nature"
-                 ],
-        "date":  "2026-10-09T12:15:46"
-    },
-    {
-        "slug":  "100FactoryMachines",
-        "page":  "100-factory-machines",
-        "name":  "100 Factory Machines",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/81030307300077",
-        "image":  "img/100FactoryMachines.jpg",
-        "slides":  [
-                       "img/100FactoryMachines/01.jpg",
-                       "img/100FactoryMachines/02.jpg",
-                       "img/100FactoryMachines/03.jpg",
-                       "img/100FactoryMachines/04.jpg",
-                       "img/100FactoryMachines/05.jpg",
-                       "img/100FactoryMachines/06.jpg",
-                       "img/100FactoryMachines/09.jpg",
-                       "img/100FactoryMachines/10.jpg"
-                   ],
-        "description":  "100 stylized toy-factory assets for tycoon and simulator games, true to scale for a 5-stud character (1 Blender unit = 1 stud): conveyors that tile on a 4-stud grid with moving belts, fat pipes that connect flange to flange with a lump of stuff visibly pumping through, 28 machines with spinning gears, stamping presses, shaking hoppers, robot arms and bobbing chimney caps, tanks, silos and vats, push buttons, levers, valve wheels and gauges that animate, plus crates, barrels, ingots, catwalks and floor tiles. Models and bone animations only: no scripts, no particles. Textured, rigged and animated.",
-        "tags":  [
-                     "Tycoon",
-                     "Props"
-                 ],
-        "date":  "2026-10-09T12:10:19"
-    },
-    {
-        "slug":  "100LuckyBlocks",
-        "page":  "100-lucky-blocks",
-        "name":  "100 Lucky Blocks",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/117632336509523",
-        "image":  "img/100LuckyBlocks.jpg",
-        "slides":  [
-                       "img/100LuckyBlocks/01.jpg",
-                       "img/100LuckyBlocks/02.jpg",
-                       "img/100LuckyBlocks/03.jpg",
-                       "img/100LuckyBlocks/04.jpg",
-                       "img/100LuckyBlocks/05.jpg",
-                       "img/100LuckyBlocks/06.jpg",
-                       "img/100LuckyBlocks/09.jpg",
-                       "img/100LuckyBlocks/10.jpg"
-                   ],
-        "description":  "70 studded lucky blocks (rarity tiers, elements, themes, creatures, special shapes) and 30 supporting pieces: pads, pedestals, conveyor, drop tube, breaking tools, loot and arena parts. Real stud scale for a 5-stud character. One texture, rigged (Block, Lid, Float) with shared Idle, Shake and Open animations.",
-        "tags":  [
-                     "Stud",
-                     "Simulator"
-                 ],
-        "date":  "2026-10-09T11:56:10"
-    },
-    {
-        "slug":  "100KartRacingAssets",
-        "page":  "100-kart-racing-assets",
-        "name":  "100 Kart Racing Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/98326620608611",
-        "image":  "img/100KartRacingAssets.jpg",
-        "slides":  [
-                       "img/100KartRacingAssets/01.jpg",
-                       "img/100KartRacingAssets/02.jpg",
-                       "img/100KartRacingAssets/03.jpg",
-                       "img/100KartRacingAssets/04.jpg",
-                       "img/100KartRacingAssets/05.jpg",
-                       "img/100KartRacingAssets/06.jpg",
-                       "img/100KartRacingAssets/09.jpg",
-                       "img/100KartRacingAssets/10.jpg"
-                   ],
-        "description":  "100 sharp low-poly kart racing assets, true to scale for a 5-stud character: 60 themed go-karts (30 designs, two colourways each) and 40 track assets. Every kart is about 7 studs long and 5 wide with a seat, a steering wheel on a Steer bone, exhausts and four wheels that are each their own MeshPart with a bone on the axle. Track tiles are 28 studs wide and snap together: straight, finish line, curve and ramp, plus start arch, start lights, curbs, boost pads, item boxes, tyre walls, cones, pit props, grandstand, podium and trophies. One palette texture. Drive, Idle, Boost, Steer, Spin and Flap animations.",
-        "tags":  [
-                     "Racing",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-09T11:38:25"
-    },
-    {
-        "slug":  "100HomestoreAssets",
-        "page":  "100-homestore-assets",
-        "name":  "100 Homestore Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/136375834601619",
-        "image":  "img/100HomestoreAssets.jpg",
-        "slides":  [
-                       "img/100HomestoreAssets/01.jpg",
-                       "img/100HomestoreAssets/02.jpg",
-                       "img/100HomestoreAssets/03.jpg",
-                       "img/100HomestoreAssets/04.jpg",
-                       "img/100HomestoreAssets/05.jpg",
-                       "img/100HomestoreAssets/06.jpg",
-                       "img/100HomestoreAssets/09.jpg",
-                       "img/100HomestoreAssets/10.jpg"
-                   ],
-        "description":  "100 clean low-poly assets to build a clothing homestore, true to scale for a 5-stud character: from a 1-stud card reader to a 34-stud storefront. Blank blocky mannequins in five poses plus bust, torso, legs and head forms; clothing racks with hangers and plain garments, folded stacks, shoe and hat displays; pedestals, podiums, glass cases, shelves, slatwall and pegboard; checkout desk, register, card reader, bags, basket, fitting room, mirrors, seating, stanchions, security gate, sign holders, tip jar, rank board and purchase kiosk; plants, rugs and carpet runners, balloons, speakers and a DJ booth; ceiling lamps, spotlights, six neon shape signs; and a snap-together building kit on a 4-stud grid (walls 8 wide and 12 tall, windows, glass walls, doors, corner, pillar, floor, ceiling, dome skylight, stairs, railing, awning, sign board, roof ornaments, arch) with three complete storefront shells. 1 Blender unit = 1 stud. Glass is its own part; doors, the rotating pedestal, the round rack, the curtain, the register drawer and the spotlight have bones and actions. Signs and boards are blank. Textured, rigged and animated.",
-        "tags":  [
-                     "Homestore",
-                     "Props"
-                 ],
-        "date":  "2026-10-09T11:18:02"
-    },
-    {
-        "slug":  "100HalloweenCreatures",
-        "page":  "100-halloween-creatures",
-        "name":  "100 Halloween Creatures",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/86535892309623",
-        "image":  "img/100HalloweenCreatures.jpg",
-        "slides":  [
-                       "img/100HalloweenCreatures/01.jpg",
-                       "img/100HalloweenCreatures/02.jpg",
-                       "img/100HalloweenCreatures/03.jpg",
-                       "img/100HalloweenCreatures/04.jpg",
-                       "img/100HalloweenCreatures/05.jpg",
-                       "img/100HalloweenCreatures/06.jpg",
-                       "img/100HalloweenCreatures/09.jpg",
-                       "img/100HalloweenCreatures/10.jpg"
-                   ],
-        "description":  "100 stylized low-poly Halloween creatures: skeleton animals, undead beasts, bats, crows and owls, black cats, spiders, wolves, werewolves and hellhounds, ghosts, pumpkin monsters, scarecrows, treants, demons and gargoyles. True stud scale, one texture, rigged and animated.",
-        "tags":  [
-                     "Halloween",
-                     "Animals"
-                 ],
-        "date":  "2026-10-09T11:05:07"
-    },
-    {
-        "slug":  "100FishingRods",
-        "page":  "100-fishing-rods",
-        "name":  "100 Fishing Rods",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/115587184023336",
-        "image":  "img/100FishingRods.jpg",
-        "slides":  [
-                       "img/100FishingRods/01.jpg",
-                       "img/100FishingRods/02.jpg",
-                       "img/100FishingRods/03.jpg",
-                       "img/100FishingRods/04.jpg",
-                       "img/100FishingRods/05.jpg",
-                       "img/100FishingRods/06.jpg",
-                       "img/100FishingRods/09.jpg",
-                       "img/100FishingRods/10.jpg"
-                   ],
-        "description":  "100 stylized low-poly fishing rods for fishing and simulator games: 20 unique themed rods (wooden, bamboo, steel, toy, lucky, candy, pirate, egypt, jungle, coral, bone, ice, lava, toxic, gem, cyber, ghost, angel, dragon, galaxy), each in 5 colour variations. Line, hook and lure are modelled. Textured, rigged and animated (Idle, Cast, Reel).",
-        "tags":  [
-                     "Simulator",
-                     "Weapons"
-                 ],
-        "date":  "2026-10-09T10:02:54"
-    },
-    {
-        "slug":  "25DarkRPGMonsters",
-        "page":  "25-dark-rpg-monsters",
-        "name":  "25 Dark RPG Monsters",
-        "count":  25,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/114148844777818",
-        "image":  "img/25DarkRPGMonsters.jpg",
-        "slides":  [
-                       "img/25DarkRPGMonsters/01.jpg",
-                       "img/25DarkRPGMonsters/02.jpg",
-                       "img/25DarkRPGMonsters/03.jpg",
-                       "img/25DarkRPGMonsters/04.jpg",
-                       "img/25DarkRPGMonsters/05.jpg",
-                       "img/25DarkRPGMonsters/06.jpg",
-                       "img/25DarkRPGMonsters/09.jpg",
-                       "img/25DarkRPGMonsters/10.jpg"
-                   ],
-        "description":  "25 dark fantasy monsters and bosses for RPGs: a club-swinging cyclops, drowned giant, crab titan, leviathan eel and a crowned eldritch king, plus brutes, stalkers, beasts and crawlers. Huge true stud scale (5 to 60 studs), high detail, rigged with shared bone names and Idle, Walk, Attack and Roar animations. 25 materials and 25 painted colour textures, one per monster (4096 px for the four colossi and the Cyclops, 1024 px for the vulture and the hound, 2048 px for the rest), each with a matching normal and roughness map in the tex folder. Every monster also has a second, studded look on the same UVs (tex/\u003cName\u003e_stud.png with its own normal and roughness maps); in Blender, use_stud.py switches all 25 materials between the two.",
-        "tags":  [
-                     "RPG",
-                     "Characters"
-                 ],
-        "date":  "2026-10-09T09:57:18"
-    },
-    {
-        "slug":  "100CuteRestaurant",
-        "page":  "100-cute-restaurant-assets",
-        "name":  "100 Cute Restaurant Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/75497114801441",
-        "image":  "img/100CuteRestaurant.jpg",
-        "slides":  [
-                       "img/100CuteRestaurant/01.jpg",
-                       "img/100CuteRestaurant/02.jpg",
-                       "img/100CuteRestaurant/03.jpg",
-                       "img/100CuteRestaurant/04.jpg",
-                       "img/100CuteRestaurant/05.jpg",
-                       "img/100CuteRestaurant/06.jpg",
-                       "img/100CuteRestaurant/09.jpg",
-                       "img/100CuteRestaurant/10.jpg"
-                   ],
-        "description":  "100 cute, rounded, pastel low-poly assets to build restaurants, cafes, bakeries and food-court tycoons, true to scale for a 5-stud character: from a half-stud tip jar to a 17-stud food truck. Tables, chairs, booth, bar, host stand, menu boards, register, neon sign frames, stove, grill, fryer, pizza oven, fridge, coffee, soda, ice cream, slush, popcorn and candy floss machines, pans and utensils, serving cart, bins, display cases, sushi conveyor, buffet, salad bar, food truck, drive-through, awning, storefront door and delivery scooter. 1 Blender unit = 1 stud. Every wheel is its own part; doors, lids, drawer, rotors, lever, bell and conveyor have bones and actions. Signs and menus are blank. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Food"
-                 ],
-        "date":  "2026-10-09T09:50:30"
-    },
-    {
-        "slug":  "100JapaneseVillage",
-        "page":  "100-japanese-village-assets",
-        "name":  "100 Japanese Village Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/108834780220872",
-        "image":  "img/100JapaneseVillage.jpg",
-        "slides":  [
-                       "img/100JapaneseVillage/01.jpg",
-                       "img/100JapaneseVillage/02.jpg",
-                       "img/100JapaneseVillage/03.jpg",
-                       "img/100JapaneseVillage/04.jpg",
-                       "img/100JapaneseVillage/05.jpg",
-                       "img/100JapaneseVillage/06.jpg",
-                       "img/100JapaneseVillage/09.jpg",
-                       "img/100JapaneseVillage/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly assets to build ninja, samurai and anime-style village maps, true to scale for a 5-stud character: from a 2-stud tea set to a 45-stud pagoda. Houses, tea house, dojo, pagodas, keep, shrine hall, stalls, red gates, castle walls, paper-screen wall panels, cherry, maple, pine and bamboo, stone lanterns, koi pond, zen garden, lantern strings, rickshaw and carts, interior props and a ninja training ground. 1 Blender unit = 1 stud. Every cart wheel is its own part; sliding doors, gates, lids, the bell, the water spout and the hanging lanterns have bones and actions. Textured, rigged and animated.",
-        "tags":  [
-                     "Japan",
-                     "Buildings"
-                 ],
-        "date":  "2026-10-05T19:30:07"
-    },
-    {
-        "slug":  "100SciFiSpace",
-        "page":  "100-sci-fi-space-assets",
-        "name":  "100 Sci-Fi Space Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/101067489483125",
-        "image":  "img/100SciFiSpace.jpg",
-        "slides":  [
-                       "img/100SciFiSpace/01.jpg",
-                       "img/100SciFiSpace/02.jpg",
-                       "img/100SciFiSpace/03.jpg",
-                       "img/100SciFiSpace/04.jpg",
-                       "img/100SciFiSpace/05.jpg",
-                       "img/100SciFiSpace/06.jpg",
-                       "img/100SciFiSpace/09.jpg",
-                       "img/100SciFiSpace/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly sci-fi assets to build a base, a space station and an alien planet, true to scale for a 5-stud character: from a 2-stud helmet to a 59-stud cargo ship. Station kit on a 12-stud grid (corridors, airlock, blast and sliding doors, window wall, catwalk, stairs, landing pad, hangar bay), consoles and crew rooms, reactor, pipes, dishes and a laser turret, cargo containers, a rover with separate wheels, hover bike, shuttle, fighter, mech walker, alien rocks, crystals, glowing plants, ruins, and gear. 1 Blender unit = 1 stud. Doors, turret, dishes, rotors, ramps and wheels have their own bones and actions. Textured, rigged and animated.",
-        "tags":  [
-                     "Sci-Fi",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-05T18:14:53"
-    },
-    {
-        "slug":  "100FantasyDungeon",
-        "page":  "100-fantasy-dungeon-assets",
-        "name":  "100 Fantasy Dungeon Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/109678902149518",
-        "image":  "img/100FantasyDungeon.jpg",
-        "slides":  [
-                       "img/100FantasyDungeon/01.jpg",
-                       "img/100FantasyDungeon/02.jpg",
-                       "img/100FantasyDungeon/03.jpg",
-                       "img/100FantasyDungeon/04.jpg",
-                       "img/100FantasyDungeon/05.jpg",
-                       "img/100FantasyDungeon/06.jpg",
-                       "img/100FantasyDungeon/09.jpg",
-                       "img/100FantasyDungeon/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly assets to build RPG dungeons, crypts and caves, true to scale for a 5-stud character on one grid: floor tiles are 12 x 12 studs, walls are 12 wide, 12 tall and 2 thick, doorways are 6 wide and 8 tall. Modular kit (floors, walls, corner, door arch, barred window, pillars, archway, stairs, spiral stair, bridge, pit edge, ceiling), doors and gates, traps, lighting, chests in 5 tiers and a mimic, loot, furniture, statues, magic props and cave pieces. 1 Blender unit = 1 stud. Doors, gates, lids, traps, the lever, the portal and every flame have bones and actions. Textured, rigged and animated.",
-        "tags":  [
-                     "RPG",
-                     "Buildings"
-                 ],
-        "date":  "2026-10-05T17:57:51"
-    },
-    {
-        "slug":  "100HorrorProps",
-        "page":  "100-horror-game-props",
-        "name":  "100 Horror Game Props",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/116267901576117",
-        "image":  "img/100HorrorProps.jpg",
-        "slides":  [
-                       "img/100HorrorProps/01.jpg",
-                       "img/100HorrorProps/02.jpg",
-                       "img/100HorrorProps/03.jpg",
-                       "img/100HorrorProps/04.jpg",
-                       "img/100HorrorProps/05.jpg",
-                       "img/100HorrorProps/06.jpg",
-                       "img/100HorrorProps/09.jpg",
-                       "img/100HorrorProps/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly props for horror games, true to scale for a 5-stud character: from a 0.9-stud battery to a 16-stud abandoned car and a 14-stud dead tree. Abandoned house, asylum and hospital, backrooms-style office, basement and utility rooms, a spooky yard and gameplay pick-ups (flashlight, keys, fuses, medkit, hiding locker, safe). Spooky and worn, not gory. 1 Blender unit = 1 stud: doors clear 7.5 studs. Doors, gates, lids, the elevator, the rocking chair, hanging lights, chains and swings have bones and actions; every wheel is its own part. Textured, rigged and animated.",
-        "tags":  [
-                     "Horror",
-                     "Props"
-                 ],
-        "date":  "2026-10-05T17:20:50"
-    },
-    {
-        "slug":  "100TropicalIsland",
-        "page":  "100-tropical-island-assets",
-        "name":  "100 Tropical Island Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/74834991571910",
-        "image":  "img/100TropicalIsland.jpg",
-        "slides":  [
-                       "img/100TropicalIsland/01.jpg",
-                       "img/100TropicalIsland/02.jpg",
-                       "img/100TropicalIsland/03.jpg",
-                       "img/100TropicalIsland/04.jpg",
-                       "img/100TropicalIsland/05.jpg",
-                       "img/100TropicalIsland/06.jpg",
-                       "img/100TropicalIsland/09.jpg",
-                       "img/100TropicalIsland/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly tropical island assets, true to scale for a 5-stud character, to build beaches, islands and resorts: palms, tropical plants, rocks, shells and coral, beach gear, lifeguard tower, huts, tiki bar and tiki statues, bungalow on stilts, boardwalks, pier and dock, boats, a beach buggy and a golf cart, plus a volcano, waterfall, cave and shipwreck. 1 Blender unit = 1 stud. Every wheel is its own part; doors, lids, sails, the hammock, the propeller and flames have bones and actions. Textured, rigged and animated.",
-        "tags":  [
-                     "Nature",
-                     "Buildings"
-                 ],
-        "date":  "2026-10-05T17:16:30"
-    },
-    {
-        "slug":  "100MedievalVillage",
-        "page":  "100-medieval-village-assets",
-        "name":  "100 Medieval Village Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/128198284864129",
-        "image":  "img/100MedievalVillage.jpg",
-        "slides":  [
-                       "img/100MedievalVillage/01.jpg",
-                       "img/100MedievalVillage/02.jpg",
-                       "img/100MedievalVillage/03.jpg",
-                       "img/100MedievalVillage/04.jpg",
-                       "img/100MedievalVillage/05.jpg",
-                       "img/100MedievalVillage/06.jpg",
-                       "img/100MedievalVillage/09.jpg",
-                       "img/100MedievalVillage/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly assets to build a medieval village and castle, true to scale for a 5-stud character: from a 1-stud tankard to a 40-stud castle keep. Cottages, tavern, chapel, windmill, water mill, barn, a modular castle kit (walls 14 studs high, towers, gatehouse with portcullis, drawbridge, stairs), market stalls, carts and wagons, workshop and interior props, siege engines, fences, bridge, dock and rowboat. 1 Blender unit = 1 stud: doors are 3.4 x 6.8 studs, tables 3 high. Every cart wheel is its own part; doors, gates, sails, water wheel and siege engines have bones and actions. Textured, rigged and animated.",
-        "tags":  [
-                     "RPG",
-                     "Buildings"
-                 ],
-        "date":  "2026-10-05T16:46:09"
-    },
-    {
-        "slug":  "100CandyLand",
-        "page":  "100-candy-land-assets",
-        "name":  "100 Candy Land Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/118652325500833",
-        "image":  "img/100CandyLand.jpg",
-        "slides":  [
-                       "img/100CandyLand/01.jpg",
-                       "img/100CandyLand/02.jpg",
-                       "img/100CandyLand/03.jpg",
-                       "img/100CandyLand/04.jpg",
-                       "img/100CandyLand/05.jpg",
-                       "img/100CandyLand/06.jpg",
-                       "img/100CandyLand/09.jpg",
-                       "img/100CandyLand/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly candy world assets for simulator zones, obbies and tycoon maps, true to scale for a 5-stud character: from a 2-stud candy flower to a 60-stud ice cream mountain. Lollipop, candy cane and cotton candy trees, gumdrop hills, chocolate rocks, marshmallow boulders, sugar crystals, frosting clouds, gingerbread house, cupcake house, ice cream shop, candy tower, chocolate fountain, gumball machine tower, wafer walls, waffle bridge, peppermint, cookie, donut and macaron platforms, chocolate river, syrup waterfall, rainbow road, candy train and props. 1 Blender unit = 1 stud. Every wheel is its own part; the gate, chest, portal, fountain and gumball crank have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Nature"
-                 ],
-        "date":  "2026-10-05T16:42:06"
-    },
-    {
-        "slug":  "100CuteFarm",
-        "page":  "100-cute-farm-assets",
-        "name":  "100 Cute Farm Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/130200390113774",
-        "image":  "img/100CuteFarm.jpg",
-        "slides":  [
-                       "img/100CuteFarm/01.jpg",
-                       "img/100CuteFarm/02.jpg",
-                       "img/100CuteFarm/03.jpg",
-                       "img/100CuteFarm/04.jpg",
-                       "img/100CuteFarm/05.jpg",
-                       "img/100CuteFarm/06.jpg",
-                       "img/100CuteFarm/09.jpg",
-                       "img/100CuteFarm/10.jpg"
-                   ],
-        "description":  "100 cute, rounded low-poly farm assets for farming games, true to scale for a 5-stud character: from a 1-stud strawberry to a 40-stud barn. Nine crops in three growth stages (Baby = seedling, Young = growing, Ripe): wheat, corn, sunflower, carrot, potato, cabbage, tomato, pumpkin, strawberry. Harvested produce, crates, baskets and sacks, soil plots (dry, tilled, watered), raised bed, scarecrow, compost bin, barn, silo, chicken coop, stable, greenhouse, windmill, water tower, tool shed, farm stand, well, dog house, fences, gate, hay bales, trough, feeder, beehive, water pump, tractor, trailer, combine harvester, pickup, wheelbarrow, hand cart, tools, fruit trees, berry bush, pond and flowers. 1 Blender unit = 1 stud. Every wheel is its own part; windmill blades, barn doors, gate and pump handle have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Farm"
-                 ],
-        "date":  "2026-10-05T16:19:46"
-    },
-    {
-        "slug":  "100ObbyParts",
-        "page":  "100-obby-parts",
-        "name":  "100 Obby Parts",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/120544606008620",
-        "image":  "img/100ObbyParts.jpg",
-        "slides":  [
-                       "img/100ObbyParts/01.jpg",
-                       "img/100ObbyParts/02.jpg",
-                       "img/100ObbyParts/03.jpg",
-                       "img/100ObbyParts/04.jpg",
-                       "img/100ObbyParts/05.jpg",
-                       "img/100ObbyParts/06.jpg",
-                       "img/100ObbyParts/09.jpg",
-                       "img/100ObbyParts/10.jpg"
-                   ],
-        "description":  "100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball, spinning bar, truss, ropes, monkey bars, zipline, balloons, clouds, checkpoints, spawn and win pads, start gate, finish arch, podium, buttons, lever, key door, timed door, teleporter, portal, cannon launcher, speed, jump and gravity pads, coins, stars, gems, keys, hearts and decoration. 1 Blender unit = 1 stud. Moving hazards, doors, lever and cannon have bones and looping actions. Textured, rigged and animated.",
-        "tags":  [
-                     "Obby",
-                     "Props"
-                 ],
-        "date":  "2026-10-05T16:15:32"
-    },
-    {
-        "slug":  "100CityProps",
-        "page":  "100-city-street-props",
-        "name":  "100 City Street Props",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/106936770013413",
-        "image":  "img/100CityProps.jpg",
-        "slides":  [
-                       "img/100CityProps/01.jpg",
-                       "img/100CityProps/02.jpg",
-                       "img/100CityProps/03.jpg",
-                       "img/100CityProps/04.jpg",
-                       "img/100CityProps/05.jpg",
-                       "img/100CityProps/06.jpg",
-                       "img/100CityProps/09.jpg",
-                       "img/100CityProps/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly props to dress a city map, true to scale for a 5-stud character: from a 2-stud road cone to a 35-stud city bus. Traffic and pedestrian lights, street lamps, blank road signs, cones, barriers, bollards, benches, bins, hydrant, mailbox, phone booth, bus stop, hot dog and ice cream carts, food truck, newsstand, vending machine, ATM, market stall, power pole, water tower, billboard, dumpster, fountain, playground, gazebo, subway entrance, bus, taxi, scooter, bicycle, scaffold, cement mixer and more. 1 Blender unit = 1 stud. Every wheel is its own part; swings, seesaw, barrier arm, doors, lids and the fountain have bones. No text and no brands on any model. Textured, rigged and animated.",
-        "tags":  [
-                     "City",
-                     "Props"
-                 ],
-        "date":  "2026-10-05T16:12:55"
-    },
-    {
-        "slug":  "150MilitaryAssets",
-        "page":  "150-military-assets",
-        "name":  "150 Military Assets",
-        "count":  150,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/136219371644903",
-        "image":  "img/150MilitaryAssets.jpg",
-        "slides":  [
-                       "img/150MilitaryAssets/01.jpg",
-                       "img/150MilitaryAssets/02.jpg",
-                       "img/150MilitaryAssets/03.jpg",
-                       "img/150MilitaryAssets/04.jpg",
-                       "img/150MilitaryAssets/05.jpg",
-                       "img/150MilitaryAssets/06.jpg",
-                       "img/150MilitaryAssets/09.jpg",
-                       "img/150MilitaryAssets/10.jpg"
-                   ],
-        "description":  "150 chunky low-poly military assets, true to scale for a 5-stud character: from a 0.6-stud bullet to an 80-stud cargo plane. Sandbags, barriers, trenches, bunkers, towers, hangar, tents, crates, radar, artillery, projectiles, tanks, trucks, helicopters, jets and boats. 1 Blender unit = 1 stud: hand-held gear is 0.6 to 3.5 studs, cover is chest high, doors and decks clear 7 studs, vehicles are 12 to 37 long. Every wheel is its own part, weapons have Turret / Barrel / Muzzle bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Military",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-05T15:38:47"
-    },
-    {
-        "slug":  "100PrisonAssets",
-        "page":  "100-prison-assets",
-        "name":  "100 Prison Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/71750706741656",
-        "image":  "img/100PrisonAssets.jpg",
-        "slides":  [
-                       "img/100PrisonAssets/01.jpg",
-                       "img/100PrisonAssets/02.jpg",
-                       "img/100PrisonAssets/03.jpg",
-                       "img/100PrisonAssets/04.jpg",
-                       "img/100PrisonAssets/05.jpg",
-                       "img/100PrisonAssets/06.jpg",
-                       "img/100PrisonAssets/09.jpg",
-                       "img/100PrisonAssets/10.jpg"
-                   ],
-        "description":  "100 chunky low-poly prison assets for jailbreak and escape games, true to scale for a 5-stud character: from a 0.8-stud key to a 30-stud prison bus and a 35-stud guard tower. Police car, SUV, prison van, bus, armoured truck, motorbike and helicopter, cells with sliding bar doors, bunks, walls, fences, gates, guard tower, yard, cafeteria, laundry, workshop, offices, security gear and escape tools. 1 Blender unit = 1 stud: cells are 12 x 10 x 10, doors clear 7.5 studs. Every wheel is its own part; doors, gates, barrier, searchlight and camera have bones. Textured, rigged and animated.",
-        "tags":  [
-                     "Prison",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-05T15:28:51"
-    },
-    {
-        "slug":  "100SimulatorEssentials",
-        "page":  "100-simulator-essentials",
-        "name":  "100 Simulator Essentials",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/98284485465970",
-        "image":  "img/100SimulatorEssentials.jpg",
-        "slides":  [
-                       "img/100SimulatorEssentials/01.jpg",
-                       "img/100SimulatorEssentials/02.jpg",
-                       "img/100SimulatorEssentials/03.jpg",
-                       "img/100SimulatorEssentials/04.jpg",
-                       "img/100SimulatorEssentials/05.jpg",
-                       "img/100SimulatorEssentials/06.jpg",
-                       "img/100SimulatorEssentials/09.jpg"
-                   ],
-        "description":  "100 chunky low-poly props for simulator games: pet eggs, hatching stands, coins and gems, breakables, gates, portals and islands, shop and upgrade stations, boosts and rewards. Textured, rigged and animated.",
-        "tags":  [
-                     "Simulator",
-                     "Props"
-                 ],
-        "date":  "2026-10-05T12:40:33"
-    },
-    {
-        "slug":  "100Christmas",
-        "page":  "100-christmas-decorations",
-        "name":  "100 Christmas Decorations",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/89778546951345",
-        "image":  "img/100Christmas.jpg",
-        "slides":  [
-                       "img/100Christmas/01.jpg",
-                       "img/100Christmas/02.jpg",
-                       "img/100Christmas/03.jpg",
-                       "img/100Christmas/04.jpg",
-                       "img/100Christmas/05.jpg",
-                       "img/100Christmas/06.jpg",
-                       "img/100Christmas/09.jpg"
-                   ],
-        "description":  "100 chunky low-poly Christmas and winter decorations: snowy pines and decorated trees, presents, candy canes and gingerbread, snowmen and snow forts, ice, ornaments, lights and village props. Textured, rigged and animated.",
-        "tags":  [
-                     "Christmas",
-                     "Nature"
-                 ],
-        "date":  "2026-10-05T12:26:32"
-    },
-    {
-        "slug":  "100SpookyTools",
-        "page":  "100-spooky-tools",
-        "name":  "100 Spooky Tools",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/92600598493133",
-        "image":  "img/100SpookyTools.jpg",
-        "slides":  [
-                       "img/100SpookyTools/01.jpg",
-                       "img/100SpookyTools/02.jpg",
-                       "img/100SpookyTools/03.jpg",
-                       "img/100SpookyTools/04.jpg",
-                       "img/100SpookyTools/05.jpg",
-                       "img/100SpookyTools/06.jpg",
-                       "img/100SpookyTools/09.jpg"
-                   ],
-        "description":  "100 chunky low-poly Halloween tools for simulator and survival games: axes, pickaxes, hammers, shovels, swords, scythes, staffs and pitchforks in upgrade tiers from wood and bone to pumpkin, bat, slime, skull and cursed. Textured, rigged and animated.",
-        "tags":  [
-                     "Halloween",
-                     "Weapons"
-                 ],
-        "date":  "2026-10-05T12:13:52"
-    },
-    {
-        "slug":  "100HalloweenDecor",
-        "page":  "100-halloween-decorations",
-        "name":  "100 Halloween Decorations",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/116561819837052",
-        "image":  "img/100HalloweenDecor.jpg",
-        "slides":  [
-                       "img/100HalloweenDecor/01.jpg",
-                       "img/100HalloweenDecor/02.jpg",
-                       "img/100HalloweenDecor/03.jpg",
-                       "img/100HalloweenDecor/04.jpg",
-                       "img/100HalloweenDecor/05.jpg",
-                       "img/100HalloweenDecor/06.jpg",
-                       "img/100HalloweenDecor/09.jpg"
-                   ],
-        "description":  "100 chunky cute-spooky Halloween map decorations: dead trees, pumpkins and jack-o-lanterns, gravestones and crypts, fences and gates, candles and lanterns, witch props, bones and decor. Textured, rigged and animated.",
-        "tags":  [
-                     "Halloween",
-                     "Nature"
-                 ],
-        "date":  "2026-10-05T11:56:07"
-    },
-    {
-        "slug":  "100CuteGuns",
-        "page":  "100-cute-guns",
-        "name":  "100 Cute Guns",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/124167877388095",
-        "image":  "img/100CuteGuns.jpg",
-        "slides":  [
-                       "img/100CuteGuns/01.jpg",
-                       "img/100CuteGuns/02.jpg",
-                       "img/100CuteGuns/03.jpg",
-                       "img/100CuteGuns/04.jpg",
-                       "img/100CuteGuns/05.jpg",
-                       "img/100CuteGuns/06.jpg",
-                       "img/100CuteGuns/09.jpg"
-                   ],
-        "description":  "100 cute, chubby toy blasters: pistols, SMGs, rifles, shotguns, snipers, launchers, ray guns and novelty guns in pastel and candy colours. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Weapons"
-                 ],
-        "date":  "2026-10-05T11:53:34"
-    },
-    {
-        "slug":  "100WildWest",
-        "page":  "100-wild-west-decorations",
-        "name":  "100 Wild West Decorations",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/107835050512816",
-        "image":  "img/100WildWest.jpg",
-        "slides":  [
-                       "img/100WildWest/01.jpg",
-                       "img/100WildWest/02.jpg",
-                       "img/100WildWest/03.jpg",
-                       "img/100WildWest/04.jpg",
-                       "img/100WildWest/05.jpg",
-                       "img/100WildWest/06.jpg",
-                       "img/100WildWest/09.jpg"
-                   ],
-        "description":  "100 chunky low-poly Wild West map decorations: cacti, tumbleweeds, dead trees, desert rocks and mesas, town props, ranch fences and wagons, mine carts and rails, and camp gear. Textured, rigged and animated.",
-        "tags":  [
-                     "Western",
-                     "Nature"
-                 ],
-        "date":  "2026-10-05T11:23:57"
-    },
-    {
-        "slug":  "100CuteFurniture",
-        "page":  "100-cute-furniture",
-        "name":  "100 Cute Furniture",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/129821030523509",
-        "image":  "img/100CuteFurniture.jpg",
-        "slides":  [
-                       "img/100CuteFurniture/01.jpg",
-                       "img/100CuteFurniture/02.jpg",
-                       "img/100CuteFurniture/03.jpg",
-                       "img/100CuteFurniture/04.jpg",
-                       "img/100CuteFurniture/05.jpg",
-                       "img/100CuteFurniture/06.jpg",
-                       "img/100CuteFurniture/09.jpg"
-                   ],
-        "description":  "100 cute rounded low-poly furniture pieces in pastel colours for roleplay, housing and tycoon games: living room, bedroom, kitchen, bathroom, office, kids and gaming, decor and outdoor. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Furniture"
-                 ],
-        "date":  "2026-10-05T11:08:34"
-    },
-    {
-        "slug":  "100CuteTycoon",
-        "page":  "100-cute-tycoon-assets",
-        "name":  "100 Cute Tycoon Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/74651319090155",
-        "image":  "img/100CuteTycoon.jpg",
-        "slides":  [
-                       "img/100CuteTycoon/01.jpg",
-                       "img/100CuteTycoon/02.jpg",
-                       "img/100CuteTycoon/03.jpg",
-                       "img/100CuteTycoon/04.jpg",
-                       "img/100CuteTycoon/05.jpg",
-                       "img/100CuteTycoon/06.jpg",
-                       "img/100CuteTycoon/09.jpg"
-                   ],
-        "description":  "100 cute rounded pastel tycoon assets: droppers in ten tiers, conveyors and pipes, upgraders, furnaces and machines, cash, coins, gold and safes, crates and ores, walls, doors, floors and stairs, decor, buttons, pads, trophies and a teleporter. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Tycoon"
-                 ],
-        "date":  "2026-10-05T10:50:43"
-    },
-    {
-        "slug":  "1000CutePets",
-        "page":  "1000-cute-pets",
-        "name":  "1000 Cute Pets",
-        "count":  1000,
-        "price":  24.99,
-        "url":  "https://create.roblox.com/store/asset/120961179518311",
-        "image":  "img/1000CutePets.jpg",
-        "slides":  [
-                       "img/1000CutePets/01.jpg",
-                       "img/1000CutePets/02.jpg",
-                       "img/1000CutePets/03.jpg",
-                       "img/1000CutePets/04.jpg",
-                       "img/1000CutePets/05.jpg",
-                       "img/1000CutePets/06.jpg"
-                   ],
-        "description":  "1000 cute round pets and animals with happy, neutral and angry faces. Cats, dogs, farm, forest, safari, birds, reptiles, sea creatures, bugs and mythical beasts. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Animals"
-                 ],
-        "date":  "2026-10-05T08:06:01"
-    },
-    {
-        "slug":  "250CuteSeaCreatures",
-        "page":  "250-cute-sea-creatures",
-        "name":  "250 Cute Sea Creatures",
-        "count":  250,
-        "price":  14.99,
-        "url":  "https://create.roblox.com/store/asset/132504272814995",
-        "image":  "img/250CuteSeaCreatures.jpg",
-        "slides":  [
-                       "img/250CuteSeaCreatures/01.jpg",
-                       "img/250CuteSeaCreatures/02.jpg",
-                       "img/250CuteSeaCreatures/03.jpg",
-                       "img/250CuteSeaCreatures/04.jpg",
-                       "img/250CuteSeaCreatures/05.jpg",
-                       "img/250CuteSeaCreatures/06.jpg"
-                   ],
-        "description":  "250 cute low-poly sea creatures: fish, sharks, whales, dolphins, crabs, lobsters, octopuses, squid, jellyfish and more. They swim, blink and bite. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Animals"
-                 ],
-        "date":  "2026-10-05T05:18:02"
-    },
-    {
-        "slug":  "100RPGItems",
-        "page":  "100-rpg-items",
-        "name":  "100 RPG Items",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/81895573095035",
-        "image":  "img/100RPGItems.jpg",
-        "slides":  [
-                       "img/100RPGItems/01.jpg",
-                       "img/100RPGItems/02.jpg",
-                       "img/100RPGItems/03.jpg",
-                       "img/100RPGItems/04.jpg",
-                       "img/100RPGItems/05.jpg",
-                       "img/100RPGItems/06.jpg",
-                       "img/100RPGItems/09.jpg"
-                   ],
-        "description":  "100 chunky low-poly RPG and survival items: tools, weapons, armour, gear, food, resources, crafting stations and economy props. Textured, rigged and animated.",
-        "tags":  [
-                     "RPG",
-                     "Props"
-                 ],
-        "date":  "2026-10-05T04:20:16"
-    },
-    {
-        "slug":  "100CuteCars",
-        "page":  "100-cute-cars",
-        "name":  "100 Cute Cars",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/100307529223115",
-        "image":  "img/100CuteCars.jpg",
-        "slides":  [
-                       "img/100CuteCars/01.jpg",
-                       "img/100CuteCars/02.jpg",
-                       "img/100CuteCars/03.jpg",
-                       "img/100CuteCars/04.jpg",
-                       "img/100CuteCars/05.jpg",
-                       "img/100CuteCars/06.jpg",
-                       "img/100CuteCars/09.jpg"
-                   ],
-        "description":  "100 low-poly cartoon cars: compacts, sedans, sports cars, utility vehicles, service vehicles, fun vehicles, heavy trucks and vintage cars. Wheels are separate bones that spin, tyres have a black outline, no interiors. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Vehicles"
-                 ],
-        "date":  "2026-10-05T04:17:28"
-    },
-    {
-        "slug":  "100CuteFoliage",
-        "page":  "100-cute-foliage",
-        "name":  "100 Cute Foliage",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/82542365949087",
-        "image":  "img/100CuteFoliage.jpg",
-        "slides":  [
-                       "img/100CuteFoliage/01.jpg",
-                       "img/100CuteFoliage/02.jpg",
-                       "img/100CuteFoliage/03.jpg",
-                       "img/100CuteFoliage/04.jpg",
-                       "img/100CuteFoliage/05.jpg",
-                       "img/100CuteFoliage/06.jpg",
-                       "img/100CuteFoliage/10.jpg"
-                   ],
-        "description":  "100 cute low-poly terrain decorations: trees, pines, bushes, grass, flowers, mushrooms, rocks, fallen logs and stumps. Textured, rigged and animated.",
-        "tags":  [
-                     "Cute",
-                     "Nature"
-                 ],
-        "date":  "2026-10-05T03:51:27"
-    },
-    {
-        "slug":  "100PirateAssets",
-        "page":  "100-pirate-assets",
-        "name":  "100 Pirate Assets",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/91916855155085",
-        "image":  "img/100PirateAssets.jpg",
-        "slides":  [
-                       "img/100PirateAssets/01.jpg",
-                       "img/100PirateAssets/02.jpg",
-                       "img/100PirateAssets/03.jpg",
-                       "img/100PirateAssets/04.jpg",
-                       "img/100PirateAssets/05.jpg",
-                       "img/100PirateAssets/06.jpg"
-                   ],
-        "description":  "100 chunky low-poly pirate assets: characters, creatures, weapons, treasure, ship parts and island props. Textured, rigged and animated.",
-        "tags":  [
-                     "Pirates",
-                     "Characters"
-                 ],
-        "date":  "2026-10-05T03:40:11"
-    },
-    {
-        "slug":  "100MagicTreasure",
-        "page":  "100-magic-and-treasure-items",
-        "name":  "100 Magic \u0026 Treasure Items",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/105476584252876",
-        "image":  "img/100MagicTreasure.jpg",
-        "slides":  [
-                       "img/100MagicTreasure/01.jpg",
-                       "img/100MagicTreasure/02.jpg",
-                       "img/100MagicTreasure/03.jpg",
-                       "img/100MagicTreasure/04.jpg",
-                       "img/100MagicTreasure/05.jpg",
-                       "img/100MagicTreasure/06.jpg",
-                       "img/100MagicTreasure/09.jpg"
-                   ],
-        "description":  "100 chunky low-poly potions, gems, crystals, magic items, jewelry and treasure. Textured, rigged and animated.",
-        "tags":  [
-                     "RPG",
-                     "Props"
-                 ],
-        "date":  "2026-10-05T03:35:02"
-    },
-    {
-        "slug":  "50LowPolyGuns",
-        "page":  "50-low-poly-guns",
-        "name":  "50 Low Poly Guns",
-        "count":  50,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/116026250201921",
-        "image":  "img/50LowPolyGuns.jpg",
-        "slides":  [
-                       "img/50LowPolyGuns/01.jpg",
-                       "img/50LowPolyGuns/02.jpg",
-                       "img/50LowPolyGuns/03.jpg",
-                       "img/50LowPolyGuns/04.jpg",
-                       "img/50LowPolyGuns/05.jpg",
-                       "img/50LowPolyGuns/06.jpg"
-                   ],
-        "description":  "50 chunky low-poly guns and firearms. Textured, rigged and animated.",
-        "tags":  [
-                     "Weapons"
-                 ],
-        "date":  "2026-10-05T03:19:10"
-    },
-    {
-        "slug":  "100CuteFruits",
-        "page":  "100-cute-fruits",
-        "name":  "100 Cute Fruits",
-        "count":  100,
-        "price":  14.99,
-        "url":  "https://create.roblox.com/store/asset/119844717670889",
-        "image":  "img/100CuteFruits.jpg",
-        "slides":  [
-                       "img/100CuteFruits/01.jpg",
-                       "img/100CuteFruits/02.jpg",
-                       "img/100CuteFruits/03.jpg",
-                       "img/100CuteFruits/04.jpg",
-                       "img/100CuteFruits/05.jpg",
-                       "img/100CuteFruits/06.jpg"
-                   ],
-        "description":  "100 cute low-poly fruits with blinking faces and a soft glowing outline. Every fruit has an idle wiggle and a blink.",
-        "tags":  [
-                     "Cute",
-                     "Food"
-                 ],
-        "date":  "2026-10-05T03:08:19"
-    },
-    {
-        "slug":  "100RPGEnemies",
-        "page":  "100-rpg-enemies",
-        "name":  "100 RPG Enemies",
-        "count":  100,
-        "price":  4.99,
-        "url":  "https://create.roblox.com/store/asset/127326377885299",
-        "image":  "img/100RPGEnemies.jpg",
-        "slides":  [
-                       "img/100RPGEnemies/01.jpg",
-                       "img/100RPGEnemies/02.jpg",
-                       "img/100RPGEnemies/03.jpg",
-                       "img/100RPGEnemies/04.jpg",
-                       "img/100RPGEnemies/05.jpg",
-                       "img/100RPGEnemies/06.jpg",
-                       "img/100RPGEnemies/09.jpg"
-                   ],
-        "description":  "100 chunky low-poly RPG enemies: cute slimes, big angry slimes, skeletons, undead, goblins and orcs, golems, dragons, beasts and dark forces. Textured, rigged and animated.",
-        "tags":  [
-                     "RPG",
-                     "Characters"
-                 ],
-        "date":  "2026-10-05T03:06:23"
+        "slug": "TidalShopUI",
+        "name": "Tidal Shop UI Pack - Pixel",
+        "kind": "ui",
+        "count": 8,
+        "price": 7.99,
+        "url": "",
+        "image": "img/TidalShopUI.jpg",
+        "slides": [
+            "img/TidalShopUI/01.jpg",
+            "img/TidalShopUI/02.jpg",
+            "img/TidalShopUI/03.jpg",
+            "img/TidalShopUI/04.jpg",
+            "img/TidalShopUI/05.jpg",
+            "img/TidalShopUI/06.jpg",
+            "img/TidalShopUI/07.jpg",
+            "img/TidalShopUI/08.jpg",
+            "img/TidalShopUI/09.jpg"
+        ],
+        "description": "A complete beach pixel-art game UI with eight working screens: a HUD (shell counter, SHOP, PETS, DAILY, CODES and SETTINGS buttons with red dots), the Tidal Shop (a chest deal with pets and drop chances, a hover card for each pet, gamepasses and shell packs, with a little beach around the window), a Pets inventory (equip, unequip, EQUIP BEST, slots), 7-day Daily rewards with a streak, a Codes box, Settings (Music, Sound Effects, Low Graphics, Volume), a purchase popup and a chest reveal. Every button opens its menu and everything is wired: hatched pets land in your inventory, rewards and codes add shells. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with springy buttons and popping numbers, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.",
+        "tags": [
+            "UI",
+            "Pixel"
+        ],
+        "date": "2026-10-23T06:10:00",
+        "page": "tidal-shop-ui-pack-pixel"
+    },
+    {
+        "slug": "SciFiFactoryTycoon",
+        "name": "Factory Tycoon UI Pack - Sci-Fi",
+        "kind": "ui",
+        "count": 8,
+        "price": 7.99,
+        "url": "",
+        "image": "img/SciFiFactoryTycoon.jpg",
+        "slides": [
+            "img/SciFiFactoryTycoon/01.jpg",
+            "img/SciFiFactoryTycoon/02.jpg",
+            "img/SciFiFactoryTycoon/03.jpg",
+            "img/SciFiFactoryTycoon/04.jpg",
+            "img/SciFiFactoryTycoon/05.jpg",
+            "img/SciFiFactoryTycoon/06.jpg",
+            "img/SciFiFactoryTycoon/07.jpg",
+            "img/SciFiFactoryTycoon/08.jpg",
+            "img/SciFiFactoryTycoon/09.jpg"
+        ],
+        "description": "A sci-fi factory tycoon UI kit in deep navy and gunmetal with holo-teal and warning-amber accents: the whole game UI, wired together. A HUD (credits counter with income ticker, tier badge, a dock of seven menu buttons with red counts, the current contract with a Claim button, power and production gauges) and every menu behind it: an Upgrades Terminal, an R&D Lab, a Contract Board, a Robux Depot (credit packs and gamepasses), Supply Drops (a 7-day login streak), a hold-to-confirm Rebirth prompt that dims the screen, and Settings. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with a mechanical feel (presses sink in, menus slide in and out, numbers roll, gauges fill), a working economy and a UI Labs story for every piece and for the whole app.",
+        "tags": [
+            "UI",
+            "Sci-Fi"
+        ],
+        "date": "2026-10-23T06:11:00",
+        "page": "factory-tycoon-ui-pack-sci-fi"
+    },
+    {
+        "slug": "MedievalQuestRPG",
+        "name": "KingdomQuest UI Pack - Medieval",
+        "kind": "ui",
+        "count": 5,
+        "price": 6.99,
+        "url": "",
+        "image": "img/MedievalQuestRPG.jpg",
+        "slides": [
+            "img/MedievalQuestRPG/01.jpg",
+            "img/MedievalQuestRPG/02.jpg",
+            "img/MedievalQuestRPG/03.jpg",
+            "img/MedievalQuestRPG/04.jpg",
+            "img/MedievalQuestRPG/05.jpg",
+            "img/MedievalQuestRPG/06.jpg"
+        ],
+        "description": "A medieval RPG UI kit in parchment cream, royal crimson and gold leaf, framed in dark oak and iron rivets, with five full screens wired into one working game UI: a HUD (hero plaque with level shield, health and mana, gold and gem counters, quest tracker, menu plates, XP bar and a hotbar whose potions heal) whose Bag, Quests, Smithy and Forge plates open an Inventory with a paper-doll and item grid, a Quest Log with objectives and rewards, a Blacksmith shop, and a Forge that tempers your gear up to +5 with iron ore, coal, a success chance and a ward scroll. Menus slide up while the HUD slides out of their way. It comes twice: a static version to drop in StarterGui and edit in Properties, with a playable UI Labs story for every screen, and a Fusion 0.3 version with sinking wax buttons, rolling numbers, filling bars and unrolling scroll toasts, with an App story that runs the whole game UI.",
+        "tags": [
+            "UI",
+            "Medieval"
+        ],
+        "date": "2026-10-23T06:12:00",
+        "page": "kingdomquest-ui-pack-medieval"
+    },
+    {
+        "slug": "PastelCloudObby",
+        "name": "Cloud Obby UI Pack - Pastel",
+        "kind": "ui",
+        "count": 5,
+        "price": 6.99,
+        "url": "",
+        "image": "img/PastelCloudObby.jpg",
+        "slides": [
+            "img/PastelCloudObby/01.jpg",
+            "img/PastelCloudObby/02.jpg",
+            "img/PastelCloudObby/03.jpg",
+            "img/PastelCloudObby/04.jpg",
+            "img/PastelCloudObby/05.jpg",
+            "img/PastelCloudObby/06.jpg"
+        ],
+        "description": "A soft pastel obby UI kit in lavender, peach, baby blue and mint, with puffy cloud windows, white outlines and FredokaOne text. Five full screens wired into one working App: an obby HUD (stage badge, stage progress bar, coin and skip counters, Skip Stage and Checkpoint buttons, menu buttons that open real menus), a Trail Shop with tabs and a grid of trail cards, a Stage Select grid with cleared, current and locked stages, a Codes redeem box, and a Settings window with switches and sliders. Opening a menu slides the HUD out of the way. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth eased buttons, rolling counters, sliding tabs and toggles, draggable sliders and windows that slide open, with a UI Labs story for every piece and for the whole App.",
+        "tags": [
+            "UI",
+            "Pastel"
+        ],
+        "date": "2026-10-23T06:13:00",
+        "page": "cloud-obby-ui-pack-pastel"
+    },
+    {
+        "slug": "NightShiftHorror",
+        "name": "Night Shift UI Pack - Minimal",
+        "kind": "ui",
+        "count": 4,
+        "price": 5.99,
+        "url": "",
+        "image": "img/NightShiftHorror.jpg",
+        "slides": [
+            "img/NightShiftHorror/01.jpg",
+            "img/NightShiftHorror/02.jpg",
+            "img/NightShiftHorror/03.jpg",
+            "img/NightShiftHorror/04.jpg",
+            "img/NightShiftHorror/05.jpg"
+        ],
+        "description": "A clean, minimal horror UI kit in charcoal and off-black with bone-white text, one blood-red accent and thin 1px lines, set in Oswald and Gotham. Four full screens wired into one working App: a HUD (sanity bar, flashlight battery meter, night and clock badge, objective tracker, key count, an interact prompt that plays the night through, and Menu and Settings buttons that open real menus), a Main Menu with Play, Chapters and Settings and a chapter list, a You Died / Night Survived results screen with stats, Retry and Main Menu, and a Settings window with a brightness slider and toggles. Opening a menu slides the HUD out of the way. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with quiet eased buttons, sliding toggles, draining bars and rolling numbers, with a UI Labs story for every piece and for the whole App.",
+        "tags": [
+            "UI",
+            "Minimal"
+        ],
+        "date": "2026-10-23T06:14:00",
+        "page": "night-shift-ui-pack-minimal"
+    },
+    {
+        "slug": "CandyStudSim",
+        "name": "Candy Simulator UI Pack - Stud",
+        "kind": "ui",
+        "count": 5,
+        "price": 6.99,
+        "url": "",
+        "image": "img/CandyStudSim.jpg",
+        "slides": [
+            "img/CandyStudSim/01.jpg",
+            "img/CandyStudSim/02.jpg",
+            "img/CandyStudSim/03.jpg",
+            "img/CandyStudSim/04.jpg",
+            "img/CandyStudSim/05.jpg",
+            "img/CandyStudSim/06.jpg"
+        ],
+        "description": "A chunky candy simulator UI kit in bubblegum pink, mint and lemon with dark plum outlines and studded brick buttons. Four full screens: a HUD (level badge, coin and gem counters, menu bricks, daily quest, boost timers, candy bag and Sell button), a Candy Shop with tabs and a grid of pet cards, an Egg Hatch prompt with odds and pet storage, and a 7-day Daily Rewards window. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with springy animations (bouncing, sinking buttons, rolling counters, shakes, pops, a rocking egg) and a UI Labs story for every screen and component.",
+        "tags": [
+            "UI",
+            "Stud"
+        ],
+        "date": "2026-10-23T06:15:00",
+        "page": "candy-simulator-ui-pack-stud"
+    },
+    {
+        "slug": "BurgerCartoonTycoon",
+        "name": "Burger Tycoon UI Pack - Cartoon",
+        "kind": "ui",
+        "count": 4,
+        "price": 5.99,
+        "url": "",
+        "image": "img/BurgerCartoonTycoon.jpg",
+        "slides": [
+            "img/BurgerCartoonTycoon/01.jpg",
+            "img/BurgerCartoonTycoon/02.jpg",
+            "img/BurgerCartoonTycoon/03.jpg",
+            "img/BurgerCartoonTycoon/04.jpg",
+            "img/BurgerCartoonTycoon/05.jpg"
+        ],
+        "description": "A bright cartoon restaurant tycoon kit in ketchup red, mustard yellow and lettuce green, with thick dark-brown outlines, chunky drop shadows and Bangers headings. Four full screens: a HUD (cash counter with income ticker, restaurant level star and rating bar, order queue, menu buttons, Collect button and a notification toast), an Upgrades window with Kitchen, Staff and Decor tabs and upgrade cards with cost, level and maxed states, a Gamepass Shop with 2x Cash and Auto-Collect cards plus cash packs, and a Leaderboard of top tycoons. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth, bubbly animations (rolling numbers, sliding tabs, a nudge on 'can't afford' cards, windows that ease in) and a UI Labs story for every piece.",
+        "tags": [
+            "UI",
+            "Cartoon"
+        ],
+        "date": "2026-10-23T06:16:00",
+        "page": "burger-tycoon-ui-pack-cartoon"
+    },
+    {
+        "slug": "ArcaneCrystalSim",
+        "name": "Crystal Sim UI Pack - Fantasy",
+        "kind": "ui",
+        "count": 8,
+        "price": 7.99,
+        "url": "",
+        "image": "img/ArcaneCrystalSim.jpg",
+        "slides": [
+            "img/ArcaneCrystalSim/01.jpg",
+            "img/ArcaneCrystalSim/02.jpg",
+            "img/ArcaneCrystalSim/03.jpg",
+            "img/ArcaneCrystalSim/04.jpg",
+            "img/ArcaneCrystalSim/05.jpg",
+            "img/ArcaneCrystalSim/06.jpg",
+            "img/ArcaneCrystalSim/07.jpg",
+            "img/ArcaneCrystalSim/08.jpg",
+            "img/ArcaneCrystalSim/09.jpg"
+        ],
+        "description": "An enchanted fantasy pet simulator UI kit in deep amethyst, moonlit teal and gold filigree, with glowing gem buttons and rune-trimmed windows in Luckiest Guy and Nunito. Seven full screens: a HUD (mana crystal and gem counters, a level orb with XP bar, six menu buttons, active boosts with timers), a Magic Egg hatch prompt (rarity odds, Hatch x1 / x3 / Auto), a Pet Inventory (tabs, search, equip slots and a grid of rarity-coloured pet cards), a Rebirth altar (multiplier now and next, requirement bar) Daily Rewards (six days and a big Day 7 chest), a Spell Shop (boosts and treasures for gems) and a Pet Index (every pet, found or still a silhouette, with a reward for finding them all). It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with springy buttons, popping numbers, sliding tabs and breathing glows, with a UI Labs story for every piece. 25 hand-drawn images included.",
+        "tags": [
+            "UI",
+            "Fantasy"
+        ],
+        "date": "2026-10-23T06:17:00",
+        "page": "crystal-sim-ui-pack-fantasy"
+    },
+    {
+        "slug": "NeonStreetRacer",
+        "name": "Street Racing UI Pack - Neon",
+        "kind": "ui",
+        "count": 3,
+        "price": 5.99,
+        "url": "",
+        "image": "img/NeonStreetRacer.jpg",
+        "slides": [
+            "img/NeonStreetRacer/01.jpg",
+            "img/NeonStreetRacer/02.jpg",
+            "img/NeonStreetRacer/03.jpg",
+            "img/NeonStreetRacer/04.jpg"
+        ],
+        "description": "A neon street racing game UI in hot magenta, electric cyan and acid lime glowing on near-black glass. Three full screens wired into one game loop: a Garage Shop with class tabs and car cards (buy, equip, stats), a loading and start-lights countdown that becomes the race HUD (lap, position, cash, nitro bar, speedometer), and a Race Results leaderboard with the prize, Garage and Rematch. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth animations (rolling numbers, sliding tabs, a sweeping speedometer) and a UI Labs story for every piece.",
+        "tags": [
+            "UI",
+            "Neon"
+        ],
+        "date": "2026-10-23T06:18:00",
+        "page": "street-racing-ui-pack-neon"
+    },
+    {
+        "slug": "SurvivalRoyaleUI",
+        "name": "Battle Royale UI Pack - Flat",
+        "kind": "ui",
+        "count": 10,
+        "price": 8.99,
+        "url": "",
+        "image": "img/SurvivalRoyaleUI.jpg",
+        "slides": [
+            "img/SurvivalRoyaleUI/01.jpg",
+            "img/SurvivalRoyaleUI/02.jpg",
+            "img/SurvivalRoyaleUI/03.jpg",
+            "img/SurvivalRoyaleUI/04.jpg",
+            "img/SurvivalRoyaleUI/05.jpg",
+            "img/SurvivalRoyaleUI/06.jpg",
+            "img/SurvivalRoyaleUI/07.jpg",
+            "img/SurvivalRoyaleUI/08.jpg",
+            "img/SurvivalRoyaleUI/09.jpg",
+            "img/SurvivalRoyaleUI/10.jpg",
+            "img/SurvivalRoyaleUI/11.jpg"
+        ],
+        "description": "A complete top-down survival battle royale game UI, Last Zone, with ten working screens: a main menu (name, region list, Play Solo, Duo and Squad, Join and Create Team, daily quests with claims, a survivor pass card, loadout, stats and leaderboard buttons, settings, controls and sound), the match HUD (gas timer over a minimap, players alive, kills and a kill feed, heals and ammo you can use, four weapon slots, ammo in the gun, gear, boost and health with a red hit flash, scope zoom, pause and map buttons), a Loadout (outfits, melee weapons and emotes with rarities and pass locks), Stats with a leaderboard for every mode, Team with codes and seats, a ten-tier Survivor Pass, the big map with gas circles and pings, Pause, Settings with key controls, and Results. Everything is wired: a match plays itself, and your kills, wins and XP fill the pass, stats and quests. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with smooth springs, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.",
+        "tags": [
+            "UI",
+            "Flat"
+        ],
+        "date": "2026-10-23T06:19:00",
+        "page": "battle-royale-ui-pack-flat"
+    },
+    {
+        "slug": "100CuteRobots",
+        "page": "100-cute-robots",
+        "name": "100 Cute Robots",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/117663071550657",
+        "image": "img/100CuteRobots.jpg",
+        "slides": [
+            "img/100CuteRobots/01.jpg",
+            "img/100CuteRobots/02.jpg",
+            "img/100CuteRobots/03.jpg",
+            "img/100CuteRobots/04.jpg",
+            "img/100CuteRobots/05.jpg",
+            "img/100CuteRobots/06.jpg",
+            "img/100CuteRobots/09.jpg",
+            "img/100CuteRobots/10.jpg"
+        ],
+        "description": "100 cute chibi toy robots, glossy and colourful, true to scale for a 5-stud character: helper bots, worker bots, wheeled and tracked bots, flying bots, animal bots, battle bots, retro bots, tiny 2-stud bots, six giant boss mechs up to 16 studs and 10 props. Every robot has a screen or simple-eye face that blinks and a battery / power core that is its own detachable part sitting in a modelled socket, like a vinyl collectible. Every wheel is its own part. One shared rig and animation set (same bone and action names as the Cute Zombies and Cute Dinos packs): Idle, Walk, Run, Jump, Blink, Hit, Fall, Wave, Attack, Cheer, PowerDown, PowerUp, Dance, Spin, Drive, Fire, Stomp, CorePop and HeadPop. Humanoid bots are set up as playable StarterCharacters by PackSetup. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Characters"
+        ],
+        "date": "2026-10-09T18:39:14"
+    },
+    {
+        "slug": "100SportsAssets",
+        "page": "100-sports-assets",
+        "name": "100 Sports Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/93377073750510",
+        "image": "img/100SportsAssets.jpg",
+        "slides": [
+            "img/100SportsAssets/01.jpg",
+            "img/100SportsAssets/02.jpg",
+            "img/100SportsAssets/03.jpg",
+            "img/100SportsAssets/04.jpg",
+            "img/100SportsAssets/05.jpg",
+            "img/100SportsAssets/06.jpg",
+            "img/100SportsAssets/09.jpg",
+            "img/100SportsAssets/10.jpg"
+        ],
+        "description": "100 chunky low-poly sports assets, true to scale for a 5-stud character: from a 0.3-stud tennis ball to a 40-stud floodlight tower. Balls, bats, rackets, medals and trophies, full-size goals, hoops, nets and posts, track and sideline gear, a whole gym, bleachers, stadium seats, ticket booth, turnstile, ice resurfacer, golf cart, skate ramps, pool, bowling and arcade pieces. 1 Blender unit = 1 stud: a soccer goal is 20 wide, the basketball rim is 8.5 up. Every wheel is its own part; hoop nets, turnstile, pedals, punching bags, diving board, barrier and locker door have bones. Textured, rigged and animated.",
+        "tags": [
+            "Sports",
+            "Props"
+        ],
+        "date": "2026-10-09T17:32:34"
+    },
+    {
+        "slug": "100SchoolAssets",
+        "page": "100-school-assets",
+        "name": "100 School Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/112362766069027",
+        "image": "img/100SchoolAssets.jpg",
+        "slides": [
+            "img/100SchoolAssets/01.jpg",
+            "img/100SchoolAssets/02.jpg",
+            "img/100SchoolAssets/03.jpg",
+            "img/100SchoolAssets/04.jpg",
+            "img/100SchoolAssets/05.jpg",
+            "img/100SchoolAssets/06.jpg",
+            "img/100SchoolAssets/09.jpg",
+            "img/100SchoolAssets/10.jpg"
+        ],
+        "description": "100 chunky low-poly school assets for school roleplay and school-escape games, true to scale for a 5-stud character: from a 1-stud eraser to a 29-stud school bus and a 22-stud bell tower. Classroom desks, boards, globe and doors, backpacks and supplies, science lab, hallway lockers, stairs and double doors, cafeteria, library, music room, principal and nurse offices, and the school yard. 1 Blender unit = 1 stud: doors clear 7.5 studs. Every wheel is its own part; doors, locker doors, the desk lid, clock hand, bell hammer, globe, fan and pottery wheel have bones. No text, flags or logos. Textured, rigged and animated.",
+        "tags": [
+            "School",
+            "Props"
+        ],
+        "date": "2026-10-09T17:04:30"
+    },
+    {
+        "slug": "100MiningAssets",
+        "page": "100-mining-and-ore-assets",
+        "name": "100 Mining & Ore Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/71370120023492",
+        "image": "img/100MiningAssets.jpg",
+        "slides": [
+            "img/100MiningAssets/01.jpg",
+            "img/100MiningAssets/02.jpg",
+            "img/100MiningAssets/03.jpg",
+            "img/100MiningAssets/04.jpg",
+            "img/100MiningAssets/05.jpg",
+            "img/100MiningAssets/06.jpg",
+            "img/100MiningAssets/09.jpg",
+            "img/100MiningAssets/10.jpg"
+        ],
+        "description": "100 chunky low-poly mining assets for simulators and tycoons, true to scale for a 5-stud character: from a 1-stud cut gem to a 16-stud drill rig. 18 ore nodes with real embedded nuggets and crystals (coal to mythic rainbow), loose ore chunks, ingots, cut gems, boulders, stalagmites, cave wall and arch, geodes, 8 pickaxe tiers, drills, dynamite, detonator, lantern, backpacks, crusher, smelter, conveyor, sorter, drill rig, pump, generator, sell station, rails, mine carts, elevator, ladder, rope bridge and signs. 1 Blender unit = 1 stud. Every mine cart wheel is its own part; drill bits, the crusher jaw, the elevator cage and the detonator plunger have bones. Textured, rigged and animated.",
+        "tags": [
+            "Simulator",
+            "Mining"
+        ],
+        "date": "2026-10-09T16:43:59"
+    },
+    {
+        "slug": "100HospitalAssets",
+        "page": "100-hospital-assets",
+        "name": "100 Hospital Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/80531541996728",
+        "image": "img/100HospitalAssets.jpg",
+        "slides": [
+            "img/100HospitalAssets/01.jpg",
+            "img/100HospitalAssets/02.jpg",
+            "img/100HospitalAssets/03.jpg",
+            "img/100HospitalAssets/04.jpg",
+            "img/100HospitalAssets/05.jpg",
+            "img/100HospitalAssets/06.jpg",
+            "img/100HospitalAssets/09.jpg",
+            "img/100HospitalAssets/10.jpg"
+        ],
+        "description": "100 chunky low-poly hospital assets for hospital, clinic and doctor roleplay games, true to scale for a 5-stud character: from a 1-stud thermometer to a 19-stud ambulance and a 24-stud entrance canopy. Reception and waiting room, patient room, exam and treatment, surgery and imaging (MRI, CT, X-ray), lab and pharmacy, staff and utility carts, doors, walls and signs, ambulance and helipad. Clean, bright and friendly. 1 Blender unit = 1 stud: doors clear 7.6 studs. Every wheel is its own part; doors, bed back-rest, curtain, MRI table, barrier, centrifuge and beacon have bones. Textured, rigged and animated.",
+        "tags": [
+            "Hospital",
+            "Props"
+        ],
+        "date": "2026-10-09T16:29:02"
+    },
+    {
+        "slug": "100FishingHarbor",
+        "page": "100-fishing-and-harbor-assets",
+        "name": "100 Fishing & Harbor Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/140365427558842",
+        "image": "img/100FishingHarbor.jpg",
+        "slides": [
+            "img/100FishingHarbor/01.jpg",
+            "img/100FishingHarbor/02.jpg",
+            "img/100FishingHarbor/03.jpg",
+            "img/100FishingHarbor/04.jpg",
+            "img/100FishingHarbor/05.jpg",
+            "img/100FishingHarbor/06.jpg",
+            "img/100FishingHarbor/09.jpg",
+            "img/100FishingHarbor/10.jpg"
+        ],
+        "description": "100 chunky low-poly fishing and harbour assets, true to scale for a 5-stud character: from a 1-stud tin can to a 44-stud lighthouse. Eight fishing rod tiers from stick-and-string to mythic, reel, bobbers, lures, tackle boxes, nets, traps, buoys and anchor; fish crates, barrels, market stall, smokehouse, aquarium and junk catches; ten boats from kayak to trawler and tugboat; modular docks, pilings, boat lift and ramp; lighthouse, crane, bait shop, boathouse, forklift and carts; reeds, lily pads, rocks, campfire and tent. 1 Blender unit = 1 stud: dock decks are 8 wide and 3.2 up, a rowboat is 13 long. Every wheel is its own part; rods cast, reels crank, propellers spin, lids, doors, crane, boat lift, forks and the lighthouse lamp have bones. Textured, rigged and animated.",
+        "tags": [
+            "Simulator",
+            "Vehicles"
+        ],
+        "date": "2026-10-09T16:12:03"
+    },
+    {
+        "slug": "100CuteZombies",
+        "page": "100-cute-zombie-apocalypse",
+        "name": "100 Cute Zombie Apocalypse",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/117868639492594",
+        "image": "img/100CuteZombies.jpg",
+        "slides": [
+            "img/100CuteZombies/01.jpg",
+            "img/100CuteZombies/02.jpg",
+            "img/100CuteZombies/03.jpg",
+            "img/100CuteZombies/04.jpg",
+            "img/100CuteZombies/05.jpg",
+            "img/100CuteZombies/06.jpg",
+            "img/100CuteZombies/09.jpg",
+            "img/100CuteZombies/10.jpg"
+        ],
+        "description": "100 cute chibi zombie apocalypse assets, true to scale for a 5-stud character: 20 small playable survivors, 40 zombies, mad scientist zombies, skeletons, imps, 8 huge bosses and 10 props. Every monster does a HUGE snappy chomp (jaw and top of the head split wide open, with teeth and tongue) and has a pink cartoon brain that is its own detachable part, like a vinyl collectible. One shared rig and animation set: Idle, Walk, Run, Jump, Blink, Wave, Attack, Hit, Cheer, ZombieWalk, Chomp, Roar, BrainPop, Fall and Slam. Survivors are set up as playable StarterCharacters by PackSetup. Cute, never gory. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Characters"
+        ],
+        "date": "2026-10-09T15:55:20"
+    },
+    {
+        "slug": "100CuteDinos",
+        "page": "100-cute-dinosaurs",
+        "name": "100 Cute Dinosaurs",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/124556256211210",
+        "image": "img/100CuteDinos.jpg",
+        "slides": [
+            "img/100CuteDinos/01.jpg",
+            "img/100CuteDinos/02.jpg",
+            "img/100CuteDinos/03.jpg",
+            "img/100CuteDinos/04.jpg",
+            "img/100CuteDinos/05.jpg",
+            "img/100CuteDinos/06.jpg",
+            "img/100CuteDinos/09.jpg",
+            "img/100CuteDinos/10.jpg"
+        ],
+        "description": "100 cute chubby low-poly dinosaurs and prehistoric animals with blinking faces, true to scale for a 5-stud character: from 2-stud babies to a 25-stud Brachiosaurus. T-Rex, Raptor, Triceratops, Stegosaurus, Brontosaurus, Ankylosaurus, Spinosaurus, Pterodactyl, Mosasaurus, Mammoth, Sabertooth, Dodo and many more, plus colour variants, babies, hatchlings, eggs, a nest, bones and fossils. Happy, neutral and angry faces. Head, jaw, tail and wing bones with Idle, Blink, Bite, Roar and Flap animations. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Animals"
+        ],
+        "date": "2026-10-09T15:15:40"
+    },
+    {
+        "slug": "100ConstructionSite",
+        "page": "100-construction-site-assets",
+        "name": "100 Construction Site Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/115486433943860",
+        "image": "img/100ConstructionSite.jpg",
+        "slides": [
+            "img/100ConstructionSite/01.jpg",
+            "img/100ConstructionSite/02.jpg",
+            "img/100ConstructionSite/03.jpg",
+            "img/100ConstructionSite/04.jpg",
+            "img/100ConstructionSite/05.jpg",
+            "img/100ConstructionSite/06.jpg",
+            "img/100ConstructionSite/09.jpg",
+            "img/100ConstructionSite/10.jpg"
+        ],
+        "description": "100 chunky low-poly construction site assets for building, demolition and city tycoon games, true to scale for a 5-stud character: from a 2-stud pair of goggles to a 78-stud tower crane. Excavator, bulldozer, dump truck, mixer truck, mobile and tower crane, forklift, road roller, loader, backhoe, skid steer, telehandler, trucks and lifts; scaffolding, steel, rebar, concrete, brick and timber pieces on a 12-stud grid; pallets and piles of materials; hand tools and safety gear; site office, containers, generators, tanks and a wrecking ball. 1 Blender unit = 1 stud. Every wheel is its own part; cabs swing, booms, buckets, blades, beds, drums, forks, hooks, platforms, doors, gates and lids have bones. Textured, rigged and animated.",
+        "tags": [
+            "City",
+            "Vehicles"
+        ],
+        "date": "2026-10-09T14:51:16"
+    },
+    {
+        "slug": "100CampingOutdoor",
+        "page": "100-camping-and-outdoor-assets",
+        "name": "100 Camping & Outdoor Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/73998325485229",
+        "image": "img/100CampingOutdoor.jpg",
+        "slides": [
+            "img/100CampingOutdoor/01.jpg",
+            "img/100CampingOutdoor/02.jpg",
+            "img/100CampingOutdoor/03.jpg",
+            "img/100CampingOutdoor/04.jpg",
+            "img/100CampingOutdoor/05.jpg",
+            "img/100CampingOutdoor/06.jpg",
+            "img/100CampingOutdoor/09.jpg",
+            "img/100CampingOutdoor/10.jpg"
+        ],
+        "description": "100 chunky low-poly camping and outdoor assets, true to scale for a 5-stud character, for camping, survival, hiking and summer-camp games: tents, cabins, a ranger station and fire lookout, an RV, pop-up trailer and camper van, campfires and camp cooking, backpacks and hiking gear, trail signs, bridges, a camp gate, canoes, an archery target, zipline and swings, plus pines, logs, boulders and forest plants. 1 Blender unit = 1 stud. Every wheel is its own part and every fire is its own Flame part; tent flaps, doors, lids, the gate, the pump handle, the lantern and the swings have bones and actions. Textured, rigged and animated.",
+        "tags": [
+            "Nature",
+            "Props"
+        ],
+        "date": "2026-10-09T14:32:46"
+    },
+    {
+        "slug": "100TowerDefenseAssets",
+        "page": "100-tower-defense-assets",
+        "name": "100 Tower Defense Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/118906122720194",
+        "image": "img/100TowerDefenseAssets.jpg",
+        "slides": [
+            "img/100TowerDefenseAssets/01.jpg",
+            "img/100TowerDefenseAssets/02.jpg",
+            "img/100TowerDefenseAssets/03.jpg",
+            "img/100TowerDefenseAssets/04.jpg",
+            "img/100TowerDefenseAssets/05.jpg",
+            "img/100TowerDefenseAssets/06.jpg",
+            "img/100TowerDefenseAssets/09.jpg",
+            "img/100TowerDefenseAssets/10.jpg"
+        ],
+        "description": "Everything for a tower defense game in the sharp studded style: 15 towers with 3 upgrade levels each, 30 enemies and bosses, and 25 path tiles and map props on an 8-stud grid. Real scale for a 5-stud character. One texture, rigged (Turret, Barrel, Recoil, Spin; Torso, Head, arms, legs, wings) with shared Idle, Fire, Spin, Walk and Attack animations.",
+        "tags": [
+            "Stud",
+            "Tower Defense"
+        ],
+        "date": "2026-10-09T14:14:57"
+    },
+    {
+        "slug": "100StudWorldAssets",
+        "page": "100-stud-world-assets",
+        "name": "100 Stud World Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/92680942443465",
+        "image": "img/100StudWorldAssets.jpg",
+        "slides": [
+            "img/100StudWorldAssets/01.jpg",
+            "img/100StudWorldAssets/02.jpg",
+            "img/100StudWorldAssets/03.jpg",
+            "img/100StudWorldAssets/04.jpg",
+            "img/100StudWorldAssets/05.jpg",
+            "img/100StudWorldAssets/06.jpg",
+            "img/100StudWorldAssets/09.jpg",
+            "img/100StudWorldAssets/10.jpg"
+        ],
+        "description": "Sharp, blocky, studded world props in five biomes: forest, winter, desert, buildings and samurai. True scale for a 5-stud character, from 1 to 40 studs. One texture, rigged, with Idle, Open and Ring animations.",
+        "tags": [
+            "Stud",
+            "Nature"
+        ],
+        "date": "2026-10-09T14:02:02"
+    },
+    {
+        "slug": "100StudPets",
+        "page": "100-stud-pets",
+        "name": "100 Stud Pets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/121177796223271",
+        "image": "img/100StudPets.jpg",
+        "slides": [
+            "img/100StudPets/01.jpg",
+            "img/100StudPets/02.jpg",
+            "img/100StudPets/03.jpg",
+            "img/100StudPets/04.jpg",
+            "img/100StudPets/05.jpg",
+            "img/100StudPets/06.jpg",
+            "img/100StudPets/09.jpg",
+            "img/100StudPets/10.jpg"
+        ],
+        "description": "Blocky, studded voxel pets for pet-simulator games: farm, forest, safari, ocean, bugs, dinos and mythics. 2 to 12 studs for a 5-stud character. One texture, rigged (Body, Head, Jaw, Tail, legs, wings, ears, Float) with shared Idle, Walk, Fly and Jump animations.",
+        "tags": [
+            "Stud",
+            "Animals"
+        ],
+        "date": "2026-10-09T13:50:43"
+    },
+    {
+        "slug": "100StudHalloweenAssets",
+        "page": "100-stud-halloween-assets",
+        "name": "100 Stud Halloween Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/86306315674759",
+        "image": "img/100StudHalloweenAssets.jpg",
+        "slides": [
+            "img/100StudHalloweenAssets/01.jpg",
+            "img/100StudHalloweenAssets/02.jpg",
+            "img/100StudHalloweenAssets/03.jpg",
+            "img/100StudHalloweenAssets/04.jpg",
+            "img/100StudHalloweenAssets/05.jpg",
+            "img/100StudHalloweenAssets/06.jpg",
+            "img/100StudHalloweenAssets/09.jpg",
+            "img/100StudHalloweenAssets/10.jpg"
+        ],
+        "description": "Sharp, blocky, studded Halloween and graveyard props at real stud scale: crypts and mausoleums with glowing purple windows, a haunted house, gravestones, coffins, iron fences and gates, dead trees, jack-o-lanterns, ghosts, skulls, webs, cauldrons, lamps and candy. One texture. Root-rigged, with Idle, Open (gates, coffin lids) and Flap (bat) animations.",
+        "tags": [
+            "Stud",
+            "Halloween"
+        ],
+        "date": "2026-10-09T13:29:21"
+    },
+    {
+        "slug": "100StudEggs",
+        "page": "100-stud-eggs",
+        "name": "100 Stud Eggs",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/80062575373343",
+        "image": "img/100StudEggs.jpg",
+        "slides": [
+            "img/100StudEggs/01.jpg",
+            "img/100StudEggs/02.jpg",
+            "img/100StudEggs/03.jpg",
+            "img/100StudEggs/04.jpg",
+            "img/100StudEggs/05.jpg",
+            "img/100StudEggs/06.jpg",
+            "img/100StudEggs/09.jpg",
+            "img/100StudEggs/10.jpg"
+        ],
+        "description": "100 hatching eggs built from stacked stud cubes: animals, dragons, characters, treats, elements, special eggs and egg stands. About 4 to 5 studs tall for a 5-stud character. One texture, rigged (Egg, Top, Float) with shared Idle, Wobble and Hatch animations.",
+        "tags": [
+            "Stud",
+            "Simulator"
+        ],
+        "date": "2026-10-09T13:18:07"
+    },
+    {
+        "slug": "50StuddedBosses",
+        "page": "50-studded-bosses",
+        "name": "50 Studded Bosses",
+        "count": 50,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/114264732499572",
+        "image": "img/50StuddedBosses.jpg",
+        "slides": [
+            "img/50StuddedBosses/01.jpg",
+            "img/50StuddedBosses/02.jpg",
+            "img/50StuddedBosses/03.jpg",
+            "img/50StuddedBosses/04.jpg",
+            "img/50StuddedBosses/05.jpg",
+            "img/50StuddedBosses/06.jpg",
+            "img/50StuddedBosses/09.jpg",
+            "img/50StuddedBosses/10.jpg"
+        ],
+        "description": "50 sharp, blocky boss monsters covered in classic studs, 17 to 40 studs tall for a 5-stud character: undead, golems, beasts, dragons, machines, warriors, royals and mages. One texture, no outline. Rigged with the same bones on every boss (Torso, Head, Jaw, arms, hands, legs, Float for crowns and crystals) and shared Idle, Attack and Roar animations.",
+        "tags": [
+            "Stud",
+            "Characters"
+        ],
+        "date": "2026-10-09T13:02:41"
+    },
+    {
+        "slug": "200PixelItems",
+        "page": "200-pixel-items",
+        "name": "200 Pixel Items",
+        "count": 200,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/95103406816723",
+        "image": "img/200PixelItems.jpg",
+        "slides": [
+            "img/200PixelItems/01.jpg",
+            "img/200PixelItems/02.jpg",
+            "img/200PixelItems/03.jpg",
+            "img/200PixelItems/03.jpg",
+            "img/200PixelItems/03.jpg",
+            "img/200PixelItems/04.jpg",
+            "img/200PixelItems/05.jpg",
+            "img/200PixelItems/06.jpg",
+            "img/200PixelItems/09.jpg",
+            "img/200PixelItems/10.jpg"
+        ],
+        "description": "200 items as full 3D voxel models for drops, pickups and inventories: food, drinks and potions, ores and ingots, coins and gems, crafting materials, farming, magic, loot containers, music and misc, tech. 1 voxel = 0.125 stud, items are 1 to 2.5 studs across and sculpted all the way round. One texture, rigged and animated (Idle bob and spin, Pickup).",
+        "tags": [
+            "Voxel",
+            "Props"
+        ],
+        "date": "2026-10-09T12:52:37"
+    },
+    {
+        "slug": "100VoxelVillageBuilds",
+        "page": "100-voxel-village-builds",
+        "name": "100 Voxel Village Builds",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/108214285909892",
+        "image": "img/100VoxelVillageBuilds.jpg",
+        "slides": [
+            "img/100VoxelVillageBuilds/01.jpg",
+            "img/100VoxelVillageBuilds/02.jpg",
+            "img/100VoxelVillageBuilds/03.jpg",
+            "img/100VoxelVillageBuilds/04.jpg",
+            "img/100VoxelVillageBuilds/05.jpg",
+            "img/100VoxelVillageBuilds/06.jpg",
+            "img/100VoxelVillageBuilds/09.jpg",
+            "img/100VoxelVillageBuilds/10.jpg"
+        ],
+        "description": "100 voxel village assets: ten enterable houses, fifteen service buildings (forge, bakery, tavern, town hall, windmill, watermill, lighthouse ...), walls and gates, paths, bridges and street props, crop fields in growth stages, interior furniture and decorations. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; doorways are 4 studs wide and 6 tall; everything snaps to the 2-stud block grid. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags": [
+            "Voxel",
+            "Buildings"
+        ],
+        "date": "2026-10-09T12:48:10"
+    },
+    {
+        "slug": "100VoxelVehicles",
+        "page": "100-voxel-vehicles",
+        "name": "100 Voxel Vehicles",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/91005801671480",
+        "image": "img/100VoxelVehicles.jpg",
+        "slides": [
+            "img/100VoxelVehicles/01.jpg",
+            "img/100VoxelVehicles/02.jpg",
+            "img/100VoxelVehicles/03.jpg",
+            "img/100VoxelVehicles/03.jpg",
+            "img/100VoxelVehicles/04.jpg",
+            "img/100VoxelVehicles/05.jpg",
+            "img/100VoxelVehicles/06.jpg",
+            "img/100VoxelVehicles/10.jpg"
+        ],
+        "description": "100 blocky voxel vehicles in bright flat colours with pixel-art shading: cars, trucks and service vehicles, bikes and carts, trains with rail pieces, boats, aircraft, spacecraft and fantasy rides. True stud scale for a 5 stud character: 1 voxel = 0.5 stud (0.25 stud on the small ride-ons). Every wheel is its own part with a bone on the axle. One texture, rigged and animated.",
+        "tags": [
+            "Voxel",
+            "Vehicles"
+        ],
+        "date": "2026-10-09T12:45:06"
+    },
+    {
+        "slug": "150VoxelToolsArmor",
+        "page": "150-voxel-tools-and-armor",
+        "name": "150 Voxel Tools & Armor",
+        "count": 150,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/105607660350111",
+        "image": "img/150VoxelToolsArmor.jpg",
+        "slides": [
+            "img/150VoxelToolsArmor/01.jpg",
+            "img/150VoxelToolsArmor/02.jpg",
+            "img/150VoxelToolsArmor/03.jpg",
+            "img/150VoxelToolsArmor/03.jpg",
+            "img/150VoxelToolsArmor/04.jpg",
+            "img/150VoxelToolsArmor/05.jpg",
+            "img/150VoxelToolsArmor/06.jpg",
+            "img/150VoxelToolsArmor/09.jpg"
+        ],
+        "description": "150 voxel tools, weapons and armour pieces in a bright pixel-art style, in ten material tiers that each have their own shapes: Wood, Stone, Copper, Iron, Gold, Crystal, Emerald, Obsidian, Magma and Void. Every tier has a sword, pickaxe, axe, shovel, hoe, dagger, hammer, spear and bow, plus a helmet, armor, pants and boots that fit a blocky 5 stud character, and there are 20 extras: shields, buckets, torch, lantern, compass, clock, map and more. 1 voxel = 0.1 stud. Every tool has its grip at the same place, so one hold animation fits all. One texture, rigged and animated.",
+        "tags": [
+            "Voxel",
+            "Weapons"
+        ],
+        "date": "2026-10-09T12:40:54"
+    },
+    {
+        "slug": "160PixelGuns",
+        "page": "160-pixel-guns",
+        "name": "160 Pixel Guns",
+        "count": 160,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/137103683799519",
+        "image": "img/160PixelGuns.jpg",
+        "slides": [
+            "img/160PixelGuns/01.jpg",
+            "img/160PixelGuns/02.jpg",
+            "img/160PixelGuns/03.jpg",
+            "img/160PixelGuns/03.jpg",
+            "img/160PixelGuns/04.jpg",
+            "img/160PixelGuns/05.jpg",
+            "img/160PixelGuns/06.jpg",
+            "img/160PixelGuns/10.jpg"
+        ],
+        "description": "160 full 3D voxel weapons in a bright pixel-art style: rifles, SMGs, shotguns, pistols, swords, hammers, scythes, bows, staffs, ray guns, snipers, crossbows, launchers and miniguns, including 36 legendary weapons with wings, jaws and orbiting parts. One texture, rigged and animated.",
+        "tags": [
+            "Voxel",
+            "Weapons"
+        ],
+        "date": "2026-10-09T12:38:40"
+    },
+    {
+        "slug": "100VoxelMobs",
+        "page": "100-voxel-mobs",
+        "name": "100 Voxel Mobs",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/91631826383744",
+        "image": "img/100VoxelMobs.jpg",
+        "slides": [
+            "img/100VoxelMobs/01.jpg",
+            "img/100VoxelMobs/02.jpg",
+            "img/100VoxelMobs/03.jpg",
+            "img/100VoxelMobs/04.jpg",
+            "img/100VoxelMobs/05.jpg",
+            "img/100VoxelMobs/06.jpg",
+            "img/100VoxelMobs/09.jpg",
+            "img/100VoxelMobs/10.jpg"
+        ],
+        "description": "100 blocky voxel creatures with painted pixel-art skins: farm animals, wild animals, sea life, hostile monsters, villagers and traders, nether and void creatures and ten large bosses. Scale: 1 unit = 1 stud for a 5-stud character; the pixel art is 8 px per stud on every mob (1 px = 0.125 stud). Animals are 1 to 5 studs, humanoids 5 to 6, bosses 12 to 30. One material, one pixel-art atlas texture, rigged with shared bone names (Root, Float, Body, Head, Jaw, Tail, ArmL/R, LegL/R, LegFL/FR/BL/BR, WingL/R) and shared actions (Idle, Walk, Attack, Fly, Hurt, Hop).",
+        "tags": [
+            "Voxel",
+            "Animals"
+        ],
+        "date": "2026-10-09T12:37:13"
+    },
+    {
+        "slug": "100VoxelSkyIslands",
+        "page": "100-voxel-sky-islands",
+        "name": "100 Voxel Sky Islands",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/101683416854844",
+        "image": "img/100VoxelSkyIslands.jpg",
+        "slides": [
+            "img/100VoxelSkyIslands/01.jpg",
+            "img/100VoxelSkyIslands/02.jpg",
+            "img/100VoxelSkyIslands/03.jpg",
+            "img/100VoxelSkyIslands/04.jpg",
+            "img/100VoxelSkyIslands/05.jpg",
+            "img/100VoxelSkyIslands/06.jpg",
+            "img/100VoxelSkyIslands/09.jpg",
+            "img/100VoxelSkyIslands/10.jpg"
+        ],
+        "description": "100 voxel skyblock assets: floating islands, trees and plants, blocks and ores, tiered ore generators, stations, bridges, stairs, portals and small structures. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; islands are 8 to 120 studs across. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags": [
+            "Voxel",
+            "Nature"
+        ],
+        "date": "2026-10-09T12:33:36"
+    },
+    {
+        "slug": "150VoxelFurniture",
+        "page": "150-voxel-furniture",
+        "name": "150 Voxel Furniture",
+        "count": 150,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/111710075728823",
+        "image": "img/150VoxelFurniture.jpg",
+        "slides": [
+            "img/150VoxelFurniture/01.jpg",
+            "img/150VoxelFurniture/02.jpg",
+            "img/150VoxelFurniture/03.jpg",
+            "img/150VoxelFurniture/03.jpg",
+            "img/150VoxelFurniture/04.jpg",
+            "img/150VoxelFurniture/05.jpg",
+            "img/150VoxelFurniture/06.jpg",
+            "img/150VoxelFurniture/10.jpg"
+        ],
+        "description": "150 blocky voxel furniture and room decor assets for building, housing and roleplay games: living room, kitchen, bedroom, bathroom, office and school, gaming, garden, medieval, shop and cafe, plus floors, walls, doors and stairs. True scale for a 5-stud character (1 unit = 1 stud, 1 voxel = 0.25 stud: seats at 2 studs, tables at 3, doors 4 x 7). One palette texture, rigged (doors, drawers, lids, spinning and swinging parts) and animated.",
+        "tags": [
+            "Voxel",
+            "Furniture"
+        ],
+        "date": "2026-10-09T12:30:29"
+    },
+    {
+        "slug": "100VoxelDungeonKit",
+        "page": "100-voxel-dungeon-kit",
+        "name": "100 Voxel Dungeon Kit",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/135576798818525",
+        "image": "img/100VoxelDungeonKit.jpg",
+        "slides": [
+            "img/100VoxelDungeonKit/01.jpg",
+            "img/100VoxelDungeonKit/02.jpg",
+            "img/100VoxelDungeonKit/03.jpg",
+            "img/100VoxelDungeonKit/04.jpg",
+            "img/100VoxelDungeonKit/05.jpg",
+            "img/100VoxelDungeonKit/06.jpg",
+            "img/100VoxelDungeonKit/09.jpg",
+            "img/100VoxelDungeonKit/10.jpg"
+        ],
+        "description": "100 voxel dungeon crawler assets: modular rooms and corridors on a 16-stud grid, ten complete set-piece rooms, doors and gates, traps, chests and loot, spawners and altars, and decor. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; corridors are 8 studs wide and 12 tall inside, rooms are up to 64 studs across. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags": [
+            "Voxel",
+            "RPG"
+        ],
+        "date": "2026-10-09T12:26:53"
+    },
+    {
+        "slug": "100VoxelCityBuilds",
+        "page": "100-voxel-city-builds",
+        "name": "100 Voxel City Builds",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/81911762313383",
+        "image": "img/100VoxelCityBuilds.jpg",
+        "slides": [
+            "img/100VoxelCityBuilds/01.jpg",
+            "img/100VoxelCityBuilds/02.jpg",
+            "img/100VoxelCityBuilds/03.jpg",
+            "img/100VoxelCityBuilds/04.jpg",
+            "img/100VoxelCityBuilds/05.jpg",
+            "img/100VoxelCityBuilds/09.jpg",
+            "img/100VoxelCityBuilds/10.jpg"
+        ],
+        "description": "100 voxel city builder assets: road tiles on a 32-stud grid, homes, shops, services, towers and landmarks, street props, static vehicles and rooftop bits. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset; road tiles are 32 x 32 studs with two 12-stud lanes, doors are 4 x 6 studs, towers reach 120 studs. One material, one pixel-art atlas texture, rigged and animated.",
+        "tags": [
+            "Voxel",
+            "City"
+        ],
+        "date": "2026-10-09T12:23:33"
+    },
+    {
+        "slug": "100VoxelCharacters",
+        "page": "100-voxel-characters",
+        "name": "100 Voxel Characters",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/102696004386746",
+        "image": "img/100VoxelCharacters.jpg",
+        "slides": [
+            "img/100VoxelCharacters/01.jpg",
+            "img/100VoxelCharacters/02.jpg",
+            "img/100VoxelCharacters/03.jpg",
+            "img/100VoxelCharacters/04.jpg",
+            "img/100VoxelCharacters/05.jpg",
+            "img/100VoxelCharacters/06.jpg",
+            "img/100VoxelCharacters/09.jpg",
+            "img/100VoxelCharacters/10.jpg"
+        ],
+        "description": "100 blocky voxel characters and NPC skins: medieval, adventurers, modern jobs, fantasy races, sci-fi, kids and teens, festive and five bosses. Scale: 1 unit = 1 stud; a normal character is 5.25 studs tall (head a 1.25 cube, torso 2, arms and legs 1 wide and 2 tall); painted skins with clothes, hair and gear raised as real voxels, 8 px per stud; bosses are the same rig scaled 1.6 to 2 times. One material, one pixel-art atlas, one shared rig with Idle, Walk, Run, Wave, Attack and Sit.",
+        "tags": [
+            "Voxel",
+            "Characters"
+        ],
+        "date": "2026-10-09T12:19:55"
+    },
+    {
+        "slug": "100VoxelBiomeKit",
+        "page": "100-voxel-biome-kit",
+        "name": "100 Voxel Biome Kit",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/83548467081510",
+        "image": "img/100VoxelBiomeKit.jpg",
+        "slides": [
+            "img/100VoxelBiomeKit/01.jpg",
+            "img/100VoxelBiomeKit/02.jpg",
+            "img/100VoxelBiomeKit/03.jpg",
+            "img/100VoxelBiomeKit/04.jpg",
+            "img/100VoxelBiomeKit/05.jpg",
+            "img/100VoxelBiomeKit/09.jpg",
+            "img/100VoxelBiomeKit/10.jpg"
+        ],
+        "description": "100 voxel overworld assets in 10 biomes (plains, forest, autumn forest, desert, snow tundra, jungle, swamp, mushroom fields, volcanic wasteland, crystal caves). Each biome has 3 terrain chunks (flat, hill, cliff), 1 landmark, 3 trees or large plants and 3 small props. Scale: 1 unit = 1 stud for a 5-stud character; a full block is 2 studs and the pixel art is 8 px per stud on every asset. Terrain chunks are 32 x 32 studs and every chunk edge is 8 studs high, so chunks of all biomes tile on a 32-stud grid; a cliff chunk is 20 studs high on its far edge and joins other cliffs sideways. One material, one pixel-art atlas texture, rigged (Root, Float, Flow) and animated.",
+        "tags": [
+            "Voxel",
+            "Nature"
+        ],
+        "date": "2026-10-09T12:15:46"
+    },
+    {
+        "slug": "100FactoryMachines",
+        "page": "100-factory-machines",
+        "name": "100 Factory Machines",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/81030307300077",
+        "image": "img/100FactoryMachines.jpg",
+        "slides": [
+            "img/100FactoryMachines/01.jpg",
+            "img/100FactoryMachines/02.jpg",
+            "img/100FactoryMachines/03.jpg",
+            "img/100FactoryMachines/04.jpg",
+            "img/100FactoryMachines/05.jpg",
+            "img/100FactoryMachines/06.jpg",
+            "img/100FactoryMachines/09.jpg",
+            "img/100FactoryMachines/10.jpg"
+        ],
+        "description": "100 stylized toy-factory assets for tycoon and simulator games, true to scale for a 5-stud character (1 Blender unit = 1 stud): conveyors that tile on a 4-stud grid with moving belts, fat pipes that connect flange to flange with a lump of stuff visibly pumping through, 28 machines with spinning gears, stamping presses, shaking hoppers, robot arms and bobbing chimney caps, tanks, silos and vats, push buttons, levers, valve wheels and gauges that animate, plus crates, barrels, ingots, catwalks and floor tiles. Models and bone animations only: no scripts, no particles. Textured, rigged and animated.",
+        "tags": [
+            "Tycoon",
+            "Props"
+        ],
+        "date": "2026-10-09T12:10:19"
+    },
+    {
+        "slug": "100LuckyBlocks",
+        "page": "100-lucky-blocks",
+        "name": "100 Lucky Blocks",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/117632336509523",
+        "image": "img/100LuckyBlocks.jpg",
+        "slides": [
+            "img/100LuckyBlocks/01.jpg",
+            "img/100LuckyBlocks/02.jpg",
+            "img/100LuckyBlocks/03.jpg",
+            "img/100LuckyBlocks/04.jpg",
+            "img/100LuckyBlocks/05.jpg",
+            "img/100LuckyBlocks/06.jpg",
+            "img/100LuckyBlocks/09.jpg",
+            "img/100LuckyBlocks/10.jpg"
+        ],
+        "description": "70 studded lucky blocks (rarity tiers, elements, themes, creatures, special shapes) and 30 supporting pieces: pads, pedestals, conveyor, drop tube, breaking tools, loot and arena parts. Real stud scale for a 5-stud character. One texture, rigged (Block, Lid, Float) with shared Idle, Shake and Open animations.",
+        "tags": [
+            "Stud",
+            "Simulator"
+        ],
+        "date": "2026-10-09T11:56:10"
+    },
+    {
+        "slug": "100KartRacingAssets",
+        "page": "100-kart-racing-assets",
+        "name": "100 Kart Racing Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/98326620608611",
+        "image": "img/100KartRacingAssets.jpg",
+        "slides": [
+            "img/100KartRacingAssets/01.jpg",
+            "img/100KartRacingAssets/02.jpg",
+            "img/100KartRacingAssets/03.jpg",
+            "img/100KartRacingAssets/04.jpg",
+            "img/100KartRacingAssets/05.jpg",
+            "img/100KartRacingAssets/06.jpg",
+            "img/100KartRacingAssets/09.jpg",
+            "img/100KartRacingAssets/10.jpg"
+        ],
+        "description": "100 sharp low-poly kart racing assets, true to scale for a 5-stud character: 60 themed go-karts (30 designs, two colourways each) and 40 track assets. Every kart is about 7 studs long and 5 wide with a seat, a steering wheel on a Steer bone, exhausts and four wheels that are each their own MeshPart with a bone on the axle. Track tiles are 28 studs wide and snap together: straight, finish line, curve and ramp, plus start arch, start lights, curbs, boost pads, item boxes, tyre walls, cones, pit props, grandstand, podium and trophies. One palette texture. Drive, Idle, Boost, Steer, Spin and Flap animations.",
+        "tags": [
+            "Racing",
+            "Vehicles"
+        ],
+        "date": "2026-10-09T11:38:25"
+    },
+    {
+        "slug": "100HomestoreAssets",
+        "page": "100-homestore-assets",
+        "name": "100 Homestore Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/136375834601619",
+        "image": "img/100HomestoreAssets.jpg",
+        "slides": [
+            "img/100HomestoreAssets/01.jpg",
+            "img/100HomestoreAssets/02.jpg",
+            "img/100HomestoreAssets/03.jpg",
+            "img/100HomestoreAssets/04.jpg",
+            "img/100HomestoreAssets/05.jpg",
+            "img/100HomestoreAssets/06.jpg",
+            "img/100HomestoreAssets/09.jpg",
+            "img/100HomestoreAssets/10.jpg"
+        ],
+        "description": "100 clean low-poly assets to build a clothing homestore, true to scale for a 5-stud character: from a 1-stud card reader to a 34-stud storefront. Blank blocky mannequins in five poses plus bust, torso, legs and head forms; clothing racks with hangers and plain garments, folded stacks, shoe and hat displays; pedestals, podiums, glass cases, shelves, slatwall and pegboard; checkout desk, register, card reader, bags, basket, fitting room, mirrors, seating, stanchions, security gate, sign holders, tip jar, rank board and purchase kiosk; plants, rugs and carpet runners, balloons, speakers and a DJ booth; ceiling lamps, spotlights, six neon shape signs; and a snap-together building kit on a 4-stud grid (walls 8 wide and 12 tall, windows, glass walls, doors, corner, pillar, floor, ceiling, dome skylight, stairs, railing, awning, sign board, roof ornaments, arch) with three complete storefront shells. 1 Blender unit = 1 stud. Glass is its own part; doors, the rotating pedestal, the round rack, the curtain, the register drawer and the spotlight have bones and actions. Signs and boards are blank. Textured, rigged and animated.",
+        "tags": [
+            "Homestore",
+            "Props"
+        ],
+        "date": "2026-10-09T11:18:02"
+    },
+    {
+        "slug": "100HalloweenCreatures",
+        "page": "100-halloween-creatures",
+        "name": "100 Halloween Creatures",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/86535892309623",
+        "image": "img/100HalloweenCreatures.jpg",
+        "slides": [
+            "img/100HalloweenCreatures/01.jpg",
+            "img/100HalloweenCreatures/02.jpg",
+            "img/100HalloweenCreatures/03.jpg",
+            "img/100HalloweenCreatures/04.jpg",
+            "img/100HalloweenCreatures/05.jpg",
+            "img/100HalloweenCreatures/06.jpg",
+            "img/100HalloweenCreatures/09.jpg",
+            "img/100HalloweenCreatures/10.jpg"
+        ],
+        "description": "100 stylized low-poly Halloween creatures: skeleton animals, undead beasts, bats, crows and owls, black cats, spiders, wolves, werewolves and hellhounds, ghosts, pumpkin monsters, scarecrows, treants, demons and gargoyles. True stud scale, one texture, rigged and animated.",
+        "tags": [
+            "Halloween",
+            "Animals"
+        ],
+        "date": "2026-10-09T11:05:07"
+    },
+    {
+        "slug": "100FishingRods",
+        "page": "100-fishing-rods",
+        "name": "100 Fishing Rods",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/115587184023336",
+        "image": "img/100FishingRods.jpg",
+        "slides": [
+            "img/100FishingRods/01.jpg",
+            "img/100FishingRods/02.jpg",
+            "img/100FishingRods/03.jpg",
+            "img/100FishingRods/04.jpg",
+            "img/100FishingRods/05.jpg",
+            "img/100FishingRods/06.jpg",
+            "img/100FishingRods/09.jpg",
+            "img/100FishingRods/10.jpg"
+        ],
+        "description": "100 stylized low-poly fishing rods for fishing and simulator games: 20 unique themed rods (wooden, bamboo, steel, toy, lucky, candy, pirate, egypt, jungle, coral, bone, ice, lava, toxic, gem, cyber, ghost, angel, dragon, galaxy), each in 5 colour variations. Line, hook and lure are modelled. Textured, rigged and animated (Idle, Cast, Reel).",
+        "tags": [
+            "Simulator",
+            "Weapons"
+        ],
+        "date": "2026-10-09T10:02:54"
+    },
+    {
+        "slug": "25DarkRPGMonsters",
+        "page": "25-dark-rpg-monsters",
+        "name": "25 Dark RPG Monsters",
+        "count": 25,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/114148844777818",
+        "image": "img/25DarkRPGMonsters.jpg",
+        "slides": [
+            "img/25DarkRPGMonsters/01.jpg",
+            "img/25DarkRPGMonsters/02.jpg",
+            "img/25DarkRPGMonsters/03.jpg",
+            "img/25DarkRPGMonsters/04.jpg",
+            "img/25DarkRPGMonsters/05.jpg",
+            "img/25DarkRPGMonsters/06.jpg",
+            "img/25DarkRPGMonsters/09.jpg",
+            "img/25DarkRPGMonsters/10.jpg"
+        ],
+        "description": "25 dark fantasy monsters and bosses for RPGs: a club-swinging cyclops, drowned giant, crab titan, leviathan eel and a crowned eldritch king, plus brutes, stalkers, beasts and crawlers. Huge true stud scale (5 to 60 studs), high detail, rigged with shared bone names and Idle, Walk, Attack and Roar animations. 25 materials and 25 painted colour textures, one per monster (4096 px for the four colossi and the Cyclops, 1024 px for the vulture and the hound, 2048 px for the rest), each with a matching normal and roughness map in the tex folder. Every monster also has a second, studded look on the same UVs (tex/<Name>_stud.png with its own normal and roughness maps); in Blender, use_stud.py switches all 25 materials between the two.",
+        "tags": [
+            "RPG",
+            "Characters"
+        ],
+        "date": "2026-10-09T09:57:18"
+    },
+    {
+        "slug": "100CuteRestaurant",
+        "page": "100-cute-restaurant-assets",
+        "name": "100 Cute Restaurant Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/75497114801441",
+        "image": "img/100CuteRestaurant.jpg",
+        "slides": [
+            "img/100CuteRestaurant/01.jpg",
+            "img/100CuteRestaurant/02.jpg",
+            "img/100CuteRestaurant/03.jpg",
+            "img/100CuteRestaurant/04.jpg",
+            "img/100CuteRestaurant/05.jpg",
+            "img/100CuteRestaurant/06.jpg",
+            "img/100CuteRestaurant/09.jpg",
+            "img/100CuteRestaurant/10.jpg"
+        ],
+        "description": "100 cute, rounded, pastel low-poly assets to build restaurants, cafes, bakeries and food-court tycoons, true to scale for a 5-stud character: from a half-stud tip jar to a 17-stud food truck. Tables, chairs, booth, bar, host stand, menu boards, register, neon sign frames, stove, grill, fryer, pizza oven, fridge, coffee, soda, ice cream, slush, popcorn and candy floss machines, pans and utensils, serving cart, bins, display cases, sushi conveyor, buffet, salad bar, food truck, drive-through, awning, storefront door and delivery scooter. 1 Blender unit = 1 stud. Every wheel is its own part; doors, lids, drawer, rotors, lever, bell and conveyor have bones and actions. Signs and menus are blank. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Food"
+        ],
+        "date": "2026-10-09T09:50:30"
+    },
+    {
+        "slug": "100JapaneseVillage",
+        "page": "100-japanese-village-assets",
+        "name": "100 Japanese Village Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/108834780220872",
+        "image": "img/100JapaneseVillage.jpg",
+        "slides": [
+            "img/100JapaneseVillage/01.jpg",
+            "img/100JapaneseVillage/02.jpg",
+            "img/100JapaneseVillage/03.jpg",
+            "img/100JapaneseVillage/04.jpg",
+            "img/100JapaneseVillage/05.jpg",
+            "img/100JapaneseVillage/06.jpg",
+            "img/100JapaneseVillage/09.jpg",
+            "img/100JapaneseVillage/10.jpg"
+        ],
+        "description": "100 chunky low-poly assets to build ninja, samurai and anime-style village maps, true to scale for a 5-stud character: from a 2-stud tea set to a 45-stud pagoda. Houses, tea house, dojo, pagodas, keep, shrine hall, stalls, red gates, castle walls, paper-screen wall panels, cherry, maple, pine and bamboo, stone lanterns, koi pond, zen garden, lantern strings, rickshaw and carts, interior props and a ninja training ground. 1 Blender unit = 1 stud. Every cart wheel is its own part; sliding doors, gates, lids, the bell, the water spout and the hanging lanterns have bones and actions. Textured, rigged and animated.",
+        "tags": [
+            "Japan",
+            "Buildings"
+        ],
+        "date": "2026-10-05T19:30:07"
+    },
+    {
+        "slug": "100SciFiSpace",
+        "page": "100-sci-fi-space-assets",
+        "name": "100 Sci-Fi Space Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/101067489483125",
+        "image": "img/100SciFiSpace.jpg",
+        "slides": [
+            "img/100SciFiSpace/01.jpg",
+            "img/100SciFiSpace/02.jpg",
+            "img/100SciFiSpace/03.jpg",
+            "img/100SciFiSpace/04.jpg",
+            "img/100SciFiSpace/05.jpg",
+            "img/100SciFiSpace/06.jpg",
+            "img/100SciFiSpace/09.jpg",
+            "img/100SciFiSpace/10.jpg"
+        ],
+        "description": "100 chunky low-poly sci-fi assets to build a base, a space station and an alien planet, true to scale for a 5-stud character: from a 2-stud helmet to a 59-stud cargo ship. Station kit on a 12-stud grid (corridors, airlock, blast and sliding doors, window wall, catwalk, stairs, landing pad, hangar bay), consoles and crew rooms, reactor, pipes, dishes and a laser turret, cargo containers, a rover with separate wheels, hover bike, shuttle, fighter, mech walker, alien rocks, crystals, glowing plants, ruins, and gear. 1 Blender unit = 1 stud. Doors, turret, dishes, rotors, ramps and wheels have their own bones and actions. Textured, rigged and animated.",
+        "tags": [
+            "Sci-Fi",
+            "Vehicles"
+        ],
+        "date": "2026-10-05T18:14:53"
+    },
+    {
+        "slug": "100FantasyDungeon",
+        "page": "100-fantasy-dungeon-assets",
+        "name": "100 Fantasy Dungeon Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/109678902149518",
+        "image": "img/100FantasyDungeon.jpg",
+        "slides": [
+            "img/100FantasyDungeon/01.jpg",
+            "img/100FantasyDungeon/02.jpg",
+            "img/100FantasyDungeon/03.jpg",
+            "img/100FantasyDungeon/04.jpg",
+            "img/100FantasyDungeon/05.jpg",
+            "img/100FantasyDungeon/06.jpg",
+            "img/100FantasyDungeon/09.jpg",
+            "img/100FantasyDungeon/10.jpg"
+        ],
+        "description": "100 chunky low-poly assets to build RPG dungeons, crypts and caves, true to scale for a 5-stud character on one grid: floor tiles are 12 x 12 studs, walls are 12 wide, 12 tall and 2 thick, doorways are 6 wide and 8 tall. Modular kit (floors, walls, corner, door arch, barred window, pillars, archway, stairs, spiral stair, bridge, pit edge, ceiling), doors and gates, traps, lighting, chests in 5 tiers and a mimic, loot, furniture, statues, magic props and cave pieces. 1 Blender unit = 1 stud. Doors, gates, lids, traps, the lever, the portal and every flame have bones and actions. Textured, rigged and animated.",
+        "tags": [
+            "RPG",
+            "Buildings"
+        ],
+        "date": "2026-10-05T17:57:51"
+    },
+    {
+        "slug": "100HorrorProps",
+        "page": "100-horror-game-props",
+        "name": "100 Horror Game Props",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/116267901576117",
+        "image": "img/100HorrorProps.jpg",
+        "slides": [
+            "img/100HorrorProps/01.jpg",
+            "img/100HorrorProps/02.jpg",
+            "img/100HorrorProps/03.jpg",
+            "img/100HorrorProps/04.jpg",
+            "img/100HorrorProps/05.jpg",
+            "img/100HorrorProps/06.jpg",
+            "img/100HorrorProps/09.jpg",
+            "img/100HorrorProps/10.jpg"
+        ],
+        "description": "100 chunky low-poly props for horror games, true to scale for a 5-stud character: from a 0.9-stud battery to a 16-stud abandoned car and a 14-stud dead tree. Abandoned house, asylum and hospital, backrooms-style office, basement and utility rooms, a spooky yard and gameplay pick-ups (flashlight, keys, fuses, medkit, hiding locker, safe). Spooky and worn, not gory. 1 Blender unit = 1 stud: doors clear 7.5 studs. Doors, gates, lids, the elevator, the rocking chair, hanging lights, chains and swings have bones and actions; every wheel is its own part. Textured, rigged and animated.",
+        "tags": [
+            "Horror",
+            "Props"
+        ],
+        "date": "2026-10-05T17:20:50"
+    },
+    {
+        "slug": "100TropicalIsland",
+        "page": "100-tropical-island-assets",
+        "name": "100 Tropical Island Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/74834991571910",
+        "image": "img/100TropicalIsland.jpg",
+        "slides": [
+            "img/100TropicalIsland/01.jpg",
+            "img/100TropicalIsland/02.jpg",
+            "img/100TropicalIsland/03.jpg",
+            "img/100TropicalIsland/04.jpg",
+            "img/100TropicalIsland/05.jpg",
+            "img/100TropicalIsland/06.jpg",
+            "img/100TropicalIsland/09.jpg",
+            "img/100TropicalIsland/10.jpg"
+        ],
+        "description": "100 chunky low-poly tropical island assets, true to scale for a 5-stud character, to build beaches, islands and resorts: palms, tropical plants, rocks, shells and coral, beach gear, lifeguard tower, huts, tiki bar and tiki statues, bungalow on stilts, boardwalks, pier and dock, boats, a beach buggy and a golf cart, plus a volcano, waterfall, cave and shipwreck. 1 Blender unit = 1 stud. Every wheel is its own part; doors, lids, sails, the hammock, the propeller and flames have bones and actions. Textured, rigged and animated.",
+        "tags": [
+            "Nature",
+            "Buildings"
+        ],
+        "date": "2026-10-05T17:16:30"
+    },
+    {
+        "slug": "100MedievalVillage",
+        "page": "100-medieval-village-assets",
+        "name": "100 Medieval Village Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/128198284864129",
+        "image": "img/100MedievalVillage.jpg",
+        "slides": [
+            "img/100MedievalVillage/01.jpg",
+            "img/100MedievalVillage/02.jpg",
+            "img/100MedievalVillage/03.jpg",
+            "img/100MedievalVillage/04.jpg",
+            "img/100MedievalVillage/05.jpg",
+            "img/100MedievalVillage/06.jpg",
+            "img/100MedievalVillage/09.jpg",
+            "img/100MedievalVillage/10.jpg"
+        ],
+        "description": "100 chunky low-poly assets to build a medieval village and castle, true to scale for a 5-stud character: from a 1-stud tankard to a 40-stud castle keep. Cottages, tavern, chapel, windmill, water mill, barn, a modular castle kit (walls 14 studs high, towers, gatehouse with portcullis, drawbridge, stairs), market stalls, carts and wagons, workshop and interior props, siege engines, fences, bridge, dock and rowboat. 1 Blender unit = 1 stud: doors are 3.4 x 6.8 studs, tables 3 high. Every cart wheel is its own part; doors, gates, sails, water wheel and siege engines have bones and actions. Textured, rigged and animated.",
+        "tags": [
+            "RPG",
+            "Buildings"
+        ],
+        "date": "2026-10-05T16:46:09"
+    },
+    {
+        "slug": "100CandyLand",
+        "page": "100-candy-land-assets",
+        "name": "100 Candy Land Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/118652325500833",
+        "image": "img/100CandyLand.jpg",
+        "slides": [
+            "img/100CandyLand/01.jpg",
+            "img/100CandyLand/02.jpg",
+            "img/100CandyLand/03.jpg",
+            "img/100CandyLand/04.jpg",
+            "img/100CandyLand/05.jpg",
+            "img/100CandyLand/06.jpg",
+            "img/100CandyLand/09.jpg",
+            "img/100CandyLand/10.jpg"
+        ],
+        "description": "100 chunky low-poly candy world assets for simulator zones, obbies and tycoon maps, true to scale for a 5-stud character: from a 2-stud candy flower to a 60-stud ice cream mountain. Lollipop, candy cane and cotton candy trees, gumdrop hills, chocolate rocks, marshmallow boulders, sugar crystals, frosting clouds, gingerbread house, cupcake house, ice cream shop, candy tower, chocolate fountain, gumball machine tower, wafer walls, waffle bridge, peppermint, cookie, donut and macaron platforms, chocolate river, syrup waterfall, rainbow road, candy train and props. 1 Blender unit = 1 stud. Every wheel is its own part; the gate, chest, portal, fountain and gumball crank have bones. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Nature"
+        ],
+        "date": "2026-10-05T16:42:06"
+    },
+    {
+        "slug": "100CuteFarm",
+        "page": "100-cute-farm-assets",
+        "name": "100 Cute Farm Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/130200390113774",
+        "image": "img/100CuteFarm.jpg",
+        "slides": [
+            "img/100CuteFarm/01.jpg",
+            "img/100CuteFarm/02.jpg",
+            "img/100CuteFarm/03.jpg",
+            "img/100CuteFarm/04.jpg",
+            "img/100CuteFarm/05.jpg",
+            "img/100CuteFarm/06.jpg",
+            "img/100CuteFarm/09.jpg",
+            "img/100CuteFarm/10.jpg"
+        ],
+        "description": "100 cute, rounded low-poly farm assets for farming games, true to scale for a 5-stud character: from a 1-stud strawberry to a 40-stud barn. Nine crops in three growth stages (Baby = seedling, Young = growing, Ripe): wheat, corn, sunflower, carrot, potato, cabbage, tomato, pumpkin, strawberry. Harvested produce, crates, baskets and sacks, soil plots (dry, tilled, watered), raised bed, scarecrow, compost bin, barn, silo, chicken coop, stable, greenhouse, windmill, water tower, tool shed, farm stand, well, dog house, fences, gate, hay bales, trough, feeder, beehive, water pump, tractor, trailer, combine harvester, pickup, wheelbarrow, hand cart, tools, fruit trees, berry bush, pond and flowers. 1 Blender unit = 1 stud. Every wheel is its own part; windmill blades, barn doors, gate and pump handle have bones. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Farm"
+        ],
+        "date": "2026-10-05T16:19:46"
+    },
+    {
+        "slug": "100ObbyParts",
+        "page": "100-obby-parts",
+        "name": "100 Obby Parts",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/120544606008620",
+        "image": "img/100ObbyParts.jpg",
+        "slides": [
+            "img/100ObbyParts/01.jpg",
+            "img/100ObbyParts/02.jpg",
+            "img/100ObbyParts/03.jpg",
+            "img/100ObbyParts/04.jpg",
+            "img/100ObbyParts/05.jpg",
+            "img/100ObbyParts/06.jpg",
+            "img/100ObbyParts/09.jpg",
+            "img/100ObbyParts/10.jpg"
+        ],
+        "description": "100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball, spinning bar, truss, ropes, monkey bars, zipline, balloons, clouds, checkpoints, spawn and win pads, start gate, finish arch, podium, buttons, lever, key door, timed door, teleporter, portal, cannon launcher, speed, jump and gravity pads, coins, stars, gems, keys, hearts and decoration. 1 Blender unit = 1 stud. Moving hazards, doors, lever and cannon have bones and looping actions. Textured, rigged and animated.",
+        "tags": [
+            "Obby",
+            "Props"
+        ],
+        "date": "2026-10-05T16:15:32"
+    },
+    {
+        "slug": "100CityProps",
+        "page": "100-city-street-props",
+        "name": "100 City Street Props",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/106936770013413",
+        "image": "img/100CityProps.jpg",
+        "slides": [
+            "img/100CityProps/01.jpg",
+            "img/100CityProps/02.jpg",
+            "img/100CityProps/03.jpg",
+            "img/100CityProps/04.jpg",
+            "img/100CityProps/05.jpg",
+            "img/100CityProps/06.jpg",
+            "img/100CityProps/09.jpg",
+            "img/100CityProps/10.jpg"
+        ],
+        "description": "100 chunky low-poly props to dress a city map, true to scale for a 5-stud character: from a 2-stud road cone to a 35-stud city bus. Traffic and pedestrian lights, street lamps, blank road signs, cones, barriers, bollards, benches, bins, hydrant, mailbox, phone booth, bus stop, hot dog and ice cream carts, food truck, newsstand, vending machine, ATM, market stall, power pole, water tower, billboard, dumpster, fountain, playground, gazebo, subway entrance, bus, taxi, scooter, bicycle, scaffold, cement mixer and more. 1 Blender unit = 1 stud. Every wheel is its own part; swings, seesaw, barrier arm, doors, lids and the fountain have bones. No text and no brands on any model. Textured, rigged and animated.",
+        "tags": [
+            "City",
+            "Props"
+        ],
+        "date": "2026-10-05T16:12:55"
+    },
+    {
+        "slug": "150MilitaryAssets",
+        "page": "150-military-assets",
+        "name": "150 Military Assets",
+        "count": 150,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/136219371644903",
+        "image": "img/150MilitaryAssets.jpg",
+        "slides": [
+            "img/150MilitaryAssets/01.jpg",
+            "img/150MilitaryAssets/02.jpg",
+            "img/150MilitaryAssets/03.jpg",
+            "img/150MilitaryAssets/04.jpg",
+            "img/150MilitaryAssets/05.jpg",
+            "img/150MilitaryAssets/06.jpg",
+            "img/150MilitaryAssets/09.jpg",
+            "img/150MilitaryAssets/10.jpg"
+        ],
+        "description": "150 chunky low-poly military assets, true to scale for a 5-stud character: from a 0.6-stud bullet to an 80-stud cargo plane. Sandbags, barriers, trenches, bunkers, towers, hangar, tents, crates, radar, artillery, projectiles, tanks, trucks, helicopters, jets and boats. 1 Blender unit = 1 stud: hand-held gear is 0.6 to 3.5 studs, cover is chest high, doors and decks clear 7 studs, vehicles are 12 to 37 long. Every wheel is its own part, weapons have Turret / Barrel / Muzzle bones. Textured, rigged and animated.",
+        "tags": [
+            "Military",
+            "Vehicles"
+        ],
+        "date": "2026-10-05T15:38:47"
+    },
+    {
+        "slug": "100PrisonAssets",
+        "page": "100-prison-assets",
+        "name": "100 Prison Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/71750706741656",
+        "image": "img/100PrisonAssets.jpg",
+        "slides": [
+            "img/100PrisonAssets/01.jpg",
+            "img/100PrisonAssets/02.jpg",
+            "img/100PrisonAssets/03.jpg",
+            "img/100PrisonAssets/04.jpg",
+            "img/100PrisonAssets/05.jpg",
+            "img/100PrisonAssets/06.jpg",
+            "img/100PrisonAssets/09.jpg",
+            "img/100PrisonAssets/10.jpg"
+        ],
+        "description": "100 chunky low-poly prison assets for jailbreak and escape games, true to scale for a 5-stud character: from a 0.8-stud key to a 30-stud prison bus and a 35-stud guard tower. Police car, SUV, prison van, bus, armoured truck, motorbike and helicopter, cells with sliding bar doors, bunks, walls, fences, gates, guard tower, yard, cafeteria, laundry, workshop, offices, security gear and escape tools. 1 Blender unit = 1 stud: cells are 12 x 10 x 10, doors clear 7.5 studs. Every wheel is its own part; doors, gates, barrier, searchlight and camera have bones. Textured, rigged and animated.",
+        "tags": [
+            "Prison",
+            "Vehicles"
+        ],
+        "date": "2026-10-05T15:28:51"
+    },
+    {
+        "slug": "100SimulatorEssentials",
+        "page": "100-simulator-essentials",
+        "name": "100 Simulator Essentials",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/98284485465970",
+        "image": "img/100SimulatorEssentials.jpg",
+        "slides": [
+            "img/100SimulatorEssentials/01.jpg",
+            "img/100SimulatorEssentials/02.jpg",
+            "img/100SimulatorEssentials/03.jpg",
+            "img/100SimulatorEssentials/04.jpg",
+            "img/100SimulatorEssentials/05.jpg",
+            "img/100SimulatorEssentials/06.jpg",
+            "img/100SimulatorEssentials/09.jpg"
+        ],
+        "description": "100 chunky low-poly props for simulator games: pet eggs, hatching stands, coins and gems, breakables, gates, portals and islands, shop and upgrade stations, boosts and rewards. Textured, rigged and animated.",
+        "tags": [
+            "Simulator",
+            "Props"
+        ],
+        "date": "2026-10-05T12:40:33"
+    },
+    {
+        "slug": "100Christmas",
+        "page": "100-christmas-decorations",
+        "name": "100 Christmas Decorations",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/89778546951345",
+        "image": "img/100Christmas.jpg",
+        "slides": [
+            "img/100Christmas/01.jpg",
+            "img/100Christmas/02.jpg",
+            "img/100Christmas/03.jpg",
+            "img/100Christmas/04.jpg",
+            "img/100Christmas/05.jpg",
+            "img/100Christmas/06.jpg",
+            "img/100Christmas/09.jpg"
+        ],
+        "description": "100 chunky low-poly Christmas and winter decorations: snowy pines and decorated trees, presents, candy canes and gingerbread, snowmen and snow forts, ice, ornaments, lights and village props. Textured, rigged and animated.",
+        "tags": [
+            "Christmas",
+            "Nature"
+        ],
+        "date": "2026-10-05T12:26:32"
+    },
+    {
+        "slug": "100SpookyTools",
+        "page": "100-spooky-tools",
+        "name": "100 Spooky Tools",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/92600598493133",
+        "image": "img/100SpookyTools.jpg",
+        "slides": [
+            "img/100SpookyTools/01.jpg",
+            "img/100SpookyTools/02.jpg",
+            "img/100SpookyTools/03.jpg",
+            "img/100SpookyTools/04.jpg",
+            "img/100SpookyTools/05.jpg",
+            "img/100SpookyTools/06.jpg",
+            "img/100SpookyTools/09.jpg"
+        ],
+        "description": "100 chunky low-poly Halloween tools for simulator and survival games: axes, pickaxes, hammers, shovels, swords, scythes, staffs and pitchforks in upgrade tiers from wood and bone to pumpkin, bat, slime, skull and cursed. Textured, rigged and animated.",
+        "tags": [
+            "Halloween",
+            "Weapons"
+        ],
+        "date": "2026-10-05T12:13:52"
+    },
+    {
+        "slug": "100HalloweenDecor",
+        "page": "100-halloween-decorations",
+        "name": "100 Halloween Decorations",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/116561819837052",
+        "image": "img/100HalloweenDecor.jpg",
+        "slides": [
+            "img/100HalloweenDecor/01.jpg",
+            "img/100HalloweenDecor/02.jpg",
+            "img/100HalloweenDecor/03.jpg",
+            "img/100HalloweenDecor/04.jpg",
+            "img/100HalloweenDecor/05.jpg",
+            "img/100HalloweenDecor/06.jpg",
+            "img/100HalloweenDecor/09.jpg"
+        ],
+        "description": "100 chunky cute-spooky Halloween map decorations: dead trees, pumpkins and jack-o-lanterns, gravestones and crypts, fences and gates, candles and lanterns, witch props, bones and decor. Textured, rigged and animated.",
+        "tags": [
+            "Halloween",
+            "Nature"
+        ],
+        "date": "2026-10-05T11:56:07"
+    },
+    {
+        "slug": "100CuteGuns",
+        "page": "100-cute-guns",
+        "name": "100 Cute Guns",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/124167877388095",
+        "image": "img/100CuteGuns.jpg",
+        "slides": [
+            "img/100CuteGuns/01.jpg",
+            "img/100CuteGuns/02.jpg",
+            "img/100CuteGuns/03.jpg",
+            "img/100CuteGuns/04.jpg",
+            "img/100CuteGuns/05.jpg",
+            "img/100CuteGuns/06.jpg",
+            "img/100CuteGuns/09.jpg"
+        ],
+        "description": "100 cute, chubby toy blasters: pistols, SMGs, rifles, shotguns, snipers, launchers, ray guns and novelty guns in pastel and candy colours. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Weapons"
+        ],
+        "date": "2026-10-05T11:53:34"
+    },
+    {
+        "slug": "100WildWest",
+        "page": "100-wild-west-decorations",
+        "name": "100 Wild West Decorations",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/107835050512816",
+        "image": "img/100WildWest.jpg",
+        "slides": [
+            "img/100WildWest/01.jpg",
+            "img/100WildWest/02.jpg",
+            "img/100WildWest/03.jpg",
+            "img/100WildWest/04.jpg",
+            "img/100WildWest/05.jpg",
+            "img/100WildWest/06.jpg",
+            "img/100WildWest/09.jpg"
+        ],
+        "description": "100 chunky low-poly Wild West map decorations: cacti, tumbleweeds, dead trees, desert rocks and mesas, town props, ranch fences and wagons, mine carts and rails, and camp gear. Textured, rigged and animated.",
+        "tags": [
+            "Western",
+            "Nature"
+        ],
+        "date": "2026-10-05T11:23:57"
+    },
+    {
+        "slug": "100CuteFurniture",
+        "page": "100-cute-furniture",
+        "name": "100 Cute Furniture",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/129821030523509",
+        "image": "img/100CuteFurniture.jpg",
+        "slides": [
+            "img/100CuteFurniture/01.jpg",
+            "img/100CuteFurniture/02.jpg",
+            "img/100CuteFurniture/03.jpg",
+            "img/100CuteFurniture/04.jpg",
+            "img/100CuteFurniture/05.jpg",
+            "img/100CuteFurniture/06.jpg",
+            "img/100CuteFurniture/09.jpg"
+        ],
+        "description": "100 cute rounded low-poly furniture pieces in pastel colours for roleplay, housing and tycoon games: living room, bedroom, kitchen, bathroom, office, kids and gaming, decor and outdoor. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Furniture"
+        ],
+        "date": "2026-10-05T11:08:34"
+    },
+    {
+        "slug": "100CuteTycoon",
+        "page": "100-cute-tycoon-assets",
+        "name": "100 Cute Tycoon Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/74651319090155",
+        "image": "img/100CuteTycoon.jpg",
+        "slides": [
+            "img/100CuteTycoon/01.jpg",
+            "img/100CuteTycoon/02.jpg",
+            "img/100CuteTycoon/03.jpg",
+            "img/100CuteTycoon/04.jpg",
+            "img/100CuteTycoon/05.jpg",
+            "img/100CuteTycoon/06.jpg",
+            "img/100CuteTycoon/09.jpg"
+        ],
+        "description": "100 cute rounded pastel tycoon assets: droppers in ten tiers, conveyors and pipes, upgraders, furnaces and machines, cash, coins, gold and safes, crates and ores, walls, doors, floors and stairs, decor, buttons, pads, trophies and a teleporter. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Tycoon"
+        ],
+        "date": "2026-10-05T10:50:43"
+    },
+    {
+        "slug": "1000CutePets",
+        "page": "1000-cute-pets",
+        "name": "1000 Cute Pets",
+        "count": 1000,
+        "price": 24.99,
+        "url": "https://create.roblox.com/store/asset/120961179518311",
+        "image": "img/1000CutePets.jpg",
+        "slides": [
+            "img/1000CutePets/01.jpg",
+            "img/1000CutePets/02.jpg",
+            "img/1000CutePets/03.jpg",
+            "img/1000CutePets/04.jpg",
+            "img/1000CutePets/05.jpg",
+            "img/1000CutePets/06.jpg"
+        ],
+        "description": "1000 cute round pets and animals with happy, neutral and angry faces. Cats, dogs, farm, forest, safari, birds, reptiles, sea creatures, bugs and mythical beasts. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Animals"
+        ],
+        "date": "2026-10-05T08:06:01"
+    },
+    {
+        "slug": "250CuteSeaCreatures",
+        "page": "250-cute-sea-creatures",
+        "name": "250 Cute Sea Creatures",
+        "count": 250,
+        "price": 14.99,
+        "url": "https://create.roblox.com/store/asset/132504272814995",
+        "image": "img/250CuteSeaCreatures.jpg",
+        "slides": [
+            "img/250CuteSeaCreatures/01.jpg",
+            "img/250CuteSeaCreatures/02.jpg",
+            "img/250CuteSeaCreatures/03.jpg",
+            "img/250CuteSeaCreatures/04.jpg",
+            "img/250CuteSeaCreatures/05.jpg",
+            "img/250CuteSeaCreatures/06.jpg"
+        ],
+        "description": "250 cute low-poly sea creatures: fish, sharks, whales, dolphins, crabs, lobsters, octopuses, squid, jellyfish and more. They swim, blink and bite. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Animals"
+        ],
+        "date": "2026-10-05T05:18:02"
+    },
+    {
+        "slug": "100RPGItems",
+        "page": "100-rpg-items",
+        "name": "100 RPG Items",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/81895573095035",
+        "image": "img/100RPGItems.jpg",
+        "slides": [
+            "img/100RPGItems/01.jpg",
+            "img/100RPGItems/02.jpg",
+            "img/100RPGItems/03.jpg",
+            "img/100RPGItems/04.jpg",
+            "img/100RPGItems/05.jpg",
+            "img/100RPGItems/06.jpg",
+            "img/100RPGItems/09.jpg"
+        ],
+        "description": "100 chunky low-poly RPG and survival items: tools, weapons, armour, gear, food, resources, crafting stations and economy props. Textured, rigged and animated.",
+        "tags": [
+            "RPG",
+            "Props"
+        ],
+        "date": "2026-10-05T04:20:16"
+    },
+    {
+        "slug": "100CuteCars",
+        "page": "100-cute-cars",
+        "name": "100 Cute Cars",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/100307529223115",
+        "image": "img/100CuteCars.jpg",
+        "slides": [
+            "img/100CuteCars/01.jpg",
+            "img/100CuteCars/02.jpg",
+            "img/100CuteCars/03.jpg",
+            "img/100CuteCars/04.jpg",
+            "img/100CuteCars/05.jpg",
+            "img/100CuteCars/06.jpg",
+            "img/100CuteCars/09.jpg"
+        ],
+        "description": "100 low-poly cartoon cars: compacts, sedans, sports cars, utility vehicles, service vehicles, fun vehicles, heavy trucks and vintage cars. Wheels are separate bones that spin, tyres have a black outline, no interiors. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Vehicles"
+        ],
+        "date": "2026-10-05T04:17:28"
+    },
+    {
+        "slug": "100CuteFoliage",
+        "page": "100-cute-foliage",
+        "name": "100 Cute Foliage",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/82542365949087",
+        "image": "img/100CuteFoliage.jpg",
+        "slides": [
+            "img/100CuteFoliage/01.jpg",
+            "img/100CuteFoliage/02.jpg",
+            "img/100CuteFoliage/03.jpg",
+            "img/100CuteFoliage/04.jpg",
+            "img/100CuteFoliage/05.jpg",
+            "img/100CuteFoliage/06.jpg",
+            "img/100CuteFoliage/10.jpg"
+        ],
+        "description": "100 cute low-poly terrain decorations: trees, pines, bushes, grass, flowers, mushrooms, rocks, fallen logs and stumps. Textured, rigged and animated.",
+        "tags": [
+            "Cute",
+            "Nature"
+        ],
+        "date": "2026-10-05T03:51:27"
+    },
+    {
+        "slug": "100PirateAssets",
+        "page": "100-pirate-assets",
+        "name": "100 Pirate Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/91916855155085",
+        "image": "img/100PirateAssets.jpg",
+        "slides": [
+            "img/100PirateAssets/01.jpg",
+            "img/100PirateAssets/02.jpg",
+            "img/100PirateAssets/03.jpg",
+            "img/100PirateAssets/04.jpg",
+            "img/100PirateAssets/05.jpg",
+            "img/100PirateAssets/06.jpg"
+        ],
+        "description": "100 chunky low-poly pirate assets: characters, creatures, weapons, treasure, ship parts and island props. Textured, rigged and animated.",
+        "tags": [
+            "Pirates",
+            "Characters"
+        ],
+        "date": "2026-10-05T03:40:11"
+    },
+    {
+        "slug": "100MagicTreasure",
+        "page": "100-magic-and-treasure-items",
+        "name": "100 Magic & Treasure Items",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/105476584252876",
+        "image": "img/100MagicTreasure.jpg",
+        "slides": [
+            "img/100MagicTreasure/01.jpg",
+            "img/100MagicTreasure/02.jpg",
+            "img/100MagicTreasure/03.jpg",
+            "img/100MagicTreasure/04.jpg",
+            "img/100MagicTreasure/05.jpg",
+            "img/100MagicTreasure/06.jpg",
+            "img/100MagicTreasure/09.jpg"
+        ],
+        "description": "100 chunky low-poly potions, gems, crystals, magic items, jewelry and treasure. Textured, rigged and animated.",
+        "tags": [
+            "RPG",
+            "Props"
+        ],
+        "date": "2026-10-05T03:35:02"
+    },
+    {
+        "slug": "50LowPolyGuns",
+        "page": "50-low-poly-guns",
+        "name": "50 Low Poly Guns",
+        "count": 50,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/116026250201921",
+        "image": "img/50LowPolyGuns.jpg",
+        "slides": [
+            "img/50LowPolyGuns/01.jpg",
+            "img/50LowPolyGuns/02.jpg",
+            "img/50LowPolyGuns/03.jpg",
+            "img/50LowPolyGuns/04.jpg",
+            "img/50LowPolyGuns/05.jpg",
+            "img/50LowPolyGuns/06.jpg"
+        ],
+        "description": "50 chunky low-poly guns and firearms. Textured, rigged and animated.",
+        "tags": [
+            "Weapons"
+        ],
+        "date": "2026-10-05T03:19:10"
+    },
+    {
+        "slug": "100CuteFruits",
+        "page": "100-cute-fruits",
+        "name": "100 Cute Fruits",
+        "count": 100,
+        "price": 14.99,
+        "url": "https://create.roblox.com/store/asset/119844717670889",
+        "image": "img/100CuteFruits.jpg",
+        "slides": [
+            "img/100CuteFruits/01.jpg",
+            "img/100CuteFruits/02.jpg",
+            "img/100CuteFruits/03.jpg",
+            "img/100CuteFruits/04.jpg",
+            "img/100CuteFruits/05.jpg",
+            "img/100CuteFruits/06.jpg"
+        ],
+        "description": "100 cute low-poly fruits with blinking faces and a soft glowing outline. Every fruit has an idle wiggle and a blink.",
+        "tags": [
+            "Cute",
+            "Food"
+        ],
+        "date": "2026-10-05T03:08:19"
+    },
+    {
+        "slug": "100RPGEnemies",
+        "page": "100-rpg-enemies",
+        "name": "100 RPG Enemies",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/127326377885299",
+        "image": "img/100RPGEnemies.jpg",
+        "slides": [
+            "img/100RPGEnemies/01.jpg",
+            "img/100RPGEnemies/02.jpg",
+            "img/100RPGEnemies/03.jpg",
+            "img/100RPGEnemies/04.jpg",
+            "img/100RPGEnemies/05.jpg",
+            "img/100RPGEnemies/06.jpg",
+            "img/100RPGEnemies/09.jpg"
+        ],
+        "description": "100 chunky low-poly RPG enemies: cute slimes, big angry slimes, skeletons, undead, goblins and orcs, golems, dragons, beasts and dark forces. Textured, rigged and animated.",
+        "tags": [
+            "RPG",
+            "Characters"
+        ],
+        "date": "2026-10-05T03:06:23"
+    },
+    {
+        "slug": "870VoxelBlockCubes",
+        "name": "870 Voxel Block Cubes",
+        "count": 870,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/138649625598617",
+        "image": "img/870VoxelBlockCubes.jpg",
+        "slides": [
+            "img/870VoxelBlockCubes/01.jpg",
+            "img/870VoxelBlockCubes/02.jpg",
+            "img/870VoxelBlockCubes/03.jpg",
+            "img/870VoxelBlockCubes/04.jpg",
+            "img/870VoxelBlockCubes/05.jpg"
+        ],
+        "description": "870 pixel-art building cubes, each a plain 2-stud Part with a Texture on every face (no meshes), in five themed sets sorted into folders by type: ground, stone, wood, leaves, ores and gems, mushrooms, fluids and more. 47 fluid cubes (lava, water, fire, portal) animate with the one small AnimatedTiles script included. Biomes x229, City x188, Dungeon x151, Islands x170, Village x132.",
+        "tags": [
+            "Voxel",
+            "Pixel"
+        ],
+        "date": "2026-10-09T04:01:12",
+        "page": "870-voxel-block-cubes"
     }
 ]

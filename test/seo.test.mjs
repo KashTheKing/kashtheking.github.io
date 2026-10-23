@@ -69,3 +69,34 @@ test('sitemap leaves out hidden pages and other sites', () => {
   const map = read(dir, 'sitemap.xml');
   assert.doesNotMatch(map, /\/roblox\/<|\/discord\/<|\/shop\/pack\/<|minigame|newsletter-privacy|contact\.html/);
 });
+
+test('UI packs: screens, not models, and their own UI packs page once there are two', () => {
+  const dir = copy();
+  const file = path.join(dir, 'shop/packs.json');
+  const packs = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const pack = (slug, name) => ({slug, name, kind: 'ui', count: 5, price: 6.99, url: 'https://create.roblox.com/store/asset/123', image: `img/${slug}.jpg`, description: 'A full game UI.', tags: ['UI']});
+  packs.unshift(pack('TestUiOne', 'Test One UI Pack'), pack('TestUiTwo', 'Test Two UI Pack'));
+  fs.writeFileSync(file, JSON.stringify(packs, null, 4));
+  const r = build(dir);
+  assert.ok(r.collections.some((c) => c.slug === 'ui' && c.packs >= 2));
+  const page = read(dir, 'shop/test-one-ui-pack/index.html');
+  assert.match(page, /<title>Test One UI Pack - Roblox UI Pack \| KashTheKing Shop<\/title>/);
+  assert.match(page, /<p>5 screens, \$6\.99\./);
+  assert.match(metaDescription(packs[0]), /^5 full Roblox UI screens, static and Fusion\./);
+  assert.doesNotMatch(page, /5 models/);
+});
+
+test('a UI pack shows before its Creator Store listing: page and card, no Roblox link until it has one', () => {
+  const dir = copy();
+  const file = path.join(dir, 'shop/packs.json');
+  const packs = JSON.parse(fs.readFileSync(file, 'utf8'));
+  packs.unshift({slug: 'SoonUi', name: 'Soon UI Pack', kind: 'ui', count: 4, price: 5.99, url: '', image: 'img/SoonUi.jpg', description: 'A full game UI.', tags: ['UI']});
+  fs.writeFileSync(file, JSON.stringify(packs, null, 4));
+  build(dir);
+  const page = read(dir, 'shop/soon-ui-pack/index.html');
+  assert.match(page, /schema\.org\/PreOrder/);
+  assert.doesNotMatch(page, /Get it on the Roblox Creator Store/);
+  assert.ok(!fs.existsSync(path.join(dir, 'shop/soon-ui-pack/roblox/index.html')));
+  assert.match(read(dir, 'shop/index.html'), /<a class="card" href="soon-ui-pack\/">/);
+  assert.match(read(dir, 'shop/ui/index.html'), /soon-ui-pack\//);
+});
