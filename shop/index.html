@@ -258,12 +258,12 @@
             empty.hidden = shown.length > 0 || (!q && !window.SHOP_PICK);
         }
         let soon = [];
-        // Asset packs are off the site for now (Roblox lists them as Packages). Set to false to bring them back.
-        const HIDE_ASSET_PACKS = true;
+        // Slugs of asset packs to hide for now (API-uploaded Packages). Empty: every pack shows.
+        const HIDDEN_PACKS = [];
         Promise.all([fetch("packs.json").then(r => r.json()), fetch("soon.json").then(r => r.ok ? r.json() : []).catch(() => [])]).then(([data, later]) => {
             // style pages (/shop/stud/ ...) set SHOP_PICK to their packs (tools/seo.mjs)
             const pick = p => !window.SHOP_PICK || window.SHOP_PICK.includes(p.slug);
-            packs = data.filter(pick).filter(p => !HIDE_ASSET_PACKS || p.kind === "ui"); soon = later.filter(pick).map(p => ({ ...p, tags: ["Coming Soon", ...p.tags] }));   // the tag doubles as a filter chip
+            packs = data.filter(pick).filter(p => !HIDDEN_PACKS.includes(p.slug)); soon = later.filter(pick).map(p => ({ ...p, tags: ["Coming Soon", ...p.tags] }));   // the tag doubles as a filter chip
             tick(); setInterval(tick, 1000);
             document.getElementById("stat-packs").textContent = packs.length;
             const allUi = packs.length && packs.every((p) => p.kind === "ui");   // the UI packs page counts screens
