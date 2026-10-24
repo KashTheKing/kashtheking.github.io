@@ -95,11 +95,12 @@
         .wide-grid .card { border-color: #c86e19; }
         .wide-grid .card img { aspect-ratio: 16 / 9; }
         /* Lifetime Pack banner: image on the left, pitch on the right; stacks on narrow screens */
-        #lifetime { flex-direction: row; flex-wrap: wrap; margin-bottom: 44px; border-color: var(--gold); }
-        #lifetime img { flex: 1 1 380px; width: auto; min-width: 0; aspect-ratio: 2 / 1; }
-        #lifetime .body { flex: 1 1 320px; justify-content: center; padding: 26px; }
-        #lifetime h2 { font-size: 28px; }
-        #lifetime p { display: block; font-size: 15px; }
+        #lifetime { flex-direction: row; align-items: center; margin-bottom: 32px; border-color: var(--gold); }
+        #lifetime img { flex: 0 0 170px; width: 170px; height: auto; align-self: stretch; aspect-ratio: auto; object-fit: cover; }
+        #lifetime .body { flex: 1 1 0; min-width: 0; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 14px 20px; }
+        #lifetime h2 { font-size: 20px; }
+        #lifetime p { display: block; flex: 1 1 260px; font-size: 13px; -webkit-line-clamp: 2; line-clamp: 2; }
+        #lifetime .buy { margin: 0 0 0 auto; } #lifetime .price { font-size: 22px; }
         .empty { padding: 60px 0; text-align: center; color: var(--dim); }
         section.info { margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
         .info div { padding: 22px; background: rgba(38,41,46,.85); border: 1px solid var(--line); border-radius: 14px; }
@@ -124,7 +125,7 @@
             .grid .buy { flex-direction: column; align-items: stretch; gap: 7px; } .grid .price { font-size: 19px; } .grid .robux { display: inline; margin: 0 0 0 6px; font-size: 12px; }
             .grid .view, .grid .soon { padding: 8px 6px; font-size: 13px; text-align: center; white-space: normal; }
             .card.locked .lock { font-size: 14px; gap: 6px; } .card.locked .lock svg { width: 24px; height: 24px; }
-            #lifetime, #featured { margin-bottom: 26px; } #lifetime .body { padding: 16px; } #lifetime h2 { font-size: 22px; } #featured > h2 { font-size: 20px; }
+            #lifetime, #featured { margin-bottom: 22px; } #lifetime img { flex-basis: 84px; width: 84px; } #lifetime .body { padding: 10px 12px; } #lifetime p { display: none; } #lifetime .buy { margin: 0; flex: 1 1 100%; } #lifetime h2 { font-size: 16px; } #featured > h2 { font-size: 20px; }
             .wide-grid { gap: 14px; } section.info { margin-top: 44px; }
         }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
@@ -165,7 +166,7 @@
                 <span class="badge first">Best value</span>
                 <span class="badge sale">50% off sale</span>
                 <h2>Lifetime Pack</h2>
-                <p>Every asset pack on this page, plus every pack I release in the future. Buy once, download the new packs as they come out. Includes FBX, Blender and Roblox files.</p>
+                <p>Every asset pack I make, now and in the future. Buy once, download the new packs as they come out. Includes FBX, Blender and Roblox files.</p>
                 <div class="buy"><span class="price"><s class="was">$199.00</s> $99.00<small class="robux"><s class="was">R$ 50,000</s> or R$ 25,000</small></span><span class="view">Get it on ClearlyDev</span></div>
             </div>
         </a>
@@ -248,18 +249,21 @@
         function render() {
             const q = search.value.trim().toLowerCase();
             const match = p => (tag === "All" || p.tags.includes(tag)) && (!q || (p.name + " " + (p.description || "") + " " + p.tags.join(" ")).toLowerCase().includes(q));
-            const shown = packs.filter(match);
+            const shown = packs.filter(p => match(p) && (window.SHOP_PICK || p.kind !== "ui"));   // UI packs sit in the featured row on the main shop, not again in the grid
             const order = { low: (a, b) => a.price - b.price, high: (a, b) => b.price - a.price, big: (a, b) => b.count - a.count }[sort.value];
             if (order) shown.sort(order);   // "new" keeps packs.json order (newest first); filter() already made a copy
             shown.push(...soon.filter(match));   // coming-soon packs always sit after the ones you can buy
             grid.replaceChildren(...shown.map(card));
-            empty.hidden = shown.length > 0;
+            empty.textContent = q ? "No packs match that search." : "Asset packs are back soon.";
+            empty.hidden = shown.length > 0 || (!q && !window.SHOP_PICK);
         }
         let soon = [];
+        // Asset packs are off the site for now (Roblox lists them as Packages). Set to false to bring them back.
+        const HIDE_ASSET_PACKS = true;
         Promise.all([fetch("packs.json").then(r => r.json()), fetch("soon.json").then(r => r.ok ? r.json() : []).catch(() => [])]).then(([data, later]) => {
             // style pages (/shop/stud/ ...) set SHOP_PICK to their packs (tools/seo.mjs)
             const pick = p => !window.SHOP_PICK || window.SHOP_PICK.includes(p.slug);
-            packs = data.filter(pick); soon = later.filter(pick).map(p => ({ ...p, tags: ["Coming Soon", ...p.tags] }));   // the tag doubles as a filter chip
+            packs = data.filter(pick).filter(p => !HIDE_ASSET_PACKS || p.kind === "ui"); soon = later.filter(pick).map(p => ({ ...p, tags: ["Coming Soon", ...p.tags] }));   // the tag doubles as a filter chip
             tick(); setInterval(tick, 1000);
             document.getElementById("stat-packs").textContent = packs.length;
             const allUi = packs.length && packs.every((p) => p.kind === "ui");   // the UI packs page counts screens
