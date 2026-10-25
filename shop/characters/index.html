@@ -96,6 +96,14 @@
         .dept a[aria-current="page"] { background: var(--gold); border-color: var(--gold); color: #1c1e22; }
         .dept a.ui { --gold: #49BAEC; }
         @media (max-width: 720px) { .dept { padding: 12px 14px 0; overflow-x: auto; flex-wrap: nowrap; } .dept a { flex: none; } }
+        /* Halloween row: the spooky packs sit on top until the season ends */
+        #halloween { margin-bottom: 44px; }
+        #halloween h2 { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; padding-left: 14px; border-left: 6px solid #8a4dff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 28px; color: #ff9a1f; }
+        #halloween h2 a { color: var(--dim); font: 700 14px 'Inter', sans-serif; text-decoration: none; }
+        #halloween h2 a:hover { color: var(--text); }
+        .wide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 26px; }
+        #halloween .card { border-color: #8a4dff; }
+        #halloween .card:hover { border-color: #ff9a1f; }
         /* Lifetime Pack banner: image on the left, pitch on the right; stacks on narrow screens */
         #lifetime { flex-direction: row; align-items: center; margin-bottom: 32px; border-color: var(--gold); }
         #lifetime img { flex: 0 0 170px; width: 170px; height: auto; align-self: stretch; aspect-ratio: auto; object-fit: cover; }
@@ -128,7 +136,7 @@
             .grid .view, .grid .soon { padding: 8px 6px; font-size: 13px; text-align: center; white-space: normal; }
             .card.locked .lock { font-size: 14px; gap: 6px; } .card.locked .lock svg { width: 24px; height: 24px; }
             #lifetime { margin-bottom: 26px; } #lifetime img { flex-basis: 84px; width: 84px; } #lifetime .body { padding: 10px 12px; } #lifetime p { display: none; } #lifetime .buy { margin: 0; flex: 1 1 100%; } #lifetime h2 { font-size: 16px; }
-            section.info { margin-top: 44px; }
+            section.info { margin-top: 44px; } #halloween h2 { font-size: 21px; } #halloween { margin-bottom: 26px; } .wide-grid { gap: 14px; }
         }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
     </style>
@@ -175,6 +183,7 @@
                 <div class="buy"><span class="price"><s class="was">$199.00</s> $99.00<small class="robux"><s class="was">R$ 50,000</s> or R$ 25,000</small></span><span class="view">Get it on ClearlyDev</span></div>
             </div>
         </a>
+        <section id="halloween" hidden aria-labelledby="halloween-title"><h2 id="halloween-title">Halloween <a href="/shop/halloween/">See all</a></h2><div class="wide-grid"></div></section>
         <div id="grid" class="grid" aria-live="polite"><!--grid:start--><a class="card" href="100-cute-robots/"><img src="img/100CuteRobots.jpg" alt="100 Cute Robots Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Robots</h2><p>100 cute chibi toy robots, glossy and colourful, true to scale for a 5-stud character: helper bots, worker bots, wheeled and tracked bots, flying bots, animal bots, battle bots, retro bots, tiny 2-stud bots, six giant boss mechs up to 16 studs and 10 props. Every robot has a screen or simple-eye face that blinks and a battery / power core that is its own detachable part sitting in a modelled socket, like a vinyl collectible. Every wheel is its own part. One shared rig and animation set (same bone and action names as the Cute Zombies and Cute Dinos packs): Idle, Walk, Run, Jump, Blink, Hit, Fall, Wave, Attack, Cheer, PowerDown, PowerUp, Dance, Spin, Drive, Fire, Stomp, CorePop and HeadPop. Humanoid bots are set up as playable StarterCharacters by PackSetup. Textured, rigged and animated.</p></div></a><a class="card" href="100-cute-zombie-apocalypse/"><img src="img/100CuteZombies.jpg" alt="100 Cute Zombie Apocalypse Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Zombie Apocalypse</h2><p>100 cute chibi zombie apocalypse assets, true to scale for a 5-stud character: 20 small playable survivors, 40 zombies, mad scientist zombies, skeletons, imps, 8 huge bosses and 10 props. Every monster does a HUGE snappy chomp (jaw and top of the head split wide open, with teeth and tongue) and has a pink cartoon brain that is its own detachable part, like a vinyl collectible. One shared rig and animation set: Idle, Walk, Run, Jump, Blink, Wave, Attack, Hit, Cheer, ZombieWalk, Chomp, Roar, BrainPop, Fall and Slam. Survivors are set up as playable StarterCharacters by PackSetup. Cute, never gory. Textured, rigged and animated.</p></div></a><a class="card" href="50-studded-bosses/"><img src="img/50StuddedBosses.jpg" alt="50 Studded Bosses Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>50 Studded Bosses</h2><p>50 sharp, blocky boss monsters covered in classic studs, 17 to 40 studs tall for a 5-stud character: undead, golems, beasts, dragons, machines, warriors, royals and mages. One texture, no outline. Rigged with the same bones on every boss (Torso, Head, Jaw, arms, hands, legs, Float for crowns and crystals) and shared Idle, Attack and Roar animations.</p></div></a><a class="card" href="100-voxel-characters/"><img src="img/100VoxelCharacters.jpg" alt="100 Voxel Characters Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Voxel Characters</h2><p>100 blocky voxel characters and NPC skins: medieval, adventurers, modern jobs, fantasy races, sci-fi, kids and teens, festive and five bosses. Scale: 1 unit = 1 stud; a normal character is 5.25 studs tall (head a 1.25 cube, torso 2, arms and legs 1 wide and 2 tall); painted skins with clothes, hair and gear raised as real voxels, 8 px per stud; bosses are the same rig scaled 1.6 to 2 times. One material, one pixel-art atlas, one shared rig with Idle, Walk, Run, Wave, Attack and Sit.</p></div></a><a class="card" href="25-dark-rpg-monsters/"><img src="img/25DarkRPGMonsters.jpg" alt="25 Dark RPG Monsters Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>25 Dark RPG Monsters</h2><p>25 dark fantasy monsters and bosses for RPGs: a club-swinging cyclops, drowned giant, crab titan, leviathan eel and a crowned eldritch king, plus brutes, stalkers, beasts and crawlers. Huge true stud scale (5 to 60 studs), high detail, rigged with shared bone names and Idle, Walk, Attack and Roar animations. 25 materials and 25 painted colour textures, one per monster (4096 px for the four colossi and the Cyclops, 1024 px for the vulture and the hound, 2048 px for the rest), each with a matching normal and roughness map in the tex folder. Every monster also has a second, studded look on the same UVs (tex/&lt;Name&gt;_stud.png with its own normal and roughness maps); in Blender, use_stud.py switches all 25 materials between the two.</p></div></a><a class="card" href="100-pirate-assets/"><img src="img/100PirateAssets.jpg" alt="100 Pirate Assets Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Pirate Assets</h2><p>100 chunky low-poly pirate assets: characters, creatures, weapons, treasure, ship parts and island props. Textured, rigged and animated.</p></div></a><a class="card" href="100-rpg-enemies/"><img src="img/100RPGEnemies.jpg" alt="100 RPG Enemies Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 RPG Enemies</h2><p>100 chunky low-poly RPG enemies: cute slimes, big angry slimes, skeletons, undead, goblins and orcs, golems, dragons, beasts and dark forces. Textured, rigged and animated.</p></div></a><!--grid:end--></div>
         <p id="empty" class="empty" hidden>No packs match that search.</p>
         <!--cols:start--><nav class="cols" aria-label="Browse asset packs by style"><style>.cols{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:28px 0 8px}.cols b{color:var(--dim);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}.cols a{padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--text);text-decoration:none;font-size:14px;font-weight:600}.cols a:hover,.cols a[aria-current]{border-color:var(--gold);color:var(--gold)}</style><b>Browse</b><a href="./">All packs</a><a href="ui/">UI packs</a><a href="stud/">Stud</a><a href="voxel/">Voxel</a><a href="halloween/">Halloween</a><a href="weapons/">Weapons</a><a href="vehicles/">Vehicles</a><a href="pets/">Pets &amp; animals</a><a href="characters/" aria-current="page">Characters</a><a href="rpg/">RPG</a><a href="simulator/">Simulator &amp; tycoon</a><a href="buildings/">Buildings &amp; maps</a><a href="cute/">Cute/Cartoon</a></nav><!--cols:end-->
@@ -235,7 +244,7 @@
             const el = document.createElement("a");
             el.className = "card";
             el.href = p.page + "/";
-            el.setAttribute("aria-label", `${p.name}, ${money(p.price)} or ${rbx(p.price)} Robux. View pack`);
+            el.setAttribute("aria-label", p.kind === "ui" && !p.url ? `${p.name}. Coming soon. View pack` : `${p.name}, ${money(p.price)} or ${rbx(p.price)} Robux. View pack`);
             el.innerHTML = `
                 <img src="${p.image}" alt="" loading="lazy" width="540" height="540">
                 <div class="body">
@@ -243,7 +252,7 @@
                     <h2>${p.name}</h2>
                     <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
                     <p>${p.description}</p>
-                    <div class="buy"><span class="price">${money(p.price)}${robux(p.price)}</span><span class="view">View pack</span></div>
+                    <div class="buy">${p.kind === "ui" && !p.url ? `<span class="soon">Coming soon</span>` : `<span class="price">${money(p.price)}${robux(p.price)}</span>`}<span class="view">View pack</span></div>
                 </div>`;
             return el;
         }
@@ -263,7 +272,12 @@
             const order = { low: (a, b) => a.price - b.price, high: (a, b) => b.price - a.price, big: (a, b) => b.count - a.count }[sort.value];   // "new" keeps packs.json order (newest first)
             const shown = packs.filter(match), waiting = soon.filter(match);   // coming-soon packs always sit after the ones you can buy
             if (order) shown.sort(order);
-            grid.replaceChildren(...shown.concat(waiting).map(card));
+            // the Halloween row shows on the plain shop view; any search or filter goes back to one grid
+            const spooky = p => p.tags.includes("Halloween") || /halloween|spooky|horror/i.test(p.name);
+            const row = document.getElementById("halloween"), hal = !pickPage() && !q && type === "All" && subject === "All" ? shown.filter(spooky) : [];
+            row.hidden = !hal.length;
+            row.lastElementChild.replaceChildren(...hal.map(card));
+            grid.replaceChildren(...shown.filter(p => !hal.includes(p)).concat(waiting).map(card));
             empty.textContent = "No packs match that search.";
             empty.hidden = shown.length + waiting.length > 0;
         }

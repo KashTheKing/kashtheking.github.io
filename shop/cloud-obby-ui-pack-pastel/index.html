@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--seo:start-->
     <title>Cloud Obby UI Pack - Pastel - Roblox UI Pack | KashTheKing Shop</title>
-    <meta name="description" content="5 full Roblox UI screens, static and Fusion. A soft pastel obby UI kit in lavender, peach, baby blue and mint, with puffy cloud windows, white… $6.99.">
+    <meta name="description" content="5 full Roblox UI screens, static and Fusion. A soft pastel obby UI kit in lavender, peach, baby blue and mint, with puffy cloud windows, white… Coming soon.">
     <link rel="canonical" href="https://kashtheking.com/shop/cloud-obby-ui-pack-pastel/">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="KashTheKing Shop">
     <meta property="og:url" content="https://kashtheking.com/shop/cloud-obby-ui-pack-pastel/">
-    <meta property="og:title" content="Cloud Obby UI Pack - Pastel - Roblox UI Pack ($6.99)">
+    <meta property="og:title" content="Cloud Obby UI Pack - Pastel - Roblox UI Pack (Coming soon)">
     <meta property="og:description" content="A soft pastel obby UI kit in lavender, peach, baby blue and mint, with puffy cloud windows, white outlines and FredokaOne text. Five full screens wired into one working App: an obby HUD (stage badge, stage progress bar, coin and skip counters, Skip Stage and Checkpoint buttons, menu buttons that…">
     <meta property="og:image" content="https://kashtheking.com/shop/img/PastelCloudObby/01.jpg">
     <meta property="og:image:alt" content="Cloud Obby UI Pack - Pastel Roblox UI Pack">
@@ -107,7 +107,7 @@
     <main>
         <div id="sub"></div>
         <a class="back" href="../ui/">← All UI packs</a>
-        <div id="pack"><h1>Cloud Obby UI Pack - Pastel - Roblox UI Pack</h1><p>A soft pastel obby UI kit in lavender, peach, baby blue and mint, with puffy cloud windows, white outlines and FredokaOne text. Five full screens wired into one working App: an obby HUD (stage badge, stage progress bar, coin and skip counters, Skip Stage and Checkpoint buttons, menu buttons that open real menus), a Trail Shop with tabs and a grid of trail cards, a Stage Select grid with cleared, current and locked stages, a Codes redeem box, and a Settings window with switches and sliders. Opening a menu slides the HUD out of the way. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth eased buttons, rolling counters, sliding tabs and toggles, draggable sliders and windows that slide open, with a UI Labs story for every piece and for the whole App.</p><p>5 screens, $6.99.</p><img src="../img/PastelCloudObby.jpg" alt="Cloud Obby UI Pack - Pastel Roblox UI Pack thumbnail" width="540" height="540"></div>
+        <div id="pack"><h1>Cloud Obby UI Pack - Pastel - Roblox UI Pack</h1><p>A soft pastel obby UI kit in lavender, peach, baby blue and mint, with puffy cloud windows, white outlines and FredokaOne text. Five full screens wired into one working App: an obby HUD (stage badge, stage progress bar, coin and skip counters, Skip Stage and Checkpoint buttons, menu buttons that open real menus), a Trail Shop with tabs and a grid of trail cards, a Stage Select grid with cleared, current and locked stages, a Codes redeem box, and a Settings window with switches and sliders. Opening a menu slides the HUD out of the way. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth eased buttons, rolling counters, sliding tabs and toggles, draggable sliders and windows that slide open, with a UI Labs story for every piece and for the whole App.</p><p>5 screens, Coming soon.</p><img src="../img/PastelCloudObby.jpg" alt="Cloud Obby UI Pack - Pastel Roblox UI Pack thumbnail" width="540" height="540"></div>
         <p id="missing" class="missing" hidden>That pack was not found. <a href="../ui/">Browse all packs</a>.</p>
         <section id="more" hidden>
             <h2>You might also like</h2>
@@ -140,6 +140,7 @@
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
+            const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
             document.getElementById("pack").innerHTML = `
                 <div class="top">
                     <div>
@@ -165,14 +166,14 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
+                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>`}
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
-                        <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
+                        ${soonUi ? "" : `<p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>`}
                         <ul class="list">
                             ${p.kind === "ui" ? `<li>${p.count} full screens, every button working</li>
                             <li>A static ScreenGui and a Fusion 0.3 version with UI Labs stories</li>` : `<li>Textured, rigged and animated</li>

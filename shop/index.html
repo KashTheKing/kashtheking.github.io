@@ -26,6 +26,7 @@
     <nav class="dept" aria-label="Shop"><a href="/shop/" aria-current="page">Shop</a><a href="/shop/models/">Model packs</a><a class="ui" href="/shop/ui/">UI packs</a><a href="/shop/plugins/">Plugins</a><a href="/library/">Library</a></nav>
     <main>
         <div class="tiles">
+            <a class="tile halloween" href="/shop/halloween/"><img src="img/100StudHalloweenAssets.jpg" alt="" width="540" height="540"><div><b>Halloween</b><span><i data-n="halloween" style="font-style:normal"></i></span></div></a>
             <a class="tile" href="/shop/models/"><img src="img/100StudPets.jpg" alt="" width="540" height="540"><div><b>Model packs</b><span><i data-n="models" style="font-style:normal"></i></span></div></a>
             <a class="tile ui" href="/shop/ui/"><img src="img/SurvivalRoyaleUI.jpg" alt="" width="540" height="300"><div><b>UI packs</b><span><i data-n="ui" style="font-style:normal"></i></span></div></a>
             <a class="tile" href="/shop/plugins/"><img src="/infinite-ocean/img/hero.jpg" alt="" width="540" height="300"><div><b>Plugins</b><span>3 plugins</span></div></a>
@@ -39,7 +40,10 @@
         fetch("/shop/packs.json").then(r => r.json()).then(packs => {
             const n = k => packs.filter(p => (p.kind === "ui") === (k === "ui")).length;
             document.querySelector('[data-n="models"]').textContent = n("models") + " packs";
-            document.querySelector('[data-n="ui"]').textContent = n("ui") + " packs";
+            const ui = packs.filter(p => p.kind === "ui");
+            document.querySelector('[data-n="ui"]').textContent = ui.every(p => !p.url) ? "Coming soon" : ui.length + " packs";   // UI packs show Coming soon until their Creator Store listing is live
+            const hal = packs.filter(p => p.tags.includes("Halloween") || /halloween|spooky|horror/i.test(p.name)).length;
+            document.querySelector('[data-n="halloween"]').textContent = hal + " packs";
         }).catch(() => {});
     </script>
 </body>

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--seo:start-->
     <title>Burger Tycoon UI Pack - Cartoon - Roblox UI Pack | KashTheKing Shop</title>
-    <meta name="description" content="4 full Roblox UI screens, static and Fusion. A bright cartoon restaurant tycoon kit in ketchup red, mustard yellow and lettuce green, with thick… $5.99.">
+    <meta name="description" content="4 full Roblox UI screens, static and Fusion. A bright cartoon restaurant tycoon kit in ketchup red, mustard yellow and lettuce green, with thick… Coming soon.">
     <link rel="canonical" href="https://kashtheking.com/shop/burger-tycoon-ui-pack-cartoon/">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="KashTheKing Shop">
     <meta property="og:url" content="https://kashtheking.com/shop/burger-tycoon-ui-pack-cartoon/">
-    <meta property="og:title" content="Burger Tycoon UI Pack - Cartoon - Roblox UI Pack ($5.99)">
+    <meta property="og:title" content="Burger Tycoon UI Pack - Cartoon - Roblox UI Pack (Coming soon)">
     <meta property="og:description" content="A bright cartoon restaurant tycoon kit in ketchup red, mustard yellow and lettuce green, with thick dark-brown outlines, chunky drop shadows and Bangers headings. Four full screens: a HUD (cash counter with income ticker, restaurant level star and rating bar, order queue, menu buttons, Collect…">
     <meta property="og:image" content="https://kashtheking.com/shop/img/BurgerCartoonTycoon/01.jpg">
     <meta property="og:image:alt" content="Burger Tycoon UI Pack - Cartoon Roblox UI Pack">
@@ -107,7 +107,7 @@
     <main>
         <div id="sub"></div>
         <a class="back" href="../ui/">← All UI packs</a>
-        <div id="pack"><h1>Burger Tycoon UI Pack - Cartoon - Roblox UI Pack</h1><p>A bright cartoon restaurant tycoon kit in ketchup red, mustard yellow and lettuce green, with thick dark-brown outlines, chunky drop shadows and Bangers headings. Four full screens: a HUD (cash counter with income ticker, restaurant level star and rating bar, order queue, menu buttons, Collect button and a notification toast), an Upgrades window with Kitchen, Staff and Decor tabs and upgrade cards with cost, level and maxed states, a Gamepass Shop with 2x Cash and Auto-Collect cards plus cash packs, and a Leaderboard of top tycoons. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth, bubbly animations (rolling numbers, sliding tabs, a nudge on 'can't afford' cards, windows that ease in) and a UI Labs story for every piece.</p><p>4 screens, $5.99.</p><img src="../img/BurgerCartoonTycoon.jpg" alt="Burger Tycoon UI Pack - Cartoon Roblox UI Pack thumbnail" width="540" height="540"></div>
+        <div id="pack"><h1>Burger Tycoon UI Pack - Cartoon - Roblox UI Pack</h1><p>A bright cartoon restaurant tycoon kit in ketchup red, mustard yellow and lettuce green, with thick dark-brown outlines, chunky drop shadows and Bangers headings. Four full screens: a HUD (cash counter with income ticker, restaurant level star and rating bar, order queue, menu buttons, Collect button and a notification toast), an Upgrades window with Kitchen, Staff and Decor tabs and upgrade cards with cost, level and maxed states, a Gamepass Shop with 2x Cash and Auto-Collect cards plus cash packs, and a Leaderboard of top tycoons. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth, bubbly animations (rolling numbers, sliding tabs, a nudge on 'can't afford' cards, windows that ease in) and a UI Labs story for every piece.</p><p>4 screens, Coming soon.</p><img src="../img/BurgerCartoonTycoon.jpg" alt="Burger Tycoon UI Pack - Cartoon Roblox UI Pack thumbnail" width="540" height="540"></div>
         <p id="missing" class="missing" hidden>That pack was not found. <a href="../ui/">Browse all packs</a>.</p>
         <section id="more" hidden>
             <h2>You might also like</h2>
@@ -140,6 +140,7 @@
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
+            const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
             document.getElementById("pack").innerHTML = `
                 <div class="top">
                     <div>
@@ -165,14 +166,14 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
+                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>`}
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
-                        <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
+                        ${soonUi ? "" : `<p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>`}
                         <ul class="list">
                             ${p.kind === "ui" ? `<li>${p.count} full screens, every button working</li>
                             <li>A static ScreenGui and a Fusion 0.3 version with UI Labs stories</li>` : `<li>Textured, rigged and animated</li>
