@@ -21,7 +21,7 @@
         "description": "A complete beach pixel-art game UI with eight working screens: a HUD (shell counter, SHOP, PETS, DAILY, CODES and SETTINGS buttons with red dots), the Tidal Shop (a chest deal with pets and drop chances, a hover card for each pet, gamepasses and shell packs, with a little beach around the window), a Pets inventory (equip, unequip, EQUIP BEST, slots), 7-day Daily rewards with a streak, a Codes box, Settings (Music, Sound Effects, Low Graphics, Volume), a purchase popup and a chest reveal. Every button opens its menu and everything is wired: hatched pets land in your inventory, rewards and codes add shells. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with springy buttons and popping numbers, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.",
         "tags": [
             "UI",
-            "Pixel"
+            "Voxel"
         ],
         "date": "2026-10-23T06:10:00",
         "page": "tidal-shop-ui-pack-pixel"
@@ -166,7 +166,7 @@
         "description": "A bright cartoon restaurant tycoon kit in ketchup red, mustard yellow and lettuce green, with thick dark-brown outlines, chunky drop shadows and Bangers headings. Four full screens: a HUD (cash counter with income ticker, restaurant level star and rating bar, order queue, menu buttons, Collect button and a notification toast), an Upgrades window with Kitchen, Staff and Decor tabs and upgrade cards with cost, level and maxed states, a Gamepass Shop with 2x Cash and Auto-Collect cards plus cash packs, and a Leaderboard of top tycoons. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth, bubbly animations (rolling numbers, sliding tabs, a nudge on 'can't afford' cards, windows that ease in) and a UI Labs story for every piece.",
         "tags": [
             "UI",
-            "Cartoon"
+            "Cute/Cartoon"
         ],
         "date": "2026-10-23T06:16:00",
         "page": "burger-tycoon-ui-pack-cartoon"
@@ -1891,8 +1891,7 @@
         ],
         "description": "870 pixel-art building cubes, each a plain 2-stud Part with a Texture on every face (no meshes), in five themed sets sorted into folders by type: ground, stone, wood, leaves, ores and gems, mushrooms, fluids and more. 47 fluid cubes (lava, water, fire, portal) animate with the one small AnimatedTiles script included. Biomes x229, City x188, Dungeon x151, Islands x170, Village x132.",
         "tags": [
-            "Voxel",
-            "Pixel"
+            "Voxel"
         ],
         "date": "2026-10-09T04:01:12",
         "page": "870-voxel-block-cubes"

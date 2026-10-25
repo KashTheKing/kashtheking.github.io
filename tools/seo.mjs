@@ -28,11 +28,7 @@ export const COLLECTIONS = [
   {slug: 'voxel', nav: 'Voxel', h1: ['VOXEL', 'ASSET PACKS'], tag: 'BLOCKY  ·  MINECRAFT STYLE',
     title: 'Roblox Voxel Asset Packs: Blocky Minecraft-Style Models',
     lead: 'Blocky voxel models in a Minecraft-like style for Roblox Studio: villages, cities, sky islands, dungeons, biomes, mobs, characters, vehicles, furniture, tools and armor.',
-    match: (p) => has(p, 'Voxel')},
-  {slug: 'pixel', nav: 'Pixel', h1: ['PIXEL', 'ASSET PACKS'], tag: 'PIXEL ART IN 3D',
-    title: 'Roblox Pixel Asset Packs: Pixel Art Guns and Items in 3D',
-    lead: 'Pixel art turned into 3D Roblox models: guns, swords, food, tools and loot with crisp pixel textures, ready for inventories, shops and drops.',
-    match: (p) => /pixel/i.test(p.name)},
+    match: (p) => has(p, 'Voxel') || /pixel/i.test(p.name)},
   {slug: 'halloween', nav: 'Halloween', h1: ['HALLOWEEN', 'ASSET PACKS'], tag: 'SPOOKY SEASON',
     title: 'Roblox Halloween Asset Packs: Spooky Models and Decorations',
     lead: 'Halloween models for Roblox events and horror games: pumpkins, graves, haunted props, spooky tools and creatures, rigged and animated where they move.',
@@ -65,8 +61,8 @@ export const COLLECTIONS = [
     title: 'Roblox Building and Map Asset Packs: Cities, Villages and Islands',
     lead: 'Buildings, streets, villages, islands and nature to build a whole Roblox map fast.',
     match: (p) => has(p, 'Buildings') || has(p, 'City') || has(p, 'Nature')},
-  {slug: 'cute', nav: 'Cute', h1: ['CUTE', 'ASSET PACKS'], tag: 'CHIBI  ·  TOY STYLE',
-    title: 'Cute Roblox Asset Packs: Chibi Toy-Style Models',
+  {slug: 'cute', nav: 'Cute/Cartoon', h1: ['CUTE/CARTOON', 'ASSET PACKS'], tag: 'CHIBI  ·  TOY STYLE',
+    title: 'Cute/Cartoon Roblox Asset Packs: Chibi Toy-Style Models',
     lead: 'Chunky, colourful toy-style models for cozy, kids and simulator games: pets, food, furniture, cars, robots and more.',
     match: (p) => has(p, 'Cute')},
 ];
@@ -83,7 +79,7 @@ const kebab = (s) => String(s).toLowerCase().replace(/&/g, ' and ').replace(/[^a
 /** Cuts text to at most n characters at a word, with an ellipsis. */
 export const clip = (s, n) => { s = String(s ?? '').replace(/\s+/g, ' ').trim(); if (s.length <= n) return s; const c = s.slice(0, n - 1); return `${c.slice(0, c.lastIndexOf(' ') > n / 2 ? c.lastIndexOf(' ') : c.length).replace(/[\s,;:.(-]+$/, '')}…`; };
 /** What the models look like, for titles and descriptions. */
-export const style = (p) => (has(p, 'Stud') ? 'studded' : /pixel/i.test(p.name) ? 'pixel art' : has(p, 'Voxel') ? 'voxel' : 'low-poly');
+export const style = (p) => (has(p, 'Stud') ? 'studded' : has(p, 'Voxel') || /pixel/i.test(p.name) ? 'voxel' : 'low-poly');
 const moves = (p) => (/animat/i.test(p.description ?? '') ? 'rigged and animated' : /rigged/i.test(p.description ?? '') ? 'rigged' : 'textured');
 const free = (p) => Number(p.price) === 0;
 const priceText = (p) => (free(p) ? 'Free' : money(p.price));
