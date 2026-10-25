@@ -36,7 +36,7 @@ test('a pack the panel added without a page gets one, with its click-through pag
   assert.match(page, /"@type":"Offer","price":"4.99"/);
   assert.doesNotMatch(page, /100 Stud Pets/);   // nothing left over from the template
   assert.match(read(dir, 'shop/100-stud-castle-assets/roblox/index.html'), /href="https:\/\/create\.roblox\.com\/store\/asset\/1234567890"/);
-  assert.match(read(dir, 'shop/index.html'), /<a class="card" href="100-stud-castle-assets\/">/);
+  assert.match(read(dir, 'shop/models/index.html'), /<a class="card" href="100-stud-castle-assets\/">/);
   assert.match(read(dir, 'shop/stud/index.html'), /100-stud-castle-assets\//);
   assert.match(read(dir, 'sitemap.xml'), /<loc>https:\/\/kashtheking\.com\/shop\/100-stud-castle-assets\/<\/loc>/);
 });
@@ -50,7 +50,7 @@ test('style pages: own address, the shop as base, only their packs, linked from 
   assert.match(stud, /window\.SHOP_PICK = \[/);
   assert.doesNotMatch(stud, /100-cute-robots\//);
   assert.doesNotMatch(stud, /class="feat"/);
-  assert.match(read(dir, 'shop/index.html'), /<a href="stud\/">Stud<\/a>/);
+  assert.match(read(dir, 'shop/models/index.html'), /<a href="stud\/">Stud<\/a>/);
   assert.match(read(dir, 'shop/100-stud-pets/index.html'), /<a href="\.\.\/voxel\/">Voxel<\/a>/);
 });
 
@@ -97,6 +97,6 @@ test('a UI pack shows before its Creator Store listing: page and card, no Roblox
   assert.match(page, /schema\.org\/PreOrder/);
   assert.doesNotMatch(page, /Get it on the Roblox Creator Store/);
   assert.ok(!fs.existsSync(path.join(dir, 'shop/soon-ui-pack/roblox/index.html')));
-  assert.match(read(dir, 'shop/index.html'), /<a class="card" href="soon-ui-pack\/">/);
+  assert.doesNotMatch(read(dir, 'shop/models/index.html'), /soon-ui-pack/);
   assert.match(read(dir, 'shop/ui/index.html'), /soon-ui-pack\//);
 });
