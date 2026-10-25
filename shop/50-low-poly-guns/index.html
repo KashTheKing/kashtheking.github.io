@@ -144,6 +144,7 @@
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
+            const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
             document.getElementById("pack").innerHTML = `
                 <div class="top">
                     <div>
@@ -169,14 +170,14 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
+                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>`}
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
-                        <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
+                        ${soonUi ? "" : `<p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>`}
                         <ul class="list">
                             <li>Textured, rigged and animated</li>
                             <li>One model to insert, ${p.count} assets inside</li>

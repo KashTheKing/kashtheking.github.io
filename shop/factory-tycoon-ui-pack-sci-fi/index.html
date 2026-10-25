@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--seo:start-->
     <title>Factory Tycoon UI Pack - Sci-Fi - Roblox UI Pack | KashTheKing Shop</title>
-    <meta name="description" content="8 full Roblox UI screens, static and Fusion. A sci-fi factory tycoon UI kit in deep navy and gunmetal with holo-teal and warning-amber accents: the… $7.99.">
+    <meta name="description" content="8 full Roblox UI screens, static and Fusion. A sci-fi factory tycoon UI kit in deep navy and gunmetal with holo-teal and warning-amber accents… Coming soon.">
     <link rel="canonical" href="https://kashtheking.com/shop/factory-tycoon-ui-pack-sci-fi/">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="KashTheKing Shop">
     <meta property="og:url" content="https://kashtheking.com/shop/factory-tycoon-ui-pack-sci-fi/">
-    <meta property="og:title" content="Factory Tycoon UI Pack - Sci-Fi - Roblox UI Pack ($7.99)">
+    <meta property="og:title" content="Factory Tycoon UI Pack - Sci-Fi - Roblox UI Pack (Coming soon)">
     <meta property="og:description" content="A sci-fi factory tycoon UI kit in deep navy and gunmetal with holo-teal and warning-amber accents: the whole game UI, wired together. A HUD (credits counter with income ticker, tier badge, a dock of seven menu buttons with red counts, the current contract with a Claim button, power and production…">
     <meta property="og:image" content="https://kashtheking.com/shop/img/SciFiFactoryTycoon/01.jpg">
     <meta property="og:image:alt" content="Factory Tycoon UI Pack - Sci-Fi Roblox UI Pack">
@@ -107,7 +107,7 @@
     <main>
         <div id="sub"></div>
         <a class="back" href="../ui/">← All UI packs</a>
-        <div id="pack"><h1>Factory Tycoon UI Pack - Sci-Fi - Roblox UI Pack</h1><p>A sci-fi factory tycoon UI kit in deep navy and gunmetal with holo-teal and warning-amber accents: the whole game UI, wired together. A HUD (credits counter with income ticker, tier badge, a dock of seven menu buttons with red counts, the current contract with a Claim button, power and production gauges) and every menu behind it: an Upgrades Terminal, an R&amp;D Lab, a Contract Board, a Robux Depot (credit packs and gamepasses), Supply Drops (a 7-day login streak), a hold-to-confirm Rebirth prompt that dims the screen, and Settings. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with a mechanical feel (presses sink in, menus slide in and out, numbers roll, gauges fill), a working economy and a UI Labs story for every piece and for the whole app.</p><p>8 screens, $7.99.</p><img src="../img/SciFiFactoryTycoon.jpg" alt="Factory Tycoon UI Pack - Sci-Fi Roblox UI Pack thumbnail" width="540" height="540"></div>
+        <div id="pack"><h1>Factory Tycoon UI Pack - Sci-Fi - Roblox UI Pack</h1><p>A sci-fi factory tycoon UI kit in deep navy and gunmetal with holo-teal and warning-amber accents: the whole game UI, wired together. A HUD (credits counter with income ticker, tier badge, a dock of seven menu buttons with red counts, the current contract with a Claim button, power and production gauges) and every menu behind it: an Upgrades Terminal, an R&amp;D Lab, a Contract Board, a Robux Depot (credit packs and gamepasses), Supply Drops (a 7-day login streak), a hold-to-confirm Rebirth prompt that dims the screen, and Settings. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with a mechanical feel (presses sink in, menus slide in and out, numbers roll, gauges fill), a working economy and a UI Labs story for every piece and for the whole app.</p><p>8 screens, Coming soon.</p><img src="../img/SciFiFactoryTycoon.jpg" alt="Factory Tycoon UI Pack - Sci-Fi Roblox UI Pack thumbnail" width="540" height="540"></div>
         <p id="missing" class="missing" hidden>That pack was not found. <a href="../ui/">Browse all packs</a>.</p>
         <section id="more" hidden>
             <h2>You might also like</h2>
@@ -140,6 +140,7 @@
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
+            const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
             document.getElementById("pack").innerHTML = `
                 <div class="top">
                     <div>
@@ -165,14 +166,14 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
+                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>`}
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
-                        <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
+                        ${soonUi ? "" : `<p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>`}
                         <ul class="list">
                             ${p.kind === "ui" ? `<li>${p.count} full screens, every button working</li>
                             <li>A static ScreenGui and a Fusion 0.3 version with UI Labs stories</li>` : `<li>Textured, rigged and animated</li>

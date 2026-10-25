@@ -83,13 +83,16 @@ export const style = (p) => (has(p, 'Stud') ? 'studded' : has(p, 'Voxel') || /pi
 const moves = (p) => (/animat/i.test(p.description ?? '') ? 'rigged and animated' : /rigged/i.test(p.description ?? '') ? 'rigged' : 'textured');
 const free = (p) => Number(p.price) === 0;
 const priceText = (p) => (free(p) ? 'Free' : money(p.price));
+/** A UI pack with no Creator Store listing yet (still in Roblox moderation) shows Coming soon instead of a price. */
+const soon = (p) => ui(p) && !p.url;
+const priceOrSoon = (p) => (soon(p) ? 'Coming soon' : priceText(p));
 const pageUrl = (p) => `${SITE}/shop/${p.page}/`;
 const imageUrl = (rel) => `${SITE}/shop/${rel}`;
 
 /** The search snippet: what it is, the style, the price, under ~160 characters. */
 export function metaDescription(p) {
   const lead = ui(p) ? `${p.count ?? ''} full Roblox UI screens, static and Fusion.`.trim() : `${p.count ?? ''} ${style(p)} Roblox models, ${moves(p)}.`.trim();
-  const tail = ` ${priceText(p)}${ui(p) && !p.url ? '' : ' on the Creator Store'}.`;
+  const tail = ` ${priceOrSoon(p)}${soon(p) ? '' : ' on the Creator Store'}.`;
   const first = (p.description ?? '').split(/(?<=[.!?])\s/)[0];
   return `${lead} ${clip(first, Math.max(40, 158 - lead.length - tail.length))}${tail}`.replace(/\s+/g, ' ');
 }
@@ -138,7 +141,7 @@ function packSeo(p) {
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="KashTheKing Shop">
     <meta property="og:url" content="${pageUrl(p)}">
-    <meta property="og:title" content="${esc(p.name)} - ${what(p)} (${priceText(p)})">
+    <meta property="og:title" content="${esc(p.name)} - ${what(p)} (${priceOrSoon(p)})">
     <meta property="og:description" content="${esc(clip(p.description ?? desc, 300))}">
     ${img ? `<meta property="og:image" content="${imageUrl(img)}">
     <meta property="og:image:alt" content="${esc(p.name)} ${what(p)}">` : `<meta property="og:image" content="${SITE}/shop/og-banner.jpg">`}
@@ -154,7 +157,7 @@ function packSeo(p) {
 }
 
 function packStatic(p) {
-  return `<div id="pack"><h1>${esc(p.name)} - ${what(p)}</h1><p>${esc(p.description)}</p><p>${p.count} ${units(p)}, ${priceText(p)}.${p.url ? ` <a href="${esc(p.url)}">Get it on the Roblox Creator Store</a>.` : ''}</p>${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} ${what(p)} thumbnail" width="540" height="540">` : ''}</div>\n`;
+  return `<div id="pack"><h1>${esc(p.name)} - ${what(p)}</h1><p>${esc(p.description)}</p><p>${p.count} ${units(p)}, ${priceOrSoon(p)}.${p.url ? ` <a href="${esc(p.url)}">Get it on the Roblox Creator Store</a>.` : ''}</p>${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} ${what(p)} thumbnail" width="540" height="540">` : ''}</div>\n`;
 }
 
 /** Links to every collection page. `prefix` is how the page reaches /shop/ ("" on the shop, "../" one level down). */

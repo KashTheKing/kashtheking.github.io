@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--seo:start-->
     <title>Battle Royale UI Pack - Flat - Roblox UI Pack | KashTheKing Shop</title>
-    <meta name="description" content="10 full Roblox UI screens, static and Fusion. A complete top-down survival battle royale game UI, Last Zone, with ten working screens: a main menu… $8.99.">
+    <meta name="description" content="10 full Roblox UI screens, static and Fusion. A complete top-down survival battle royale game UI, Last Zone, with ten working screens: a main… Coming soon.">
     <link rel="canonical" href="https://kashtheking.com/shop/battle-royale-ui-pack-flat/">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="KashTheKing Shop">
     <meta property="og:url" content="https://kashtheking.com/shop/battle-royale-ui-pack-flat/">
-    <meta property="og:title" content="Battle Royale UI Pack - Flat - Roblox UI Pack ($8.99)">
+    <meta property="og:title" content="Battle Royale UI Pack - Flat - Roblox UI Pack (Coming soon)">
     <meta property="og:description" content="A complete top-down survival battle royale game UI, Last Zone, with ten working screens: a main menu (name, region list, Play Solo, Duo and Squad, Join and Create Team, daily quests with claims, a survivor pass card, loadout, stats and leaderboard buttons, settings, controls and sound), the match…">
     <meta property="og:image" content="https://kashtheking.com/shop/img/SurvivalRoyaleUI/01.jpg">
     <meta property="og:image:alt" content="Battle Royale UI Pack - Flat Roblox UI Pack">
@@ -107,7 +107,7 @@
     <main>
         <div id="sub"></div>
         <a class="back" href="../ui/">← All UI packs</a>
-        <div id="pack"><h1>Battle Royale UI Pack - Flat - Roblox UI Pack</h1><p>A complete top-down survival battle royale game UI, Last Zone, with ten working screens: a main menu (name, region list, Play Solo, Duo and Squad, Join and Create Team, daily quests with claims, a survivor pass card, loadout, stats and leaderboard buttons, settings, controls and sound), the match HUD (gas timer over a minimap, players alive, kills and a kill feed, heals and ammo you can use, four weapon slots, ammo in the gun, gear, boost and health with a red hit flash, scope zoom, pause and map buttons), a Loadout (outfits, melee weapons and emotes with rarities and pass locks), Stats with a leaderboard for every mode, Team with codes and seats, a ten-tier Survivor Pass, the big map with gas circles and pings, Pause, Settings with key controls, and Results. Everything is wired: a match plays itself, and your kills, wins and XP fill the pass, stats and quests. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with smooth springs, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.</p><p>10 screens, $8.99.</p><img src="../img/SurvivalRoyaleUI.jpg" alt="Battle Royale UI Pack - Flat Roblox UI Pack thumbnail" width="540" height="540"></div>
+        <div id="pack"><h1>Battle Royale UI Pack - Flat - Roblox UI Pack</h1><p>A complete top-down survival battle royale game UI, Last Zone, with ten working screens: a main menu (name, region list, Play Solo, Duo and Squad, Join and Create Team, daily quests with claims, a survivor pass card, loadout, stats and leaderboard buttons, settings, controls and sound), the match HUD (gas timer over a minimap, players alive, kills and a kill feed, heals and ammo you can use, four weapon slots, ammo in the gun, gear, boost and health with a red hit flash, scope zoom, pause and map buttons), a Loadout (outfits, melee weapons and emotes with rarities and pass locks), Stats with a leaderboard for every mode, Team with codes and seats, a ten-tier Survivor Pass, the big map with gas circles and pings, Pause, Settings with key controls, and Results. Everything is wired: a match plays itself, and your kills, wins and XP fill the pass, stats and quests. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with smooth springs, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.</p><p>10 screens, Coming soon.</p><img src="../img/SurvivalRoyaleUI.jpg" alt="Battle Royale UI Pack - Flat Roblox UI Pack thumbnail" width="540" height="540"></div>
         <p id="missing" class="missing" hidden>That pack was not found. <a href="../ui/">Browse all packs</a>.</p>
         <section id="more" hidden>
             <h2>You might also like</h2>
@@ -140,6 +140,7 @@
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
+            const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
             document.getElementById("pack").innerHTML = `
                 <div class="top">
                     <div>
@@ -165,14 +166,14 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
+                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>`}
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
-                        <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
+                        ${soonUi ? "" : `<p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>`}
                         <ul class="list">
                             ${p.kind === "ui" ? `<li>${p.count} full screens, every button working</li>
                             <li>A static ScreenGui and a Fusion 0.3 version with UI Labs stories</li>` : `<li>Textured, rigged and animated</li>

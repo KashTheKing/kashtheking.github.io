@@ -28,6 +28,7 @@ main { padding: 40px 64px 80px; flex: 1; }
 .tile span { display: block; margin-top: 4px; color: var(--gold); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .tile:hover, .tile:focus-visible { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 14px 34px rgba(0,0,0,.45); outline: none; }
 .tile.ui { --gold: #49BAEC; }
+.tile.halloween { --gold: #ff9a1f; border-color: #8a4dff; }
 .lifetime { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; margin-top: 26px; padding: 18px 24px; border: 1px solid #ffb02e; border-radius: 16px; background: var(--panel); text-decoration: none; }
 .lifetime b { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 20px; }
 .lifetime span { color: #a9adb6; font-size: 14px; }

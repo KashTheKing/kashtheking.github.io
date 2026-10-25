@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--seo:start-->
     <title>Crystal Sim UI Pack - Fantasy - Roblox UI Pack | KashTheKing Shop</title>
-    <meta name="description" content="8 full Roblox UI screens, static and Fusion. An enchanted fantasy pet simulator UI kit in deep amethyst, moonlit teal and gold filigree, with glowing… $7.99.">
+    <meta name="description" content="8 full Roblox UI screens, static and Fusion. An enchanted fantasy pet simulator UI kit in deep amethyst, moonlit teal and gold filigree, with… Coming soon.">
     <link rel="canonical" href="https://kashtheking.com/shop/crystal-sim-ui-pack-fantasy/">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="KashTheKing Shop">
     <meta property="og:url" content="https://kashtheking.com/shop/crystal-sim-ui-pack-fantasy/">
-    <meta property="og:title" content="Crystal Sim UI Pack - Fantasy - Roblox UI Pack ($7.99)">
+    <meta property="og:title" content="Crystal Sim UI Pack - Fantasy - Roblox UI Pack (Coming soon)">
     <meta property="og:description" content="An enchanted fantasy pet simulator UI kit in deep amethyst, moonlit teal and gold filigree, with glowing gem buttons and rune-trimmed windows in Luckiest Guy and Nunito. Seven full screens: a HUD (mana crystal and gem counters, a level orb with XP bar, six menu buttons, active boosts with timers)…">
     <meta property="og:image" content="https://kashtheking.com/shop/img/ArcaneCrystalSim/01.jpg">
     <meta property="og:image:alt" content="Crystal Sim UI Pack - Fantasy Roblox UI Pack">
@@ -107,7 +107,7 @@
     <main>
         <div id="sub"></div>
         <a class="back" href="../ui/">← All UI packs</a>
-        <div id="pack"><h1>Crystal Sim UI Pack - Fantasy - Roblox UI Pack</h1><p>An enchanted fantasy pet simulator UI kit in deep amethyst, moonlit teal and gold filigree, with glowing gem buttons and rune-trimmed windows in Luckiest Guy and Nunito. Seven full screens: a HUD (mana crystal and gem counters, a level orb with XP bar, six menu buttons, active boosts with timers), a Magic Egg hatch prompt (rarity odds, Hatch x1 / x3 / Auto), a Pet Inventory (tabs, search, equip slots and a grid of rarity-coloured pet cards), a Rebirth altar (multiplier now and next, requirement bar) Daily Rewards (six days and a big Day 7 chest), a Spell Shop (boosts and treasures for gems) and a Pet Index (every pet, found or still a silhouette, with a reward for finding them all). It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with springy buttons, popping numbers, sliding tabs and breathing glows, with a UI Labs story for every piece. 25 hand-drawn images included.</p><p>8 screens, $7.99.</p><img src="../img/ArcaneCrystalSim.jpg" alt="Crystal Sim UI Pack - Fantasy Roblox UI Pack thumbnail" width="540" height="540"></div>
+        <div id="pack"><h1>Crystal Sim UI Pack - Fantasy - Roblox UI Pack</h1><p>An enchanted fantasy pet simulator UI kit in deep amethyst, moonlit teal and gold filigree, with glowing gem buttons and rune-trimmed windows in Luckiest Guy and Nunito. Seven full screens: a HUD (mana crystal and gem counters, a level orb with XP bar, six menu buttons, active boosts with timers), a Magic Egg hatch prompt (rarity odds, Hatch x1 / x3 / Auto), a Pet Inventory (tabs, search, equip slots and a grid of rarity-coloured pet cards), a Rebirth altar (multiplier now and next, requirement bar) Daily Rewards (six days and a big Day 7 chest), a Spell Shop (boosts and treasures for gems) and a Pet Index (every pet, found or still a silhouette, with a reward for finding them all). It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with springy buttons, popping numbers, sliding tabs and breathing glows, with a UI Labs story for every piece. 25 hand-drawn images included.</p><p>8 screens, Coming soon.</p><img src="../img/ArcaneCrystalSim.jpg" alt="Crystal Sim UI Pack - Fantasy Roblox UI Pack thumbnail" width="540" height="540"></div>
         <p id="missing" class="missing" hidden>That pack was not found. <a href="../ui/">Browse all packs</a>.</p>
         <section id="more" hidden>
             <h2>You might also like</h2>
@@ -140,6 +140,7 @@
             // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
             const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
+            const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
             document.getElementById("pack").innerHTML = `
                 <div class="top">
                     <div>
@@ -165,14 +166,14 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        <div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>
+                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>`}
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
                             ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
-                        <p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>
+                        ${soonUi ? "" : `<p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>`}
                         <ul class="list">
                             ${p.kind === "ui" ? `<li>${p.count} full screens, every button working</li>
                             <li>A static ScreenGui and a Fusion 0.3 version with UI Labs stories</li>` : `<li>Textured, rigged and animated</li>
