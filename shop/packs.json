@@ -1887,7 +1887,8 @@
             "img/870VoxelBlockCubes/02.jpg",
             "img/870VoxelBlockCubes/03.jpg",
             "img/870VoxelBlockCubes/04.jpg",
-            "img/870VoxelBlockCubes/05.jpg"
+            "img/870VoxelBlockCubes/05.jpg",
+            "img/870VoxelBlockCubes/06.jpg"
         ],
         "description": "870 pixel-art building cubes, each a plain 2-stud Part with a Texture on every face (no meshes), in five themed sets sorted into folders by type: ground, stone, wood, leaves, ores and gems, mushrooms, fluids and more. 47 fluid cubes (lava, water, fire, portal) animate with the one small AnimatedTiles script included. Biomes x229, City x188, Dungeon x151, Islands x170, Village x132.",
         "tags": [
