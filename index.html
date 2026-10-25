@@ -412,9 +412,9 @@
       } else {
         b.innerHTML = '<img alt=""><span class="tag">' + esc(g.label) + "</span>";
         var im = b.querySelector("img");
-        im.src = OBJ + g.object + ".png";
+        im.src = g.icon ? "assets/icons/" + g.icon : OBJ + g.object + ".png";
       }
-      b.addEventListener("click", function () { if (!stage.classList.contains("is-focused")) location.hash = g.id; });
+      b.addEventListener("click", function () { if (g.href) location.href = g.href; else if (!stage.classList.contains("is-focused")) location.hash = g.id; });
       host.append(b); bubbles[g.id] = b;
     });
     data.groups.forEach(function (g) { if (hasNew(g) && !seen(g.id)) bubbles[g.id].insertAdjacentHTML("beforeend", '<span class="badge" aria-label="new">!</span>'); });

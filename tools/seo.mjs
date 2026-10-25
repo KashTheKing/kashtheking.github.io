@@ -1,7 +1,7 @@
 // node tools/seo.mjs  (no dependencies). Makes the shop findable from shop/packs.json, which the panel edits:
 //  - every pack's own page /shop/<page>/ (search title, short description, Product data, link previews), made from a
 //    template when the panel added a pack that has no page yet, plus its roblox/ and discord/ click-through pages
-//  - the static grid and pack list in shop/index.html, so search engines see every pack without running scripts
+//  - the static grid and pack list in shop/models/index.html, so search engines see every pack without running scripts
 //  - one page per style or theme (/shop/stud/, /shop/voxel/, ...) for what people search, linked from every shop page
 //  - sitemap.xml with every page that should be found
 // Only text between <!--name:start--> and <!--name:end--> markers is rewritten, so hand edits elsewhere stay.
@@ -132,7 +132,7 @@ function packSeo(p) {
   };
   const crumbs = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     {'@type': 'ListItem', position: 1, name: 'KashTheKing', item: `${SITE}/`},
-    {'@type': 'ListItem', position: 2, name: 'Roblox Asset Packs', item: `${SITE}/shop/`},
+    {'@type': 'ListItem', position: 2, name: 'Shop', item: `${SITE}/shop/`},
     {'@type': 'ListItem', position: 3, name: p.name, item: pageUrl(p)}]};
   const img = slides[0] ?? p.image;
   return `
@@ -152,7 +152,8 @@ function packSeo(p) {
     <meta name="twitter:site" content="@KashTheKing_X">
     <script type="application/ld+json">${json(product)}</script>
     <script type="application/ld+json">${json(crumbs)}</script>
-    <script>window.PACK_SLUG = ${JSON.stringify(p.slug)};</script>
+    <script>window.PACK_SLUG = ${JSON.stringify(p.slug)};</script>${ui(p) ? `
+    <style>html:root { --gold: #49BAEC; --gold-hi: #a5e1fa; } .badge.first { background: linear-gradient(180deg, #a5e1fa, #2a7fb0); } .buy-try:hover { background: rgba(73,186,236,.14); }</style>` : ''}
 `;
 }
 
@@ -235,10 +236,11 @@ export function build(root = ROOT) {
   }
 
   // the shop
-  const shop = 'shop/index.html';
+  const shop = 'shop/models/index.html';   // /shop/ is the hub; model packs have their own page, UI packs theirs (/shop/ui/)
+  const models = live.filter((p) => !ui(p));
   let index = read(shop);
-  index = between(index, 'packs', itemList('Roblox asset packs by KashTheKing', live));
-  index = between(index, 'grid', gridCards(live));
+  index = between(index, 'packs', itemList('Roblox model asset packs by KashTheKing', models));
+  index = between(index, 'grid', gridCards(models));
   index = ensureBlock(index, 'cols', collectionNav(cols, '', ''), '<p id="empty" class="empty" hidden>No packs match that search.</p>');
   write(shop, index, changed);
 
@@ -250,7 +252,6 @@ export function build(root = ROOT) {
     const desc = clip(`${c.lead} ${c.packs.length} packs, ${c.packs.reduce((n, p) => n + (p.count || 0), 0).toLocaleString('en-US')} ${c.slug === 'ui' ? 'screens' : 'models'}.`, 160);
     const img = c.packs[0].slides?.[0] ?? c.packs[0].image;
     let html = base
-      .replace(/<meta name="viewport"[^>]*>/, (m) => `${m}\n    <base href="/shop/">`)
       .replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`)
       .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(desc)}">`)
       .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`)
@@ -263,9 +264,10 @@ export function build(root = ROOT) {
       .replace(/<p class="lead">[^<]*<\/p>/, `<p class="lead">${esc(c.lead)}</p>`)
       .replace(/<section class="feat"[\s\S]*?<\/section>/, '')   // the shop's featured trailer belongs to one pack
       .replace('<a class="brand" href="/"', '<a class="brand" href="/shop/"');
+    if (c.slug === 'ui') html = html.replace('<html lang="en">', '<html lang="en" class="blue">').replace(' aria-current="page"', '').replace('<a class="ui" href="/shop/ui/">', '<a class="ui" href="/shop/ui/" aria-current="page">');   // UI packs are blue, the rest of the shop orange
     html = between(html, 'packs', `${itemList(c.title, c.packs)}<script type="application/ld+json">${json({'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       {'@type': 'ListItem', position: 1, name: 'KashTheKing', item: `${SITE}/`},
-      {'@type': 'ListItem', position: 2, name: 'Roblox Asset Packs', item: `${SITE}/shop/`},
+      {'@type': 'ListItem', position: 2, name: 'Shop', item: `${SITE}/shop/`},
       {'@type': 'ListItem', position: 3, name: c.title.split(':')[0], item: url}]})}</script><script>window.SHOP_PICK = ${json(c.packs.map((p) => p.slug))};</script>`);
     html = between(html, 'grid', gridCards(c.packs));
     html = between(html, 'cols', collectionNav(cols, '', c.slug));

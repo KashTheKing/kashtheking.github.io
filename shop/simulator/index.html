@@ -16,11 +16,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-crown-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-crown-180.png">
     <link rel="canonical" href="https://kashtheking.com/shop/simulator/">
-    <!--packs:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Roblox Simulator and Tycoon Asset Packs","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"name":"100 Mining & Ore Assets","url":"https://kashtheking.com/shop/100-mining-and-ore-assets/"},{"@type":"ListItem","position":2,"name":"100 Fishing & Harbor Assets","url":"https://kashtheking.com/shop/100-fishing-and-harbor-assets/"},{"@type":"ListItem","position":3,"name":"100 Stud Eggs","url":"https://kashtheking.com/shop/100-stud-eggs/"},{"@type":"ListItem","position":4,"name":"100 Factory Machines","url":"https://kashtheking.com/shop/100-factory-machines/"},{"@type":"ListItem","position":5,"name":"100 Lucky Blocks","url":"https://kashtheking.com/shop/100-lucky-blocks/"},{"@type":"ListItem","position":6,"name":"100 Fishing Rods","url":"https://kashtheking.com/shop/100-fishing-rods/"},{"@type":"ListItem","position":7,"name":"100 Simulator Essentials","url":"https://kashtheking.com/shop/100-simulator-essentials/"},{"@type":"ListItem","position":8,"name":"100 Cute Tycoon Assets","url":"https://kashtheking.com/shop/100-cute-tycoon-assets/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"KashTheKing","item":"https://kashtheking.com/"},{"@type":"ListItem","position":2,"name":"Roblox Asset Packs","item":"https://kashtheking.com/shop/"},{"@type":"ListItem","position":3,"name":"Roblox Simulator and Tycoon Asset Packs","item":"https://kashtheking.com/shop/simulator/"}]}</script><script>window.SHOP_PICK = ["100MiningAssets","100FishingHarbor","100StudEggs","100FactoryMachines","100LuckyBlocks","100FishingRods","100SimulatorEssentials","100CuteTycoon"];</script><!--packs:end-->
+    <!--packs:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Roblox Simulator and Tycoon Asset Packs","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"name":"100 Mining & Ore Assets","url":"https://kashtheking.com/shop/100-mining-and-ore-assets/"},{"@type":"ListItem","position":2,"name":"100 Fishing & Harbor Assets","url":"https://kashtheking.com/shop/100-fishing-and-harbor-assets/"},{"@type":"ListItem","position":3,"name":"100 Stud Eggs","url":"https://kashtheking.com/shop/100-stud-eggs/"},{"@type":"ListItem","position":4,"name":"100 Factory Machines","url":"https://kashtheking.com/shop/100-factory-machines/"},{"@type":"ListItem","position":5,"name":"100 Lucky Blocks","url":"https://kashtheking.com/shop/100-lucky-blocks/"},{"@type":"ListItem","position":6,"name":"100 Fishing Rods","url":"https://kashtheking.com/shop/100-fishing-rods/"},{"@type":"ListItem","position":7,"name":"100 Simulator Essentials","url":"https://kashtheking.com/shop/100-simulator-essentials/"},{"@type":"ListItem","position":8,"name":"100 Cute Tycoon Assets","url":"https://kashtheking.com/shop/100-cute-tycoon-assets/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"KashTheKing","item":"https://kashtheking.com/"},{"@type":"ListItem","position":2,"name":"Shop","item":"https://kashtheking.com/shop/"},{"@type":"ListItem","position":3,"name":"Roblox Simulator and Tycoon Asset Packs","item":"https://kashtheking.com/shop/simulator/"}]}</script><script>window.SHOP_PICK = ["100MiningAssets","100FishingHarbor","100StudEggs","100FactoryMachines","100LuckyBlocks","100FishingRods","100SimulatorEssentials","100CuteTycoon"];</script><!--packs:end-->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #1c1e22; --panel: #26292e; --line: #3a3d44; --text: #fff; --dim: #a9adb6; --gold: #ffb02e; --gold-hi: #ffe98a; --orange: #c86e19; }
+        :root { --bg: #1c1e22; --panel: #26292e; --line: #3a3d44; --text: #fff; --dim: #a9adb6; --gold: #ffb02e; --gold-hi: #ffe98a; --gold-deep: #ff9a1f; --orange: #c86e19; --head: 200,110,25; --head-dim: 120,60,15; }
+        /* UI packs are blue: the UI page (tools/seo.mjs adds the class) and the UI section on the shop */
+        html.blue { --gold: #49BAEC; --gold-hi: #a5e1fa; --gold-deep: #2a7fb0; --orange: #2a7fb0; --head: 42,127,176; --head-dim: 15,55,85; }
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); min-height: 100vh; display: flex; flex-direction: column; /* footer sits on the bottom edge */
@@ -37,11 +39,11 @@
         .brand:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
 
         header { position: relative; overflow: hidden; padding: 120px 64px 56px; }
-        header::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(200,110,25,.85), rgba(120,60,15,.1) 60%); clip-path: polygon(0 0, 62% 0, 0 78%); }
+        header::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(var(--head),.85), rgba(var(--head-dim),.1) 60%); clip-path: polygon(0 0, 62% 0, 0 78%); }
         header > * { position: relative; }
         h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(44px, 7vw, 92px); line-height: .95; letter-spacing: .01em; text-shadow: 0 6px 0 rgba(0,0,0,.45); }
         /* Gradient text is transparent, so an inherited text-shadow would show through the letters: use a filter shadow instead */
-        h1 span { background: linear-gradient(var(--gold-hi), #ff9a1f); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 6px 0 rgba(0,0,0,.45)); }
+        h1 span { background: linear-gradient(var(--gold-hi), var(--gold-deep)); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 6px 0 rgba(0,0,0,.45)); }
         .tag { display: inline-block; margin-top: 22px; padding: 10px 22px; background: #000; font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: .12em; font-size: 15px; transform: skewX(-10deg); }
         .lead { max-width: 640px; margin-top: 22px; color: #e6e8ec; font-size: 17px; line-height: 1.55; }
         .stats { display: flex; gap: 36px; margin-top: 28px; flex-wrap: wrap; }
@@ -68,7 +70,7 @@
         .body { display: flex; flex-direction: column; gap: 10px; padding: 18px; flex: 1; }
         .card h2 { font-size: 20px; font-weight: 800; }
         .badge { align-self: flex-start; display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #fff; background: #3a3d44; }
-        .badge.first { color: #1c1e22; background: linear-gradient(180deg, #ffe98a, #ff9a1f); }
+        .badge.first { color: #1c1e22; background: linear-gradient(180deg, var(--gold-hi), var(--gold-deep)); }
         .badge.sale { background: #e5484d; margin-left: 6px; }
         .was { color: var(--dim); font-size: .7em; font-weight: 700; opacity: .8; }
         /* three lines then "...": the full description is on the pack's own page */
@@ -87,12 +89,13 @@
         .card.locked .shot img { filter: grayscale(.55) brightness(.42) blur(1.5px); }
         .card.locked .lock { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: .08em; text-shadow: 0 2px 10px rgba(0,0,0,.7); }
         .card.locked h2 { color: var(--dim); }
-        /* Featured row: the same cards, but with the 16:9 showcase image so they stand out from the square grid */
-        #featured { margin-bottom: 44px; }
-        #featured > h2 { margin-bottom: 18px; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px; letter-spacing: .02em; color: #ff9a1f; }
-        .wide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 26px; }
-        .wide-grid .card { border-color: #c86e19; }
-        .wide-grid .card img { aspect-ratio: 16 / 9; }
+        /* Shop departments: the same strip on every shop page */
+        .dept { display: flex; gap: 8px; flex-wrap: wrap; padding: 14px 64px 0; }
+        .dept a { padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); text-decoration: none; font-size: 14px; font-weight: 700; }
+        .dept a:hover { border-color: var(--gold); }
+        .dept a[aria-current="page"] { background: var(--gold); border-color: var(--gold); color: #1c1e22; }
+        .dept a.ui { --gold: #49BAEC; }
+        @media (max-width: 720px) { .dept { padding: 12px 14px 0; overflow-x: auto; flex-wrap: nowrap; } .dept a { flex: none; } }
         /* Lifetime Pack banner: image on the left, pitch on the right; stacks on narrow screens */
         #lifetime { flex-direction: row; align-items: center; margin-bottom: 32px; border-color: var(--gold); }
         #lifetime img { flex: 0 0 170px; width: 170px; height: auto; align-self: stretch; aspect-ratio: auto; object-fit: cover; }
@@ -124,8 +127,8 @@
             .grid .buy { flex-direction: column; align-items: stretch; gap: 7px; } .grid .price { font-size: 19px; } .grid .robux { display: inline; margin: 0 0 0 6px; font-size: 12px; }
             .grid .view, .grid .soon { padding: 8px 6px; font-size: 13px; text-align: center; white-space: normal; }
             .card.locked .lock { font-size: 14px; gap: 6px; } .card.locked .lock svg { width: 24px; height: 24px; }
-            #lifetime, #featured { margin-bottom: 22px; } #lifetime img { flex-basis: 84px; width: 84px; } #lifetime .body { padding: 10px 12px; } #lifetime p { display: none; } #lifetime .buy { margin: 0; flex: 1 1 100%; } #lifetime h2 { font-size: 16px; } #featured > h2 { font-size: 20px; }
-            .wide-grid { gap: 14px; } section.info { margin-top: 44px; }
+            #lifetime { margin-bottom: 26px; } #lifetime img { flex-basis: 84px; width: 84px; } #lifetime .body { padding: 10px 12px; } #lifetime p { display: none; } #lifetime .buy { margin: 0; flex: 1 1 100%; } #lifetime h2 { font-size: 16px; }
+            section.info { margin-top: 44px; }
         }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
     </style>
@@ -147,6 +150,8 @@
     <style>.feat{max-width:960px;margin:0 auto 28px;padding:0 16px}.feat a.new-ui{display:flex;gap:18px;align-items:center;padding:16px 20px;border-radius:14px;background:linear-gradient(120deg,#49BAEC,#2a7fb0);color:#fff;text-decoration:none;box-shadow:0 8px 28px #49baec44}.feat a.new-ui img{width:96px;height:96px;border-radius:10px;flex:none}.feat .new-ui b{display:block;font:900 22px system-ui;letter-spacing:.03em}.feat .new-ui span{font-weight:600;opacity:.92}</style>
     <div id="sub" class="sub-slot"></div>
 
+    <nav class="dept" aria-label="Shop"><a href="/shop/">Shop</a><a href="/shop/models/" aria-current="page">Model packs</a><a class="ui" href="/shop/ui/">UI packs</a><a href="/shop/plugins/">Plugins</a><a href="/library/">Library</a></nav>
+
     <div class="bar" role="search">
         <input id="search" type="search" placeholder="Search packs…" aria-label="Search packs">
         <select id="sort" aria-label="Sort packs">
@@ -155,6 +160,7 @@
             <option value="high">Price: high to low</option>
             <option value="big">Most models</option>
         </select>
+        <select id="subject" aria-label="Filter by subject" hidden></select>
         <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
     </div>
 
@@ -169,10 +175,6 @@
                 <div class="buy"><span class="price"><s class="was">$199.00</s> $99.00<small class="robux"><s class="was">R$ 50,000</s> or R$ 25,000</small></span><span class="view">Get it on ClearlyDev</span></div>
             </div>
         </a>
-        <section id="featured" hidden aria-labelledby="featured-title">
-            <h2 id="featured-title">New: UI Packs</h2>
-            <div class="wide-grid"></div>
-        </section>
         <div id="grid" class="grid" aria-live="polite"><!--grid:start--><a class="card" href="100-mining-and-ore-assets/"><img src="img/100MiningAssets.jpg" alt="100 Mining &amp; Ore Assets Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Mining &amp; Ore Assets</h2><p>100 chunky low-poly mining assets for simulators and tycoons, true to scale for a 5-stud character: from a 1-stud cut gem to a 16-stud drill rig. 18 ore nodes with real embedded nuggets and crystals (coal to mythic rainbow), loose ore chunks, ingots, cut gems, boulders, stalagmites, cave wall and arch, geodes, 8 pickaxe tiers, drills, dynamite, detonator, lantern, backpacks, crusher, smelter, conveyor, sorter, drill rig, pump, generator, sell station, rails, mine carts, elevator, ladder, rope bridge and signs. 1 Blender unit = 1 stud. Every mine cart wheel is its own part; drill bits, the crusher jaw, the elevator cage and the detonator plunger have bones. Textured, rigged and animated.</p></div></a><a class="card" href="100-fishing-and-harbor-assets/"><img src="img/100FishingHarbor.jpg" alt="100 Fishing &amp; Harbor Assets Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Fishing &amp; Harbor Assets</h2><p>100 chunky low-poly fishing and harbour assets, true to scale for a 5-stud character: from a 1-stud tin can to a 44-stud lighthouse. Eight fishing rod tiers from stick-and-string to mythic, reel, bobbers, lures, tackle boxes, nets, traps, buoys and anchor; fish crates, barrels, market stall, smokehouse, aquarium and junk catches; ten boats from kayak to trawler and tugboat; modular docks, pilings, boat lift and ramp; lighthouse, crane, bait shop, boathouse, forklift and carts; reeds, lily pads, rocks, campfire and tent. 1 Blender unit = 1 stud: dock decks are 8 wide and 3.2 up, a rowboat is 13 long. Every wheel is its own part; rods cast, reels crank, propellers spin, lids, doors, crane, boat lift, forks and the lighthouse lamp have bones. Textured, rigged and animated.</p></div></a><a class="card" href="100-stud-eggs/"><img src="img/100StudEggs.jpg" alt="100 Stud Eggs Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Stud Eggs</h2><p>100 hatching eggs built from stacked stud cubes: animals, dragons, characters, treats, elements, special eggs and egg stands. About 4 to 5 studs tall for a 5-stud character. One texture, rigged (Egg, Top, Float) with shared Idle, Wobble and Hatch animations.</p></div></a><a class="card" href="100-factory-machines/"><img src="img/100FactoryMachines.jpg" alt="100 Factory Machines Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Factory Machines</h2><p>100 stylized toy-factory assets for tycoon and simulator games, true to scale for a 5-stud character (1 Blender unit = 1 stud): conveyors that tile on a 4-stud grid with moving belts, fat pipes that connect flange to flange with a lump of stuff visibly pumping through, 28 machines with spinning gears, stamping presses, shaking hoppers, robot arms and bobbing chimney caps, tanks, silos and vats, push buttons, levers, valve wheels and gauges that animate, plus crates, barrels, ingots, catwalks and floor tiles. Models and bone animations only: no scripts, no particles. Textured, rigged and animated.</p></div></a><a class="card" href="100-lucky-blocks/"><img src="img/100LuckyBlocks.jpg" alt="100 Lucky Blocks Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Lucky Blocks</h2><p>70 studded lucky blocks (rarity tiers, elements, themes, creatures, special shapes) and 30 supporting pieces: pads, pedestals, conveyor, drop tube, breaking tools, loot and arena parts. Real stud scale for a 5-stud character. One texture, rigged (Block, Lid, Float) with shared Idle, Shake and Open animations.</p></div></a><a class="card" href="100-fishing-rods/"><img src="img/100FishingRods.jpg" alt="100 Fishing Rods Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Fishing Rods</h2><p>100 stylized low-poly fishing rods for fishing and simulator games: 20 unique themed rods (wooden, bamboo, steel, toy, lucky, candy, pirate, egypt, jungle, coral, bone, ice, lava, toxic, gem, cyber, ghost, angel, dragon, galaxy), each in 5 colour variations. Line, hook and lure are modelled. Textured, rigged and animated (Idle, Cast, Reel).</p></div></a><a class="card" href="100-simulator-essentials/"><img src="img/100SimulatorEssentials.jpg" alt="100 Simulator Essentials Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Simulator Essentials</h2><p>100 chunky low-poly props for simulator games: pet eggs, hatching stands, coins and gems, breakables, gates, portals and islands, shop and upgrade stations, boosts and rewards. Textured, rigged and animated.</p></div></a><a class="card" href="100-cute-tycoon-assets/"><img src="img/100CuteTycoon.jpg" alt="100 Cute Tycoon Assets Roblox Asset Pack" loading="lazy" width="540" height="540"><div class="body"><h2>100 Cute Tycoon Assets</h2><p>100 cute rounded pastel tycoon assets: droppers in ten tiers, conveyors and pipes, upgraders, furnaces and machines, cash, coins, gold and safes, crates and ores, walls, doors, floors and stairs, decor, buttons, pads, trophies and a teleporter. Textured, rigged and animated.</p></div></a><!--grid:end--></div>
         <p id="empty" class="empty" hidden>No packs match that search.</p>
         <!--cols:start--><nav class="cols" aria-label="Browse asset packs by style"><style>.cols{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:28px 0 8px}.cols b{color:var(--dim);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}.cols a{padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--text);text-decoration:none;font-size:14px;font-weight:600}.cols a:hover,.cols a[aria-current]{border-color:var(--gold);color:var(--gold)}</style><b>Browse</b><a href="./">All packs</a><a href="ui/">UI packs</a><a href="stud/">Stud</a><a href="voxel/">Voxel</a><a href="pixel/">Pixel</a><a href="halloween/">Halloween</a><a href="weapons/">Weapons</a><a href="vehicles/">Vehicles</a><a href="pets/">Pets &amp; animals</a><a href="characters/">Characters</a><a href="rpg/">RPG</a><a href="simulator/" aria-current="page">Simulator &amp; tycoon</a><a href="buildings/">Buildings &amp; maps</a><a href="cute/">Cute</a></nav><!--cols:end-->
@@ -245,41 +247,59 @@
                 </div>`;
             return el;
         }
+        // A pack's look, first match wins: stud, pixel, voxel, cartoon (the Cute tag), low poly.
+        const GROUPS = [
+            { id: "stud", name: "Stud", test: p => p.tags.includes("Stud") },
+            { id: "pixel", name: "Pixel", test: p => /pixel/i.test(p.name) && !/voxel/i.test(p.name) },
+            { id: "voxel", name: "Voxel", test: p => p.tags.includes("Voxel") },
+            { id: "cartoon", name: "Cartoon", test: p => p.tags.includes("Cute") },
+            { id: "lowpoly", name: "Low Poly", test: () => true },
+        ];
+        const groupOf = p => GROUPS.find(g => g.test(p)).id;
+        let type = "All", subject = "All";
+        const pickPage = () => !!window.SHOP_PICK;   // a style page (/shop/stud/ ...) has tag chips instead of looks
         function render() {
             const q = search.value.trim().toLowerCase();
-            const match = p => (tag === "All" || p.tags.includes(tag)) && (!q || (p.name + " " + (p.description || "") + " " + p.tags.join(" ")).toLowerCase().includes(q));
-            const shown = packs.filter(p => match(p) && (window.SHOP_PICK || p.kind !== "ui"));   // UI packs sit in the featured row on the main shop, not again in the grid
-            const order = { low: (a, b) => a.price - b.price, high: (a, b) => b.price - a.price, big: (a, b) => b.count - a.count }[sort.value];
-            if (order) shown.sort(order);   // "new" keeps packs.json order (newest first); filter() already made a copy
-            shown.push(...soon.filter(match));   // coming-soon packs always sit after the ones you can buy
-            grid.replaceChildren(...shown.map(card));
-            empty.textContent = q ? "No packs match that search." : "Asset packs are back soon.";
-            empty.hidden = shown.length > 0 || (!q && !window.SHOP_PICK);
+            const match = p => (pickPage() ? tag === "All" || p.tags.includes(tag) : (type === "All" || groupOf(p) === type) && (subject === "All" || p.tags.includes(subject))) && (!q || (p.name + " " + (p.description || "") + " " + p.tags.join(" ")).toLowerCase().includes(q));
+            const order = { low: (a, b) => a.price - b.price, high: (a, b) => b.price - a.price, big: (a, b) => b.count - a.count }[sort.value];   // "new" keeps packs.json order (newest first)
+            const shown = packs.filter(match), waiting = soon.filter(match);   // coming-soon packs always sit after the ones you can buy
+            if (order) shown.sort(order);
+            grid.replaceChildren(...shown.concat(waiting).map(card));
+            empty.textContent = "No packs match that search.";
+            empty.hidden = shown.length + waiting.length > 0;
         }
         let soon = [];
         // Slugs of asset packs to hide for now (API-uploaded Packages). Empty: every pack shows.
         const HIDDEN_PACKS = [];
         Promise.all([fetch("packs.json").then(r => r.json()), fetch("soon.json").then(r => r.ok ? r.json() : []).catch(() => [])]).then(([data, later]) => {
             // style pages (/shop/stud/ ...) set SHOP_PICK to their packs (tools/seo.mjs)
-            const pick = p => !window.SHOP_PICK || window.SHOP_PICK.includes(p.slug);
-            packs = data.filter(pick).filter(p => !HIDDEN_PACKS.includes(p.slug)); soon = later.filter(pick).map(p => ({ ...p, tags: ["Coming Soon", ...p.tags] }));   // the tag doubles as a filter chip
+            const pick = p => window.SHOP_PICK ? window.SHOP_PICK.includes(p.slug) : p.kind !== "ui";   // the model packs page leaves out UI packs (/shop/ui/)
+            packs = data.filter(pick).filter(p => !HIDDEN_PACKS.includes(p.slug)); soon = later.filter(pick).map(p => ({ ...p, tags: ["Coming Soon", ...p.tags] }));   // the tag doubles as a filter
             tick(); setInterval(tick, 1000);
             document.getElementById("stat-packs").textContent = packs.length;
             const allUi = packs.length && packs.every((p) => p.kind === "ui");   // the UI packs page counts screens
             document.getElementById("stat-assets").textContent = packs.reduce((n, p) => n + ((p.kind === "ui") === allUi ? p.count : 0), 0).toLocaleString();
-            if (allUi) document.getElementById("stat-assets").nextElementSibling.textContent = "screens";
-            for (const t of ["All", ...new Set([...packs, ...soon].flatMap(p => p.tags))]) {
+            if (allUi) { document.getElementById("stat-assets").nextElementSibling.textContent = "screens"; document.documentElement.classList.add("blue"); }
+            const chip = (label, on, pressed) => {
                 const b = document.createElement("button");
-                b.className = "chip"; b.type = "button"; b.textContent = t; b.setAttribute("aria-pressed", t === tag);
-                b.onclick = () => { tag = t; [...chips.children].forEach(c => c.setAttribute("aria-pressed", c === b)); render(); };
+                b.className = "chip"; b.type = "button"; b.textContent = label; b.setAttribute("aria-pressed", pressed);
+                b.onclick = () => { on(); [...chips.children].forEach(c => c.setAttribute("aria-pressed", c === b)); render(); };
                 chips.append(b);
+            };
+            const all = [...packs, ...soon];
+            if (pickPage()) {
+                for (const t of ["All", ...new Set(all.flatMap(p => p.tags))]) chip(t, () => { tag = t; }, t === tag);
+            } else {
+                const subj = document.getElementById("subject");
+                chip("All", () => { type = "All"; }, true);
+                for (const g of GROUPS) {
+                    const n = all.filter(p => groupOf(p) === g.id).length;
+                    if (n) chip(`${g.name} ${n}`, () => { type = g.id; }, false);
+                }
+                subj.replaceChildren(...["All", ...[...new Set(all.flatMap(p => p.tags))].sort()].map(t => new Option(t === "All" ? "All subjects" : t, t)));
+                subj.hidden = false; subj.onchange = () => { subject = subj.value; render(); };
             }
             render();
-            // Featured row. Change FEATURED (a tag) and the heading above to feature something else.
-            const FEATURED = "UI", picks = window.SHOP_PICK ? [] : packs.filter(p => p.tags.includes(FEATURED));
-            const row = document.getElementById("featured");
-            row.hidden = !picks.length;
-            row.lastElementChild.replaceChildren(...picks.map(p => { const el = card(p); el.querySelector("img").src = p.slides[0]; return el; }));
         }).catch(() => { empty.hidden = false; empty.textContent = "The shop could not load. Please refresh."; });
         search.addEventListener("input", render);
         const sort = document.getElementById("sort");

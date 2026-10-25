@@ -1,49 +1,14 @@
 {
   "groups": [
     {
-      "id": "work",
-      "label": "Work",
-      "object": "work",
+      "id": "shop",
+      "label": "Shop",
+      "icon": "shop-bag.svg",
+      "href": "/shop/",
       "size": 1.0,
       "angle": -135,
-      "tint": "#FFB300",
-      "items": [
-        {
-          "label": "Contact me",
-          "icon": "mail-3d.png",
-          "page": "contact.html",
-          "button": {
-            "label": "Email me",
-            "href": "mailto:business@kashtheking.com"
-          },
-          "bg": "#2979FF"
-        },
-        {
-          "label": "Shop",
-          "icon": "shop.svg",
-          "href": "https://kashtheking.com/shop/",
-          "bg": "#00C853"
-        },
-        {
-          "label": "Game Consulting",
-          "icon": "bulb-3d.png",
-          "page": "terms.html",
-          "bg": "#F48FB1",
-          "button": {
-            "label": "Download terms (.md)",
-            "href": "consulting-terms.md",
-            "download": "KashTheKing consulting terms.md"
-          }
-        },
-        {
-          "label": "Support me - Paypal",
-          "icon": "paypal.svg",
-          "href": "https://paypal.me/KashPlacek",
-          "bg": "#0070BA"
-        }
-      ],
-      "grid": true,
-      "pageTint": "#3A3F47"
+      "tint": "#00C853",
+      "items": []
     },
     {
       "id": "blog",
