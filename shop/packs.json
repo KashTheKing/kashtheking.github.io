@@ -1,7 +1,7 @@
 [
     {
         "slug": "TidalShopUI",
-        "name": "Tidal Shop UI Pack - Pixel",
+        "name": "Tidal Shop UI Pack - Voxel",
         "kind": "ui",
         "count": 8,
         "price": 7.99,
@@ -18,13 +18,13 @@
             "img/TidalShopUI/08.jpg",
             "img/TidalShopUI/09.jpg"
         ],
-        "description": "A complete beach pixel-art game UI with eight working screens: a HUD (shell counter, SHOP, PETS, DAILY, CODES and SETTINGS buttons with red dots), the Tidal Shop (a chest deal with pets and drop chances, a hover card for each pet, gamepasses and shell packs, with a little beach around the window), a Pets inventory (equip, unequip, EQUIP BEST, slots), 7-day Daily rewards with a streak, a Codes box, Settings (Music, Sound Effects, Low Graphics, Volume), a purchase popup and a chest reveal. Every button opens its menu and everything is wired: hatched pets land in your inventory, rewards and codes add shells. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with springy buttons and popping numbers, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.",
+        "description": "A complete beach voxel-art game UI with eight working screens: a HUD (shell counter, SHOP, PETS, DAILY, CODES and SETTINGS buttons with red dots), the Tidal Shop (a chest deal with pets and drop chances, a hover card for each pet, gamepasses and shell packs, with a little beach around the window), a Pets inventory (equip, unequip, EQUIP BEST, slots), 7-day Daily rewards with a streak, a Codes box, Settings (Music, Sound Effects, Low Graphics, Volume), a purchase popup and a chest reveal. Every button opens its menu and everything is wired: hatched pets land in your inventory, rewards and codes add shells. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with springy buttons and popping numbers, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.",
         "tags": [
             "UI",
-            "Pixel"
+            "Voxel"
         ],
         "date": "2026-10-23T06:10:00",
-        "page": "tidal-shop-ui-pack-pixel"
+        "page": "tidal-shop-ui-pack-voxel"
     },
     {
         "slug": "SciFiFactoryTycoon",
