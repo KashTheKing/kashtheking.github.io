@@ -20,7 +20,43 @@
     "100MagicTreasure": {},
     "50LowPolyGuns": {},
     "100CuteFruits": {},
-    "100RPGEnemies": {}
+    "100RPGEnemies": {},
+    "TidalShopUI": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159234"
+    },
+    "NeonStreetRacer": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159235"
+    },
+    "LobbyUI": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159236"
+    },
+    "PiratePunkUI": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159237"
+    },
+    "NightShiftHorror": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159238"
+    },
+    "MedievalQuestRPG": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159239"
+    },
+    "SciFiFactoryTycoon": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159240"
+    },
+    "ArcaneCrystalSim": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159241"
+    },
+    "PastelCloudObby": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159242"
+    },
+    "CandyStudSim": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159243"
+    },
+    "BurgerCartoonTycoon": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159244"
+    },
+    "SurvivalRoyaleUI": {
+      "clearlyDevUrl": "https://clearlydev.com/product/1159245"
+    }
   },
   "subscription": {
     "enabled": false,
