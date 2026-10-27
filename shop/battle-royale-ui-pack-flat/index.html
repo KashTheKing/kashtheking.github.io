@@ -137,8 +137,8 @@
             const place = /^\d{1,19}$/.test(String(buy && buy.showcasePlaceId)) ? buy.showcasePlaceId : null;
             // opens the Roblox app in the showcase place, which shows this pack and prompts its developer product at once
             const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "buy", pack: p.slug }))}` : null;
-            // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json
-            const tryUrl = place && buy && buy.packs && buy.packs[p.slug] ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
+            // 'Try in Roblox': the showcase place shows this pack (no purchase prompt); only packs that are released and mapped in buy.json, never UI packs (the place has none)
+            const tryUrl = place && buy && buy.packs && buy.packs[p.slug] && p.kind !== "ui" ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug }))}` : null;
             const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
             const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
             document.getElementById("pack").innerHTML = `
