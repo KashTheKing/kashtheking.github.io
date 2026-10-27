@@ -1,11 +1,66 @@
 [
     {
+        "slug": "LobbyUI",
+        "name": "Sky Lobby UI",
+        "kind": "ui",
+        "count": 9,
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/71468411602162",
+        "image": "img/LobbyUI.jpg",
+        "slides": [
+            "img/LobbyUI/01.jpg",
+            "img/LobbyUI/02.jpg",
+            "img/LobbyUI/03.jpg",
+            "img/LobbyUI/04.jpg",
+            "img/LobbyUI/05.jpg",
+            "img/LobbyUI/06.jpg",
+            "img/LobbyUI/07.jpg",
+            "img/LobbyUI/08.jpg",
+            "img/LobbyUI/09.jpg",
+            "img/LobbyUI/10.jpg"
+        ],
+        "description": "A bright cartoon game lobby with every menu built and working, nine full screens: the Lobby HUD (trophy counter, players pill, a First Steps task list, a big Play button and an Items, Tasks, Shop, Settings and Codes bar over a sunny sky), Items (backpack grid with details and Equip), Daily Tasks (progress bars and Claim), Shop (tabs, item cards, buy), Settings (switches and a volume slider), Codes (redeem with success and error), Get Trophies (free gift and packs), Invite Friends (online filter, Invite to Sent) and a Play queue (Solo or Squad, players found, Start). It comes twice: a static version to drop in and edit in Properties (each screen with its own working UI Labs story, the Lobby opening every menu), and a Fusion 0.3 version where everything is wired together on one trophy counter, with windows and buttons that ease open and press smoothly and a UI Labs story with live controls for every piece plus a full App story. Drop it in StarterGui and press Play.",
+        "tags": [
+            "UI",
+            "Cute/Cartoon"
+        ],
+        "date": "2026-10-26T21:56:29",
+        "page": "sky-lobby-ui"
+    },
+    {
+        "slug": "PiratePunkUI",
+        "name": "Pirate Punk UI",
+        "kind": "ui",
+        "count": 8,
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/114410391548295",
+        "image": "img/PiratePunkUI.jpg",
+        "slides": [
+            "img/PiratePunkUI/01.jpg",
+            "img/PiratePunkUI/02.jpg",
+            "img/PiratePunkUI/03.jpg",
+            "img/PiratePunkUI/04.jpg",
+            "img/PiratePunkUI/05.jpg",
+            "img/PiratePunkUI/06.jpg",
+            "img/PiratePunkUI/07.jpg",
+            "img/PiratePunkUI/08.jpg",
+            "img/PiratePunkUI/09.jpg"
+        ],
+        "description": "A comic pirate-punk UI kit as a full game UI with eight screens: a lobby HUD with a big PLAY burst, a Shop with tabs and cards, a weapon Loadout with stat bars, a Party screen with friends to invite, the KABOOM round results with COLLECT CASH, Daily rewards with seven days, a Codes redeem box, and Settings with switches and a volume slider. It has a guided tour (H) and keys for every menu. Every button opens its menu and every menu works. It comes twice: a static version to drop in StarterGui and edit in Properties, and a Fusion 0.3 version with smooth animations, sparkle and cash bursts, and a UI Labs story for every piece.",
+        "tags": [
+            "UI",
+            "Comic"
+        ],
+        "date": "2026-10-26T21:56:22",
+        "page": "pirate-punk-ui"
+    },
+    {
         "slug": "TidalShopUI",
         "name": "Tidal Shop UI Pack - Voxel",
         "kind": "ui",
         "count": 8,
-        "price": 7.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/77237330727925",
         "image": "img/TidalShopUI.jpg",
         "slides": [
             "img/TidalShopUI/01.jpg",
@@ -18,7 +73,7 @@
             "img/TidalShopUI/08.jpg",
             "img/TidalShopUI/09.jpg"
         ],
-        "description": "A complete beach voxel-art game UI with eight working screens: a HUD (shell counter, SHOP, PETS, DAILY, CODES and SETTINGS buttons with red dots), the Tidal Shop (a chest deal with pets and drop chances, a hover card for each pet, gamepasses and shell packs, with a little beach around the window), a Pets inventory (equip, unequip, EQUIP BEST, slots), 7-day Daily rewards with a streak, a Codes box, Settings (Music, Sound Effects, Low Graphics, Volume), a purchase popup and a chest reveal. Every button opens its menu and everything is wired: hatched pets land in your inventory, rewards and codes add shells. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with springy buttons and popping numbers, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.",
+        "description": "A complete beach voxel-art game UI with eight working screens: a HUD (shell counter, SHOP, PETS, DAILY, CODES and SETTINGS buttons with red dots), the Tidal Shop (a chest deal with pets and drop chances, a hover card for each pet, gamepasses and shell packs, with a little beach around the window), a Pets inventory (equip, unequip, EQUIP BEST, slots), 7-day Daily rewards with a streak, a Codes box, Settings (Music, Sound Effects, Low Graphics, Volume), an unlocked popup and a chest reveal. Every button opens its menu and everything is wired: hatched pets land in your inventory, rewards and codes add shells. It comes twice: a static version to drop in StarterGui and edit in Properties, with a UI Labs story per screen, and a Fusion 0.3 version with springy buttons and popping numbers, App.luau running the whole UI, and a UI Labs story for every screen and piece with real on/off and number controls.",
         "tags": [
             "UI",
             "Voxel"
@@ -31,8 +86,8 @@
         "name": "Factory Tycoon UI Pack - Sci-Fi",
         "kind": "ui",
         "count": 8,
-        "price": 7.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/127329642680466",
         "image": "img/SciFiFactoryTycoon.jpg",
         "slides": [
             "img/SciFiFactoryTycoon/01.jpg",
@@ -58,8 +113,8 @@
         "name": "KingdomQuest UI Pack - Medieval",
         "kind": "ui",
         "count": 5,
-        "price": 6.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/119395521285396",
         "image": "img/MedievalQuestRPG.jpg",
         "slides": [
             "img/MedievalQuestRPG/01.jpg",
@@ -82,8 +137,8 @@
         "name": "Cloud Obby UI Pack - Pastel",
         "kind": "ui",
         "count": 5,
-        "price": 6.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/89118971573862",
         "image": "img/PastelCloudObby.jpg",
         "slides": [
             "img/PastelCloudObby/01.jpg",
@@ -106,8 +161,8 @@
         "name": "Night Shift UI Pack - Minimal",
         "kind": "ui",
         "count": 4,
-        "price": 5.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/79071511816649",
         "image": "img/NightShiftHorror.jpg",
         "slides": [
             "img/NightShiftHorror/01.jpg",
@@ -129,8 +184,8 @@
         "name": "Candy Simulator UI Pack - Stud",
         "kind": "ui",
         "count": 5,
-        "price": 6.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/124360314166176",
         "image": "img/CandyStudSim.jpg",
         "slides": [
             "img/CandyStudSim/01.jpg",
@@ -153,8 +208,8 @@
         "name": "Burger Tycoon UI Pack - Cartoon",
         "kind": "ui",
         "count": 4,
-        "price": 5.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/71514987386838",
         "image": "img/BurgerCartoonTycoon.jpg",
         "slides": [
             "img/BurgerCartoonTycoon/01.jpg",
@@ -176,8 +231,8 @@
         "name": "Crystal Sim UI Pack - Fantasy",
         "kind": "ui",
         "count": 8,
-        "price": 7.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/101752437422664",
         "image": "img/ArcaneCrystalSim.jpg",
         "slides": [
             "img/ArcaneCrystalSim/01.jpg",
@@ -203,8 +258,8 @@
         "name": "Street Racing UI Pack - Neon",
         "kind": "ui",
         "count": 3,
-        "price": 5.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/110693946636678",
         "image": "img/NeonStreetRacer.jpg",
         "slides": [
             "img/NeonStreetRacer/01.jpg",
@@ -225,8 +280,8 @@
         "name": "Battle Royale UI Pack - Flat",
         "kind": "ui",
         "count": 10,
-        "price": 8.99,
-        "url": "",
+        "price": 9.99,
+        "url": "https://create.roblox.com/store/asset/77541823379605",
         "image": "img/SurvivalRoyaleUI.jpg",
         "slides": [
             "img/SurvivalRoyaleUI/01.jpg",
