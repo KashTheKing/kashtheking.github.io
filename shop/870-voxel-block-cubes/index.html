@@ -165,10 +165,10 @@
                         <h1>${esc(p.name)}</h1>
                         <div class="meta"><span>${p.count} ${p.kind === "ui" ? "screens" : "models"}</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
                         <p class="desc">${esc(p.description)}</p>
-                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small></div>`}
+                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">${p.price === 0 ? "FREE" : `$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small>`}</div>`}
                         <div class="buy">
                             ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
-                            ${robuxUrl ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
+                            ${robuxUrl && p.price !== 0 ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
                             ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
                             ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
                         </div>
@@ -226,7 +226,7 @@
                 document.getElementById("recommended").innerHTML = others.map(o => `
                     <a class="card" href="../${o.page}/">
                         <img src="../${o.image}" alt="${esc(o.name)} thumbnail" loading="lazy" width="360" height="360">
-                        <div><b>${esc(o.name)}</b><span>$${o.price.toFixed(2)} <small style="color:var(--dim)">or R$ ${robux(o.price)}</small></span></div>
+                        <div><b>${esc(o.name)}</b><span>${o.price === 0 ? "FREE" : `$${o.price.toFixed(2)} <small style="color:var(--dim)">or R$ ${robux(o.price)}</small>`}</span></div>
                     </a>`).join("");
             }
         }).catch(() => { document.getElementById("missing").hidden = false; });
