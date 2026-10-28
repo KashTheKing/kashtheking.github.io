@@ -1,5 +1,55 @@
 [
     {
+        "slug": "100VoxelSpookyNight",
+        "page": "100-voxel-spooky-night",
+        "name": "100 Voxel Spooky Night",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/122624274299474",
+        "image": "img/100VoxelSpookyNight.jpg",
+        "slides": [
+            "img/100VoxelSpookyNight/01.jpg",
+            "img/100VoxelSpookyNight/02.jpg",
+            "img/100VoxelSpookyNight/03.jpg",
+            "img/100VoxelSpookyNight/04.jpg",
+            "img/100VoxelSpookyNight/05.jpg",
+            "img/100VoxelSpookyNight/06.jpg",
+            "img/100VoxelSpookyNight/09.jpg",
+            "img/100VoxelSpookyNight/10.jpg"
+        ],
+        "description": "100 blocky voxel Halloween night props: carved pumpkins with lift-off lids, gravestones and a coffin, twisted trees, a haunted cabin, a mausoleum, a bell tower and an old windmill, fences and swinging gates, cauldrons, candles, lanterns, candy, crates and signs. Solid colours, every item a Model of separate parts.",
+        "tags": [
+            "Voxel",
+            "Halloween"
+        ],
+        "date": "2026-10-28T10:40:00"
+    },
+    {
+        "slug": "100PixelHalloween",
+        "page": "100-pixel-halloween",
+        "name": "100 Pixel Halloween Assets",
+        "count": 100,
+        "price": 4.99,
+        "url": "https://create.roblox.com/store/asset/99380896744750",
+        "image": "img/100PixelHalloween.jpg",
+        "slides": [
+            "img/100PixelHalloween/01.jpg",
+            "img/100PixelHalloween/02.jpg",
+            "img/100PixelHalloween/03.jpg",
+            "img/100PixelHalloween/04.jpg",
+            "img/100PixelHalloween/05.jpg",
+            "img/100PixelHalloween/06.jpg",
+            "img/100PixelHalloween/09.jpg",
+            "img/100PixelHalloween/10.jpg"
+        ],
+        "description": "100 Halloween trick-or-treat assets as pixel art extruded into 3D: jack-o'-lanterns with lifting lids, candy, lanterns, candles and torches, graves, a crypt and a cemetery gate that open, potions, cauldrons, bones and spooky props. Solid colours, every item a Model of separate parts.",
+        "tags": [
+            "Voxel",
+            "Halloween"
+        ],
+        "date": "2026-10-28T10:40:00"
+    },
+    {
         "slug": "LobbyUI",
         "name": "Sky Lobby UI",
         "kind": "ui",
@@ -1107,7 +1157,7 @@
     {
         "slug": "100HalloweenCreatures",
         "page": "100-halloween-creatures",
-        "name": "100 Halloween Creatures",
+        "name": "100 Stud Halloween Creatures",
         "count": 100,
         "price": 4.99,
         "url": "https://create.roblox.com/store/asset/86535892309623",
@@ -1122,10 +1172,10 @@
             "img/100HalloweenCreatures/09.jpg",
             "img/100HalloweenCreatures/10.jpg"
         ],
-        "description": "100 stylized low-poly Halloween creatures: skeleton animals, undead beasts, bats, crows and owls, black cats, spiders, wolves, werewolves and hellhounds, ghosts, pumpkin monsters, scarecrows, treants, demons and gargoyles. True stud scale, one texture, rigged and animated.",
+        "description": "100 Halloween creatures in classic Stud style: skeleton and zombie animals, bats, crows and owls, black cats, spiders, wolves, werewolves and hellhounds, ghosts, pumpkin monsters, scarecrows, treants, demons and gargoyles. Solid colours with glowing eyes, and every creature a Model of separate parts on Motor6D joints (legs, wings, tails and heads move on their own). True stud scale.",
         "tags": [
-            "Halloween",
-            "Animals"
+            "Stud",
+            "Halloween"
         ],
         "date": "2026-10-09T11:05:07"
     },
@@ -1579,7 +1629,7 @@
     {
         "slug": "100HalloweenDecor",
         "page": "100-halloween-decorations",
-        "name": "100 Halloween Decorations",
+        "name": "100 Stud Halloween Decorations",
         "count": 100,
         "price": 4.99,
         "url": "https://create.roblox.com/store/asset/116561819837052",
@@ -1591,12 +1641,13 @@
             "img/100HalloweenDecor/04.jpg",
             "img/100HalloweenDecor/05.jpg",
             "img/100HalloweenDecor/06.jpg",
-            "img/100HalloweenDecor/09.jpg"
+            "img/100HalloweenDecor/09.jpg",
+            "img/100HalloweenDecor/10.jpg"
         ],
-        "description": "100 chunky cute-spooky Halloween map decorations: dead trees, pumpkins and jack-o-lanterns, gravestones and crypts, fences and gates, candles and lanterns, witch props, bones and decor. Textured, rigged and animated.",
+        "description": "100 Halloween map decorations in classic Stud style: pumpkins and jack-o-lanterns, gravestones, crypts and coffins, iron and wood fences, candles and lanterns, witch props, bones, signs, cobwebs, dead trees and mushrooms. Solid colours with glowing faces, every item a Model of separate parts, with gates, doors and lids on their own joints.",
         "tags": [
-            "Halloween",
-            "Nature"
+            "Stud",
+            "Halloween"
         ],
         "date": "2026-10-05T11:56:07"
     },
