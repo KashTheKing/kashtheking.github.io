@@ -54,7 +54,7 @@
         "name": "Sky Lobby UI",
         "kind": "ui",
         "count": 9,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/71468411602162",
         "image": "img/LobbyUI.jpg",
         "slides": [
@@ -82,7 +82,7 @@
         "name": "Pirate Punk UI",
         "kind": "ui",
         "count": 8,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/80411089083657",
         "image": "img/PiratePunkUI.jpg",
         "slides": [
@@ -109,7 +109,7 @@
         "name": "Tidal Shop UI Pack - Voxel",
         "kind": "ui",
         "count": 8,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/77237330727925",
         "image": "img/TidalShopUI.jpg",
         "slides": [
@@ -136,7 +136,7 @@
         "name": "Factory Tycoon UI Pack - Sci-Fi",
         "kind": "ui",
         "count": 8,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/127329642680466",
         "image": "img/SciFiFactoryTycoon.jpg",
         "slides": [
@@ -163,7 +163,7 @@
         "name": "KingdomQuest UI Pack - Medieval",
         "kind": "ui",
         "count": 5,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/138233276888597",
         "image": "img/MedievalQuestRPG.jpg",
         "slides": [
@@ -187,7 +187,7 @@
         "name": "Cloud Obby UI Pack - Pastel",
         "kind": "ui",
         "count": 5,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/91751312606214",
         "image": "img/PastelCloudObby.jpg",
         "slides": [
@@ -211,7 +211,7 @@
         "name": "Night Shift UI Pack - Minimal",
         "kind": "ui",
         "count": 4,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/101938950501097",
         "image": "img/NightShiftHorror.jpg",
         "slides": [
@@ -234,7 +234,7 @@
         "name": "Candy Simulator UI Pack - Stud",
         "kind": "ui",
         "count": 5,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/124360314166176",
         "image": "img/CandyStudSim.jpg",
         "slides": [
@@ -258,7 +258,7 @@
         "name": "Burger Tycoon UI Pack - Cartoon",
         "kind": "ui",
         "count": 4,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/108192637698011",
         "image": "img/BurgerCartoonTycoon.jpg",
         "slides": [
@@ -281,7 +281,7 @@
         "name": "Crystal Sim UI Pack - Fantasy",
         "kind": "ui",
         "count": 8,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/105463170292615",
         "image": "img/ArcaneCrystalSim.jpg",
         "slides": [
@@ -308,7 +308,7 @@
         "name": "Street Racing UI Pack - Neon",
         "kind": "ui",
         "count": 3,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/90018271962359",
         "image": "img/NeonStreetRacer.jpg",
         "slides": [
@@ -330,7 +330,7 @@
         "name": "Battle Royale UI Pack - Flat",
         "kind": "ui",
         "count": 10,
-        "price": 0,
+        "price": 9.99,
         "url": "https://create.roblox.com/store/asset/77541823379605",
         "image": "img/SurvivalRoyaleUI.jpg",
         "slides": [
