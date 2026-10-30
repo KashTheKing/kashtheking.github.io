@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[622],{4410:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/KashTheKing/init/blob/main","baseUrl":"/init/","classOrder":[],"apiCategories":[]}')}}]);

@@ -1,0 +1,526 @@
+---
+name: init-framework
+description: Build Roblox games on KashTheKing's Init module loader (Wally package kashtheking/init, Init Framework Studio plugin). Use when a game has ReplicatedStorage.Packages.Init or InitServer/InitClient boot scripts, when the user asks to install or set up Init, or to add a Service, Controller, GuiController, Binder, Network (Packet) module, Class or Input context to a game that uses Init.
+---
+
+# Init framework
+
+Init is a module loader for Roblox. Two boot scripts (one Script, one LocalScript) call `Init.start`
+with a list of folders. Init requires every ModuleScript in them, calls each module's `Init`, then
+each module's `Start`, then connects the module's hook methods (`OnPlayerAdded`, `OnHeartbeat`, ...).
+Modules are plain tables; they never connect those events themselves.
+
+Docs: https://kashtheking.com/init/ · Source: https://github.com/KashTheKing/init ·
+Templates: https://kashtheking.com/init/templates/ (raw `.luau` files)
+
+## 1. Find out how the game is set up
+
+- **Rojo project** (a `*.project.json` and usually a `wally.toml`): edit files, install with Wally.
+- **Studio only** (no project files; you may have Roblox Studio MCP tools such as `execute_luau`): create
+  instances in Studio.
+- **Already uses Init** if `ReplicatedStorage.Packages.Init` exists, or a Script calls `Init.start`.
+  Skip to section 3.
+- **Old Init** if `ReplicatedStorage.Init` is a ModuleScript with `SharedEntries`/`ServerEntries`
+  children and `InitServer`/`InitClient` scripts inside it. It works; don't migrate unless asked
+  (guide: https://kashtheking.com/init/docs/migrating/). Its modules use the same methods.
+
+## 2. Install
+
+### Rojo + Wally
+
+1. `wally.toml`, under `[dependencies]`: `Init = "kashtheking/init@1.0.0"`, then run `wally install`.
+2. The project file must map `Packages` to `ReplicatedStorage.Packages`.
+3. Add the two boot scripts and the folders from the example project
+   (https://github.com/KashTheKing/init/tree/main/example), mapped like `example.project.json`:
+   - `ServerScriptService/InitServer.server.luau`
+   - `StarterPlayer/StarterPlayerScripts/InitClient.client.luau`
+   - folders: `ReplicatedStorage/{Network, Services, Controllers, Binders/Shared, Binders/Client}`,
+     `ServerScriptService/{Services, Binders}`. Every folder a boot script names must exist, or the boot
+     script errors. Rojo skips empty directories in git, so keep a `.gitkeep` in each or declare it in the
+     project file with `"$className": "Folder"`.
+
+### Studio only
+
+Best for the user: install the **Init Framework** plugin
+(https://create.roblox.com/store/asset/77164672536940/Init-Framework), then press **Setup** (loader, boot
+scripts and folders) and **Add Packages** (Trove, Signal, Packet, Binder). Ask them to do this if you can't
+click in Studio.
+
+If you can run Luau in Studio but can't use the plugin:
+
+1. Get `Init.rbxm` from https://github.com/KashTheKing/init/releases/latest.
+2. Load it: copy it into Studio's content folder
+   (`%LOCALAPPDATA%\Roblox\Versions\<version>\content\` on Windows, `RobloxStudio.app/Contents/Resources/content/`
+   on macOS) and run `game:GetObjects("rbxasset://Init.rbxm")[1]` in edit mode, or ask the user to drag the
+   file into Studio's Explorer.
+3. Put the `Init` ModuleScript in `ReplicatedStorage.Packages` (make the folder if needed).
+4. Create the boot scripts (Script `InitServer` in ServerScriptService, LocalScript `InitClient` in
+   StarterPlayer.StarterPlayerScripts) with the source of the example's boot scripts, and the folders
+   listed above.
+
+## 3. Add modules
+
+Copy the matching template, replace every `_SNIPPET_` with the name, and put it in the right folder.
+The boot scripts only load names that match their predicate, so **the suffix matters**.
+
+| You want | Template | Name | Folder |
+| --- | --- | --- | --- |
+| Server game logic | `Service.luau` | `ShopService` | `ServerScriptService/Services` |
+| Logic on server and client | `Service.luau` | `TimeService` | `ReplicatedStorage/Services` |
+| Client game logic | `Controller.luau` | `CameraController` | `ReplicatedStorage/Controllers` |
+| One ScreenGui | `GuiController.luau` | `ShopGuiController` (for a ScreenGui named `Shop`) | `ReplicatedStorage/Controllers` |
+| Remote events (Packet) | `Network.luau` | `ShopNetwork` | `ReplicatedStorage/Network` |
+| Code per tagged instance | `Binder.luau` | `LavaBinder` | `ServerScriptService/Binders`, `ReplicatedStorage/Binders/Client` or `/Shared` |
+| An object class | `Class.luau` | `Weapon` | `ReplicatedStorage/Classes` (Init does not load it) |
+| A subclass | `InheritedClass.luau` | `Sword` | child of the parent class's ModuleScript |
+| A class for a Binder | `BoundClass.luau` | `Lava` | next to its Binder |
+| Player input | `Input.model.json` (InputContext) | `CombatInput` | `ReplicatedStorage/Input` |
+
+Templates are at `https://kashtheking.com/init/templates/<Template>` (for example `.../templates/Service.luau`).
+Network, Binder and BoundClass need packages: `Packet = "kashtheking/packet@1.0.0"`,
+`Binder = "kashtheking/binder@0.6.3"`, `Trove = "sleitnick/trove@1.8.0"` (or the plugin's Add Packages).
+
+## 4. Rules that matter
+
+- **Init**: set up the module's own state. Runs one module at a time; don't wait for other modules or
+  yield for long (3 s `InitTimeout`, then the module is reported and skipped).
+- **Start**: runs after every Init has finished, so other modules are ready. All Starts run at once; a Start
+  that waits doesn't block the others (15 s `StartTimeout`, then Init stops waiting; the Start keeps running).
+- To use another module, `require` it (from the top of the file or inside Start). It returns the same table
+  Init loaded. Don't call its methods during your Init.
+- Hooks (all optional): `OnPlayerAdded(player)` (also runs for players already in game),
+  `OnPlayerRemoving(player)`, `Step(dt)` (fixed 60/s), `OnHeartbeat(dt)`, `OnStepped(time, dt)`; client only:
+  `OnRenderStepped(dt)`, `OnCharacterAdded(character)`, `OnCharacterRemoving(character)`, `OnDied()`.
+  Never connect `Players.PlayerAdded` yourself in an Init module; use the hook.
+- A ModuleScript inside another ModuleScript is not loaded by Init. Put private helpers there.
+- Every module must `return` exactly one value. Module names should be unique across loaded folders.
+- Attributes on a ModuleScript: `Ignore = true` skips it; `Priority = <number>` loads it earlier (lower first)
+  within its entry.
+- Never call `Init.start` anywhere except the two boot scripts.
+- To load another folder, add an entry to **both** boot scripts if it's shared:
+  `{ Folders = { ReplicatedStorage.Systems }, Predicate = Init.matchesName("System$") }`.
+
+## 5. Check it works
+
+Play the game (Studio MCP: start a playtest, then read the output). The Output should show:
+
+```
+🔲 Initializing Server
+✅ Initialized 4 Server modules in 0.02s
+🔲 Initializing Client
+✅ Initialized 3 Client modules in 0.01s
+```
+
+Errors start with `[Init]` and name the module and method. Common ones:
+- `X is not a valid member of ReplicatedStorage`: a folder named in a boot script is missing. Create it.
+- `must return exactly one value`: the module has no `return` at the end.
+- `X:Init() didn't finish within 3s`: Init is waiting on something; move that into Start.
+- A module never runs: its name doesn't match the entry's predicate (e.g. `Shop` instead of `ShopService`),
+  it's nested inside another ModuleScript, or it has the `Ignore` attribute.
+- More: https://kashtheking.com/init/docs/guides/troubleshooting/
+
+
+---
+
+
+# What is Init?
+
+Init is a **module loader**: the thing that starts your game's code.
+
+Without one, every Script runs on its own, in an order you don't control, and each one connects `Players.PlayerAdded`, `RunService.Heartbeat` and friends by hand. With Init, your game has exactly two scripts (one for the server, one for the client) and everything else is a ModuleScript in a folder:
+
+```
+ReplicatedStorage
+├─ Packages/Init            the loader
+├─ Network                  remote events (loaded first)
+├─ Services                 code for server AND client   (names end in Service)
+├─ Controllers              code for the client only     (names end in Controller)
+└─ Binders/Shared, Client   code that runs per tagged instance
+ServerScriptService
+├─ InitServer               boots the server
+├─ Services                 server-only code              (names end in Service)
+└─ Binders
+StarterPlayer/StarterPlayerScripts
+└─ InitClient               boots the client
+```
+
+When the game starts, Init:
+
+1. **Loads** every module, folder by folder, in the order the boot script lists them.
+2. Calls **`Init`** on each one, one at a time. Modules set up their own data here.
+3. Calls **`Start`** on all of them. Now every module is ready, so they can use each other.
+4. Connects their **hooks**: `OnPlayerAdded`, `OnPlayerRemoving`, `Step` (60 times a second), `OnHeartbeat`, and on the client `OnCharacterAdded`, `OnDied`, `OnRenderStepped`...
+
+A module only writes the methods it needs:
+
+```lua
+local CoinService = {}
+
+function CoinService.Init(self)
+	self.Coins = {}
+end
+
+function CoinService.OnPlayerAdded(self, player: Player)
+	self.Coins[player] = 0
+end
+
+function CoinService.OnPlayerRemoving(self, player: Player)
+	self.Coins[player] = nil
+end
+
+return CoinService
+```
+
+## Pick how to install
+
+- **[Without code](install/no-code.md):** the Init Framework plugin. Two clicks.
+- **[With AI](install/with-ai.md):** paste one prompt into Claude, Cursor or ChatGPT.
+- **[Rojo + Wally](install/wally.md):** `kashtheking/init`.
+- **[Studio, by hand](install/model.md):** drag in `Init.rbxm`.
+
+Next: [the lifecycle](guides/lifecycle.md) explains exactly when each method runs.
+
+
+---
+
+
+# Install without code
+
+The **Init Framework** plugin sets up everything. You don't need to write a line.
+
+1. Get the plugin from the Creator Store: [Init Framework](https://create.roblox.com/store/asset/77164672536940/Init-Framework). In Studio it appears in the **Plugins** tab.
+2. Open your place and press **Setup**. This adds:
+   - the loader at `ReplicatedStorage.Packages.Init`
+   - `InitServer` in ServerScriptService and `InitClient` in StarterPlayer › StarterPlayerScripts
+   - the folders: `Network`, `Services`, `Controllers`, `Binders`, `Classes`, `Constants`, `Input`
+3. Press **Add Packages** for Trove, Signal, Packet and Binder (the Network and Binder templates use them).
+4. Press **Play**. The Output shows `✅ Initialized 0 Server modules` and `✅ Initialized 0 Client modules`. Init is running.
+
+## Add your first module
+
+1. Click the `Services` folder in **ServerScriptService**.
+2. Press **Service** in the plugin. A new module opens.
+3. Rename it in the Explorer to `Coin`. The plugin renames it `CoinService` and fills the name into the code.
+4. Write your code in the methods (delete the ones you don't need) and press Play.
+
+Every button works the same way: select the folder, press the button, rename.
+
+| Button | Makes | Put it in |
+| --- | --- | --- |
+| Service | game logic (`...Service`) | ServerScriptService › Services (server) or ReplicatedStorage › Services (both) |
+| Controller | client logic (`...Controller`) | ReplicatedStorage › Controllers |
+| Gui Controller | a controller for one ScreenGui | ReplicatedStorage › Controllers |
+| Network | Packet remote events | ReplicatedStorage › Network |
+| Binder | code for every part with a tag | ServerScriptService › Binders, ReplicatedStorage › Binders › Client or Shared |
+| Bound Class | a class for a Binder | next to the Binder |
+| Class / InheritedClass | an object class | ReplicatedStorage › Classes |
+| Input | an InputContext | ReplicatedStorage › Input |
+| Add Extras | an `Assets` folder that preloads, plus SFX and Music sound groups | |
+| Update Script Name | renames the open script to the text you selected | |
+
+What every template does: [Templates](../guides/templates.md).
+
+:::tip Let an AI write the modules
+Once Setup is done, an AI can add modules for you. See [Install with AI](with-ai.md).
+:::
+
+
+---
+
+
+# Install with AI
+
+Init ships an **AI skill**: one file that teaches an AI how to install Init, where every kind of module goes and the rules to follow. Point your AI at it.
+
+- Skill: [`https://kashtheking.com/init/SKILL.md`](https://kashtheking.com/init/SKILL.md)
+- Templates (raw): `https://kashtheking.com/init/templates/Service.luau`, `Controller.luau`, `Binder.luau`, ...
+- Everything in one page for AI: [`https://kashtheking.com/init/llms.txt`](https://kashtheking.com/init/llms.txt)
+
+## Copy this prompt
+
+Paste it into Claude, Cursor, ChatGPT or any AI that can read web pages:
+
+```text
+Read https://kashtheking.com/init/SKILL.md and follow it.
+Set up the Init framework (kashtheking/init) in my Roblox game, then add a CoinService
+that gives every player 100 coins when they join and shows them on the leaderboard.
+```
+
+Change the second part to whatever you want built. After setup, you can keep asking: *"add a ShopGuiController for my Shop ScreenGui"*, *"add a LavaBinder that kills players who touch parts tagged Lava"*.
+
+## Claude Code
+
+Install the skill once and Claude uses it whenever you mention Init:
+
+```bash
+mkdir -p ~/.claude/skills/init-framework && curl -L https://kashtheking.com/init/SKILL.md -o ~/.claude/skills/init-framework/SKILL.md
+```
+
+With the **Roblox Studio MCP** connected, Claude can create the modules in Studio and playtest. With a Rojo project, it edits files and runs `wally install`.
+
+## If your AI can't touch Studio
+
+Chat AIs (ChatGPT, Claude.ai) can't click in Studio. Do the setup with the [plugin](no-code.md) (two clicks), then ask the AI for module code and paste it into a module the plugin made.
+
+## Check the AI's work
+
+Press Play. The Output should say `✅ Initialized N Server modules` and `✅ Initialized N Client modules`. Anything that starts with `[Init]` is an error: paste it back to the AI. See [Troubleshooting](../guides/troubleshooting.md).
+
+
+---
+
+
+# Install with Rojo + Wally
+
+1. Add Init to `wally.toml`:
+
+   ```toml
+   [dependencies]
+   Init = "kashtheking/init@1.0.0"
+   ```
+
+2. `wally install`, and map `Packages` to `ReplicatedStorage.Packages` in your project file.
+
+3. Add the boot scripts and folders. The [example project](https://github.com/KashTheKing/init/tree/main/example) has all of them; copy it, or start from it:
+
+   ```bash
+   git clone https://github.com/KashTheKing/init && cd init && rojo serve example.project.json
+   ```
+
+   - [`ServerScriptService/InitServer.server.luau`](https://github.com/KashTheKing/init/blob/main/example/ServerScriptService/InitServer.server.luau)
+   - [`StarterPlayer/StarterPlayerScripts/InitClient.client.luau`](https://github.com/KashTheKing/init/blob/main/example/StarterPlayerScripts/InitClient.client.luau)
+
+   Every folder a boot script names must exist. Git doesn't keep empty folders, so add a `.gitkeep` to each (Rojo ignores it) or declare them in the project file with `"$className": "Folder"`.
+
+4. `rojo serve`, connect from Studio and press Play.
+
+Your folders, names and order are yours: change the entries in the boot scripts. See [Entries](../guides/entries.md).
+
+The [templates](../guides/templates.md) are plain `.luau` files you can copy, and the [plugin](no-code.md)'s template buttons work in Rojo games too.
+
+
+---
+
+
+# Install by hand in Studio
+
+1. Download `Init.rbxm` from the [latest release](https://github.com/KashTheKing/init/releases/latest).
+2. In Studio, make a Folder named `Packages` in ReplicatedStorage. Drag `Init.rbxm` onto it (or right-click it › **Insert from File**).
+3. Make a **Script** named `InitServer` in ServerScriptService and paste in [InitServer](https://github.com/KashTheKing/init/blob/main/example/ServerScriptService/InitServer.server.luau).
+4. Make a **LocalScript** named `InitClient` in StarterPlayer › StarterPlayerScripts and paste in [InitClient](https://github.com/KashTheKing/init/blob/main/example/StarterPlayerScripts/InitClient.client.luau).
+5. Make the folders the boot scripts name: in ReplicatedStorage `Network`, `Services`, `Controllers`, `Binders` (with `Shared` and `Client` inside); in ServerScriptService `Services` and `Binders`.
+6. Press Play and look for `✅ Initialized` in the Output.
+
+The [plugin](no-code.md)'s Setup button does all of this for you.
+
+
+---
+
+
+# Lifecycle
+
+`Init.start(entries)` runs in this order, separately on the server and on each client.
+
+## 1. Load
+
+Entries load in list order. Inside an entry, every ModuleScript in its `Folders` (at any depth) is required, lowest `Priority` attribute first, then in Explorer order. Skipped:
+
+- a ModuleScript inside another ModuleScript (it belongs to its parent, which can `require` it)
+- a module whose `Ignore` attribute is `true`
+- a module the entry's `Predicate` turns down (e.g. not ending in `Service`)
+
+A module that errors while loading is reported and left out; the rest still load.
+
+## 2. Init: one at a time
+
+`module:Init()` runs for each module, in load order, and Init waits for each before the next. Use it for the module's **own** setup: tables, constants, instances it owns. Other modules may not have run their Init yet, so don't call into them here.
+
+If Init errors or takes longer than `InitTimeout` (3 s), it's reported and **that module doesn't Start** or get hooks.
+
+## 3. Start: all at once
+
+After every Init has finished, `module:Start()` runs for every module, in load order, each in its own thread. A Start that waits (for a GUI, for data) doesn't hold up the others. This is where modules use each other.
+
+If Start errors or runs longer than `StartTimeout` (15 s), it's reported. A Start that's still running keeps running; Init just stops waiting for it.
+
+## 4. Hooks
+
+As soon as a module's Start returns, its hooks connect:
+
+| Method | Runs | Args |
+| --- | --- | --- |
+| `OnPlayerAdded` | for each player already in game, then each player who joins | `player` |
+| `OnPlayerRemoving` | when a player leaves | `player` |
+| `Step` | exactly 60 times a second, however fast frames run | `dt` (1/60) |
+| `OnHeartbeat` | every `RunService.Heartbeat` | `dt` |
+| `OnStepped` | every `RunService.Stepped` | `time, dt` |
+| `OnRenderStepped` | client: every frame before render | `dt` |
+| `OnCharacterAdded` | client: local player's current and each new character | `character` |
+| `OnCharacterRemoving` | client: when the character is removed | `character` |
+| `OnDied` | client: when the local player's Humanoid dies | |
+
+Errors in a hook are reported and don't break the event. Per-frame hooks get a MicroProfiler label like `CoinService - Step`.
+
+## 5. Done
+
+The promise from `Init.start` resolves once every Start has returned (or timed out):
+
+```lua
+Init.start(entries):andThen(function(modules, count, seconds)
+	print(modules.CoinService, count, seconds)
+end)
+```
+
+## Using one module from another
+
+Modules are plain tables, and `require` returns the same table Init loaded:
+
+```lua
+local CoinService = require(ServerScriptService.Services.CoinService)
+
+function ShopService.Start(self)
+	CoinService:Give(player, 10) -- fine: every Init has run
+end
+```
+
+
+---
+
+
+# Entries and folders
+
+The boot scripts decide what loads and in what order. Each entry is a group of folders:
+
+```lua
+Init.start({
+	{ Folders = { ReplicatedStorage.Network } },                     -- 1st: every module in Network
+	{
+		Folders = { ReplicatedStorage.Services, ServerScriptService.Services },
+		Predicate = Init.matchesName("Service$"),                      -- 2nd: only names ending in Service
+	},
+	{ Folders = { ReplicatedStorage.Binders.Shared, ServerScriptService.Binders } }, -- 3rd
+})
+```
+
+- **Order:** entries load in list order. Inside an entry, the `Priority` attribute (lower first) then Explorer order.
+- **Predicate:** a function `(module) -> boolean`. `Init.matchesName(pattern)` makes one from a [string pattern](https://create.roblox.com/docs/luau/strings#string-patterns): `"Service$"` ends in Service, `"^Admin"` starts with Admin.
+- **Shared folders** (in ReplicatedStorage) go in **both** boot scripts.
+
+## Adding your own folder
+
+Say you want `ReplicatedStorage.Systems` with modules named `...System`:
+
+1. Make the folder.
+2. Add an entry to `InitServer` and `InitClient` (or just one, if it's one-sided):
+
+   ```lua
+   { Folders = { ReplicatedStorage.Systems }, Predicate = Init.matchesName("System$") },
+   ```
+
+## Attributes
+
+Set these on a ModuleScript in the Properties window:
+
+| Attribute | Type | Effect |
+| --- | --- | --- |
+| `Ignore` | boolean | `true`: Init skips it |
+| `Priority` | number | lower loads earlier inside its entry (default 0) |
+
+## The old Entries modules
+
+The old Init kept entries in `SharedEntries`/`ServerEntries`/`ClientEntries` modules as named dictionaries with `Order`. That format still works: `Init.start(require(path.to.ServerEntries))` sorts it by `Order`. See [Migrating](../migrating.md).
+
+
+---
+
+
+# Settings
+
+Pass overrides as the second argument of `Init.start`. A name that isn't a setting is an error, so typos are caught.
+
+```lua
+Init.start(entries, { Verbose = true, StartTimeout = 30 })
+```
+
+| Setting | Default | What |
+| --- | --- | --- |
+| `Verbose` | `false` | log every module as it loads, inits and starts |
+| `DefaultLogEnabled` | `true` | log `🔲 Initializing` and `✅ Initialized N modules` |
+| `DebugLabelFormat` | `"%s - %s"` | MicroProfiler label for per-frame hooks (module, method) |
+| `InitTimeout` | `3` | seconds to wait for each `Init` |
+| `StartTimeout` | `15` | seconds to wait for each `Start` |
+| `DefaultPriority` | `0` | priority of modules without a `Priority` attribute |
+| `IgnoreAttribute` | `"Ignore"` | attribute that skips a module |
+| `PriorityAttribute` | `"Priority"` | attribute that orders modules |
+
+The method names are settings too, if you'd rather call them something else:
+
+| Setting | Default |
+| --- | --- |
+| `InitMethod` | `"Init"` |
+| `StartMethod` | `"Start"` |
+| `PlayerAdded` | `"OnPlayerAdded"` |
+| `PlayerRemoving` | `"OnPlayerRemoving"` |
+| `Accumulator` | `"Step"` |
+| `Heartbeat` | `"OnHeartbeat"` |
+| `Stepped` | `"OnStepped"` |
+| `RenderStepped` | `"OnRenderStepped"` |
+| `Died` | `"OnDied"` |
+| `CharacterAdded` | `"OnCharacterAdded"` |
+| `CharacterRemoving` | `"OnCharacterRemoving"` |
+
+Source: [`Settings.luau`](https://github.com/KashTheKing/init/blob/main/src/Init/Settings.luau).
+
+
+---
+
+
+# Troubleshooting
+
+Init's errors start with `[Init]` and name the module and method.
+
+| You see | Why | Fix |
+| --- | --- | --- |
+| `Network is not a valid member of ReplicatedStorage` | a boot script names a folder that doesn't exist | make the folder, or remove the entry |
+| `... must return exactly one value` | the module doesn't end with `return` | add `return MyModule` at the bottom |
+| `X:Init() didn't finish within 3s` | Init is waiting (WaitForChild, a DataStore, another module) | move the waiting into `Start` |
+| `X:Start() didn't finish within 15s` | Start waits a long time | fine if intended (it keeps running); otherwise `task.spawn` the loop or raise `StartTimeout` |
+| `X:Init() errored: ...` | a bug in Init | fix it; that module won't Start until then |
+| `Two loaded modules are named "X"` | two modules share a name | rename one; both still run |
+| `Init.start was already called` | two boot scripts on one side | keep one InitServer and one InitClient (the old `ReplicatedStorage.Init` boots too, see [Migrating](../migrating.md)) |
+| `"X" isn't a setting` | a typo in the settings table | check [Settings](settings.md) |
+
+## A module never runs
+
+- Its name doesn't match the entry's predicate: `Coins` isn't loaded by `matchesName("Service$")`; name it `CoinService`.
+- It's inside another ModuleScript. Only top-level modules (folders are fine) load.
+- It has the `Ignore` attribute.
+- It's in a folder no entry lists, or on the wrong side (a Controller in ServerScriptService).
+- Turn on `Verbose = true` to see every module Init loads.
+
+## Nothing prints at all
+
+The boot scripts aren't running: `InitServer` must be a **Script** in ServerScriptService and `InitClient` a **LocalScript** in StarterPlayerScripts, both enabled.
+
+
+---
+
+
+# Migrating from the old Init
+
+The old Init was a ModuleScript at `ReplicatedStorage.Init` with `Settings`, `SharedEntries`, `ServerEntries`, `ClientEntries` and two scripts inside it that booted the game. Your modules don't change: same `Init`, `Start` and hook methods.
+
+1. Press **Setup** in the [plugin](install/no-code.md) (or [install by hand](install/model.md)). It adds `ReplicatedStorage.Packages.Init`, `InitServer` and `InitClient`.
+2. If you changed the old Entries modules, copy those folders into the new boot scripts as list entries (`Order` becomes the position in the list). If you changed `Settings`, pass those values as the second argument of `Init.start`.
+3. Delete `ReplicatedStorage.Init`. While it's there, it boots the game a second time.
+4. Press Play and check for `✅ Initialized`.
+
+## What behaves differently
+
+- **Every Init runs before any Start.** The old loader ran Init then Start per module, so a Start could run before other modules' Init. If a Start relied on that, move the code into Init.
+- **Starts run at the same time.** A slow Start no longer holds up the modules after it.
+- **Modules run in the order you list.** The old loader required in order but called Init/Start in an arbitrary order.
+- **Modules inside a ModuleScript aren't loaded.** The old one loaded them too, unless a predicate filtered them out.
+- **`Step` runs at 60 per second.** The old one read `Stepped`'s first argument (the game time) as the frame time, so it could run many extra steps per frame.
+- **A timed-out Init or Start keeps running.** The old one cancelled it.
+- Start errors are always reported (the old one only reported them with `Verbose`).

@@ -1,0 +1,22 @@
+{
+	"className": "InputContext",
+	"properties": {
+		"Priority": 1000,
+		"Sink": false
+	},
+	"children": [
+		{
+			"name": "InputAction",
+			"className": "InputAction",
+			"properties": {
+				"Type": "Bool"
+			},
+			"children": [
+				{ "name": "Mouse", "className": "InputBinding", "properties": { "KeyCode": "MouseLeftButton" } },
+				{ "name": "Keyboard", "className": "InputBinding" },
+				{ "name": "Gamepad", "className": "InputBinding", "properties": { "KeyCode": "ButtonR2" } },
+				{ "name": "Touch", "className": "InputBinding" }
+			]
+		}
+	]
+}
