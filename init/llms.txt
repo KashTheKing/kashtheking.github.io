@@ -1,6 +1,6 @@
 ---
 name: init-framework
-description: Build Roblox games on KashTheKing's Init module loader (Wally package kashtheking/init, Init Framework Studio plugin). Use when a game has ReplicatedStorage.Packages.Init or InitServer/InitClient boot scripts, when the user asks to install or set up Init, or to add a Service, Controller, GuiController, Binder, Network (Packet) module, Class or Input context to a game that uses Init.
+description: Build Roblox games on KashTheKing's Init module loader (Wally package kashtheking/init, Init Framework Studio plugin), in a Rojo project on disk or directly in Roblox Studio. Use when a game has ReplicatedStorage.Packages.Init or InitServer/InitClient boot scripts, when the user asks to install or set up Init, or to add a Service, Controller, GuiController, Binder, Network (Packet) module, Class or Input context to a game that uses Init.
 ---
 
 # Init framework
@@ -10,75 +10,151 @@ with a list of folders. Init requires every ModuleScript in them, calls each mod
 each module's `Start`, then connects the module's hook methods (`OnPlayerAdded`, `OnHeartbeat`, ...).
 Modules are plain tables; they never connect those events themselves.
 
-Docs: https://kashtheking.com/init/ · Source: https://github.com/KashTheKing/init ·
-Templates: https://kashtheking.com/init/templates/ (raw `.luau` files)
+Docs: https://kashtheking.com/init/ · Source: https://github.com/KashTheKing/init
+
+**Templates** (one file per module type) are in the first of these you can read:
+1. `templates/` two folders up from this skill (the Claude Code plugin and the Wally package both have it),
+   e.g. `Packages/_Index/kashtheking_init@1.0.1/init/templates/` after `wally install`.
+2. The **Templates** section at the end of this file, if it has one.
+3. `https://kashtheking.com/init/templates/<File>`, e.g. `.../templates/Service.luau`.
 
 ## 1. Find out how the game is set up
 
-- **Rojo project** (a `*.project.json` and usually a `wally.toml`): edit files, install with Wally.
-- **Studio only** (no project files; you may have Roblox Studio MCP tools such as `execute_luau`): create
-  instances in Studio.
-- **Already uses Init** if `ReplicatedStorage.Packages.Init` exists, or a Script calls `Init.start`.
-  Skip to section 3.
+- **Files (Rojo)**: there's a `*.project.json`, usually a `wally.toml`. Edit files; go to 2A.
+- **Studio**: you have Studio tools (`execute_luau`, `multi_edit`, ...) or you are Roblox Studio's Assistant.
+  Create instances; go to 2B.
+- **Neither** (a chat with no tools): write the code and say exactly where each script goes. For setup,
+  send the user to the plugin (2B).
+- **Already uses Init** if `ReplicatedStorage.Packages.Init` exists, a `wally.toml` lists `kashtheking/init`,
+  or a script calls `Init.start`. Skip to section 3.
 - **Old Init** if `ReplicatedStorage.Init` is a ModuleScript with `SharedEntries`/`ServerEntries`
   children and `InitServer`/`InitClient` scripts inside it. It works; don't migrate unless asked
   (guide: https://kashtheking.com/init/docs/migrating/). Its modules use the same methods.
 
-## 2. Install
+## 2A. Install in a Rojo project
 
-### Rojo + Wally
+1. In `wally.toml`, under `[dependencies]`: `Init = "kashtheking/init@1.0.1"`. No `wally.toml` yet? Run
+   `wally init` first. Then `wally install`.
+2. The project file must put `Packages` in `ReplicatedStorage`. If the project already maps
+   ReplicatedStorage, ServerScriptService and StarterPlayerScripts to folders, keep its layout and use those
+   folders below. A new project can use:
 
-1. `wally.toml`, under `[dependencies]`: `Init = "kashtheking/init@1.0.0"`, then run `wally install`.
-2. The project file must map `Packages` to `ReplicatedStorage.Packages`.
-3. Add the two boot scripts and the folders from the example project
-   (https://github.com/KashTheKing/init/tree/main/example), mapped like `example.project.json`:
-   - `ServerScriptService/InitServer.server.luau`
-   - `StarterPlayer/StarterPlayerScripts/InitClient.client.luau`
-   - folders: `ReplicatedStorage/{Network, Services, Controllers, Binders/Shared, Binders/Client}`,
-     `ServerScriptService/{Services, Binders}`. Every folder a boot script names must exist, or the boot
-     script errors. Rojo skips empty directories in git, so keep a `.gitkeep` in each or declare it in the
-     project file with `"$className": "Folder"`.
+   ```json
+   {
+   	"name": "Game",
+   	"tree": {
+   		"$className": "DataModel",
+   		"ReplicatedStorage": { "$path": "src/ReplicatedStorage", "Packages": { "$path": "Packages" } },
+   		"ServerScriptService": { "$path": "src/ServerScriptService" },
+   		"StarterPlayer": { "StarterPlayerScripts": { "$path": "src/StarterPlayerScripts" } }
+   	}
+   }
+   ```
 
-### Studio only
+3. Create the boot scripts and folders (paths for the layout above):
+
+   ```
+   src/ServerScriptService/InitServer.server.luau
+   src/ServerScriptService/Services/.gitkeep
+   src/ServerScriptService/Binders/.gitkeep
+   src/StarterPlayerScripts/InitClient.client.luau
+   src/ReplicatedStorage/Network/.gitkeep
+   src/ReplicatedStorage/Services/.gitkeep
+   src/ReplicatedStorage/Controllers/.gitkeep
+   src/ReplicatedStorage/Binders/Shared/.gitkeep
+   src/ReplicatedStorage/Binders/Client/.gitkeep
+   ```
+
+   Every folder a boot script names must exist or the boot script errors. Git drops empty folders, so keep
+   the `.gitkeep` files (Rojo ignores them).
+
+`InitServer.server.luau`:
+
+```lua
+--!strict
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
+
+local Init = require(ReplicatedStorage.Packages.Init)
+
+Init.start({
+	{ Folders = { ReplicatedStorage.Network } },
+	{
+		Folders = { ReplicatedStorage.Services, ServerScriptService.Services },
+		Predicate = Init.matchesName("Service$"),
+	},
+	{ Folders = { ReplicatedStorage.Binders.Shared, ServerScriptService.Binders } },
+}):andThen(function()
+	workspace:SetAttribute("ServerStarted", true)
+end)
+```
+
+`InitClient.client.luau`:
+
+```lua
+--!strict
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Init = require(ReplicatedStorage.Packages.Init)
+
+Init.start({
+	{ Folders = { ReplicatedStorage.Network } },
+	{ Folders = { ReplicatedStorage.Services }, Predicate = Init.matchesName("Service$") },
+	{ Folders = { ReplicatedStorage.Controllers }, Predicate = Init.matchesName("Controller$") },
+	{ Folders = { ReplicatedStorage.Binders.Shared, ReplicatedStorage.Binders.Client } },
+})
+```
+
+Rojo file names: `Name.luau` is a ModuleScript, `Name.server.luau` a Script, `Name.client.luau` a
+LocalScript, a folder with `init.luau` is a ModuleScript with children, `Name.model.json` is any instance.
+Attributes go in `Name.meta.json`: `{ "attributes": { "Priority": -10 } }`.
+
+## 2B. Install in Studio
 
 Best for the user: install the **Init Framework** plugin
 (https://create.roblox.com/store/asset/77164672536940/Init-Framework), then press **Setup** (loader, boot
-scripts and folders) and **Add Packages** (Trove, Signal, Packet, Binder). Ask them to do this if you can't
-click in Studio.
+scripts and folders) and **Add Packages** (Trove, Signal, Packet, Binder). Ask the user to do this; you
+can't click plugin buttons. Studio's Assistant can't download files, so this is its only way to install.
 
-If you can run Luau in Studio but can't use the plugin:
+If you can run Luau in Studio (`execute_luau`) and read and write the user's files but the plugin isn't an
+option:
 
 1. Get `Init.rbxm` from https://github.com/KashTheKing/init/releases/latest.
-2. Load it: copy it into Studio's content folder
-   (`%LOCALAPPDATA%\Roblox\Versions\<version>\content\` on Windows, `RobloxStudio.app/Contents/Resources/content/`
-   on macOS) and run `game:GetObjects("rbxasset://Init.rbxm")[1]` in edit mode, or ask the user to drag the
-   file into Studio's Explorer.
+2. Copy it into Studio's content folder (`%LOCALAPPDATA%\Roblox\Versions\<version>\content\` on Windows,
+   `RobloxStudio.app/Contents/Resources/content/` on macOS) and run
+   `game:GetObjects("rbxasset://Init.rbxm")[1]` in edit mode, or ask the user to drag the file into the
+   Explorer.
 3. Put the `Init` ModuleScript in `ReplicatedStorage.Packages` (make the folder if needed).
-4. Create the boot scripts (Script `InitServer` in ServerScriptService, LocalScript `InitClient` in
-   StarterPlayer.StarterPlayerScripts) with the source of the example's boot scripts, and the folders
-   listed above.
+4. Create Script `InitServer` in ServerScriptService and LocalScript `InitClient` in
+   StarterPlayer.StarterPlayerScripts with the boot script sources from 2A, and these Folders:
+   `ReplicatedStorage.{Network, Services, Controllers, Binders.Shared, Binders.Client}`,
+   `ServerScriptService.{Services, Binders}`.
 
 ## 3. Add modules
 
-Copy the matching template, replace every `_SNIPPET_` with the name, and put it in the right folder.
-The boot scripts only load names that match their predicate, so **the suffix matters**.
+Read the template, replace every `_SNIPPET_` with the **base name** (no suffix), and save it under the full
+module name. The boot scripts only load names that match their predicate, so **the suffix matters**:
+`Service.luau` with `_SNIPPET_` = `Shop` gives a module named `ShopService`.
 
-| You want | Template | Name | Folder |
-| --- | --- | --- | --- |
-| Server game logic | `Service.luau` | `ShopService` | `ServerScriptService/Services` |
-| Logic on server and client | `Service.luau` | `TimeService` | `ReplicatedStorage/Services` |
-| Client game logic | `Controller.luau` | `CameraController` | `ReplicatedStorage/Controllers` |
-| One ScreenGui | `GuiController.luau` | `ShopGuiController` (for a ScreenGui named `Shop`) | `ReplicatedStorage/Controllers` |
-| Remote events (Packet) | `Network.luau` | `ShopNetwork` | `ReplicatedStorage/Network` |
-| Code per tagged instance | `Binder.luau` | `LavaBinder` | `ServerScriptService/Binders`, `ReplicatedStorage/Binders/Client` or `/Shared` |
-| An object class | `Class.luau` | `Weapon` | `ReplicatedStorage/Classes` (Init does not load it) |
-| A subclass | `InheritedClass.luau` | `Sword` | child of the parent class's ModuleScript |
-| A class for a Binder | `BoundClass.luau` | `Lava` | next to its Binder |
-| Player input | `Input.model.json` (InputContext) | `CombatInput` | `ReplicatedStorage/Input` |
+| You want | Template | `_SNIPPET_` | Module name | Goes in (Rojo file in the layout above) |
+| --- | --- | --- | --- | --- |
+| Server game logic | `Service.luau` | `Shop` | `ShopService` | ServerScriptService.Services (`src/ServerScriptService/Services/ShopService.luau`) |
+| Logic on server and client | `Service.luau` | `Time` | `TimeService` | ReplicatedStorage.Services (`src/ReplicatedStorage/Services/TimeService.luau`) |
+| Client game logic | `Controller.luau` | `Camera` | `CameraController` | ReplicatedStorage.Controllers (`src/ReplicatedStorage/Controllers/CameraController.luau`) |
+| One ScreenGui | `GuiController.luau` | the ScreenGui's name, `Shop` | `ShopGuiController` | ReplicatedStorage.Controllers |
+| Remote events (Packet) | `Network.luau` | `Shop` | `ShopNetwork` | ReplicatedStorage.Network |
+| Code per tagged instance | `Binder.luau` | the tag, `Lava` | `LavaBinder` | ServerScriptService.Binders (server), ReplicatedStorage.Binders.Client or .Shared |
+| An object class | `Class.luau` | `Weapon` | `Weapon` | ReplicatedStorage.Classes (Init doesn't load it; `require` it) |
+| A subclass | `InheritedClass.luau` | `Sword` | `Sword` | child of the parent class's ModuleScript (`Classes/Weapon/init.luau` + `Classes/Weapon/Sword.luau`) |
+| A class per bound instance | `BoundClass.luau` | `Lava` | `Lava` | child of its Binder (`Binders/LavaBinder/init.luau` + `Lava.luau`); the Binder does `Binder.new(require(script.Lava), { Tags = { "Lava" } })` |
+| Player input | `Input.model.json` | (none) | `CombatInput` | ReplicatedStorage.Input (`src/ReplicatedStorage/Input/CombatInput.model.json`); set the Keyboard binding's `KeyCode` |
 
-Templates are at `https://kashtheking.com/init/templates/<Template>` (for example `.../templates/Service.luau`).
-Network, Binder and BoundClass need packages: `Packet = "kashtheking/packet@1.0.0"`,
-`Binder = "kashtheking/binder@0.6.3"`, `Trove = "sleitnick/trove@1.8.0"` (or the plugin's Add Packages).
+In Studio, create a ModuleScript with that name and the filled template as its `Source` (for
+`Input.model.json`, create the InputContext, InputAction and InputBindings it describes).
+
+Network, Binder and BoundClass need packages, as `ReplicatedStorage.Packages.<Name>`. Rojo: add
+`Packet = "kashtheking/packet@1.0.0"`, `Binder = "kashtheking/binder@0.6.3"`, `Trove = "sleitnick/trove@1.8.0"`
+to `wally.toml` and `wally install`. Studio: the plugin's **Add Packages**.
 
 ## 4. Rules that matter
 
@@ -98,11 +174,16 @@ Network, Binder and BoundClass need packages: `Packet = "kashtheking/packet@1.0.
   within its entry.
 - Never call `Init.start` anywhere except the two boot scripts.
 - To load another folder, add an entry to **both** boot scripts if it's shared:
-  `{ Folders = { ReplicatedStorage.Systems }, Predicate = Init.matchesName("System$") }`.
+  `{ Folders = { ReplicatedStorage.Systems }, Predicate = Init.matchesName("System$") }`, and create the folder.
 
 ## 5. Check it works
 
-Play the game (Studio MCP: start a playtest, then read the output). The Output should show:
+- **Rojo**: `rojo build <project>.project.json -o build.rbxl` must succeed (it catches bad file names and
+  project paths). Run `selene` and `luau-lsp analyze` if the project has them. Then the user runs
+  `rojo serve`, connects from Studio and presses Play; ask them for the Output.
+- **Studio**: start a playtest and read the Output.
+
+The Output should show:
 
 ```
 🔲 Initializing Server
@@ -118,6 +199,336 @@ Errors start with `[Init]` and name the module and method. Common ones:
 - A module never runs: its name doesn't match the entry's predicate (e.g. `Shop` instead of `ShopService`),
   it's nested inside another ModuleScript, or it has the `Ignore` attribute.
 - More: https://kashtheking.com/init/docs/guides/troubleshooting/
+
+## Templates
+
+### Binder.luau
+
+```lua
+--!strict
+-- A Binder (kashtheking/binder): runs code for every instance with a tag, and cleans up when it goes away.
+-- Install Trove and Binder from Wally or the plugin's "Add Packages".
+-- Put it in ServerScriptService/Binders (server), ReplicatedStorage/Binders/Client (client) or
+-- ReplicatedStorage/Binders/Shared (both). Init calls the binder's Start for you.
+-- This example pushes every part tagged "_SNIPPET_" forward at its "Speed" attribute.
+-- Binder docs: https://kashtheking.com/library/docs/packages/binder
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+
+local Binder = require(ReplicatedStorage.Packages.Binder)
+local Trove = require(ReplicatedStorage.Packages.Trove)
+
+-- Called for each matching instance. The trove is cleaned when the instance is unbound;
+-- anything you return with a :Destroy() method is cleaned too.
+local function _SNIPPET_(part: BasePart, trove: Trove.Trove, speed: number)
+	trove:Connect(RunService.Heartbeat, function()
+		part.AssemblyLinearVelocity = part.CFrame.LookVector * speed
+	end)
+
+	return trove
+end
+
+return Binder.new(_SNIPPET_, {
+	Tags = { "_SNIPPET_" }, -- instances need one of these CollectionService tags
+	ClassNames = { "BasePart" }, -- and must be one of these classes (optional)
+	Ancestors = { workspace }, -- and must be inside one of these (optional)
+
+	-- Last check (optional). Return true to bind; anything returned after true goes to the constructor.
+	Predicate = function(instance: Instance)
+		local speed = tonumber(instance:GetAttribute("Speed"))
+		if not speed then
+			warn(`[_SNIPPET_Binder] {instance:GetFullName()} needs a number "Speed" attribute`)
+			return false
+		end
+		return true, speed
+	end,
+})
+```
+
+### BoundClass.luau
+
+```lua
+--!strict
+-- A class for a Binder to construct, one per bound instance: Binder.new(_SNIPPET_, { Tags = { "_SNIPPET_" } }).
+-- Put it next to the Binder that uses it. The Binder cleans the trove when the instance is unbound.
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Trove = require(ReplicatedStorage.Packages.Trove)
+
+local _SNIPPET_ = {}
+_SNIPPET_.__index = _SNIPPET_
+
+export type _SNIPPET_Properties = {
+	Instance: Instance,
+	Trove: Trove.Trove,
+}
+
+export type _SNIPPET_ = typeof(setmetatable({} :: _SNIPPET_Properties, _SNIPPET_))
+
+export type ClassType = _SNIPPET_
+
+-- Called by the Binder for each bound instance. Values your Binder's Predicate returns after `true`
+-- arrive as extra parameters after the trove.
+function _SNIPPET_.new(instance: Instance, trove: Trove.Trove): _SNIPPET_
+	local self = setmetatable(
+		{
+			Instance = instance,
+			Trove = trove,
+		} :: _SNIPPET_Properties,
+		_SNIPPET_
+	)
+
+	return self
+end
+
+-- Called by the Binder when the instance is unbound
+function _SNIPPET_.Destroy(self: _SNIPPET_): () end
+
+return _SNIPPET_
+```
+
+### Class.luau
+
+```lua
+--!strict
+-- A plain class (an object you make many of with .new). Init does NOT load classes; require them yourself.
+-- Put it in ReplicatedStorage/Classes (shared) or ServerScriptService/Classes (server-only).
+local _SNIPPET_ = {}
+_SNIPPET_.__index = _SNIPPET_
+
+export type _SNIPPET_Properties = {}
+
+export type _SNIPPET_ = typeof(setmetatable({} :: _SNIPPET_Properties, _SNIPPET_))
+
+export type ClassType = _SNIPPET_
+
+-- Creates a new _SNIPPET_
+function _SNIPPET_.new(): _SNIPPET_
+	local properties: _SNIPPET_Properties = {}
+
+	local self = setmetatable(properties, _SNIPPET_)
+
+	return self
+end
+
+-- Cleans up the _SNIPPET_
+function _SNIPPET_.Destroy(self: _SNIPPET_): () end
+
+return _SNIPPET_
+```
+
+### Controller.luau
+
+```lua
+--!strict
+-- A Controller: client-only game logic that Init loads and starts for you. Name it <Something>Controller.
+-- Put it in ReplicatedStorage/Controllers. Every method below is optional; delete the ones you don't use.
+local _SNIPPET_Controller = {}
+
+export type _SNIPPET_Controller = typeof(_SNIPPET_Controller)
+
+-- Runs first, one module at a time. Set up this module's own state here.
+-- Don't wait for other modules here (they may not have run Init yet); use Start for that.
+function _SNIPPET_Controller.Init(self: _SNIPPET_Controller) end
+
+-- Runs after every module's Init has finished. Safe to use other modules here.
+-- Waiting here is fine for a few seconds (StartTimeout is 15s); it doesn't hold up other modules.
+function _SNIPPET_Controller.Start(self: _SNIPPET_Controller) end
+
+---- Runs for the local player's current character, then every time it respawns
+--function _SNIPPET_Controller.OnCharacterAdded(self: _SNIPPET_Controller, character: Model)
+--
+--end
+
+---- Runs when the local player's character is being removed
+--function _SNIPPET_Controller.OnCharacterRemoving(self: _SNIPPET_Controller, character: Model)
+--
+--end
+
+---- Runs when the local player's Humanoid dies
+--function _SNIPPET_Controller.OnDied(self: _SNIPPET_Controller)
+--
+--end
+
+---- Runs every frame before it renders (camera, UI that follows things)
+--function _SNIPPET_Controller.OnRenderStepped(self: _SNIPPET_Controller, dt: number)
+--
+--end
+
+---- Runs for every player already in the game (the local player too), then for every player who joins
+--function _SNIPPET_Controller.OnPlayerAdded(self: _SNIPPET_Controller, player: Player)
+--
+--end
+
+---- Runs when a player is leaving the game
+--function _SNIPPET_Controller.OnPlayerRemoving(self: _SNIPPET_Controller, player: Player)
+--
+--end
+
+---- Runs exactly 60 times a second, however fast the frames are
+--function _SNIPPET_Controller.Step(self: _SNIPPET_Controller, dt: number)
+--
+--end
+
+---- Runs every RunService.Heartbeat
+--function _SNIPPET_Controller.OnHeartbeat(self: _SNIPPET_Controller, dt: number)
+--
+--end
+
+return _SNIPPET_Controller
+```
+
+### GuiController.luau
+
+```lua
+--!strict
+-- A Controller for one ScreenGui. Name the ScreenGui in StarterGui "_SNIPPET_" (or change the name below).
+-- Put it in ReplicatedStorage/Controllers. It's a normal Controller with the GUI lookup done for you.
+local Players = game:GetService("Players")
+
+local player = assert(Players.LocalPlayer, "_SNIPPET_GuiController must be required on the client")
+local PlayerGui = player:WaitForChild("PlayerGui") :: PlayerGui
+
+-- Gives you autocomplete for the ScreenGui's children (works when the ScreenGui exists in StarterGui)
+export type Gui = typeof(game:GetService("StarterGui")["_SNIPPET_"])
+
+local _SNIPPET_GuiController = {
+	Gui = (nil :: any) :: Gui,
+}
+
+export type _SNIPPET_GuiController = typeof(_SNIPPET_GuiController)
+
+-- The ScreenGui is copied into PlayerGui when the player spawns, which can take a moment, so wait for it in Start
+function _SNIPPET_GuiController.Start(self: _SNIPPET_GuiController)
+	self.Gui = assert(
+		PlayerGui:WaitForChild("_SNIPPET_", 5) :: any,
+		`[_SNIPPET_GuiController] the ScreenGui "_SNIPPET_" didn't appear in PlayerGui`
+	)
+end
+
+return _SNIPPET_GuiController
+```
+
+### InheritedClass.luau
+
+```lua
+--!strict
+-- A class that inherits from another class. Insert it as a child of the parent class's ModuleScript.
+-- Init does NOT load classes; require them yourself.
+local SuperClass = require(script.Parent)
+
+local _SNIPPET_ = setmetatable({}, SuperClass)
+_SNIPPET_.__index = _SNIPPET_
+
+export type _SNIPPET_ = typeof(_SNIPPET_) & SuperClass.ClassType & {
+	__super: SuperClass.ClassType,
+}
+
+export type ClassType = _SNIPPET_
+
+-- Creates a new _SNIPPET_; arguments go to the parent class's .new
+function _SNIPPET_.new(...: any): _SNIPPET_
+	local super = SuperClass.new(...)
+
+	local self: _SNIPPET_ = setmetatable(super :: any, _SNIPPET_) :: any
+	self.__super = super
+
+	return self
+end
+
+return _SNIPPET_
+```
+
+### Input.model.json
+
+```json
+{
+	"className": "InputContext",
+	"properties": {
+		"Priority": 1000,
+		"Sink": false
+	},
+	"children": [
+		{
+			"name": "InputAction",
+			"className": "InputAction",
+			"properties": {
+				"Type": "Bool"
+			},
+			"children": [
+				{ "name": "Mouse", "className": "InputBinding", "properties": { "KeyCode": "MouseLeftButton" } },
+				{ "name": "Keyboard", "className": "InputBinding" },
+				{ "name": "Gamepad", "className": "InputBinding", "properties": { "KeyCode": "ButtonR2" } },
+				{ "name": "Touch", "className": "InputBinding" }
+			]
+		}
+	]
+}
+```
+
+### Network.luau
+
+```lua
+--!strict
+-- Network packets, made with kashtheking/packet (install it from Wally or the plugin's "Add Packages").
+-- Put it in ReplicatedStorage/Network. Init loads Network first on both sides, so every packet exists
+-- before anything sends one. Docs: https://kashtheking.com/library/docs/packages/packet
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Packet = require(ReplicatedStorage.Packages.Packet)
+
+return {
+	-- Packet.new(name, ...types). Use exact types (Packet.NumberU8, Packet.String, ...) for smaller packets.
+	_SNIPPET_ = Packet.new("_SNIPPET_", Packet.Any),
+}
+```
+
+### Service.luau
+
+```lua
+--!strict
+-- A Service: game logic that Init loads and starts for you. Name it <Something>Service.
+-- Server-only: ServerScriptService/Services. Shared (runs on server AND client): ReplicatedStorage/Services.
+-- Every method below is optional; delete the ones you don't use.
+local _SNIPPET_Service = {}
+
+export type _SNIPPET_Service = typeof(_SNIPPET_Service)
+
+-- Runs first, one module at a time. Set up this module's own state here.
+-- Don't wait for other modules here (they may not have run Init yet); use Start for that.
+function _SNIPPET_Service.Init(self: _SNIPPET_Service) end
+
+-- Runs after every module's Init has finished. Safe to use other modules here.
+-- Waiting here is fine for a few seconds (StartTimeout is 15s); it doesn't hold up other modules.
+function _SNIPPET_Service.Start(self: _SNIPPET_Service) end
+
+---- Runs for every player already in the game, then for every player who joins
+--function _SNIPPET_Service.OnPlayerAdded(self: _SNIPPET_Service, player: Player)
+--
+--end
+
+---- Runs when a player is leaving the game
+--function _SNIPPET_Service.OnPlayerRemoving(self: _SNIPPET_Service, player: Player)
+--
+--end
+
+---- Runs exactly 60 times a second, however fast the frames are (good for game ticks)
+--function _SNIPPET_Service.Step(self: _SNIPPET_Service, dt: number)
+--
+--end
+
+---- Runs every RunService.Heartbeat
+--function _SNIPPET_Service.OnHeartbeat(self: _SNIPPET_Service, dt: number)
+--
+--end
+
+---- Runs every RunService.Stepped (before physics)
+--function _SNIPPET_Service.OnStepped(self: _SNIPPET_Service, time: number, dt: number)
+--
+--end
+
+return _SNIPPET_Service
+```
 
 
 ---
@@ -230,9 +641,9 @@ Once Setup is done, an AI can add modules for you. See [Install with AI](with-ai
 
 # Install with AI
 
-Init ships an **AI skill**: one file that teaches an AI how to install Init, where every kind of module goes and the rules to follow. Point your AI at it.
+Init ships an **AI skill**: one file that teaches an AI how to install Init (in a Rojo project or in Studio), where every kind of module goes, the rules to follow, and every template. Point your AI at it.
 
-- Skill: [`https://kashtheking.com/init/SKILL.md`](https://kashtheking.com/init/SKILL.md)
+- Skill, with every template inside: [`https://kashtheking.com/init/SKILL.md`](https://kashtheking.com/init/SKILL.md)
 - Templates (raw): `https://kashtheking.com/init/templates/Service.luau`, `Controller.luau`, `Binder.luau`, ...
 - Everything in one page for AI: [`https://kashtheking.com/init/llms.txt`](https://kashtheking.com/init/llms.txt)
 
@@ -250,15 +661,33 @@ Change the second part to whatever you want built. After setup, you can keep ask
 
 ## Claude Code
 
-Install the skill once and Claude uses it whenever you mention Init:
+Install the plugin once and Claude uses the skill whenever you mention Init. It carries the templates, so it works offline:
 
-```bash
-mkdir -p ~/.claude/skills/init-framework && curl -L https://kashtheking.com/init/SKILL.md -o ~/.claude/skills/init-framework/SKILL.md
+```text
+/plugin marketplace add KashTheKing/init
+/plugin install init@kashtheking-init
 ```
 
-With the **Roblox Studio MCP** connected, Claude can create the modules in Studio and playtest. With a Rojo project, it edits files and runs `wally install`.
+In a Rojo project, Claude edits files and runs `wally install`. With the **Roblox Studio MCP** connected, it can create the modules in Studio and playtest.
 
-## If your AI can't touch Studio
+## Roblox Studio's Assistant
+
+Studio's built-in Assistant can't read web pages, so give it the skill once:
+
+1. Open [`kashtheking.com/init/SKILL.md`](https://kashtheking.com/init/SKILL.md), select everything (Ctrl+A) and copy it.
+2. In Studio's Assistant, type `Save this as a skill named init-framework:` and paste.
+
+It shows up under the Assistant's **Skills** tab and is used whenever you ask for Init things. The Assistant can't install plugins, so press **Setup** in the [plugin](no-code.md) yourself first.
+
+## Cursor, Codex and other coding AIs
+
+In a Rojo project with Init installed by Wally, the skill and templates are on disk at `Packages/_Index/kashtheking_init@<version>/init/skills/init/SKILL.md` and `.../init/templates/`. Add one line to your `AGENTS.md` (or `.cursor/rules`):
+
+```text
+This game uses the Init framework. Before changing modules, read Packages/_Index/kashtheking_init@*/init/skills/init/SKILL.md.
+```
+
+## If your AI can't touch Studio or files
 
 Chat AIs (ChatGPT, Claude.ai) can't click in Studio. Do the setup with the [plugin](no-code.md) (two clicks), then ask the AI for module code and paste it into a module the plugin made.
 
@@ -276,7 +705,7 @@ Press Play. The Output should say `✅ Initialized N Server modules` and `✅ In
 
    ```toml
    [dependencies]
-   Init = "kashtheking/init@1.0.0"
+   Init = "kashtheking/init@1.0.1"
    ```
 
 2. `wally install`, and map `Packages` to `ReplicatedStorage.Packages` in your project file.
@@ -296,7 +725,7 @@ Press Play. The Output should say `✅ Initialized N Server modules` and `✅ In
 
 Your folders, names and order are yours: change the entries in the boot scripts. See [Entries](../guides/entries.md).
 
-The [templates](../guides/templates.md) are plain `.luau` files you can copy, and the [plugin](no-code.md)'s template buttons work in Rojo games too.
+The [templates](../guides/templates.md) are plain `.luau` files you can copy (Wally also puts them in `Packages/_Index/kashtheking_init@<version>/init/templates/`), and the [plugin](no-code.md)'s template buttons work in Rojo games too.
 
 
 ---
