@@ -78,6 +78,11 @@
               "href": "https://kashtheking.com/flashback/"
             },
             {
+              "label": "Init Framework",
+              "icon": "plugins.svg",
+              "href": "https://kashtheking.com/init/"
+            },
+            {
               "label": "Blockwork",
               "icon": "blockwork.png",
               "href": "https://github.com/KashTheKing/blockwork"
