@@ -250,7 +250,8 @@ return Binder.new(_SNIPPET_, {
 ```lua
 --!strict
 -- A class for a Binder to construct, one per bound instance: Binder.new(_SNIPPET_, { Tags = { "_SNIPPET_" } }).
--- Put it next to the Binder that uses it. The Binder cleans the trove when the instance is unbound.
+-- Make it a child of the Binder's ModuleScript (require(script._SNIPPET_)) so Init doesn't load it on its own.
+-- The Binder cleans the trove when the instance is unbound.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Trove = require(ReplicatedStorage.Packages.Trove)
