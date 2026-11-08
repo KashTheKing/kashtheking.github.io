@@ -564,7 +564,7 @@ html.is-loading main { opacity: .6; transition: opacity 200ms linear 120ms; }
   .top__nav a[href="/library/"] { display: block; }
   .top__lifetime { grid-area: life; height: 34px; padding: 0 12px; font-size: 13px; }
   .tools { top: 0; }
-  .chips { flex: 1 1 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 3px 28px 3px 3px; margin: -3px 0 -3px -3px; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent); }
+  .chips { flex: 1 1 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 3px 28px 3px 3px; margin: -3px 0 -3px -3px; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
   .chip { flex: none; }
   .field--select { width: 152px; }
   .plugins { grid-template-columns: repeat(2, minmax(0, 1fr)); }
