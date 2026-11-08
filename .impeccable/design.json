@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T01:00:50Z",
+  "title": "Design System: KashTheKing Shop",
+  "extensions": {
+    "colorMeta": {
+      "orange": {
+        "role": "primary",
+        "displayName": "Livery Orange",
+        "canonical": "#FF9A1F",
+        "cssVar": "--orange",
+        "oklch": "oklch(77.4% 0.169 63.3)",
+        "tonalRamp": [
+          "#150700",
+          "#391D00",
+          "#613600",
+          "#8C5101",
+          "#BA6D01",
+          "#EB8A02",
+          "#FFB876",
+          "#FFEAD9"
+        ],
+        "aliases": [
+          "--gold"
+        ]
+      },
+      "orange-base": {
+        "role": "primary",
+        "displayName": "Burnt Orange Base",
+        "canonical": "#B86400",
+        "cssVar": "--orange-base",
+        "oklch": "oklch(58.8% 0.140 58.7)",
+        "tonalRamp": [
+          "#160700",
+          "#3B1C00",
+          "#643401",
+          "#914D01",
+          "#BE6A0F",
+          "#E58D40",
+          "#FFB77F",
+          "#FFEADB"
+        ]
+      },
+      "blue": {
+        "role": "secondary",
+        "displayName": "Marketing Blue",
+        "canonical": "#49BAEC",
+        "cssVar": "--blue",
+        "oklch": "oklch(74.5% 0.124 230.9)",
+        "tonalRamp": [
+          "#000D15",
+          "#00293A",
+          "#004963",
+          "#036A8F",
+          "#048EBD",
+          "#40B2E4",
+          "#81D5FF",
+          "#DCF3FF"
+        ]
+      },
+      "blue-base": {
+        "role": "secondary",
+        "displayName": "Deep Blue Base",
+        "canonical": "#1F7FAD",
+        "cssVar": "--blue-base",
+        "oklch": "oklch(56.5% 0.110 235.3)",
+        "tonalRamp": [
+          "#000D17",
+          "#00293C",
+          "#014866",
+          "#006994",
+          "#308CBB",
+          "#58B0E0",
+          "#8BD3FE",
+          "#DEF2FF"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink",
+        "canonical": "#121316",
+        "cssVar": "--dark-ink",
+        "oklch": "oklch(18.7% 0.006 271.1)",
+        "tonalRamp": [
+          "#0B0B0C",
+          "#242527",
+          "#414245",
+          "#606165",
+          "#818286",
+          "#A3A5A9",
+          "#C8C9CD",
+          "#EDEEF1"
+        ]
+      },
+      "strip": {
+        "role": "neutral",
+        "displayName": "Strip Black",
+        "canonical": "#0B0C0E",
+        "cssVar": "--strip",
+        "oklch": "oklch(15.4% 0.005 264.4)",
+        "tonalRamp": [
+          "#0B0B0C",
+          "#242526",
+          "#414244",
+          "#606164",
+          "#818285",
+          "#A3A5A8",
+          "#C8C9CC",
+          "#EDEEF0"
+        ]
+      },
+      "sunk": {
+        "role": "neutral",
+        "displayName": "Sunken Charcoal",
+        "canonical": "#121316",
+        "cssVar": "--sunk",
+        "oklch": "oklch(18.7% 0.006 271.1)",
+        "tonalRamp": [
+          "#0B0B0C",
+          "#242527",
+          "#414245",
+          "#606165",
+          "#818286",
+          "#A3A5A9",
+          "#C8C9CD",
+          "#EDEEF1"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Baseplate Charcoal",
+        "canonical": "#1A1C20",
+        "cssVar": "--ground",
+        "oklch": "oklch(22.6% 0.008 264.4)",
+        "tonalRamp": [
+          "#0A0B0C",
+          "#242528",
+          "#404246",
+          "#5F6166",
+          "#808287",
+          "#A2A5AA",
+          "#C7C9CE",
+          "#EDEEF2"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised Charcoal",
+        "canonical": "#22252B",
+        "cssVar": "--raised",
+        "oklch": "oklch(26.4% 0.012 264.3)",
+        "tonalRamp": [
+          "#0A0B0D",
+          "#232529",
+          "#3F4248",
+          "#5E6168",
+          "#7F828A",
+          "#A1A5AD",
+          "#C6C9D0",
+          "#ECEEF3"
+        ],
+        "aliases": [
+          "--panel"
+        ]
+      },
+      "raised-2": {
+        "role": "neutral",
+        "displayName": "Lifted Charcoal",
+        "canonical": "#2B2F36",
+        "cssVar": "--raised-2",
+        "oklch": "oklch(30.4% 0.014 261.7)",
+        "tonalRamp": [
+          "#0A0B0D",
+          "#232529",
+          "#3E4249",
+          "#5D6169",
+          "#7E838B",
+          "#A0A5AE",
+          "#C5C9D1",
+          "#EBEFF4"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Studio White",
+        "canonical": "#F2F3F5",
+        "cssVar": "--ink",
+        "oklch": "oklch(96.4% 0.003 264.5)",
+        "tonalRamp": [
+          "#0B0B0C",
+          "#252526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#A4A5A7",
+          "#C8C9CB",
+          "#EEEEEF"
+        ],
+        "aliases": [
+          "--text"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#D3D6DC",
+        "cssVar": "--ink-2",
+        "oklch": "oklch(87.6% 0.009 264.5)",
+        "tonalRamp": [
+          "#0A0B0C",
+          "#242528",
+          "#404246",
+          "#5F6166",
+          "#808288",
+          "#A2A5AB",
+          "#C7C9CE",
+          "#EDEEF2"
+        ]
+      },
+      "dim": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#A3A8B2",
+        "cssVar": "--dim",
+        "oklch": "oklch(73.1% 0.015 264.5)",
+        "tonalRamp": [
+          "#0A0B0D",
+          "#23252A",
+          "#3E424A",
+          "#5D616A",
+          "#7E828C",
+          "#A0A5AF",
+          "#C5C9D2",
+          "#EBEEF5"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(255, 255, 255, .08)",
+        "cssVar": "--hair",
+        "tonalRamp": [
+          "rgba(255, 255, 255, .04)",
+          "rgba(255, 255, 255, .06)",
+          "rgba(255, 255, 255, .08)",
+          "rgba(255, 255, 255, .1)",
+          "rgba(255, 255, 255, .12)",
+          "rgba(255, 255, 255, .16)",
+          "rgba(255, 255, 255, .24)",
+          "rgba(255, 255, 255, .32)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Legacy Line",
+        "canonical": "rgba(255, 255, 255, .12)",
+        "cssVar": "--line",
+        "legacy": true,
+        "usedBy": [
+          "shop/news.js"
+        ],
+        "tonalRamp": [
+          "rgba(255, 255, 255, .04)",
+          "rgba(255, 255, 255, .06)",
+          "rgba(255, 255, 255, .08)",
+          "rgba(255, 255, 255, .1)",
+          "rgba(255, 255, 255, .12)",
+          "rgba(255, 255, 255, .16)",
+          "rgba(255, 255, 255, .24)",
+          "rgba(255, 255, 255, .32)"
+        ]
+      }
+    },
+    "tonalRampNote": "shop.css defines no tonal scales. Each tonalRamp is 8 reference steps synthesized in OKLCH (lightness 15% to 95%, same hue, chroma tapered at the ends); the hair and line ramps are white at stepped alpha. None of them are tokens.",
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Department names on the two stage doors, in dark ink.",
+        "responsive": "clamp(42px, 12.5vw, 64px) at max-width 720px."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The page name in a catalog head (Model packs, UI packs, collections, All packs, Plugins)."
+      },
+      "pack-name": {
+        "displayName": "Pack name",
+        "purpose": "The pack's name at the top of the buy box."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings on the home and pack pages.",
+        "responsive": "24px at max-width 720px."
+      },
+      "card-name": {
+        "displayName": "Card name",
+        "purpose": "Product card and collection tile names.",
+        "responsive": "Card names 15px at max-width 720px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text everywhere; About paragraphs use line-height 1.7 at a 72ch measure."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Card meta line, tile pack counts and the Robux figure after a price, in --dim."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "The uppercase label strip on a pack page (text-transform: uppercase)."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Button text; big buttons use 16px."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Header links and section 'All ...' links.",
+        "responsive": "Header links 14px at max-width 860px."
+      },
+      "chip": {
+        "displayName": "Chip",
+        "purpose": "Filter chips and collection links; the count after the name is 700 12px in --dim."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Card prices; CSS sets font-variant-numeric: tabular-nums. The big price is 28px."
+      },
+      "price-hero": {
+        "displayName": "Price hero",
+        "purpose": "The price in the buy box, with the Robux figure at 600 16px in --dim."
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-base",
+        "value": "0 2px 0 var(--base)",
+        "purpose": "The darker base under every button face; pressed it becomes 0 0 0 var(--base) while the face moves down 2px."
+      },
+      {
+        "name": "art-ring",
+        "value": "0 0 0 3px var(--ground), 0 0 0 5px var(--accent)",
+        "purpose": "Hover and keyboard focus on card art, the front collection tile card and plugin art."
+      },
+      {
+        "name": "thumbnail-ring",
+        "value": "0 0 0 2px var(--ground), 0 0 0 4px var(--accent)",
+        "purpose": "The current gallery thumbnail."
+      },
+      {
+        "name": "inset-accent",
+        "value": "inset 0 0 0 2px var(--accent)",
+        "purpose": "The current collection link and the focused gallery strip."
+      },
+      {
+        "name": "hairline-under",
+        "value": "0 1px 0 var(--hair)",
+        "purpose": "Under the sticky header."
+      },
+      {
+        "name": "hairline-over",
+        "value": "0 -1px 0 var(--hair)",
+        "purpose": "Above the phone buy bar."
+      },
+      {
+        "name": "dropdown",
+        "value": "0 18px 48px rgba(0, 0, 0, .5), 0 0 0 1px var(--hair)",
+        "purpose": "The header search suggestions list."
+      },
+      {
+        "name": "fan-card",
+        "value": "0 18px 40px rgba(0, 0, 0, .35)",
+        "purpose": "Box arts fanned on the stage doors."
+      },
+      {
+        "name": "icon-lift",
+        "value": "drop-shadow(0 10px 18px rgba(0, 0, 0, .45))",
+        "purpose": "filter on a plugin icon over its livery."
+      },
+      {
+        "name": "dot-legibility",
+        "value": "0 1px 3px rgba(0, 0, 0, .5)",
+        "purpose": "Hover-scrub dots over a slide."
+      },
+      {
+        "name": "icon-legibility",
+        "value": "drop-shadow(0 1px 3px rgba(0, 0, 0, .7))",
+        "purpose": "filter on the white play icon of the trailer thumbnail."
+      },
+      {
+        "name": "glass",
+        "value": "backdrop-filter: blur(14px)",
+        "purpose": "Header (rgba(26, 28, 32, .9)), catalog tools bar (rgba(26, 28, 32, .92)) and phone buy bar (rgba(34, 37, 43, .96))."
+      }
+    ],
+    "motion": [
+      {
+        "name": "--ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "The easing for every transition and the view transitions."
+      },
+      {
+        "name": "--fast",
+        "value": "160ms",
+        "purpose": "Colour, background, border, ring and fade changes."
+      },
+      {
+        "name": "--slow",
+        "value": "420ms",
+        "purpose": "Movement: the nav underline, door fans, tile stacks, arrows, the phone buy bar sliding in."
+      },
+      {
+        "name": "button-press",
+        "value": "90ms var(--ease)",
+        "purpose": "Literal in shop.css: the face sinking onto its base (transform and box-shadow)."
+      },
+      {
+        "name": "scrub-crossfade",
+        "value": "120ms linear",
+        "purpose": "Literal in shop.css: a hover-scrub slide fading in over the box art."
+      },
+      {
+        "name": "scrub-rest",
+        "value": "140ms",
+        "purpose": "In app.mjs: how long the pointer rests on a card before the hover scrub starts."
+      },
+      {
+        "name": "page-crossfade",
+        "value": "200ms var(--ease)",
+        "purpose": "Literal in shop.css: ::view-transition-old/new(root)."
+      },
+      {
+        "name": "pack-art",
+        "value": "420ms var(--ease)",
+        "purpose": "Literal in shop.css: ::view-transition-group(pack-art), the card art morphing into the gallery stage and back."
+      },
+      {
+        "name": "loading-dim",
+        "value": "opacity .6, 200ms linear 120ms",
+        "purpose": "Literal in shop.css: html.is-loading main, when a page takes longer than 120ms."
+      },
+      {
+        "name": "intent-preload",
+        "value": "60ms",
+        "purpose": "In app.mjs: mouse hover time on a link before its data and first images load."
+      },
+      {
+        "name": "preload-wait",
+        "value": "350ms",
+        "purpose": "In app.mjs: the longest a click waits for up to four images to decode before swapping the page."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce)",
+        "purpose": "Transitions and animations 1ms, scroll-behavior auto, view-transition animations off; app.mjs skips the morph and smooth scrolling."
+      },
+      {
+        "name": "forced-colors",
+        "value": "@media (forced-colors: active)",
+        "purpose": "Doors and department page heads keep their colours (forced-color-adjust: none); .btn, .chip and .top__lifetime gain a 1px ButtonText border."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "1180",
+        "value": "max-width: 1180px",
+        "purpose": "Shelf 4 tiles, grids 3 columns (home grids 6 cards), Lifetime strip 200px image with price over button, header gap 18px."
+      },
+      {
+        "name": "1000",
+        "value": "max-width: 1000px",
+        "purpose": "Pack page one column, buy box static, phone buy bar on, Library link hidden."
+      },
+      {
+        "name": "860",
+        "value": "max-width: 860px",
+        "purpose": "Header not sticky (--top-h 0px) in two rows, nav scrolls with Library shown, tools bar at top 0 with chips and a 152px sort select on one row, Lifetime image edge to edge at 3:1, compact strip without image, home plugins 2, footer 2 columns."
+      },
+      {
+        "name": "720",
+        "value": "max-width: 720px",
+        "purpose": "Doors stack (330px each, 40px slant), grids 2 columns (26px/14px gaps, home grids 4 cards), shelf 2.4 tiles without arrows, card name 15px, gallery full bleed with square corners, How buying works 1 column."
+      },
+      {
+        "name": "560",
+        "value": "max-width: 560px",
+        "purpose": "Header in three rows: brand with Lifetime Pack, search, nav with all four links and no mask."
+      },
+      {
+        "name": "460",
+        "value": "max-width: 460px",
+        "purpose": "Lifetime strip one column with a full-width button, plugins one column (third shown), brand 22px."
+      },
+      {
+        "name": "touch",
+        "value": "hover: none",
+        "purpose": "Gallery arrows and counter always visible, arrows 40px, zoom hidden."
+      }
+    ],
+    "scopedVariables": [
+      {
+        "name": "--accent",
+        "scope": ":root, [data-dept=\"ui\"]",
+        "value": "var(--orange) / var(--blue)",
+        "purpose": "The department action colour every component asks for."
+      },
+      {
+        "name": "--accent-base",
+        "scope": ":root, [data-dept=\"ui\"]",
+        "value": "var(--orange-base) / var(--blue-base)",
+        "purpose": "The 2px base under accent buttons."
+      },
+      {
+        "name": "--r",
+        "scope": ":root",
+        "value": "6px",
+        "purpose": "The one corner radius."
+      },
+      {
+        "name": "--wrap",
+        "scope": ":root",
+        "value": "1320px",
+        "purpose": "The content column's maximum width."
+      },
+      {
+        "name": "--top-h",
+        "scope": ":root",
+        "value": "64px (0px at max-width 860px)",
+        "purpose": "Header height; sticky offsets use it."
+      },
+      {
+        "name": "--face / --base / --fg",
+        "scope": ".btn",
+        "value": "var(--raised-2) / #15171A / var(--ink) by default",
+        "purpose": "A button's face, base and text colour; variants only reset these."
+      },
+      {
+        "name": "--d",
+        "scope": ".stage",
+        "value": "7vw (0px at max-width 720px)",
+        "purpose": "How far the door diagonal leans from the centre line."
+      },
+      {
+        "name": "--seam",
+        "scope": ".stage",
+        "value": "5px",
+        "purpose": "Cut from each door so a 10px ground gap divides them."
+      },
+      {
+        "name": "--h",
+        "scope": ".stage",
+        "value": "clamp(420px, min(calc(100svh - var(--top-h) - 360px), 52vw), 600px)",
+        "purpose": "Stage height; the door name and fan size from it."
+      },
+      {
+        "name": "--skew",
+        "scope": ".stage at max-width 720px",
+        "value": "40px",
+        "purpose": "The slant between stacked doors."
+      },
+      {
+        "name": "--cols / --gap",
+        "scope": ".shelf",
+        "value": "6 / 22px (4 at 1180px; 2.4 / 14px at 720px)",
+        "purpose": "Tiles across and the gap on the Collections shelf."
+      }
+    ],
+    "legacyAliases": [
+      {
+        "name": "--panel",
+        "value": "var(--raised)",
+        "usedBy": "shop/news.js"
+      },
+      {
+        "name": "--line",
+        "value": "rgba(255, 255, 255, .12)",
+        "usedBy": "shop/news.js"
+      },
+      {
+        "name": "--text",
+        "value": "var(--ink)",
+        "usedBy": "shop/news.js"
+      },
+      {
+        "name": "--gold",
+        "value": "var(--orange)",
+        "usedBy": "shop/news.js"
+      }
+    ],
+    "untokenizedLiterals": [
+      {
+        "value": "#15171A",
+        "where": ".btn --base (neutral button base)"
+      },
+      {
+        "value": "#343941",
+        "where": ".btn:hover --face (neutral button hover)"
+      },
+      {
+        "value": "#8E939C",
+        "where": ".btn--robux --base"
+      },
+      {
+        "value": "#fff",
+        "where": ".btn--robux:hover face, hover tint mix, scrub dot, play icon"
+      },
+      {
+        "value": "#202227",
+        "where": ".plugin__art--icon livery ground"
+      },
+      {
+        "value": "#3A3F48",
+        "where": "html scrollbar thumb"
+      },
+      {
+        "value": "#000",
+        "where": "gallery video background, fade masks"
+      },
+      {
+        "value": "rgba(26, 28, 32, .9) / .92",
+        "where": "header and tools glass (--ground with alpha)"
+      },
+      {
+        "value": "rgba(34, 37, 43, .96)",
+        "where": "phone buy bar glass (--raised with alpha)"
+      },
+      {
+        "value": "rgba(18, 19, 22, .72 / .75 / .78 / .92)",
+        "where": "gallery arrows, counter, zoom, lock badge (--sunk with alpha)"
+      },
+      {
+        "value": "420ms",
+        "where": "::view-transition-group(pack-art), equal to --slow but not written as var(--slow)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The action button: the department accent face on its 2px accent base, dark ink text; the second button shows the UI-packs (blue) department.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Purchase on Creator Store<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 4.5h5.5V10M19.5 4.5 11 13M18 14.5v5H4.5V6h5\"/></svg></a> <a class=\"ds-btn-primary ds-dept-ui\" href=\"#\">Purchase on Creator Store<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 4.5h5.5V10M19.5 4.5 11 13M18 14.5v5H4.5V6h5\"/></svg></a>",
+      "css": ".ds-btn-primary{--face:var(--accent);--base:var(--accent-base);--fg:var(--dark-ink);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:10px 18px;margin-top:2px;border:0;border-radius:var(--r);background:var(--face);color:var(--fg);box-shadow:0 2px 0 var(--base);translate:0 -2px;font:800 15px/1.2 Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif;text-decoration:none;text-align:center;cursor:pointer;transition:background-color var(--fast) var(--ease),transform 90ms var(--ease),box-shadow 90ms var(--ease)} .ds-btn-primary:hover{--face:color-mix(in srgb,var(--accent) 88%,#fff)} .ds-btn-primary:active{transform:translateY(2px);box-shadow:0 0 0 var(--base)} .ds-btn-primary:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-btn-primary svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round} .ds-dept-ui{--accent:var(--blue);--accent-base:var(--blue-base)}"
+    },
+    {
+      "name": "Neutral Button",
+      "kind": "button",
+      "refersTo": "button-neutral",
+      "description": "Secondary actions (Try in Roblox, Purchase on Clearly Dev, Clear search): a lifted charcoal face on a near-black base.",
+      "html": "<a class=\"ds-btn-neutral\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5.8v12.4L18 12z\"/></svg>Try in Roblox</a>",
+      "css": ".ds-btn-neutral{--face:var(--raised-2);--base:#15171A;--fg:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:10px 18px;margin-top:2px;border:0;border-radius:var(--r);background:var(--face);color:var(--fg);box-shadow:0 2px 0 var(--base);translate:0 -2px;font:800 15px/1.2 Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif;text-decoration:none;text-align:center;cursor:pointer;transition:background-color var(--fast) var(--ease),transform 90ms var(--ease),box-shadow 90ms var(--ease)} .ds-btn-neutral:hover{--face:#343941} .ds-btn-neutral:active{transform:translateY(2px);box-shadow:0 0 0 var(--base)} .ds-btn-neutral:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-btn-neutral svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Robux Button",
+      "kind": "button",
+      "refersTo": "button-robux",
+      "description": "Purchase with Robux on a pack page: a white face on a grey base, always big.",
+      "html": "<a class=\"ds-btn-robux\" href=\"#\">Purchase with Robux <span class=\"ds-nowrap\">(R$ 3,945)</span></a>",
+      "css": ".ds-btn-robux{--face:var(--ink);--base:#8E939C;--fg:var(--dark-ink);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:10px 18px;margin-top:2px;border:0;border-radius:var(--r);background:var(--face);color:var(--fg);box-shadow:0 2px 0 var(--base);translate:0 -2px;font:800 15px/1.2 Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif;text-decoration:none;text-align:center;cursor:pointer;transition:background-color var(--fast) var(--ease),transform 90ms var(--ease),box-shadow 90ms var(--ease);min-height:54px;font-size:16px;padding-inline:22px} .ds-btn-robux:hover{--face:#fff} .ds-btn-robux:active{transform:translateY(2px);box-shadow:0 0 0 var(--base)} .ds-btn-robux:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-btn-robux svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round} .ds-nowrap{white-space:nowrap}"
+    },
+    {
+      "name": "Header Bar",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "The sticky header's links with the skewed accent underline on the current section (UI packs carries the blue accent), and the fixed-orange Lifetime Pack button.",
+      "html": "<nav class=\"ds-top\" aria-label=\"Shop\"><a class=\"ds-on\" href=\"#\">Model packs</a><a class=\"ds-top__ui\" href=\"#\">UI packs</a><a href=\"#\">Plugins</a><a href=\"#\">Library</a><a class=\"ds-top__life\" href=\"#\">Lifetime Pack</a></nav>",
+      "css": ".ds-top{display:flex;align-items:center;gap:4px;height:64px;padding:0 16px;background:rgba(26,28,32,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--hair);font-family:Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif} .ds-top a{position:relative;padding:8px 12px;border-radius:var(--r);color:var(--dim);font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;transition:color var(--fast) var(--ease),background-color var(--fast) var(--ease)} .ds-top a:hover{color:var(--ink);background:var(--raised)} .ds-top a.ds-on{color:var(--ink)} .ds-top a::after{content:\"\";position:absolute;left:12px;right:12px;bottom:-11px;height:4px;background:var(--accent);transform:skewX(-24deg) scaleX(0);transform-origin:left;transition:transform var(--slow) var(--ease)} .ds-top a.ds-on::after{transform:skewX(-24deg) scaleX(1)} .ds-top a:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-top .ds-top__ui{--accent:var(--blue)} .ds-top .ds-top__life{margin-left:auto;display:inline-flex;align-items:center;height:40px;padding:0 14px;background:var(--orange);color:var(--dark-ink);box-shadow:0 2px 0 var(--orange-base);translate:0 -1px;font-size:14px;font-weight:800;transition:transform 90ms var(--ease),box-shadow 90ms var(--ease),background-color var(--fast) var(--ease)} .ds-top .ds-top__life:hover{background:color-mix(in srgb,var(--orange) 88%,#fff);color:var(--dark-ink)} .ds-top .ds-top__life:active{transform:translateY(2px);box-shadow:0 0 0 var(--orange-base)} .ds-top .ds-top__life::after{display:none}"
+    },
+    {
+      "name": "Header Search",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "The one search box: raised charcoal with a muted icon and a / key hint; hover lifts it, focus draws the accent border.",
+      "html": "<div class=\"ds-search\" role=\"search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"m20 20-4.2-4.2\"/></svg><input type=\"search\" placeholder=\"Search packs\" aria-label=\"Search packs\"><kbd aria-hidden=\"true\">/</kbd></div>",
+      "css": ".ds-search{position:relative;max-width:440px;font-family:Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif} .ds-search svg{position:absolute;left:12px;top:50%;translate:0 -50%;width:18px;height:18px;fill:none;stroke:var(--dim);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none} .ds-search input{box-sizing:border-box;width:100%;height:42px;padding:0 40px;border:1px solid transparent;border-radius:var(--r);background:var(--raised);color:var(--ink);font:500 15px Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif;outline:none;transition:border-color var(--fast) var(--ease),background-color var(--fast) var(--ease)} .ds-search input::placeholder{color:var(--dim);opacity:1} .ds-search input:hover{background:var(--raised-2)} .ds-search input:focus{border-color:var(--accent);background:var(--raised)} .ds-search input::-webkit-search-cancel-button{display:none} .ds-search kbd{position:absolute;right:10px;top:50%;translate:0 -50%;min-width:22px;padding:1px 6px;border-radius:4px;background:var(--sunk);color:var(--dim);font:700 12px/18px Montserrat,sans-serif;text-align:center;pointer-events:none} .ds-search input:focus~kbd,.ds-search input:not(:placeholder-shown)~kbd{display:none}"
+    },
+    {
+      "name": "Filter Chips and Sort",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "The catalog tools row: chips with counts (the selected one filled with the accent) and the sort select with its chevron.",
+      "html": "<div class=\"ds-tools\"><div class=\"ds-chips\" role=\"group\" aria-label=\"Filter\"><button type=\"button\" class=\"ds-chip\" aria-pressed=\"true\">All<span>69</span></button><button type=\"button\" class=\"ds-chip\" aria-pressed=\"false\">Stud<span>9</span></button><button type=\"button\" class=\"ds-chip\" aria-pressed=\"false\">Voxel<span>15</span></button><button type=\"button\" class=\"ds-chip\" aria-pressed=\"false\">Cute/Cartoon<span>14</span></button><button type=\"button\" class=\"ds-chip\" aria-pressed=\"false\">Low Poly<span>31</span></button></div><select class=\"ds-sort\" aria-label=\"Sort\"><option>Newest</option><option>Lowest price</option><option>Highest price</option><option>Most models</option></select></div>",
+      "css": ".ds-tools{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--ground);font-family:Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif} .ds-chips{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 auto;min-width:0} .ds-chip{flex:none;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border:0;border-radius:var(--r);background:var(--raised);color:var(--ink);font:700 14px Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif;white-space:nowrap;cursor:pointer;transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease)} .ds-chip span{color:var(--dim);font-size:12px;font-weight:700;font-variant-numeric:tabular-nums} .ds-chip:hover{background:var(--raised-2)} .ds-chip[aria-pressed=\"true\"]{background:var(--accent);color:var(--dark-ink)} .ds-chip[aria-pressed=\"true\"] span{color:inherit;opacity:.72} .ds-chip:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-sort{flex:none;appearance:none;height:38px;padding:0 36px 0 12px;border:1px solid transparent;border-radius:var(--r);background:var(--raised) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A3A8B2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\") no-repeat right 10px center/16px;color:var(--ink);font:600 14px Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif;cursor:pointer;outline:none;transition:border-color var(--fast) var(--ease)} .ds-sort:focus-visible{border-color:var(--accent)} .ds-sort option{background:var(--raised);color:var(--ink)}"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "card-art",
+      "description": "A product card with no container, shown with the placeholder art a pack gets when it has no image (real cards show the 1:1 box art, which also scrubs through slides on hover); hover or focus draws the ground-gap accent ring.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-card__art\"><span class=\"ds-card__ph\" aria-hidden=\"true\"><b>100</b><span>100 Voxel Spooky Night</span></span></span><h3 class=\"ds-card__name\">100 Voxel Spooky Night</h3><span class=\"ds-card__meta\">100 models · Voxel</span><span class=\"ds-price\"><b>$4.99</b> <small>R$ 1,300</small></span></a>",
+      "css": ".ds-card{display:flex;flex-direction:column;gap:4px;width:240px;color:var(--ink);text-decoration:none;outline:none;font-family:Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif} .ds-card__art{position:relative;display:block;aspect-ratio:1;margin-bottom:8px;overflow:hidden;border-radius:var(--r);background:var(--raised);box-shadow:0 0 0 0 var(--ground),0 0 0 0 var(--accent);transition:box-shadow var(--fast) var(--ease)} .ds-card:hover .ds-card__art,.ds-card:focus-visible .ds-card__art{box-shadow:0 0 0 3px var(--ground),0 0 0 5px var(--accent)} .ds-card__ph{box-sizing:border-box;display:grid;place-content:center;gap:6px;width:100%;height:100%;padding:16px;text-align:center;background:var(--accent);color:var(--dark-ink)} .ds-card__ph b{font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1} .ds-card__ph span{font-size:14px;font-weight:800} .ds-card__name{margin:0;font-size:16px;font-weight:800;line-height:1.3;letter-spacing:0;text-wrap:pretty} .ds-card__meta{color:var(--dim);font-size:13px;font-weight:600} .ds-price{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:0 8px;margin-top:2px;line-height:1.2;font-variant-numeric:tabular-nums} .ds-price b{font-size:16px;font-weight:900;color:var(--ink)} .ds-price small{font-size:13px;font-weight:600;color:var(--dim)}"
+    },
+    {
+      "name": "Buy Box Head",
+      "kind": "custom",
+      "refersTo": "label-strip",
+      "description": "The top of a pack page's buy box: the pack name, the black skewed label strip with accent separators, the hero price and the spec list with skewed accent bullets (the buy buttons sit between the price and the specs).",
+      "html": "<div class=\"ds-buy\"><h1 class=\"ds-buy__name\">250 Cute Sea Creatures</h1><p class=\"ds-strip\"><span>250 models</span><span>Cute</span><span>Animals</span></p><span class=\"ds-hero\"><b>$14.99</b> <small>R$ 3,945</small></span><ul class=\"ds-specs\"><li>Textured, rigged and animated</li><li>One model to insert, 250 assets inside</li><li>Use in any game, including commercial ones</li></ul></div>",
+      "css": ".ds-buy{display:grid;gap:18px;justify-items:start;max-width:400px;color:var(--ink);font-family:Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif} .ds-buy__name{margin:0;font-size:clamp(30px,3vw,42px);font-weight:900;line-height:1.02;letter-spacing:-.025em;text-wrap:balance} .ds-strip{display:flex;flex-wrap:wrap;margin:0 0 0 6px;padding:7px 18px;background:var(--strip);color:var(--ink);font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;line-height:1.4;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)} .ds-strip span+span::before{content:\"·\";margin:0 9px;color:var(--accent)} .ds-hero{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:0 8px;line-height:1.2;font-variant-numeric:tabular-nums} .ds-hero b{font-size:clamp(30px,3vw,40px);font-weight:900} .ds-hero small{font-size:16px;font-weight:600;color:var(--dim)} .ds-specs{display:grid;gap:8px;width:100%;margin:0;padding:18px 0 0;list-style:none;border-top:1px solid var(--hair)} .ds-specs li{position:relative;padding-left:22px;color:var(--ink-2);font-size:14px;line-height:1.5} .ds-specs li::before{content:\"\";position:absolute;left:2px;top:.5em;width:10px;height:6px;background:var(--accent);transform:skewX(-24deg)}"
+    },
+    {
+      "name": "Stage Doors",
+      "kind": "custom",
+      "refersTo": "door-models",
+      "description": "The home page's first screen: the orange Model packs door and the blue UI packs door split by one diagonal with a charcoal seam, each with its name, count and a fan of three box arts (shown here in their loading fill) that opens on hover.",
+      "html": "<section class=\"ds-stage\" aria-label=\"Departments\"><a class=\"ds-door ds-door--models\" href=\"#\"><span class=\"ds-fan\" aria-hidden=\"true\"><i></i><i></i><i></i></span><span class=\"ds-door__text\"><span class=\"ds-door__name\">Model<br>packs</span><span class=\"ds-door__count\">69 packs · 8,855 models<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4.5 12h15M13.5 6l6 6-6 6\"/></svg></span></span></a><a class=\"ds-door ds-door--ui\" href=\"#\"><span class=\"ds-fan\" aria-hidden=\"true\"><i></i><i></i><i></i></span><span class=\"ds-door__text\"><span class=\"ds-door__name\">UI<br>packs</span><span class=\"ds-door__count\">12 packs · 77 screens<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4.5 12h15M13.5 6l6 6-6 6\"/></svg></span></span></a></section>",
+      "css": ".ds-stage{--d:7vw;--seam:5px;--h:420px;position:relative;height:var(--h);overflow:hidden;background:var(--ground);font-family:Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif} .ds-door{position:absolute;inset:0;display:block;color:var(--dark-ink);text-decoration:none;outline:none} .ds-door--models{background:var(--orange);clip-path:polygon(0 0,calc(50% + var(--d) - var(--seam)) 0,calc(50% - var(--d) - var(--seam)) 100%,0 100%)} .ds-door--ui{background:var(--blue);clip-path:polygon(calc(50% + var(--d) + var(--seam)) 0,100% 0,100% 100%,calc(50% - var(--d) + var(--seam)) 100%)} .ds-door__text{position:absolute;top:clamp(28px,5vh,56px);left:max(16px,calc((100% - var(--wrap)) / 2));display:flex;flex-direction:column;gap:14px} .ds-door--ui .ds-door__text{left:auto;right:max(16px,calc((100% - var(--wrap)) / 2));align-items:flex-end;text-align:right} .ds-door__name{font-size:clamp(48px,min(7.4vw,calc(var(--h) * .2)),116px);font-weight:900;line-height:.9;letter-spacing:-.035em} .ds-door__count{display:inline-flex;align-items:center;gap:10px;font-size:clamp(14px,1.3vw,17px);font-weight:700;font-variant-numeric:tabular-nums} .ds-door__count svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--slow) var(--ease)} .ds-door:hover .ds-door__count svg,.ds-door:focus-visible .ds-door__count svg{transform:translateX(6px)} .ds-door:focus-visible .ds-door__name{text-decoration:underline;text-decoration-thickness:6px;text-underline-offset:8px} .ds-fan{position:absolute;bottom:0;width:clamp(160px,min(20vw,calc(var(--h) * .46)),300px);aspect-ratio:1;translate:-50% 13%} .ds-door--models .ds-fan{left:24%} .ds-door--ui .ds-fan{left:75%} .ds-fan i{position:absolute;inset:0;border-radius:var(--r);background:var(--sunk);box-shadow:0 18px 40px rgba(0,0,0,.35);transform-origin:50% 120%;transition:transform var(--slow) var(--ease)} .ds-fan i:nth-child(1){z-index:3;transform:rotate(0deg) translateY(-6%)} .ds-fan i:nth-child(2){z-index:2;transform:rotate(-12deg) translateX(-44%)} .ds-fan i:nth-child(3){z-index:1;transform:rotate(12deg) translateX(44%)} .ds-door:hover .ds-fan i:nth-child(1),.ds-door:focus-visible .ds-fan i:nth-child(1){transform:rotate(0deg) translateY(-12%)} .ds-door:hover .ds-fan i:nth-child(2),.ds-door:focus-visible .ds-fan i:nth-child(2){transform:rotate(-16deg) translateX(-58%) translateY(-3%)} .ds-door:hover .ds-fan i:nth-child(3),.ds-door:focus-visible .ds-fan i:nth-child(3){transform:rotate(16deg) translateX(58%) translateY(-3%)}"
+    },
+    {
+      "name": "Phone Buy Bar",
+      "kind": "custom",
+      "refersTo": "buybar",
+      "description": "At 1000px and below, the bar that slides up from the bottom of a pack page once the buy buttons scroll out of view: the name, the price and a Purchase button.",
+      "html": "<div class=\"ds-buybar\"><span class=\"ds-buybar__name\">250 Cute Sea Creatures</span><span class=\"ds-buybar__price\">$14.99</span><a class=\"ds-buybar__btn\" href=\"#\">Purchase</a></div>",
+      "css": ".ds-buybar{display:flex;align-items:center;gap:12px;max-width:390px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(34,37,43,.96);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 -1px 0 var(--hair);color:var(--ink);font-family:Montserrat,system-ui,-apple-system,\"Segoe UI\",sans-serif} .ds-buybar__name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;font-weight:800} .ds-buybar__price{font-size:16px;font-weight:900;line-height:1.2;font-variant-numeric:tabular-nums} .ds-buybar__btn{display:inline-flex;align-items:center;min-height:42px;padding:10px 18px;margin-top:2px;border-radius:var(--r);background:var(--accent);color:var(--dark-ink);box-shadow:0 2px 0 var(--accent-base);translate:0 -2px;font-size:15px;font-weight:800;line-height:1.2;text-decoration:none;transition:background-color var(--fast) var(--ease),transform 90ms var(--ease),box-shadow 90ms var(--ease)} .ds-buybar__btn:hover{background:color-mix(in srgb,var(--accent) 88%,#fff)} .ds-buybar__btn:active{transform:translateY(2px);box-shadow:0 0 0 var(--accent-base)} .ds-buybar__btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Box-Art Wall",
+    "overview": "The shop is Kash's thumbnail livery turned into a store. The box art he makes for every pack already carries the brand: a charcoal ground, an orange diagonal band for model packs, marketing blue for UI packs, a black skewed label strip and Montserrat Black lettering. The interface is built from the same few materials so that it never competes with the art. Box art is shown at full size with nothing around it, and the chrome is flat charcoal with one accent colour at a time.\n\nThe site is dark because its visitors work in Roblox Studio's dark theme. Density is that of a real storefront: four box arts across on a desktop, two on a phone, separated by generous gaps instead of borders. The home page is split by one diagonal into two departments, the orange Model packs door and the blue UI packs door, and the department's colour follows the visitor into its catalog and pack pages. Words are few and short. Weight and size carry the hierarchy, not extra lines of text.\n\nMotion is quick and has a job. Moving between shop pages never reloads the page; the clicked card's art morphs into the pack gallery, and a pointer that rests on a card scrubs through the pack's slides. Everything that moves stops under reduced motion. The direction for this shop refused a gradient headline over equal tile cards on grid paper.",
+    "keyCharacteristics": [
+      "A baseplate charcoal ground (#1A1C20) with flat tonal steps above and below it, and no grid lines.",
+      "One accent per department: livery orange for model packs and marketing blue (#49BAEC) for UI packs, always with dark ink on top.",
+      "Montserrat only: 900 for names, 800 for card names and buttons.",
+      "Product cards with no container: the 1:1 box art is the card.",
+      "One 6px corner on every surface.",
+      "Buttons whose face sits on a 2px darker base and sinks onto it when pressed.",
+      "Hard diagonals (the stage seam, the page-head edge, the label strip, skewed marks) instead of soft gradients."
+    ],
+    "rules": [
+      {
+        "name": "The Two Doors Rule",
+        "body": "Orange means model packs and blue means UI packs. A component takes its colour through `--accent`, so `data-dept=\"ui\"` is the only switch. Only shop-wide pieces (the Lifetime Pack, the newsletter button, the plugin livery) name orange directly.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark Ink Rule",
+        "body": "Text and icons on an orange or blue field are always Dark Ink (#121316), which holds 8.75:1 on orange and 8.42:1 on blue. White on orange is 2.12:1 and is never used.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Step Up Rule",
+        "body": "Hover moves a charcoal surface one step up the ladder: raised becomes raised-2, and a neutral button face becomes #343941. An accent surface on hover mixes 12% white into the accent instead.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Montserrat is the only typeface. Weight carries the hierarchy: 900 for names and prices, 800 for card names, buttons and labels, 700 for navigation, chips and counts, 600 for meta, 500 for body text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Say It Once Rule",
+        "body": "A card or a row says each thing once: the name, one meta line, the price. Kash's rule for every screen applies: \"Cut taglines, helper text and secondary labels. If a screen needs them to make sense, fix the layout.\"",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Ladder Rule",
+        "body": "Resting surfaces are flat. A shadow belongs only to something that floats over content (the dropdown, the fanned art) or that is pressed (the button base).",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ground Gap Rule",
+        "body": "A ring around art is the accent separated from the art by a band of ground colour, never an accent border touching the image.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Six Pixel Rule",
+        "body": "Every surface uses the 6px radius. The smaller 4px radius is only for small pieces such as search rows and gallery thumbnails, and there are no pills.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Hard Diagonal Rule",
+        "body": "Diagonals are cut with clip-path, skew or hard-stop gradients, never blended. The only soft gradients in the shop are fade masks at the edge of a sideways-scrolling row.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Art Is The Card Rule",
+        "body": "A product, collection or plugin is shown by its art at full size with its name under it. Nothing frames the art, and every state (hover, focus, selected, scrubbing) happens on or around the art itself.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do take every colour from the `:root` tokens, and switch department only with `data-dept=\"ui\"`; components ask for `--accent` and `--accent-base`, and only shop-wide pieces (the Lifetime Pack, the newsletter button, the plugin livery) name orange directly.",
+      "Do set text on Livery Orange (#FF9A1F) and Marketing Blue (#49BAEC) in Dark Ink (#121316).",
+      "Do show box art square and at full size with the 6px radius and nothing around it, with the name, one meta line and the price under it.",
+      "Do give every button its face on a 2px darker base (`box-shadow: 0 2px 0 var(--base)`) and let the face sink 2px when pressed.",
+      "Do mark hover and focus on art with the ground-gap ring (`0 0 0 3px var(--ground), 0 0 0 5px var(--accent)`), and keep the 2px accent focus outline on every control.",
+      "Do move a charcoal surface one step up the ladder on hover (raised to raised-2).",
+      "Do time motion with `--fast` (160ms) or `--slow` (420ms) on `--ease`, and turn it off under `prefers-reduced-motion`.",
+      "Do use tabular numerals for prices and counts.",
+      "Do keep one search box, in the header: it filters a catalog page in place and suggests packs everywhere else."
+    ],
+    "donts": [
+      "Don't add taglines, helper text or secondary labels. Kash: \"Cut taglines, helper text and secondary labels. If a screen needs them to make sense, fix the layout.\"",
+      "Don't put white text on orange or blue; white on orange is 2.12:1.",
+      "Don't use any blue other than Marketing Blue (#49BAEC) for UI packs.",
+      "Don't wrap a product card in a panel, border, background or padding.",
+      "Don't add a second typeface, a system display face or a monospace face.",
+      "Don't blend colours in a gradient or draw grid lines on the ground; cut diagonals as hard edges.",
+      "Don't put a resting shadow under a flat surface; shadows belong to the button base and to things that float over content.",
+      "Don't use a radius other than 6px, apart from 4px on small pieces such as search rows and gallery thumbnails.",
+      "Don't add new hard-coded colours; reuse a token, or add one to `:root` and to this file.",
+      "Don't use the legacy aliases (`--panel`, `--line`, `--text`, `--gold`) in new shop CSS."
+    ]
+  }
+}

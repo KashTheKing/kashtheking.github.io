@@ -336,7 +336,7 @@ ul, ol { list-style: none; }
 
 .how { padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--hair); }
 .how h2 { font-size: 22px; margin-bottom: 20px; }
-.how dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 32px; }
+.how dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 32px; }
 .how dt { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
 .how dd { color: var(--dim); font-size: 14px; line-height: 1.6; }
 .how a { color: var(--ink); text-underline-offset: 3px; }
@@ -515,7 +515,7 @@ ul, ol { list-style: none; }
 /* ---------- moving between pages ---------- */
 
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 200ms; animation-timing-function: var(--ease); }
-::view-transition-group(pack-art) { animation-duration: 420ms; animation-timing-function: var(--ease); }
+::view-transition-group(pack-art) { animation-duration: var(--slow); animation-timing-function: var(--ease); }
 ::view-transition-image-pair(pack-art) { overflow: hidden; border-radius: var(--r); }
 ::view-transition-old(pack-art), ::view-transition-new(pack-art) { height: 100%; object-fit: cover; }
 html.is-loading main { opacity: .6; transition: opacity 200ms linear 120ms; }
@@ -529,7 +529,6 @@ html.is-loading main { opacity: .6; transition: opacity 200ms linear 120ms; }
   .lifetime .btn { align-self: start; justify-self: end; margin-bottom: 16px; }
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .grid:not(.grid--catalog) > :nth-child(n + 7) { display: none; }
-  .how dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .top__in { gap: 18px; }
 }
 @media (max-width: 1000px) {
