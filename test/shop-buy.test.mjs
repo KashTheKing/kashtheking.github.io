@@ -1,4 +1,4 @@
-// node --test test/shop-buy.test.mjs  (no dependencies). Runs shop/sub.js against a fake DOM and checks the pack page link.
+// node --test test/shop-buy.test.mjs  (no dependencies). Runs shop/sub.js against a fake DOM and checks the pack page buy links.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -43,7 +43,30 @@ test('ids missing: only the USD button; robux only: only Pay with Robux', async 
     assert.ok(!launch(rbx, 'sub-go') && launch(rbx, 'sub-alt'));
 });
 
-test('pack page: Purchase with Robux launches {"a":"buy","pack":slug}', () => {
-    const page = fs.readFileSync(new URL('pack/index.html', root), 'utf8');
-    assert.match(page, /JSON\.stringify\(\{ a: "buy", pack: p\.slug \}\)/);
+test('pack page: Purchase with Robux launches {"a":"buy","pack":slug} in the showcase place, only with a Robux product', async () => {
+    const V = await import('../shop/app/views.mjs');
+    const p = V.model(packs).live.find((x) => x.price > 0 && x.url);
+    const buy = { showcasePlaceId: '91734861985398', packs: { [p.slug]: { robuxProductId: '123456' } } };
+    const html = V.buyActions(p, buy);
+    const m = /class="btn btn--robux btn--big" href="([^"]+)"/.exec(html);
+    assert.ok(m, html);
+    const u = new URL(m[1].replace(/&amp;/g, '&'));
+    assert.equal(u.searchParams.get('placeId'), '91734861985398');
+    assert.deepEqual(JSON.parse(u.searchParams.get('launchData')), { a: 'buy', pack: p.slug });
+    assert.match(html, new RegExp(`Purchase with Robux <span class="nowrap">\\(R\\$ ${V.robux(p.price)}\\)`));
+    assert.equal(V.buyLinks(p, { showcasePlaceId: '91734861985398', packs: {} }).robux, null);
+    assert.equal(V.buyLinks(p, { showcasePlaceId: 'x', packs: buy.packs }).robux, null);
+    assert.equal(V.buyLinks({ ...p, price: 0 }, buy).robux, null);
+    const t = new URL(V.buyLinks(p, buy).try);
+    assert.deepEqual(JSON.parse(t.searchParams.get('launchData')), { pack: p.slug, asset: /\/asset\/(\d+)/.exec(p.url)[1] });
+    assert.equal(V.buyLinks(p, buy).store, `/shop/${p.page}/roblox/`);
+    assert.equal(V.buyLinks(p, { packs: { [p.slug]: { clearlyDevUrl: 'javascript:alert(1)' } } }).clearly, null);
+});
+
+test('Robux prices: the DevEx value rounded down to a clean number', async () => {
+    const { robux } = await import('../shop/app/views.mjs');
+    assert.equal(robux(4.99), '1,300');
+    assert.equal(robux(9.99), '2,600');
+    assert.equal(robux(14.99), '3,945');
+    assert.equal(robux(99), '25,000');
 });

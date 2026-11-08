@@ -1,238 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-dept="models">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--seo:start-->
-    <title>100 Obby Parts - Roblox Asset Pack | KashTheKing Shop</title>
-    <meta name="description" content="100 low-poly Roblox models, rigged and animated. 100 bright, chunky low-poly obby parts, true to scale for a 5-stud character… $4.99 on the Creator Store.">
-    <link rel="canonical" href="https://kashtheking.com/shop/100-obby-parts/">
-    <meta property="og:type" content="product">
-    <meta property="og:site_name" content="KashTheKing Shop">
-    <meta property="og:url" content="https://kashtheking.com/shop/100-obby-parts/">
-    <meta property="og:title" content="100 Obby Parts - Roblox Asset Pack ($4.99)">
-    <meta property="og:description" content="100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball…">
-    <meta property="og:image" content="https://kashtheking.com/shop/img/100ObbyParts/01.jpg">
-    <meta property="og:image:alt" content="100 Obby Parts Roblox Asset Pack">
-    <meta property="product:price:amount" content="4.99">
-    <meta property="product:price:currency" content="USD">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@KashTheKing_X">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"100 Obby Parts - Roblox Asset Pack","description":"100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball, spinning bar, truss, ropes, monkey bars, zipline, balloons, clouds, checkpoints, spawn and win pads, start gate, finish arch, podium, buttons, lever, key door, timed door, teleporter, portal, cannon launcher, speed, jump and gravity pads, coins, stars, gems, keys, hearts and decoration. 1 Blender unit = 1 stud. Moving hazards, doors, lever and cannon have bones and looping actions. Textured, rigged and animated.","image":["https://kashtheking.com/shop/img/100ObbyParts.jpg","https://kashtheking.com/shop/img/100ObbyParts/01.jpg","https://kashtheking.com/shop/img/100ObbyParts/02.jpg","https://kashtheking.com/shop/img/100ObbyParts/03.jpg","https://kashtheking.com/shop/img/100ObbyParts/04.jpg","https://kashtheking.com/shop/img/100ObbyParts/05.jpg","https://kashtheking.com/shop/img/100ObbyParts/06.jpg","https://kashtheking.com/shop/img/100ObbyParts/09.jpg","https://kashtheking.com/shop/img/100ObbyParts/10.jpg"],"url":"https://kashtheking.com/shop/100-obby-parts/","sku":"100ObbyParts","category":"Roblox asset pack","brand":{"@type":"Brand","name":"KashTheKing"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://create.roblox.com/store/asset/120544606008620"}}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"KashTheKing","item":"https://kashtheking.com/"},{"@type":"ListItem","position":2,"name":"Shop","item":"https://kashtheking.com/shop/"},{"@type":"ListItem","position":3,"name":"100 Obby Parts","item":"https://kashtheking.com/shop/100-obby-parts/"}]}</script>
-    <script>window.PACK_SLUG = "100ObbyParts";</script>
-<!--seo:end-->
-    <meta name="theme-color" content="#1c1e22">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-crown-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-crown-180.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #1c1e22; --panel: #26292e; --line: #3a3d44; --text: #fff; --dim: #a9adb6; --gold: #ffb02e; --gold-hi: #ffe98a; --blurple: #5865f2; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); min-height: 100vh; display: flex; flex-direction: column;
-            background-color: var(--bg);
-            background-image:
-                linear-gradient(rgba(62,65,70,.55) 1px, transparent 1px), linear-gradient(90deg, rgba(62,65,70,.55) 1px, transparent 1px),
-                linear-gradient(rgba(38,41,46,.9) 1px, transparent 1px), linear-gradient(90deg, rgba(38,41,46,.9) 1px, transparent 1px);
-            background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
-        }
-        a { color: inherit; }
-        :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-        /* Standard watermark (assets/watermark.png), top left like the home page; links home */
-        .brand { position: absolute; top: 22px; left: 28px; z-index: 10; display: block; line-height: 0; text-decoration: none; }
-        .brand img { display: block; width: auto; height: 35px; filter: drop-shadow(0 2px 3px rgba(0,0,0,.45)); }
-        main { flex: 1; width: min(1280px, 100%); margin: 0 auto; padding: 84px 48px 72px; }
-        .back { display: inline-block; margin-bottom: 22px; color: var(--dim); text-decoration: none; font-weight: 600; font-size: 14px; }
-        .back:hover { color: var(--text); }
-        .top { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr); gap: 36px; align-items: start; }
-
-        /* slideshow: a horizontal scroll-snap strip, so swiping, trackpads and the buttons all work */
-        .show { position: relative; }
-        .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: 16px; border: 1px solid var(--line); background: #14171c; scrollbar-width: none; }
-        .strip::-webkit-scrollbar { display: none; }
-        .strip figure { flex: 0 0 100%; min-width: 0; scroll-snap-align: center; aspect-ratio: 16 / 10; overflow: hidden; }
-        .strip img { width: 100%; height: 100%; object-fit: contain; display: block; }
-        .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.6); color: #fff; font-size: 22px; cursor: pointer; display: grid; place-items: center; }
-        .nav:hover { background: rgba(0,0,0,.85); }
-        .nav[disabled] { opacity: .25; cursor: default; }
-        .prev { left: 12px; } .next { right: 12px; }
-        /* zoom: + / - / reset buttons, mouse wheel over the image, drag to pan while zoomed */
-        .strip img { transform-origin: center; transition: transform .12s ease; will-change: transform; user-select: none; -webkit-user-drag: none; }
-        .strip.zoomed { overflow-x: hidden; scroll-snap-type: none; cursor: grab; }
-        .strip.zoomed.dragging { cursor: grabbing; } .strip.dragging img { transition: none; }
-        .zoom { position: absolute; right: 12px; bottom: 12px; display: flex; gap: 6px; padding: 6px; border-radius: 999px; background: rgba(0,0,0,.6); }
-        .zoom button { width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 18px; font-weight: 700; cursor: pointer; }
-        .zoom button:hover { background: rgba(255,255,255,.28); } .zoom button[disabled] { opacity: .35; cursor: default; }
-        .zoom output { min-width: 46px; display: grid; place-items: center; font-size: 13px; font-weight: 700; color: #fff; }
-        .thumbs { display: flex; gap: 8px; margin-top: 12px; overflow-x: auto; padding-bottom: 4px; }
-        .thumbs button { flex: 0 0 auto; width: 84px; height: 56px; padding: 0; border-radius: 8px; border: 2px solid transparent; background: #14171c; cursor: pointer; overflow: hidden; opacity: .6; }
-        .thumbs button[aria-current="true"] { border-color: var(--gold); opacity: 1; }
-        .thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        .side { background: rgba(38,41,46,.92); border: 1px solid var(--line); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 16px; }
-        h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.05; }
-        .meta { display: flex; gap: 8px; flex-wrap: wrap; }
-        .meta span { padding: 4px 10px; border-radius: 6px; background: #1c1e22; color: #d6d9df; font-size: 12px; font-weight: 600; }
-        .desc { color: #d6d9df; line-height: 1.6; font-size: 15px; }
-        .price { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 40px; color: var(--gold); }
-        .badge { display: inline-block; margin-bottom: 10px; padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #fff; background: #3a3d44; }
-        .badge.first { color: #1c1e22; background: linear-gradient(180deg, #ffe98a, #ff9a1f); }
-        .btn { display: block; text-align: center; padding: 15px 20px; border-radius: 12px; font-weight: 800; font-size: 16px; text-decoration: none; }
-        .buy { display: flex; flex-direction: column; gap: 10px; }
-        .buy-store { background: var(--gold); color: #1c1e22; } .buy-store:hover { background: var(--gold-hi); }
-        .buy-robux { background: #2ea043; color: #fff; } .buy-robux:hover { filter: brightness(1.12); }
-        .buy-clearly { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.75); padding: 13px 18px; } .buy-clearly:hover { border-color: #fff; background: rgba(255,255,255,.06); }
-        .buy-try { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 13px 18px; } .buy-try:hover { background: rgba(255,176,46,.12); }
-        .buy-other { text-align: center; color: var(--dim); font-size: 13px; } .buy-other a { color: var(--dim); }
-        .list { color: #d6d9df; font-size: 14px; line-height: 1.7; padding-left: 18px; }
-
-        h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px; margin: 64px 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        .card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
-        .card:hover { transform: translateY(-4px); border-color: var(--gold); }
-        .card img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; }
-        .card div { padding: 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-        .card b { font-size: 15px; } .card span { font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--gold); }
-        .missing { padding: 80px 0; text-align: center; color: var(--dim); }
-        footer { padding: 28px 48px 40px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); background: rgba(20,23,28,.8); }
-        footer a { color: var(--gold); }
-        @media (max-width: 860px) { main { padding: 84px 20px 56px; } .top { grid-template-columns: minmax(0, 1fr); } .brand { left: 16px; } footer { padding-inline: 20px; } .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; } }
-        @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 Obby Parts - Roblox Asset Pack | KashTheKing Shop</title>
+<meta data-r name="description" content="100 low-poly Roblox models, rigged and animated. 100 bright, chunky low-poly obby parts, true to scale for a 5-stud character… $4.99 on the Creator Store.">
+<link data-r rel="canonical" href="https://kashtheking.com/shop/100-obby-parts/">
+<meta data-r property="og:type" content="product">
+<meta data-r property="og:site_name" content="KashTheKing Shop">
+<meta data-r property="og:url" content="https://kashtheking.com/shop/100-obby-parts/">
+<meta data-r property="og:title" content="100 Obby Parts - Roblox Asset Pack ($4.99)">
+<meta data-r property="og:description" content="100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball…">
+<meta data-r property="og:image" content="https://kashtheking.com/shop/img/100ObbyParts/01.jpg">
+<meta data-r property="og:image:alt" content="100 Obby Parts Roblox Asset Pack">
+<meta data-r property="product:price:amount" content="4.99">
+<meta data-r property="product:price:currency" content="USD">
+<meta data-r name="twitter:card" content="summary_large_image">
+<meta data-r name="twitter:site" content="@KashTheKing_X">
+<script data-r type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"100 Obby Parts - Roblox Asset Pack","description":"100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball, spinning bar, truss, ropes, monkey bars, zipline, balloons, clouds, checkpoints, spawn and win pads, start gate, finish arch, podium, buttons, lever, key door, timed door, teleporter, portal, cannon launcher, speed, jump and gravity pads, coins, stars, gems, keys, hearts and decoration. 1 Blender unit = 1 stud. Moving hazards, doors, lever and cannon have bones and looping actions. Textured, rigged and animated.","image":["https://kashtheking.com/shop/img/100ObbyParts.jpg","https://kashtheking.com/shop/img/100ObbyParts/01.jpg","https://kashtheking.com/shop/img/100ObbyParts/02.jpg","https://kashtheking.com/shop/img/100ObbyParts/03.jpg","https://kashtheking.com/shop/img/100ObbyParts/04.jpg","https://kashtheking.com/shop/img/100ObbyParts/05.jpg","https://kashtheking.com/shop/img/100ObbyParts/06.jpg","https://kashtheking.com/shop/img/100ObbyParts/09.jpg","https://kashtheking.com/shop/img/100ObbyParts/10.jpg"],"url":"https://kashtheking.com/shop/100-obby-parts/","sku":"100ObbyParts","category":"Roblox asset pack","brand":{"@type":"Brand","name":"KashTheKing"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://create.roblox.com/store/asset/120544606008620"}}</script>
+<script data-r type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"KashTheKing","item":"https://kashtheking.com/"},{"@type":"ListItem","position":2,"name":"Shop","item":"https://kashtheking.com/shop/"},{"@type":"ListItem","position":3,"name":"100 Obby Parts","item":"https://kashtheking.com/shop/100-obby-parts/"}]}</script>
+<meta name="theme-color" content="#1A1C20">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-crown-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-crown-180.png">
+<link rel="preload" href="/kit/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/shop/app/shop.css?v=f3404de487">
+<script type="importmap">{"imports":{"/shop/app/views.mjs":"/shop/app/views.mjs?v=f3404de487"}}</script>
+<link rel="modulepreload" href="/shop/app/views.mjs?v=f3404de487">
+<script type="module" src="/shop/app/app.mjs?v=f3404de487"></script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/shop/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
-    <a class="brand" href="/shop/" aria-label="KashTheKing shop"><img class="mark" src="/assets/watermark.png" alt="KashTheKing" width="165" height="35"></a>
-    <main>
-        <div id="sub"></div>
-        <a class="back" href="../models/">← All model packs</a>
-        <div id="pack"><h1>100 Obby Parts - Roblox Asset Pack</h1><p>100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball, spinning bar, truss, ropes, monkey bars, zipline, balloons, clouds, checkpoints, spawn and win pads, start gate, finish arch, podium, buttons, lever, key door, timed door, teleporter, portal, cannon launcher, speed, jump and gravity pads, coins, stars, gems, keys, hearts and decoration. 1 Blender unit = 1 stud. Moving hazards, doors, lever and cannon have bones and looping actions. Textured, rigged and animated.</p><p>100 models, $4.99. <a href="https://create.roblox.com/store/asset/120544606008620">Get it on the Roblox Creator Store</a>.</p><img src="../img/100ObbyParts.jpg" alt="100 Obby Parts Roblox Asset Pack thumbnail" width="540" height="540"></div>
-        <p id="missing" class="missing" hidden>That pack was not found. <a href="../models/">Browse all packs</a>.</p>
-        <section id="more" hidden>
-            <h2>You might also like</h2>
-            <div id="recommended" class="grid"></div>
-        </section>
-        <!--cols:start--><nav class="cols" aria-label="Browse asset packs by style"><style>.cols{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:28px 0 8px}.cols b{color:var(--dim);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}.cols a{padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--text);text-decoration:none;font-size:14px;font-weight:600}.cols a:hover,.cols a[aria-current]{border-color:var(--gold);color:var(--gold)}</style><b>Browse</b><a href="../">All packs</a><a href="../ui/">UI packs</a><a href="../stud/">Stud</a><a href="../voxel/">Voxel</a><a href="../halloween/">Halloween</a><a href="../weapons/">Weapons</a><a href="../vehicles/">Vehicles</a><a href="../pets/">Pets &amp; animals</a><a href="../characters/">Characters</a><a href="../rpg/">RPG</a><a href="../simulator/">Simulator &amp; tycoon</a><a href="../buildings/">Buildings &amp; maps</a><a href="../cute/">Cute/Cartoon</a></nav><!--cols:end-->
-    </main>
-    <footer><div class="news-slot" data-place="footer"></div>© KashTheKing · <a href="/">kashtheking.com</a></footer>
-
-    <script>
-        // Page for one pack: /shop/pack/?p=<slug>. Data comes from ../packs.json (generated by build-shop.ps1).
-        const DISCORD = "https://discord.gg/6HYgCk22eD";
-        const slug = window.PACK_SLUG || new URLSearchParams(location.search).get("p");   // static pages (/shop/<page>/) set PACK_SLUG
-        const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-        // shop/buy.json (made in the Clanker panel, My shop > Robux purchases): the showcase place and, per pack, the
-        // Robux developer product and the Clearly Dev link. Missing or unreadable: only the Creator Store button shows.
-        const BUY = fetch("../buy.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({}));
-        Promise.all([fetch("../packs.json").then(r => r.json()), BUY]).then(([packs, buy]) => {
-            // Robux alternative: the DevEx value of the dollar price ($0.0038 per Robux), no marketplace tax
-            const robux = d => { const r = d / 0.0038; if (d === 14.99) return "3,945";   /* Kash kept this one as it was */ return (r < 5000 ? Math.floor(r / 100) * 100 : r < 20000 ? Math.floor(r / 500) * 500 : Math.floor(r / 5000) * 5000).toLocaleString("en-US"); }   // rounded down to a clean number
-            const p = packs.find(x => x.slug === slug || x.page === slug);
-            if (p && !window.PACK_SLUG && p.page) { location.replace("../" + p.page + "/"); return; }   // old ?p= links go to the pack's own URL
-            if (!p) { document.getElementById("missing").hidden = false; return; }
-            if (!window.PACK_SLUG) document.title = `${p.name} | KashTheKing Shop`;   // static pages already carry their own title
-            const slides = p.slides && p.slides.length ? p.slides : [p.image];
-            const b = (buy && buy.packs && buy.packs[p.slug]) || {};
-            const place = /^\d{1,19}$/.test(String(buy && buy.showcasePlaceId)) ? buy.showcasePlaceId : null;
-            // opens the Roblox app in the showcase place, which shows this pack and prompts its developer product at once
-            const robuxUrl = place && /^\d{1,19}$/.test(String(b.robuxProductId)) ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ a: "buy", pack: p.slug }))}` : null;
-            // 'Try in Roblox': the showcase place loads the pack by the asset id in the join data (UI packs too); needs the pack's Creator Store link
-            const assetId = (String(p.url || "").match(/\/asset\/(\d{1,19})/) || [])[1];
-            const tryUrl = place && assetId ? `https://www.roblox.com/games/start?placeId=${place}&launchData=${encodeURIComponent(JSON.stringify({ pack: p.slug, asset: assetId }))}` : null;
-            const clearly = /^https:\/\/[^\s<>"]+$/.test(b.clearlyDevUrl || "") ? b.clearlyDevUrl : null;
-            const soonUi = p.kind === "ui" && !p.url;   // UI packs still in Roblox moderation: no price, no buying
-            document.getElementById("pack").innerHTML = `
-                <div class="top">
-                    <div>
-                        <div class="show">
-                            <div class="strip" id="strip" tabindex="0" aria-label="${esc(p.name)} images. Scroll or use the arrow buttons.">
-                                ${slides.map((s, i) => `<figure><img src="../${s}" alt="${esc(p.name)} image ${i + 1} of ${slides.length}" ${i ? 'loading="lazy"' : ""}></figure>`).join("")}
-                            </div>
-                            <button class="nav prev" id="prev" type="button" aria-label="Previous image">‹</button>
-                            <button class="nav next" id="next" type="button" aria-label="Next image">›</button>
-                            <div class="zoom" role="group" aria-label="Zoom">
-                                <button id="zout" type="button" aria-label="Zoom out">−</button>
-                                <output id="zlevel" aria-live="polite">100%</output>
-                                <button id="zin" type="button" aria-label="Zoom in">+</button>
-                                <button id="zreset" type="button" aria-label="Reset zoom">⟲</button>
-                            </div>
-                        </div>
-                        <div class="thumbs" id="thumbs">
-                            ${slides.map((s, i) => `<button type="button" aria-label="Show image ${i + 1}"><img src="../${s}" alt="" loading="lazy"></button>`).join("")}
-                        </div>
-                    </div>
-                    <aside class="side">
-                        ${p.badge ? `<span class="badge${p.badge.startsWith("#1") ? " first" : ""}">${esc(p.badge)}</span>` : ""}
-                        <h1>${esc(p.name)}</h1>
-                        <div class="meta"><span>${p.count} models</span>${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
-                        <p class="desc">${esc(p.description)}</p>
-                        ${soonUi ? `<div class="price">Coming soon</div>` : `<div class="price">${p.price === 0 ? "FREE" : `$${p.price.toFixed(2)} <small style="font-size:16px;color:var(--dim);white-space:nowrap">or R$ ${robux(p.price)}</small>`}</div>`}
-                        <div class="buy">
-                            ${p.url ? `<a class="btn buy-store" href="${window.PACK_SLUG ? "roblox/" : p.url}" target="_blank" rel="noopener">Purchase on Creator Store</a>` : ""}
-                            ${robuxUrl && p.price !== 0 ? `<a class="btn buy-robux" href="${esc(robuxUrl)}" rel="noopener">Purchase with Robux <span style="white-space:nowrap">(R$ ${robux(p.price)})</span></a>` : ""}
-                            ${tryUrl ? `<a class="btn buy-try" href="${esc(tryUrl)}" rel="noopener">Try in Roblox</a>` : ""}
-                            ${clearly ? `<a class="btn buy-clearly" href="${esc(clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev</a>` : ""}
-                        </div>
-                        ${soonUi ? "" : `<p class="buy-other">Other ways to pay? <a href="${window.PACK_SLUG ? "discord/" : DISCORD}" target="_blank" rel="noopener">Ask on Discord</a></p>`}
-                        <ul class="list">
-                            <li>Textured, rigged and animated</li>
-                            <li>One model to insert, ${p.count} assets inside</li>
-                            <li>Use in any game, including commercial ones</li>
-                        </ul>
-                    </aside>
-                </div>`;
-
-            // slideshow controls
-            const strip = document.getElementById("strip"), thumbs = [...document.getElementById("thumbs").children];
-            const prev = document.getElementById("prev"), next = document.getElementById("next");
-            const index = () => Math.round(strip.scrollLeft / strip.clientWidth);
-            const go = i => strip.scrollTo({ left: Math.max(0, Math.min(slides.length - 1, i)) * strip.clientWidth });
-            const sync = () => { const i = index(); thumbs.forEach((t, k) => t.setAttribute("aria-current", k === i)); prev.disabled = i === 0; next.disabled = i === slides.length - 1; };
-            prev.onclick = () => go(index() - 1); next.onclick = () => go(index() + 1);
-            thumbs.forEach((t, k) => t.onclick = () => go(k));
-            strip.addEventListener("scroll", () => requestAnimationFrame(sync));
-            strip.addEventListener("keydown", e => { if (e.key === "ArrowLeft") go(index() - 1); if (e.key === "ArrowRight") go(index() + 1); });
-            sync();
-
-            // zoom: scale the current image and let it be dragged around; any slide change resets it
-            const zin = document.getElementById("zin"), zout = document.getElementById("zout"), zreset = document.getElementById("zreset"), zlevel = document.getElementById("zlevel");
-            let zoom = 1, panX = 0, panY = 0, drag = null;
-            const current = () => strip.children[index()].querySelector("img");
-            function applyZoom() {
-                const limitX = strip.clientWidth * (zoom - 1) / 2, limitY = strip.clientHeight * (zoom - 1) / 2;
-                panX = Math.max(-limitX, Math.min(limitX, panX)); panY = Math.max(-limitY, Math.min(limitY, panY));
-                [...strip.querySelectorAll("img")].forEach(img => img.style.transform = "");
-                current().style.transform = zoom > 1 ? `translate(${panX}px, ${panY}px) scale(${zoom})` : "";
-                strip.classList.toggle("zoomed", zoom > 1);
-                zlevel.textContent = Math.round(zoom * 100) + "%";
-                zout.disabled = zreset.disabled = zoom <= 1; zin.disabled = zoom >= 4;
-            }
-            const setZoom = z => { zoom = Math.max(1, Math.min(4, Math.round(z * 4) / 4)); if (zoom === 1) panX = panY = 0; applyZoom(); };
-            zin.onclick = () => setZoom(zoom + 0.5); zout.onclick = () => setZoom(zoom - 0.5); zreset.onclick = () => setZoom(1);
-            strip.addEventListener("wheel", e => { if (e.ctrlKey || zoom > 1) { e.preventDefault(); setZoom(zoom + (e.deltaY < 0 ? 0.25 : -0.25)); } }, { passive: false });
-            strip.addEventListener("dblclick", () => setZoom(zoom > 1 ? 1 : 2));
-            strip.addEventListener("pointerdown", e => { if (zoom > 1) { drag = { x: e.clientX - panX, y: e.clientY - panY }; strip.classList.add("dragging"); strip.setPointerCapture(e.pointerId); } });
-            strip.addEventListener("pointermove", e => { if (drag) { panX = e.clientX - drag.x; panY = e.clientY - drag.y; applyZoom(); } });
-            const drop = () => { drag = null; strip.classList.remove("dragging"); };
-            strip.addEventListener("pointerup", drop); strip.addEventListener("pointercancel", drop);
-            [prev, next, ...thumbs].forEach(b => b.addEventListener("click", () => setZoom(1), true));
-            applyZoom();
-
-            // recommended: packs sharing the most tags first, then the newest
-            const score = x => x.tags.filter(t => p.tags.includes(t)).length;
-            const others = packs.filter(x => x.slug !== p.slug).sort((a, b) => score(b) - score(a)).slice(0, 4);
-            if (others.length) {
-                document.getElementById("more").hidden = false;
-                document.getElementById("recommended").innerHTML = others.map(o => `
-                    <a class="card" href="../${o.page}/">
-                        <img src="../${o.image}" alt="${esc(o.name)} thumbnail" loading="lazy" width="360" height="360">
-                        <div><b>${esc(o.name)}</b><span>${o.price === 0 ? "FREE" : `$${o.price.toFixed(2)} <small style="color:var(--dim)">or R$ ${robux(o.price)}</small>`}</span></div>
-                    </a>`).join("");
-            }
-        }).catch(() => { document.getElementById("missing").hidden = false; });
-    </script>
-    <script defer src="https://panel.kashtheking.com/t.js"></script><!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cd94b2bc49634d048aa496f6b380505d"}'></script><!-- End Cloudflare Web Analytics -->
-    <script src="/shop/sub.js" defer></script>
-    <script src="../news.js" defer></script>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="top__in">
+    <a class="top__brand" href="/shop/"><img src="/assets/watermark.png" alt="KashTheKing Shop" width="156" height="33"></a>
+    <nav class="top__nav" aria-label="Shop"><a href="/shop/models/" data-section="models" class="is-on">Model packs</a><a href="/shop/ui/" data-section="ui" data-dept="ui">UI packs</a><a href="/shop/plugins/" data-section="plugins">Plugins</a><a href="/library/">Library</a></nav>
+    <form class="search" role="search" action="/shop/search/" data-search>
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input type="search" name="q" placeholder="Search packs" aria-label="Search packs" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="search-list" aria-autocomplete="list"><kbd aria-hidden="true">/</kbd>
+      <div class="search__list" id="search-list" role="listbox" aria-label="Packs" hidden></div>
+    </form>
+    <a class="top__lifetime" href="https://clearlydev.com/store/kashtheking" target="_blank" rel="noopener">Lifetime Pack</a>
+  </div>
+</header>
+<div id="sub" class="wrap sub-slot"></div>
+<main id="main" tabindex="-1" data-route="pack" data-pack="100ObbyParts">
+<div class="wrap pack" data-pack="100ObbyParts">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/shop/">Shop</a></li><li><a href="/shop/models/">Model packs</a></li><li><span aria-current="page">100 Obby Parts</span></li></ol></nav>
+      <div class="pack__top">
+        <section class="gallery" aria-label="100 Obby Parts images" data-gallery>
+      <div class="gallery__stage">
+        <div class="gallery__strip" tabindex="0" aria-label="Scroll or use the arrow keys"><figure data-slide="0"><img src="/shop/img/100ObbyParts/01.jpg" alt="100 Obby Parts, image 1 of 8" width="1600" height="900" fetchpriority="high" decoding="async"></figure><figure data-slide="1"><img src="/shop/img/100ObbyParts/02.jpg" alt="100 Obby Parts, image 2 of 8" width="1600" height="900" loading="lazy" decoding="async"></figure><figure data-slide="2"><img src="/shop/img/100ObbyParts/03.jpg" alt="100 Obby Parts, image 3 of 8" width="1600" height="900" loading="lazy" decoding="async"></figure><figure data-slide="3"><img src="/shop/img/100ObbyParts/04.jpg" alt="100 Obby Parts, image 4 of 8" width="1600" height="900" loading="lazy" decoding="async"></figure><figure data-slide="4"><img src="/shop/img/100ObbyParts/05.jpg" alt="100 Obby Parts, image 5 of 8" width="1600" height="900" loading="lazy" decoding="async"></figure><figure data-slide="5"><img src="/shop/img/100ObbyParts/06.jpg" alt="100 Obby Parts, image 6 of 8" width="1600" height="900" loading="lazy" decoding="async"></figure><figure data-slide="6"><img src="/shop/img/100ObbyParts/09.jpg" alt="100 Obby Parts, image 7 of 8" width="1600" height="900" loading="lazy" decoding="async"></figure><figure data-slide="7"><img src="/shop/img/100ObbyParts/10.jpg" alt="100 Obby Parts, image 8 of 8" width="1600" height="900" loading="lazy" decoding="async"></figure></div>
+        <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Previous image" data-prev disabled><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14.5 5-7 7 7 7"/></svg></button><button class="gallery__nav gallery__nav--next" type="button" aria-label="Next image" data-next><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9.5 5 7 7-7 7"/></svg></button>
+        <div class="gallery__hud"><span class="gallery__count" data-index>1 / 8</span><span class="gallery__zoom" role="group" aria-label="Zoom"><button type="button" aria-label="Zoom out" data-zout><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/></svg></button><output data-zlevel aria-live="polite">100%</output><button type="button" aria-label="Zoom in" data-zin><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" aria-label="Reset zoom" data-zreset><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v4.2h4.2"/></svg></button></span></div>
+      </div>
+      <div class="gallery__thumbs" role="group" aria-label="Choose an image"><button type="button" aria-label="Show image 1" aria-current="true"><img src="/shop/img/100ObbyParts/01.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button><button type="button" aria-label="Show image 2"><img src="/shop/img/100ObbyParts/02.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button><button type="button" aria-label="Show image 3"><img src="/shop/img/100ObbyParts/03.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button><button type="button" aria-label="Show image 4"><img src="/shop/img/100ObbyParts/04.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button><button type="button" aria-label="Show image 5"><img src="/shop/img/100ObbyParts/05.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button><button type="button" aria-label="Show image 6"><img src="/shop/img/100ObbyParts/06.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button><button type="button" aria-label="Show image 7"><img src="/shop/img/100ObbyParts/09.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button><button type="button" aria-label="Show image 8"><img src="/shop/img/100ObbyParts/10.jpg" alt="" width="160" height="90" loading="lazy" decoding="async"></button></div>
+    </section>
+        <aside class="buy" aria-labelledby="pack-name">
+          <h1 class="buy__name" id="pack-name">100 Obby Parts</h1>
+          <p class="strip"><span>100 models</span><span>Obby</span><span>Props</span></p>
+          <span class="price price--hero"><b>$4.99</b><span class="sr"> or</span> <small>R$ 1,300</small></span>
+          <div class="buy__actions" data-buy><a class="btn btn--primary btn--big" href="/shop/100-obby-parts/roblox/" target="_blank" rel="noopener">Purchase on Creator Store<svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4.5h5.5V10M19.5 4.5 11 13M18 14.5v5H4.5V6h5"/></svg></a><a class="btn btn--ghost" href="https://www.roblox.com/games/start?placeId=91734861985398&amp;launchData=%7B%22pack%22%3A%22100ObbyParts%22%2C%22asset%22%3A%22120544606008620%22%7D" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.8v12.4L18 12z"/></svg>Try in Roblox</a><a class="buy__alt" href="/shop/100-obby-parts/discord/" target="_blank" rel="noopener">Other ways to pay</a></div>
+          <ul class="buy__specs"><li>Textured, rigged and animated</li><li>One model to insert, 100 assets inside</li><li>Use in any game, including commercial ones</li></ul>
+        </aside>
+      </div>
+      <section class="about" aria-labelledby="about-title"><h2 id="about-title">About this pack</h2><p>100 bright, chunky low-poly obby parts, true to scale for a 5-stud character: everything an obstacle course needs. Platforms, moving platform, conveyor, ice and fading tiles, bounce pads and trampoline, lava, acid, spikes, saw blade, lasers, crusher, swinging hammer, axe and wrecking ball, spinning bar, truss, ropes, monkey bars, zipline, balloons, clouds, checkpoints, spawn and win pads, start gate, finish arch, podium, buttons, lever, key door, timed door, teleporter, portal, cannon launcher, speed, jump and gravity pads, coins, stars, gems, keys, hearts and decoration. 1 Blender unit = 1 stud. Moving hazards, doors, lever and cannon have bones and looping actions. Textured, rigged and animated.</p></section>
+      <section class="section" aria-labelledby="more-title"><div class="shead"><h2 id="more-title">More like this</h2></div><div class="grid"><a class="card" href="/shop/100-sports-assets/" data-pack="100SportsAssets"><span class="card__art"><img class="card__img" src="/shop/img/100SportsAssets.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></span><h3 class="card__name">100 Sports Assets</h3><span class="card__meta">100 models · Sports</span><span class="price"><b>$4.99</b><span class="sr"> or</span> <small>R$ 1,300</small></span></a><a class="card" href="/shop/100-school-assets/" data-pack="100SchoolAssets"><span class="card__art"><img class="card__img" src="/shop/img/100SchoolAssets.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></span><h3 class="card__name">100 School Assets</h3><span class="card__meta">100 models · School</span><span class="price"><b>$4.99</b><span class="sr"> or</span> <small>R$ 1,300</small></span></a><a class="card" href="/shop/100-hospital-assets/" data-pack="100HospitalAssets"><span class="card__art"><img class="card__img" src="/shop/img/100HospitalAssets.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></span><h3 class="card__name">100 Hospital Assets</h3><span class="card__meta">100 models · Hospital</span><span class="price"><b>$4.99</b><span class="sr"> or</span> <small>R$ 1,300</small></span></a><a class="card" href="/shop/100-camping-and-outdoor-assets/" data-pack="100CampingOutdoor"><span class="card__art"><img class="card__img" src="/shop/img/100CampingOutdoor.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></span><h3 class="card__name">100 Camping &amp; Outdoor Assets</h3><span class="card__meta">100 models · Nature</span><span class="price"><b>$4.99</b><span class="sr"> or</span> <small>R$ 1,300</small></span></a></div></section>
+      <section class="section how" aria-labelledby="how-title"><h2 id="how-title">How buying works</h2><dl>
+      <div><dt>Creator Store</dt><dd>Packs are sold on the Roblox Creator Store. Buy there and the pack appears in your Toolbox inventory, ready to insert in Studio.</dd></div>
+      <div><dt>License</dt><dd>Use and modify the assets in any game, including commercial ones. Reselling or redistributing the assets themselves is not allowed. Each pack includes the full text.</dd></div>
+      <div><dt>Other ways to pay</dt><dd>DM me on <a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener">Discord</a> to purchase with a different payment method.</dd></div>
+      <div><dt>Questions</dt><dd>Ask in the <a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener">community Discord</a>.</dd></div>
+    </dl></section>
+      <nav class="browse" aria-labelledby="browse-title"><h2 id="browse-title">Collections</h2><ul><li><a href="/shop/ui/">UI packs<span>12</span></a></li><li><a href="/shop/stud/">Stud<span>10</span></a></li><li><a href="/shop/voxel/">Voxel<span>16</span></a></li><li><a href="/shop/halloween/">Halloween<span>7</span></a></li><li><a href="/shop/weapons/">Weapons<span>6</span></a></li><li><a href="/shop/vehicles/">Vehicles<span>8</span></a></li><li><a href="/shop/pets/">Pets &amp; animals<span>7</span></a></li><li><a href="/shop/characters/">Characters<span>7</span></a></li><li><a href="/shop/rpg/">RPG<span>7</span></a></li><li><a href="/shop/simulator/">Simulator &amp; tycoon<span>8</span></a></li><li><a href="/shop/buildings/">Buildings &amp; maps<span>16</span></a></li><li><a href="/shop/cute/">Cute/Cartoon<span>14</span></a></li></ul></nav>
+    </div>
+    <div class="buybar" data-buybar aria-hidden="true"><span class="buybar__name">100 Obby Parts</span><span class="price"><b>$4.99</b><span class="sr"> or</span> <small>R$ 1,300</small></span><a class="btn btn--primary" href="/shop/100-obby-parts/roblox/" target="_blank" rel="noopener" tabindex="-1">Purchase</a></div>
+</main>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div class="news-slot" data-place="footer"></div>
+    <nav class="foot__nav" aria-label="Footer">
+      <div><h2>Shop</h2><ul><li><a href="/shop/models/">Model packs</a></li><li><a href="/shop/ui/">UI packs</a></li><li><a href="/shop/plugins/">Plugins</a></li><li><a href="https://clearlydev.com/store/kashtheking" target="_blank" rel="noopener">Lifetime Pack</a></li><li><a href="/shop/search/">All packs</a></li><li><a href="/library/">Library</a></li></ul></div>
+      <div><h2>Collections</h2><ul><li><a href="/shop/stud/">Stud</a></li><li><a href="/shop/voxel/">Voxel</a></li><li><a href="/shop/halloween/">Halloween</a></li><li><a href="/shop/weapons/">Weapons</a></li><li><a href="/shop/vehicles/">Vehicles</a></li><li><a href="/shop/pets/">Pets &amp; animals</a></li><li><a href="/shop/characters/">Characters</a></li><li><a href="/shop/rpg/">RPG</a></li><li><a href="/shop/simulator/">Simulator &amp; tycoon</a></li><li><a href="/shop/buildings/">Buildings &amp; maps</a></li><li><a href="/shop/cute/">Cute/Cartoon</a></li></ul></div>
+      <div><h2>KashTheKing</h2><ul><li><a href="https://discord.gg/6HYgCk22eD" target="_blank" rel="noopener">Discord</a></li><li><a href="https://youtube.com/@KashTheKingYT" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://x.com/KashTheKing_X" target="_blank" rel="noopener">X</a></li><li><a href="https://github.com/KashTheKing" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.roblox.com/users/117445502/profile" target="_blank" rel="noopener">Roblox</a></li></ul></div>
+      <div><h2>Legal</h2><ul><li><a href="/terms.html">Terms</a></li><li><a href="/shop/newsletter-privacy.html">Newsletter privacy</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
+    </nav>
+    <p class="foot__legal"><a href="/">kashtheking.com</a> · © KashTheKing</p>
+  </div>
+</footer>
+<p class="sr" id="route-status" aria-live="polite"></p>
+<script defer src="https://panel.kashtheking.com/t.js"></script><!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cd94b2bc49634d048aa496f6b380505d", "spa": true}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/shop/sub.js" defer></script>
+<script src="/shop/news.js" defer></script>
+<script src="/shop/editor.js" defer></script>
 </body>
 </html>

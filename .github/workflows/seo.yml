@@ -1,16 +1,18 @@
-# Keeps the shop findable: when shop/packs.json (the panel edits it) or a shop page changes on main, tools/seo.mjs
-# rebuilds the pack pages, the style pages (/shop/stud/ ...) and sitemap.xml, commits what changed, and tells
-# Bing, Yandex and the other IndexNow engines which pages are new or changed. Google reads sitemap.xml itself.
+# Keeps the shop built and findable: when shop/packs.json (the panel edits it) or the shop's code changes on main,
+# tools/seo.mjs writes every shop page and sitemap.xml again, commits what changed, and tells Bing, Yandex and the other
+# IndexNow engines which pages are new or changed. Google reads sitemap.xml itself. On a pull request it only checks:
+# the tests pass and the committed pages are what the build makes.
 name: Shop SEO
 on:
   push:
     branches: [main]
-    paths: ['shop/**', 'tools/seo.mjs', 'index.html', '.github/workflows/seo.yml']
+    paths: ['shop/**', 'tools/**', 'test/**', 'index.html', '.github/workflows/seo.yml']
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: write
   pages: write
-concurrency: {group: shop-seo, cancel-in-progress: false}
+concurrency: {group: "shop-seo-${{ github.event_name == 'pull_request' && github.ref || 'main' }}", cancel-in-progress: false}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,7 +23,14 @@ jobs:
         with: {node-version: 22}
       - run: node --test test/*.test.mjs
       - run: node tools/seo.mjs
+      - name: The committed pages are up to date
+        if: github.event_name == 'pull_request'
+        run: |
+          git add -A shop
+          git diff --cached --stat
+          git diff --cached --quiet || { echo "::error::Run node tools/seo.mjs and commit the pages it changes."; exit 1; }
       - name: Commit the rebuilt pages
+        if: github.event_name != 'pull_request'
         id: commit
         run: |
           git add -A shop sitemap.xml
@@ -35,6 +44,7 @@ jobs:
         run: |
           curl -fsS -X POST -H "Authorization: Bearer ${{ github.token }}" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${{ github.repository }}/pages/builds"
       - name: Tell IndexNow engines what changed
+        if: github.event_name != 'pull_request'
         continue-on-error: true
         env: {BEFORE: '${{ github.event.before }}'}
         run: |
