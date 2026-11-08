@@ -345,7 +345,7 @@ export function chipsOf(c) {
   return useful.length >= 2 ? [['all', 'All', all.length], ...useful.map(([t, n]) => [t, t, n])] : [];
 }
 
-export const SORTS = [['new', 'Newest'], ['low', 'Price: low to high'], ['high', 'Price: high to low'], ['big', 'Most models']];
+export const SORTS = [['new', 'Newest'], ['low', 'Lowest price'], ['high', 'Highest price'], ['big', 'Most models']];
 
 /** A catalog's packs after the search box, the chip and the sort. Coming-soon packs always sit after the ones you can buy. */
 export function pick(c, {q = '', f = 'all', sort = 'new'} = {}) {
