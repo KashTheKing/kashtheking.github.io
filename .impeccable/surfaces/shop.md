@@ -30,6 +30,6 @@ FORM: The category standard executed at full fidelity, chosen because Kash asked
 storefront home, departments, catalog with filters and sort, product page with gallery and buy box. Bar: Steam store,
 Fab, Apple Store product pages. Signature interaction: hover scrub that shows a pack's slides on its card, the box art
 morphing into the pack page through a view transition, and hover or focus preloading every link's data and images.
-seed: none (unavailable)
+seed: none (unavailable). Evidence: running the downloaded Impeccable engine binary was refused in this cloud thread on 2026-11-08: the sandbox classifier blocks running downloaded executables, so no seed was rolled and the form above was chosen by hand from the brief. Roll a seed on a machine that can run the engine before the next rework of this surface.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

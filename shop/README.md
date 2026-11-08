@@ -20,7 +20,7 @@ Prices come only from `packs.json`. Model packs need a `url` to show; a UI pack 
 | --- | --- |
 | `app/views.mjs` | Every page's markup as pure functions of the data. Collections (`COLLECTIONS`), plugins, titles, descriptions and Product data live here. |
 | `app/shop.css` | The whole look. Tokens on `:root`; see `/DESIGN.md`. |
-| `app/app.mjs` | In the browser: shop links render the next page with `views.mjs` and swap it in, so nothing reloads. Hovering, focusing or touching a link loads that page's data and first images. Cards scrub through slides on hover; the art morphs into the pack page. |
+| `app/app.mjs` | In the browser: shop links render the next page with `views.mjs` and swap it in, so nothing reloads. Hovering, focusing or touching a link loads that page's data and first images. Cards scrub through slides on hover; the art morphs into the pack page. The header search filters a catalog page in place and suggests packs everywhere else. |
 | `../tools/seo.mjs` | Writes `index.html` for the shop, every catalog, every pack (plus its `roblox/` and `discord/` click-through pages), `pack/` (old links) and `sitemap.xml`. CSS and JS get a version from their contents. |
 | `sub.js`, `news.js`, `editor.js` | The subscription block, the newsletter form and the owner's editor bar. Unchanged by the router. |
 

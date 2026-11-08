@@ -156,7 +156,9 @@ function apply(v, url, route, {start = 0} = {}) {
   if (v.slug) main.dataset.pack = v.slug; else delete main.dataset.pack;
   main.innerHTML = v.html;
   search.close();
-  search.input.value = route.kind === 'catalog' && route.id === 'search' ? url.searchParams.get('q') ?? '' : '';
+  search.input.placeholder = v.find || 'Search packs';
+  search.input.setAttribute('aria-label', search.input.placeholder);
+  search.input.value = route.kind === 'catalog' ? url.searchParams.get('q') ?? '' : '';
   const h1 = main.querySelector('h1');
   status.textContent = h1 ? h1.textContent : v.title;
   main.focus({preventScroll: true});
@@ -288,12 +290,15 @@ main.addEventListener('pointerout', (e) => {
 }, {passive: true});
 
 /* ---------- header search ---------- */
+// One search box per page. On a catalog page it filters that catalog in place (the page sets a scope); everywhere else
+// it suggests packs as you type and Enter opens the search page.
 
 const search = (() => {
   const form = document.querySelector('[data-search]');
   const input = form ? form.querySelector('input') : document.createElement('input');
   const list = form ? form.querySelector('.search__list') : null;
   let active = -1;
+  let scope = null;
   const options = () => (list ? [...list.querySelectorAll('a[role="option"]')] : []);
   function close() {
     if (!list) return;
@@ -310,6 +315,7 @@ const search = (() => {
     if (active >= 0) { input.setAttribute('aria-activedescendant', o[active].id); o[active].scrollIntoView({block: 'nearest'}); prefetch(o[active]); }
   }
   async function show() {
+    if (scope) return;
     const q = input.value.trim();
     if (!q) { close(); return; }
     const m = await data().catch(() => null);
@@ -326,7 +332,7 @@ const search = (() => {
   }
   if (form) {
     input.addEventListener('focus', () => { data().catch(() => {}); if (input.value.trim()) show(); });
-    input.addEventListener('input', show);
+    input.addEventListener('input', () => (scope ? scope() : show()));
     input.addEventListener('blur', () => setTimeout(() => { if (document.activeElement !== input) close(); }, 120));
     input.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
@@ -347,6 +353,7 @@ const search = (() => {
     list.addEventListener('click', () => { setTimeout(() => { close(); input.blur(); }, 0); });
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (scope) { scope(true); if (matchMedia('(pointer: coarse)').matches) input.blur(); return; }
       const q = input.value.trim();
       close();
       input.blur();
@@ -361,7 +368,9 @@ const search = (() => {
       input.select();
     });
   }
-  return {input, close};
+  /** A catalog page takes the box over: typing filters it in place. Null gives the box back. */
+  function setScope(f) { scope = f; close(); }
+  return {input, close, scope: setScope};
 })();
 
 /* ---------- page controls ---------- */
@@ -374,6 +383,9 @@ async function mount({start = 0} = {}) {
   const bar = main.querySelector('[data-buybar]');
   if (bar) buybar(bar);
   const cat = main.querySelector('[data-catalog]');
+  if (cat) { search.scope(() => {}); cleanups.push(() => search.scope(null)); }   // no suggestions while the catalog loads
+  const shelf = main.querySelector('[data-shelf]');
+  if (shelf) shelfNav(shelf);
   const m = await data().catch(() => null);
   if (!m || mine !== mountTicket) return;
   peekModel = m;
@@ -386,21 +398,24 @@ function debounce(f, ms) {
   return (...a) => { clearTimeout(t); t = setTimeout(() => f(...a), ms); };
 }
 
-/** Filter chips, the search box and the sort of a catalog page; the state lives in the address (?q=&f=&sort=). */
+/** Filter chips, the header search box and the sort of a catalog page; the state lives in the address (?q=&f=&sort=). */
 function catalog(el, m) {
   const c = V.catalogOf(el.dataset.catalog, m);
   if (!c) return;
   const grid = main.querySelector('[data-grid]');
   const count = main.querySelector('[data-count]');
   const empty = main.querySelector('[data-empty]');
-  const input = el.querySelector('input[name="q"]');
+  const input = search.input;
+  const everywhere = main.querySelector('[data-everywhere]');
   const select = el.querySelector('select[name="sort"]');
   const chips = [...el.querySelectorAll('.chip')];
   const params = new URLSearchParams(location.search);
   const st = {q: (params.get('q') ?? '').trim(), f: params.get('f') ?? 'all', sort: params.get('sort') ?? 'new'};
   if (!chips.some((b) => b.dataset.f === st.f)) st.f = 'all';
   if (!V.SORTS.some(([s]) => s === st.sort)) st.sort = 'new';
-  input.value = st.q;
+  const typed = input.value.trim();
+  if (typed && document.activeElement === input) st.q = typed;   // typed before the data arrived
+  else input.value = st.q;
   select.value = st.sort;
   const address = debounce(() => {
     const u = new URL(location.href);
@@ -413,11 +428,12 @@ function catalog(el, m) {
     count.textContent = V.countLine(c, list.length);
     empty.hidden = list.length > 0;
     chips.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === st.f)));
+    if (everywhere) everywhere.href = `/shop/search/${st.q ? `?q=${encodeURIComponent(st.q)}` : ''}`;
     address();
   };
   if (st.q || st.f !== 'all' || st.sort !== 'new') draw();
-  input.addEventListener('input', debounce(() => { st.q = input.value.trim(); draw(); }, 120));
-  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') e.preventDefault(); });
+  const typing = debounce(() => { if (input.value.trim() !== st.q) { st.q = input.value.trim(); draw(); } }, 120);
+  search.scope((now) => { if (now === true) { st.q = input.value.trim(); draw(); } else typing(); });
   select.addEventListener('change', () => { st.sort = select.value; draw(); });
   el.addEventListener('click', (e) => {
     const b = e.target.closest('.chip');
@@ -427,6 +443,37 @@ function catalog(el, m) {
   });
   const clear = main.querySelector('[data-clear]');
   if (clear) clear.addEventListener('click', () => { st.q = ''; st.f = 'all'; input.value = ''; draw(); input.focus(); });
+}
+
+/** The Collections shelf on the home page: arrows page through it when it is wider than the screen. */
+function shelfNav(list) {
+  const prev = main.querySelector('[data-shelf-prev]');
+  const next = main.querySelector('[data-shelf-next]');
+  if (!prev || !next) return;
+  const update = () => {
+    const max = list.scrollWidth - list.clientWidth;
+    prev.hidden = next.hidden = max <= 2;
+    prev.setAttribute('aria-disabled', String(list.scrollLeft <= 2));
+    next.setAttribute('aria-disabled', String(list.scrollLeft >= max - 2));
+  };
+  // one page is as many whole tiles as fit, so the next tile lands on the left edge
+  const page = (d) => {
+    const li = list.children;
+    const each = li.length > 1 ? li[1].offsetLeft - li[0].offsetLeft : list.clientWidth;
+    const pad = parseFloat(getComputedStyle(list).paddingLeft) || 0;
+    const gap = each - (li[0] ? li[0].offsetWidth : 0);
+    const n = Math.max(1, Math.floor((list.clientWidth - 2 * pad + gap + 1) / each));
+    list.scrollBy({left: d * n * each, behavior: reduce.matches ? 'auto' : 'smooth'});
+  };
+  prev.addEventListener('click', () => page(-1));
+  next.addEventListener('click', () => page(1));
+  list.addEventListener('scroll', update, {passive: true});
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver(update);
+    ro.observe(list);
+    cleanups.push(() => ro.disconnect());
+  }
+  update();
 }
 
 /** buy.json can change after the page was built (a ClearlyDev link, a Robux product): the buttons follow it. */

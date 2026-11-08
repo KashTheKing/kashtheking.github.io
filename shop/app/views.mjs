@@ -70,10 +70,10 @@ export const LOOKS = [
 export const lookOf = (p) => LOOKS.find((l) => l.test(p)).id;
 
 export const PLUGINS = [
-  {name: 'Infinite Ocean', href: '/infinite-ocean/', image: '/infinite-ocean/img/hero.jpg', w: 1601, h: 853, text: 'An infinite, animated, fully scriptable sea for Roblox.'},
-  {name: 'Flashback', href: '/flashback/', image: '/flashback/img/hero.png', w: 823, h: 481, text: 'Record gameplay on the server. Play it back anywhere.'},
-  {name: 'Blockwork', href: 'https://github.com/KashTheKing/blockwork', image: '/assets/icons/blockwork.png', w: 256, h: 256, icon: true, out: true, text: 'Free and open source on GitHub.'},
-  {name: 'All plugins', href: '/library/plugins', image: '/assets/icons/plugins.svg', w: 256, h: 256, icon: true, text: 'Every plugin in the Library, with docs.'},
+  {name: 'Infinite Ocean', href: '/infinite-ocean/', image: '/infinite-ocean/img/hero.jpg', w: 1601, h: 853},
+  {name: 'Flashback', href: '/flashback/', image: '/flashback/img/hero.png', w: 823, h: 481},
+  {name: 'Blockwork', href: 'https://github.com/KashTheKing/blockwork', image: '/assets/icons/blockwork.png', w: 256, h: 256, icon: true, out: true},
+  {name: 'All plugins', href: '/library/plugins', image: '/assets/icons/plugins.svg', w: 256, h: 256, icon: true},
 ];
 
 const SOCIAL = [
@@ -292,8 +292,17 @@ function door(kind, name, list, line) {
 function home(m) {
   const models = m.live.filter((p) => !ui(p)), uis = m.live.filter(ui);
   const cols = m.collections.filter((c) => c.slug !== 'ui');
-  // a collection shows four of its packs at once, so it never reads as one product
-  const tiles = cols.map((c) => `<li><a class="tile" href="/shop/${c.slug}/"><span class="tile__art">${c.packs.filter((x) => x.image).slice(0, 4).map((p) => `<img src="${esc(src(p.image))}" alt="" width="360" height="360" loading="lazy" decoding="async">`).join('')}</span><span class="tile__name">${esc(c.nav)}</span><span class="tile__count">${c.packs.length} packs</span></a></li>`).join('');
+  // each collection leads with a pack no other tile leads with, two more fanned behind it, so it reads as a set
+  const used = new Set();
+  const tiles = cols.map((c) => {
+    const art = c.packs.filter((x) => x.image);
+    const lead = art.find((x) => !used.has(x.slug)) ?? art[0];
+    if (lead) used.add(lead.slug);
+    const fan = [lead, ...art.filter((x) => x !== lead)].filter(Boolean).slice(0, 3);
+    const cards = fan.map((p, i) => `<span class="tile__card tile__card--${i + 1}"><img src="${esc(src(p.image))}" alt="" width="720" height="720" loading="lazy" decoding="async"></span>`).reverse().join('');
+    return `<li><a class="tile" href="/shop/${c.slug}/"><span class="tile__art">${cards}</span><span class="tile__name">${esc(c.nav)}</span><span class="tile__count">${c.packs.length} packs</span></a></li>`;
+  }).join('');
+  const shelfNav = `<span class="shelf__nav"><button type="button" class="shelf__btn" data-shelf-prev aria-label="Earlier collections" hidden>${ICON.prev}</button><button type="button" class="shelf__btn" data-shelf-next aria-label="More collections" hidden>${ICON.next}</button></span>`;
   return `<h1 class="sr">KashTheKing Shop</h1>
     <section class="stage" aria-label="Departments">
       ${door('models', 'Model packs', models, `${models.length} packs · ${num(sum(models))} models`)}
@@ -303,9 +312,8 @@ function home(m) {
       ${lifetime()}
       <section class="section" aria-labelledby="new-title">${sectionHead('New model packs', 'new-title', ['All model packs', '/shop/models/'])}<div class="grid">${models.slice(0, 8).map((p) => card(p)).join('')}</div></section>
       <section class="section" aria-labelledby="ui-title" data-dept="ui">${sectionHead('UI packs', 'ui-title', ['All UI packs', '/shop/ui/'])}<div class="grid">${uis.slice(0, 4).map((p) => card(p)).join('')}</div></section>
-      ${cols.length ? `<section class="section" aria-labelledby="cols-title">${sectionHead('Collections', 'cols-title')}<ul class="tiles">${tiles}</ul></section>` : ''}
+      ${cols.length ? `<section class="section" aria-labelledby="cols-title"><div class="shead"><h2 id="cols-title">Collections</h2>${shelfNav}</div><ul class="shelf" data-shelf>${tiles}</ul></section>` : ''}
       <section class="section" aria-labelledby="plugins-title">${sectionHead('Plugins', 'plugins-title', ['All plugins', '/shop/plugins/'])}<div class="plugins">${PLUGINS.slice(0, 3).map((x) => plugin(x)).join('')}</div></section>
-      ${howToBuy()}
     </div>`;
 }
 
@@ -314,17 +322,16 @@ function howToBuy() {
       <div><dt>Creator Store</dt><dd>Packs are sold on the Roblox Creator Store. Buy there and the pack appears in your Toolbox inventory, ready to insert in Studio.</dd></div>
       <div><dt>License</dt><dd>Use and modify the assets in any game, including commercial ones. Reselling or redistributing the assets themselves is not allowed. Each pack includes the full text.</dd></div>
       <div><dt>Other ways to pay</dt><dd>DM me on <a href="${DISCORD}" target="_blank" rel="noopener">Discord</a> to purchase with a different payment method.</dd></div>
-      <div><dt>Questions</dt><dd>Ask in the <a href="${DISCORD}" target="_blank" rel="noopener">community Discord</a>.</dd></div>
     </dl></section>`;
 }
 
 function plugin(x, h = 'h3') {
-  return `<a class="plugin" href="${esc(x.href)}"${x.out ? ' target="_blank" rel="noopener"' : ''}><span class="plugin__art${x.icon ? ' plugin__art--icon' : ''}"><img src="${esc(x.image)}" alt="" width="${x.w}" height="${x.h}" loading="lazy" decoding="async"></span><${h} class="plugin__name">${esc(x.name)}${x.out ? ICON.out : ''}</${h}><p class="plugin__text">${esc(x.text)}</p></a>`;
+  return `<a class="plugin" href="${esc(x.href)}"${x.out ? ' target="_blank" rel="noopener"' : ''}><span class="plugin__art${x.icon ? ' plugin__art--icon' : ''}"><img src="${esc(x.image)}" alt="" width="${x.w}" height="${x.h}" loading="lazy" decoding="async"></span><${h} class="plugin__name">${esc(x.name)}${x.out ? ICON.out : ''}</${h}></a>`;
 }
 
 function plugins() {
   return `<section class="phead phead--plain"><div class="wrap">${crumbs([['Shop', '/shop/']], 'Plugins')}<h1>Plugins</h1></div></section>
-    <div class="wrap"><div class="plugins plugins--page">${PLUGINS.map((x) => plugin(x, 'h2')).join('')}</div>${howToBuy()}</div>`;
+    <div class="wrap"><div class="plugins plugins--page">${PLUGINS.map((x) => plugin(x, 'h2')).join('')}</div></div>`;
 }
 
 /** The filter chips of a catalog: looks with counts on the model packs page, tags elsewhere. */
@@ -362,13 +369,12 @@ function catalog(c, m) {
   return `<section class="phead phead--${c.id === 'search' ? 'plain' : c.dept}"><div class="wrap">${crumbs(c.crumbs, c.h1)}<h1>${esc(c.h1)}</h1><p class="phead__count" data-count>${countLine(c, list.length)}</p></div></section>
     <div class="tools" data-catalog="${esc(c.id)}"><div class="wrap tools__in">
       ${chips.length ? `<div class="chips" role="group" aria-label="Filter">${chips.map(([id, name, n]) => `<button type="button" class="chip" data-f="${esc(id)}" aria-pressed="${id === 'all'}">${esc(name)}<span>${n}</span></button>`).join('')}</div>` : '<div class="chips"></div>'}
-      <label class="field field--search">${ICON.search}<input type="search" name="q" placeholder="Search" aria-label="Search these packs" autocomplete="off" enterkeyhint="search"></label>
       <label class="field field--select"><span class="sr">Sort</span><select name="sort">${SORTS.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label>
     </div></div>
     <div class="wrap">
       ${c.id === 'models' ? lifetime({compact: true}) : ''}
       <div class="grid grid--catalog" data-grid>${gridHtml(list)}</div>
-      <div class="empty" data-empty hidden><p>No packs match that search.</p><button type="button" class="btn btn--quiet" data-clear>Clear search</button></div>
+      <div class="empty" data-empty hidden><p>No packs match that search.</p><span class="empty__actions"><button type="button" class="btn btn--ghost" data-clear>Clear search</button>${c.id === 'search' ? '' : '<a class="btn btn--ghost" href="/shop/search/" data-everywhere>Search all packs</a>'}</span></div>
       ${browse(m, {current: c.id})}
     </div>`;
 }
@@ -477,6 +483,10 @@ function packMeta(p) {
   };
 }
 
+/** The header search box's words: on a catalog page it filters that catalog in place. */
+const finds = (c) => (c.id === 'models' ? 'Search model packs' : c.id === 'search' ? 'Search all packs'
+  : `Search ${c.h1.replace(/^([A-Z])([a-z]+)(?=[\s&])/, (w, a, b) => a.toLowerCase() + b)}`);
+
 /** Everything one page needs: its head, which department and nav item it belongs to, and its main markup. */
 export function render(route, m) {
   if (route.kind === 'home') {
@@ -496,7 +506,7 @@ export function render(route, m) {
     const url = `${SITE}/shop/${c.id}/`;
     const first = c.packs.find((p) => p.slides.length || p.image);
     const og = c.id === 'models' || !first ? `${SITE}/shop/og-banner.jpg?v=66` : abs(src(first.slides[0] ?? first.image));
-    return {kind: 'catalog', id: c.id, dept: c.dept, section: c.section, html: catalog(c, m),
+    return {kind: 'catalog', id: c.id, dept: c.dept, section: c.section, html: catalog(c, m), find: finds(c),
       title: `${c.title} | KashTheKing Shop`, description: c.description, canonical: url, robots: c.robots, ogType: 'website',
       ogTitle: c.id === 'models' ? 'KashTheKing Shop 👑' : c.title, ogDescription: c.ogDescription ?? c.description, ogImage: og,
       jsonld: c.id === 'search' ? [] : [itemList(c.id === 'models' ? 'Roblox model asset packs by KashTheKing' : c.title, c.packs),
@@ -540,13 +550,13 @@ export function headTags(v) {
 
 const NAV = [['models', 'Model packs', '/shop/models/'], ['ui', 'UI packs', '/shop/ui/'], ['plugins', 'Plugins', '/shop/plugins/']];
 
-export function header(section) {
+export function header(section, find = 'Search packs') {
   return `<header class="top">
   <div class="top__in">
     <a class="top__brand" href="/shop/"><img src="/assets/watermark.png" alt="KashTheKing Shop" width="156" height="33"></a>
     <nav class="top__nav" aria-label="Shop">${NAV.map(([id, name, href]) => `<a href="${href}" data-section="${id}"${id === section ? ' class="is-on"' : ''}${id === 'ui' ? ' data-dept="ui"' : ''}>${name}</a>`).join('')}<a href="/library/">Library</a></nav>
     <form class="search" role="search" action="/shop/search/" data-search>
-      ${ICON.search}<input type="search" name="q" placeholder="Search packs" aria-label="Search packs" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="search-list" aria-autocomplete="list"><kbd aria-hidden="true">/</kbd>
+      ${ICON.search}<input type="search" name="q" placeholder="${esc(find)}" aria-label="${esc(find)}" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="search-list" aria-autocomplete="list"><kbd aria-hidden="true">/</kbd>
       <div class="search__list" id="search-list" role="listbox" aria-label="Packs" hidden></div>
     </form>
     <a class="top__lifetime" href="${LIFETIME.url}" target="_blank" rel="noopener">Lifetime Pack</a>
@@ -592,7 +602,7 @@ ${headTags(v)}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-${header(v.section)}
+${header(v.section, v.find)}
 <div id="sub" class="wrap sub-slot"></div>
 <main id="main" tabindex="-1" data-route="${esc(v.kind)}"${v.slug ? ` data-pack="${esc(v.slug)}"` : ''}>
 ${v.html}
