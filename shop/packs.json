@@ -1791,7 +1791,9 @@
             "Cute",
             "Animals"
         ],
-        "date": "2026-10-05T05:18:02"
+        "date": "2026-10-05T05:18:02",
+        "video": "video/sea-creatures.mp4",
+        "poster": "video/sea-creatures.jpg"
     },
     {
         "slug": "100RPGItems",

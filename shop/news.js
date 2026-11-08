@@ -1,4 +1,4 @@
-// "Join Newsletter" form. Renders into every element with class news-slot, but only when shop/buy.json has a
+// The newsletter form. Renders into every element with class news-slot, but only when shop/buy.json has a
 // newsletter_endpoint (empty or missing = nothing shown). Same-origin endpoint ("/newsletter/subscribe", once the site
 // is served by the Clanker server): JSON answer shown. Another origin (before the DNS cutover): a simple form POST
 // without CORS, so the answer cannot be read and the neutral message is shown instead.
@@ -23,7 +23,7 @@
         document.head.appendChild(style);
         slots.forEach(function (slot, i) {
             var id = "news-email-" + i;
-            slot.innerHTML = '<form class="news-box" novalidate><h2>Join Newsletter</h2><p>Get notified about new packs and sales</p>' +
+            slot.innerHTML = '<form class="news-box" novalidate><h2>Newsletter</h2>' +
                 '<div class="news-row"><label for="' + id + '" class="news-hp" style="position:absolute;left:-9999px">Email address</label>' +
                 '<input id="' + id + '" type="email" name="email" required maxlength="254" autocomplete="email" placeholder="you@example.com" aria-label="Email address">' +
                 '<span class="news-hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></span>' +
