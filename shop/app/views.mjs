@@ -398,9 +398,10 @@ export function buyLinks(p, buy = {}) {
 export function buyActions(p, buy) {
   const l = buyLinks(p, buy);
   return [
-    l.store && `<a class="btn btn--primary btn--big" href="${esc(l.store)}" target="_blank" rel="noopener">${free(p) ? 'Get it on Creator Store' : 'Purchase on Creator Store'}${ICON.out}</a>`,
+    l.try && `<a class="btn btn--primary btn--big" href="${esc(l.try)}" rel="noopener">${ICON.play}Try in Roblox</a>`,
+    l.try && `<p class="buy__hint">Walk through every item of this pack in the game before you buy.</p>`,
+    l.store && `<a class="btn ${l.try ? 'btn--ghost' : 'btn--primary'} btn--big" href="${esc(l.store)}" target="_blank" rel="noopener">${free(p) ? 'Get it on Creator Store' : 'Purchase on Creator Store'}${ICON.out}</a>`,
     l.robux && `<a class="btn btn--robux btn--big" href="${esc(l.robux)}" rel="noopener">Purchase with Robux <span class="nowrap">(R$ ${robux(p.price)})</span></a>`,
-    l.try && `<a class="btn btn--ghost" href="${esc(l.try)}" rel="noopener">${ICON.play}Try in Roblox</a>`,
     l.clearly && `<a class="btn btn--ghost" href="${esc(l.clearly)}" target="_blank" rel="noopener">Purchase on Clearly Dev${ICON.out}</a>`,
     l.discord && `<a class="buy__alt" href="${esc(l.discord)}" target="_blank" rel="noopener">Other ways to pay</a>`,
   ].filter(Boolean).join('');
@@ -548,17 +549,20 @@ export function headTags(v) {
   return t.filter(Boolean).join('\n');
 }
 
+/** The showcase game: every pack's items placed in a real Roblox place, the best way to see them all. */
+const SHOWCASE = 'https://www.roblox.com/games/91734861985398/Shop-and-Showcase';
 const NAV = [['models', 'Model packs', '/shop/models/'], ['ui', 'UI packs', '/shop/ui/'], ['plugins', 'Plugins', '/shop/plugins/']];
 
 export function header(section, find = 'Search packs') {
   return `<header class="top">
   <div class="top__in">
     <a class="top__brand" href="/shop/"><img src="/assets/watermark.png" alt="KashTheKing Shop" width="156" height="33"></a>
-    <nav class="top__nav" aria-label="Shop">${NAV.map(([id, name, href]) => `<a href="${href}" data-section="${id}"${id === section ? ' class="is-on"' : ''}${id === 'ui' ? ' data-dept="ui"' : ''}>${name}</a>`).join('')}<a href="/library/">Library</a></nav>
+    <nav class="top__nav" aria-label="Shop">${NAV.map(([id, name, href]) => `<a href="${href}" data-section="${id}"${id === section ? ' class="is-on"' : ''}${id === 'ui' ? ' data-dept="ui"' : ''}>${name}</a>`).join('')}</nav>
     <form class="search" role="search" action="/shop/search/" data-search>
       ${ICON.search}<input type="search" name="q" placeholder="${esc(find)}" aria-label="${esc(find)}" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="search-list" aria-autocomplete="list"><kbd aria-hidden="true">/</kbd>
       <div class="search__list" id="search-list" role="listbox" aria-label="Packs" hidden></div>
     </form>
+    <a class="top__try" href="${SHOWCASE}" target="_blank" rel="noopener" title="Walk through every pack in the showcase game">${ICON.play}Try in Roblox</a>
     <a class="top__lifetime" href="${LIFETIME.url}" target="_blank" rel="noopener">Lifetime Pack</a>
   </div>
 </header>`;
