@@ -554,7 +554,7 @@ export function header(section, find = 'Search packs') {
   return `<header class="top">
   <div class="top__in">
     <a class="top__brand" href="/shop/"><img src="/assets/watermark.png" alt="KashTheKing Shop" width="156" height="33"></a>
-    <nav class="top__nav" aria-label="Shop">${NAV.map(([id, name, href]) => `<a href="${href}" data-section="${id}"${id === section ? ' class="is-on"' : ''}${id === 'ui' ? ' data-dept="ui"' : ''}>${name}</a>`).join('')}<a href="/library/">Library</a></nav>
+    <nav class="top__nav" aria-label="Shop">${NAV.map(([id, name, href]) => `<a href="${href}" data-section="${id}"${id === section ? ' class="is-on"' : ''}${id === 'ui' ? ' data-dept="ui"' : ''}>${name}</a>`).join('')}</nav>
     <form class="search" role="search" action="/shop/search/" data-search>
       ${ICON.search}<input type="search" name="q" placeholder="${esc(find)}" aria-label="${esc(find)}" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="search-list" aria-autocomplete="list"><kbd aria-hidden="true">/</kbd>
       <div class="search__list" id="search-list" role="listbox" aria-label="Packs" hidden></div>
